@@ -1,0 +1,35 @@
+{
+  "integration_base_commit": "49de5fa7956dad447414c95726f53d5a2597136a",
+  "original_bibliography_entries_preserved_exactly": 32,
+  "total_bibliography_entries": 35,
+  "all_entries_cited": true,
+  "undefined_cross_references": [],
+  "duplicate_labels": [],
+  "protected_archival_verification_and_lean_files_unchanged": 84,
+  "seven_calculation_checks_passed": true,
+  "source_hashes_current": true,
+  "no_overfull_boxes_or_unresolved_tex_references": true,
+  "pdf_artifacts": {
+    "paper.pdf": {
+      "pages": 25,
+      "sha256": "a8bf99027a827d192e89a38525f4f8d1077e169133f841587ce6e1cc6b38c696",
+      "text_outside_page": false
+    },
+    "paper_reading.pdf": {
+      "pages": 41,
+      "sha256": "9d4cfc3223eb8fe4a848a5ae17f65a3427c9fb9be5ab73a90d2fe96edbbaa4ed",
+      "text_outside_page": false
+    },
+    "figures_review.pdf": {
+      "pages": 11,
+      "sha256": "bd26cb74b897f6682c0a7b47664d215a8e1eeaf0a0e62dbba440dc3dd335dcfc",
+      "text_outside_page": false
+    },
+    "reports/repair-audit-2026-11-27/repair-calculations.pdf": {
+      "pages": 9,
+      "sha256": "068df1bd31d513da94a2cb828ba89912126a2a82acd2eef3b0856900f6bacc92",
+      "text_outside_page": false
+    }
+  },
+  "visual_review": "All-page contact sheets and selected full-size action, clock, proof, figure, and supplement pages inspected."
+}

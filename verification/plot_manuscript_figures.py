@@ -73,6 +73,9 @@ def save(fig,stem):
             warnings.warn(f'{stem}: text outside canvas: {t.get_text()!r}')
     for ext in ['pdf','svg','png']:
         fig.savefig(OUT/f'{stem}.{ext}',dpi=300,facecolor='white',bbox_inches=None)
+        if ext=='svg':
+            path=OUT/f'{stem}.{ext}'
+            path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines())+'\n')
     STEMS.append(stem)
     plt.close(fig)
 
@@ -163,9 +166,9 @@ def roughness():
         e=1.96*np.array([r['Q2_se'] for r in rows])
         a.errorbar(x,y,yerr=e,marker=m,color=col,lw=1.25,ms=4,capsize=2,label=f'$N={n}$')
     a.set(xlim=(-.06,2.09),ylim=(.065,.36),xticks=[0,.5,1,1.5,2],yticks=[.1,.2,.3],
-          xlabel='Coupling $g_N$',ylabel=r'Mean roughness $\langle Q_2\rangle$')
+          xlabel='Coupling $g_N$',ylabel=r'Traceless-field variance $\langle Q_2\rangle$')
     a.legend(loc='upper right',ncol=2,fontsize=8,handlelength=.9,columnspacing=.7)
-    panel(a,'A','Roughness decreases with coupling')
+    panel(a,'A','Field fluctuations decrease')
     vals=[r['smoothing_vs_measured_g0'] for r in d['primary_4rank_table']]
     vals += [d['lattice_12x8_test']['smoothing_12x8_vs_measured_g0'],d['extended_n32_smoothing_crosscheck']]
     labels=['$N=8$  |  8 × 4','$N=16$  |  8 × 4','$N=24$  |  8 × 4','$N=32$  |  12 × 4',
@@ -379,6 +382,32 @@ def supplementary():
             ax.set(xlabel='Dimensionless area $s$',ylabel='Gaussian amplitude magnitude',xticks=[100,1000,10000])
             ax.minorticks_off();ax.legend(loc='upper left',bbox_to_anchor=(0,-.34),fontsize=8,ncol=2)
             panel(ax,'C',titles[stem][2])
+            # Replace the legacy unrestricted-occupation clock curves with
+            # the second moment of the actual many-body budget compression.
+            data=json.loads((ROOT/'reports/repair-audit-2026-11-27/clock_large_budget_results.json').read_text())
+            rows=[r for r in data['rows'] if r['Xi_variance']>0]
+            ax=fig.axes[3];ax.clear();style()
+            ax.loglog([r['s'] for r in rows],
+                      [r['vacuum_failure_probability_upper_bound_at_log2'] for r in rows],
+                      color=BLUE,marker='o',label='Projected second-moment bound')
+            ax.set(xlabel='Dimensionless area $s$',ylabel='Vacuum rejection upper bound',
+                   xticks=[10,100,1000,5000])
+            ax.minorticks_off()
+            ax.legend(loc='upper left',bbox_to_anchor=(0,-.34),fontsize=8)
+            panel(ax,'D','Occupation-projected clock')
+        if stem=='fig1_breakthrough_1loop':
+            data=json.loads((ROOT/'reports/repair-audit-2026-11-27/clock_results.json').read_text())
+            rows=[r for r in data['occupation_projected_clock'] if r['B']>4]
+            ax=fig.axes[0];ax.clear();style()
+            ax.semilogy([r['B'] for r in rows],[r['mean_exp_Xi']-1 for r in rows],
+                        color=BLUE,marker='o',label='Mean minus one')
+            ax.semilogy([r['B'] for r in rows],[r['variance_exp_Xi'] for r in rows],
+                        color=RUST,marker='s',label='Variance')
+            ax.set(xlabel='Total occupation budget $B$',ylabel='Exponential-clock statistic',
+                   xticks=[6,8,9,10,11])
+            ax.minorticks_off()
+            ax.legend(loc='upper left',bbox_to_anchor=(0,-.34),fontsize=8,ncol=2)
+            panel(ax,'A','Exact small-budget clock')
         if stem=='fig4_original_resolution':
             ax=fig.axes[1];ax.axhspan(1e-19,1e-14,color=LIGHT,zorder=-1)
             ax.text(.04,.36,'Floating-point residuals below',transform=ax.transAxes,ha='left',fontsize=8,color=GRAY)

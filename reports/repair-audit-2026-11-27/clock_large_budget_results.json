@@ -1,0 +1,97 @@
+{
+  "rows": [
+    {
+      "s": 8.0,
+      "B": 4.0,
+      "J_max": 2,
+      "Xi_variance": 0.0,
+      "vacuum_failure_probability_upper_bound_at_log2": 0.0,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 1.0,
+      "FFT_grid_doubling_absolute_change": 0.0
+    },
+    {
+      "s": 12.0,
+      "B": 6.0,
+      "J_max": 3,
+      "Xi_variance": 0.0001170914099201545,
+      "vacuum_failure_probability_upper_bound_at_log2": 0.0002437104285500219,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.99975628957145,
+      "FFT_grid_doubling_absolute_change": 0.0
+    },
+    {
+      "s": 16.0,
+      "B": 8.0,
+      "J_max": 3,
+      "Xi_variance": 0.00011235758267900113,
+      "vacuum_failure_probability_upper_bound_at_log2": 0.0002338575873688459,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9997661424126312,
+      "FFT_grid_doubling_absolute_change": 1.3552527156068805e-20
+    },
+    {
+      "s": 18.0,
+      "B": 9.0,
+      "J_max": 4,
+      "Xi_variance": 0.00010994239567467519,
+      "vacuum_failure_probability_upper_bound_at_log2": 0.00022883069205471406,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9997711693079453,
+      "FFT_grid_doubling_absolute_change": 4.0657581468206416e-20
+    },
+    {
+      "s": 20.0,
+      "B": 10.0,
+      "J_max": 4,
+      "Xi_variance": 9.891781817211857e-05,
+      "vacuum_failure_probability_upper_bound_at_log2": 0.00020588447841220044,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9997941155215878,
+      "FFT_grid_doubling_absolute_change": 1.3552527156068805e-20
+    },
+    {
+      "s": 40.0,
+      "B": 20.0,
+      "J_max": 6,
+      "Xi_variance": 7.885000790059407e-05,
+      "vacuum_failure_probability_upper_bound_at_log2": 0.00016411596059634362,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9998358840394037,
+      "FFT_grid_doubling_absolute_change": 2.710505431213761e-20
+    },
+    {
+      "s": 80.0,
+      "B": 40.0,
+      "J_max": 8,
+      "Xi_variance": 4.171231316755976e-05,
+      "vacuum_failure_probability_upper_bound_at_log2": 8.681871475295065e-05,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9999131812852471,
+      "FFT_grid_doubling_absolute_change": 1.3552527156068805e-20
+    },
+    {
+      "s": 160.0,
+      "B": 80.0,
+      "J_max": 12,
+      "Xi_variance": 1.7364770993622995e-05,
+      "vacuum_failure_probability_upper_bound_at_log2": 3.614249570839283e-05,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9999638575042916,
+      "FFT_grid_doubling_absolute_change": 3.3881317890172014e-21
+    },
+    {
+      "s": 240.0,
+      "B": 120.0,
+      "J_max": 14,
+      "Xi_variance": 1.0722458447461202e-05,
+      "vacuum_failure_probability_upper_bound_at_log2": 2.2317392412667295e-05,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9999776826075873,
+      "FFT_grid_doubling_absolute_change": 3.3881317890172014e-21
+    },
+    {
+      "s": 5000.0,
+      "B": 2500.0,
+      "J_max": 67,
+      "Xi_variance": 5.24679122178123e-07,
+      "vacuum_failure_probability_upper_bound_at_log2": 1.0920508498827968e-06,
+      "vacuum_clock_acceptance_lower_bound_at_log2": 0.9999989079491501,
+      "FFT_grid_doubling_absolute_change": 1.0587911840678754e-22
+    }
+  ],
+  "low_mode_FFT_vs_Gauss_max_error": 5.995204332975845e-14,
+  "runtime_seconds": 10.155691385269165,
+  "scope": "Second moment and Chebyshev bound for the compressed quadratic clock, not exponential moments or a nonlinear gravitational clock."
+}

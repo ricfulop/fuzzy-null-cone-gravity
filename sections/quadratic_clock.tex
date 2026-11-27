@@ -1,0 +1,53 @@
+To study the clock-domain issue in Sec.~\ref{sec:audit_clock}, we specify a quadratic oscillator model smeared with
+$g(u)=\exp[1-(4u(1-u))^{-1}]$ for $0<u<1$, extended smoothly by zero.
+Set $c_n=\int_0^1g(u)^2\cos(2\pi n u)\,du$ and $\mu_j=t_j/(2\pi)$.
+The positive Gram matrices $M_q,M_p$ defined in Appendix~\ref{app:clock_proof} give
+\begin{equation}\label{eq:oscillator_clock}
+H_\mu^{\mathrm{NO}}=\tfrac12(q^TM_q q+p^TM_p p)
+-\tfrac14\Tr(M_q+M_p).
+\end{equation}
+The scalar-field bounds of Flanagan and Fewster--Eveson~\cite{Flanagan1997,FewsterEveson1998} are relevant context, but do not supply the previously claimed floor for this canonical clock. We replace that attribution with an explicit bound for Eq.~\eqref{eq:oscillator_clock}:
+\begin{equation}\label{eq:clock_floor}
+H_\mu^{\mathrm{NO}}\ge-K_g\mathbf1,\qquad
+K_g=\frac12\sum_{n=1}^{\infty}(2n^2-n)|c_n|<\infty.
+\end{equation}
+The proof uses the Powers--St\o rmer trace inequality~\cite{PowersStormer1970} and a bound on the pair kernel $K_\mu=(M_q-M_p)/2$. It is uniform in both $\mu\ge0$ and the radial truncation. It does not construct the full nonlinear gravitational clock. Fourier coefficients through $n=80$, with an analytic fourth-derivative tail bound evaluated by numerical quadrature, give a conservative estimate $K_g\lesssim0.61564$. The analytic expression is the bound; the decimal is not an interval certificate.
+
+The observable must use the total occupation projector $P_B$ of Eq.~\eqref{eq:cross_focusing}. With $d_j=2(2j+1)$, define
+\begin{align}\label{eq:compressed_clock}
+\Xi_s&=\frac1s\sum_{j=2}^{J(s)}\sum_{m,p}H_{\mu_j}^{\mathrm{NO}},\nonumber\\
+\Xi_{s,B}&=\left.P_B\Xi_sP_B\right|_{\operatorname{ran}P_B},\qquad
+\tau_{s,B}=u_{\mathrm{cl}}(s)e^{\Xi_{s,B}}.
+\end{align}
+Every matrix element of the compression is fixed once the radial truncation includes all $k\le B$. In general $e^{P_B\Xi_sP_B}$ on $\operatorname{ran}P_B$ differs from $P_Be^{\Xi_s}P_B$. Radial-mode truncation alone leaves occupation unrestricted. Gaussian determinant methods~\cite{BalianBrezin1969} and stress-tensor tail studies~\cite{FewsterFordRoman2010} therefore cannot be used to identify the former observable with the latter. The earlier large-area exponential moments and Chernoff estimates are withdrawn for the occupation-projected clock.
+
+For $\eta=\ln(\ell/u_{\mathrm{cl}})>0$, spectral calculus gives
+\begin{equation}\label{eq:clock_proj_equiv}
+P_{\ell,s}=\mathbf1_{(-\infty,\ell]}(\tau_{s,B})
+=\mathbf1_{(-\infty,\eta]}(\Xi_{s,B}).
+\end{equation}
+The normal-ordered vacuum has zero mean. Its second moment requires only the allowed pair states:
+\begin{align}\label{eq:projected_clock_variance}
+v_{s,B}&=\frac1{2s^2}\sum_{j=2}^{J(s)}d_j\sum_{k,l\ge1}
+|(K_{\mu_j})_{kl}|^2\,
+\mathbf1_{\omega_{k,j}+\omega_{l,j}\le B},\nonumber\\
+\langle0|P_{\ell,s}|0\rangle&\ge1-\frac{v_{s,B}}{\eta^2}.
+\end{align}
+Here the budget cost $\omega_{k,j}=k+t_j^2/k$ is distinct from the oscillator frequency $\sqrt{k^2+\mu_j^2}$. For $Q_*=1/2$, $s=5000$, $B=2500$, and $J(s)=\lfloor\sqrt{s/\ln3}\rfloor=67$, the computed variance is $5.2467912\times10^{-7}$. At $\ell/u_{\mathrm{cl}}=2$ this gives vacuum acceptance at least $0.9999989079$ [Fig.~\ref{fig:v2}(D)]. This is a spectral probability bound for the vacuum, not a sampling acceptance rate or an all-state estimate. Doubling the Fourier grid changes the variance by about $10^{-22}$; this checks quadrature, not the modeling assumptions.
+
+For $B<12$, no four-particle state is allowed, so the vacuum spectral measure can be computed exactly in the vacuum-plus-pair sector. At $B=4$ the vacuum has no allowed pair partner and $\langle e^{\Xi_{s,B}}\rangle_0=1$ exactly. At $(s,B)=(12,6)$ and $(20,10)$, the means are $1.0000629275$ and $1.0000505663$, and the variances of $e^{\Xi_{s,B}}$ are $1.4563867\times10^{-4}$ and $1.0583928\times10^{-4}$, respectively. These values do not define a monotone law as new states enter the budget.
+
+\begin{proposition}[Conditional finite-area and finite-state bound]\label{prop:finite_area}
+Assume $s_M=M s_{\min}>0$ with finite corner degeneracy at each integer $M$, $u_{\mathrm{cl}}(s)=c_0\sqrt{s}$ with $c_0>0$, $J(s)\le\lfloor\sqrt{s/s_{\min}}\rfloor$, and the occupation budget $B(s)=sQ_*$ with fixed $Q_*>0$. Then the clock restriction $\tau_{s,B}\le\ell$ admits only finitely many area sectors, each with finitely many states.
+\end{proposition}
+\begin{proof}
+For $J\ge2$, the number of independent real oscillator channels is $D(J)=2[(J+1)^2-4]$ and
+$D(J)/J^2\le8/3$. Thus $\Xi_{s,B}\ge-C_g\mathbf1$ with $C_g=8K_g/(3s_{\min})$; for $J<2$ the sum is empty. Spectral calculus gives
+\begin{equation}\label{eq:finite_area_clock}
+\tau_{s,B}\ge c_0\sqrt{s}\,e^{-C_g}\mathbf1,
+\qquad s\le(\ell/c_0)^2e^{2C_g}
+\end{equation}
+whenever the clock projector is nonzero. Only finitely many $M$ satisfy this inequality. Equation~\eqref{eq:cross_focusing} bounds the number of modes and every occupation in each sector, proving the claim.
+\end{proof}
+The conservative expression for $e^{2C_g}$ evaluates to approximately $19.86$ at $s_{\min}=\ln3$; it does not support the previous $1.0036$ precision claim. Also,
+$v_{s,B}\le2D(J)K_g^2/s^2\le16K_g^2/(3s_{\min}s)$, giving a uniform $O(1/s)$ vacuum rejection bound for fixed positive $\eta$. This theorem strengthens the model's finiteness result while keeping the clock normalization, angular rule, spectrum, and budget explicit assumptions.
