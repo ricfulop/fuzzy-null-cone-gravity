@@ -1,7 +1,5 @@
 # Nonperturbative Modal NVIDIA B200 Hybrid Monte Carlo of 4D Fuzzy-Sphere Null-Cone Matrix Gravity ($I_{\mathrm{FSG}}^{(N)}$)
 
-> The numerical interpretation in this archived report is superseded by the [reviewed manuscript notes](manuscript-review-2026-11-27.md), which specify per-chain size, observable-specific convergence, and comparison baselines.
-
 **Date:** 2026-11-27  
 **Author:** Ric Fulop (`ricfulop@mit.edu`), Center for Bits and Atoms, MIT  
 **Compute:** 72 total NVIDIA B200 ensembles on Modal across Tier 1 (24× B200, 173 s), Tier 2 (20× B200, 154 s), and Final Dual IR+UV Production Sweep with exact collective $(\phi_0, Z)$ scale updates (28× B200, 230 s, 1.063 B200 GPU-hours, ~$6.64 USD; total campaign ~$15.14 USD).  
