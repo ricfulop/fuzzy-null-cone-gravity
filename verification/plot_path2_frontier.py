@@ -57,9 +57,9 @@ ax1.set_xticks([6, 8, 12, 16, 24])
 ax1.get_xaxis().set_major_formatter(lambda x, _: f"{int(x)}")
 ax1.set_yticks([1e-3, 1e-2, 1e-1])
 ax1.minorticks_off()
-ax1.set_xlabel("Fuzzy-sphere matrix rank $N = J_{\\max}+1$")
+ax1.set_xlabel("Matrix rank $N$")
 ax1.set_ylabel(r"Nonlinear error $|c_j(N) - c_j^{\mathrm{GR}}|$")
-ax1.legend(loc="lower left", fontsize=5.6, labelspacing=0.25)
+ax1.legend(loc="lower left", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (b): Second Variation delta^2 I_FSG -> RW, Zerilli, & Weyl Tidal Shift
@@ -90,7 +90,7 @@ ax2.set_xticks([-10, 0, 10, 20])
 ax2.set_yticks([0.0, 0.1, 0.2])
 ax2.set_xlabel("Tortoise coordinate $r_* / M$ (horizon $r_* \\to -\\infty$)")
 ax2.set_ylabel("Effective potential $M^2 V_{j=2}(r_*)$")
-ax2.legend(loc="upper right", fontsize=5.7, labelspacing=0.25)
+ax2.legend(loc="upper right", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (c): Exponential Restoration of SO(3,1) Finite-Rapidity Boosts
@@ -112,9 +112,9 @@ ax3.set_ylim(5e-16, 2.0)
 ax3.set_xticks([6, 14, 24, 32, 44])
 ax3.set_yticks([1e-15, 1e-10, 1e-5, 1e0])
 ax3.minorticks_off()
-ax3.set_xlabel("Fuzzy-sphere matrix rank $N = J_{\\max}+1$")
+ax3.set_xlabel("Matrix rank $N$")
 ax3.set_ylabel("Boost infidelity $1 - |\\langle\\psi_N(\\eta)|\\psi_{\\mathrm{exact}}(\\eta)\\rangle|^2$")
-ax3.legend(loc="lower left", fontsize=5.9, labelspacing=0.25)
+ax3.legend(loc="lower left", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (d): Nonlinear Raychaudhuri Caustic Bounce (Classical vs Path 2)
@@ -129,18 +129,20 @@ rho_Q_d = np.sqrt((r0 * np.cos(omega * vs_d)) ** 2 + (rho_min * np.sin(omega * v
 
 ax4.axhline(0.0, color=BASELINE, linestyle=":", linewidth=0.7)
 ax4.axhline(rho_min, color=PALETTE["green"], linestyle="-.", linewidth=0.9, label="Min embadon $\\rho_{\\min}=\\sqrt{\\ln 3/\\pi}$")
-ax4.plot(vs_d, rho_cl_d, linestyle="--", color=PALETTE["red"], linewidth=1.2, label="Classical Raychaudhuri (caustic)")
+mask = vs_d <= math.pi / (2 * omega)
+ax4.plot(vs_d[mask], rho_cl_d[mask], linestyle="--", color=PALETTE["red"], linewidth=1.2, label="Classical Raychaudhuri (caustic)")
 ax4.plot(vs_d, rho_Q_d, color=PALETTE["blue"], linewidth=1.35, label="FSG quantum bounce (Ermakov)")
 
+ax4.scatter([math.pi/(2*omega)], [0], marker="o", color=PALETTE["red"], s=18, clip_on=False)
 ax4.set_xlim(0.0, 1.0)
-ax4.set_ylim(-6.5, 11.2)
+ax4.set_ylim(0, 11.2)
 ax4.set_xticks([0.0, 0.25, 0.5, 0.75, 1.0])
-ax4.set_yticks([-5, 0, 5, 10])
+ax4.set_yticks([0, 5, 10])
 ax4.set_xlabel("Null affine parameter $v$")
 ax4.set_ylabel("Areal radius $\\rho(v) / \\ell_P$")
-ax4.legend(loc="lower left", fontsize=5.6, labelspacing=0.25)
+ax4.legend(loc="upper right", fontsize=7, labelspacing=0.25)
 
 panel_labels([ax1, ax2, ax3, ax4])
-out_stem = os.path.join(HERE, "path2_frontier_unified")
+out_stem = os.path.join(HERE, "..", "figs", "fig2_unified_matrix_gravity")
 save(fig, out_stem)
 print("Saved path2_frontier_unified.svg and .pdf")

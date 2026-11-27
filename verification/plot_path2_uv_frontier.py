@@ -46,7 +46,7 @@ ax1.loglog(L_par, I2, marker="s", color=PALETTE["red"], label="2-loop sunset, $S
 ax1.loglog(L_par, I1, marker="o", color=PALETTE["blue"], label="1-loop $W^2$, $S^2_N$ only (converges)")
 ax1.axhline(sc1[0]["I_1loop_limit_A_inf"], linestyle=":", color=PALETTE["blue"], linewidth=0.9)
 # Also plot normalized constant marker showing cross-focusing B=4 finite cap (independent of L_par -> inf!)
-ax1.axhline(251.18, linestyle="--", color=PALETTE["green"], linewidth=1.1, label="Cross-focusing sector ($B=4$, finite sum)")
+ax1.axhline(251.18, linestyle="--", color=PALETTE["green"], linewidth=1.1, label="Mode cutoff $B=4$")
 
 ax1.set_xlim(1.7, 38)
 ax1.set_ylim(0.5, 1.2e4)
@@ -56,7 +56,7 @@ ax1.set_yticks([1e0, 1e1, 1e2, 1e3, 1e4])
 ax1.minorticks_off()
 ax1.set_xlabel("Parallel radial/time cutoff $\\Lambda_\\parallel / \\Lambda_\\perp$")
 ax1.set_ylabel("Loop integral magnitude")
-ax1.legend(loc="upper left", fontsize=5.4, labelspacing=0.25)
+ax1.legend(loc="upper left", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (b): Dynamical Rank Sum Convergence (AdS_4 vs. Flat-Space Jeans)
@@ -72,15 +72,15 @@ logW_ads = sN_b + (106.0 / 45.0) * np.log(sN_b) - 20.0 * E_ads_b
 
 ax2.axhline(0.0, color=BASELINE, linestyle=":", linewidth=0.7)
 ax2.plot(Ns_b, logW_flat / 1e4, linestyle="--", color=PALETTE["red"], linewidth=1.3, label="Flat space ($+N^2$ Jeans instability)")
-ax2.plot(Ns_b, logW_ads / 1e4, color=PALETTE["blue"], linewidth=1.4, label="AdS$_4$ ($L=20$, $-N^3$ UV convergent)")
+ax2.plot(Ns_b, logW_ads / 1e4, color=PALETTE["blue"], linewidth=1.4, label="AdS$_4$ ($L=20$)")
 
 ax2.set_xlim(0, 265)
 ax2.set_ylim(-5.5, 8.2)
 ax2.set_xticks([0, 60, 120, 180, 240])
 ax2.set_yticks([-4, -2, 0, 2, 4, 6, 8])
-ax2.set_xlabel("Fuzzy-sphere matrix rank $N = J_{\\max}+1$")
+ax2.set_xlabel("Matrix rank $N$")
 ax2.set_ylabel("Log Boltzmann weight $\\ln W_N \\; (\\times 10^4)$")
-ax2.legend(loc="upper left", fontsize=5.7, labelspacing=0.25)
+ax2.legend(loc="upper left", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (c): Exact 4D Hawking-Page Phase Transition (L=25) & 1-Loop Shift
@@ -101,7 +101,7 @@ ax3.set_xticks([0.29, 0.30, 0.31, 0.32, 0.33, 0.34])
 ax3.set_yticks([0.0, 0.5, 1.0])
 ax3.set_xlabel("Dimensionless temperature $T \\cdot L_{\\mathrm{AdS}}$ ($L = 25\\,\\ell_P$)")
 ax3.set_ylabel("Black-hole phase probability $P_{\\mathrm{BH}}$")
-ax3.legend(loc="center left", bbox_to_anchor=(0.01, 0.56), fontsize=5.2, labelspacing=0.25)
+ax3.legend(loc="center left", bbox_to_anchor=(0.01, 0.56), fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (d): Coarse-Graining + 4D CEMZ Causality Selection of s_min
@@ -126,9 +126,9 @@ ax4.set_yticks([0.5, 1.0, 1.5])
 ax4.minorticks_off()
 ax4.set_xlabel("Local embadon Hilbert dimension $d_0$")
 ax4.set_ylabel(r"Minimal pixel radius $\rho_{\min} / \ell_P$")
-ax4.legend(loc="lower right", fontsize=5.4, labelspacing=0.25)
+ax4.legend(loc="lower right", fontsize=7, labelspacing=0.25)
 
 panel_labels([ax1, ax2, ax3, ax4])
-out_stem = os.path.join(HERE, "path2_uv_frontier")
+out_stem = os.path.join(HERE, "..", "figs", "fig3_uv_completion")
 save(fig, out_stem)
 print("Saved path2_uv_frontier.svg and .pdf")

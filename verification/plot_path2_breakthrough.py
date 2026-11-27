@@ -57,7 +57,7 @@ ax1.get_xaxis().set_major_formatter(lambda x, _: f"{int(x)}")
 ax1.minorticks_off()
 ax1.set_xlabel("Dimensionless horizon area $s$")
 ax1.set_ylabel("Clock operator scale (dimensionless)")
-ax1.legend(loc="center right", bbox_to_anchor=(0.99, 0.48), fontsize=5.3, labelspacing=0.25)
+ax1.legend(loc="center right", bbox_to_anchor=(0.99, 0.48), fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (b): Flat-Space Spin-2 Graviton EE on Fuzzy Sphere S^2_J
@@ -83,7 +83,7 @@ ax2.set_xticks([2, 4, 6, 8, 10, 12])
 ax2.set_yticks([-1.5, -1.0, -0.5, 0.0, 0.5, 1.0])
 ax2.set_xlabel("Fuzzy-sphere cutoff ratio $\\alpha = J_{\\max}/R_{\\mathrm{eff}}$")
 ax2.set_ylabel("Extracted log coeff. $c_{\\log}$ (in $\\ln R$)")
-ax2.legend(loc="upper right", fontsize=5.8)
+ax2.legend(loc="upper right", fontsize=7)
 
 # =========================================================================
 # Panel (c): Curved Schwarzschild Discrete-Harmonic Gluing vs Sen
@@ -113,38 +113,27 @@ ax3.set_yticks([-10, -5, 0, 5, 10, 15, 20])
 ax3.minorticks_off()
 ax3.set_xlabel("Schwarzschild horizon area $s = \\pi (r_H/\\ell_P)^2$")
 ax3.set_ylabel("Relative subleading $\\Delta S(s) - \\Delta S(s_0)$")
-ax3.legend(loc="upper left", fontsize=5.6)
+ax3.legend(loc="upper left", fontsize=7)
 
 # =========================================================================
 # Panel (d): Unified 4D Spin-2 Log Correction Scorecard Across Geometries
 # =========================================================================
-labels = [
-    "dS $S^4$ total\n($-\\frac{571}{45}$)",
-    "dS $S^4$ bulk\n($-\\frac{331}{45}$)",
-    "Flat sphere\n($-\\frac{61}{45}$)",
-    "Schw. singlet\n($+\\frac{77}{90}$)",
-    "Schw. mixed\n($+\\frac{106}{45}$)",
-]
-exact_vals = np.array([-571.0 / 45.0, -331.0 / 45.0, -61.0 / 45.0, 77.0 / 90.0, 106.0 / 45.0])
-# Path 2 measured/exact values:
-# S^4: exact rational match (-571/45, -331/45); Flat sphere: -1.35523 (alpha=2.0);
-# Schw: asymptotic r_H=160..320 slope (+0.85334 singlet, +2.35334 mixed) / fit (+0.84557, +2.34557)
-p2_vals = np.array([-571.0 / 45.0, -331.0 / 45.0, -1.35523, 0.84557, 2.34557])
-
-y_pos = np.arange(len(labels))
-h = 0.34
-ax4.axvline(0.0, color=BASELINE, linewidth=0.8)
-ax4.barh(y_pos + h / 2, exact_vals, height=h, color=BASELINE, alpha=0.75, label="Exact 4D GR target")
-ax4.barh(y_pos - h / 2, p2_vals, height=h, color=PALETTE["blue"], label="FSG fuzzy-sphere / glued")
-
-ax4.set_yticks(y_pos)
-ax4.set_yticklabels(labels, fontsize=6.5)
-ax4.set_xlim(-15.5, 4.8)
-ax4.set_xticks([-15, -10, -5, 0, 5])
-ax4.set_xlabel("Logarithmic coefficient $c_{\\log}$ (exact convention)")
-ax4.legend(loc="upper left", fontsize=6.0)
+labels=["Schw. mixed", "Schw. singlet", "Flat sphere", "de Sitter bulk", "de Sitter total"]
+target=np.array([106/45,77/90,-61/45,-331/45,-571/45])
+end=(dS_bulk[-1]-dS_bulk[-2])/np.log(s5[-1]/s5[-2])
+final=np.array([end,end-1.5,-1.3552340588790237,-331/45,-571/45])
+fit=t5["part_a_schwarzschild"]["fitted_slopes_dynamical"]["c_log_bulk_gluing"]
+y=np.arange(5)[::-1]
+ax4.axvline(0,color=BASELINE,ls=":",lw=.7)
+ax4.scatter(100*(final[:3]-target[:3])/abs(target[:3]),y[:3],marker="o",s=27,color=PALETTE["blue"],label="Final doubling / flat")
+ax4.scatter(100*(np.array([fit,fit-1.5])-target[:2])/abs(target[:2]),y[:2],marker="s",s=27,color=PALETTE["orange"],label="Five-radius fit")
+ax4.scatter([0,0],y[3:],marker="D",s=23,color="black",label="Exact identity")
+ax4.set_yticks(y);ax4.set_yticklabels(labels,fontsize=7)
+ax4.set_xlim(-1.4,.25);ax4.set_ylim(-.6,4.8)
+ax4.set_xlabel("Signed benchmark difference (%)")
+ax4.legend(loc="lower left",fontsize=7)
 
 panel_labels([ax1, ax2, ax3, ax4])
-out_stem = os.path.join(HERE, "path2_breakthrough_summary")
+out_stem = os.path.join(HERE, "..", "figs", "fig1_breakthrough_1loop")
 save(fig, out_stem)
 print("Saved path2_breakthrough_summary.svg and .pdf")

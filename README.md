@@ -1,103 +1,74 @@
 # A Finite-State Model of Quantum Gravity in a Causal Diamond
 
-**Author:** Ric Fulop ([ricfulop@mit.edu](mailto:ricfulop@mit.edu)), Center for Bits and Atoms, Massachusetts Institute of Technology
+**Author:** Ric Fulop, Center for Bits and Atoms, Massachusetts Institute of Technology
 
-This repository contains the complete APS *Physical Review D* manuscript (`paper.tex` / `paper.pdf`), all **50 kernel-verified Lean 4.36.0 theorems** (zero warnings, zero `sorryAx`), all **30 self-contained Python symbolic, numerical, Z3, and GPU Monte Carlo scripts** with **35 exact JSON datasets**, **9 figure generators**, **7 publication vector PDF figures**, and **8 technical reports** auditing and regularizing Venkatesa Chandrasekaran's algebraic null-cone quantum gravity framework ([arXiv:2611.34924](https://arxiv.org/abs/2611.34924)).
+This is a research manuscript and reproducibility archive for a finite-resolution model motivated by Venkatesa Chandrasekaran's null-cone construction. It contains analytic examples, symbolic and numerical checks, selected Lean lemmas, and Euclidean matrix simulations. It does **not** establish a continuum quantum theory of general relativity.
 
----
+## Read the current draft
 
-## Summary of Results
+- [Single-column reading copy](paper_reading.pdf), built from [paper_reading.tex](paper_reading.tex).
+- [Two-column technical copy](paper.pdf), built from [paper.tex](paper.tex).
+- Both layouts use the same scientific source. The reading copy uses REVTeX in one-column mode; it is not an official Science submission template.
+- [Targeted B200 follow-up report](reports/modal-b200-followup-report.md) and [archived follow-up analysis](verification/modal_hmc_followup_analysis.json).
 
-1. **Classical Reduction and Axiomatic Bridge:** All 14 classical first-order null-cone identities (Sec. 3 and Appendices A–B of `arXiv:2611.34924`) hold identically in SymPy, and Appendix E.2's conditional Lorentzian-to-Euclidean equivalence theorem holds without gaps once Axioms 1–5 are met (checked in Z3 and Lean 4).
-2. **Four Continuum Obstructions:** Direct continuum quantization encounters four independent obstructions: Sec. 5.2 non-entailment and circularity ($\mathbb{C}^2 \otimes \ell^2(\mathbb{N})$ counterexample), unrenormalized focusing-clock zero-point collapse ($P_{\mathscr{D}} \equiv 0$) and inverse-lapse divergence ($N^{-1} \to \infty$), Sec. 4.4 quadratic angular divergence ($\propto J^2$) at fixed $G_N$, and a two-loop quadratic sunset divergence ($\sim \Lambda_\parallel^2 \ln \Lambda_\parallel$) for any transverse-only regulator.
-3. **Fuzzy-Sphere Null-Cone Regularization:**
-   - **Fuzzy Monopole Bundles and Matrix Action $I_{\mathrm{FSG}}^{(N)}$:** Rectangular $SU(2)$-equivariant bundles $\mathcal{B}_{s_w}^{(N)} = \mathrm{Hom}(V_{(N-1-s_w)/2}, V_{(N-1+s_w)/2})$ of dimension $N^2 - s_w^2$, explicit $SU(2)$-equivariant embedding $\iota_{N \to M}$, closed Wigner-$6j$ parity-symmetrized cubic vertex $\mathcal{V}_3^{(N)}[F; Z_2, Z_3]$ (verified to $3.96 \times 10^{-14}$), $O(1/N^2)$ convergence to 4D GR, Regge–Wheeler/Zerilli isospectrality, sub-Planckian $SO(3,1)$ boost closure, and Ermakov–Pinney caustic regularization.
-   - **Smoothly Smeared Massive-QEI and Exponential Clock:** $C^\infty_c$ bump smearing bounded uniformly across all 4D spin-2 harmonics via Fewster–Eveson massive quantum energy inequalities, monotone spectral-projector equivalence, and exact zero-inversion Balian–Brézin Fredholm determinants ($\lambda_{\mathrm{crit}}^{\mathrm{phys}} \in [17.0, 22.3] \gg 2$ inside $B(s)=s Q_*$).
-   - **Area-Scaled Total Occupation Budget and Projected Dynamics:** $\sum_{k,j,m,p} n_{k,j,m,p}(k + t_j^2/k) \le B(s) = s Q_*$ with projected Hamiltonian $H_{\mathrm{phys}} = P_{B(s)} H_{\mathrm{FSG}} P_{B(s)}$ (zero sector leakage, $O(1/N^2)$ interacting amplitude and 1-loop self-energy convergence), yielding finite fixed-area sectors and all-loop finiteness while preserving the macroscopic $s^{-3/2}$ and $-\ln s/(s_{\min} s^2)$ pair-creation asymptotics via an $O(s^{-2})$ tail bound.
-4. **Universal 4D One-Loop, Two-Loop, and Semiclassical Benchmarks:**
-   - One-loop logarithmic corrections: Sen Schwarzschild mixed ($+\frac{106}{45}$, $0.09\%$) and singlet ($+\frac{77}{90}$, $0.26\%$), Benedetti–Casini flat-space graviton entanglement entropy ($-\frac{61}{45}$, $0.02\%$), and Anninos–Denef–Law–Sun de Sitter $S^4$ ($-\frac{571}{45}$, exact).
-   - Two-loop Schwarzschild Goroff–Sagnotti shift $\frac{209}{1440}\frac{\ln(s/s_{\min})}{s}$, sub-Planckian pixel-size ceiling $s_{\min} \le \pi$ ($2 \le d_0 \le 22$), dynamical-rank $\mathrm{AdS}_4$ Hawking–Page transition, 2,048-state three-diamond corner fusion and generalized entropy additivity ($8.88 \times 10^{-16}$), and finite-dimensional realizations of Secs. 4.4, 5.4, and 6 (including Don Page's pure-graviton Hawking luminosity $\alpha_{\mathrm{grav}} = 3.8367 \times 10^{-6}$, within $0.017\%$).
-5. **Nonperturbative Matrix-Gravity Hybrid Monte Carlo (NVIDIA B200):**
-   - Exact $T^2 \times S^2_N$ Fourier-accelerated HMC (`verification/modal_fsg_hmc.py`) with exact collective monopole-shear scale updates across 28 converged dual IR/UV ensembles (all $\hat{R}(\phi_0) \le 1.005$, exact Schwinger–Dyson Ward identities satisfied to $0.05\%$ for $Z$ and $0.16\%$ for $\Phi$), plus 4 flat-measure collapse benchmarks.
-   - **Macroscopic IR limit ($g_N = g_P/\sqrt{N}$, $N=8\dots 48$ at $\mu^2 \in \{0.5, 0.05\}$):** Up to $N=48$ ($s=2531$, $1.33 \times 10^6$ coupled degrees of freedom), all 46 spin-2 harmonics remain UV-finite and massless ($Z_{\mathrm{wf}}=1.0008$, $m_{\mathrm{grav}}^2 = +0.077$), the quantum area spectrum stays strictly positive and concentrates smoothly onto $\lambda=1$ ($\lambda \in [0.730, 1.390]$), and the intrinsic specific heat remains bounded ($C_V^{\mathrm{int}}/N_{\mathrm{dof}} \in [0.44, 0.51]$).
-   - **Fixed-$g_N$ strong-coupling scan and matched zero-coupling controls ($g_N \in \{0, 0.5, 1.0, 1.5, 2.0\}$, $N=8\dots 32$, $\mu^2=0.25, \lambda_4=0.1$):** Turning on $g_N=2.0$ suppresses horizon roughness $Q_2$ by **$47.68\%$–$48.02\%$** relative to matched measured $g_N=0$ controls (quartic-only shift $\le 0.17\%$). Expanding the $N=24$ lattice from $8\times 4$ to $12\times 8$ gives $47.621\%$ ($-0.060 \pm 0.047$ percentage points). Extended 16-chain runs with exact spacetime-local collective moves converge both roughness and local area ($\hat{R}_{\mathrm{rank}} \le 1.0098$, bulk $\mathrm{ESS} \ge 2{,}576$, tail $\mathrm{ESS} \ge 5{,}624$) at $N=32$ ($\lambda \in [0.342, 3.038]$) and $N=48$ ($\lambda \in [0.726, 1.381]$).
-   - **Functional measure phase transition ($g=2.5$, $N=8\dots 32$):** Omitting the invariant DeWitt–Fujikawa spin-2 measure triggers a $180\times$ radiative horizon collapse ($\langle\widehat{\rho}^2\rangle \approx 0.006$, $C_V/N_{\mathrm{dof}} \propto N^2$ up to $366.3$), whereas including it stabilizes the smooth geometric phase ($\langle\widehat{\rho}^2\rangle \approx 1.0$, $C_V^{\mathrm{int}}/N_{\mathrm{dof}} \approx 0.46$).
+The review incorporates the Open Research follow-up at `d288b95712c735c2ef1c3df293d1c87abef76849` and preserves its simulation driver, analysis, and raw result files. It retains the corrections to pair-state counting, benchmark precision, and numerical scope, and replaces the figure presentation with a self-contained narrative and regenerated vector artwork.
 
----
+## What the current evidence supports
 
-## Repository Structure
+The total occupation budget makes the specified radiative sector finite; the corner spectrum and budget remain model assumptions. Symbolic identities and known black-hole benchmarks test particular parts of the construction. They do not prove that the finite-state Hamiltonian, full constrained gravitational action, and sampled Euclidean model are equivalent.
 
-```text
-.
-├── paper.tex              # APS Physical Review D (revtex4-2) manuscript (Overleaf-ready)
-├── paper.pdf              # Compiled 17-page PDF (zero errors, zero overfull boxes)
-├── figs/                  # Six publication vector PDF figures (Fig. 1 – Fig. 6)
-├── lean4/                 # 6 standalone Lean 4.36.0 modules (50 verified theorems, 0 sorryAx)
-├── verification/          # 29 verification & GPU HMC scripts, 8 plotters, 32 JSON datasets
-└── reports/               # 7 technical reports documenting every stage of the study
+With matched measured zero-coupling controls at fixed scalar self-interaction, the strongest tested coupling reduces the matrix model's roughness observable by **47.68–48.02%** across four ranks. A larger lattice at rank 24 gives **47.621%**, a change of **−0.060 ± 0.047 percentage points**. This supports persistence over the tested volume change, not an exact universal percentage or a continuum extrapolation.
+
+Extended local collective moves improve local-area diagnostics at ranks 32 and 48: rank-normalized split-R-hat is **1.0098** and **1.0021**, respectively. The larger-lattice rank-24 run has well-sampled roughness but poorly mixed local area (**R-hat 1.3268; bulk ESS 20**). The main four-rank comparison still uses archived summaries for the coupled ensembles. The matrix exponential is positive by construction; positivity alone does not demonstrate the absence of spacetime caustics.
+
+The six Lean files certify their encoded algebraic identities and conditional implications. Their physical hypotheses and the identification of abstract variables with gravitational operators require separate arguments. In particular, the conditional Appendix E.2 lemma assumes the relevant implication rather than formalizing the Hilbert-algebra reconstruction.
+
+## Build the manuscript
+
+Use a TeX distribution with `revtex4-2`, AMS packages, `graphicx`, `bm`, `mathrsfs`, `microtype`, and `hyperref`:
+
+```bash
+pdflatex paper.tex
+pdflatex paper.tex
+pdflatex paper_reading.tex
+pdflatex paper_reading.tex
 ```
 
----
+In Overleaf, select `paper_reading.tex` or `paper.tex` as the main document. A separate concise Science submission can be prepared once its scientific claims and main/supplement split are settled.
 
-## Reproducing the Lean 4.36.0 Proofs (50 Theorems)
+## Reproduce the manuscript figures
 
-Each Lean 4 module is completely self-contained (zero external Mathlib dependencies; standard Lean core axioms only). With Lean 4.36.0 installed via `elan`:
+The canonical builder produces all 11 figures as vector PDF, editable SVG, and PNG previews. It reads archived results and evaluates the displayed deterministic formulas in memory; it does not launch GPU jobs or overwrite numerical result files.
+
+```bash
+python verification/plot_manuscript_figures.py
+```
+
+Install `numpy scipy sympy matplotlib`. The pair-amplitude panel explicitly enforces the two-particle cost `2*omega <= B`; the old archived single-particle-cutoff JSON is preserved for provenance. The Schwarzschild spectrum is recomputed on the documented grid. Legacy benchmark plotting files supply some panel data to the canonical builder; run the canonical builder to reproduce the manuscript layout.
+
+- [Figure captions and source mapping](figs/README.md).
+- [Captioned figure review](figures_review.pdf), built from `figures_review.tex`.
+- The main text now explains the original proposal, the continuum gaps, and the added model assumptions without requiring the source paper beside it. Detailed source-section and equation locations are in an appendix.
+- Six main figures emphasize the construction and evidence; five additional benchmark figures appear in the appendix. Sampling diagnostics distinguish roughness from local area, and captions separate model tests from continuum claims.
+
+## Simulation and formal sources
+
+- `verification/modal_fsg_hmc.py`: Modal simulation driver, including the follow-up local collective moves.
+- `verification/analyze_followup_hmc.py`: follow-up statistics and diagnostic calculation.
+- `verification/modal_hmc_followup_batch1_results.json` and `verification/modal_hmc_followup_b2_both_results.json`: raw follow-up results.
+- `lean4/`: six Lean modules, with 50 selected statements cataloged in the manuscript.
+- `figs/`: vector PDFs and editable SVGs.
+- `reports/`: historical reviews and the targeted follow-up report. The manuscript and this README reflect the newer numerical results.
+
+To check the Lean files using the archived toolchain version (4.36.0):
 
 ```bash
 for f in lean4/*.lean; do
-  echo "=== Checking $f ==="
   lean "$f"
 done
 ```
 
-| Lean 4 Module | Theorems | Certified Logical or Algebraic Scope |
-|---|---:|---|
-| `lean4/lean4_verified_audit.lean` | 11 | Sec. 5.2 non-entailment, AdS sum iff, clock collapse triad, App. E.2 validity |
-| `lean4/lean4_path2_breakthrough.lean` | 9 | Lichnerowicz $+\frac{106}{45}$ / $+\frac{77}{90}$, 4D isotropy, QEI clock, Type I Wedderburn |
-| `lean4/lean4_path2_frontier.lean` | 8 | Fuzzy monopole $\mathcal{B}_{s_w}^{(N)}$, $SO(3,1)$ boost closure, parity symmetry, caustic bounce |
-| `lean4/lean4_path2_uv_completion.lean` | 8 | 2-loop power count, Schwarzschild $W^3$, $\mathrm{AdS}_4$ rank sum, 3-diamond SSA & CEMZ |
-| `lean4/lean4_original_problem_resolution.lean` | 7 | Sec. 4.4 denominator dominance, Sec. 5.4 $SU(2)$ factorization, Sec. 6 Eq. (6.13) cancellation |
-| `lean4/lean4_v2_reviewer_fixes.lean` | 7 | Total occupation budget, $B(s)=s Q_*$ tail regions, $P_B H P_B$ zero leakage, massive QEI, $Z_{\mathscr{D},1}=45$ mod-8 |
-| **Total** | **50** | **Zero `sorryAx`, zero compiler warnings** |
-
----
-
-## Reproducing the Numerical, Symbolic, and GPU Monte Carlo Verification
-
-Install standard Python scientific packages (`numpy`, `scipy`, `sympy`, `z3-solver`, `matplotlib`):
-
-```bash
-pip install numpy scipy sympy z3-solver matplotlib
-
-# Matrix vertex, projected Hamiltonian, and B(s)=s*Q* tail-bound verification
-python verification/v2_test1_matrix_vertex_and_projected_dynamics.py
-
-# Fewster-Eveson massive QEI and Balian-Brezin exponential clock verification
-python verification/v2_test2_fewster_eveson_and_exponential_clock.py
-
-# Original continuum audit counterexamples and Z3 dependency checks
-python verification/test1_section52_counterexamples.py
-python verification/test5_formal_dependency_and_z3.py
-```
-
-To reproduce the 28-GPU NVIDIA B200 nonperturbative hybrid Monte Carlo production sweep on Modal (requires `modal` CLI):
-
-```bash
-modal run verification/modal_fsg_hmc.py --mode final
-python verification/plot_modal_hmc.py
-```
-
----
-
-## Compiling the Paper (Local TeX or Overleaf)
-
-This repository is directly importable into **Overleaf** via *New Project → Import from GitHub*. Locally, with TeX Live (`revtex4-2`):
-
-```bash
-pdflatex paper.tex && pdflatex paper.tex
-```
-
----
+GPU runs incur compute charges and are separate from figure generation. Consult the driver and follow-up report for the specific run configurations.
 
 ## License
 
