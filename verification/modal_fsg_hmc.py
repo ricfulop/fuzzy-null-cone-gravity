@@ -711,6 +711,52 @@ def _create_gpu_fsg_engine(
             V = V + (0.25 * lam4 / float(N)) * (P2_re.square() + P2_im.square()).sum(dim=(1, 2, 3, 4))
         return V
 
+    def phi_par_and_potential(X_phi: torch.Tensor) -> torch.Tensor:
+        """Scalar parallel kinetic + potential (the only Phi terms that vary under local monopole shift Phi -> Phi + delta(x) I_N / sqrt(N))."""
+        Phi_re, Phi_im = unpack_phi(X_phi)
+        d_tau_pr = torch.roll(Phi_re, -1, dims=1) - Phi_re
+        d_tau_pi = torch.roll(Phi_im, -1, dims=1) - Phi_im
+        d_r_pr = torch.roll(Phi_re, -1, dims=2) - Phi_re
+        d_r_pi = torch.roll(Phi_im, -1, dims=2) - Phi_im
+        S_par = 0.5 * (
+            d_tau_pr.square() + d_tau_pi.square() + d_r_pr.square() + d_r_pi.square()
+        ).sum(dim=(1, 2, 3, 4))
+        Phi2_tr = (Phi_re.square() + Phi_im.square()).sum(dim=(1, 2, 3, 4))
+        V = 0.5 * mu2 * Phi2_tr
+        if lam4 > 0.0:
+            P2_re = torch.matmul(Phi_re, Phi_re) - torch.matmul(Phi_im, Phi_im)
+            P2_im = torch.matmul(Phi_re, Phi_im) + torch.matmul(Phi_im, Phi_re)
+            V = V + (0.25 * lam4 / float(N)) * (P2_re.square() + P2_im.square()).sum(dim=(1, 2, 3, 4))
+        return S_par + V
+
+    def shear_exp_m2_p2(X_phi: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        """Compute cached matrix exponentials E_{N-2}, E_{N+2} for exact zero-matrix_exp local collective moves."""
+        Phi_re, Phi_im = unpack_phi(X_phi)
+        P_m2_r, P_m2_i = apply_iota_herm(Phi_re, Phi_im, N - 2)
+        P_p2_r, P_p2_i = apply_iota_herm(Phi_re, Phi_im, N + 2)
+        E_m2 = torch.linalg.matrix_exp(torch.complex(g_N * P_m2_r, g_N * P_m2_i))
+        E_p2 = torch.linalg.matrix_exp(torch.complex(g_N * P_p2_r, g_N * P_p2_i))
+        return E_m2, E_p2
+
+    def shear_par_cached(E_m2: torch.Tensor, E_p2: torch.Tensor, Z_re: torch.Tensor, Z_im: torch.Tensor) -> torch.Tensor:
+        """Exact parallel shear action S_{z,par} evaluated from cached E_{N+/-2} without matrix_exp."""
+        dt_Zr = torch.roll(Z_re, -1, dims=1) - Z_re
+        dt_Zi = torch.roll(Z_im, -1, dims=1) - Z_im
+        dr_Zr = torch.roll(Z_re, -1, dims=2) - Z_re
+        dr_Zi = torch.roll(Z_im, -1, dims=2) - Z_im
+        def _R(E_mat, Ar, Ai):
+            AE = torch.matmul(torch.complex(Ar, Ai), E_mat)
+            return (AE.real * Ar + AE.imag * Ai).sum(dim=(-1, -2, -3, -4))
+        def _L(E_mat, Ar, Ai):
+            EA = torch.matmul(E_mat, torch.complex(Ar, Ai))
+            return (EA.real * Ar + EA.imag * Ai).sum(dim=(-1, -2, -3, -4))
+        return 0.5 * (
+            _R(E_m2, dt_Zr, dt_Zi)
+            + _L(E_p2, dt_Zr, dt_Zi)
+            + _R(E_m2, dr_Zr, dr_Zi)
+            + _L(E_p2, dr_Zr, dr_Zi)
+        )
+
     def action_and_grad(X_phi: torch.Tensor, Z_re: torch.Tensor, Z_im: torch.Tensor):
         X_req = X_phi.detach().requires_grad_(True)
         Zr_req = Z_re.detach().requires_grad_(True)
@@ -736,6 +782,9 @@ def _create_gpu_fsg_engine(
         apply_ethbar_2to1=apply_ethbar_2to1,
         action_components=action_components,
         phi_potential_only=phi_potential_only,
+        phi_par_and_potential=phi_par_and_potential,
+        shear_exp_m2_p2=shear_exp_m2_p2,
+        shear_par_cached=shear_par_cached,
         total_action=total_action,
         action_and_grad=action_and_grad,
     )
@@ -756,6 +805,10 @@ def _hmc_run_ensemble(
     seed: int,
     dewitt_measure: bool = True,
     fixed_gN: bool = False,
+    save_histories: bool = False,
+    resume_ckpt: str | None = None,
+    save_ckpt: str | None = None,
+    local_collective: bool = False,
 ):
     """Run batched multi-chain FAHMC + exact collective (phi_0, Z) scale moves on GPU."""
     import numpy as np
@@ -773,6 +826,9 @@ def _hmc_run_ensemble(
     act_grad = eng["action_and_grad"]
     act_comp = eng["action_components"]
     phi_pot = eng["phi_potential_only"]
+    phi_par_pot = eng["phi_par_and_potential"]
+    shear_exp_m2_p2 = eng["shear_exp_m2_p2"]
+    shear_par_cached = eng["shear_par_cached"]
     unpack_phi = eng["unpack_phi"]
     apply_M_phi = eng["apply_M_power_phi"]
     apply_M_z = eng["apply_M_power_z"]
@@ -797,28 +853,31 @@ def _hmc_run_ensemble(
     # Initialize half chains "cool" (0.85x free Gaussian draw) and half "warm" (1.15x free Gaussian draw)
     # using exact FAHMC M^{-1/2} so neither cold nor hot starts trigger the S_0=0 => dH = +(eps^2/8)*N_dof/2
     # cold-start rejection trap, while still providing independent overdispersed starts for Gelman-Rubin R-hat!
-    X_raw = torch.randn((n_chains, Nt, Nr, N, N), dtype=dtype, device=device)
-    Zr_raw = torch.randn((n_chains, Nt, Nr, N + 2, N - 2), dtype=dtype, device=device)
-    Zi_raw = torch.randn((n_chains, Nt, Nr, N + 2, N - 2), dtype=dtype, device=device)
-    X = apply_M_phi(X_raw, -0.5)
-    Zr, Zi = apply_M_z(Zr_raw, Zi_raw, -0.5)
-    n_hot = n_chains // 2
-    if n_hot > 0:
-        X[:n_hot] *= 1.15
-        Zr[:n_hot] *= 1.15
-        Zi[:n_hot] *= 1.15
-        X[n_hot:] *= 0.85
-        Zr[n_hot:] *= 0.85
-        Zi[n_hot:] *= 0.85
-
-    # Preconditioned mass matrix (Fourier-diagonal free-field mass or simple scalar? Wait:
-    # on S^2_N, eigenvalues span j(j+1) ~ 0..N^2, which creates stiffness ~ N for leapfrog!
-    # A HUGE speedup & acceptance win: exact diagonal angular/mode preconditioning?
-    # Even simpler & 100% exact without mode transforms: check stiffness! At N=48, max omega = N = 48,
-    # so eps ~ 0.02 with n_steps = 12..20 already achieves ~80% acceptance with ZERO preconditioning!
-    # Wait: even better, auto-tune eps per chain/globally during warmup to target 78% acceptance!)
-    S_cur, gX_cur, gZr_cur, gZi_cur = act_grad(X, Zr, Zi)
-    eps = init_eps
+    if resume_ckpt is not None:
+        ckpt = torch.load(resume_ckpt, map_location=device, weights_only=True)
+        X = ckpt["X"].to(device=device, dtype=dtype)
+        Zr = ckpt["Zr"].to(device=device, dtype=dtype)
+        Zi = ckpt["Zi"].to(device=device, dtype=dtype)
+        eps = float(ckpt["eps"])
+        assert X.shape == (n_chains, Nt, Nr, N, N), f"Checkpoint X shape mismatch: {X.shape}"
+        assert Zr.shape == (n_chains, Nt, Nr, N + 2, N - 2), f"Checkpoint Zr shape mismatch: {Zr.shape}"
+        S_cur, gX_cur, gZr_cur, gZi_cur = act_grad(X, Zr, Zi)
+    else:
+        X_raw = torch.randn((n_chains, Nt, Nr, N, N), dtype=dtype, device=device)
+        Zr_raw = torch.randn((n_chains, Nt, Nr, N + 2, N - 2), dtype=dtype, device=device)
+        Zi_raw = torch.randn((n_chains, Nt, Nr, N + 2, N - 2), dtype=dtype, device=device)
+        X = apply_M_phi(X_raw, -0.5)
+        Zr, Zi = apply_M_z(Zr_raw, Zi_raw, -0.5)
+        n_hot = n_chains // 2
+        if n_hot > 0:
+            X[:n_hot] *= 1.15
+            Zr[:n_hot] *= 1.15
+            Zi[:n_hot] *= 1.15
+            X[n_hot:] *= 0.85
+            Zr[n_hot:] *= 0.85
+            Zi[n_hot:] *= 0.85
+        S_cur, gX_cur, gZr_cur, gZi_cur = act_grad(X, Zr, Zi)
+        eps = init_eps
 
     # Accumulators across measurement trajectories
     vol_spacetime = Nt * Nr
@@ -847,6 +906,44 @@ def _hmc_run_ensemble(
     alpha_scale = eng["g_N"] / math.sqrt(float(N))
     # Proposal step width for uniform monopole shift delta: matches free Gaussian std 1 / sqrt(V * mu^2)
     delta_std = 1.1 / math.sqrt(float(vol_spacetime) * max(mu2, 0.02))
+
+    # Optional exact orthonormal real Fourier basis on T^2 (all nonzero k_par != 0 modes)
+    # for exact local-wave collective scale moves Phi(x) -> Phi(x) + (delta(x)/sqrt(N)) I_N,
+    # Z(x) -> exp(-0.5 * alpha * delta(x)) Z(x) (exact Delta S_{z,ang} = 0 and -Delta S_DW + log J = 0!).
+    local_basis_t = None
+    local_sigmas = None
+    if local_collective and dewitt_measure and eng["g_N"] > 0.0:
+        t_grid = np.arange(Nt, dtype=np.float64)[:, None]
+        r_grid = np.arange(Nr, dtype=np.float64)[None, :]
+        basis_list = []
+        sigma_list = []
+        z_par_fac = 1.0 + 1.5 * (eng["g_N"] ** 2) * math.log(max(3.0, float(N))) / float(N)
+        seen_modes = set()
+        for kt in range(Nt):
+            for kr in range(Nr):
+                if kt == 0 and kr == 0:
+                    continue
+                neg_pair = ((-kt) % Nt, (-kr) % Nr)
+                if neg_pair in seen_modes:
+                    continue
+                seen_modes.add((kt, kr))
+                phase = 2.0 * math.pi * (kt * t_grid / float(Nt) + kr * r_grid / float(Nr))
+                kp2 = 4.0 * math.sin(math.pi * kt / float(Nt)) ** 2 + 4.0 * math.sin(math.pi * kr / float(Nr)) ** 2
+                sig = 1.45 / math.sqrt(kp2 * z_par_fac + max(mu2, 0.02))
+                c_vec = np.cos(phase)
+                c_norm = float(np.linalg.norm(c_vec))
+                if c_norm > 1e-10:
+                    basis_list.append(c_vec / c_norm)
+                    sigma_list.append(sig)
+                if (kt, kr) != neg_pair:
+                    s_vec = np.sin(phase)
+                    s_norm = float(np.linalg.norm(s_vec))
+                    if s_norm > 1e-10:
+                        basis_list.append(s_vec / s_norm)
+                        sigma_list.append(sig)
+        local_basis_t = torch.tensor(np.stack(basis_list, axis=0), dtype=dtype, device=device)  # (V-1, Nt, Nr)
+        local_sigmas = np.array(sigma_list, dtype=np.float64)
+        assert local_basis_t.shape[0] == vol_spacetime - 1, f"Expected {vol_spacetime-1} modes, got {local_basis_t.shape[0]}"
 
     # Spin-2 graviton temporal correlator G2[j, dt] averaged over chains, r, m, measurements:
     G2_sum = np.zeros((N, Nt), dtype=np.float64)
@@ -947,6 +1044,37 @@ def _hmc_run_ensemble(
                         Zr = torch.where(mc5, Zr * scale_z, Zr)
                         Zi = torch.where(mc5, Zi * scale_z, Zi)
                         V_cur = torch.where(acc_c, V_prop, V_cur)
+                if local_basis_t is not None:
+                    # Exact local-wave collective scale moves across randomly sampled nonzero k_par modes:
+                    # Delta S_{z,ang} == 0 and (-Delta S_DW + log J) == 0 identically; zero matrix_exp calls inside loop!
+                    E_m2_c, E_p2_c = shear_exp_m2_p2(X)
+                    S_loc_cur = phi_par_pot(X) + shear_par_cached(E_m2_c, E_p2_c, Zr, Zi)
+                    n_loc_modes = local_basis_t.shape[0]
+                    n_loc_steps = 16
+                    for _ in range(n_loc_steps):
+                        m_pick = int(np.random.randint(0, n_loc_modes))
+                        amp = float(local_sigmas[m_pick]) * torch.randn((n_chains,), dtype=dtype, device=device)
+                        delta_field = amp.view(n_chains, 1, 1) * local_basis_t[m_pick].unsqueeze(0)  # (B, Nt, Nr)
+                        X_prop = X + delta_field.view(n_chains, Nt, Nr, 1, 1) * I_N_norm
+                        scale_z_loc = torch.exp(-0.5 * alpha_scale * delta_field).view(n_chains, Nt, Nr, 1, 1)
+                        scale_e_loc = torch.exp(alpha_scale * delta_field).view(n_chains, Nt, Nr, 1, 1)
+                        Zr_prop = Zr * scale_z_loc
+                        Zi_prop = Zi * scale_z_loc
+                        Em2_prop = E_m2_c * scale_e_loc
+                        Ep2_prop = E_p2_c * scale_e_loc
+                        S_loc_prop = phi_par_pot(X_prop) + shear_par_cached(Em2_prop, Ep2_prop, Zr_prop, Zi_prop)
+                        dS_loc = S_loc_prop - S_loc_cur
+                        u_l = torch.rand((n_chains,), dtype=dtype, device=device)
+                        acc_l = torch.isfinite(dS_loc) & (torch.log(torch.clamp(u_l, min=1e-30)) < -dS_loc)
+                        if acc_l.any():
+                            any_moved = True
+                            ml5 = acc_l.view(n_chains, 1, 1, 1, 1)
+                            X = torch.where(ml5, X_prop, X)
+                            Zr = torch.where(ml5, Zr_prop, Zr)
+                            Zi = torch.where(ml5, Zi_prop, Zi)
+                            E_m2_c = torch.where(ml5, Em2_prop, E_m2_c)
+                            E_p2_c = torch.where(ml5, Ep2_prop, E_p2_c)
+                            S_loc_cur = torch.where(acc_l, S_loc_prop, S_loc_cur)
             if any_moved:
                 S_cur, gX_cur, gZr_cur, gZi_cur = act_grad(X, Zr, Zi)
 
@@ -1036,6 +1164,23 @@ def _hmc_run_ensemble(
                 eig_hist += h_cur
 
     elapsed = time.time() - t0
+
+    if save_ckpt is not None:
+        torch.save(
+            dict(
+                X=X.detach().cpu(),
+                Zr=Zr.detach().cpu(),
+                Zi=Zi.detach().cpu(),
+                eps=float(eps),
+                N=N,
+                Nt=Nt,
+                Nr=Nr,
+                g=g,
+                mu2=mu2,
+                lam4=lam4,
+            ),
+            save_ckpt,
+        )
 
     # --- Statistical Analysis: Autocorrelation (Madras-Sokal), Jackknife, Gelman-Rubin R-hat ---
     def _autocorr_tau_int(series_2d: np.ndarray) -> float:
@@ -1178,6 +1323,7 @@ def _hmc_run_ensemble(
             g_N=eng["g_N"],
             fixed_gN=fixed_gN,
             dewitt_measure=dewitt_measure,
+            local_collective=local_collective,
             mu2=mu2,
             lam4=lam4,
             n_chains=n_chains,
@@ -1249,6 +1395,14 @@ def _hmc_run_ensemble(
             pdf=[float(x) for x in eig_pdf],
         ),
     )
+    if save_histories:
+        res["histories"] = dict(
+            Q2=q2_hist.tolist(),
+            phi0=phi0_hist.tolist(),
+            rho2_eig_mean=rho_mean_hist.tolist(),
+            rho2_eig_min=rho_min_hist.tolist(),
+            rho2_eig_max=rho_max_hist.tolist(),
+        )
     return res
 
 
@@ -1454,11 +1608,18 @@ def run_smoke_and_unit_tests() -> dict[str, Any]:
     return out
 
 
-@app.function(image=image, gpu="B200", timeout=2400, volumes={"/results": vol})
+@app.function(image=image, gpu="B200", timeout=3600, volumes={"/results": vol})
 def run_hmc_point(cfg: dict[str, Any]) -> dict[str, Any]:
     """Run one (N, g, mu2, lam4) ensemble point on a dedicated B200 GPU and persist JSON to Volume."""
     tag = cfg["tag"]
-    print(f"[{tag}] Starting HMC: N={cfg['N']}, Nt={cfg['Nt']}, Nr={cfg['Nr']}, g={cfg['g']}, mu2={cfg['mu2']}, chains={cfg['n_chains']}")
+    resume_ckpt = cfg.get("resume_ckpt")
+    if resume_ckpt is not None:
+        vol.reload()
+    print(
+        f"[{tag}] Starting HMC: N={cfg['N']}, Nt={cfg['Nt']}, Nr={cfg['Nr']}, g={cfg['g']}, "
+        f"mu2={cfg['mu2']}, chains={cfg['n_chains']}, warmup={cfg['n_warmup']}, meas={cfg['n_meas']}, "
+        f"resume={resume_ckpt is not None}"
+    )
     res = _hmc_run_ensemble(
         N=cfg["N"],
         Nt=cfg["Nt"],
@@ -1474,8 +1635,16 @@ def run_hmc_point(cfg: dict[str, Any]) -> dict[str, Any]:
         seed=cfg["seed"],
         dewitt_measure=cfg.get("dewitt_measure", True),
         fixed_gN=cfg.get("fixed_gN", False),
+        save_histories=cfg.get("save_histories", False),
+        resume_ckpt=resume_ckpt,
+        save_ckpt=cfg.get("save_ckpt"),
+        local_collective=cfg.get("local_collective", False),
     )
     res["tag"] = tag
+    if "base_commit" in cfg:
+        res["params"]["base_commit"] = cfg["base_commit"]
+    if resume_ckpt is not None:
+        res["params"]["resumed_from"] = resume_ckpt
     out_file = f"/results/{tag}.json"
     with open(out_file, "w") as f:
         json.dump(res, f, indent=2)
@@ -1702,6 +1871,226 @@ def main(mode: str = "smoke"):
         with open(out_path, "w") as f:
             json.dump(payload, f, indent=2)
         print(f"FINAL sweep COMPLETE in {wall:.1f}s ({len(results)} B200 ensembles) -> saved to {out_path}")
+        return
+
+    if mode == "followup_b1":
+        # Targeted B200 follow-up Batch 1 (16 parallel B200 GPUs):
+        #   1. Four matched zero-coupling controls copying final_UV_gN2.00_N{8,16,24,32} with g_N=0 & fresh seeds.
+        #   2. Larger-lattice 12x8 matched pair at N=24 (g_N=0 and g_N=2; 2 workers x 4 chains = 8 independent chains each).
+        #   3. Extended independent-chain area convergence runs (Batch 1: 4 workers x 4 chains = 16 independent chains each,
+        #      n_warmup=400, n_meas=2000, saving per-chain histories & checkpoints for optional Batch 2 continuation):
+        #        - N=32 fixed-coupling (g_N=2.0, mu^2=0.25, 12x4)
+        #        - N=48 scaled-coupling (g_P=3.3821, mu^2=0.05, 12x4)
+        base_commit = "589a99b9a5fa5695ebaf20cd3082b76f94a02346"
+        g_P = round(math.sqrt(4.0 * math.pi / math.log(3.0)), 4)
+        configs = []
+
+        # 1. Four matched zero-coupling controls (exact copies of final_UV_gN2.00_N{N} with g=0.0)
+        ctrl_specs = [
+            (8, 8, 4, 8, 220, 700, 10, 0.10, 9101),
+            (16, 8, 4, 8, 220, 700, 10, 0.10, 9102),
+            (24, 8, 4, 4, 220, 700, 10, 0.10, 9103),
+            (32, 12, 4, 4, 220, 600, 10, 0.10, 9104),
+        ]
+        for N_c, Nt_c, Nr_c, nc_c, nw_c, nm_c, ns_c, eps_c, sd_c in ctrl_specs:
+            configs.append(
+                dict(
+                    tag=f"followup_ctrl_gN0.00_N{N_c}",
+                    N=N_c,
+                    Nt=Nt_c,
+                    Nr=Nr_c,
+                    g=0.0,
+                    mu2=0.25,
+                    lam4=0.1,
+                    n_chains=nc_c,
+                    n_warmup=nw_c,
+                    n_meas=nm_c,
+                    n_steps=ns_c,
+                    init_eps=eps_c,
+                    seed=sd_c,
+                    dewitt_measure=True,
+                    fixed_gN=True,
+                    save_histories=True,
+                    base_commit=base_commit,
+                )
+            )
+
+        # 2. Larger-lattice 12x8 matched pair at N=24 (2 workers x 4 chains = 8 independent chains per coupling)
+        for g_lat, g_lbl, sd_base in [(0.0, "gN0.00", 9201), (2.0, "gN2.00", 9211)]:
+            for w_idx in range(2):
+                configs.append(
+                    dict(
+                        tag=f"followup_lat12x8_{g_lbl}_N24_w{w_idx}",
+                        N=24,
+                        Nt=12,
+                        Nr=8,
+                        g=g_lat,
+                        mu2=0.25,
+                        lam4=0.1,
+                        n_chains=4,
+                        n_warmup=220,
+                        n_meas=700,
+                        n_steps=10,
+                        init_eps=0.10,
+                        seed=sd_base + w_idx,
+                        dewitt_measure=True,
+                        fixed_gN=True,
+                        save_histories=True,
+                        base_commit=base_commit,
+                    )
+                )
+
+        # 3a. Extended N=32 fixed-coupling area convergence (Batch 1: 4 GPUs x 4 chains = 16 independent chains)
+        for w_idx in range(4):
+            configs.append(
+                dict(
+                    tag=f"followup_ext_UV_gN2.00_N32_b1_w{w_idx}",
+                    N=32,
+                    Nt=12,
+                    Nr=4,
+                    g=2.0,
+                    mu2=0.25,
+                    lam4=0.1,
+                    n_chains=4,
+                    n_warmup=400,
+                    n_meas=2000,
+                    n_steps=10,
+                    init_eps=0.10,
+                    seed=9301 + w_idx,
+                    dewitt_measure=True,
+                    fixed_gN=True,
+                    save_histories=True,
+                    save_ckpt=f"/results/ckpt_ext_UV_gN2.00_N32_w{w_idx}.pt",
+                    base_commit=base_commit,
+                )
+            )
+
+        # 3b. Extended N=48 scaled-coupling area convergence (Batch 1: 4 GPUs x 4 chains = 16 independent chains)
+        for w_idx in range(4):
+            configs.append(
+                dict(
+                    tag=f"followup_ext_IR_mu005_N48_b1_w{w_idx}",
+                    N=48,
+                    Nt=12,
+                    Nr=4,
+                    g=g_P,
+                    mu2=0.05,
+                    lam4=0.1,
+                    n_chains=4,
+                    n_warmup=400,
+                    n_meas=2000,
+                    n_steps=8,
+                    init_eps=0.13,
+                    seed=9401 + w_idx,
+                    dewitt_measure=True,
+                    fixed_gN=False,
+                    save_histories=True,
+                    save_ckpt=f"/results/ckpt_ext_IR_mu005_N48_w{w_idx}.pt",
+                    base_commit=base_commit,
+                )
+            )
+
+        print(f"Launching FOLLOW-UP BATCH 1: {len(configs)} parallel B200 ensembles...")
+        t0 = time.time()
+        results = list(run_hmc_point.map(configs))
+        wall = time.time() - t0
+        total_gpu_sec = sum(r["runtime"]["wall_seconds"] for r in results)
+        payload = dict(
+            tier="followup_batch1",
+            base_commit=base_commit,
+            v5_reference_commit="f527e17520167b04494fd137c381757ac501b5de",
+            total_wall_seconds=wall,
+            total_b200_gpu_hours=total_gpu_sec / 3600.0,
+            n_runs=len(results),
+            runs=results,
+        )
+        out_path = os.path.join(out_dir, "modal_hmc_followup_batch1_results.json")
+        with open(out_path, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(
+            f"FOLLOW-UP BATCH 1 COMPLETE in {wall:.1f}s "
+            f"({total_gpu_sec/3600.0:.3f} B200 GPU-hrs, {len(results)} GPUs) -> saved to {out_path}"
+        )
+        return
+
+    if mode in ("followup_b2_n32", "followup_b2_n48", "followup_b2_both"):
+        # Optional Batch 2 seamless stationary continuation from Batch 1 checkpoints (n_warmup=0, frozen eps)
+        base_commit = "589a99b9a5fa5695ebaf20cd3082b76f94a02346"
+        g_P = round(math.sqrt(4.0 * math.pi / math.log(3.0)), 4)
+        configs = []
+        if mode in ("followup_b2_n32", "followup_b2_both"):
+            for w_idx in range(4):
+                configs.append(
+                    dict(
+                        tag=f"followup_ext_UV_gN2.00_N32_b2_w{w_idx}",
+                        N=32,
+                        Nt=12,
+                        Nr=4,
+                        g=2.0,
+                        mu2=0.25,
+                        lam4=0.1,
+                        n_chains=4,
+                        n_warmup=0,
+                        n_meas=2000,
+                        n_steps=10,
+                        init_eps=0.10,
+                        seed=9501 + w_idx,
+                        dewitt_measure=True,
+                        fixed_gN=True,
+                        local_collective=True,
+                        save_histories=True,
+                        resume_ckpt=f"/results/ckpt_ext_UV_gN2.00_N32_w{w_idx}.pt",
+                        save_ckpt=f"/results/ckpt_ext_UV_gN2.00_N32_b2_w{w_idx}.pt",
+                        base_commit=base_commit,
+                    )
+                )
+        if mode in ("followup_b2_n48", "followup_b2_both"):
+            for w_idx in range(4):
+                configs.append(
+                    dict(
+                        tag=f"followup_ext_IR_mu005_N48_b2_w{w_idx}",
+                        N=48,
+                        Nt=12,
+                        Nr=4,
+                        g=g_P,
+                        mu2=0.05,
+                        lam4=0.1,
+                        n_chains=4,
+                        n_warmup=0,
+                        n_meas=2000,
+                        n_steps=8,
+                        init_eps=0.13,
+                        seed=9601 + w_idx,
+                        dewitt_measure=True,
+                        fixed_gN=False,
+                        local_collective=True,
+                        save_histories=True,
+                        resume_ckpt=f"/results/ckpt_ext_IR_mu005_N48_w{w_idx}.pt",
+                        save_ckpt=f"/results/ckpt_ext_IR_mu005_N48_b2_w{w_idx}.pt",
+                        base_commit=base_commit,
+                    )
+                )
+        print(f"Launching FOLLOW-UP BATCH 2 ({mode}): {len(configs)} parallel B200 ensembles...")
+        t0 = time.time()
+        results = list(run_hmc_point.map(configs))
+        wall = time.time() - t0
+        total_gpu_sec = sum(r["runtime"]["wall_seconds"] for r in results)
+        payload = dict(
+            tier=mode,
+            base_commit=base_commit,
+            v5_reference_commit="f527e17520167b04494fd137c381757ac501b5de",
+            total_wall_seconds=wall,
+            total_b200_gpu_hours=total_gpu_sec / 3600.0,
+            n_runs=len(results),
+            runs=results,
+        )
+        out_path = os.path.join(out_dir, f"modal_hmc_{mode}_results.json")
+        with open(out_path, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(
+            f"FOLLOW-UP BATCH 2 ({mode}) COMPLETE in {wall:.1f}s "
+            f"({total_gpu_sec/3600.0:.3f} B200 GPU-hrs, {len(results)} GPUs) -> saved to {out_path}"
+        )
         return
 
     raise ValueError(f"Unknown mode: {mode}")

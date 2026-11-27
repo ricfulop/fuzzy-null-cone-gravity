@@ -26,6 +26,10 @@ use_style()
 fin = json.load(open(os.path.join(HERE, "modal_hmc_final_results.json")))
 t1 = json.load(open(os.path.join(HERE, "modal_hmc_tier1_results.json")))
 t2 = json.load(open(os.path.join(HERE, "modal_hmc_tier2_results.json")))
+fu_ana_path = os.path.join(HERE, "modal_hmc_followup_analysis.json")
+fu_b2_path = os.path.join(HERE, "modal_hmc_followup_b2_both_results.json")
+fu_ana = json.load(open(fu_ana_path)) if os.path.exists(fu_ana_path) else None
+fu_b2 = json.load(open(fu_b2_path)) if os.path.exists(fu_b2_path) else None
 
 fin_runs = fin["runs"]
 old_all = t1["runs"] + t2["runs"]
@@ -68,12 +72,17 @@ specs_b = [
     (8, PALETTE["red"], "--", r"$N=8$ ($s=70$, $\lambda \in [0.43, 2.66]$)"),
     (16, PALETTE["orange"], "-.", r"$N=16$ ($s=281$, $\lambda \in [0.53, 1.98]$)"),
     (32, PALETTE["green"], "-", r"$N=32$ ($s=1125$, $\lambda \in [0.64, 1.52]$)"),
-    (48, PALETTE["blue"], "-", r"$N=48$ ($s=2531$, $\lambda \in [0.73, 1.39]$)"),
+    (48, PALETTE["blue"], "-", r"$N=48$ ($s=2531$, $\lambda \in [0.73, 1.38]$)"),
 ]
 for N_v, col, ls, lab in specs_b:
-    r = next(x for x in fin_runs if x["tag"] == f"final_IR_mu005_N{N_v}")
-    bc = np.array(r["rho2_eig_histogram"]["bin_centers"], dtype=float)
-    pdf = np.array(r["rho2_eig_histogram"]["pdf"], dtype=float)
+    if N_v == 48 and fu_b2 is not None:
+        n48_ws = [x for x in fu_b2["runs"] if "N48" in x["tag"]]
+        bc = np.array(n48_ws[0]["rho2_eig_histogram"]["bin_centers"], dtype=float)
+        pdf = np.mean([np.array(x["rho2_eig_histogram"]["pdf"], dtype=float) for x in n48_ws], axis=0)
+    else:
+        r = next(x for x in fin_runs if x["tag"] == f"final_IR_mu005_N{N_v}")
+        bc = np.array(r["rho2_eig_histogram"]["bin_centers"], dtype=float)
+        pdf = np.array(r["rho2_eig_histogram"]["pdf"], dtype=float)
     ax2.plot(bc, pdf, linestyle=ls, color=col, linewidth=1.3, label=lab)
 
 ax2.axvline(1.0, color=BASELINE, linestyle=":", linewidth=0.9)
@@ -87,31 +96,52 @@ ax2.legend(loc="upper right", fontsize=5.2, labelspacing=0.22)
 
 # =========================================================================
 # Panel (c): Fixed-g_N UV Strong-Coupling Horizon-Anisotropy Suppression Q2/Q2_free
+#            with MEASURED zero-coupling controls (mu^2=0.25, lam4=0.1) & 12x8 check
 # =========================================================================
 gN_grid = [0.0, 0.5, 1.0, 1.5, 2.0]
 specs_c = [
-    (8, PALETTE["red"], "o", "--", r"$N=8$"),
-    (16, PALETTE["orange"], "s", "-.", r"$N=16$"),
-    (24, PALETTE["green"], "^", ":", r"$N=24$"),
-    (32, PALETTE["blue"], "D", "-", r"$N=32$"),
+    (8, PALETTE["red"], "o", "--", r"$N=8$ ($8\times 4$)"),
+    (16, PALETTE["orange"], "s", "-.", r"$N=16$ ($8\times 4$)"),
+    (24, PALETTE["green"], "^", ":", r"$N=24$ ($8\times 4$)"),
+    (32, PALETTE["blue"], "D", "-", r"$N=32$ ($12\times 4$)"),
 ]
 for N_v, col, mk, ls, lab in specs_c:
-    ys = [1.0]
-    yses = [0.0]
-    for gN_v in gN_grid[1:]:
-        r = next(x for x in fin_runs if x["tag"] == f"final_UV_gN{gN_v:.2f}_N{N_v}")
-        ys.append(r["observables"]["Q2_anisotropy"]["mean"] / r["observables"]["Q2_free"])
-        yses.append(r["observables"]["Q2_anisotropy"]["se"] / r["observables"]["Q2_free"])
-    ax3.errorbar(gN_grid, ys, yerr=yses, fmt=f"{mk}{ls}", color=col, markersize=3.6, linewidth=1.25, label=lab)
+    ys, yses = [], []
+    for gN_v in gN_grid:
+        if gN_v == 0.0 and fu_ana is not None:
+            row = next(r for r in fu_ana["primary_4rank_table"] if r["N"] == N_v)
+            ys.append(row["Q2_g0_mean"] / row["Q2_free"])
+            yses.append(1.96 * row["Q2_g0_se"] / row["Q2_free"])
+        elif gN_v == 0.0:
+            ys.append(1.0)
+            yses.append(0.0)
+        else:
+            r = next(x for x in fin_runs if x["tag"] == f"final_UV_gN{gN_v:.2f}_N{N_v}")
+            ys.append(r["observables"]["Q2_anisotropy"]["mean"] / r["observables"]["Q2_free"])
+            yses.append(1.96 * r["observables"]["Q2_anisotropy"]["se"] / r["observables"]["Q2_free"])
+    ax3.errorbar(gN_grid, ys, yerr=yses, fmt=f"{mk}{ls}", color=col, markersize=3.5, linewidth=1.2, capsize=1.8, label=lab)
+
+if fu_ana is not None:
+    lat = fu_ana["lattice_12x8_test"]
+    q2f_lat = lat["lat_12x8_g0"]["params"]["Q2_free"]
+    y_lat = [
+        lat["lat_12x8_g0"]["diagnostics"]["Q2"]["mean"] / q2f_lat,
+        lat["lat_12x8_g2"]["diagnostics"]["Q2"]["mean"] / q2f_lat,
+    ]
+    ye_lat = [
+        1.96 * max(lat["lat_12x8_g0"]["diagnostics"]["Q2"]["se_chains"], lat["lat_12x8_g0"]["diagnostics"]["Q2"]["se_ess"]) / q2f_lat,
+        1.96 * max(lat["lat_12x8_g2"]["diagnostics"]["Q2"]["se_chains"], lat["lat_12x8_g2"]["diagnostics"]["Q2"]["se_ess"]) / q2f_lat,
+    ]
+    ax3.errorbar([0.04, 2.04], y_lat, yerr=ye_lat, fmt="*", color=PALETTE["purple"], markersize=5.4, markerfacecolor="white", markeredgewidth=0.9, capsize=1.8, label=r"$N=24$ ($12\times 8$)")
 
 ax3.axhline(1.0, color=BASELINE, linestyle=":", linewidth=0.8)
-ax3.set_xlim(-0.08, 2.12)
+ax3.set_xlim(-0.10, 2.15)
 ax3.set_ylim(0.45, 1.06)
 ax3.set_xticks([0.0, 0.5, 1.0, 1.5, 2.0])
 ax3.set_yticks([0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-ax3.set_xlabel(r"Fixed microscopic coupling $g_N$ ($\mu^2 = 0.25$)")
-ax3.set_ylabel(r"Horizon anisotropy ratio $Q_2 / Q_{2,\mathrm{free}}$")
-ax3.legend(loc="lower left", ncol=2, fontsize=5.4, labelspacing=0.22, columnspacing=0.8)
+ax3.set_xlabel(r"Fixed microscopic coupling $g_N$ ($\mu^2 = 0.25,\ \lambda_4 = 0.1$)")
+ax3.set_ylabel(r"Roughness ratio $Q_2(g_N) / Q_{2,\mathrm{free}}$")
+ax3.legend(loc="lower left", ncol=2, fontsize=5.1, labelspacing=0.20, columnspacing=0.6)
 
 # =========================================================================
 # Panel (d): DeWitt-Fujikawa Measure vs. Flat-Measure Horizon Collapse (g=2.5)
