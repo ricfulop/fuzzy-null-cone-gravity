@@ -1,0 +1,197 @@
+{
+  "fock_2mode_mgf_verification": {
+    "lam_test": 0.25,
+    "log_mgf_fock": 0.008229580897180457,
+    "log_mgf_fredholm": 0.008229580897179734,
+    "abs_err": 7.233796894823286e-16
+  },
+  "int_g_prime_sq": 6.052923538595965,
+  "E_Flanagan_2D_massless_bound": -0.02555372405946295,
+  "E_Fewster_Eveson_uniform_m_ge_0_bound": -0.03833058608919442,
+  "massive_qei_scan": [
+    {
+      "j": 0,
+      "mu_j": 0.0,
+      "E_min_NO": -0.010132025903430986,
+      "Var0_analytic": 0.003177077532851421,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.006765013721721223,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    },
+    {
+      "j": 2,
+      "mu_j": 0.22507907903927654,
+      "E_min_NO": -0.00878447528327797,
+      "Var0_analytic": 0.002950493289910807,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.006042526088474179,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    },
+    {
+      "j": 3,
+      "mu_j": 0.3558812717085886,
+      "E_min_NO": -0.007419649551252405,
+      "Var0_analytic": 0.00266588539492822,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.005318234587900487,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    },
+    {
+      "j": 5,
+      "mu_j": 0.5955032684613765,
+      "E_min_NO": -0.005033253980400332,
+      "Var0_analytic": 0.0020890959113537026,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.00501384202957789,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    },
+    {
+      "j": 10,
+      "mu_j": 1.1695452018505141,
+      "E_min_NO": -0.001957030426410711,
+      "Var0_analytic": 0.0013749761900691188,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.017317174024546335,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    },
+    {
+      "j": 20,
+      "mu_j": 2.3008763211681216,
+      "E_min_NO": -0.0009153318353583018,
+      "Var0_analytic": 0.0014687886131165655,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.08490288170024826,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    },
+    {
+      "j": 40,
+      "mu_j": 4.554724179439262,
+      "E_min_NO": -0.0009505513446583791,
+      "Var0_analytic": 0.0015719325525706215,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.2693443664144971,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    },
+    {
+      "j": 80,
+      "mu_j": 9.057860037248478,
+      "E_min_NO": -0.0007299533544937731,
+      "Var0_analytic": 0.0012130012527367716,
+      "Var0_mgf_err": 0.0,
+      "kappa4_NO": 0.6569873046370193,
+      "obeys_FE_bound": true,
+      "obeys_Flanagan_bound": true
+    }
+  ],
+  "fewster_ford_roman_nrad_scan_j2": [
+    {
+      "N_rad": 10,
+      "E_min_NO": -0.008355436517042847,
+      "Var0_NO": 0.0029495470314091724,
+      "kappa4_NO": 0.006054256078585592,
+      "lambda_crit_mode": 0.9049421780797047,
+      "N_rad_times_lambda_crit": 9.049421780797047
+    },
+    {
+      "N_rad": 20,
+      "E_min_NO": -0.008710685781920802,
+      "Var0_NO": 0.0029504903753150417,
+      "kappa4_NO": 0.006042702024440337,
+      "lambda_crit_mode": 0.5091589658484507,
+      "N_rad_times_lambda_crit": 10.183179316969014
+    },
+    {
+      "N_rad": 40,
+      "E_min_NO": -0.008780445675540705,
+      "Var0_NO": 0.0029504932888754836,
+      "kappa4_NO": 0.006042525146710047,
+      "lambda_crit_mode": 0.28200380734040764,
+      "N_rad_times_lambda_crit": 11.280152293616306
+    },
+    {
+      "N_rad": 80,
+      "E_min_NO": -0.008784369809973214,
+      "Var0_NO": 0.0029504932899267608,
+      "kappa4_NO": 0.006042526340188427,
+      "lambda_crit_mode": 0.15535139931216696,
+      "N_rad_times_lambda_crit": 12.428111944973356
+    },
+    {
+      "N_rad": 120,
+      "E_min_NO": -0.008783284640230704,
+      "Var0_NO": 0.0029504932899306596,
+      "kappa4_NO": 0.006042526469599226,
+      "lambda_crit_mode": 0.10936779030743936,
+      "N_rad_times_lambda_crit": 13.124134836892724
+    }
+  ],
+  "unified_Bs_exponential_clock_scan": [
+    {
+      "s": 20.0,
+      "N_rad_B": 10,
+      "J_max": 3,
+      "lambda_crit_phys": 17.02697397978091,
+      "exact_E_uexp_over_ucl": 1.0000849266268574,
+      "exact_Var_uexp_over_ucl2": 0.00017587036213395635,
+      "spectral_proj_fail_2nd_moment": 0.0003476095188403702,
+      "spectral_proj_fail_4th_moment": 4.022161129657012e-06,
+      "chernoff_opt_lambda": 14.472884747258183,
+      "chernoff_log10_fail_prob": -4.286764269215795
+    },
+    {
+      "s": 40.0,
+      "N_rad_B": 20,
+      "J_max": 5,
+      "lambda_crit_phys": 18.101262127747304,
+      "exact_E_uexp_over_ucl": 1.0000489765209897,
+      "exact_Var_uexp_over_ucl2": 9.966670932248789e-05,
+      "spectral_proj_fail_2nd_moment": 0.00020214837884464492,
+      "spectral_proj_fail_4th_moment": 6.864766199194177e-07,
+      "chernoff_opt_lambda": 15.386026951464636,
+      "chernoff_log10_fail_prob": -4.558615665821396
+    },
+    {
+      "s": 80.0,
+      "N_rad_B": 40,
+      "J_max": 7,
+      "lambda_crit_phys": 19.684936567786735,
+      "exact_E_uexp_over_ucl": 1.0000199003532753,
+      "exact_Var_uexp_over_ucl2": 4.017553580371036e-05,
+      "spectral_proj_fail_2nd_moment": 8.245738237879642e-05,
+      "spectral_proj_fail_4th_moment": 9.558224231420402e-08,
+      "chernoff_opt_lambda": 16.7321462134713,
+      "chernoff_log10_fail_prob": -4.972799106793886
+    },
+    {
+      "s": 160.0,
+      "N_rad_B": 80,
+      "J_max": 11,
+      "lambda_crit_phys": 21.14176738262131,
+      "exact_E_uexp_over_ucl": 1.0000093977132296,
+      "exact_Var_uexp_over_ucl2": 1.8924392901409348e-05,
+      "spectral_proj_fail_2nd_moment": 3.8988075139990455e-05,
+      "spectral_proj_fail_4th_moment": 2.6350117107080382e-08,
+      "chernoff_opt_lambda": 17.970448715395154,
+      "chernoff_log10_fail_prob": -5.3263668281167105
+    },
+    {
+      "s": 240.0,
+      "N_rad_B": 120,
+      "J_max": 13,
+      "lambda_crit_phys": 22.245376626262445,
+      "exact_E_uexp_over_ucl": 1.0000053796178605,
+      "exact_Var_uexp_over_ucl2": 1.082040104471993e-05,
+      "spectral_proj_fail_2nd_moment": 2.233107573802096e-05,
+      "spectral_proj_fail_4th_moment": 9.930574052680534e-09,
+      "chernoff_opt_lambda": 18.90851377664407,
+      "chernoff_log10_fail_prob": -5.609700314708296
+    }
+  ]
+}

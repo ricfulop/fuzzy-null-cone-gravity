@@ -1,0 +1,41 @@
+{
+  "total_Hilbert_dim": 1260,
+  "dim_rad_RW_plus_Z": 15,
+  "schwarzschild_j2_graviton_modes": {
+    "omega_RW": [
+      0.13394480560469338,
+      0.23803147705653063
+    ],
+    "omega_Zerilli": [
+      0.13673785754099615,
+      0.23390453413006979
+    ],
+    "omega_scalar_no_tidal": [
+      0.14517457847132226,
+      0.24771129539476067
+    ],
+    "isospectral_RW_vs_Z_diff": [
+      0.002793051936302776,
+      0.004126942926460847
+    ],
+    "weyl_tidal_shift_mode1": -0.011229772866628879,
+    "weyl_tidal_shift_pct_mode1": -7.735357653438755
+  },
+  "bounded_lapse": {
+    "N_inv_min": 0.9997906805052776,
+    "N_inv_max": 30.719451545476577,
+    "condition_number": 30.725883071796062
+  },
+  "SU2_invariance_max_comm": 3.086787344705072e-14,
+  "unitarity_err": 3.2354038579620814e-14,
+  "K_M_min_eig": 0.043847186231528945,
+  "singlet_area_transitions": {
+    "M2_to_M4": 0.22284515277831932,
+    "M4_to_M6": 0.2228098296619995,
+    "M2_to_M6": 0.03133374918051387
+  },
+  "axiom5_Z_D1": 45.0,
+  "Z_Euc_glued": 13.902619607177877,
+  "wick_equivalence_err": 0.0,
+  "unified_all_checks_passed": true
+}

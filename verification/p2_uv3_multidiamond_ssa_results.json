@@ -1,0 +1,78 @@
+{
+  "part1_fusion_associativity": {
+    "M_triad": [
+      2,
+      2,
+      2
+    ],
+    "total_dim": 64,
+    "pentagon_associativity_err": 9.454044005802109e-17,
+    "SU2_coproduct_equivariance_err": 0.0
+  },
+  "part2_three_diamond_SSA_RT": {
+    "network_dim": 2048,
+    "corner_areas_in_smin": {
+      "C_AB": 2,
+      "C_BC": 1,
+      "C_CA": 1
+    },
+    "exact_generalized_entropies": {
+      "S_A": 2.702536261376707,
+      "S_B": 2.7451256605360648,
+      "S_C": 1.9134489515730384,
+      "S_AB": 1.9134489515730386,
+      "S_BC": 2.702536261376707,
+      "S_AC": 2.7451256605360648,
+      "S_ABC": 4.440892098500625e-16
+    },
+    "bulk_graviton_entropies": {
+      "Sb_A": 0.6230947196968724,
+      "Sb_B": 0.6656841188562298,
+      "Sb_C": 0.5271545904531482,
+      "Sb_AB": 0.5271545904531482,
+      "Sb_BC": 0.6230947196968724,
+      "Sb_AC": 0.6656841188562298
+    },
+    "max_RT_generalized_entropy_err": 8.881784197001252e-16,
+    "quantum_info_inequalities": {
+      "subadditivity_I_AB": 3.534212970339733,
+      "SSA_I_AC_given_B": 1.8708595524136808,
+      "SSA_I_AB_given_C": 3.534212970339733,
+      "SSA_I_BC_given_A": 1.956038350732396,
+      "araki_lieb_AB": 1.870859552413681,
+      "all_inequalities_satisfied": true
+    }
+  },
+  "part3_smin_selection": {
+    "coarse_graining_fixed_point_law": "s_min = ln(1 + d_0) [Model A] or ln(d_0) [Model B]",
+    "cemz_causality_window": "s_min <= pi (3.14159) for no sub-Planckian higher-spin tower",
+    "finite_allowed_count_modelA": 21,
+    "finite_allowed_count_modelB": 22,
+    "minimal_qubit_qutrit_solutions": [
+      {
+        "label": "Qubit SU(2) singlet (j0=1/2, Model B)",
+        "d0": 2,
+        "s_min": 0.6931471805599453,
+        "b_adv_over_lP": 0.46971863934982566
+      },
+      {
+        "label": "Qubit compositions (j0=1/2, Model A)",
+        "d0": 2,
+        "s_min": 1.0986122886681098,
+        "b_adv_over_lP": 0.5913536611589209
+      },
+      {
+        "label": "Qutrit fixed-quantum (j0=1, Model B)",
+        "d0": 3,
+        "s_min": 1.0986122886681098,
+        "b_adv_over_lP": 0.5913536611589209
+      },
+      {
+        "label": "Qutrit compositions (j0=1, Model A)",
+        "d0": 3,
+        "s_min": 1.3862943611198906,
+        "b_adv_over_lP": 0.6642824702679601
+      }
+    ]
+  }
+}

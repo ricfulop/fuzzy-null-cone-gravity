@@ -1,0 +1,293 @@
+{
+  "module1_corner": {
+    "d0": 2,
+    "s_min_modelA": 1.0986122886681098,
+    "s_min_modelB": 0.6931471805599453,
+    "modelA_unconstrained": [
+      {
+        "M": 10,
+        "s": 10.986122886681098,
+        "K_max": 10,
+        "log_Omega": 10.580657778572933,
+        "diff_from_s": -0.4054651081081655
+      },
+      {
+        "M": 50,
+        "s": 54.93061443340549,
+        "K_max": 50,
+        "log_Omega": 54.52514932529733,
+        "diff_from_s": -0.40546510810816017
+      },
+      {
+        "M": 100,
+        "s": 109.86122886681098,
+        "K_max": 100,
+        "log_Omega": 109.45576375870282,
+        "diff_from_s": -0.40546510810816017
+      },
+      {
+        "M": 500,
+        "s": 549.3061443340549,
+        "K_max": 500,
+        "log_Omega": 548.9006792259466,
+        "diff_from_s": -0.40546510810827385
+      },
+      {
+        "M": 1000,
+        "s": 1098.6122886681098,
+        "K_max": 1000,
+        "log_Omega": 1098.2068235600016,
+        "diff_from_s": -0.40546510810827385
+      },
+      {
+        "M": 5000,
+        "s": 5493.061443340549,
+        "K_max": 5000,
+        "log_Omega": 5492.655978232441,
+        "diff_from_s": -0.4054651081078191
+      }
+    ],
+    "modelB_su2_singlet": [
+      {
+        "K": 20,
+        "s": 13.862943611198906,
+        "log_Omega_singlet": 9.728896041804084,
+        "residual_minus_s": -4.134047569394822
+      },
+      {
+        "K": 50,
+        "s": 34.657359027997266,
+        "log_Omega_singlet": 29.21245996779053,
+        "residual_minus_s": -5.444899060206737
+      },
+      {
+        "K": 100,
+        "s": 69.31471805599453,
+        "log_Omega_singlet": 62.852016019293075,
+        "residual_minus_s": -6.462702036701458
+      },
+      {
+        "K": 200,
+        "s": 138.62943611198907,
+        "log_Omega_singlet": 131.13811556443733,
+        "residual_minus_s": -7.491320547551737
+      },
+      {
+        "K": 500,
+        "s": 346.5735902799726,
+        "log_Omega_singlet": 337.7145419393182,
+        "residual_minus_s": -8.859048340654397
+      },
+      {
+        "K": 1000,
+        "s": 693.1471805599452,
+        "log_Omega_singlet": 683.2506554667661,
+        "residual_minus_s": -9.896525093179093
+      },
+      {
+        "K": 2000,
+        "s": 1386.2943611198905,
+        "log_Omega_singlet": 1375.3592387581639,
+        "residual_minus_s": -10.935122361726599
+      },
+      {
+        "K": 5000,
+        "s": 3465.7359027997263,
+        "log_Omega_singlet": 3453.427018920498,
+        "residual_minus_s": -12.308883879228233
+      }
+    ],
+    "fitted_c_log_su2_singlet": -1.4968026801340084,
+    "exact_c_log_su2_singlet": -1.5,
+    "sen_4d_pure_gravity_mixed": 2.3555555555555556,
+    "sen_4d_pure_gravity_singlet": 0.8555555555555555
+  },
+  "module2_qei_clock": {
+    "taper_function": "g(u) = sin^3(pi u) on [0, 1] (smooth C^5, bandlimited at n=6; see path2_cinfty_bump_check.py for non-bandlimited C^infty_c)",
+    "integral_gprime_sq": 5.551652475612122,
+    "radial_convergence": [
+      {
+        "N_rad": 10,
+        "E0_unnormal_ordered": 17.16668200920654,
+        "E_min_NO": -0.020817990791471175,
+        "Var0_NO": 0.019531249999995445
+      },
+      {
+        "N_rad": 20,
+        "E0_unnormal_ordered": 65.6041674859331,
+        "E_min_NO": -0.020832514059293317,
+        "Var0_NO": 0.019531249999995445
+      },
+      {
+        "N_rad": 40,
+        "E0_unnormal_ordered": 256.22916670772435,
+        "E_min_NO": -0.020833292245981738,
+        "Var0_NO": 0.019531249999995445
+      },
+      {
+        "N_rad": 80,
+        "E0_unnormal_ordered": 1012.4791671373392,
+        "E_min_NO": -0.020832862543556985,
+        "Var0_NO": 0.019531249999995445
+      },
+      {
+        "N_rad": 160,
+        "E0_unnormal_ordered": 4024.9791689490507,
+        "E_min_NO": -0.020831050483138824,
+        "Var0_NO": 0.019531249999995445
+      }
+    ],
+    "Xi_QEI_floor": 0.03792247856319378,
+    "exp_minus_Xi_QEI": 0.962787574674431,
+    "area_bound_multiplier_e2Xi": 1.078795301666805,
+    "single_cell_variance": 0.06472933200703357,
+    "projector_survival_as_s_grows": [
+      {
+        "s": 10.0,
+        "K_cells": 9,
+        "Var_Xi_avg": 0.0071921480007815074,
+        "chebyshev_1_minus_PD_sq_upper": 0.014969513755628126,
+        "PD_norm_sq_lower_bound": 0.9850304862443718
+      },
+      {
+        "s": 50.0,
+        "K_cells": 45,
+        "Var_Xi_avg": 0.0014384296001563016,
+        "chebyshev_1_minus_PD_sq_upper": 0.0029939027511256253,
+        "PD_norm_sq_lower_bound": 0.9970060972488743
+      },
+      {
+        "s": 100.0,
+        "K_cells": 91,
+        "Var_Xi_avg": 0.0007113113407366327,
+        "chebyshev_1_minus_PD_sq_upper": 0.001480501360446738,
+        "PD_norm_sq_lower_bound": 0.9985194986395532
+      },
+      {
+        "s": 1000.0,
+        "K_cells": 910,
+        "Var_Xi_avg": 7.113113407366326e-05,
+        "chebyshev_1_minus_PD_sq_upper": 0.00014805013604467378,
+        "PD_norm_sq_lower_bound": 0.9998519498639553
+      },
+      {
+        "s": 1000000.0,
+        "K_cells": 910239,
+        "Var_Xi_avg": 7.111245728543115e-08,
+        "chebyshev_1_minus_PD_sq_upper": 1.4801126275698266e-07,
+        "PD_norm_sq_lower_bound": 0.9999998519887372
+      },
+      {
+        "s": 10000000000.0,
+        "K_cells": 9102392266,
+        "Var_Xi_avg": 7.111243958230175e-12,
+        "chebyshev_1_minus_PD_sq_upper": 1.4801122591023825e-11,
+        "PD_norm_sq_lower_bound": 0.9999999999851988
+      }
+    ]
+  },
+  "module3_finite_dim_and_axiom5": {
+    "exact_sector_table": [
+      {
+        "M": 2,
+        "s": 2.1972245773362196,
+        "J_max": 2,
+        "d_corner": 6,
+        "regime1_horizon_active_modes": 50,
+        "regime1_d_rad": 261,
+        "regime1_d_tot": 1566,
+        "regime1_thermal_weight": 173.99999999999997,
+        "regime2_gas_active_modes": 0,
+        "regime2_d_rad": 1
+      },
+      {
+        "M": 4,
+        "s": 4.394449154672439,
+        "J_max": 2,
+        "d_corner": 54,
+        "regime1_horizon_active_modes": 50,
+        "regime1_d_rad": 261,
+        "regime1_d_tot": 14094,
+        "regime1_thermal_weight": 173.99999999999994,
+        "regime2_gas_active_modes": 0,
+        "regime2_d_rad": 1
+      },
+      {
+        "M": 6,
+        "s": 6.591673732008658,
+        "J_max": 2,
+        "d_corner": 486,
+        "regime1_horizon_active_modes": 50,
+        "regime1_d_rad": 261,
+        "regime1_d_tot": 126846,
+        "regime1_thermal_weight": 174.0,
+        "regime2_gas_active_modes": 20,
+        "regime2_d_rad": 21
+      },
+      {
+        "M": 8,
+        "s": 8.788898309344878,
+        "J_max": 2,
+        "d_corner": 4374,
+        "regime1_horizon_active_modes": 50,
+        "regime1_d_rad": 261,
+        "regime1_d_tot": 1141614,
+        "regime1_thermal_weight": 173.9999999999999,
+        "regime2_gas_active_modes": 30,
+        "regime2_d_rad": 31
+      },
+      {
+        "M": 10,
+        "s": 10.986122886681098,
+        "J_max": 2,
+        "d_corner": 39366,
+        "regime1_horizon_active_modes": 50,
+        "regime1_d_rad": 261,
+        "regime1_d_tot": 10274526,
+        "regime1_thermal_weight": 173.99999999999977,
+        "regime2_gas_active_modes": 50,
+        "regime2_d_rad": 51
+      },
+      {
+        "M": 15,
+        "s": 16.479184330021646,
+        "J_max": 3,
+        "d_corner": 9565938,
+        "regime1_horizon_active_modes": 120,
+        "regime1_d_rad": 331,
+        "regime1_d_tot": 3166325478,
+        "regime1_thermal_weight": 220.66666666666663,
+        "regime2_gas_active_modes": 168,
+        "regime2_d_rad": null
+      },
+      {
+        "M": 20,
+        "s": 21.972245773362197,
+        "J_max": 3,
+        "d_corner": 2324522934,
+        "regime1_horizon_active_modes": 120,
+        "regime1_d_rad": 331,
+        "regime1_d_tot": 769417091154,
+        "regime1_thermal_weight": 220.66666666666606,
+        "regime2_gas_active_modes": 240,
+        "regime2_d_rad": null
+      }
+    ],
+    "M_max_sum_check": {
+      "M_sectors_included": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        15,
+        20
+      ],
+      "total_Hilbert_dim": 772594975278,
+      "Z_D1_finite": 1311.3333333333323,
+      "mean_area_s": 10.843699839599054,
+      "exact_von_Neumann_entropy": 18.02249954987995,
+      "axiom5_verified": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "b1_b2_full_4d_metric": {
+    "eq_B3_residual": "0",
+    "eq_A1_beta_r_residual": "0",
+    "eq_A1_beta_y_residual": "0",
+    "n_dot_beta_vs_mu_c": {
+      "n_dot_beta_minus_mu_c": "((-Derivative(F(t, r), r) + 2*Derivative(N(t, r), t))*N(t, r)**2 - F(t, r)*Derivative(N(t, r), r) + N(t, r)*Derivative(F(t, r), r))/(2*N(t, r)**3)",
+      "n_dot_beta_plus_mu_c": "((Derivative(F(t, r), r) - 2*Derivative(N(t, r), t))*N(t, r)**2 - F(t, r)*Derivative(N(t, r), r) + N(t, r)*Derivative(F(t, r), r))/(2*N(t, r)**3)"
+    },
+    "eq_B10_B11_EH_minus_paper": "0",
+    "eq_B5a_check": {
+      "lhs_over_A_plus_half_qR": "(-4*F(t, r)*rho(t, r)*Derivative(rho(t, r), (r, 2)) - 4*F(t, r)*Derivative(rho(t, r), r)**2 - rho(t, r)**4*exp(sh(t, r))*Derivative(V(t, r), r)**2 - 4*rho(t, r)*Derivative(F(t, r), r)*Derivative(rho(t, r), r) + 8*rho(t, r)*Derivative(rho(t, r), r, t) + 8*Derivative(rho(t, r), r)*Derivative(rho(t, r), t))/(2*rho(t, r)**2)",
+      "lhs_over_A_minus_half_qR": "0"
+    }
+  },
+  "b3_displaced_boundary_and_charge": {
+    "eq_B8d_residual": "0",
+    "eq_B8e_t_residual": "0",
+    "eq_B8e_r_on_null_residual": "0",
+    "eq_B8e_y_residual": "0",
+    "eq_B8e_r_off_null_note": "0",
+    "eq_B12_residual": "0",
+    "eq_B17_Q_minus_paper": "0",
+    "eq_B17_Q_plus_paper": "2*(-chiy(t, r, y)*rho(t, r, y)**3*Derivative(V(t, r, y), r) - 2*chiy(t, r, y)*Derivative(b(t, y), y)*Derivative(rho(t, r, y), r) - rho(t, r, y)*Derivative(b(t, y), y)*Derivative(chiy(t, r, y), r) + rho(t, r, y)*Derivative(chir(t, r, y), r))*rho(t, r, y)"
+  }
+}

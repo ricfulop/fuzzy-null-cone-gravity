@@ -1,0 +1,98 @@
+{
+  "symbolic_second_variation": {
+    "j2_axial_constraint_residual": "0",
+    "j2_regge_wheeler_exact_ratio": "-r**3/(8*M**2 - 8*M*r + 2*r**2)",
+    "j2_regge_wheeler_residual": "0",
+    "general_j_chandrasekhar_darboux_RW_residual": "0",
+    "general_j_chandrasekhar_darboux_Zerilli_residual": "0"
+  },
+  "numerical_isospectrality": {
+    "tortoise_inversion_err": 2.1718088305533456e-07,
+    "fuzzy_graviton_tower_j2_to_j8": [
+      {
+        "j": 2,
+        "lam_tj_sq": 2.0,
+        "peak_V_RW": 0.15128008130925835,
+        "peak_V_Z": 0.15129882341271883,
+        "peak_V_scalar_no_tidal": 0.2471147527591018,
+        "tidal_barrier_lowering_pct": 38.781444806440696,
+        "greybody_T_RW_at_peak": 0.6049479997761619,
+        "greybody_T_Z_at_peak": 0.6028297682905012,
+        "greybody_T_scalar_at_peak": 0.037186172764302326,
+        "isospectrality_T_diff": 0.0021182314856607043,
+        "lowest_cavity_E_RW": 0.006784246295984692,
+        "lowest_cavity_E_Z": 0.0069636101538877344
+      },
+      {
+        "j": 3,
+        "lam_tj_sq": 5.0,
+        "peak_V_RW": 0.37161267892302174,
+        "peak_V_Z": 0.3716134477436957,
+        "peak_V_scalar_no_tidal": 0.4692386394912425,
+        "tidal_barrier_lowering_pct": 20.805183621295274,
+        "greybody_T_RW_at_peak": 0.5627328993590848,
+        "greybody_T_Z_at_peak": 0.5629465596803135,
+        "greybody_T_scalar_at_peak": 0.09565650114844254,
+        "isospectrality_T_diff": 0.0002136603212287147,
+        "lowest_cavity_E_RW": 0.007727478641752166,
+        "lowest_cavity_E_Z": 0.007770435052957021
+      },
+      {
+        "j": 4,
+        "lam_tj_sq": 9.0,
+        "peak_V_RW": 0.6673369352261018,
+        "peak_V_Z": 0.6673596758213661,
+        "peak_V_scalar_no_tidal": 0.7654928826195959,
+        "tidal_barrier_lowering_pct": 12.822581322715147,
+        "greybody_T_RW_at_peak": 0.5510340837870613,
+        "greybody_T_Z_at_peak": 0.5512715165590257,
+        "greybody_T_scalar_at_peak": 0.15168342608261354,
+        "isospectrality_T_diff": 0.0002374327719644187,
+        "lowest_cavity_E_RW": 0.008335035801208077,
+        "lowest_cavity_E_Z": 0.008351022516818185
+      },
+      {
+        "j": 5,
+        "lam_tj_sq": 14.0,
+        "peak_V_RW": 1.037447053404553,
+        "peak_V_Z": 1.037407216265194,
+        "peak_V_scalar_no_tidal": 1.1358106865300377,
+        "tidal_barrier_lowering_pct": 8.660213739139119,
+        "greybody_T_RW_at_peak": 0.544425992180004,
+        "greybody_T_Z_at_peak": 0.5445014291303211,
+        "greybody_T_scalar_at_peak": 0.1998047857138286,
+        "isospectrality_T_diff": 7.543695031708708e-05,
+        "lowest_cavity_E_RW": 0.008812459978966312,
+        "lowest_cavity_E_Z": 0.008819897540864085
+      },
+      {
+        "j": 6,
+        "lam_tj_sq": 20.0,
+        "peak_V_RW": 1.4817166686814844,
+        "peak_V_Z": 1.4817427308970708,
+        "peak_V_scalar_no_tidal": 1.5801920512225676,
+        "tidal_barrier_lowering_pct": 6.231861656619168,
+        "greybody_T_RW_at_peak": 0.538625255331628,
+        "greybody_T_Z_at_peak": 0.5386281153249455,
+        "greybody_T_scalar_at_peak": 0.23870166398216733,
+        "isospectrality_T_diff": 2.859993317505527e-06,
+        "lowest_cavity_E_RW": 0.009217121534526819,
+        "lowest_cavity_E_Z": 0.009221095648728353
+      },
+      {
+        "j": 8,
+        "lam_tj_sq": 35.0,
+        "peak_V_RW": 2.592767400669925,
+        "peak_V_Z": 2.5927689892841466,
+        "peak_V_scalar_no_tidal": 2.691145462953893,
+        "tidal_barrier_lowering_pct": 3.655620390582118,
+        "greybody_T_RW_at_peak": 0.529106645352076,
+        "greybody_T_Z_at_peak": 0.5290831756966335,
+        "greybody_T_scalar_at_peak": 0.29431779875324937,
+        "isospectrality_T_diff": 2.3469655442420745e-05,
+        "lowest_cavity_E_RW": 0.009896083923016085,
+        "lowest_cavity_E_Z": 0.009897555667570425
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "5A_sec52_without_trace_class": {
+    "status": "sat",
+    "entails_DimHD_Finite": false,
+    "countermodel": {
+      "DimHD_Finite_5_39c": "False",
+      "OpenAmpConv_4_30": "True",
+      "BoostNonZero_5_29": "True",
+      "Axiom5_E_5": "True",
+      "AdS_Zbeta_Finite_5_45": "False",
+      "ClosedTraceConv": "False",
+      "LorentzianAxioms1_4": "True",
+      "EuclideanEquiv_TypeI_E_2": "True",
+      "UniformLowerBound_5_30c": "True"
+    },
+    "meaning": "SAT countermodel exists: eq. (4.30) + eq. (5.30c) + eq. (5.29) do NOT entail dim H_D < inf without ClosedTraceConv."
+  },
+  "5A_sec52_with_trace_class_is_redundant": {
+    "status": "unsat",
+    "boost_and_cycles_needed": false,
+    "meaning": "UNSAT of negation: UniformLowerBound + ClosedTraceConv ALREADY entails dim H_D < inf even if BoostNonZero = False."
+  },
+  "5B_circular_loop_5_2_and_E_3": {
+    "status": "sat",
+    "all_false_model_consistent": true,
+    "meaning": "SAT: The circular chain ClosedTraceConv -> DimHD_Finite -> Axiom5 -> ClosedTraceConv admits the all-False model (e.g. JT + scalar)."
+  },
+  "5C_clock_incompatibility_triad": {
+    "status": "unsat",
+    "simultaneously_satisfiable": false,
+    "meaning": "UNSAT: Continuum Fock space (4.10c) + un-normal-ordered positive clock (4.22) + nonzero subspace P_D != 0 (5.19) are mutually inconsistent."
+  },
+  "5D_appendix_E2_conditional_valid": {
+    "status": "unsat",
+    "valid_given_axiom5": true,
+    "meaning": "UNSAT of negation: Appendix E.2 (Lorentzian <-> Euclidean equivalence) is valid conditionally on Axioms 1-5."
+  },
+  "5E_real_arithmetic_trace_bound": {
+    "status": "unsat",
+    "proved": "For all c > 0, T >= 0, d >= 0: (c * d <= T) => (d <= T / c)."
+  }
+}

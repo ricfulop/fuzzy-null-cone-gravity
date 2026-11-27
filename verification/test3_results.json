@@ -1,0 +1,138 @@
+{
+  "test_3a_pair_creation": {
+    "asymptotic_1d_check": [
+      {
+        "s": 10.0,
+        "exact_real": 0.006703874007439805,
+        "exact_imag": -0.0026099935792511476,
+        "asymp_real": 0.006653874007446234,
+        "asymp_imag": -0.0026094379124341005,
+        "rel_err_imag": 0.00021289968736493814,
+        "two_s2_times_sum_real": 1.340774801487961,
+        "pi2_over_6": 1.6449340668482264
+      },
+      {
+        "s": 100.0,
+        "exact_real": 8.068090701246708e-05,
+        "exact_imag": -4.912028570486098e-06,
+        "asymp_real": 8.067590701561642e-05,
+        "asymp_imag": -4.912023005428146e-06,
+        "rel_err_imag": 1.1329449475605887e-06,
+        "two_s2_times_sum_real": 1.6136181402493417,
+        "pi2_over_6": 1.6449340668482264
+      },
+      {
+        "s": 1000.0,
+        "exact_real": 8.208967379236302e-07,
+        "exact_imag": -7.214607590775375e-09,
+        "asymp_real": 8.208962370973182e-07,
+        "asymp_imag": -7.2146080984221914e-09,
+        "rel_err_imag": 7.036374610135288e-08,
+        "two_s2_times_sum_real": 1.6417934758472603,
+        "pi2_over_6": 1.6449340668482264
+      },
+      {
+        "s": 10000.0,
+        "exact_real": 8.223099535594145e-09,
+        "exact_imag": -9.517108018176915e-12,
+        "asymp_real": 8.223099537914337e-09,
+        "asymp_imag": -9.517193191416239e-12,
+        "rel_err_imag": 8.949487508250095e-06,
+        "two_s2_times_sum_real": 1.644619907118829,
+        "pi2_over_6": 1.6449340668482264
+      }
+    ],
+    "angular_mode_divergence_at_finite_GN": [
+      {
+        "J": 2,
+        "angular_modes": 10,
+        "amplitude_mag_at_s100": 0.0008083029618300079
+      },
+      {
+        "J": 10,
+        "angular_modes": 234,
+        "amplitude_mag_at_s100": 0.018914289306822183
+      },
+      {
+        "J": 100,
+        "angular_modes": 20394,
+        "amplitude_mag_at_s100": 1.648453060356118
+      },
+      {
+        "J": 1000,
+        "angular_modes": 2003994,
+        "amplitude_mag_at_s100": 161.98342856895647
+      },
+      {
+        "J": 10000,
+        "angular_modes": 200039994,
+        "amplitude_mag_at_s100": 16169.2919634657
+      }
+    ],
+    "diagnosis": "Eq. (4.33) is a 1D free-oscillator sum with a manually injected phase shift 1/s. Normalized by G_N^2 (i.e. 1/s^2), it already converges at G_N=0 to pi^2/6; the log N divergence in eq. (4.34) is merely d/dx [sum e^{ikx}/k^2]|_{x=0} = i sum 1/k. Restoring the 2*((J+1)^2-4) angular graviton modes on S^2 makes it quadratically UV divergent even at finite G_N, and no nonlinear interaction vertex of H_c enters."
+  },
+  "test_3b_Hc_lapse": {
+    "s_macro": 31415926535.89793,
+    "lapse_collapse_table": [
+      {
+        "N": 10,
+        "J": 10,
+        "E0_Xi": 5.453487027997629e-06,
+        "lapse_ratio_upper_bound": 0.9999945465278423,
+        "inv_lapse_factor_lower_bound": 1.0000054535018983
+      },
+      {
+        "N": 100,
+        "J": 100,
+        "E0_Xi": 0.0475292369440101,
+        "lapse_ratio_upper_bound": 0.9535825928841846,
+        "inv_lapse_factor_lower_bound": 1.048676860779749
+      },
+      {
+        "N": 500,
+        "J": 500,
+        "E0_Xi": 29.24805306765643,
+        "lapse_ratio_upper_bound": 1.9848694451406492e-13,
+        "inv_lapse_factor_lower_bound": 5038114735698.092
+      },
+      {
+        "N": 1000,
+        "J": 1000,
+        "E0_Xi": 467.0408240677385,
+        "lapse_ratio_upper_bound": 1.468071757388833e-203,
+        "inv_lapse_factor_lower_bound": 6.811656139878593e+202
+      }
+    ],
+    "conclusion": "In eq. (3.54)-(3.55), H_c contains (d_v F)/(2 N(v,y)) with 1/N(eps,y) = N(1,y)^{-1} exp(Xi_y(1)). As the UV cutoff N, J -> inf, N(eps,y) -> 0 and 1/N(eps,y) -> +inf on every state in K_A, violating the bounded, self-adjoint generator hypothesis of Appendix C.2 eq. (C.7)."
+  },
+  "test_3c_pure_extension": {
+    "extensions": [
+      {
+        "theta_rad": 0.0,
+        "omega_on_A_in_diff": 0.0,
+        "transition_amp_omega_UM": 0.0
+      },
+      {
+        "theta_rad": 0.5235987755982988,
+        "omega_on_A_in_diff": 0.0,
+        "transition_amp_omega_UM": 0.8660254037844386
+      },
+      {
+        "theta_rad": 0.7853981633974483,
+        "omega_on_A_in_diff": 5.551115123125783e-17,
+        "transition_amp_omega_UM": 1.0
+      },
+      {
+        "theta_rad": 1.5707963267948966,
+        "omega_on_A_in_diff": 0.0,
+        "transition_amp_omega_UM": 1.2246467991473532e-16
+      },
+      {
+        "theta_rad": 2.356194490192345,
+        "omega_on_A_in_diff": 5.551115123125783e-17,
+        "transition_amp_omega_UM": -1.0
+      }
+    ],
+    "conclusion": "All pure extensions omega_theta agree identically on A_in (diff = 0), generate irreducible Type I factors B(H_omega), and yet assign arbitrary transition amplitudes omega(U_M) in [-1, 1] to area-changing unitaries. Thus pure-state extension alone cannot fix gravitational dynamics or equate omega(a^dag U_M b) with the path integral (4.5)."
+  }
+}

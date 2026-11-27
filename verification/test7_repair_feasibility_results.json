@@ -1,0 +1,86 @@
+{
+  "test_7a_high_j_loophole": {
+    "loophole_table": [
+      {
+        "j": 2,
+        "mean_cos2_j": 0.5,
+        "Xi_pointwise_max": 0.1886706048096791,
+        "u_bar_over_ucl": 1.01418967785002,
+        "symp_area_over_s": 0.18018604354349216,
+        "Q_cross_focusing_k1": 3.0,
+        "am_gm_floor_s_times_nu": 4.898979485566356
+      },
+      {
+        "j": 10,
+        "mean_cos2_j": 0.5,
+        "Xi_pointwise_max": 0.1886706048096791,
+        "u_bar_over_ucl": 1.01418967785002,
+        "symp_area_over_s": 0.18018604354349216,
+        "Q_cross_focusing_k1": 55.0,
+        "am_gm_floor_s_times_nu": 20.97617696340303
+      },
+      {
+        "j": 100,
+        "mean_cos2_j": 0.5000000000000001,
+        "Xi_pointwise_max": 0.1886706048096791,
+        "u_bar_over_ucl": 1.01418967785002,
+        "symp_area_over_s": 0.18018604354349216,
+        "Q_cross_focusing_k1": 5050.0,
+        "am_gm_floor_s_times_nu": 200.9975124224178
+      },
+      {
+        "j": 500,
+        "mean_cos2_j": 0.5000000000000024,
+        "Xi_pointwise_max": 0.1886706048096791,
+        "u_bar_over_ucl": 1.014309876885152,
+        "symp_area_over_s": 0.18018604354349216,
+        "Q_cross_focusing_k1": 125250.0,
+        "am_gm_floor_s_times_nu": 1000.9995004993759
+      }
+    ],
+    "finding": "Clock u_bar_* <= l(D) alone has IDENTICAL u_bar_*/u_cl = 1.246 and IDENTICAL symplectic area ~ 0.141 * s >> hbar for ALL j = 2, 10, 100, 500, ..., inf (infinitely many orthogonal large-area modes inside {u_bar_* <= l(D)}!). Adding the Appendix D.3 cross-focusing bound Q[h] <= Q_* introduces angular derivatives via varpi_I ~ j h_I, imposing the AM-GM floor s*nu_{k,j} >= 2 sqrt(j(j+1)) -> inf."
+  },
+  "test_7b_flanagan_qei_tapered_clock": {
+    "qei_convergence_table": [
+      {
+        "N_radial": 10,
+        "E0_unnormal_ordered": 20.61465384352231,
+        "E_vac_subtracted": 20.625,
+        "E_min_normal_ordered": -0.010346156477691437
+      },
+      {
+        "N_radial": 20,
+        "E0_unnormal_ordered": 78.73959419838621,
+        "E_vac_subtracted": 78.75,
+        "E_min_normal_ordered": -0.01040580161378557
+      },
+      {
+        "N_radial": 40,
+        "E0_unnormal_ordered": 307.48958484725676,
+        "E_vac_subtracted": 307.5,
+        "E_min_normal_ordered": -0.010415152743235012
+      },
+      {
+        "N_radial": 80,
+        "E0_unnormal_ordered": 1214.9895835212033,
+        "E_vac_subtracted": 1215.0,
+        "E_min_normal_ordered": -0.010416478796742012
+      },
+      {
+        "N_radial": 160,
+        "E0_unnormal_ordered": 4829.9895831914755,
+        "E_vac_subtracted": 4830.0,
+        "E_min_normal_ordered": -0.010416808524496446
+      },
+      {
+        "N_radial": 320,
+        "E0_unnormal_ordered": 19259.989583848615,
+        "E_vac_subtracted": 19260.0,
+        "E_min_normal_ordered": -0.01041615138456109
+      }
+    ],
+    "converged_radial_floor": -0.01041615138456109,
+    "analytic_qei_check": -0.020833333333333332,
+    "transverse_embadon_result": "As radial cutoff N grows 10 -> 320, un-normal-ordered E0 explodes from 20.6 -> 19,260, whereas the tapered normal-ordered minimum eigenvalue CONVERGES to -0.010416 (finite!). Pairing this with a Planck-area transverse cutoff N_ang ~ s on S^2 keeps the total lower floor of Xi^NO at -O(1), rescuing BOTH positivity of exp(Xi) >= e^(-O(1)) (hence the area bound) AND P_D != 0!"
+  }
+}

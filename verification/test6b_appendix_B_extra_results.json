@@ -1,0 +1,26 @@
+{
+  "b7_divergence": {
+    "status": "PASS",
+    "eq": "B.7",
+    "remaining": "2*Lam - Rq - df**2/2 + 2*w**2",
+    "paper_B7": "2*Lam - Rq - df**2/2 + 2*w**2",
+    "residual": "0"
+  },
+  "b8f_inaffinity": {
+    "status": "PASS",
+    "eq": "B.8f",
+    "residual_on_null_surface": "0"
+  },
+  "b4a_and_b5c": {
+    "eq_B4a": {
+      "status": "PASS",
+      "lhs_minus_rhs_over_r2_plus_2Rry": "0",
+      "lhs_minus_rhs_over_r2_minus_2Rry": "2*r**2*exp(sh(r, y))*Derivative(V(r, y), r)*Derivative(sh(r, y), r)/N(r, y) + 2*r**2*exp(sh(r, y))*Derivative(V(r, y), (r, 2))/N(r, y) - 2*r**2*exp(sh(r, y))*Derivative(N(r, y), r)*Derivative(V(r, y), r)/N(r, y)**2 + 8*r*exp(sh(r, y))*Derivative(V(r, y), r)/N(r, y) + 2*Derivative(sh(r, y), r)*Derivative(sh(r, y), y) - 2*Derivative(sh(r, y), r, y) + 2*Derivative(N(r, y), r, y)/N(r, y) - 2*Derivative(N(r, y), r)*Derivative(N(r, y), y)/N(r, y)**2 - 4*Derivative(N(r, y), y)/(r*N(r, y))"
+    },
+    "eq_B5c": {
+      "status": "PASS",
+      "diff_area_coord_minus_N_Rln_halfqR": "0",
+      "diff_area_coord_plus_N_Rln_halfqR": "-3*r**2*rhoS(t)**2*exp(sh(t, r))*Derivative(V(t, r), r)**2/(2*N(t, r)) + F(t, r)*Derivative(sh(t, r), r)**2/(2*N(t, r)) - Derivative(sh(t, r), r)*Derivative(sh(t, r), t) + Derivative(F(t, r), (r, 2))/N(t, r) - 2*Derivative(N(t, r), r, t)/N(t, r) - Derivative(F(t, r), r)*Derivative(N(t, r), r)/N(t, r)**2 + 2*Derivative(N(t, r), r)*Derivative(N(t, r), t)/N(t, r)**2 + 4*Derivative(rhoS(t), t)/(r*rhoS(t)) - 2*F(t, r)/(r**2*N(t, r))"
+    }
+  }
+}

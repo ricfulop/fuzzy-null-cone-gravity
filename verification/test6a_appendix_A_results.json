@@ -1,0 +1,55 @@
+{
+  "a1_smooth_null_symplectic": {
+    "status": "PASS",
+    "eqs_checked": [
+      "3.39",
+      "3.42a",
+      "3.42b",
+      "3.42c",
+      "3.42d"
+    ],
+    "alpha_coeff": "1/4 exact",
+    "J_coeff": "-2 K(y) delta J with J = (1/16) int_0^1 v(1-v^2)(d_v qbar)^2 dv exact",
+    "ibp_residual": "0"
+  },
+  "a2_linearized_raychaudhuri": {
+    "status": "PASS",
+    "eqs_checked": [
+      "A.23d",
+      "A.24",
+      "A.25",
+      "A.26",
+      "A.27"
+    ],
+    "L_h1": "0",
+    "L_h2": "0",
+    "G_jump_at_v_eq_w": "1"
+  },
+  "a3_V_coord_and_Dz_reduction": {
+    "status": "PASS",
+    "eqs_checked": [
+      "A.30b",
+      "A.31",
+      "A.33c",
+      "A.37a-d",
+      "A.38",
+      "A.40",
+      "A.41"
+    ],
+    "res_A31": "0",
+    "res_G_ode": "0",
+    "jump_G": "1",
+    "res_A41_eq1_ydd": "0",
+    "res_A41_eq2_w": "0",
+    "res_A41_eq3_bdd": "0"
+  },
+  "a4_second_class_kernel": {
+    "status": "PASS",
+    "eqs_checked": [
+      "A.34",
+      "A.35",
+      "A.36"
+    ],
+    "Delta_C_times_K": "+delta(v - w) exact sign"
+  }
+}

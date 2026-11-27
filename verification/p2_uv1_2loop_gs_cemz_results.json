@@ -1,0 +1,180 @@
+{
+  "part_a_2loop_finiteness": {
+    "fuzzy_only_2loop_divergence_scan": [
+      {
+        "L_par": 2.0,
+        "I_1loop_W2": 1.3981288187668934,
+        "I_1loop_limit_A_inf": 1.6094379124341003,
+        "I_2loop_derivative_sunset": 1.4116749864898286,
+        "I_2loop_over_Lpar_sq": 0.35291874662245715
+      },
+      {
+        "L_par": 4.0,
+        "I_1loop_W2": 1.549718677732478,
+        "I_1loop_limit_A_inf": 1.6094379124341003,
+        "I_2loop_derivative_sunset": 18.254947321025156,
+        "I_2loop_over_Lpar_sq": 1.1409342075640723
+      },
+      {
+        "L_par": 8.0,
+        "I_1loop_W2": 1.5939935900066269,
+        "I_1loop_limit_A_inf": 1.6094379124341003,
+        "I_2loop_derivative_sunset": 145.84696871172628,
+        "I_2loop_over_Lpar_sq": 2.278858886120723
+      },
+      {
+        "L_par": 16.0,
+        "I_1loop_W2": 1.6055430681725593,
+        "I_1loop_limit_A_inf": 1.6094379124341003,
+        "I_2loop_derivative_sunset": 874.137663815689,
+        "I_2loop_over_Lpar_sq": 3.4146002492800354
+      },
+      {
+        "L_par": 32.0,
+        "I_1loop_W2": 1.6084620645889123,
+        "I_1loop_limit_A_inf": 1.6094379124341003,
+        "I_2loop_derivative_sunset": 4365.048400158802,
+        "I_2loop_over_Lpar_sq": 4.26274257828008
+      }
+    ],
+    "fitted_2loop_Lpar_divergence_exponent": 2.62881041041652,
+    "cross_focusing_all_loop_rescue": [
+      {
+        "B_cross_focusing": 4.0,
+        "max_j_allowed": 2,
+        "max_k_allowed": 3,
+        "total_allowed_modes_at_Nrad_inf": 30,
+        "exact_finite_2loop_sunset_sum": 251.17984250215656
+      },
+      {
+        "B_cross_focusing": 6.0,
+        "max_j_allowed": 4,
+        "max_k_allowed": 5,
+        "total_allowed_modes_at_Nrad_inf": 138,
+        "exact_finite_2loop_sunset_sum": 8613.236943807618
+      },
+      {
+        "B_cross_focusing": 8.0,
+        "max_j_allowed": 5,
+        "max_k_allowed": 7,
+        "total_allowed_modes_at_Nrad_inf": 324,
+        "exact_finite_2loop_sunset_sum": 67989.28468937834
+      },
+      {
+        "B_cross_focusing": 10.0,
+        "max_j_allowed": 6,
+        "max_k_allowed": 9,
+        "total_allowed_modes_at_Nrad_inf": 662,
+        "exact_finite_2loop_sunset_sum": 372883.3303207391
+      }
+    ]
+  },
+  "part_b_goroff_sagnotti_W3": {
+    "K_exact": "48*M**2/r**6",
+    "W3_exact": "-96*M**3/r**9",
+    "int_K_over_32pi2_Euler": "2",
+    "int_W3_exact_in_M": "-8*pi**2/M**2",
+    "int_W3_exact_in_s": "-32*pi**3/(lP**2*s)",
+    "GS_2loop_coeff_multiplying_log_rH_over_s": "209/720",
+    "GS_2loop_coeff_multiplying_log_s_over_s": "209/1440",
+    "numerical_comparison_vs_s": [
+      {
+        "s": 100.0,
+        "Delta_S_2loop_GS": 0.00654739286735848,
+        "fuzzy_1_over_N2_scale": 0.010986122886681098,
+        "ratio_GS_over_fuzzy": 0.5959693820006454
+      },
+      {
+        "s": 10000.0,
+        "Delta_S_2loop_GS": 0.00013231285706743974,
+        "fuzzy_1_over_N2_scale": 0.00010986122886681098,
+        "ratio_GS_over_fuzzy": 1.204363526898536
+      },
+      {
+        "s": 1000000.0,
+        "Delta_S_2loop_GS": 1.991517854612947e-06,
+        "fuzzy_1_over_N2_scale": 1.0986122886681098e-06,
+        "ratio_GS_over_fuzzy": 1.812757671796427
+      },
+      {
+        "s": 10000000000.0,
+        "Delta_S_2loop_GS": 3.328296422490046e-10,
+        "fuzzy_1_over_N2_scale": 1.0986122886681097e-10,
+        "ratio_GS_over_fuzzy": 3.029545961592209
+      }
+    ]
+  },
+  "part_c_cemz_causality_bound": {
+    "c_FS_from_Module_A": 1.0,
+    "s_min_CEMZ_upper_bound_b_le_lP": 3.141592653589793,
+    "max_allowed_d0_modelA": 22,
+    "max_allowed_d0_modelB": 23,
+    "GS_2loop_c4": 2.9101430816365916e-06,
+    "GS_2loop_b_adv_over_lP": 0.041302713571605726,
+    "candidate_embadon_models": [
+      {
+        "d0": 2,
+        "s_min_modelA": 1.0986122886681098,
+        "b_adv_modelA_over_lP": 0.5913536611589209,
+        "cemz_safe_no_subPlanck_HS_modelA": true,
+        "s_min_modelB": 0.6931471805599453,
+        "b_adv_modelB_over_lP": 0.46971863934982566,
+        "cemz_safe_no_subPlanck_HS_modelB": true
+      },
+      {
+        "d0": 3,
+        "s_min_modelA": 1.3862943611198906,
+        "b_adv_modelA_over_lP": 0.6642824702679601,
+        "cemz_safe_no_subPlanck_HS_modelA": true,
+        "s_min_modelB": 1.0986122886681098,
+        "b_adv_modelB_over_lP": 0.5913536611589209,
+        "cemz_safe_no_subPlanck_HS_modelB": true
+      },
+      {
+        "d0": 4,
+        "s_min_modelA": 1.6094379124341003,
+        "b_adv_modelA_over_lP": 0.715751352584664,
+        "cemz_safe_no_subPlanck_HS_modelA": true,
+        "s_min_modelB": 1.3862943611198906,
+        "b_adv_modelB_over_lP": 0.6642824702679601,
+        "cemz_safe_no_subPlanck_HS_modelB": true
+      },
+      {
+        "d0": 8,
+        "s_min_modelA": 2.1972245773362196,
+        "b_adv_modelA_over_lP": 0.8363003677699297,
+        "cemz_safe_no_subPlanck_HS_modelA": true,
+        "s_min_modelB": 2.0794415416798357,
+        "b_adv_modelB_over_lP": 0.8135765486160198,
+        "cemz_safe_no_subPlanck_HS_modelB": true
+      },
+      {
+        "d0": 20,
+        "s_min_modelA": 3.044522437723423,
+        "b_adv_modelA_over_lP": 0.9844295762703088,
+        "cemz_safe_no_subPlanck_HS_modelA": true,
+        "s_min_modelB": 2.995732273553991,
+        "b_adv_modelB_over_lP": 0.9765097024771845,
+        "cemz_safe_no_subPlanck_HS_modelB": true
+      },
+      {
+        "d0": 100,
+        "s_min_modelA": 4.61512051684126,
+        "b_adv_modelA_over_lP": 1.2120389789277484,
+        "cemz_safe_no_subPlanck_HS_modelA": false,
+        "s_min_modelB": 4.605170185988092,
+        "b_adv_modelB_over_lP": 1.2107316786798203,
+        "cemz_safe_no_subPlanck_HS_modelB": false
+      },
+      {
+        "d0": 1000,
+        "s_min_modelA": 6.90875477931522,
+        "b_adv_modelA_over_lP": 1.4829446879353079,
+        "cemz_safe_no_subPlanck_HS_modelA": false,
+        "s_min_modelB": 6.907755278982137,
+        "b_adv_modelB_over_lP": 1.4828374140944391,
+        "cemz_safe_no_subPlanck_HS_modelB": false
+      }
+    ]
+  }
+}

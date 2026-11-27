@@ -1,0 +1,80 @@
+{
+  "test_4a_microscopic_vs_bh": {
+    "stefan_boltzmann_coeff": 2.8012128390311,
+    "scaling_table": [
+      {
+        "s_BH": 100.0,
+        "log_d_graviton_gas": 88.5821278224489,
+        "ratio_over_S_BH": 0.885821278224489,
+        "missing_entropy_fraction": 0.11417872177551103
+      },
+      {
+        "s_BH": 10000.0,
+        "log_d_graviton_gas": 2801.2128390311,
+        "ratio_over_S_BH": 0.28012128390311,
+        "missing_entropy_fraction": 0.71987871609689
+      },
+      {
+        "s_BH": 1000000.0,
+        "log_d_graviton_gas": 88582.1278224489,
+        "ratio_over_S_BH": 0.08858212782244891,
+        "missing_entropy_fraction": 0.9114178721775511
+      },
+      {
+        "s_BH": 100000000.0,
+        "log_d_graviton_gas": 2801212.8390311003,
+        "ratio_over_S_BH": 0.028012128390311003,
+        "missing_entropy_fraction": 0.971987871609689
+      },
+      {
+        "s_BH": 10000000000.0,
+        "log_d_graviton_gas": 88582127.8224489,
+        "ratio_over_S_BH": 0.00885821278224489,
+        "missing_entropy_fraction": 0.9911417872177551
+      },
+      {
+        "s_BH": 1000000000000.0,
+        "log_d_graviton_gas": 2801212839.0311003,
+        "ratio_over_S_BH": 0.0028012128390311,
+        "missing_entropy_fraction": 0.9971987871609689
+      },
+      {
+        "s_BH": 1e+16,
+        "log_d_graviton_gas": 2801212839031.1,
+        "ratio_over_S_BH": 0.00028012128390311,
+        "missing_entropy_fraction": 0.9997198787160969
+      },
+      {
+        "s_BH": 1e+20,
+        "log_d_graviton_gas": 2801212839031100.0,
+        "ratio_over_S_BH": 2.8012128390311e-05,
+        "missing_entropy_fraction": 0.9999719878716097
+      }
+    ],
+    "conclusion": "Perturbative graviton states allowed by focusing (Appendix D.3, eq. D.46c) scale as log d(s) ~ 2.80 (s Q_*)^{3/4} (standard 3+1D 't Hooft graviton gas), which is an exponentially vanishing fraction of e^s at large s. The Bekenstein-Hawking factor e^s in eq. (D.48) is imported from the classical Euclidean disk Gauss-Bonnet action, not counted in H_D."
+  },
+  "test_4b_ensemble_spread": {
+    "alpha": "257/90",
+    "q_exact": "257/302",
+    "q_float": 0.8509933774834437,
+    "mean_area_over_s_star": "257/347",
+    "mean_area_float": 0.7406340057636888,
+    "area_fractional_std": 0.26855622854312167,
+    "radius_fractional_std": 0.15068888337637223,
+    "jensen_ratio_sqrtA_over_sqrt_meanA": 0.9888361979853936,
+    "fn23_consistency": true,
+    "bookkeeping_check": "53/45 * 2 = 106/45 (imported BBM heat kernel) -> +1/2 (measure 5.66) = 257/90 -> -1/2 (change to M in 5.69) = 106/45"
+  },
+  "test_4c_squashed_cone": {
+    "surf_GB_proxy": "424*pi*R_q/45",
+    "surf_true_BBM": "2*pi*(212*R_q + 63*Theta_l*Theta_n)/45",
+    "diff_true_minus_GB": "14*pi*Theta_l*Theta_n/5",
+    "diff_on_MTS_Theta_l_zero": "0",
+    "value_on_MTS": "424*pi*R_q/45",
+    "minkowski_sphere_GB_integral": "3392*pi**2/45",
+    "minkowski_sphere_BBM_integral": "2384*pi**2/45",
+    "minkowski_sphere_mismatch": "-112*pi**2/5",
+    "schwarzschild_interior_kretschmann_vs_eps": "-16*pi + 16*pi/eps**3",
+    "nuanced_verdict": "On a marginally trapped surface (Theta_l = 0), k^2 = -2 Theta_l Theta_n vanishes, so the BBM heat kernel and Gauss-Bonnet proxy agree (giving 424*pi*R_q/45) even with nonzero shear. HOWEVER: (1) on a generic causal diamond corner (e.g. Minkowski sphere), BBM and E_4 disagree by -56*pi^2/5; (2) on the conical manifold M_n, R_ab != 0 at S is off-shell where BBM's R_ab^2 coefficient (-361/90) is gauge-dependent; (3) the bulk interior Kretschmann integral diverges as 16*pi*(eps^{-3} - 1) near the cap; and (4) the log(s_b^{1/2}) factor imports the perturbative UV cutoff Lambda_UV ~ 1/l_P rather than deriving it from the null-cone quantization."
+  }
+}
