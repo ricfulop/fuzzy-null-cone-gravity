@@ -1,0 +1,44 @@
+\section{Uniform Lower Bound for the Specified Quadratic Clock}\label{app:clock_proof}
+
+This appendix proves Eq.~\eqref{eq:clock_floor} for the actual oscillator matrices used in the code. Let $\nu_k=\sqrt{k^2+\mu^2}$, with radial indices $k,l\ge1$. The matrix entries are
+\begin{align}
+(M_p)_{kl}&=2\sqrt{\nu_k\nu_l}\,(c_{|k-l|}+c_{k+l}),\nonumber\\
+(M_q)_{kl}&=\frac{2kl}{\sqrt{\nu_k\nu_l}}(c_{|k-l|}-c_{k+l})
++\frac{2\mu^2}{\sqrt{\nu_k\nu_l}}(c_{|k-l|}+c_{k+l}).
+\end{align}
+They are positive Gram matrices of sine and cosine functions weighted by $g^2\ge0$. For every finite radial cutoff, the oscillator ground-energy formula and the Powers--St\o rmer inequality~\cite{PowersStormer1970} give
+\begin{align}
+\inf H_\mu^{\mathrm{NO}}
+&=\tfrac12\|\sqrt{M_q}\sqrt{M_p}\|_1-\tfrac14\Tr(M_q+M_p)\nonumber\\
+&\ge-\tfrac14\|M_q-M_p\|_1=-\tfrac12\|K_\mu\|_1.
+\end{align}
+Indeed $\|\sqrt P-\sqrt Q\|_2^2\le\|P-Q\|_1$ and $\|\sqrt P\sqrt Q\|_1\ge\Tr(\sqrt P\sqrt Q)$ for positive $P,Q$. Singular cases follow by adding $\varepsilon\mathbf1$ and taking the finite-dimensional limit.
+
+Put $D=\nu_k\nu_l$. Rationalizing the difference of frequencies gives
+\begin{equation}\label{eq:stable_pair_kernel}
+(K_\mu)_{kl}=-\frac{\mu^2(k-l)^2c_{|k-l|}}{\sqrt D(D+kl+\mu^2)}
+-\frac{D+kl-\mu^2}{\sqrt D}\,c_{k+l}.
+\end{equation}
+For $l=k+d$, $d\ge1$, the coefficient of $c_d$ is bounded by
+$\mu^2d^2/[2(k^2+\mu^2)^{3/2}]$.
+The decreasing-function integral comparison gives
+$\sum_{k\ge1}\mu^2/(k^2+\mu^2)^{3/2}\le1$ for $\mu>0$; the difference term vanishes at $\mu=0$. Including both triangular halves of the matrix bounds their contribution by $\sum_{d\ge1}d^2|c_d|$.
+
+For the sum term, $0\le(D+kl-\mu^2)/\sqrt D\le k+l$. The upper bound follows from
+\begin{align}
+&(D+kl-\mu^2)^2-(k+l)^2D\nonumber\\
+&\quad=D[2D-k^2-l^2-2\mu^2]-\mu^2(k+l)^2\le0,
+\end{align}
+using the arithmetic--geometric mean inequality. There are $n-1$ positive pairs $k+l=n$, so its contribution is at most $\sum_{n\ge2}n(n-1)|c_n|$. Bounding trace norm by the sum of absolute entries yields
+\begin{equation}
+\|K_\mu\|_1\le\sum_{n\ge1}(2n^2-n)|c_n|=2K_g.
+\end{equation}
+Four integrations by parts give $|c_n|\le C_4/n^4$, where $C_4=\|(g^2)^{(4)}\|_{L^1(0,1)}/(2\pi)^4$. Hence the series converges uniformly in mass and radial cutoff. A finite Fourier sum through $n_0$ can be supplemented with the analytic tail
+$C_4[2\zeta(2,n_0+1)-\zeta(3,n_0+1)]$ before division by two. Numerical quadrature of $C_4$ and the finite coefficients is not a certified interval evaluation.
+
+The angular estimate in Proposition~\ref{prop:finite_area} follows from
+\begin{equation}
+\frac83-\frac{2[(J+1)^2-4]}{J^2}
+=\frac{2(J-3)^2}{3J^2}\ge0\qquad(J\ge2).
+\end{equation}
+Since $\|K\|_2\le\|K\|_1$, each channel contributes at most $2K_g^2$ to the vacuum variance. Compression can only decrease the norm of $\Xi_s|0\rangle$ because $P_B|0\rangle=|0\rangle$. This proves the uniform second-moment bound stated in the main text without a fourth-moment or exponential-integrability assumption. If the clock restriction is imposed on dynamics as well as the state space, its projector must also be included in the Hamiltonian compression; budget preservation alone does not imply clock-sector preservation.

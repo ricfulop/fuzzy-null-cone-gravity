@@ -8,16 +8,26 @@ This is a research manuscript and reproducibility archive for a finite-resolutio
 
 - [Single-column reading copy](paper_reading.pdf), built from [paper_reading.tex](paper_reading.tex).
 - [Two-column technical copy](paper.pdf), built from [paper.tex](paper.tex).
-- Both layouts use the same scientific source. The reading copy uses REVTeX in one-column mode; it is not an official Science submission template.
+- Both layouts use the same scientific source, including the files under `sections/`. The reading copy uses REVTeX in one-column mode; it is not an official Science submission template.
 - [Targeted B200 follow-up report](reports/modal-b200-followup-report.md) and [archived follow-up analysis](verification/modal_hmc_followup_analysis.json).
 
 The review incorporates the Open Research follow-up at `d288b95712c735c2ef1c3df293d1c87abef76849` and preserves its simulation driver, analysis, and raw result files. It retains the corrections to pair-state counting, benchmark precision, and numerical scope, and replaces the figure presentation with a self-contained narrative and regenerated vector artwork.
+
+## Implemented action and clock repairs
+
+The current draft includes citation PR #5 and replaces the failed Appendix A action with an explicit Einstein--Hilbert angular Galerkin **bulk** construction. All metric components are varied before null gauge fixing; exact spherical and quadratic checks and a finite-amplitude nonspherical check are supplied. This reconstruction uses pointwise products of harmonic symbols and is distinct from the archived fuzzy-product simulation model. Finite-rank constraint closure, null-boundary quantization, and equivalence of the models remain open.
+
+The clock now has a proved uniform oscillator lower bound and uses the actual total-occupation compression before exponentiation. With the stated area, rank, and classical-clock assumptions, a new proposition bounds the number of area sectors. Old unrestricted-occupation exponential estimates and the unsupported scalar-QEI attribution are retired. The recomputed vacuum second-moment bound at s=5000 is at least 0.9999989079 for a clock threshold twice its classical value.
+
+- [Repair calculations and provenance](reports/repair-audit-2026-11-27/README.md)
+- [Calculation supplement PDF](reports/repair-audit-2026-11-27/repair-calculations.pdf)
+- Reproduce all seven checks: `python verification/repair_audit_20261127/run_all.py`
 
 ## What the current evidence supports
 
 The total occupation budget makes the specified radiative sector finite; the corner spectrum and budget remain model assumptions. Symbolic identities and known black-hole benchmarks test particular parts of the construction. They do not prove that the finite-state Hamiltonian, full constrained gravitational action, and sampled Euclidean model are equivalent.
 
-With matched measured zero-coupling controls at fixed scalar self-interaction, the strongest tested coupling reduces the matrix model's roughness observable by **47.68–48.02%** across four ranks. A larger lattice at rank 24 gives **47.621%**, a change of **−0.060 ± 0.047 percentage points**. This supports persistence over the tested volume change, not an exact universal percentage or a continuum extrapolation.
+With matched measured zero-coupling controls at fixed scalar self-interaction, the strongest tested coupling reduces the matrix model's traceless-field variance Q2 by **47.68–48.02%** across four ranks. A larger lattice at rank 24 gives **47.621%**, a change of **−0.060 ± 0.047 percentage points**. This supports persistence over the tested volume change, not an exact universal percentage or a continuum extrapolation.
 
 Extended local collective moves improve local-area diagnostics at ranks 32 and 48: rank-normalized split-R-hat is **1.0098** and **1.0021**, respectively. The larger-lattice rank-24 run has well-sampled roughness but poorly mixed local area (**R-hat 1.3268; bulk ESS 20**). The main four-rank comparison still uses archived summaries for the coupled ensembles. The matrix exponential is positive by construction; positivity alone does not demonstrate the absence of spacetime caustics.
 
@@ -38,7 +48,7 @@ In Overleaf, select `paper_reading.tex` or `paper.tex` as the main document. A s
 
 ## Reproduce the manuscript figures
 
-The canonical builder produces all 11 figures as vector PDF, editable SVG, and PNG previews. It reads archived results and evaluates the displayed deterministic formulas in memory; it does not launch GPU jobs or overwrite numerical result files.
+After reproducing the repair calculations above, the canonical builder produces all 11 figures as vector PDF, editable SVG, and PNG previews. It reads archived results and evaluates the displayed deterministic formulas in memory; it does not launch GPU jobs or overwrite numerical result files.
 
 ```bash
 python verification/plot_manuscript_figures.py

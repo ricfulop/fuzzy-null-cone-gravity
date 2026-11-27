@@ -1,0 +1,94 @@
+{
+  "curvature_symbolic_residual": "0",
+  "Schwarzschild_R_residual": "0",
+  "conformal_Ricci_scalar": "-3*(-2*A(theta)*sin(2*theta)*tan(theta)*Derivative(A(theta), theta) + 2*A(theta)*sin(2*theta)*Derivative(A(theta), (theta, 2)) + 4*A(theta)*Derivative(A(theta), theta) - sin(2*theta)*Derivative(A(theta), theta)**2)/(2*r**2*A(theta)**3*sin(2*theta))",
+  "quadratic_coefficient": "9",
+  "cubic_coefficient": "-9*sqrt(5)/7",
+  "nonlinear_checks": [
+    {
+      "epsilon": -0.2,
+      "exact_angular_density": 0.3964875427629394,
+      "direct_Ricci_vs_integrated_density_error": 3.2529534621517087e-14,
+      "Einstein_first_variation_error": 1.687538997430238e-13,
+      "representations": [
+        {
+          "N": 3,
+          "symbol_error": 7.771561172376096e-16,
+          "distinct_fuzzy_product_density": 0.3499622028753061
+        },
+        {
+          "N": 4,
+          "symbol_error": 1.1102230246251565e-15,
+          "distinct_fuzzy_product_density": 0.3749999999999999
+        },
+        {
+          "N": 6,
+          "symbol_error": 4.107825191113079e-15,
+          "distinct_fuzzy_product_density": 0.38870330249546503
+        },
+        {
+          "N": 8,
+          "symbol_error": 1.5543122344752192e-15,
+          "distinct_fuzzy_product_density": 0.3925690201062667
+        }
+      ]
+    },
+    {
+      "epsilon": 0.1,
+      "exact_angular_density": 0.08771299556847703,
+      "direct_Ricci_vs_integrated_density_error": 1.6237011735142914e-14,
+      "Einstein_first_variation_error": 3.530509218307998e-14,
+      "representations": [
+        {
+          "N": 3,
+          "symbol_error": 4.440892098500626e-16,
+          "distinct_fuzzy_product_density": 0.09444036541943701
+        },
+        {
+          "N": 4,
+          "symbol_error": 6.661338147750939e-16,
+          "distinct_fuzzy_product_density": 0.09090909090909097
+        },
+        {
+          "N": 6,
+          "symbol_error": 2.6645352591003757e-15,
+          "distinct_fuzzy_product_density": 0.08898576478974143
+        },
+        {
+          "N": 8,
+          "symbol_error": 1.3322676295501878e-15,
+          "distinct_fuzzy_product_density": 0.08840414892350297
+        }
+      ]
+    },
+    {
+      "epsilon": 0.3,
+      "exact_angular_density": 0.7747881766405627,
+      "direct_Ricci_vs_integrated_density_error": 4.8627768478581856e-14,
+      "Einstein_first_variation_error": 7.460698725481052e-14,
+      "representations": [
+        {
+          "N": 3,
+          "symbol_error": 6.661338147750939e-16,
+          "distinct_fuzzy_product_density": 1.0375695141954293
+        },
+        {
+          "N": 4,
+          "symbol_error": 1.7763568394002505e-15,
+          "distinct_fuzzy_product_density": 0.8901098901098898
+        },
+        {
+          "N": 6,
+          "symbol_error": 7.105427357601002e-15,
+          "distinct_fuzzy_product_density": 0.8171506648966258
+        },
+        {
+          "N": 8,
+          "symbol_error": 2.886579864025407e-15,
+          "distinct_fuzzy_product_density": 0.7973935608821235
+        }
+      ]
+    }
+  ],
+  "scope": "Full angular Galerkin EH action is defined by pullback; these tests exercise one nonlinear family. No closed finite-N constraint algebra, null-boundary gluing, quantization, or HMC equivalence is proved."
+}
