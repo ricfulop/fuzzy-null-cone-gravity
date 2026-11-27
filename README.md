@@ -2,7 +2,7 @@
 
 **Author:** Ric Fulop ([ricfulop@mit.edu](mailto:ricfulop@mit.edu)), Center for Bits and Atoms, Massachusetts Institute of Technology
 
-This repository contains the complete APS *Physical Review D* manuscript (`paper.tex` / `paper.pdf`), all **50 kernel-verified Lean 4.36.0 theorems** (zero warnings, zero `sorryAx`), all **29 self-contained Python symbolic, numerical, Z3, and GPU Monte Carlo scripts** with **32 exact JSON datasets**, **8 figure generators**, **6 publication vector PDF figures**, and **7 technical reports** auditing and regularizing Venkatesa Chandrasekaran's algebraic null-cone quantum gravity framework ([arXiv:2611.34924](https://arxiv.org/abs/2611.34924)).
+This repository contains the manuscript source and compiled PDF, verification scripts and archived data, Lean proof modules, and editable figure artwork. The reviewed revision adds explanatory figures, enforces the two-particle budget in the pair-creation diagnostic, and reports the B200 results with observable-specific sampling qualifications. [Revision details and figure specifications](reports/manuscript-review-2026-11-27.md).
 
 ---
 
@@ -13,15 +13,15 @@ This repository contains the complete APS *Physical Review D* manuscript (`paper
 3. **Fuzzy-Sphere Null-Cone Regularization:**
    - **Fuzzy Monopole Bundles and Matrix Action $I_{\mathrm{FSG}}^{(N)}$:** Rectangular $SU(2)$-equivariant bundles $\mathcal{B}_{s_w}^{(N)} = \mathrm{Hom}(V_{(N-1-s_w)/2}, V_{(N-1+s_w)/2})$ of dimension $N^2 - s_w^2$, explicit $SU(2)$-equivariant embedding $\iota_{N \to M}$, closed Wigner-$6j$ parity-symmetrized cubic vertex $\mathcal{V}_3^{(N)}[F; Z_2, Z_3]$ (verified to $3.96 \times 10^{-14}$), $O(1/N^2)$ convergence to 4D GR, Regge–Wheeler/Zerilli isospectrality, sub-Planckian $SO(3,1)$ boost closure, and Ermakov–Pinney caustic regularization.
    - **Smoothly Smeared Massive-QEI and Exponential Clock:** $C^\infty_c$ bump smearing bounded uniformly across all 4D spin-2 harmonics via Fewster–Eveson massive quantum energy inequalities, monotone spectral-projector equivalence, and exact zero-inversion Balian–Brézin Fredholm determinants ($\lambda_{\mathrm{crit}}^{\mathrm{phys}} \in [17.0, 22.3] \gg 2$ inside $B(s)=s Q_*$).
-   - **Area-Scaled Total Occupation Budget and Projected Dynamics:** $\sum_{k,j,m,p} n_{k,j,m,p}(k + t_j^2/k) \le B(s) = s Q_*$ with projected Hamiltonian $H_{\mathrm{phys}} = P_{B(s)} H_{\mathrm{FSG}} P_{B(s)}$ (zero sector leakage, $O(1/N^2)$ interacting amplitude and 1-loop self-energy convergence), yielding finite fixed-area sectors and all-loop finiteness while preserving the macroscopic $s^{-3/2}$ and $-\ln s/(s_{\min} s^2)$ pair-creation asymptotics via an $O(s^{-2})$ tail bound.
+   - **Area-Scaled Total Occupation Budget and Projected Dynamics:** $\sum_{k,j,m,p} n_{k,j,m,p}(k + t_j^2/k) \le B(s) = s Q_*$ with projected Hamiltonian $H_{\mathrm{phys}} = P_{B(s)} H_{\mathrm{FSG}} P_{B(s)}$ (zero sector leakage, $O(1/N^2)$ interacting amplitude and 1-loop self-energy convergence), yielding finite fixed-area sectors and finite projected perturbative sums while preserving the macroscopic $s^{-3/2}$ and $-\ln s/(s_{\min} s^2)$ pair-creation asymptotics via an $O(s^{-2})$ tail bound.
 4. **Universal 4D One-Loop, Two-Loop, and Semiclassical Benchmarks:**
    - One-loop logarithmic corrections: Sen Schwarzschild mixed ($+\frac{106}{45}$, $0.09\%$) and singlet ($+\frac{77}{90}$, $0.26\%$), Benedetti–Casini flat-space graviton entanglement entropy ($-\frac{61}{45}$, $0.02\%$), and Anninos–Denef–Law–Sun de Sitter $S^4$ ($-\frac{571}{45}$, exact).
-   - Two-loop Schwarzschild Goroff–Sagnotti shift $\frac{209}{1440}\frac{\ln(s/s_{\min})}{s}$, sub-Planckian pixel-size ceiling $s_{\min} \le \pi$ ($2 \le d_0 \le 22$), dynamical-rank $\mathrm{AdS}_4$ Hawking–Page transition, 2,048-state three-diamond corner fusion and generalized entropy additivity ($8.88 \times 10^{-16}$), and finite-dimensional realizations of Secs. 4.4, 5.4, and 6 (including Don Page's pure-graviton Hawking luminosity $\alpha_{\mathrm{grav}} = 3.8367 \times 10^{-6}$, within $0.017\%$).
-5. **Nonperturbative Matrix-Gravity Hybrid Monte Carlo (NVIDIA B200):**
-   - Exact $T^2 \times S^2_N$ Fourier-accelerated HMC (`verification/modal_fsg_hmc.py`) with exact collective monopole-shear scale updates across 28 converged dual IR/UV ensembles (all $\hat{R}(\phi_0) \le 1.005$, exact Schwinger–Dyson Ward identities satisfied to $0.05\%$ for $Z$ and $0.16\%$ for $\Phi$), plus 4 flat-measure collapse benchmarks.
-   - **Macroscopic IR limit ($g_N = g_P/\sqrt{N}$, $N=8\dots 48$ at $\mu^2 \in \{0.5, 0.05\}$):** Up to $N=48$ ($s=2531$, $1.33 \times 10^6$ coupled degrees of freedom), all 46 spin-2 harmonics remain UV-finite and massless ($Z_{\mathrm{wf}}=1.0008$, $m_{\mathrm{grav}}^2 = +0.077$), the quantum area spectrum stays strictly positive and concentrates smoothly onto $\lambda=1$ ($\lambda \in [0.730, 1.390]$), and the intrinsic specific heat remains bounded ($C_V^{\mathrm{int}}/N_{\mathrm{dof}} \in [0.44, 0.51]$).
-   - **Fixed-$g_N$ strong-coupling UV scan ($g_N \in \{0.5, 1.0, 1.5, 2.0\}$, $N=8\dots 32$):** Graviton backreaction suppresses traceless horizon anisotropy $Q_2/Q_{2,\mathrm{free}}$ by $-47.8\%$ at $g_N=2.0$ independently of $N$ ($0.5190, 0.5221, 0.5231, 0.5222$), with Gaussian Binder cumulant $U_4(Q_2)=0.02\pm 0.03$ and persistent $+2.5\%$ graviton wave-function dressing ($Z_{\mathrm{wf}}=1.0246$).
-   - **Functional measure phase transition ($g=2.5$, $N=8\dots 32$):** Omitting the invariant DeWitt–Fujikawa spin-2 measure triggers a $180\times$ radiative horizon collapse ($\langle\widehat{\rho}^2\rangle \approx 0.006$, $C_V/N_{\mathrm{dof}} \propto N^2$ up to $366.3$), whereas including it stabilizes the smooth geometric phase ($\langle\widehat{\rho}^2\rangle \approx 1.0$, $C_V^{\mathrm{int}}/N_{\mathrm{dof}} \approx 0.46$).
+   - Two-loop Schwarzschild Goroff–Sagnotti shift $\frac{209}{1440}\frac{\ln(s/s_{\min})}{s}$, sub-Planckian pixel-size ceiling $s_{\min} \le \pi$ ($2 \le d_0 \le 22$), dynamical-rank $\mathrm{AdS}_4$ Hawking–Page transition, 2,048-state three-diamond corner fusion and generalized entropy additivity ($8.88 \times 10^{-16}$), and finite-dimensional realizations of Secs. 4.4, 5.4, and 6 (including Don Page's pure-graviton Hawking luminosity $\alpha_{\mathrm{grav}} = 3.8367 \times 10^{-6}$, consistent with Page’s printed precision).
+5. **Matrix simulations on NVIDIA B200 GPUs**
+   - The archived production set contains 28 ensembles with 4–8 independent chains. At rank 48, each chain has 331,392 coupled real variables. Four independent copies account for 1,325,568 variables in parallel.
+   - Increasing the microscopic coupling from 0.5 to 2 reduces measured roughness by 40.45–43.47% across four ranks, at the same lattice and scalar self-interaction within each comparison. The analytic Gaussian reference gives a 47.69–48.10% reduction at coupling 2. Matched zero-coupling controls at the production stiffness remain pending in this revision.
+   - The archived ordinary R-hat for roughness at coupling 2 is 1.000–1.0035. Local mean area has R-hat as high as 1.416. Its sampled distribution requires further mixing checks. Positive definiteness follows from the exponential parameterization.
+   - The largest scaled-coupling propagator approaches its free value. A massless continuum limit requires fit errors and a controlled extrapolation in rank and volume.
 
 ---
 
@@ -30,11 +30,11 @@ This repository contains the complete APS *Physical Review D* manuscript (`paper
 ```text
 .
 ├── paper.tex              # APS Physical Review D (revtex4-2) manuscript (Overleaf-ready)
-├── paper.pdf              # Compiled 17-page PDF (zero errors, zero overfull boxes)
-├── figs/                  # Six publication vector PDF figures (Fig. 1 – Fig. 6)
+├── paper.pdf              # Compiled reviewed manuscript
+├── figs/                  # Science-style vector PDF and editable SVG artwork
 ├── lean4/                 # 6 standalone Lean 4.36.0 modules (50 verified theorems, 0 sorryAx)
-├── verification/          # 29 verification & GPU HMC scripts, 8 plotters, 32 JSON datasets
-└── reports/               # 7 technical reports documenting every stage of the study
+├── verification/          # Verification, plotting scripts, and archived numerical data
+└── reports/               # Technical reports and revision notes
 ```
 
 ---
@@ -88,6 +88,23 @@ python verification/plot_modal_hmc.py
 ```
 
 ---
+
+## Rebuilding the reviewed figures
+
+These commands use completed archived runs and local CPU calculations.
+
+```bash
+python verification/v2_test1_matrix_vertex_and_projected_dynamics.py
+python verification/plot_path2_frontier.py
+python verification/plot_path2_breakthrough.py
+python verification/plot_path2_uv_frontier.py
+python verification/plot_original_problem_solved.py
+python verification/plot_v2_unification_and_clock.py
+python verification/plot_modal_hmc.py
+python verification/plot_review_figures.py
+```
+
+The ten manuscript figures are exported at 18.4 cm width as PDF and SVG. Figure titles are in captions, panel letters are uppercase, and ordinary lettering is at least 7 pt at the artwork’s native size. The supplied LaTeX retains the existing REVTeX manuscript format.
 
 ## Compiling the Paper (Local TeX or Overleaf)
 

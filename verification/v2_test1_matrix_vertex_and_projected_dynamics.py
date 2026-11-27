@@ -10,7 +10,7 @@ V2 Reviewer-Response Verification 1:
       Built Directly from V_3^{(N)}, Exact Sector Preservation ||(1 - P_B) U_t P_B|| = 0,
       Interacting 1 -> 2 Graviton Splitting & 1-Loop Self-Energy Convergence O(1/N^2),
       and Reconciled Eq. (7) Pair-Creation Amplitude M_{B(s)}^{P2}(s) Under the EXACT SAME
-      Unified Cutoff omega_{k,j} <= B(s) = s Q_* (Confirming Reviewer's O(s^{-2}) Tail Bound!).
+      Pair-state cutoff 2*omega_{k,j} <= B(s) = s Q_* (Confirming Reviewer's O(s^{-2}) Tail Bound!).
 """
 
 import json
@@ -240,7 +240,7 @@ def part_b_projected_hamiltonian_and_unified_eq7():
            - Exact 1 -> 2 interacting graviton transition amplitude & 1-loop self-energy
              Delta E^{(2)}(N) converging as O(1/N^2) to continuum GR using the matrix 6j vertex!
       2) Recompute Section 4.4's pair-creation amplitude M_{B(s)}^{P2}(s) strictly inside the
-         SAME projected mode set omega_{k,j} <= B(s) = s Q_* (Q_* = 1.0, 2.0) across s = 10^2..10^6,
+         Projected pair-state set 2*omega_{k,j} <= B(s) = s Q_* (Q_* = 1.0, 2.0) across s = 10^2..10^6,
          directly verifying the reviewer's O(s^{-2}) tail bound and exact survival of BOTH
          Re M ~ (pi/sqrt(2 s_min)) s^{-3/2} and Im M ~ -(ln s)/(s_min s^2)!
     """
@@ -335,13 +335,15 @@ def part_b_projected_hamiltonian_and_unified_eq7():
         t2 = 0.5 * (j - 1) * (j + 2)
         for k in range(1, 10):
             om = k + t2 / k
-            if om <= 4.0 + 1e-12:
+            if 2.0 * om <= 4.0 + 1e-12:
                 c_re_B4 += (2 * j + 1) / (om**2)
                 c_im_B4 += (2 * j + 1) * (-2.0 / om)
 
+    assert c_re_B4 == c_im_B4 == 0.0, "No pair fits a total budget of four."
+
     # Area-scaled B(s) = s Q_* scan (Q_* = 1.0, s_min = ln 3) across s = 100 .. 100,000:
-    # Note: for a given j and B = s Q_*, the allowed radial modes k satisfy k + t_j^2 / k <= B
-    # <=> k_minus <= k <= k_plus where k_pm = (B +- sqrt(B^2 - 4 t_j^2)) / 2!
+    # Note: for a given j and B = s Q_*, the allowed radial modes k satisfy 2*(k + t_j^2 / k) <= B
+    # <=> k_minus <= k <= k_plus where k_pm = (B/2 +- sqrt(B^2/4 - 4 t_j^2)) / 2!
     # Exact analytic continuum tail bound vs exact discrete summation!
     s_min = math.log(3.0)
     gamma_E = 0.5772156649015329
@@ -350,16 +352,17 @@ def part_b_projected_hamiltonian_and_unified_eq7():
     for s in [100.0, 300.0, 1000.0, 3000.0, 10000.0, 30000.0]:
         J_max = int(math.floor(math.sqrt(s / s_min)))
         B_s = s * Q_star
+        mode_budget = B_s / 2.0  # Two quanta occupy the intermediate state.
         M_B = 0j
         M_inf = 0j
         n_active_pairs = 0
         for j in range(2, J_max + 1):
             t2 = 0.5 * (j - 1) * (j + 2)
             deg = 2 * j + 1  # already includes 2 polarizations / 2
-            disc = B_s * B_s - 4.0 * t2
+            disc = mode_budget * mode_budget - 4.0 * t2
             if disc >= 0.0:
-                k_lo = max(1, int(math.ceil(0.5 * (B_s - math.sqrt(disc)))))
-                k_hi = int(math.floor(0.5 * (B_s + math.sqrt(disc))))
+                k_lo = max(1, int(math.ceil(0.5 * (mode_budget - math.sqrt(disc)))))
+                k_hi = int(math.floor(0.5 * (mode_budget + math.sqrt(disc))))
                 if k_hi >= k_lo:
                     ks = np.arange(k_lo, k_hi + 1, dtype=float)
                     oms = ks + t2 / ks

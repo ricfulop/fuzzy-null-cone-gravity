@@ -24,9 +24,9 @@ import numpy as np
 
 # Final printed widths in inches. Build every figure at the size it will be
 # printed at: rescaling in LaTeX rescales the text with it.
-COLUMN = 3.25  # one column of a two-column paper (ICML, CVPR, IEEE)
-TEXT = 5.5  # \textwidth of a single-column paper (NeurIPS, article)
-WIDE = 6.75  # both columns of a two-column paper (figure*)
+COLUMN = 5.7 / 2.54  # Science one-column artwork
+TEXT = 12.1 / 2.54  # Science two-column artwork
+WIDE = 18.4 / 2.54  # Science full-width artwork
 
 # Okabe-Ito: distinguishable under every common form of color blindness and in
 # greyscale print. Use in this order so the first two series stay the furthest
@@ -126,13 +126,13 @@ def use_style(family: str = "sans") -> None:
         "axes.spines.top": False,
         "axes.spines.right": False,
         "axes.linewidth": 0.6,
-        "axes.grid": True,
+        "axes.grid": False,
         "axes.grid.axis": "y",
         "axes.axisbelow": True,
         "grid.color": "#D9D9D9",
         "grid.linewidth": 0.4,
         "lines.linewidth": 1.2,
-        "lines.markersize": 3.5,
+        "lines.markersize": 6,
         "xtick.direction": "out",
         "ytick.direction": "out",
         "xtick.major.width": 0.6,
@@ -161,21 +161,21 @@ def figure_grid(nrows: int = 1, ncols: int = 2, width: float = TEXT, ratio: floa
 
 
 def panel_labels(axes, labels=None, weight: str = "bold", pad: float = 2.0):
-    """Label panels (a), (b), ... above each axes' top-left corner.
+    """Label panels A, B, ... above each axes' top-left corner.
 
     Panel letters are how prose names a part of a figure ("as Fig. 2b shows").
     Without them a multi-panel figure can only be referred to by position,
     which breaks the moment a panel moves.
     """
     flat = np.ravel(np.asarray(axes, dtype=object)).tolist()
-    labels = labels or [f"({chr(ord('a') + i)})" for i in range(len(flat))]
+    labels = labels or [chr(ord("A") + i) for i in range(len(flat))]
     for ax, text in zip(flat, labels):
         ax.annotate(
             text,
             xy=(0, 1), xycoords="axes fraction",
             xytext=(0, pad), textcoords="offset points",
             ha="left", va="bottom", fontweight=weight,
-            fontsize=mpl.rcParams["axes.labelsize"],
+            fontsize=10,
         )
 
 
@@ -332,6 +332,15 @@ def save(fig, stem: str, formats=("pdf", "svg"), close: bool = True) -> list[str
     No `bbox_inches="tight"`: trimming to content changes the physical width
     and defeats building at the final size.
     """
+    for ax in fig.axes:
+        for line in ax.lines:
+            if line.get_marker() not in (None, "None", "", " "):
+                line.set_markersize(max(6, line.get_markersize()))
+        ax.grid(False)
+        ax.minorticks_off()
+    for text in fig.findobj(mpl.text.Text):
+        text.set_fontsize(max(7, text.get_fontsize()))
+        text.set_color("black")
     # Write first: the audit inspects a live canvas and must never be the
     # reason a finished figure is lost.
     parent = os.path.dirname(stem)

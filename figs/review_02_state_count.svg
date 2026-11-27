@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="521.574803pt" height="262.8pt" viewBox="0 0 521.574803 262.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-27T13:38:14.479923</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 262.8 
+L 521.574803 262.8 
+L 521.574803 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 52.15748 204.984 
+L 286.866142 204.984 
+L 286.866142 49.932 
+L 52.15748 49.932 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="68.344285" y="213.587438" transform="rotate(-0 68.344285 213.587438)">1</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="108.811295" y="213.587438" transform="rotate(-0 108.811295 213.587438)">2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="149.278306" y="213.587438" transform="rotate(-0 149.278306 213.587438)">3</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="189.745316" y="213.587438" transform="rotate(-0 189.745316 213.587438)">4</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="230.212327" y="213.587438" transform="rotate(-0 230.212327 213.587438)">5</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="270.679337" y="213.587438" transform="rotate(-0 270.679337 213.587438)">6</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <!-- Radial mode  $k$ -->
+     <g transform="translate(142.991811 224.945719)">
+      <text>
+       <tspan x="0" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">R</tspan>
+       <tspan x="5.775986" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">a</tspan>
+       <tspan x="10.223969" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">d</tspan>
+       <tspan x="14.671951" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">i</tspan>
+       <tspan x="16.447937" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">a</tspan>
+       <tspan x="20.89592" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">l</tspan>
+       <tspan x="22.671906" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'"> </tspan>
+       <tspan x="24.895889" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">m</tspan>
+       <tspan x="31.559875" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">o</tspan>
+       <tspan x="36.007858" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">d</tspan>
+       <tspan x="40.455841" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">e</tspan>
+       <tspan x="44.903824" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'"> </tspan>
+       <tspan x="47.127808" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'"> </tspan>
+       <tspan x="49.351791" y="-0.859375" style="font-style: italic; font-size: 8px; font-family: 'STIXGeneral'">𝘬</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_8">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="48.65748" y="189.871567" transform="rotate(-0 48.65748 189.871567)">2</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_9">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="48.65748" y="150.617896" transform="rotate(-0 48.65748 150.617896)">3</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9"/>
+     <g id="text_10">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="48.65748" y="111.364225" transform="rotate(-0 48.65748 111.364225)">4</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10"/>
+     <g id="text_11">
+      <text style="font-size: 7px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="48.65748" y="72.110554" transform="rotate(-0 48.65748 72.110554)">5</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <!-- Angular mode  $j$ -->
+     <g transform="translate(39.005918 155.618) rotate(-90)">
+      <text>
+       <tspan x="0" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">A</tspan>
+       <tspan x="5.335983" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">n</tspan>
+       <tspan x="9.783966" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">g</tspan>
+       <tspan x="14.231949" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">u</tspan>
+       <tspan x="18.679932" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">l</tspan>
+       <tspan x="20.455917" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">a</tspan>
+       <tspan x="24.9039" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">r</tspan>
+       <tspan x="27.567886" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'"> </tspan>
+       <tspan x="29.79187" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">m</tspan>
+       <tspan x="36.455856" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">o</tspan>
+       <tspan x="40.903839" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">d</tspan>
+       <tspan x="45.351822" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'">e</tspan>
+       <tspan x="49.799805" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'"> </tspan>
+       <tspan x="52.023788" y="-0.859375" style="font-size: 8px; font-family: 'Nimbus Sans'"> </tspan>
+       <tspan x="54.247772" y="-0.859375" style="font-style: italic; font-size: 8px; font-family: 'STIXGeneral'">𝘫</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m1314e7b2ba" d="M -2.598076 2.598076 
+L 2.598076 -2.598076 
+M -2.598076 -2.598076 
+L 2.598076 2.598076 
+" style="stroke: #92a2a6"/>
+    </defs>
+    <g clip-path="url(#p9a92000fdd)">
+     <use xlink:href="#m1314e7b2ba" x="189.745316" y="187.319848" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="230.212327" y="187.319848" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="270.679337" y="187.319848" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="68.344285" y="148.066177" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="108.811295" y="148.066177" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="149.278306" y="148.066177" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="189.745316" y="148.066177" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="230.212327" y="148.066177" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="270.679337" y="148.066177" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="68.344285" y="108.812506" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="108.811295" y="108.812506" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="149.278306" y="108.812506" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="189.745316" y="108.812506" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="230.212327" y="108.812506" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="270.679337" y="108.812506" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="68.344285" y="69.558835" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="108.811295" y="69.558835" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="149.278306" y="69.558835" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="189.745316" y="69.558835" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="230.212327" y="69.558835" style="fill: #92a2a6; stroke: #92a2a6"/>
+     <use xlink:href="#m1314e7b2ba" x="270.679337" y="69.558835" style="fill: #92a2a6; stroke: #92a2a6"/>
+    </g>
+   </g>
+   <g id="PathCollection_2"/>
+   <g id="PathCollection_3"/>
+   <g id="patch_3">
+    <path d="M 52.15748 204.984 
+L 52.15748 49.932 
+" style="fill: none; stroke: #000000; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 52.15748 204.984 
+L 286.866142 204.984 
+" style="fill: none; stroke: #000000; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="PathCollection_4">
+    <defs>
+     <path id="m40762e760c" d="M 0 3.708099 
+C 0.983399 3.708099 1.926654 3.317391 2.622022 2.622022 
+C 3.317391 1.926654 3.708099 0.983399 3.708099 0 
+C 3.708099 -0.983399 3.317391 -1.926654 2.622022 -2.622022 
+C 1.926654 -3.317391 0.983399 -3.708099 0 -3.708099 
+C -0.983399 -3.708099 -1.926654 -3.317391 -2.622022 -2.622022 
+C -3.317391 -1.926654 -3.708099 -0.983399 -3.708099 0 
+C -3.708099 0.983399 -3.317391 1.926654 -2.622022 2.622022 
+C -1.926654 3.317391 -0.983399 3.708099 0 3.708099 
+z
+" style="stroke: #006e71"/>
+    </defs>
+    <g clip-path="url(#p9a92000fdd)">
+     <use xlink:href="#m40762e760c" x="68.344285" y="187.319848" style="fill: #006e71; stroke: #006e71"/>
+     <use xlink:href="#m40762e760c" x="108.811295" y="187.319848" style="fill: #006e71; stroke: #006e71"/>
+     <use xlink:href="#m40762e760c" x="149.278306" y="187.319848" style="fill: #006e71; stroke: #006e71"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 600; font-size: 9.6px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="52.15748" y="37.52784" transform="rotate(-0 52.15748 37.52784)">Allowed single-graviton modes</text>
+   </g>
+   <g id="legend_1">
+    <g id="PathCollection_5">
+     <defs>
+      <path id="m53e71359ae" d="M 0 2.645751 
+C 0.701661 2.645751 1.374679 2.366978 1.870829 1.870829 
+C 2.366978 1.374679 2.645751 0.701661 2.645751 0 
+C 2.645751 -0.701661 2.366978 -1.374679 1.870829 -1.870829 
+C 1.374679 -2.366978 0.701661 -2.645751 0 -2.645751 
+C -0.701661 -2.645751 -1.374679 -2.366978 -1.870829 -1.870829 
+C -2.366978 -1.374679 -2.645751 -0.701661 -2.645751 0 
+C -2.645751 0.701661 -2.366978 1.374679 -1.870829 1.870829 
+C -1.374679 2.366978 -0.701661 2.645751 0 2.645751 
+z
+" style="stroke: #006e71"/>
+     </defs>
+     <g>
+      <use xlink:href="#m53e71359ae" x="125.839092" y="250.247438" style="fill: #006e71; stroke: #006e71"/>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 7.4px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="132.869092" y="252.189938" transform="rotate(-0 132.869092 252.189938)">Allowed</text>
+    </g>
+    <g id="PathCollection_6">
+     <defs>
+      <path id="m1af588f289" d="M -2.345208 2.345208 
+L 2.345208 -2.345208 
+M -2.345208 -2.345208 
+L 2.345208 2.345208 
+" style="stroke: #829599; stroke-width: 1.2"/>
+     </defs>
+     <g>
+      <use xlink:href="#m1af588f289" x="170.61603" y="250.247438" style="fill: #829599; stroke: #829599; stroke-width: 1.2"/>
+     </g>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 7.4px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="177.64603" y="252.189938" transform="rotate(-0 177.64603 252.189938)">Over budget</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="line2d_11">
+    <path d="M 312.944882 164.5128 
+L 488.559118 164.5128 
+" clip-path="url(#p5672f9a11d)" style="fill: none; stroke: #d7e2e3; stroke-linecap: square"/>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 600; font-size: 9.6px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="312.944882" y="62.301" transform="rotate(-0 312.944882 62.301)">Count the independent states</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(312.944882 94.435105)">3 radial modes</text>
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(312.944882 107.404917)">5 angular orientations</text>
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(312.944882 120.37473)">2 polarizations</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="312.944882" y="181.894945" transform="rotate(-0 312.944882 181.894945)">30 one-graviton states</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="312.944882" y="207.123745" transform="rotate(-0 312.944882 207.123745)">+ 1 vacuum state</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="312.944882" y="237.6221" transform="rotate(-0 312.944882 237.6221)">Two gravitons cost at least 6.</text>
+   </g>
+  </g>
+  <g id="text_21">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="52.15748" y="26.28" transform="rotate(-0 52.15748 26.28)">A</text>
+  </g>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'TeX Gyre Heros', 'Nimbus Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="312.944882" y="26.28" transform="rotate(-0 312.944882 26.28)">B</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9a92000fdd">
+   <rect x="52.15748" y="49.932" width="234.708661" height="155.052"/>
+  </clipPath>
+  <clipPath id="p5672f9a11d">
+   <rect x="312.944882" y="55.188" width="192.982677" height="168.192"/>
+  </clipPath>
+ </defs>
+</svg>

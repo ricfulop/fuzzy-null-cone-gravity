@@ -54,7 +54,7 @@ ax1.set_yticks([1e-2, 1e-1])
 ax1.minorticks_off()
 ax1.set_xlabel(r"Fuzzy-sphere matrix rank $N = J_{\max}+1$")
 ax1.set_ylabel(r"Cubic vertex error $|C^{(N)} - C^{\mathrm{cont}}|$")
-ax1.legend(loc="lower left", fontsize=5.1, labelspacing=0.25)
+ax1.legend(loc="lower left", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (b): Interacting Projected H_phys = P_B H_FSG P_B Convergence
@@ -75,7 +75,7 @@ ax2.set_yticks([1e-7, 1e-5, 1e-3])
 ax2.minorticks_off()
 ax2.set_xlabel(r"Fuzzy-sphere matrix rank $N = J_{\max}+1$")
 ax2.set_ylabel(r"Projected $H_{\mathrm{phys}}$ observable error")
-ax2.legend(loc="lower left", fontsize=5.0, labelspacing=0.28)
+ax2.legend(loc="lower left", fontsize=7, labelspacing=0.28)
 
 # =========================================================================
 # Panel (c): Unified B(s) = s Q_* Eq. (7) Reconciliation & O(s^{-2}) Tail
@@ -85,13 +85,12 @@ s_c = np.array([r["s"] for r in sc_c], dtype=float)
 re_B = np.array([r["Re_M_B"] for r in sc_c], dtype=float)
 im_B = np.array([abs(r["Im_M_B"]) for r in sc_c], dtype=float)
 diff_B = np.array([r["tail_diff_abs"] for r in sc_c], dtype=float)
-fixed_B4 = 1.483012 / (s_c**2)
 
 ax3.loglog(s_c, re_B, marker="o", markersize=3.8, color=PALETTE["blue"], linewidth=1.4, label=r"$\mathrm{Re}\,\mathcal{M}_{B(s)}$ ($B=sQ_*$, $\propto s^{-3/2}$)")
 ax3.loglog(s_c, im_B, marker="s", markersize=3.5, color=PALETTE["orange"], linewidth=1.3, label=r"$|\mathrm{Im}\,\mathcal{M}_{B(s)}|$ ($\propto \ln s / s^2$)")
-ax3.loglog(s_c, diff_B, marker="^", markersize=3.4, linestyle=":", color=PALETTE["green"], linewidth=1.3, label=r"Tail $|\mathcal{M}_\infty - \mathcal{M}_{B(s)}|$ ($0.33/s^2$)")
-ax3.loglog(s_c, fixed_B4, linestyle="--", color=PALETTE["red"], linewidth=1.1, label=r"Fixed $B=4$ ($\mathrm{Re} = 1.483/s^2$)")
+ax3.loglog(s_c, diff_B, marker="^", markersize=3.4, linestyle=":", color=PALETTE["green"], linewidth=1.3, label=r"Tail $|\mathcal{M}_\infty - \mathcal{M}_{B(s)}|$ ($O(s^{-2})$)")
 
+ax3.text(0.52, 0.90, r"$B=4$: no allowed pair", transform=ax3.transAxes, fontsize=7)
 ax3.set_xlim(75, 4.2e4)
 ax3.set_ylim(1.5e-10, 6e-3)
 ax3.set_xticks([1e2, 1e3, 1e4])
@@ -99,7 +98,7 @@ ax3.set_yticks([1e-9, 1e-6, 1e-3])
 ax3.minorticks_off()
 ax3.set_xlabel(r"Corner area $s = \mathcal{A}/(4 G_N \hbar)$")
 ax3.set_ylabel(r"Projected 4D amplitude magnitude")
-ax3.legend(loc="lower left", fontsize=5.0, labelspacing=0.22)
+ax3.legend(loc="lower left", fontsize=7, labelspacing=0.22)
 
 # =========================================================================
 # Panel (d): Exponential-Clock & Spectral-Projector Failure Bounds
@@ -122,9 +121,9 @@ ax4.set_yticks([1e-9, 1e-7, 1e-5, 1e-3])
 ax4.minorticks_off()
 ax4.set_xlabel(r"Horizon area $s$ ($N_{\mathrm{rad}} = B(s) = 0.5\,s$)")
 ax4.set_ylabel(r"Clock failure bound $\|(1-P_{\mathcal{D}})|\Omega_s\rangle\|^2$")
-ax4.legend(loc="lower left", fontsize=5.0, labelspacing=0.24)
+ax4.legend(loc="lower left", fontsize=7, labelspacing=0.24)
 
 panel_labels([ax1, ax2, ax3, ax4])
-out_stem = os.path.join(HERE, "fig5_v2_unification_and_clock")
+out_stem = os.path.join(HERE, "..", "figs", "fig5_v2_unification_and_clock")
 save(fig, out_stem)
 print("Saved fig5_v2_unification_and_clock.svg and .pdf")

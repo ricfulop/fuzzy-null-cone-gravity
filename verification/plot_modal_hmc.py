@@ -1,148 +1,66 @@
-#!/usr/bin/env python3
-"""
-Generate final publication-grade 4-panel Fig. 6 summarizing the converged 28-GPU Modal NVIDIA B200
-dual IR + UV nonperturbative FAHMC simulation (all 28 runs R-hat <= 1.005, Schwinger-Dyson <= 0.16%):
-  (a) Dressed spin-2 graviton propagator G_meas(j)/G_free(j) across j=2..47 at N=48 (mu^2=0.05, g_P=3.382)
-      and strong-coupling fixed-g_N=2.0 at N=32, showing UV finiteness across 2t_j^2 = 4..2254;
-  (b) Quantum area matrix rho^2 = exp((g/sqrt(N)) Phi) eigenvalue density rho(lambda) at mu^2=0.05, g_P=3.382
-      across N=8..48, showing strictly positive caustic-free horizon concentration onto lambda = 1;
-  (c) Fixed-g_N UV strong-coupling scan (N=8, 16, 24, 32): N-independent nonperturbative horizon-anisotropy
-      suppression Q_2 / Q_{2,free} down to 0.522 (-47.8%) at g_N=2.0 with bounded intrinsic C_V^{int};
-  (d) DeWitt-Fujikawa invariant measure vs. flat-measure graviton-induced 180x horizon collapse (g=2.5).
-"""
-
+"""Regenerate the reviewed HMC figure from the completed production ensembles."""
+from pathlib import Path
 import json
-import os
-import sys
-
 import numpy as np
+from orx_figstyle import use_style, figure_grid, panel_labels, save, WIDE, PALETTE
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
-from orx_figstyle import BASELINE, PALETTE, WIDE, figure_grid, panel_labels, save, use_style
-
+HERE=Path(__file__).resolve().parent
+runs=json.loads((HERE/'modal_hmc_final_results.json').read_text())['runs']
+by_tag={r['tag']:r for r in runs}
 use_style()
-
-fin = json.load(open(os.path.join(HERE, "modal_hmc_final_results.json")))
-t1 = json.load(open(os.path.join(HERE, "modal_hmc_tier1_results.json")))
-t2 = json.load(open(os.path.join(HERE, "modal_hmc_tier2_results.json")))
-
-fin_runs = fin["runs"]
-old_all = t1["runs"] + t2["runs"]
-old_main = [r for r in old_all if r["params"]["mu2"] == 0.5 and "flatmeas" not in r["tag"]]
-flat_runs = sorted([r for r in old_all if "flatmeas" in r["tag"]], key=lambda r: r["params"]["N"])
-
-fig, axes = figure_grid(2, 2, width=WIDE, ratio=0.77)
-ax1, ax2, ax3, ax4 = axes[0, 0], axes[0, 1], axes[1, 0], axes[1, 1]
-
-# =========================================================================
-# Panel (a): Full Spin-2 Graviton Propagator at N=48 (IR, mu2=0.05) & N=32 (UV, g_N=2.0)
-# =========================================================================
-r48_ir = next(r for r in fin_runs if r["tag"] == "final_IR_mu005_N48")
-r32_uv = next(r for r in fin_runs if r["tag"] == "final_UV_gN2.00_N32")
-r8_ir = next(r for r in fin_runs if r["tag"] == "final_IR_mu005_N8")
-
-for r_cur, col, mk, lab in [
-    (r48_ir, PALETTE["blue"], "o", r"IR $N=48,\ \mu^2=0.05,\ g_P=3.38$"),
-    (r32_uv, PALETTE["red"], "^", r"UV $N=32,$ fixed $g_N=2.0$"),
-    (r8_ir, PALETTE["orange"], "s", r"IR $N=8,\ \mu^2=0.05,\ g_P=3.38$"),
-]:
-    js = np.array([m["j"] for m in r_cur["spin2_modes"]], dtype=float)
-    z0 = np.array([m["Z_ratio_0"] for m in r_cur["spin2_modes"]], dtype=float)
-    zse = np.array([m["G_meas_0_se"] / m["G_free_0"] for m in r_cur["spin2_modes"]], dtype=float)
-    ax1.errorbar(js, z0, yerr=zse, fmt=f"{mk}-", markersize=2.5, linewidth=1.1, elinewidth=0.65, color=col, label=lab)
-
-ax1.axhline(1.0, color=BASELINE, linestyle=":", linewidth=0.9)
-ax1.set_xlim(1, 49)
-ax1.set_ylim(0.935, 1.055)
-ax1.set_xticks([2, 10, 20, 30, 40, 47])
-ax1.set_yticks([0.94, 0.97, 1.00, 1.03])
-ax1.set_xlabel(r"Spin-2 graviton angular momentum $j$ ($2t_j^2 = 4 \to 2254$)")
-ax1.set_ylabel(r"Dressed propagator $G_{\mathrm{meas}}(j)/G_{\mathrm{free}}(j)$")
-ax1.legend(loc="lower right", fontsize=5.3, labelspacing=0.22)
-
-# =========================================================================
-# Panel (b): Quantum Area Eigenvalue Spectrum rho(lambda) at mu^2=0.05, g_P=3.382
-# =========================================================================
-specs_b = [
-    (8, PALETTE["red"], "--", r"$N=8$ ($s=70$, $\lambda \in [0.43, 2.66]$)"),
-    (16, PALETTE["orange"], "-.", r"$N=16$ ($s=281$, $\lambda \in [0.53, 1.98]$)"),
-    (32, PALETTE["green"], "-", r"$N=32$ ($s=1125$, $\lambda \in [0.64, 1.52]$)"),
-    (48, PALETTE["blue"], "-", r"$N=48$ ($s=2531$, $\lambda \in [0.73, 1.39]$)"),
-]
-for N_v, col, ls, lab in specs_b:
-    r = next(x for x in fin_runs if x["tag"] == f"final_IR_mu005_N{N_v}")
-    bc = np.array(r["rho2_eig_histogram"]["bin_centers"], dtype=float)
-    pdf = np.array(r["rho2_eig_histogram"]["pdf"], dtype=float)
-    ax2.plot(bc, pdf, linestyle=ls, color=col, linewidth=1.3, label=lab)
-
-ax2.axvline(1.0, color=BASELINE, linestyle=":", linewidth=0.9)
-ax2.set_xlim(0.0, 2.75)
-ax2.set_ylim(0.0, 3.35)
-ax2.set_xticks([0.0, 0.5, 1.0, 1.5, 2.0, 2.5])
-ax2.set_yticks([0.0, 1.0, 2.0, 3.0])
-ax2.set_xlabel(r"Quantum area eigenvalue $\lambda(\widehat{\rho}^2 / r_0^2)$")
-ax2.set_ylabel(r"Spectral density $\rho(\lambda)$ ($\mu^2=0.05$)")
-ax2.legend(loc="upper right", fontsize=5.2, labelspacing=0.22)
-
-# =========================================================================
-# Panel (c): Fixed-g_N UV Strong-Coupling Horizon-Anisotropy Suppression Q2/Q2_free
-# =========================================================================
-gN_grid = [0.0, 0.5, 1.0, 1.5, 2.0]
-specs_c = [
-    (8, PALETTE["red"], "o", "--", r"$N=8$"),
-    (16, PALETTE["orange"], "s", "-.", r"$N=16$"),
-    (24, PALETTE["green"], "^", ":", r"$N=24$"),
-    (32, PALETTE["blue"], "D", "-", r"$N=32$"),
-]
-for N_v, col, mk, ls, lab in specs_c:
-    ys = [1.0]
-    yses = [0.0]
-    for gN_v in gN_grid[1:]:
-        r = next(x for x in fin_runs if x["tag"] == f"final_UV_gN{gN_v:.2f}_N{N_v}")
-        ys.append(r["observables"]["Q2_anisotropy"]["mean"] / r["observables"]["Q2_free"])
-        yses.append(r["observables"]["Q2_anisotropy"]["se"] / r["observables"]["Q2_free"])
-    ax3.errorbar(gN_grid, ys, yerr=yses, fmt=f"{mk}{ls}", color=col, markersize=3.6, linewidth=1.25, label=lab)
-
-ax3.axhline(1.0, color=BASELINE, linestyle=":", linewidth=0.8)
-ax3.set_xlim(-0.08, 2.12)
-ax3.set_ylim(0.45, 1.06)
-ax3.set_xticks([0.0, 0.5, 1.0, 1.5, 2.0])
-ax3.set_yticks([0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-ax3.set_xlabel(r"Fixed microscopic coupling $g_N$ ($\mu^2 = 0.25$)")
-ax3.set_ylabel(r"Horizon anisotropy ratio $Q_2 / Q_{2,\mathrm{free}}$")
-ax3.legend(loc="lower left", ncol=2, fontsize=5.4, labelspacing=0.22, columnspacing=0.8)
-
-# =========================================================================
-# Panel (d): DeWitt-Fujikawa Measure vs. Flat-Measure Horizon Collapse (g=2.5)
-# =========================================================================
-Ns_d = np.array([r["params"]["N"] for r in flat_runs], dtype=float)
-rho_flat = np.array([r["observables"]["rho2_eig_mean"]["mean"] for r in flat_runs], dtype=float)
-cv_flat = np.array([r["observables"]["C_V_per_dof"]["mean"] for r in flat_runs], dtype=float)
-rho_dw = np.array(
-    [next(x for x in old_main if x["params"]["N"] == int(n) and abs(x["params"]["g"] - 2.5) < 1e-3)["observables"]["rho2_eig_mean"]["mean"] for n in Ns_d],
-    dtype=float,
-)
-cv_int_dw = np.array(
-    [next(x for x in fin_runs if x["tag"] == f"final_IR_mu050_N{int(n)}")["observables"]["C_V_intrinsic_per_dof"]["mean"] for n in Ns_d],
-    dtype=float,
-)
-
-ax4.semilogy(Ns_d, rho_dw, marker="o", color=PALETTE["blue"], linewidth=1.4, label=r"DeWitt measure $\langle\widehat{\rho}^2\rangle \approx 1.0$")
-ax4.semilogy(Ns_d, rho_flat, marker="s", linestyle="--", color=PALETTE["red"], linewidth=1.3, label=r"Flat measure $\langle\widehat{\rho}^2\rangle \approx 0.006$ ($180\times$)")
-ax4.semilogy(Ns_d, cv_flat, marker="^", linestyle="-.", color=PALETTE["orange"], linewidth=1.2, label=r"Flat measure $C_V/N_{\mathrm{dof}} \propto N^2$")
-ax4.semilogy(Ns_d, cv_int_dw, marker="D", linestyle=":", color=PALETTE["green"], linewidth=1.2, label=r"DeWitt $C_V^{\mathrm{int}}/N_{\mathrm{dof}} \approx 0.46$")
-
-ax4.set_xlim(6, 34)
-ax4.set_ylim(1.8e-3, 1.4e3)
-ax4.set_xticks([8, 16, 24, 32])
-ax4.set_yticks([1e-2, 1e0, 1e2])
-ax4.minorticks_off()
-ax4.set_xlabel(r"Fuzzy-sphere matrix rank $N = J_{\max} + 1$")
-ax4.set_ylabel(r"Horizon area $\langle\widehat{\rho}^2\rangle$ and $C_V/N_{\mathrm{dof}}$")
-ax4.legend(loc="center right", bbox_to_anchor=(0.99, 0.25), fontsize=5.1, labelspacing=0.20, frameon=True, facecolor="white", framealpha=0.92, edgecolor="none")
-
-panel_labels([ax1, ax2, ax3, ax4])
-out_stem = os.path.join(HERE, "fig6_modal_b200_hmc")
-save(fig, out_stem)
-print("Saved final fig6_modal_b200_hmc.svg and .pdf")
+fig,axes=figure_grid(2,2,width=WIDE,ratio=.78)
+a,b,c,d=axes.ravel()
+colors=[PALETTE[k] for k in ('blue','orange','purple','black')]
+summary={'roughness':[], 'area_diagnostics':[]}
+# Spin-2 propagator. These errors are archived unblocked Monte Carlo estimates.
+for tag,col,m,lab in [('final_IR_mu005_N48',colors[0],'o',r'$N=48$, scaled coupling'),
+                      ('final_UV_gN2.00_N32',colors[1],'^',r'$N=32$, $g_N=2$')]:
+    modes=by_tag[tag]['spin2_modes']
+    a.errorbar([q['j'] for q in modes],[q['Z_ratio_0'] for q in modes],
+        yerr=[q['G_meas_0_se']/q['G_free_0'] for q in modes],fmt=m+'-',color=col,ms=3,lw=1,elinewidth=.6,label=lab)
+a.axhline(1,color='0.5',ls=':',lw=.6)
+a.set(xlabel=r'Angular momentum $j$',ylabel=r'$G(j)/G_{\mathrm{free}}(j)$',xlim=(1,49),xticks=[2,10,20,30,40,47],ylim=(.94,1.04))
+a.legend(loc='lower right',fontsize=7)
+# Compare measured coupled ensembles at the same rank and lattice.
+for n,col,m in zip([8,16,24,32],colors,['o','s','^','D']):
+    base=by_tag[f'final_UV_gN0.50_N{n}']['observables']
+    q0=base['Q2_anisotropy']['mean'];se0=base['Q2_anisotropy']['se']
+    yy=[];ee=[]
+    for g in [.5,1,1.5,2]:
+        r=by_tag[f'final_UV_gN{g:.2f}_N{n}'];q=r['observables']['Q2_anisotropy'];free=r['observables']['Q2_free']
+        ratio=q['mean']/q0
+        se=0 if g==.5 else ratio*np.hypot(q['se']/q['mean'],se0/q0)
+        yy.append(100*(1-ratio));ee.append(100*se)
+        if g==2:
+            summary['roughness'].append(dict(N=n,ratio_to_free=q['mean']/free,se_ratio_to_free=q['se']/free,
+                reduction_from_g05=yy[-1],se_reduction_from_g05=ee[-1],rhat=q['rhat'],Nt=r['params']['Nt'],Nr=r['params']['Nr']))
+    b.errorbar([.5,1,1.5,2],yy,yerr=ee,marker=m,ls='-',color=col,lw=1.1,ms=4,capsize=2,label=f'{n}')
+b.set(xlabel=r'Coupling $g_N$',ylabel=r'Reduction from $g_N=0.5$ (%)',xticks=[.5,1,1.5,2],ylim=(-2,47))
+b.legend(title='Rank',title_fontsize=7,ncol=2,fontsize=7,loc='lower right')
+# Mean local extreme eigenvalues, rather than absolute sampled bounds.
+for n in [8,12,16,24,32,48]:
+    r=by_tag[f'final_IR_mu005_N{n}'];o=r['observables'];p=r['params']
+    assert p['n_dof']==p['Nt']*p['Nr']*(3*n*n-8)
+    lo,hi=o['rho2_eig_min']['mean'],o['rho2_eig_max']['mean']
+    c.plot([n,n],[lo,hi],color=colors[0],lw=1.3)
+    c.scatter([n,n],[lo,hi],color=colors[0],s=15)
+    c.scatter(n,o['rho2_eig_mean']['mean'],color=colors[3],s=18,marker='D')
+    summary['area_diagnostics'].append(dict(N=n,mean_min=lo,mean_max=hi,
+        mean_area=o['rho2_eig_mean']['mean'],rhat_area=o['rho2_eig_mean']['rhat'],rhat_monopole=o['phi0_tadpole']['rhat'],
+        mass2_fit=o['m2_grav_ir'],dof_per_chain=p['n_dof'],chains=p['n_chains']))
+c.axhline(1,color='0.5',ls=':',lw=.6)
+c.set(xlabel=r'Matrix rank $N$',ylabel='Normalized local area eigenvalue',xlim=(5,51),ylim=(0,2.9),xticks=[8,16,24,32,48])
+c.text(.45,.88,'Mean extrema',transform=c.transAxes,fontsize=7)
+c.text(.45,.79,'Diamonds mark mean area',transform=c.transAxes,fontsize=7)
+# Convergence is observable-specific.
+for prefix,col,m,field,lab in [
+    ('final_IR_mu005_N',colors[0],'o','rho2_eig_mean','Area, scaled coupling'),
+    ('final_UV_gN2.00_N',colors[1],'s','rho2_eig_mean','Area, fixed coupling'),
+    ('final_IR_mu005_N',colors[2],'^','phi0_tadpole','Monopole, scaled coupling')]:
+    rr=sorted((r for r in runs if r['tag'].startswith(prefix)),key=lambda r:r['params']['N'])
+    d.plot([r['params']['N'] for r in rr],[r['observables'][field]['rhat'] for r in rr],m+'-',color=col,lw=1.1,ms=4,label=lab)
+d.set(xlabel=r'Matrix rank $N$',ylabel=r'Chain diagnostic $\hat{R}$',xlim=(5,51),ylim=(.98,1.5),xticks=[8,16,24,32,48])
+d.legend(loc='upper left',fontsize=7)
+panel_labels(axes)
+save(fig,str(HERE.parent/'figs/fig6_modal_b200_hmc'))
+(HERE/'reviewed_hmc_summary.json').write_text(json.dumps(summary,indent=2)+'\n')

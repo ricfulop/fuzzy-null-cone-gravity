@@ -58,7 +58,7 @@ ax1.set_yticks([1e-11, 1e-8, 1e-5, 1e-2])
 ax1.minorticks_off()
 ax1.set_xlabel(r"Corner area $s = \mathcal{A}/(4 G_N \hbar)$")
 ax1.set_ylabel(r"4D pair amplitude $|\mathcal{M}_{4\mathrm{D}}(s)|$")
-ax1.legend(loc="lower left", fontsize=5.2, labelspacing=0.25)
+ax1.legend(loc="lower left", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (b): Repaired Sec. 5.4A — Wormhole Gram-Matrix Spectrum (K = 140)
@@ -78,7 +78,7 @@ ax2.set_yticks([1e-18, 1e-12, 1e-6, 1e0])
 ax2.minorticks_off()
 ax2.set_xlabel(r"Wormhole Gram eigenvalue index $k$ ($K=140$ fillings)")
 ax2.set_ylabel(r"Gram eigenvalue $|\lambda_k(G)|$")
-ax2.legend(loc="lower left", fontsize=5.3, labelspacing=0.28)
+ax2.legend(loc="lower left", fontsize=7, labelspacing=0.28)
 
 # =========================================================================
 # Panel (c): Repaired Sec. 5.4B — Two-Sided Hartle-Hawking Horizon Gluing
@@ -100,7 +100,7 @@ ax3.set_yticks([1e-6, 1e-3, 1e0, 1e3])
 ax3.minorticks_off()
 ax3.set_xlabel(r"Horizon affine separation $u / \ell_P$ ($u_L = u_R = u$)")
 ax3.set_ylabel(r"Area-focusing correlator $C_{\mathcal{A}}(-u, u)$")
-ax3.legend(loc="lower left", fontsize=5.2, labelspacing=0.25)
+ax3.legend(loc="lower left", fontsize=7, labelspacing=0.25)
 
 # =========================================================================
 # Panel (d): Repaired Sec. 6 — Exact 1-Loop Semiclassical Einstein eq. (6.13)
@@ -122,9 +122,9 @@ ax4.set_yticks([1e-9, 1e-7, 1e-5, 1e-3, 1e-1])
 ax4.minorticks_off()
 ax4.set_xlabel(r"Quantum parameter $\hbar$")
 ax4.set_ylabel(r"Semiclassical Einstein residual")
-ax4.legend(loc="lower right", fontsize=5.2, labelspacing=0.25)
+ax4.legend(loc="lower right", fontsize=7, labelspacing=0.25)
 
 panel_labels([ax1, ax2, ax3, ax4])
-out_stem = os.path.join(HERE, "original_problem_solved")
+out_stem = os.path.join(HERE, "..", "figs", "fig4_original_resolution")
 save(fig, out_stem)
 print("Saved original_problem_solved.svg and .pdf")
