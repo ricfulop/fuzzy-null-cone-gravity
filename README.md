@@ -1,4 +1,4 @@
-# Fuzzy-Sphere Regularization of Algebraic Null-Cone Quantum Gravity
+# A Finite-State Model of Quantum Gravity in a Causal Diamond
 
 **Author:** Ric Fulop ([ricfulop@mit.edu](mailto:ricfulop@mit.edu)), Center for Bits and Atoms, Massachusetts Institute of Technology
 
