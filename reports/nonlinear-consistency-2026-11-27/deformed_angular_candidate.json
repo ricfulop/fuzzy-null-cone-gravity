@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "N": 4,
+      "matrix_Jacobi_residual": 5.649026192406046e-17,
+      "classical_bracket_defect_operator_norm": 0.01721325931647752,
+      "Casimir_scaled_defect": 0.06454972243679069
+    },
+    {
+      "N": 8,
+      "matrix_Jacobi_residual": 3.085563246329454e-16,
+      "classical_bracket_defect_operator_norm": 0.004666228061842248,
+      "Casimir_scaled_defect": 0.0734930919740154
+    },
+    {
+      "N": 16,
+      "matrix_Jacobi_residual": 1.3845144311395998e-15,
+      "classical_bracket_defect_operator_norm": 0.001227890766833828,
+      "Casimir_scaled_defect": 0.07827803638565653
+    },
+    {
+      "N": 32,
+      "matrix_Jacobi_residual": 4.195581092903932e-15,
+      "classical_bracket_defect_operator_norm": 0.00031581080781861726,
+      "Casimir_scaled_defect": 0.08076861409961136
+    }
+  ],
+  "algebraic_fact": "The scaled commutator closes and obeys Jacobi because matrix multiplication is associative.",
+  "scope": "An explicit deformation of one angular subalgebra, with a low-polynomial comparison. It does not close the full gravitational constraints or establish invariance of the reconstructed bulk action."
+}

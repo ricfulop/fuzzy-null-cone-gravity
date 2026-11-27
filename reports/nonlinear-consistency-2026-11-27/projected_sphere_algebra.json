@@ -1,0 +1,31 @@
+{
+  "counterexample": {
+    "f": "x*z",
+    "g": "y*z",
+    "h": "x*(-x**2 - y**2 + 4*z**2)",
+    "L": 3,
+    "Jacobiator": "-15*y*(x**2 + y**2 - 4*z**2)/7",
+    "continuum_Jacobiator": "0",
+    "L4_Jacobiator": "0",
+    "lost_intermediate_harmonic": "-5*(2*x**4 + 3*x**2*y**2 - 15*x**2*z**2 + y**4 - 9*y**2*z**2 + 4*z**4)/7"
+  },
+  "cutoff_checks_for_this_triple": [
+    {
+      "L": 3,
+      "Jacobiator": "-15*y*(x**2 + y**2 - 4*z**2)/7",
+      "value_at_0_1_0": "-15/7"
+    },
+    {
+      "L": 4,
+      "Jacobiator": "0",
+      "value_at_0_1_0": "0"
+    },
+    {
+      "L": 5,
+      "Jacobiator": "0",
+      "value_at_0_1_0": "0"
+    }
+  ],
+  "conclusion": "Naive projected angular Poisson bracket fails Jacobi at L=3.",
+  "scope": "Necessary diagnostic for a proposed angular gauge bracket; not a derivation or universal no-go theorem for the full metric constraint algebra."
+}

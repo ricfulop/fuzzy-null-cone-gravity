@@ -1,0 +1,95 @@
+{
+  "direct_curvature_residual": "0",
+  "sqrt_g_R_density": "-3*Derivative(A(u), (u, 2)) + 3*Derivative(A(u), u)**2/(2*A(u))",
+  "Euclidean_conformal_quadratic_per_unit_transverse_volume_G1": "-3/32",
+  "HMC_scalar_checks": [
+    {
+      "N": 3,
+      "HMC_quadratic_coefficient": 9.375,
+      "evaluations": [
+        {
+          "epsilon": 0.001,
+          "action": 9.375000037500003e-06,
+          "analytic_residual": 3.3881317890172014e-21
+        },
+        {
+          "epsilon": 0.01,
+          "action": 0.0009375003750000003,
+          "analytic_residual": 3.2526065174565133e-19
+        },
+        {
+          "epsilon": 0.1,
+          "action": 0.09375375000000002,
+          "analytic_residual": 2.7755575615628914e-17
+        }
+      ]
+    },
+    {
+      "N": 4,
+      "HMC_quadratic_coefficient": 12.5,
+      "evaluations": [
+        {
+          "epsilon": 0.001,
+          "action": 1.2500000024999992e-05,
+          "analytic_residual": 8.470329472543003e-21
+        },
+        {
+          "epsilon": 0.01,
+          "action": 0.0012500002499999995,
+          "analytic_residual": 6.505213034913027e-19
+        },
+        {
+          "epsilon": 0.1,
+          "action": 0.12500249999999993,
+          "analytic_residual": 5.551115123125783e-17
+        }
+      ]
+    },
+    {
+      "N": 6,
+      "HMC_quadratic_coefficient": 18.75,
+      "evaluations": [
+        {
+          "epsilon": 0.001,
+          "action": 1.875000003750001e-05,
+          "analytic_residual": 1.3552527156068805e-20
+        },
+        {
+          "epsilon": 0.01,
+          "action": 0.0018750003750000008,
+          "analytic_residual": 8.673617379884035e-19
+        },
+        {
+          "epsilon": 0.1,
+          "action": 0.1875037500000001,
+          "analytic_residual": 1.1102230246251565e-16
+        }
+      ]
+    },
+    {
+      "N": 8,
+      "HMC_quadratic_coefficient": 25.0,
+      "evaluations": [
+        {
+          "epsilon": 0.001,
+          "action": 2.500000004404766e-05,
+          "analytic_residual": 4.0657581468206416e-20
+        },
+        {
+          "epsilon": 0.01,
+          "action": 0.0025000004404761955,
+          "analytic_residual": 4.7704895589362195e-18
+        },
+        {
+          "epsilon": 0.1,
+          "action": 0.2500044047619051,
+          "analytic_residual": 3.3306690738754696e-16
+        }
+      ]
+    }
+  ],
+  "archived_HMC_sha256": "ec70f8e4cc658bcf707a0c5132596b8296fec8db89da48e8d0a2421110af5610",
+  "execution": "Original scalar action statements and harmonic builder evaluated on CPU with a NumPy tensor adapter; no sampler run.",
+  "conclusion": "The standard real Euclidean Einstein action has a negative conformal direction, while the archived HMC scalar quadratic form is positive. A direct real identification retaining this direction is impossible.",
+  "scope": "This rules out the stated direct unreduced real action identification, not every possible gauge-reduced effective theory, analytic continuation, or continuum-universality relation. Those require separate derivations."
+}

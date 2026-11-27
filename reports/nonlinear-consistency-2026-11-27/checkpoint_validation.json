@@ -1,0 +1,10 @@
+{
+  "base_commit": "ab303dd3f756c7f3f8d393ef090d4da35a7fdae2",
+  "prior_tracked_files_unchanged_except_readme": 154,
+  "manuscript_and_citations_unchanged": true,
+  "archived_simulations_unchanged": true,
+  "five_new_checks_passed": true,
+  "source_hashes_current": true,
+  "full_research_goal_complete": false,
+  "next_checkpoint": "Canonical constraints of the actual bulk action; compare reduction before truncation."
+}

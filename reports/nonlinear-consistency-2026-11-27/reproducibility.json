@@ -1,0 +1,50 @@
+{
+  "python": "3.12.14",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "repair_base_commit": "ab303dd3f756c7f3f8d393ef090d4da35a7fdae2",
+  "runs": [
+    {
+      "script": "projected_sphere_algebra.py",
+      "status": "passed",
+      "seconds": 0.975
+    },
+    {
+      "script": "deformed_angular_candidate.py",
+      "status": "passed",
+      "seconds": 0.669
+    },
+    {
+      "script": "boundary_compression.py",
+      "status": "passed",
+      "seconds": 0.446
+    },
+    {
+      "script": "reduced_boundary_gluing.py",
+      "status": "passed",
+      "seconds": 1.65
+    },
+    {
+      "script": "euclidean_signature.py",
+      "status": "passed",
+      "seconds": 0.976
+    }
+  ],
+  "GPU_jobs": 0,
+  "sha256": {
+    "verification/closure_audit_20261127/reduced_boundary_gluing.py": "ae4f0442f7d226d13142a68d7c2356343fc6db6048b5bd80b527a66f7d99fccb",
+    "verification/closure_audit_20261127/projected_sphere_algebra.py": "67ac9d38c632dac629ab8cf57e09bdb7deea51bd1cebc57e1fd11d8f20d85999",
+    "verification/closure_audit_20261127/boundary_compression.py": "25d0bd250e4e7121e6d8b9e0f816f7fd55c73be6f7228513bb230adecef62b4c",
+    "verification/closure_audit_20261127/euclidean_signature.py": "d534672fc9b709642ba5c3c00f49fcac7c41b5387c6bf239f1151916d1111c83",
+    "verification/closure_audit_20261127/deformed_angular_candidate.py": "f70d22a81f64f7769a63ea54f1fb3af9f74f1bc853d28c8c192f3402467219dd",
+    "verification/closure_audit_20261127/run_all.py": "747723fe62bbc32492e54ef4597663417467f4c7bf1aafcaa58c2380aa97dff0",
+    "verification/modal_fsg_hmc.py": "ec70f8e4cc658bcf707a0c5132596b8296fec8db89da48e8d0a2421110af5610",
+    "verification/repair_audit_20261127/nonlinear_galerkin.py": "b5717e1eca05e0cbaa297eab2e528e5ac5db7bdf83e869c37e48352acae72e1d",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470",
+    "paper.tex": "3b2f2ad67265a072ffbe4f378a3a2778c3eb62134ff6600b74a902b02ffbb1c1"
+  },
+  "goal_status": "First obstruction/candidate checkpoint complete; nonlinear gravitational completion remains open."
+}
