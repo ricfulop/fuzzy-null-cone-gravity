@@ -318,7 +318,17 @@ def _build_spin2_harmonic_projectors_np(N: int):
 # =============================================================================
 # GPU-Accelerated FSG Action & Batched Multi-Chain HMC Engine (PyTorch on B200)
 # =============================================================================
-def _create_gpu_fsg_engine(N: int, Nt: int, Nr: int, g: float, mu2: float, lam4: float, device, dewitt_measure: bool = True):
+def _create_gpu_fsg_engine(
+    N: int,
+    Nt: int,
+    Nr: int,
+    g: float,
+    mu2: float,
+    lam4: float,
+    device,
+    dewitt_measure: bool = True,
+    fixed_gN: bool = False,
+):
     """Build GPU tensors and pure-PyTorch action/gradient evaluator for I_FSG^{(N)}."""
     import numpy as np
     import torch
@@ -589,17 +599,15 @@ def _create_gpu_fsg_engine(N: int, Nt: int, Nr: int, g: float, mu2: float, lam4:
             row_norm2 = (VhA.real * VhA.real + VhA.imag * VhA.imag).sum(dim=-1)  # (..., M)
             return (exp_ev * row_norm2).sum(dim=-1)
 
-    # Physical gravitational coupling normalization: g_N = g / sqrt(N)
-    # (Matches I_FSG^{(N)} scaling where Phi_phys = sqrt(4*pi/(s_min N)) Phi_can, g_P = sqrt(4*pi/ln 3) = 3.382)
-    g_N = g / math.sqrt(float(N))
+    # Physical gravitational coupling normalization:
+    #   - IR macroscopic scaling (fixed_gN=False): g_N = g / sqrt(N)  (s = N^2 ln 3, g_P = 3.3821)
+    #   - UV strong-coupling scaling (fixed_gN=True): g_N = g         (microscopic coupling held fixed as N grows)
+    g_N = g if fixed_gN else (g / math.sqrt(float(N)))
 
-    def total_action(X_phi: torch.Tensor, Z_re: torch.Tensor, Z_im: torch.Tensor) -> torch.Tensor:
+    def action_components(X_phi: torch.Tensor, Z_re: torch.Tensor, Z_im: torch.Tensor):
         """
-        Compute exact nonperturbative Euclidean action S_E^{(N)}[Phi, Z] per chain in batch.
-        Input shapes:
-          X_phi: (B, Nt, Nr, N, N)
-          Z_re, Z_im: (B, Nt, Nr, N+2, N-2)
-        Returns: (B,) real FP64 tensor of action values.
+        Compute exact nonperturbative Euclidean action components per chain in batch.
+        Returns dict with S_total, S_phi, S_z, S_dw.
         """
         Phi_re, Phi_im = unpack_phi(X_phi)
 
@@ -629,29 +637,25 @@ def _create_gpu_fsg_engine(N: int, Nt: int, Nr: int, g: float, mu2: float, lam4:
         Phi2_tr = (Phi_re.square() + Phi_im.square()).sum(dim=(1, 2, 3, 4))
         S_phi_mass = 0.5 * mu2 * Phi2_tr
         if lam4 > 0.0:
-            # Tr(Phi^4) = ||Phi^2||_F^2
             P2_re = torch.matmul(Phi_re, Phi_re) - torch.matmul(Phi_im, Phi_im)
             P2_im = torch.matmul(Phi_re, Phi_im) + torch.matmul(Phi_im, Phi_re)
             S_phi_q4 = (0.25 * lam4 / float(N)) * (P2_re.square() + P2_im.square()).sum(dim=(1, 2, 3, 4))
         else:
             S_phi_q4 = torch.zeros_like(S_phi_mass)
 
+        S_phi = S_phi_par + S_phi_ang + S_phi_mass + S_phi_q4
+
         # --- 2. Spin-2 graviton shear kinetic + exact parity-symmetrized exponential interaction ---
-        # Forward differences on (tau, r):
         dt_Zr = torch.roll(Z_re, -1, dims=1) - Z_re
         dt_Zi = torch.roll(Z_im, -1, dims=1) - Z_im
         dr_Zr = torch.roll(Z_re, -1, dims=2) - Z_re
         dr_Zi = torch.roll(Z_im, -1, dims=2) - Z_im
-
-        # Exact fuzzy angular derivative ethbar(Z) in B_{+1}^{(N)} = C^{N+1} x C^{N-1}
         eb_Zr, eb_Zi = apply_ethbar_2to1(Z_re, Z_im)
 
         if g_N == 0.0:
             S_z_par = (dt_Zr.square() + dt_Zi.square() + dr_Zr.square() + dr_Zi.square()).sum(dim=(1, 2, 3, 4))
             S_z_ang = (eb_Zr.square() + eb_Zi.square()).sum(dim=(1, 2, 3, 4))
         else:
-            # Exact parity-symmetrized exponential couplings via iota_{N -> N +/- 2} and iota_{N -> N +/- 1}
-            # Uses pure GEMM Tensor-Core torch.linalg.matrix_exp (~30-80x faster than cuSOLVER eigh at N=32,48!)
             P_m2_r, P_m2_i = apply_iota_herm(Phi_re, Phi_im, N - 2)
             P_p2_r, P_p2_i = apply_iota_herm(Phi_re, Phi_im, N + 2)
             P_m1_r, P_m1_i = apply_iota_herm(Phi_re, Phi_im, N - 1)
@@ -663,13 +667,11 @@ def _create_gpu_fsg_engine(N: int, Nt: int, Nr: int, g: float, mu2: float, lam4:
             E_p1 = torch.linalg.matrix_exp(torch.complex(g_N * P_p1_r, g_N * P_p1_i))
 
             def _tr_exp_R(E_mat, Ar, Ai):
-                # Re Tr( E * A^H A ) = Re sum( (A @ E) * conj(A) )  [avoids forming A^H A separately if wanted, or A^H @ A]
                 A_c = torch.complex(Ar, Ai)
                 AE = torch.matmul(A_c, E_mat)
                 return (AE.real * Ar + AE.imag * Ai).sum(dim=(-1, -2, -3, -4))
 
             def _tr_exp_L(E_mat, Ar, Ai):
-                # Re Tr( E * A A^H ) = Re sum( (E @ A) * conj(A) )
                 A_c = torch.complex(Ar, Ai)
                 EA = torch.matmul(E_mat, A_c)
                 return (EA.real * Ar + EA.imag * Ai).sum(dim=(-1, -2, -3, -4))
@@ -685,16 +687,29 @@ def _create_gpu_fsg_engine(N: int, Nt: int, Nr: int, g: float, mu2: float, lam4:
                 + _tr_exp_L(E_p1, eb_Zr, eb_Zi)
             )
 
-        # Exact DeWitt-Fujikawa invariant spin-2 path-integral measure factor:
-        #   D_{rho} Z D_{rho} Z^dag = exp( +g_N * (N^2 - 4) / N * sum_x Tr_N(Phi(x)) ) D Z D Z^dag
-        # Cancels the spurious flat-measure 1-loop cosmological tadpole identically to all orders in N!
+        S_z = S_z_par + S_z_ang
+
         if dewitt_measure and g_N > 0.0:
             tr_phi_sum = torch.diagonal(Phi_re, dim1=-2, dim2=-1).sum(dim=(1, 2, 3))
             S_dw = -(g_N * float(N * N - 4) / float(N)) * tr_phi_sum
         else:
             S_dw = torch.zeros_like(S_phi_mass)
 
-        return S_phi_par + S_phi_ang + S_phi_mass + S_phi_q4 + S_z_par + S_z_ang + S_dw
+        return dict(S_total=S_phi + S_z + S_dw, S_phi=S_phi, S_z=S_z, S_dw=S_dw)
+
+    def total_action(X_phi: torch.Tensor, Z_re: torch.Tensor, Z_im: torch.Tensor) -> torch.Tensor:
+        return action_components(X_phi, Z_re, Z_im)["S_total"]
+
+    def phi_potential_only(X_phi: torch.Tensor) -> torch.Tensor:
+        """Fast O(N^3) potential (mu^2/2)Tr(Phi^2) + (lam4/4N)Tr(Phi^4) for exact collective (phi_0, Z) scale moves."""
+        Phi_re, Phi_im = unpack_phi(X_phi)
+        Phi2_tr = (Phi_re.square() + Phi_im.square()).sum(dim=(1, 2, 3, 4))
+        V = 0.5 * mu2 * Phi2_tr
+        if lam4 > 0.0:
+            P2_re = torch.matmul(Phi_re, Phi_re) - torch.matmul(Phi_im, Phi_im)
+            P2_im = torch.matmul(Phi_re, Phi_im) + torch.matmul(Phi_im, Phi_re)
+            V = V + (0.25 * lam4 / float(N)) * (P2_re.square() + P2_im.square()).sum(dim=(1, 2, 3, 4))
+        return V
 
     def action_and_grad(X_phi: torch.Tensor, Z_re: torch.Tensor, Z_im: torch.Tensor):
         X_req = X_phi.detach().requires_grad_(True)
@@ -712,11 +727,15 @@ def _create_gpu_fsg_engine(N: int, Nt: int, Nr: int, g: float, mu2: float, lam4:
         g_N=g_N,
         mu2=mu2,
         lam4=lam4,
+        dewitt_measure=dewitt_measure,
+        fixed_gN=fixed_gN,
         unpack_phi=unpack_phi,
         apply_M_power_phi=apply_M_power_phi,
         apply_M_power_z=apply_M_power_z,
         apply_iota_herm=apply_iota_herm,
         apply_ethbar_2to1=apply_ethbar_2to1,
+        action_components=action_components,
+        phi_potential_only=phi_potential_only,
         total_action=total_action,
         action_and_grad=action_and_grad,
     )
@@ -736,8 +755,9 @@ def _hmc_run_ensemble(
     init_eps: float,
     seed: int,
     dewitt_measure: bool = True,
+    fixed_gN: bool = False,
 ):
-    """Run batched multi-chain HMC (half cool, half warm starts) on GPU and compute all nonperturbative observables."""
+    """Run batched multi-chain FAHMC + exact collective (phi_0, Z) scale moves on GPU."""
     import numpy as np
     import torch
 
@@ -747,8 +767,12 @@ def _hmc_run_ensemble(
     torch.manual_seed(seed)
     np.random.seed(seed)
 
-    eng = _create_gpu_fsg_engine(N, Nt, Nr, g, mu2, lam4, device, dewitt_measure=dewitt_measure)
+    eng = _create_gpu_fsg_engine(
+        N, Nt, Nr, g, mu2, lam4, device, dewitt_measure=dewitt_measure, fixed_gN=fixed_gN
+    )
     act_grad = eng["action_and_grad"]
+    act_comp = eng["action_components"]
+    phi_pot = eng["phi_potential_only"]
     unpack_phi = eng["unpack_phi"]
     apply_M_phi = eng["apply_M_power_phi"]
     apply_M_z = eng["apply_M_power_z"]
@@ -798,26 +822,36 @@ def _hmc_run_ensemble(
 
     # Accumulators across measurement trajectories
     vol_spacetime = Nt * Nr
-    n_dof = vol_spacetime * (N * N + 2 * (N + 2) * (N - 2))
+    n_dof_phi = vol_spacetime * N * N
+    n_dof_z = vol_spacetime * 2 * (N + 2) * (N - 2)
+    n_dof = n_dof_phi + n_dof_z
 
     # Time series stored per chain for autocorrelation / jackknife / Gelman-Rubin R-hat
     S_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
+    S_int_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     phi0_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
+    q2_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     phi2_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     z2_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
+    sd_z_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
+    sd_phi_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     rho_min_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     rho_mean_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     rho_max_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     acc_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
+    coll_acc_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
     dH_abs_hist = np.zeros((n_meas, n_chains), dtype=np.float64)
 
+    # Precompute diagonal identity matrix I_N / sqrt(N) for exact collective (phi_0, Z) scale moves
+    I_N_norm = torch.eye(N, dtype=dtype, device=device) / math.sqrt(float(N))
+    alpha_scale = eng["g_N"] / math.sqrt(float(N))
+    # Proposal step width for uniform monopole shift delta: matches free Gaussian std 1 / sqrt(V * mu^2)
+    delta_std = 1.1 / math.sqrt(float(vol_spacetime) * max(mu2, 0.02))
+
     # Spin-2 graviton temporal correlator G2[j, dt] averaged over chains, r, m, measurements:
-    # Shape: (N, Nt) for j = 2..N-1
     G2_sum = np.zeros((N, Nt), dtype=np.float64)
     G2_sq_sum = np.zeros((N, Nt), dtype=np.float64)
-    # Scalar temporal correlator G0[j, dt] for j = 0, 1, 2
     G0_sum = np.zeros((3, Nt), dtype=np.float64)
-    # Eigenvalue histogram of quantum area matrix rho^2 = exp((g/sqrt(N)) * Phi)
     eig_bins = np.linspace(0.0, 4.0, 81)
     eig_hist = np.zeros(80, dtype=np.float64)
 
@@ -825,9 +859,7 @@ def _hmc_run_ensemble(
     warm_acc_window = []
 
     for it in range(n_total):
-        # Exact Fourier-Accelerated HMC (FAHMC):
-        #   Sample white noise xi ~ N(0, I) -> p = M^{+1/2} xi so p ~ N(0, M) and K(p) = 0.5 p^T M^{-1} p = 0.5 ||xi||^2!
-        #   Every free mode from j=0 to j=N-1 oscillates at exact frequency omega = 1.000 (ZERO stiffness!).
+        # Exact Fourier-Accelerated HMC (FAHMC)
         xiX = torch.randn_like(X)
         xiZr = torch.randn_like(Zr)
         xiZi = torch.randn_like(Zi)
@@ -844,7 +876,6 @@ def _hmc_run_ensemble(
         # Jitter leapfrog step size by +/-15% per trajectory (prevents exact omega=1 harmonic resonance!)
         eps_it = eps * (0.85 + 0.30 * float(np.random.rand()))
 
-        # Exact symplectic velocity-Verlet with constant FAHMC inverse mass M^{-1}
         Xn, Zrn, Zin = X.clone(), Zr.clone(), Zi.clone()
         pXn = pX - 0.5 * eps_it * gX_cur
         pZrn = pZr - 0.5 * eps_it * gZr_cur
@@ -876,13 +907,11 @@ def _hmc_run_ensemble(
         H_new = S_new + K_new
         dH = H_new - H_cur
 
-        # Per-chain Metropolis accept/reject (guard against NaN/Inf)
         valid = torch.isfinite(dH)
         u = torch.rand((n_chains,), dtype=dtype, device=device)
         accept = valid & (torch.log(torch.clamp(u, min=1e-30)) < -dH)
         acc_f = accept.to(dtype)
 
-        # Update accepted chains
         m5 = accept.view(n_chains, 1, 1, 1, 1)
         X = torch.where(m5, Xn, X)
         Zr = torch.where(m5, Zrn, Zr)
@@ -892,7 +921,35 @@ def _hmc_run_ensemble(
         gZr_cur = torch.where(m5, gZrn, gZr_cur)
         gZi_cur = torch.where(m5, gZin, gZi_cur)
 
-        # Auto-tune step size during first 75% of warmup to lock acceptance in [0.72, 0.86]
+        # --- EXACT COLLECTIVE (phi_0, Z) SCALE METROPOLIS MOVE ---
+        # Simultaneously shifts Phi -> Phi + (delta/sqrt(N)) I_N and rescales Z -> exp(-0.5*alpha*delta) Z.
+        # Under this exact symmetry of the shear kinetic term:
+        #   Delta S_Z == 0 identically, and (-Delta S_DW + log_J) == 0 identically when dewitt_measure=True!
+        # Completely eliminates slow monopole autocorrelation at ALL N, ALL g, and ALL mu^2 -> 0!
+        coll_acc_mean = 0.0
+        if dewitt_measure:
+            with torch.no_grad():
+                V_cur = phi_pot(X)
+                any_moved = False
+                for _ in range(4):
+                    delta = delta_std * torch.randn((n_chains,), dtype=dtype, device=device)
+                    X_prop = X + delta.view(n_chains, 1, 1, 1, 1) * I_N_norm
+                    V_prop = phi_pot(X_prop)
+                    dV = V_prop - V_cur
+                    u_c = torch.rand((n_chains,), dtype=dtype, device=device)
+                    acc_c = torch.isfinite(dV) & (torch.log(torch.clamp(u_c, min=1e-30)) < -dV)
+                    coll_acc_mean += float(acc_c.to(dtype).mean().item()) / 4.0
+                    if acc_c.any():
+                        any_moved = True
+                        mc5 = acc_c.view(n_chains, 1, 1, 1, 1)
+                        scale_z = torch.exp(-0.5 * alpha_scale * delta).view(n_chains, 1, 1, 1, 1)
+                        X = torch.where(mc5, X_prop, X)
+                        Zr = torch.where(mc5, Zr * scale_z, Zr)
+                        Zi = torch.where(mc5, Zi * scale_z, Zi)
+                        V_cur = torch.where(acc_c, V_prop, V_cur)
+            if any_moved:
+                S_cur, gX_cur, gZr_cur, gZi_cur = act_grad(X, Zr, Zi)
+
         if it < int(0.75 * n_warmup):
             warm_acc_window.append(float(acc_f.mean().item()))
             if len(warm_acc_window) >= 15:
@@ -908,18 +965,32 @@ def _hmc_run_ensemble(
             m_idx = it - n_warmup
             S_hist[m_idx] = S_cur.cpu().numpy()
             acc_hist[m_idx] = acc_f.cpu().numpy()
+            coll_acc_hist[m_idx] = coll_acc_mean
             dH_abs_hist[m_idx] = torch.where(valid, dH.abs(), torch.full_like(dH, 99.0)).cpu().numpy()
 
             with torch.no_grad():
+                comps = act_comp(X, Zr, Zi)
+                # Intrinsic physical action excluding linear DeWitt measure term
+                S_int_hist[m_idx] = (comps["S_phi"] + comps["S_z"]).cpu().numpy()
+
+                # Exact Schwinger-Dyson Ward identities: <q . dS/dq> / n_dof == 1.0000 identically!
+                sd_z_val = (Zr * gZr_cur + Zi * gZi_cur).sum(dim=(1, 2, 3, 4)) / float(n_dof_z)
+                sd_phi_val = (X * gX_cur).sum(dim=(1, 2, 3, 4)) / float(n_dof_phi)
+                sd_z_hist[m_idx] = sd_z_val.cpu().numpy()
+                sd_phi_hist[m_idx] = sd_phi_val.cpu().numpy()
+
                 Phi_re, Phi_im = unpack_phi(X)
-                # Monopole area fluctuation per site: phi0 = (1/sqrt(N)) Tr(Phi)
                 phi_diag = torch.diagonal(Phi_re, dim1=-2, dim2=-1)  # (B, Nt, Nr, N)
                 phi0_site = (phi_diag * v0_j0).sum(dim=-1)  # (B, Nt, Nr)
                 phi1_site = (phi_diag * v0_j1).sum(dim=-1)
                 phi2_site = (phi_diag * v0_j2).sum(dim=-1)
 
                 phi0_hist[m_idx] = phi0_site.mean(dim=(1, 2)).cpu().numpy()
-                phi2_hist[m_idx] = (Phi_re.square() + Phi_im.square()).mean(dim=(1, 2)).sum(dim=(-1, -2)).cpu().numpy()
+                phi2_site = (Phi_re.square() + Phi_im.square()).sum(dim=(-1, -2))  # (B, Nt, Nr)
+                # Traceless anisotropy order parameter Q_2 = (1/N) Tr(Phi_trless^2) = (1/N) (Tr(Phi^2) - phi0^2)
+                q2_site = (phi2_site - phi0_site.square()) / float(N)
+                q2_hist[m_idx] = q2_site.mean(dim=(1, 2)).cpu().numpy()
+                phi2_hist[m_idx] = phi2_site.mean(dim=(1, 2)).cpu().numpy()
                 z2_hist[m_idx] = (Zr.square() + Zi.square()).mean(dim=(1, 2)).sum(dim=(-1, -2)).cpu().numpy()
 
                 # Exact scalar temporal correlators G0(j, dt) for j=0,1,2 via FFT along tau
@@ -1004,14 +1075,19 @@ def _hmc_run_ensemble(
         rhat = _gelman_rubin(series_2d)
         return dict(mean=mean_val, se=se_chains, tau_int=tau, rhat=rhat)
 
-    # Specific heat C_V / n_dof = Var(S_E) / n_dof (computed per chain then averaged with SE)
+    # Specific heat C_V / n_dof = Var(S_E) / n_dof AND intrinsic non-DeWitt C_V_int / n_dof
     cv_per_chain = np.var(S_hist, axis=0, ddof=1) / float(n_dof)
+    cv_int_per_chain = np.var(S_int_hist, axis=0, ddof=1) / float(n_dof)
     chi_phi_per_chain = vol_spacetime * np.var(phi0_hist, axis=0, ddof=1)
-    # Binder cumulant U4 = 1 - <phi0^4> / (3 <phi0^2>^2)
+    chi_q2_per_chain = vol_spacetime * np.var(q2_hist, axis=0, ddof=1)
     p0_centered = phi0_hist - phi0_hist.mean(axis=0, keepdims=True)
     m2_c = np.mean(p0_centered**2, axis=0)
     m4_c = np.mean(p0_centered**4, axis=0)
     u4_per_chain = 1.0 - m4_c / np.maximum(3.0 * m2_c * m2_c, 1e-30)
+    q2_centered = q2_hist - q2_hist.mean(axis=0, keepdims=True)
+    qm2_c = np.mean(q2_centered**2, axis=0)
+    qm4_c = np.mean(q2_centered**4, axis=0)
+    u4_q2_per_chain = 1.0 - qm4_c / np.maximum(3.0 * qm2_c * qm2_c, 1e-30)
 
     # Propagator analysis: extract effective spin-2 dispersion E_eff(j) and wave-function renormalization Z_wf(j)
     G2_mean = G2_sum / float(n_meas)
@@ -1086,8 +1162,9 @@ def _hmc_run_ensemble(
             )
         )
 
-    # Exact free-field total Tr(Phi^2) and Tr(Z^dag Z) per site
+    # Exact free-field total Tr(Phi^2), traceless Q2, and Tr(Z^dag Z) per site
     free_phi2_site = sum((2 * j + 1) * float(np.mean(1.0 / (kpar2 + j * (j + 1.0) + mu2))) for j in range(N))
+    free_q2_site = sum((2 * j + 1) * float(np.mean(1.0 / (kpar2 + j * (j + 1.0) + mu2))) for j in range(1, N)) / float(N)
     free_z2_site = sum((2 * j + 1) * float(np.mean(1.0 / (kpar2 + (j - 1) * (j + 2)))) for j in range(2, N))
 
     eig_pdf = eig_hist / max(1.0, float(eig_hist.sum()) * (eig_bins[1] - eig_bins[0]))
@@ -1099,6 +1176,8 @@ def _hmc_run_ensemble(
             Nr=Nr,
             g=g,
             g_N=eng["g_N"],
+            fixed_gN=fixed_gN,
+            dewitt_measure=dewitt_measure,
             mu2=mu2,
             lam4=lam4,
             n_chains=n_chains,
@@ -1117,14 +1196,22 @@ def _hmc_run_ensemble(
         hmc_diagnostics=dict(
             acceptance_mean=float(acc_hist.mean()),
             acceptance_min_chain=float(acc_hist.mean(axis=0).min()),
+            collective_acceptance_mean=float(coll_acc_hist.mean()),
             mean_abs_dH=float(dH_abs_hist.mean()),
             S_E_per_dof=_summary_stat(S_hist / float(n_dof)),
+            S_intrinsic_per_dof=_summary_stat(S_int_hist / float(n_dof)),
             S_E_free_equipartition=0.5,
+            schwinger_dyson_Z=_summary_stat(sd_z_hist),
+            schwinger_dyson_Phi=_summary_stat(sd_phi_hist),
         ),
         observables=dict(
             C_V_per_dof=dict(
                 mean=float(cv_per_chain.mean()),
                 se=float(cv_per_chain.std(ddof=1) / math.sqrt(n_chains)) if n_chains > 1 else 0.0,
+            ),
+            C_V_intrinsic_per_dof=dict(
+                mean=float(cv_int_per_chain.mean()),
+                se=float(cv_int_per_chain.std(ddof=1) / math.sqrt(n_chains)) if n_chains > 1 else 0.0,
             ),
             chi_phi0=dict(
                 mean=float(chi_phi_per_chain.mean()),
@@ -1133,6 +1220,16 @@ def _hmc_run_ensemble(
             binder_U4=dict(
                 mean=float(u4_per_chain.mean()),
                 se=float(u4_per_chain.std(ddof=1) / math.sqrt(n_chains)) if n_chains > 1 else 0.0,
+            ),
+            Q2_anisotropy=_summary_stat(q2_hist),
+            Q2_free=free_q2_site,
+            chi_Q2=dict(
+                mean=float(chi_q2_per_chain.mean()),
+                se=float(chi_q2_per_chain.std(ddof=1) / math.sqrt(n_chains)) if n_chains > 1 else 0.0,
+            ),
+            binder_U4_Q2=dict(
+                mean=float(u4_q2_per_chain.mean()),
+                se=float(u4_q2_per_chain.std(ddof=1) / math.sqrt(n_chains)) if n_chains > 1 else 0.0,
             ),
             phi0_tadpole=_summary_stat(phi0_hist),
             phi2_per_site=_summary_stat(phi2_hist),
@@ -1376,6 +1473,7 @@ def run_hmc_point(cfg: dict[str, Any]) -> dict[str, Any]:
         init_eps=cfg["init_eps"],
         seed=cfg["seed"],
         dewitt_measure=cfg.get("dewitt_measure", True),
+        fixed_gN=cfg.get("fixed_gN", False),
     )
     res["tag"] = tag
     out_file = f"/results/{tag}.json"
@@ -1386,9 +1484,10 @@ def run_hmc_point(cfg: dict[str, Any]) -> dict[str, Any]:
     diag = res["hmc_diagnostics"]
     print(
         f"[{tag}] DONE in {res['runtime']['wall_seconds']:.1f}s | acc={diag['acceptance_mean']:.3f} "
-        f"| S/dof={diag['S_E_per_dof']['mean']:.4f} | CV={obs['C_V_per_dof']['mean']:.4f} "
-        f"| Z_wf={obs['Z_wf_ir']:.4f} | m2_g={obs['m2_grav_ir']:+.4f} "
-        f"| rho2_min={obs['rho2_eig_min']['mean']:.4f}"
+        f"c_acc={diag['collective_acceptance_mean']:.2f} rhat_p0={obs['phi0_tadpole']['rhat']:.3f} "
+        f"SD_Z={diag['schwinger_dyson_Z']['mean']:.4f} SD_P={diag['schwinger_dyson_Phi']['mean']:.4f} "
+        f"| CV_int={obs['C_V_intrinsic_per_dof']['mean']:.3f} Q2/Q2f={obs['Q2_anisotropy']['mean']/obs['Q2_free']:.3f} "
+        f"| Z_wf={obs['Z_wf_ir']:.4f} m2_g={obs['m2_grav_ir']:+.4f} rho2_min={obs['rho2_eig_min']['mean']:.4f}"
     )
     return res
 
@@ -1531,6 +1630,78 @@ def main(mode: str = "smoke"):
         with open(out_path, "w") as f:
             json.dump(payload, f, indent=2)
         print(f"Tier 2 COMPLETE in {wall:.1f}s ({len(results)} B200 ensembles) -> saved to {out_path}")
+        return
+
+    if mode == "final":
+        # Final production sweep: 28 parallel NVIDIA B200 GPUs with exact collective (phi_0, Z) scale moves!
+        #   - Ensemble A (12 GPUs): Macroscopic IR scaling (g_N = g_P / sqrt(N), g_P = 3.3821)
+        #     across N in {8, 12, 16, 24, 32, 48} at BOTH mu^2 = 0.5 AND low mu^2 = 0.05!
+        #   - Ensemble B (16 GPUs): Fixed-g_N UV strong-coupling matrix-gravity scan (fixed_gN=True, mu^2=0.25)
+        #     across g_N in {0.5, 1.0, 1.5, 2.0} x N in {8, 16, 24, 32}!
+        g_P = round(math.sqrt(4.0 * math.pi / math.log(3.0)), 4)
+        configs = []
+        idx = 0
+        for mu2_val, label_mu in [(0.5, "mu050"), (0.05, "mu005")]:
+            for N in [8, 12, 16, 24, 32, 48]:
+                idx += 1
+                n_chains = 8 if N <= 24 else 4
+                Nt = 8 if N <= 24 else 12
+                n_warmup = 200
+                n_meas = 700 if N <= 24 else (600 if N == 32 else 500)
+                configs.append(
+                    dict(
+                        tag=f"final_IR_{label_mu}_N{N}",
+                        N=N,
+                        Nt=Nt,
+                        Nr=4,
+                        g=g_P,
+                        mu2=mu2_val,
+                        lam4=0.1,
+                        n_chains=n_chains,
+                        n_warmup=n_warmup,
+                        n_meas=n_meas,
+                        n_steps=8,
+                        init_eps=0.13,
+                        seed=5000 + 41 * idx,
+                        dewitt_measure=True,
+                        fixed_gN=False,
+                    )
+                )
+        for gN_val in [0.5, 1.0, 1.5, 2.0]:
+            for N in [8, 16, 24, 32]:
+                idx += 1
+                n_chains = 8 if N <= 16 else 4
+                Nt = 8 if N <= 24 else 12
+                n_warmup = 220
+                n_meas = 700 if N <= 24 else 600
+                configs.append(
+                    dict(
+                        tag=f"final_UV_gN{gN_val:.2f}_N{N}",
+                        N=N,
+                        Nt=Nt,
+                        Nr=4,
+                        g=gN_val,
+                        mu2=0.25,
+                        lam4=0.1,
+                        n_chains=n_chains,
+                        n_warmup=n_warmup,
+                        n_meas=n_meas,
+                        n_steps=10 if gN_val >= 1.5 else 8,
+                        init_eps=0.10 if gN_val >= 1.5 else 0.13,
+                        seed=7000 + 67 * idx,
+                        dewitt_measure=True,
+                        fixed_gN=True,
+                    )
+                )
+        print(f"Launching FINAL dual IR+UV production sweep: {len(configs)} parallel B200 ensembles...")
+        t0 = time.time()
+        results = list(run_hmc_point.map(configs))
+        wall = time.time() - t0
+        payload = dict(tier="final_dual_IR_UV", total_wall_seconds=wall, n_runs=len(results), runs=results)
+        out_path = os.path.join(out_dir, "modal_hmc_final_results.json")
+        with open(out_path, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"FINAL sweep COMPLETE in {wall:.1f}s ({len(results)} B200 ensembles) -> saved to {out_path}")
         return
 
     raise ValueError(f"Unknown mode: {mode}")
