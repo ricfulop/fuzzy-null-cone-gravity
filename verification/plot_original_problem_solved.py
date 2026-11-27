@@ -46,9 +46,9 @@ im_arr = np.array([abs(r["Im_M4D_bessel"]) for r in sc1], dtype=float)
 re_as = np.array([r["Re_asym"] for r in sc1], dtype=float)
 im_as = np.array([abs(r["Im_asym"]) for r in sc1], dtype=float)
 
-ax1.loglog(s_arr, re_arr, marker="o", markersize=3.8, color=PALETTE["blue"], label=r"$\mathrm{Re}\,\mathcal{M}_{4\mathrm{D}}^{\mathrm{P2}}(s)$ ($\propto s^{-3/2}$)")
+ax1.loglog(s_arr, re_arr, marker="o", markersize=3.8, color=PALETTE["blue"], label=r"$\mathrm{Re}\,\mathcal{M}_{4\mathrm{D}}^{\mathrm{FSG}}(s)$ ($\propto s^{-3/2}$)")
 ax1.loglog(s_arr, re_as, linestyle=":", color=PALETTE["blue"], linewidth=1.0, label=r"Asymptotic $\frac{\pi}{\sqrt{2s_{\min}}} s^{-3/2}$")
-ax1.loglog(s_arr, im_arr, marker="s", markersize=3.5, color=PALETTE["orange"], label=r"$|\mathrm{Im}\,\mathcal{M}_{4\mathrm{D}}^{\mathrm{P2}}(s)|$ ($\propto \frac{\ln s}{s^2}$)")
+ax1.loglog(s_arr, im_arr, marker="s", markersize=3.5, color=PALETTE["orange"], label=r"$|\mathrm{Im}\,\mathcal{M}_{4\mathrm{D}}^{\mathrm{FSG}}(s)|$ ($\propto \frac{\ln s}{s^2}$)")
 ax1.loglog(s_arr, im_as, linestyle="--", color=PALETTE["orange"], linewidth=1.0, label=r"Non-analytic branch cut $\frac{\ln s}{s_{\min} s^2}$")
 
 ax1.set_xlim(7, 1.8e6)
@@ -89,7 +89,7 @@ ca_cl = np.array([r["CA_classical"] for r in sc3], dtype=float)
 ca_p2 = np.array([r["CA_path2"] for r in sc3], dtype=float)
 
 ax3.loglog(u_vals, ca_cl, linestyle="--", color=PALETTE["red"], linewidth=1.2, label=r"Classical connected eq. (5.77b) $\propto u^{-4}$")
-ax3.loglog(u_vals, ca_p2, marker="o", markersize=3.8, color=PALETTE["blue"], linewidth=1.4, label=r"Path 2 disconnected TFD caps (UV-finite)")
+ax3.loglog(u_vals, ca_p2, marker="o", markersize=3.8, color=PALETTE["blue"], linewidth=1.4, label=r"FSG disconnected TFD caps (UV-finite)")
 ax3.axvline(0.5914, color=BASELINE, linestyle=":", linewidth=0.9, label=r"Embadon floor $\rho_{\min} = \sqrt{\ln 3 / \pi}\,\ell_P$")
 
 ax3.set_xlim(0.038, 42)
@@ -113,7 +113,7 @@ res_613 = np.array([r["res_eq613_full"] for r in sc4], dtype=float)
 
 ax4.loglog(hb, res_cl, marker="^", markersize=3.8, linestyle="--", color=PALETTE["red"], label=r"Classical $E[\bar{g}]$ ($O(\hbar^{0.99})$)")
 ax4.loglog(hb, res_sh, marker="s", markersize=3.4, linestyle="-.", color=PALETTE["orange"], label=r"Shear-only (no cross-term, $O(\hbar^{1.0})$)")
-ax4.loglog(hb, res_613, marker="o", markersize=3.8, color=PALETTE["green"], linewidth=1.5, label=r"Full Path 2 eq. (6.13) ($O(\hbar^{2.00})$)")
+ax4.loglog(hb, res_613, marker="o", markersize=3.8, color=PALETTE["green"], linewidth=1.5, label=r"Full FSG Eq. (6.13) ($O(\hbar^{2.00})$)")
 
 ax4.set_xlim(7e-5, 1.6e-1)
 ax4.set_ylim(5e-10, 0.2)

@@ -58,7 +58,7 @@ ax1.get_xaxis().set_major_formatter(lambda x, _: f"{int(x)}")
 ax1.set_yticks([1e-3, 1e-2, 1e-1])
 ax1.minorticks_off()
 ax1.set_xlabel("Fuzzy-sphere matrix rank $N = J_{\\max}+1$")
-ax1.set_ylabel("Nonlinear GR error $|c_j(N) - c_j^{\\mathrm{GR}}|$")
+ax1.set_ylabel(r"Nonlinear error $|c_j(N) - c_j^{\mathrm{GR}}|$")
 ax1.legend(loc="lower left", fontsize=5.6, labelspacing=0.25)
 
 # =========================================================================
@@ -130,7 +130,7 @@ rho_Q_d = np.sqrt((r0 * np.cos(omega * vs_d)) ** 2 + (rho_min * np.sin(omega * v
 ax4.axhline(0.0, color=BASELINE, linestyle=":", linewidth=0.7)
 ax4.axhline(rho_min, color=PALETTE["green"], linestyle="-.", linewidth=0.9, label="Min embadon $\\rho_{\\min}=\\sqrt{\\ln 3/\\pi}$")
 ax4.plot(vs_d, rho_cl_d, linestyle="--", color=PALETTE["red"], linewidth=1.2, label="Classical Raychaudhuri (caustic)")
-ax4.plot(vs_d, rho_Q_d, color=PALETTE["blue"], linewidth=1.35, label="Path 2 quantum bounce (Ermakov)")
+ax4.plot(vs_d, rho_Q_d, color=PALETTE["blue"], linewidth=1.35, label="FSG quantum bounce (Ermakov)")
 
 ax4.set_xlim(0.0, 1.0)
 ax4.set_ylim(-6.5, 11.2)

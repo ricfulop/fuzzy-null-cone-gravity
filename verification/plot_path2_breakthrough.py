@@ -102,9 +102,9 @@ sen_singlet_line = (77.0 / 90.0) * np.log(s_line / s5[0])
 
 ax3.axhline(0.0, color=BASELINE, linestyle=":", linewidth=0.7, zorder=0)
 ax3.semilogx(s_line, sen_mixed_line, linestyle="--", color=PALETTE["orange"], label="Sen exact mixed ($+\\frac{106}{45}\\ln s$)")
-ax3.semilogx(s5, dS_mixed_rel, marker="o", linestyle="none", color=PALETTE["red"], label="Path 2 discrete-harmonic mixed")
+ax3.semilogx(s5, dS_mixed_rel, marker="o", linestyle="none", color=PALETTE["red"], label="FSG discrete-harmonic mixed")
 ax3.semilogx(s_line, sen_singlet_line, linestyle="-.", color=PALETTE["purple"], label="Sen exact singlet ($+\\frac{77}{90}\\ln s$)")
-ax3.semilogx(s5, dS_singlet_rel, marker="s", linestyle="none", color=PALETTE["blue"], label="Path 2 glued $SU(2)$ singlet")
+ax3.semilogx(s5, dS_singlet_rel, marker="s", linestyle="none", color=PALETTE["blue"], label="FSG glued $SU(2)$ singlet")
 ax3.semilogx(s5, kin_singlet_rel, marker="^", linestyle=":", color=BASELINE, label="Kinematical singlet only ($-\\frac{3}{2}\\ln s$)")
 
 ax3.set_xlim(220, 4.5e5)
@@ -135,7 +135,7 @@ y_pos = np.arange(len(labels))
 h = 0.34
 ax4.axvline(0.0, color=BASELINE, linewidth=0.8)
 ax4.barh(y_pos + h / 2, exact_vals, height=h, color=BASELINE, alpha=0.75, label="Exact 4D GR target")
-ax4.barh(y_pos - h / 2, p2_vals, height=h, color=PALETTE["blue"], label="Path 2 fuzzy-sphere / glued")
+ax4.barh(y_pos - h / 2, p2_vals, height=h, color=PALETTE["blue"], label="FSG fuzzy-sphere / glued")
 
 ax4.set_yticks(y_pos)
 ax4.set_yticklabels(labels, fontsize=6.5)
