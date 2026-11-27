@@ -1,0 +1,100 @@
+{
+  "gpu": "NVIDIA B200",
+  "op_checks": {
+    "N=8": {
+      "max_SU2_equivariance_err": 6.119793082409805e-15,
+      "ethbar_vs_L2_minus_2_rel_err": 2.382750613833178e-16
+    },
+    "N=16": {
+      "max_SU2_equivariance_err": 7.667020630398527e-15,
+      "ethbar_vs_L2_minus_2_rel_err": 0.0
+    },
+    "N=32": {
+      "max_SU2_equivariance_err": 1.1010986786075688e-14,
+      "ethbar_vs_L2_minus_2_rel_err": 0.0
+    }
+  },
+  "symplectic_O_eps2_check": {
+    "rows": [
+      {
+        "n_steps": 8,
+        "eps": 0.02,
+        "mean_abs_dH": 54.40700447123163
+      },
+      {
+        "n_steps": 16,
+        "eps": 0.01,
+        "mean_abs_dH": 13.794835158169008
+      },
+      {
+        "n_steps": 32,
+        "eps": 0.005,
+        "mean_abs_dH": 3.4607428113317837
+      }
+    ],
+    "ratio_8_16": 3.9440126574483174,
+    "ratio_16_32": 3.9860908221782587
+  },
+  "free_field_check": {
+    "acceptance": 0.608,
+    "S_E_per_dof": {
+      "mean": 0.32943545181466893,
+      "se": 0.07314034307561182,
+      "tau_int": 37.71110306113529,
+      "rhat": 1.8477118792903822
+    },
+    "phi2_meas": 1.9777033014598333,
+    "phi2_exact": 2.9957101682313376,
+    "z2_meas": 1.6429629906620196,
+    "z2_exact": 2.4946722308051625,
+    "spin2_Z_ratios": [
+      0.6597,
+      0.6552,
+      0.6597,
+      0.6588,
+      0.6594,
+      0.6594
+    ],
+    "scalar_ratios": [
+      0.6706,
+      0.6622,
+      0.6691
+    ],
+    "Z_wf_ir": 0.6581697592618959,
+    "m2_grav_ir": 0.792374307251348
+  },
+  "b200_throughput": [
+    {
+      "N": 8,
+      "Nt": 8,
+      "Nr": 4,
+      "n_chains": 8,
+      "ms_per_grad": 6.92819356918335,
+      "est_sec_1500_traj_12steps": 124.7074842453003
+    },
+    {
+      "N": 16,
+      "Nt": 8,
+      "Nr": 4,
+      "n_chains": 8,
+      "ms_per_grad": 7.260096073150635,
+      "est_sec_1500_traj_12steps": 130.68172931671143
+    },
+    {
+      "N": 32,
+      "Nt": 12,
+      "Nr": 4,
+      "n_chains": 4,
+      "ms_per_grad": 8.072805404663086,
+      "est_sec_1500_traj_12steps": 145.31049728393555
+    },
+    {
+      "N": 48,
+      "Nt": 12,
+      "Nr": 4,
+      "n_chains": 4,
+      "ms_per_grad": 13.475704193115234,
+      "est_sec_1500_traj_12steps": 242.56267547607422
+    }
+  ]
+}
