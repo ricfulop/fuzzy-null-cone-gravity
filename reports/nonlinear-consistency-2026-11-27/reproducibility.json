@@ -50,7 +50,14 @@
     "verification/modal_fsg_hmc.py": "ec70f8e4cc658bcf707a0c5132596b8296fec8db89da48e8d0a2421110af5610",
     "verification/repair_audit_20261127/nonlinear_galerkin.py": "b5717e1eca05e0cbaa297eab2e528e5ac5db7bdf83e869c37e48352acae72e1d",
     "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470",
-    "paper.tex": "3b2f2ad67265a072ffbe4f378a3a2778c3eb62134ff6600b74a902b02ffbb1c1"
+    "paper.tex": "3b2f2ad67265a072ffbe4f378a3a2778c3eb62134ff6600b74a902b02ffbb1c1",
+    "verification/closure_audit_20261127/crosscheck_paper2.py": "3f3a6458c01b74f77a7c52beb2296daa29d99a1644510a1964a9a64058bb92d0"
   },
-  "goal_status": "First obstruction/candidate checkpoint complete; nonlinear gravitational completion remains open."
+  "goal_status": "First obstruction/candidate checkpoint complete; nonlinear gravitational completion remains open.",
+  "additional_companion_check": {
+    "script": "verification/closure_audit_20261127/crosscheck_paper2.py",
+    "source_commit": "5e0ab55afed69f24432bccffd6ac2a781f29cfbf",
+    "status": "passed",
+    "additional_nonlinear_jet_configurations": 20
+  }
 }

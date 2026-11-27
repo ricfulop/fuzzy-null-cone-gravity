@@ -257,6 +257,25 @@ This identifies genuine nonlinear gauge symmetry of the chosen action; it does n
 
 ## Reproduction and next decision
 
+### Coordination with companion Paper II
+
+The other research track published [Paper II PR #7](https://github.com/ricfulop/fuzzy-null-cone-gravity/pull/7) during this checkpoint. Its scattering script at commit `5e0ab55afed69f24432bccffd6ac2a781f29cfbf` was read and independently rerun. The tested continuum affine Bondi--Sachs four-graviton amplitudes reproduce the Einstein benchmark: maximum nonzero-channel discrepancy in this run is 8.25e-13, with the vanishing channels below 2.6e-13. The nonlinear curvature identity also passes 20 additional random-jet configurations using seeds 30 through 49. The pinned source hash and reproduced values are in `paper2_crosscheck.json`.
+
+These results provide an existing weak-field interaction calculation for the next phase, so it need not be recreated. They do not resolve all the present questions:
+
+- The calculation uses continuum affine Bondi--Sachs vertices and a quadratic auxiliary-field Schur complement. It is not the complete Dirac analysis of the finite-angular nonlinear action, including its zero modes and boundary data.
+- The reported pure-gauge Ward projection tests the gauge-restoring projection of a pure-gauge tensor to zero radiative components before applying the amplitude. This is a useful kinematic check, but it is not an independent nonlinear vertex Ward identity or finite-rank constraint-closure test.
+- Paper II's Route C projects pointwise products back into the harmonic band. PR #6 instead reconstructs the metric and performs full pointwise nonlinear operations without intermediate projection. They agree in appropriate low-band, fixed-order calculations when discarded intermediates cannot contribute, but they are different nonlinear prescriptions at finite rank. Their inverses, higher-order products, and constraint algebras must not be identified without a calculation.
+
+The optional reproduction driver is
+
+```bash
+python verification/closure_audit_20261127/crosscheck_paper2.py \
+  --source /path/to/paper2/verification/bondi_sachs_4pt_scattering.py
+```
+
+It requires the pinned companion source and verifies its SHA-256 before executing it. The script is available in PR #7 at the recorded commit. This companion run is additional to the six self-contained checks below.
+
 ```bash
 python verification/closure_audit_20261127/run_all.py
 ```
