@@ -1,0 +1,23 @@
+# Figure sources and interpretation
+
+Rebuild all artwork with `python verification/plot_manuscript_figures.py` from the repository root. The builder writes PDF, SVG, and 300 dpi PNG previews. It does not launch simulations or change any archived result file. The figure width is 178 mm, chosen for the manuscript layouts; this is a general manuscript design, not a certification of a journal's submission requirements.
+
+The main text contains six explanatory/evidence figures. Five further benchmark figures are in the appendix. Full captions are in `paper.tex` and the captioned `figures_review.pdf`. Numerical uncertainty is shown only where the archived analysis supports it; deterministic mode calculations are not given artificial sampling errors.
+
+| Figure stem | Inputs under `verification/` | Display and interpretation |
+|---|---|---|
+| `review_01_causal_diamond` | Explicit schematic geometry and the clock taper | Light-ray paths are schematic. Finite traces follow from the listed additional state-space assumptions. |
+| `review_02_state_count` | The exact cost formula `omega = k + (j-1)(j+2)/(2*k)` | Discrete mode costs and 30 individually drawn one-graviton states; one vacuum completes the 31-state example. No two-particle state fits B=4. |
+| `fig_followup_roughness` | `modal_hmc_followup_analysis.json` | Mean Q2 with 1.96 SE bars; reduction against a measured same-rank, same-lattice control with archived propagated 95% ratio intervals. The percentage axis is expanded. Lines guide the eye. |
+| `fig6_modal_b200_hmc` | `modal_hmc_followup_analysis.json` | Rank-normalized split-R-hat and bulk/tail effective sample sizes. Roughness and area have separate panels and scales. The larger-lattice area failure is retained. |
+| `review_03_two_loop_budget` | `p2_uv1_2loop_gs_cemz_results.json` | Fixed-transverse-cutoff integrals and single-mode-budget sums. Log axes show cutoff dependence; these are not a complete many-particle projected calculation. |
+| `review_04_graviton_spectrum` | `review_spectrum.py`, using the archived grid/conventions | Transmission factors and thermal spectrum from the known Schwarzschild potential; both helicities, j=2 through 6, 155 frequencies, 2400 radial samples. The Page reference is shown only to its published precision. |
+| `fig2_unified_matrix_gravity` | `p2_frontier1_sun_action_results.json`, `p2_frontier3_so31_caustic_results.json`; explicit potential and trajectory formulas | Selected product/boost benchmarks and an illustrative bounce with an imposed radius. The classical curve stops at its caustic. Floating-point-scale boost residuals are identified. |
+| `fig5_v2_unification_and_clock` | `v2_test1_matrix_vertex_projected_results.json` (vertex/dynamics only), `v2_test2_qei_exp_clock_results.json`; corrected pair sum | The pair panel is evaluated in memory with `2*omega <= B`, including the radial reference-tail approximation used by the revised calculation. The old archived pair-cutoff data are not used for that panel or overwritten. Clock bounds refer to the stated quadratic-mode approximation. |
+| `fig1_breakthrough_1loop` | `p2_test1_transverse_qei_results.json`, `p2_test2_fuzzy_graviton_ee_results.json`, `p2_test5_schwarzschild_s4_results.json` | QEI estimates and entropy-coefficient comparisons. Fitted estimates, last-radius doubling, and exact coefficient identities are distinguished. Known heat-kernel inputs are not independent predictions. |
+| `fig3_uv_completion` | `p2_uv1_2loop_gs_cemz_results.json`, `p2_uv2_rank_sum_hp_results.json`; explicit assumed rank weights | Conditional thermodynamic and pixel-radius examples. Historical filenames do not imply ultraviolet completion. |
+| `fig4_original_resolution` | `orig1_sec44_4d_pair_results.json`, `orig2_sec54_wormhole_hh_results.json`, `orig3_sec6_semiclassical_results.json` | A radial-unrestricted Gaussian reference, finite Gram-matrix rank, regulated correlator, and one-generator backreaction test. Floating-point residuals are labeled. These are not full interacting-gravity results. |
+
+Colors are supplemented by marker shapes, line styles, direct labels, or panel separation. PDF fonts are embedded TrueType; SVG text is editable and depends on available fonts. White backgrounds are explicit. The final PDFs should be reviewed at their intended print size.
+
+Design and evidence-appraisal procedures were informed by Kassis et al., *Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents*, arXiv:2609.00065 (2026), https://doi.org/10.48550/arXiv.2609.00065. The manuscript includes this methods reference. The diagrams and plots use explicit code, not generated raster illustrations.

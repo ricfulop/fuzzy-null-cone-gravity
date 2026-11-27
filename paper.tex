@@ -39,9 +39,9 @@
 \date{\today}
 
 \begin{abstract}
-How many quantum states of gravity can fit inside a finite region of space and time? Chandrasekaran proposed answering this question with a clock based on how gravity focuses light. His construction connects classical general relativity to a proposed quantum description, but its continuum clock and sums over states require further mathematical control.
+Can a finite region of space and time contain only a finite number of quantum states of gravity? Chandrasekaran proposed that the focusing of light could act as a clock and enforce this limit. Two steps in the proposal require additional justification: the clock contains uncontrolled short-distance fluctuations, and the state-counting argument uses closed sums whose convergence has not been independently established.
 
-We develop a model with finite boundary resolution and a limit, set by the boundary area, on the gravitational excitations a region can contain. We subtract the empty-space contribution to the clock and average its reading over a short interval. Under these explicit assumptions, the allowed states can be counted and their number is finite. Calculations of black-hole graviton emission reproduce the published benchmark to its stated precision. In simulations of a related Euclidean matrix model, turning on the strongest tested coupling reduces a measure of geometric roughness by about 48\% across four matrix sizes. The effect persists on a larger lattice, and extended sampling improves local-area convergence. These results support further study of the finite-resolution model. Deriving its assumptions from gravity and establishing a predictive continuum quantum theory remain open.
+We develop a finite-resolution model that addresses these gaps under explicit assumptions. We subtract the vacuum contribution and smoothly average the clock in a quadratic mode approximation. We also impose finite boundary resolution and a total excitation budget that limits angular structure, radial frequency, and particle number. Together with finite boundary-state sectors, this budget makes the state count and closed traces finite without assuming their convergence. These are changes to the model, rather than a proof of the original continuum proposal. In simulations of a related matrix model, the strongest tested coupling reduces a measure of geometric roughness by 47.7--48.0\% across four matrix sizes. A larger-lattice test supports the effect, although one area observable remains poorly sampled. Selected classical and black-hole benchmarks provide consistency checks. Deriving the added assumptions from gravity and establishing a common continuum quantum theory remain open.
 \end{abstract}
 
 \maketitle
@@ -50,50 +50,71 @@ We develop a model with finite boundary resolution and a limit, set by the bound
 
 In perturbative quantum gravity one expands the metric around a fixed background spacetime and quantizes small fluctuations. Nonperturbatively, background independence requires observables defined without reference to any chosen background, for example by dressing bulk fields to gravitational data on the boundary of a finite subregion. Recent work on characteristic initial-value formulations~\cite{ChoquetBruhat2011,Reisenberger2008,Reisenberger2013}, gravitational edge modes and corner symmetries~\cite{DonnellyFreidel2016,FreidelGeillerPranzetti2020,ChandrasekaranFlanagan2023,CiambelliFreidelLeigh2024,CiambelliKlinger2026}, subregion von Neumann algebras~\cite{CLPW2023,CPW2023}, and axiomatic gravitational path integrals~\cite{CDMW2024} points to the null cone as a natural setting for this problem, because the gravitational constraints reduce to ordinary differential equations along null generators.
 
-In Ref.~\cite{Chandrasekaran2026}, Venkatesa Chandrasekaran combined these ingredients into a proposal for four-dimensional vacuum general relativity on intersecting null cones. Starting from first-order Pleba\'nski gravity, Ref.~\cite{Chandrasekaran2026} solves the constraints at finite $G_N$ with corner edge modes, isolates a canonical symplectic form and a boundary-localized reduced Hamiltonian $H_c$, and introduces an intrinsic gravitational clock built from null Raychaudhuri focusing. Using this clock to dress a causal diamond $\scrD$, Ref.~\cite{Chandrasekaran2026} links corner area directly to boost-generated traces, Bekenstein--Hawking entropy, Sen's one-loop logarithmic correction~\cite{Sen2013}, and spatial-topology null states~\cite{MarolfMaxfield2020}. Appendix~E of Ref.~\cite{Chandrasekaran2026} further formulates five Lorentzian cobordism axioms and establishes a conditional equivalence with the Euclidean reflection-positive framework of Ref.~\cite{CDMW2024}, identifying replica traces with traces in a Type~I algebra without assuming $\mathrm{AdS}/\mathrm{CFT}$.
+A causal diamond is the region that can both receive a signal from an earlier event and send one to a later event. Its lightlike boundary is a natural place to describe gravitational data: the distortion and focusing of neighboring light rays encode part of the geometry (Fig.~\ref{fig:geometry}). Chandrasekaran~\cite{Chandrasekaran2026} combines this classical description with boundary degrees of freedom and proposes using accumulated focusing as an intrinsic clock. The intended conclusion is striking: limiting the clock reading and boundary area should leave only finitely many quantum states inside the diamond.
 
-The classical null-cone formulation supplies a useful starting point, while its proposed continuum quantum construction requires separate control of operator domains, closed traces, and the removal of cutoffs. We examine selected identities and logical dependencies with symbolic calculations, finite-dimensional examples, and numerical checks. These checks do not constitute a formal verification of the entire classical reduction or of a continuum theory of quantum gravity.
+The difficulty is the passage from a classical construction to that quantum conclusion. Products of fields at the same point require short-distance control. In addition, an amplitude between two normalizable states is not a trace over all states: the former can converge when the latter does not. Consequently, the clock operator and the closed state sums require independent justification before they can establish a finite-dimensional Hilbert space. We explain these issues in Sec.~\ref{sec:audit}; exact locations in the original submission are collected in Appendix~\ref{app:comparison} for readers who want to check the comparison.
 
-Our aim is constructive. We retain the null-cone motivation and introduce three explicit modeling ingredients:
-\begin{enumerate}
-\item \emph{Fuzzy monopole bundles on the corner:} we replace continuum two-spheres with compact $SU(2)$-equivariant rectangular matrix bundles $\calB_{s_w}^{(N)}$ of dimension $N^2-s_w^2$ ($s_w\in\{0,\pm 1,\pm 2\}$), equipped with an explicit $SU(2)$-equivariant embedding map $\iota_{N\to M}$ and a parity-symmetrized $SU(N)$ null-cone action $I_{\mathrm{FSG}}^{(N)}$ free of spurious low-angular-momentum or higher-spin fields.
-\item \emph{A smoothly smeared normal-ordered gravitational clock:} we replace the sharp-endpoint, unrenormalized focusing operator $\widehat{\Xi}_y(1)$ by a normal-ordered Raychaudhuri integral smeared with a compactly supported smooth function $g\in C^\infty_c((0,1))$, whose quadratic mode approximation we study using the Fewster--Eveson massive quantum energy inequality~\cite{Flanagan1997,FewsterEveson1998} and Balian--Br\'ezin Fredholm determinants~\cite{BalianBrezin1969}.
-\item \emph{An area-scaled double-null occupation budget:} we impose the total occupation constraint $\sum_{k,j,m,p} n_{k,j,m,p}(k+t_j^2/k)\le B(s)=s Q_*$, with $t_j^2=\frac{1}{2}(j-1)(j+2)$, which bounds radial frequencies, angular momenta, and bosonic occupation numbers simultaneously while preserving macroscopic non-analytic behavior.
-\end{enumerate}
+We retain the null-cone motivation and introduce a finite-resolution model. A fuzzy sphere represents angular structure by matrices. Vacuum subtraction and smooth averaging define the clock calculation at the quadratic-mode level. An additional total excitation budget limits radial and angular modes and their occupation numbers. Finally, a finite set of finite-dimensional boundary sectors supplies the corner states. Under these stated assumptions, finiteness follows by counting admissible states, so closed-trace convergence is a consequence rather than an input. Deriving these assumptions from the full gravitational constraints remains a separate problem.
 
-We organize the remainder of the paper as follows. In Sec.~\ref{sec:audit} we discuss the classical null-cone reduction and the scope of four continuum concerns. In Sec.~\ref{sec:unified} we construct the fuzzy-sphere null-cone action $I_{\mathrm{FSG}}^{(N)}$ (written in full in Appendix~\ref{app:explicit_action}), its parity-symmetrized cubic vertices in closed Wigner-$6j$ form, the massive-QEI clock and exponential-clock bounds, the projected physical Hamiltonian $H_{\mathrm{phys}}=P_{B(s)}H_{\mathrm{FSG}}P_{B(s)}$, Regge--Wheeler and Zerilli benchmark dynamics, truncated $SO(3,1)$ boost tests, and an Ermakov--Pinney bounce example. In Sec.~\ref{sec:1loop} we evaluate the Lichnerowicz curvature decomposition and a four-dimensional infrared isotropy test, comparing with the universal one-loop logarithmic corrections on Schwarzschild, flat space, and de Sitter $S^4$. In Sec.~\ref{sec:uv} we analyze the two-loop regulator behavior, compute the Schwarzschild Goroff--Sagnotti entropy shift alongside a sub-Planckian pixel-size naturalness ceiling ($s_{\min}\le\pi$), sum dynamically over matrix ranks $N$ to recover the $\mathrm{AdS}_4$ Hawking--Page transition, and test $SU(2)$-singlet corner fusion on a three-diamond network. In Sec.~\ref{sec:orig_sections} we present finite-dimensional realizations of Secs.~4.4, 5.4, and~6 of Ref.~\cite{Chandrasekaran2026}. In Sec.~\ref{sec:hmc} we report a hybrid Monte Carlo study of the Euclidean matrix model up to rank $N=48$. We close in Sec.~\ref{sec:discussion} with open dynamical questions; Appendix~\ref{app:code} catalogs our machine-checked formal proofs and publicly archived numerical code.
+The paper distinguishes three levels of evidence: mathematical consequences of the finite-state assumptions; selected classical and semiclassical consistency calculations; and Monte Carlo results for a related Euclidean matrix action. We have not proved that these are three descriptions of one equivalent quantum theory. In particular, reproducing a known heat-kernel coefficient, a graviton-emission benchmark, or a matrix-algebra identity does not by itself establish a nonperturbative quantization of four-dimensional general relativity.
+
+Section~\ref{sec:unified} specifies the matrix model, clock approximation, and occupation budget. Section~\ref{sec:hmc} presents the simulation results and explains their uncertainty and sampling diagnostics. Sections~\ref{sec:1loop}--\ref{sec:orig_sections} examine entropy coefficients, regulator dependence, pair amplitudes, gluing, and backreaction. The main figures emphasize the construction and simulation evidence; additional benchmark plots are collected in Appendix~\ref{app:benchmark_figures}. Section~\ref{sec:discussion} states the remaining steps toward a continuum theory.
 
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/review_01_causal_diamond.pdf}
-\caption{\textbf{A region bounded by light.} (A) The causal diamond contains events reachable from the earlier tip that can still signal the later tip. The ellipse represents its spherical boundary cross-section. (B) Focusing changes the separation of neighboring light rays. A smooth weight averages the vacuum-subtracted focusing over a finite interval. The ray paths are schematic, and the taper is the profile defined in Sec.~\ref{sec:unified_clock}, rescaled to the shaded interval.}
+\caption{\textbf{From a region bounded by light to a finite model.} (A) The causal diamond contains events that can receive a signal from the earlier tip and send one to the later tip. The ellipse represents a spherical cross-section. (B) Neighboring light rays focus; the modified clock subtracts the vacuum contribution and averages over a smooth weight. Ray paths are schematic and the weight is the rescaled taper of Sec.~\ref{sec:unified_clock}. (C) Finite angular resolution, a total excitation budget, and finite corner sectors supply a finite basis. Closed traces are finite as a consequence of these explicit assumptions.}
 \label{fig:geometry}
 \end{figure*}
 
-\section{Audit of the Continuum Quantization}\label{sec:audit}
+\section{The Continuum Gaps and the Changes Made Here}\label{sec:audit}
 
-\subsection{Classical Null-Cone Reduction and Axiomatic Bridge}\label{sec:audit_pass}
+\subsection{What the original construction supplies}\label{sec:audit_pass}
 
-Chandrasekaran's Sec.~3 and Appendices~A--B formulate classical general relativity using characteristic null data, corner degrees of freedom, and boundary terms. Our symbolic scripts check selected local identities, including the constraint kernels, focusing equations, and boundary-charge expressions. Global regularity, domains of inverse operators, and the physical interpretation of the reduced variables require analysis beyond such local checks.
+The classical proposal describes general relativity using characteristic null data, boundary degrees of freedom, and boundary terms~\cite{Chandrasekaran2026}. Our symbolic calculations check selected local identities in its focusing equations and boundary charges. They do not establish global regularity, the domains of inverse operators, or a complete quantum dynamics. The proposal also gives a conditional correspondence between Lorentzian and Euclidean descriptions of gluing. One of its assumptions is that specified closed contractions are finite. Such a conditional correspondence is useful, but does not independently prove that gravity satisfies this finiteness assumption.
 
-Appendix~E.2 of Ref.~\cite{Chandrasekaran2026} gives a conditional Lorentzian--Euclidean correspondence. Its Axiom~5 explicitly requires finite amplitudes for the specified closed contractions. Our logical-dependency checks preserve this conditional structure; they do not independently prove the Hilbert-algebra reconstruction or show that four-dimensional gravity satisfies all five axioms.
+\subsection{Closed amplitudes need an independent convergence argument}\label{sec:audit_fail}
 
-\subsection{Scope of the Continuum Concerns}\label{sec:audit_fail}
+An open amplitude has fixed initial and final states, such as $\langle\phi|U|\psi\rangle$. A closed trace instead sums diagonal amplitudes over a complete basis. Cauchy--Schwarz control of the first expression does not establish convergence of the second. For a positive operator $A\ge c\mathbf{1}$ with $c>0$,
+\begin{equation}\label{eq:trace_gap}
+\Tr A<\infty\quad\Longrightarrow\quad
+\dim\calH\le \frac{\Tr A}{c}<\infty.
+\end{equation}
+Thus, assuming finite closed-trace convergence at this step would already supply the desired conclusion. The original finite-diamond argument needs an independent reason that its closed-cut partial sums converge to the uncut amplitude; its thermal argument likewise needs convergence over arbitrary finite subsets of the joint cut. The open-amplitude estimates do not supply either implication.
 
-Four issues motivate the finite-resolution model. We distinguish direct mathematical implications from tests of a particular approximation.
-\begin{enumerate}
-\item \emph{Closed traces.} Equations~(4.29)--(4.30) of Ref.~\cite{Chandrasekaran2026} bound open amplitudes between normalizable states. They do not by themselves establish convergence of the closed sums used in Eq.~(5.38). For a positive operator $A\ge c\mathbf{1}$ with $c>0$, a finite ordinary trace would already imply $\dim\calH\le\Tr(A)/c$. Likewise, the finite-subset convergence used in Eqs.~(5.44)--(5.45) needs justification independently of the desired thermal-trace bound. A qubit tensored with an infinite-dimensional system illustrates this missing implication, but is not a counterexample satisfying every gravitational hypothesis. The JT model in Sec.~2 has a different relation between its clock and matter; it does not automatically furnish a verbatim counterexample to the four-dimensional proof.
-\item \emph{Continuum control of the clock.} Appendix~C.2 constructs a monotone limit of truncated quadratic forms, but allows the closure of the limiting form domain to be a subspace $M$ [Eq.~(C.13)]. The fixed-resolution estimates and the explicitly heuristic noncommuting estimate in Eq.~(5.16), footnote~18, do not establish a cutoff-uniform dense domain for the nonlinear continuum clock. Our quadratic oscillator calculations exhibit growing unrenormalized zero-point contributions. Identifying these calculations with the exact constrained operator would require further proof, so we do not conclude that the full gravitational Hilbert space is empty. Vacuum subtraction permits negative renormalized focusing; a replacement lower bound must therefore be established. The original paper itself subtracts a local vacuum singularity in Appendix~D.2, Eq.~(D.21).
-\item \emph{Scope of amplitudes and state choice.} Section~4.4 evaluates a Gaussian contraction for a selected angular sector. Summing identical contributions over angular degeneracies diverges, but this extension is not a calculation of the full interacting four-dimensional amplitude. Pure-state extension gives an abstract representation; it does not select all area-changing matrix elements or establish their uniqueness from the fixed-area data alone.
-\item \emph{State counting and regulator removal.} The bound in Appendix~D.3 concerns perturbative radiative states under a focusing budget and grows subextensively in area. It does not determine the complete microscopic gravitational state count. Our transverse-cutoff and two-loop calculations likewise test specified regulated expressions. Finiteness at fixed total occupation budget does not imply a finite or predictive limit when that budget and the resolution grow without bound.
-\end{enumerate}
+Our response is to change the state space explicitly. A total excitation budget and finite corner sectors give finitely many basis states. All ordinary matrix traces are then finite, without rearranging an infinite signed sum. This establishes trace control for the modified finite model; it does not prove that the original continuum clock enforces the same state space.
 
-These observations motivate modified assumptions and further analysis. They establish neither a general no-go theorem for Chandrasekaran's framework nor a proof that the modifications below yield continuum quantum gravity.
+\subsection{The clock needs short-distance control and a new lower bound}\label{sec:audit_clock}
+
+The focusing clock contains products of quantum fields at coincident points. In its quadratic oscillator approximation, the un-subtracted vacuum contribution grows with the number of retained modes. The original fixed-resolution estimates do not establish a cutoff-uniform dense domain for the full nonlinear clock. Its limiting-form construction permits a proper domain subspace, so nontriviality must be demonstrated rather than inferred from the finite-mode calculation. Conversely, these observations alone do not prove that the exact gravitational Hilbert space is empty.
+
+We subtract the vacuum contribution and average with a smooth function supported inside the null interval. Subtraction removes the manifest vacuum term but permits negative renormalized focusing: classical positivity can no longer be used unchanged. The quadratic-mode calculation instead uses quantum-energy-inequality and moment estimates (Sec.~\ref{sec:unified_clock}). Their extension to the complete constrained nonlinear operator remains open. The original paper already uses local vacuum subtraction in a separate semiclassical calculation; the issue here is establishing consistent operator control for its nonperturbative clock.
+
+\subsection{Finite angular resolution alone does not give finite state count}
+
+Replacing a sphere by matrices limits angular modes, but each remaining bosonic mode can still contain arbitrarily many quanta; radial frequencies also remain unbounded without another restriction. We therefore impose a total cost, $\sum n_{k,j,m,p}(k+t_j^2/k)\le B$, in addition to the angular cutoff and finite corner sectors. The cost penalizes radial frequency, angular structure, and occupation number together. Section~\ref{sec:unified_H} gives the counting argument and an exactly enumerable 31-state example.
+
+The original selected-angular-sector Gaussian amplitude, perturbative radiative state count, and conditional algebraic reconstruction motivate comparisons, but none replaces this missing dynamical derivation. A pure-state representation also does not determine every area-changing amplitude from the fixed-area data. We keep those questions open. Table~\ref{tab:changes} states what each modification does and what it does not establish.
+
+\begin{table*}[t]
+\caption{From the continuum concerns to explicit assumptions in the finite model. Each row distinguishes a controlled model statement from an outstanding gravitational derivation.}
+\label{tab:changes}
+\begin{ruledtabular}
+\begin{tabular}{p{0.21\textwidth}p{0.35\textwidth}p{0.35\textwidth}}
+Issue & Change made here & Scope of the result \\
+\colrule
+Closed state sums & Count a budget-limited state space with finite corner sectors before taking traces & Finite traces at fixed model parameters; the gravitational origin of the restriction remains open \\
+Short-distance clock fluctuations & Vacuum subtraction and smooth averaging; use replacement lower bounds & Controlled quadratic-mode estimates; a nonlinear continuum clock is not constructed \\
+Unbounded mode occupations & Bound the total radial, angular, and occupation cost & Finite radiative sector; angular resolution alone would not suffice \\
+Removing the regulators & Display cutoff dependence and test selected benchmarks & Consistency evidence at finite resolution; no ultraviolet completion or unified continuum limit is established \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
 
 \section{Fuzzy-Sphere Null-Cone Matrix Gravity}\label{sec:unified}
 
-Motivated by these concerns, we lift the null-cone fields onto a fuzzy sphere of dynamically determined matrix rank, replace the sharp clock by a smoothly smeared massive-QEI clock, and impose an area-scaled double-null occupation budget.
+We represent the null-cone fields on a fuzzy sphere whose matrix rank is tied to the corner area, use a smoothly averaged clock in the mode approximation, and impose an area-scaled occupation budget. The finite-state conclusion below is conditional on these choices.
 
 \subsection{Fuzzy Monopole Bundles, Explicit Matrix Vertices, and the Action $I_{\mathrm{FSG}}^{(N)}$}\label{sec:unified_action}
 
@@ -134,16 +155,11 @@ Direct matrix evaluation confirms both the adjoint relation~\eqref{eq:cubic_vert
 
 The full operator-ordered matrix action $I_{\mathrm{FSG}}^{(N)}[\widehat{\rho}^2,\widehat{N},\widehat{F},\widehat{V},\widehat{Z}]$ built from $\mathcal{S}_N^{(1)}$ and $\mathcal{S}_N^{(2)}$ is given explicitly in Appendix~\ref{app:explicit_action}. Selected finite-$N$ saddle checks reproduce Schwarzschild and Schwarzschild--de Sitter data for $N\ge3$ (residual $\le 3.8\times 10^{-16}$). For non-spherical solutions, slow-rotation Kerr $O(a^2)$ quadrupole backreaction and nonlinear $j=2$ gravitational-wave shear focusing conserve the monopole identically ($c_0=1.000000$) and approach the selected continuum benchmark contractions at order $O(1/N^2)=O(\lP^2/\scrA)=O(1/s)$ ($p=2.00$ for Kerr, $p=2.03$ for shear waves), as shown in Fig.~\ref{fig:unified}(A). In the present formulation, the discrete corner Hilbert space $\calH_{\mathrm{corner}}(M)$ of area $s_M=M s_{\min}$ is coupled kinematically to the radiative matrix action $I_{\mathrm{FSG}}^{(N)}$; deriving the discrete corner spectrum directly from a nonperturbative quantization of $I_{\mathrm{FSG}}^{(N)}$ remains an open problem (Sec.~\ref{sec:discussion}).
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig2_unified_matrix_gravity.pdf}
-\caption{\textbf{Fuzzy-sphere null-cone matrix gravity ($I_{\mathrm{FSG}}^{(N)}$).} \textbf{(A)} Parity-symmetrized contractions on fuzzy monopole bundles $\calB_{s_w}^{(N)}$ cancel $O(1/N)$ artifacts, giving $O(1/N^2)=O(1/s)$ convergence to continuum 4D GR for slow-rotation Kerr ($p=2.00$) and nonlinear $j=2$ gravitational-wave backreaction ($p=2.03$). \textbf{(B)} Second variation $\delta^2 I_{\mathrm{FSG}}^{(N)}$ around the finite-$N$ Schwarzschild saddle reproduces the Regge--Wheeler potential with the $-6M/r^3$ Weyl tidal term and its isospectral Zerilli partner (greybody discrepancy down to $2.86\times 10^{-6}$), lowering the $j=2$ barrier by $-38.8\%$ and increasing peak transmission $16.3\times$. \textbf{(C)} Truncated Gel'fand--Naimark $SO(3,1)$ boosts on $\calB_2^{(N)}$ close on all sub-Planckian modes $j\le N-2$ and restore finite-rapidity boost covariance exponentially in $N$ ($1.55\times 10^{-15}$ infidelity by $N=18$ at $\eta=0.5$). \textbf{(D)} Minimal embadon area ($s_{\min}=\ln 3$) is modeled by replacing classical Raychaudhuri caustic collapse ($\rho\to 0$ at $v_c=0.7405$) by an Ermakov--Pinney bounce at $\rho_{\min}=\sqrt{\ln 3/\pi}\,\lP=0.5914\,\lP$.}
-\label{fig:unified}
-\end{figure*}
+
 
 \subsection{Tapered Massive-QEI Clock and Exponential-Clock Bounds}\label{sec:unified_clock}
 
-To study the clock-domain issue in Sec.~\ref{sec:audit_fail}, we replace the sharp-endpoint unrenormalized integral $\widehat{\Xi}_y(1)$ by a normal-ordered Raychaudhuri integral smeared with a smooth compactly supported profile $g(u)=\exp[-(4u(1-u))^{-1}+1]\in C^\infty_c((0,1))$. Each four-dimensional spin-2 harmonic $(j,m,p)$ propagates along the null cone with an effective two-dimensional mass $\mu_j=t_j/(2\pi)>0$. Because Flanagan's bound~\cite{Flanagan1997} applies to a massless scalar in two dimensions, we invoke the Fewster--Eveson massive two-dimensional quantum energy inequality~\cite{FewsterEveson1998}, which establishes a mass-independent and $N_{\mathrm{rad}}$-independent floor $E_{\min}^{\mathrm{NO}}(\mu_j)\ge E_{\mathrm{FE}}(0)=-\frac{1}{16\pi^2}\int_0^1 (g')^2 du=-0.038331$ for every $\mu_j\ge 0$. Writing the smeared mode operator as $H_{g,j}^{\mathrm{NO}}=a^\dagger A a+\frac{1}{2}(a^\dagger B a^\dagger+a B a)$ with $A=\frac{1}{2}(M_q+M_p)$ and $B=\frac{1}{2}(M_q-M_p)$, the algebraic identity $(k^2+\mu^2)(l^2+\mu^2)-(kl+\mu^2)^2=\mu^2(k-l)^2$ ensures that the pair-creation kernel $B(\mu_j)$ stays Hilbert--Schmidt uniformly as $N_{\mathrm{rad}}\to\infty$ and decays as $O(1/\mu_j^2)$ at large $j$. The exact vacuum cumulants $\kappa_2=\frac{1}{2}\Tr(B^2)$ and $\kappa_4=\Tr(B^4)+\Tr(BA^2B)+\Tr(BABA)$ converge to seven digits across $N_{\mathrm{rad}}=20\to 120$ ($\kappa_2=0.0029505$, $\kappa_4=0.0060425$ at $j=2$), while higher harmonics $j=0\to 80$ reduce $|E_{\min}^{\mathrm{NO}}(j)|$ by a factor of $14$ and remain strictly above $E_{\mathrm{FE}}(0)$. At $s=5000$ ($J_{\max}=66$), the area-bound multiplier is $e^{2\Xi_{\mathrm{QEI}}}=1.0036$ ($+0.36\%$) and connected spatial correlations fall to $4.89\times 10^{-6}$ at $90^\circ$ [Fig.~\ref{fig:1loop}(A)].
+To study the clock-domain issue in Sec.~\ref{sec:audit_clock}, we replace the sharp-endpoint unrenormalized integral $\widehat{\Xi}_y(1)$ by a normal-ordered Raychaudhuri integral smeared with a smooth compactly supported profile $g(u)=\exp[-(4u(1-u))^{-1}+1]$ for $0<u<1$, extended by zero outside $[0,1]$. Each four-dimensional spin-2 harmonic $(j,m,p)$ propagates along the null cone with an effective two-dimensional mass $\mu_j=t_j/(2\pi)>0$. Because Flanagan's bound~\cite{Flanagan1997} applies to a massless scalar in two dimensions, we invoke the Fewster--Eveson massive two-dimensional quantum energy inequality~\cite{FewsterEveson1998}, which establishes a mass-independent and $N_{\mathrm{rad}}$-independent floor $E_{\min}^{\mathrm{NO}}(\mu_j)\ge E_{\mathrm{FE}}(0)=-\frac{1}{16\pi^2}\int_0^1 (g')^2 du=-0.038331$ for every $\mu_j\ge 0$. Writing the smeared mode operator as $H_{g,j}^{\mathrm{NO}}=a^\dagger A a+\frac{1}{2}(a^\dagger B a^\dagger+a B a)$ with $A=\frac{1}{2}(M_q+M_p)$ and $B=\frac{1}{2}(M_q-M_p)$, the algebraic identity $(k^2+\mu^2)(l^2+\mu^2)-(kl+\mu^2)^2=\mu^2(k-l)^2$ ensures that the pair-creation kernel $B(\mu_j)$ stays Hilbert--Schmidt uniformly as $N_{\mathrm{rad}}\to\infty$ and decays as $O(1/\mu_j^2)$ at large $j$. The exact vacuum cumulants $\kappa_2=\frac{1}{2}\Tr(B^2)$ and $\kappa_4=\Tr(B^4)+\Tr(BA^2B)+\Tr(BABA)$ converge to seven digits across $N_{\mathrm{rad}}=20\to 120$ ($\kappa_2=0.0029505$, $\kappa_4=0.0060425$ at $j=2$), while higher harmonics $j=0\to 80$ reduce $|E_{\min}^{\mathrm{NO}}(j)|$ by a factor of $14$ and remain strictly above $E_{\mathrm{FE}}(0)$. At $s=5000$ ($J_{\max}=66$), the area-bound multiplier is $e^{2\Xi_{\mathrm{QEI}}}=1.0036$ ($+0.36\%$) and connected spatial correlations fall to $4.89\times 10^{-6}$ at $90^\circ$ [Fig.~\ref{fig:1loop}(A)].
 
 The mode reduction and the application of scalar quantum energy inequalities to the proposed gravitational clock are assumptions of this quadratic benchmark. Their extension to the full nonlinear constrained null-cone theory, including uniform control of all mode sums, remains to be demonstrated. Finite-cutoff numerical convergence alone does not prove that extension.
 
@@ -155,7 +171,7 @@ Both the second-moment bound $\|(1-P_{\scrD})|\Omega_s\rangle\|^2\le \kappa_{2,\
 
 \subsection{Area-Scaled Budget $B(s)=s Q_*$, Projected Dynamics $H_{\mathrm{phys}}$, and Type~I Gluing}\label{sec:unified_H}
 
-Imposing only a clock cap $\bar{u}_*\le\ell(\scrD)$ leaves a high-$j$ loophole in which large angular harmonics contribute little radial focusing. In $I_{\mathrm{FSG}}^{(N)}$, fixing the corner area $s=\scrA/(4G_N\hbar)$ together with the cap clock ratio $\ell(\scrD)/u_{\mathrm{cl}}=e^{Q_R}$ and a transverse cap curvature bound $Q_\perp$ bounds the combined Raychaudhuri (Eq.~B.3) and cross-focusing (Eq.~B.5a) integrals by $Q_*:=Q_R+Q_\perp=O(1)$. In terms of graviton occupation numbers $n_{k,j,m,p}\in\mathbb{N}_{\ge 0}$, this enforces the total occupation budget
+The radial focusing clock alone does not explicitly penalize fine angular structure. Classical focusing and transverse-curvature constraints motivate combining a radial allowance $Q_R$ with a transverse allowance $Q_\perp$. We set $Q_*:=Q_R+Q_\perp>0$ and impose the following quantum occupation budget at fixed dimensionless corner area $s=\scrA/(4G_N\hbar)$. This is an additional model assumption, not a consequence proved for the original nonlinear clock:
 \begin{align}\label{eq:cross_focusing}
 \sum_{k,j,m,p} n_{k,j,m,p}\,\omega_{k,j} &\;\le\; B(s) := s Q_*, \nonumber\\
 \omega_{k,j} &= k + \frac{t_j^2}{k} \;\ge\; \max(k,2t_j),
@@ -166,7 +182,7 @@ For a directly enumerable example, $B=4$ admits 30 one-graviton states and the v
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/review_02_state_count.pdf}
-\caption{\textbf{A 31-state radiative sector.} (A) With total budget $B=4$ and $J_{\max}\ge2$, only $(j,k)=(2,1),(2,2),(2,3)$ admit a single graviton. Their costs are $3,3,11/3$. (B) Five magnetic substates and two polarizations per radial mode give 30 one-graviton states. Adding the vacuum gives 31. Every two-graviton state costs at least six. This example fixes the corner sector and counts the spin-2 radiative degrees of freedom.}
+\caption{\textbf{An exactly enumerable 31-state radiative sector.} (A) Discrete costs $\omega_{k,j}=k+(j-1)(j+2)/(2k)$ for three angular modes. Filled markers lie within the total budget $B=4$; only $(j,k)=(2,1),(2,2),(2,3)$ qualify, with costs $3,3,11/3$. Lines connect discrete values as guides. (B) Each marker is one one-graviton basis state: three radial modes, five magnetic substates, and two polarization labels ($+$ and $-$). The vacuum adds one state. Every two-graviton state costs at least six. The count fixes the corner sector and assumes $J_{\max}\ge2$.}
 \label{fig:state_count}
 \end{figure*}
 
@@ -176,14 +192,9 @@ H_{\mathrm{phys}} := P_{B(s)}\,H_{\mathrm{FSG}}\,P_{B(s)}, \qquad H_{\mathrm{FSG
 \end{equation}
 with $\widehat{\mathcal{V}}_3^{(N)}$ constructed directly from the Wigner-$6j$ cubic vertex~\eqref{eq:cubic_vertex}--\eqref{eq:wigner6j}. By idempotence $P_{B(s)}^2=P_{B(s)}$, unitary evolution $U_t=e^{-it H_{\mathrm{phys}}}$ leaves $P_{B(s)}\calH$ strictly invariant: $\|(1-P_B)U_t P_B\|=0$. Evaluating Eq.~\eqref{eq:H_phys} on an 88-state $1\leftrightarrow 2$ graviton-focusing Fock space projected to its 19-state physical sector ($B=9$) across $N=6\dots 32$ confirms zero leakage and $O(1/N^2)$ convergence of both the interacting $1\to 2$ transition probability ($p=2.03$) and the projected one-loop graviton self-energy ($p=2.02$) to the corresponding continuum-vertex calculation [Fig.~\ref{fig:v2}(B)].
 
-Replacing infinite-dimensional $\mathrm{Diff}(S^2)$~\cite{CiambelliKlinger2026} by compact $SU(2)$ corner rotations on $\calH_{\scrD}^{\mathrm{FSG}}=\bigoplus_{M\in\{2,4,6\}}\calH_{\mathrm{corner}}(M)\otimes\calH_{\mathrm{rad}}^{\mathrm{RW+Z}}(M)$ ($\dim_{\mathrm{rad}}=15$; explicit operator formula in Appendix~\ref{app:explicit_action}) using spin-$\frac{1}{2}$ embadons ($s_M=M\ln 2$, $\dim\calH_{\mathrm{corner}}(M)=2^M$) gives sector dimensions $(d_2,d_4,d_6)=(60,240,960)$ ($\dim\calH_{\scrD}^{\mathrm{FSG}}=1{,}260$) and Boltzmann weights $(e^{-s_2},e^{-s_4},e^{-s_6})=(\frac{1}{4},\frac{1}{16},\frac{1}{64})$. The resulting Axiom~5 trace is $Z_{\scrD,1}=60/4+240/16+960/64=45.0000$. (With the $s_M=M\ln 3$ spectrum instead, $729 Z=81 d_2+9 d_4+d_6\equiv 4\pmod 8$ for any integers $d_2+d_4+d_6=1260$, whereas $729\times 45\equiv 5\pmod 8$, so $Z_{\scrD,1}=45$ uniquely reflects the $M\ln 2$ spectrum.) On this 1,260-state space, $H_{\mathrm{FSG}}$ is $SU(2)$-invariant ($\max_i\|[H_{\mathrm{FSG}},J_i]\|=3.09\times 10^{-14}$), has a bounded positive inverse lapse $\widehat{N}^{-1}\in[0.9998,30.7195]$, generates a unique unitary area-changing gluing operator $U_{\calM}$ (singlet transitions $|\langle 4|U|2\rangle|=0.22285$, $|\langle 6|U|4\rangle|=0.22281$), admits reflection-positive $K_{\calM}$ ($\lambda_{\min}=4.385\times 10^{-2}>0$, $Z_{\mathrm{Euc}}=13.9026$), and satisfies the Lorentzian-to-Euclidean Wick identity of Appendix~E.2 identically.
+Replacing infinite-dimensional $\mathrm{Diff}(S^2)$~\cite{CiambelliKlinger2026} by compact $SU(2)$ corner rotations on $\calH_{\scrD}^{\mathrm{FSG}}=\bigoplus_{M\in\{2,4,6\}}\calH_{\mathrm{corner}}(M)\otimes\calH_{\mathrm{rad}}^{\mathrm{RW+Z}}(M)$ ($\dim_{\mathrm{rad}}=15$; explicit operator formula in Appendix~\ref{app:explicit_action}) using spin-$\frac{1}{2}$ embadons ($s_M=M\ln 2$, $\dim\calH_{\mathrm{corner}}(M)=2^M$) gives sector dimensions $(d_2,d_4,d_6)=(60,240,960)$ ($\dim\calH_{\scrD}^{\mathrm{FSG}}=1{,}260$) and Boltzmann weights $(e^{-s_2},e^{-s_4},e^{-s_6})=(\frac{1}{4},\frac{1}{16},\frac{1}{64})$. The resulting Axiom~5 trace is $Z_{\scrD,1}=60/4+240/16+960/64=45.0000$. (With the $s_M=M\ln 3$ spectrum instead, $729 Z=81 d_2+9 d_4+d_6\equiv 4\pmod 8$ for any integers $d_2+d_4+d_6=1260$, whereas $729\times 45\equiv 5\pmod 8$, so $Z_{\scrD,1}=45$ uniquely reflects the $M\ln 2$ spectrum.) On this 1,260-state space, $H_{\mathrm{FSG}}$ is $SU(2)$-invariant ($\max_i\|[H_{\mathrm{FSG}},J_i]\|=3.09\times 10^{-14}$), has a bounded positive inverse lapse $\widehat{N}^{-1}\in[0.9998,30.7195]$, generates a unique unitary area-changing gluing operator $U_{\calM}$ (singlet transitions $|\langle 4|U|2\rangle|=0.22285$, $|\langle 6|U|4\rangle|=0.22281$), admits reflection-positive $K_{\calM}$ ($\lambda_{\min}=4.385\times 10^{-2}>0$, $Z_{\mathrm{Euc}}=13.9026$), and satisfies the corresponding finite-matrix Lorentzian--Euclidean contraction identity.
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig5_v2_unification_and_clock.pdf}
-\caption{\textbf{Matrix cubic vertex, projected interacting dynamics, unified $B(s)=s Q_*$ pair creation, and clock bounds.} \textbf{(A)} Parity-symmetrized cubic vertex $\mathcal{V}_3^{(N)}[F;Z_2,Z_3]$ [Eqs.~\eqref{eq:iota_map}--\eqref{eq:wigner6j}] converges to continuum spin-weighted Gaunt integrals as $O(1/N^2)$ ($p=2.05$ for $(2,2,2)$), versus $O(1/N)$ ($p=1.06$) for one-sided traces. \textbf{(B)} Projected Hamiltonian $H_{\mathrm{phys}}=P_B H_{\mathrm{FSG}} P_B$ preserves $P_B\calH$ with zero leakage while both the $1\to 2$ graviton splitting probability ($p=2.03$) and one-loop self-energy ($p=2.02$) converge at $O(1/N^2)$. \textbf{(C)} Pair-state cutoff $2\omega_{k,j}\le B(s)=sQ_*$ ($Q_*=1$) in Eq.~\eqref{eq:sec44_4d}. The real and imaginary amplitudes retain their leading macroscopic powers, and the difference from the radial-unrestricted reference is $O(s^{-2})$. At $B=4$ the pair amplitude is zero. \textbf{(D)} Clock-projector failure bounds $\|(1-P_{\scrD})|\Omega_s\rangle\|^2$ inside $B(s)=0.5 s$: uniform $N_{\mathrm{rad}}\to\infty$ second-moment ($O(1/s)$) and fourth-moment ($O(1/s^2)$) bounds alongside the Balian--Br\'ezin Chernoff bound ($\lambda_{\mathrm{crit}}^{\mathrm{phys}}\in[17.0,22.3]\gg 2$).}
-\label{fig:v2}
-\end{figure*}
+
 
 \subsection{Regge--Wheeler/Zerilli Perturbations, Boost Closure, and Caustic Bounce}\label{sec:unified_rw}
 
@@ -191,16 +202,72 @@ Expanding $I_{\mathrm{FSG}}^{(N)}$ to second order around its finite-$N$ Schwarz
 
 Because noncompact $SO(3,1)$ has no faithful finite-dimensional unitary representation, we examine truncated Gel'fand--Naimark spin-2 generators $(L_i^{(N)},K_i^{(N)})$ on $\calB_2^{(N)}$. Direct evaluation across $N=6\dots 24$ confirms exact $[L,L]$ and $[L,K]$ commutation everywhere, exact boost closure $([K_i,K_j]+i\epsilon_{ijk}L_k)|j,m\rangle=0$, and exact Lorentz Casimirs ($C_1=+2,C_2=-2$) on every mode $j\le N-2$, confining the entire boost defect to the single Planckian shell $j=N-1$. Finite-rapidity boosts of a localized $j=2$ wavepacket recover continuum $SO(3,1)$ exponentially in $N$, with infidelity reaching $1.55\times 10^{-15}$ by $N=18$ ($\eta=0.5$), $2.66\times 10^{-15}$ by $N=32$ ($\eta=1.0$), and $1.33\times 10^{-12}$ by $N=44$ ($\eta=1.5$) [Fig.~\ref{fig:unified}(C)]. Under strong shear focusing ($\sigma_0=3.0$, classical caustic $\rho\to 0$ at $v_c=0.7405$), the minimal embadon area barrier ($s_{\min}=\ln 3$) is modeled by the Ermakov--Pinney trajectory $\rho_Q(v)=\sqrt{r_0^2\cos^2(\omega v)+\rho_{\min}^2\sin^2(\omega v)}$ that matches classical general relativity to $0.036\%$ in the semiclassical regime and bounces smoothly at $\rho_{\min}=\sqrt{\ln 3/\pi}\,\lP=0.5914\,\lP$ [Fig.~\ref{fig:unified}(D)].
 
-\section{Universal Four-Dimensional One-Loop Logarithmic Corrections}\label{sec:1loop}
+\section{Monte Carlo of the Euclidean Matrix Model}\label{sec:hmc}
 
-Purely kinematical embadon horizons reproduce the Bekenstein--Hawking area law $S=s$ with logarithmic coefficient $c_{\log}=0$ (unconstrained compositions, $s_{\min}=\ln 3$) or $c_{\log}=-\frac{3}{2}$ (an $SU(2)$ singlet horizon, matching Kaul and Majumdar~\cite{KaulMajumdar2000}). By contrast, Sen's covariant one-loop computation for four-dimensional pure gravity on Schwarzschild~\cite{Sen2013}, the target of Sec.~5.3 of Ref.~\cite{Chandrasekaran2026}, gives positive coefficients: $+\frac{106}{45}\approx +2.3556$ for mixed angular momentum and $+\frac{77}{90}\approx +0.8556$ in the $J=0$ singlet ensemble.
+We study nonperturbative sampling of a finite Euclidean matrix model motivated by the preceding vertex construction. A derivation equating its measure and dynamics to the complete constrained Lorentzian action is still required. The sampled path integral is
+\begin{equation}\label{eq:hmc_Z}
+Z^{(N)} = \int \mathcal{D}\Phi\,\mathcal{D}_{\widehat{\rho}} Z\,\mathcal{D}_{\widehat{\rho}} Z^\dagger\,\exp\!\big(-S_E^{(N)}[\Phi,Z]\big)
+\end{equation}
+on a periodic radial-time lattice $T^2$ ($N_\tau\times N_r$) fibered with the fuzzy monopole bundles $\Phi(x)\in\calB_0^{(N)}$ ($N\times N$ Hermitian, representing the conformal area fluctuation $\widehat{\rho}^2/r_0^2=\exp(g_N\Phi)$) and $Z(x)\in\calB_{+2}^{(N)}$ ($(N+2)\times(N-2)$ complex spin-2 shear).
+
+Using the parity-symmetrized embedding $\iota_{N\to N\pm s}$ of Eq.~\eqref{eq:iota_map} and the exact $SU(2)$-intertwining spin-lowering map $\widehat{\bareth}:\calB_{+2}^{(N)}\to\calB_{+1}^{(N)}$ satisfying $\Tr((\widehat{\bareth}Z)^\dagger\widehat{\bareth}Z)=\Tr(Z^\dagger(L^2-2)Z)$, the Euclidean action, with a nonnegative shear contribution, is
+\begin{align}\label{eq:hmc_action}
+&S_E^{(N)} = \sum_{x\in T^2}\Bigg\{\frac{1}{2}\Tr_N\!\Big[(\nabla_\parallel\Phi)^2 + \Phi L^2\Phi + \mu^2\Phi^2 + \tfrac{\lambda_4}{2N}\Phi^4\Big] \nonumber\\
+&\quad + \frac{1}{2}\Big[\Tr_{N-2}\!\big(e^{g_N\iota_{N\to N-2}(\Phi)}|\nabla_\parallel Z|_R^2\big) \nonumber\\
+&\qquad + \Tr_{N+2}\!\big(e^{g_N\iota_{N\to N+2}(\Phi)}|\nabla_\parallel Z|_L^2\big)\Big] \nonumber\\
+&\quad + \frac{1}{2}\Big[\Tr_{N-1}\!\big(e^{g_N\iota_{N\to N-1}(\Phi)}(\widehat{\bareth}Z)^\dagger\widehat{\bareth}Z\big) \nonumber\\
+&\qquad + \Tr_{N+1}\!\big(e^{g_N\iota_{N\to N+1}(\Phi)}\widehat{\bareth}Z(\widehat{\bareth}Z)^\dagger\big)\Big]\Bigg\} + S_{\mathrm{DW}},
+\end{align}
+where $|\nabla_\parallel Z|_R^2=(\partial_\tau Z)^\dagger\partial_\tau Z+(\partial_r Z)^\dagger\partial_r Z$, $|\nabla_\parallel Z|_L^2=\partial_\tau Z(\partial_\tau Z)^\dagger+\partial_r Z(\partial_r Z)^\dagger$, and $S_{\mathrm{DW}}$ encodes the invariant DeWitt--Fujikawa spin-2 path-integral measure $\mathcal{D}_{\widehat{\rho}}Z\,\mathcal{D}_{\widehat{\rho}}Z^\dagger$:
+\begin{equation}\label{eq:dewitt_measure}
+S_{\mathrm{DW}}[\Phi] = -\frac{g_N(N^2-4)}{N}\sum_{x\in T^2}\Tr_N\!\big(\Phi(x)\big).
+\end{equation}
+Expanding Eq.~\eqref{eq:hmc_action} to $O(g_N)$ reproduces the exact parity-symmetrized Wigner-$6j$ cubic vertex~\eqref{eq:cubic_vertex}--\eqref{eq:wigner6j}, while the exponential coupling preserves strict positivity $S_{\mathrm{shear}}\ge 0$ for all configurations.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figs/fig1_breakthrough_1loop.pdf}
-\caption{\textbf{Massive-QEI clock and universal four-dimensional one-loop logarithmic corrections on the fuzzy sphere.} \textbf{(A)} Coupled $C^\infty_c$ QEI clock floor $|\Xi_{\mathrm{QEI}}|$ and vacuum variance $\mathrm{Var}_0(\widehat{\Xi}_{\mathrm{avg}}^{\mathrm{NO}})$ versus horizon area $s$ ($N_{\mathrm{rad}}=\infty$), securing $\|P_{\scrD}|\Omega_s\rangle\|^2\ge 0.99999889$ at $s=5000$. \textbf{(B)} Flat-space graviton and Maxwell entanglement entropy on $S^2_J$ ($N=200$ radial lattice): a smooth Casimir regulator $e^{-j(j+1)/(\alpha R_{\mathrm{eff}})^2}$ removes the sharp-step Euler--Maclaurin anomaly at $\alpha=2.0$ and matches Benedetti--Casini's $-\frac{61}{45}$ to $0.02\%\text{--}0.12\%$. \textbf{(C)} Discrete-harmonic integration on curved Euclidean Schwarzschild ($N_{\mathrm{rad}}=\infty$, $j=0\dots J_{\max}(r)$): the Lichnerowicz Weyl tidal coupling ($+3\ln s$) yields a final-doubling bulk slope of $+2.3533$ ($0.09\%$ from Sen's $+\frac{106}{45}$), and combined with the $-\frac{3}{2}\ln s$ $SU(2)$-singlet corner gives $+0.8533$ ($0.26\%$ from $+\frac{77}{90}$). \textbf{(D)} Signed percentage residuals $100(c_{\mathrm{est}}-c_{\mathrm{target}})/|c_{\mathrm{target}}|$. Schwarzschild estimates compare the five-radius fit ($r_H/\lP=20,40,80,160,320$) and the final doubling ($160\to320$). The de Sitter values are exact coefficient identities.}
-\label{fig:1loop}
+\includegraphics[width=\textwidth]{figs/fig_followup_roughness.pdf}
+\caption{\textbf{Coupling reduces geometric roughness in the sampled model.} (A) Mean dimensionless traceless-area fluctuation $Q_2$ versus coupling. Colors and shapes identify matrix rank; lines guide the eye. Bars are $1.96$ times the archived Monte Carlo standard error, often smaller than the symbols. (B) Reduction $100[1-\overline Q_2(2)/\overline Q_2(0)]$, using a measured zero-coupling control at the same rank and lattice. The percentage axis is expanded to show size dependence. Bars are the archived approximate 95\% propagated ratio intervals. The four main coupled ensembles use 4--8 chains; the extended $N=32$ check uses 16 chains with 2000 draws per chain, and the $12\times8$ check uses eight with 700. All comparisons retain $\mu^2=0.25$ and $\lambda_4=0.1$. Intervals quantify sampling uncertainty, not model or discretization uncertainty.}
+\label{fig:roughness}
 \end{figure*}
+
+We sample Eq.~\eqref{eq:hmc_Z} in double precision using Fourier-accelerated hybrid Monte Carlo on $T^2\times S_N^2$. The archived production set contains 28 ensembles with 4--8 chains each. At $N=48$ on a $12\times4$ lattice, each chain contains $N_\tau N_r(3N^2-8)=331{,}392$ real variables. The previously quoted $1{,}325{,}568$ is the sum over four independent replicas.
+
+\paragraph{Matched controls and a larger lattice.}
+We define roughness by $Q_2=V^{-1}\sum_x N^{-1}\Tr(\Phi_{\mathrm{trless}}^2)$, a measure of traceless area-field fluctuations. With $\mu^2=0.25$ and $\lambda_4=0.1$ held fixed, changing $g_N$ from zero to two reduces its mean by $48.016\%$, $47.758\%$, $47.681\%$, and $47.772\%$ at ranks $8,16,24,32$, respectively [Fig.~\ref{fig:roughness}]. The corresponding approximate 95\% Monte Carlo intervals are $[47.899,48.134]\%$, $[47.674,47.841]\%$, $[47.603,47.758]\%$, and $[47.676,47.866]\%$. The quartic-only change relative to the analytic Gaussian reference is at most $0.17\%$. These matched controls resolve the denominator ambiguity in the earlier Gaussian-baseline comparison.
+
+At $N=24$, increasing the lattice from $8\times4$ to $12\times8$ gives $47.621\%$ suppression, with interval $[47.572,47.670]\%$. The difference is $-0.060\pm0.047$ percentage points (one standard error; 95\% interval $[-0.151,+0.032]$). This supports persistence over the tested volume change. It does not establish exact rank independence or a continuum extrapolation. The four-rank headline uses archived $g_N=2$ summaries; the extended $N=32$ run provides a full-history cross-check of $47.789\%$.
+
+\paragraph{What convergence and drift mean.}
+A Monte Carlo chain is a sequence of correlated sampled configurations. Sampling drift means that estimated distributions or averages continue to change with simulation time. Rank-normalized split-$\hat R$~\cite{Vehtari2021} compares within-chain and between-chain behavior after splitting chains in half; values near one support agreement. Bulk and tail effective sample sizes (ESS) estimate the information available for typical values and distribution tails after accounting for correlations. We use $\hat R<1.01$ and both ESS values at least 400 as diagnostic targets, not proofs of stationarity. This sampling question differs from resolution dependence, the change in a computed quantity when a numerical cutoff or lattice is refined.
+
+A spatially uniform collective move changes $\Phi$ and rescales $Z$ together. The follow-up adds local Fourier-wave moves,
+$\Phi(x)\mapsto\Phi(x)+\delta(x)I_N/\sqrt N$ and $Z(x)\mapsto e^{-g_N\delta(x)/(2\sqrt N)}Z(x)$.
+The angular shear term is invariant and the measure change cancels the transformation Jacobian. The local move does change the radial-time terms; these enter its Metropolis acceptance probability. Each extended run uses 16 chains with 2000 retained draws per chain.
+
+In these follow-ups, the local mean-area rank-normalized split-$\hat R$ improves from 1.1082 to 1.0098 at fixed-coupling $N=32$, and from 1.0325 to 1.0021 at scaled-coupling $N=48$ [Fig.~\ref{fig:hmc}(B)]. Bulk/tail ESS are 2576/5624 and 4020/9123, respectively. Earlier values 1.416 and 1.181 were ordinary unsplit diagnostics and should not be labeled as the same estimator. The $N=24$, $12\times8$, $g_N=2$ run passes the roughness targets ($\hat R=1.0041$, bulk ESS 896), but its local area remains poorly mixed ($\hat R=1.3268$, bulk ESS 20). Convergence is therefore assessed separately for each observable and ensemble.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig6_modal_b200_hmc.pdf}
+\caption{\textbf{Sampling convergence depends on the observable.} Rank-normalized split-$\hat R$ for (A) roughness and (B) local mean area, with different horizontal scales. Values near one indicate agreement across split chains; the target is $\hat R<1.01$. (C) Bulk and tail effective sample sizes (ESS) for local mean area, on a logarithmic axis; the target is at least 400 for each. ``Global'' and ``+local'' identify the successive sampling schemes, with local collective moves added in the latter. The extended $N=32$ and $N=48$ runs use 16 chains with 2000 retained draws per chain; their couplings differ as specified in the text. The $N=24$, $12\times8$ test has eight chains with 700 draws. Its roughness passes the displayed targets while its area remains poorly mixed. These diagnostics do not prove stationarity.}
+\label{fig:hmc}
+\end{figure*}
+
+\paragraph{Area and spin-2 benchmarks.}
+At scaled coupling $g_N=3.3821/\sqrt N$ and $\mu^2=0.05$, the extended $N=48$ run gives local mean area $1.0142\pm0.0009$ (between-chain standard error), with mean extreme eigenvalues $(0.726,1.381)$. At fixed $g_N=2$, $N=32$, these quantities are $1.2107\pm0.0057$ and $(0.342,3.038)$. The matrix $\exp(g_N\Phi)$ is positive by construction for Hermitian $\Phi$. Its positive sampled eigenvalues alone do not prove the absence of physical spacetime caustics.
+
+The archived $N=48$ propagator is close to its free-field value, with fitted wave-function coefficient $Z_{\mathrm{wf}}=1.0008$. The mass-squared fit intercepts at increasing ranks $8,12,16,24,32,48$ are $+0.348,+0.314,+0.137,-0.065,+0.016,+0.077$. Their uncertainties and joint volume/rank extrapolation remain to be established. The Binder statistic of the invariant scalar $Q_2$ alone does not determine spontaneous breaking of $SU(2)$.
+
+\paragraph{Functional measure.}
+Earlier $g=2.5$, $\mu^2=0.5$ ensembles show a large area difference with and without the DeWitt term. The ratios of mean areas are approximately 197, 181, and 177 at ranks 8, 16, and 24 on matching lattices. At rank 32 the temporal extents differ. Establishing a phase transition requires matched volumes, observable-specific convergence, and scaling analysis beyond these comparisons.
+
+
+\section{One-Loop Entropy Benchmarks}\label{sec:1loop}
+
+Purely kinematical embadon horizons reproduce the Bekenstein--Hawking area law $S=s$ with logarithmic coefficient $c_{\log}=0$ (unconstrained compositions, $s_{\min}=\ln 3$) or $c_{\log}=-\frac{3}{2}$ (an $SU(2)$ singlet horizon, matching Kaul and Majumdar~\cite{KaulMajumdar2000}). By contrast, Sen's covariant one-loop computation for four-dimensional pure gravity on Schwarzschild~\cite{Sen2013}, also considered in Ref.~\cite{Chandrasekaran2026}, gives positive coefficients: $+\frac{106}{45}\approx +2.3556$ for mixed angular momentum and $+\frac{77}{90}\approx +0.8556$ in the $J=0$ singlet ensemble.
+
+
 
 Two results reconcile discrete corners with Sen's positive sign. First, orthonormal-frame evaluation of the four-dimensional de Donder Lichnerowicz operator $\Delta_L h_{ab}=-\nabla^2 h_{ab}-2W_{acbd}h^{cd}$ plus vector ghost on Ricci-flat Schwarzschild splits the Gilkey--Seeley--DeWitt coefficient $a_2$ into three channels:
 \begin{align}\label{eq:lich_flip}
@@ -234,7 +301,7 @@ de Sitter $S^4$~\cite{ADLS2022} & $-\frac{571}{45}$ ($-12.6889$) & $-\frac{571}{
 
 \section{Two-Loop Regulator Analysis, Dynamical Rank Sums, and Sub-Planckian Bounds}\label{sec:uv}
 
-\subsection{Two-Loop Transverse-Only No-Go Theorem and Fixed-Budget Sums}\label{sec:uv_2loop}
+\subsection{Transverse-Only Cutoffs and Fixed-Budget Sums}\label{sec:uv_2loop}
 
 Because Theorem~\ref{thm:isotropy} holds at one loop with a transverse fuzzy-sphere cutoff alone, one might ask whether $S^2_N$ alone regulates higher loops. Power counting and numerical integration over a parallel radial-time cutoff $\Lambda_\parallel/\Lambda_\perp=2\to 32$ show that it does not. Whereas the one-loop $W^2$ integral converges monotonically to $\ln 5=1.60944$ ($1.39813\to 1.60846$), derivative graviton vertices give the two-loop sunset diagram a parallel superficial degree of $+2$, producing a quadratic divergence $I_{\mathrm{2L}}\sim\Lambda_\parallel^2\ln\Lambda_\parallel$ ($1.41\to 4365.05$, fitted slope $p=2.63$) [Fig.~\ref{fig:uv}(A)].
 
@@ -244,16 +311,11 @@ The occupation projector in Eq.~\eqref{eq:cross_focusing} gives a finite-dimensi
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/review_03_two_loop_budget.pdf}
-\caption{\textbf{Growth of a regulated two-loop diagnostic.} The four values use the single-mode cutoff $\omega_{k,j}\le B$ and are reproduced from the archived two-loop calculation. The number of admitted modes increases from 30 to 662. The logarithmic vertical scale shows the increase as the cutoff is relaxed. Connecting segments guide the eye. The full many-particle occupation projector also constrains intermediate-state totals.}
+\caption{\textbf{Finite resolution and cutoff removal are different questions.} (A) Archived one- and two-loop diagnostic integrals with fixed angular cutoff as the radial/time cutoff grows. The one-loop expression approaches its reference limit while the two-loop diagnostic grows. (B) The regulated two-loop sum at four single-mode cost cutoffs $\omega_{k,j}\le B$; labels give the admitted mode count. Both vertical axes are logarithmic and lines guide the eye. The many-particle projector also constrains total intermediate-state cost. These fixed-cutoff calculations do not establish a finite ultraviolet limit.}
 \label{fig:budget_growth}
 \end{figure*}
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig3_uv_completion.pdf}
-\caption{\textbf{Two-loop regulator analysis, dynamical rank sums, and sub-Planckian pixel bounds.} \textbf{(A)} Two-loop obstruction for transverse-only cutoffs ($S^2_N$ only): the 1-loop $W^2$ integral converges while the 2-loop sunset diverges quadratically ($p=2.63$); the horizontal line shows the single-mode regulated diagnostic at $B=4$ (251.18). \textbf{(B)} Dynamical sum over matrix ranks $N=3\dots\infty$: flat space exhibits the $+N^2$ Gross--Perry--Yaffe instability, whereas $\mathrm{AdS}_4$ converges via $-N^3$ cubic energy. \textbf{(C)} $\mathrm{AdS}_4$ Hawking--Page transition ($L=25\,\lP$): the $+\frac{106}{45}\ln s$ correction lowers $T_{\mathrm{HP}}$ relative to $1/\pi$, whereas kinematical LQG ($-\frac{3}{2}\ln s$) raises it. \textbf{(D)} Coarse-graining combined with the sub-Planckian pixel bound $\rho_{\min}=\sqrt{s_{\min}/\pi}\,\lP\le\lP$ ($s_{\min}\le\pi$) restricts higher-spin-free corner spectra to $2\le d_0\le 22$.}
-\label{fig:uv}
-\end{figure*}
+
 
 \subsection{Schwarzschild Goroff--Sagnotti Shift and Sub-Planckian Pixel Bound}\label{sec:uv_cemz}
 
@@ -281,20 +343,15 @@ To test multi-diamond gluing, we constructed a $2{,}048$-dimensional network of 
 
 Combining coarse-graining of the corner entropy ($s_{\min}=\ln(1+d_0)$ when an empty state is included, or $s_{\min}=\ln d_0$ without one, where $d_0\ge 2$ is the local embadon dimension) with the sub-Planckian bound~\eqref{eq:cemz_bound} restricts admissible models to a finite discrete set: $2\le d_0\le 22$ (or $2\le d_0\le 23$). Large-$d_0$ corners violate the bound ($d_0=100\implies \rho_{\min}=1.21\,\lP$), leaving minimal spin-$\frac{1}{2}$ qubit corners ($d_0=2$, $s_{\min}=\ln 2$ with $\rho_{\min}=0.470\,\lP$ or $s_{\min}=\ln 3$ with $\rho_{\min}=0.591\,\lP$) well inside the sub-Planckian window [Fig.~\ref{fig:uv}(D)].
 
-\section{Finite-Dimensional Realizations of Sections~4.4, 5.4, and~6 of Ref.~\cite{Chandrasekaran2026}}\label{sec:orig_sections}
+\section{Pair Amplitudes, Gluing, and Semiclassical Backreaction}\label{sec:orig_sections}
 
-We now apply the fuzzy-sphere completion to the three concrete physical applications developed in Secs.~4.4, 5.4, and~6 of Ref.~\cite{Chandrasekaran2026}.
+We now examine three distinct tests: a regulated Gaussian pair amplitude, finite-matrix gluing identities, and semiclassical backreaction benchmarks. Each calculation is specified below without requiring the original paper. These tests address selected ingredients of the null-cone proposal~\cite{Chandrasekaran2026}; they do not establish equivalence to its complete interacting dynamics.
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig4_original_resolution.pdf}
-\caption{\textbf{Fuzzy-sphere realizations of Sections~4.4, 5.4, and~6 of Ref.~\cite{Chandrasekaran2026}.} \textbf{(A)} Sec.~4.4: the 4D graviton pair-creation amplitude $\calM_{4\mathrm{D}}^{\mathrm{FSG}}(s)$ matches $\mathrm{Re}\sim\frac{\pi}{\sqrt{2s_{\min}}}s^{-3/2}$ and $|\mathrm{Im}|\sim\frac{\ln s}{s_{\min} s^2}$ ($0.18\%$ at $s=10^6$), removing the continuum $J^2$ divergence. \textbf{(B)} Sec.~5.4A: Gram spectrum of $K=140$ two-boundary fillings in $\calA_{\scrD}=M_8(\mathbb{C})\oplus M_6(\mathbb{C})$ saturates $\mathrm{rank}(G)=100=\dim\calK_\Sigma$ with 40 null superpositions ($\le 1.1\times 10^{-15}$). \textbf{(C)} Sec.~5.4B: two disconnected fuzzy-sphere thermofield-double caps match the connected-horizon correlator Eq.~(5.77b) ($\propto u^{-4}$) for $u\gg\lP$ while smoothing the $u\to 0$ singularity at $\rho_{\min}=\sqrt{\ln 3/\pi}\,\lP$. \textbf{(D)} Sec.~6: 1D null-Raychaudhuri check of Eq.~(6.13) showing cancellation of the $O(\hbar^1)$ residual ($O(\hbar^{2.00})$ versus $O(\hbar^1)$ without the dressed cross-term).}
-\label{fig:orig}
-\end{figure*}
 
-\subsection{Sec.~4.4: Four-Dimensional Graviton Pair Creation Under Unified $B(s)=s Q_*$}\label{sec:orig_44}
 
-Summing the four-dimensional graviton modes $(j,m,p,k)$ over $j\in\{2,\dots,J_{\max}(s)\}$ ($J_{\max}=\lfloor\sqrt{s/s_{\min}}\rfloor$) and $k$ satisfying $2\omega_{k,j}=2(k+t_j^2/k)\le B(s)=sQ_*$ of Eq.~\eqref{eq:cross_focusing} promotes the one-dimensional polylogarithm of Sec.~4.4 to a finite four-dimensional sum at every finite area $s$:
+\subsection{A Budget-Limited Gaussian Pair Amplitude}\label{sec:orig_44}
+
+Summing the four-dimensional graviton modes $(j,m,p,k)$ over $j\in\{2,\dots,J_{\max}(s)\}$ ($J_{\max}=\lfloor\sqrt{s/s_{\min}}\rfloor$) and $k$ satisfying $2\omega_{k,j}=2(k+t_j^2/k)\le B(s)=sQ_*$ of Eq.~\eqref{eq:cross_focusing} defines the following finite Gaussian mode sum at every finite area $s$. It extends the selected-angular-sector example of Ref.~\cite{Chandrasekaran2026} with angular degeneracies and a two-particle budget:
 \begin{align}\label{eq:sec44_4d}
 \calM_{B(s)}^{\mathrm{FSG}}(s)
 &= \sum_{j=2}^{J_{\max}(s)}\frac{2j+1}{s^2}\sum_{2\omega_{k,j}\le B(s)}\frac{e^{-2i(k+t_j^2/k)/s}}{(k+t_j^2/k)^2}.
@@ -305,15 +362,20 @@ The factor of two enforces the occupation cost of the intermediate state created
 \end{equation}
 Here $Q_*>0$ is fixed and $J_{\max}^2=O(s)$. The upper radial tail uses $\omega\ge k$ and $\sum_{k>L/2} k^{-2}=O(L^{-1})$. The lower tail uses $\omega\ge t_j^2/k$ and $\sum_{k<2t_j^2/L} k^2/t_j^4=O(t_j^2/L^3)$. Thus the corrected pair projector preserves the leading real $s^{-3/2}$ term and the imaginary $-\ln s/(s_{\min}s^2)$ coefficient of the radial-unrestricted reference sum. Figure~\ref{fig:v2}(C) evaluates the corrected cutoff at $Q_*=1$ across $s=10^2$ to $3\times10^4$. The reference sum in Fig.~\ref{fig:orig}(A) has the same finite angular cutoff and unrestricted radial index.
 
-\subsection{Sec.~5.4: Type~I Sector Factorization and Hartle--Hawking Gluing}\label{sec:orig_54}
+\subsection{Finite-Matrix Gluing and Cross-Horizon Correlations}\label{sec:orig_54}
 
-In Sec.~5.4 of Ref.~\cite{Chandrasekaran2026}, the baby-universe rank bound (Eq.~5.70) and two-boundary factorization identity (Eqs.~5.73--5.74) lacked finite traces because $d_{\scrD}=\infty$. To exhibit a concrete finite-dimensional Type~I consistency realization of these equations, we work on the compact-$SU(2)$ algebra $\calA_{\scrD}=M_8(\mathbb{C})\oplus M_6(\mathbb{C})$ with spin multiplicities $m(0)=1,m(1)=3$ ($\dim\calH_{\scrD}=26$, $\dim\calK_\Sigma=8^2+6^2=100$). Constructing $K=50$ one-boundary fillings and $K=140$ two-boundary cobordisms from thermal collars, area-changing $U_{\calM}$, and handle insertions confirms that the Gram matrix $G_{ab}=\Tr_{\calH_{\scrD}}(N_{M_a}^\dagger N_{M_b})$ is finite and saturates $\mathrm{rank}(G)=26$ for one boundary and $\mathrm{rank}(G)=100$ (40 null combinations, $\le 1.12\times 10^{-15}$) for two boundaries [Fig.~\ref{fig:orig}(B)]. While $\mathrm{rank}(G)\le 100$ follows from linear algebra once $\calA_{\scrD}$ is finite-dimensional, and deriving finite rank from a continuum sum over topologies remains the deeper problem of Ref.~\cite{MarolfMaxfield2020}, this realization repairs the undefined continuum traces, verifies connected-to-disconnected factorization (Eq.~5.73) across all 140 fillings to $8.88\times 10^{-16}$, and refines Eq.~(5.74) to $\calK_\Sigma\cong\bigoplus_J(\calH_J\otimes\calH_J^*)$ with the positive integer trace weights $m(J)=2J+1$ of Appendix~E.2.
+Gluing contracts boundary-state indices. A finite matrix algebra makes this contraction an ordinary finite trace and bounds the number of independent boundary amplitudes. To illustrate that statement, we choose $\calA_{\scrD}=M_8(\mathbb{C})\oplus M_6(\mathbb{C})$, represented with spin multiplicities $m(0)=1$ and $m(1)=3$. Then $\dim\calH_{\scrD}=26$ and the two-boundary operator space has dimension $8^2+6^2=100$. For 140 constructed fillings, the Gram matrix
+\begin{equation}
+G_{ab}=\Tr_{\calH_{\scrD}}(N_{M_a}^{\dagger}N_{M_b})
+\end{equation}
+has rank at most 100 by linear algebra. Numerically it saturates this bound, with 40 residual eigenvalue magnitudes at or below $1.12\times10^{-15}$ [Fig.~\ref{fig:orig}(B)]. Connected-to-disconnected contraction identities hold to $8.88\times10^{-16}$ in this example. The sector decomposition is $\calK_\Sigma\cong\bigoplus_J(\calH_J\otimes\calH_J^*)$, with positive integer trace weights $m(J)=2J+1$. These are consistency checks within the chosen finite algebra. They do not derive its dimension from a continuum sum over topologies or resolve that dynamical problem~\cite{MarolfMaxfield2020}.
 
-Preparing two disconnected fuzzy-sphere Schwarzschild caps in the thermofield-double state $|\Psi_{\mathrm{HH}}^{(N)}\rangle$ reproduces the connected-horizon shear correlator $-c_\perp/(u_L+u_R)^2$ (Eq.~5.76) and area-focusing correlator $2c_\perp^2/(u_L+u_R)^4$ (Eq.~5.77b) to relative error $9.77\times 10^{-5}$ at $(10,40)$ and $2.00\times 10^{-4}$ at $(50,50)$, while the minimal embadon length $\rho_{\min}=\sqrt{\ln 3/\pi}\,\lP$ smooths the $u^{-4}$ bifurcation singularity ($2.0\times 10^4$ at $u=0.05\,\lP$) into a finite plateau ($0.6117$) [Fig.~\ref{fig:orig}(C)].
+A second check concerns two boundaries prepared in a thermofield-double state, an entangled state formed from matching energy eigenstates with thermal weights. The reference shear correlation is $-c_\perp/(u_L+u_R)^2$, giving an area-focusing correlation $2c_\perp^2/(u_L+u_R)^4$. Here $u_L,u_R$ are affine separations and $c_\perp$ fixes the shear normalization. Introducing the model's length $\rho_{\min}=\sqrt{\ln3/\pi}\,\lP$ softens the short-distance divergence while preserving the large-separation behavior [Fig.~\ref{fig:orig}(C)]. This regulated correlator illustrates a possible matching prescription; it is not an independent derivation of a connected spacetime from entanglement.
 
-\subsection{Sec.~6: Semiclassical Backreaction, Page's Graviton Luminosity, and Trace-Constant Cancellation}\label{sec:orig_6}
 
-Section~6 of Ref.~\cite{Chandrasekaran2026} derives the formal one-loop semiclassical Einstein equation $E_{ab}[\bar{g}]+\langle E_{ab}^{(2)}[h,h]\rangle_G=O(\hbar^2)$ (Eq.~6.13). We test its mechanism in three ways.
+\subsection{Backreaction, Graviton Emission, and Entropy Differences}\label{sec:orig_6}
+
+At one loop, quantum fluctuations contribute to the mean gravitational field through a quadratic expectation value. The formal equation is $E_{ab}[\bar g]+\langle E_{ab}^{(2)}[h,h]\rangle_G=O(\hbar^2)$: $\bar g$ is the mean metric, $h$ its fluctuation, and the second term is the quadratic Einstein tensor averaged in the chosen state. Such coincident products require a renormalization prescription in the continuum. We test selected aspects of this structure through a one-generator model, a known emission benchmark, and finite-matrix entropy differences.
 
 First, along a single null generator obeying $\rho''+\frac{1}{2}\sigma^2\rho=0$ in a Gaussian graviton state, direct numerical integration across $\hbar=10^{-1}\to 10^{-4}$ confirms that including both the shear variance $\frac{1}{2}\langle(\delta\sigma)^2\rangle\rho_0$ and the dressed metric--shear cross-term $\sigma_0\langle\delta\sigma\,\delta\rho\rangle$ cancels the $O(\hbar^1)$ residual, shifting the scaling exponent from $p=0.995$ (classical or shear-only) to $p=1.999$ ($2.09\times 10^{-9}$ at $\hbar=10^{-4}$) [Fig.~\ref{fig:orig}(D)]. Extending this one-dimensional check to full four-dimensional interacting backreaction on curved saddles remains open.
 
@@ -324,7 +386,7 @@ Second, integrating the Regge--Wheeler and isospectral Zerilli greybody factors 
 \end{align}
 in agreement with the precision of Page's published total, $0.038\times10^{-4}$ in Table~I of Ref.~\cite{Page1976}. The archived reference value $3.836\times10^{-6}$ gives a $0.017\%$ numerical difference, but its extra digits are absent from that table. Figure~\ref{fig:hawking} shows the spectrum and its integral. The $j=2$ quadrupole carries $99.06\%$ of the radiated power, enhanced by a factor of $9.84$ by the same $-6M/r^3$ Weyl tidal coupling responsible for the sign of Sen's $+\frac{106}{45}\ln s$ correction. The dynamical cutoff $J_{\max}(s)=\lfloor\sqrt{s/\ln 3}\rfloor$ already captures $99.06\%$ of the luminosity at $s=5$, $99.991\%$ at $s=10$, and $100.000\%$ for macroscopic black holes ($s\ge 50$).
 
-Third, tracking the finite-dimensional Type~I algebras $\calA^{(N)}$ across $N=4\to 64$ illustrates how additive trace ambiguities arise in the semiclassical Type~$\mathrm{II}_1/\mathrm{II}_\infty$ limit~\cite{CLPW2023,CPW2023}: individual von Neumann entropies diverge as $S_{\mathrm{vN}}^{(N)}(\rho_1)=38.52\to 4539.75\sim s_{\min}N^2$, while entropy differences $\Delta S_{\mathrm{vN}}^{(N)}$ cancel $s_N$ identically and converge to the semiclassical generalized entropy difference ($117.21541448$) with error falling from $93.7$ ($N=4$) to $7.69\times 10^{-8}$ ($N=64$). Proving full modular crossed-product convergence of the operator algebras to a Type~II factor remains an open algebraic step. Table~\ref{tab:ledger} summarizes the comparison across all sections of Ref.~\cite{Chandrasekaran2026}.
+Third, tracking the finite-dimensional Type~I algebras $\calA^{(N)}$ across $N=4\to 64$ illustrates how additive trace ambiguities arise in the semiclassical Type~$\mathrm{II}_1/\mathrm{II}_\infty$ limit~\cite{CLPW2023,CPW2023}: individual von Neumann entropies diverge as $S_{\mathrm{vN}}^{(N)}(\rho_1)=38.52\to 4539.75\sim s_{\min}N^2$, while entropy differences $\Delta S_{\mathrm{vN}}^{(N)}$ cancel $s_N$ identically and converge to the semiclassical generalized entropy difference ($117.21541448$) with error falling from $93.7$ ($N=4$) to $7.69\times 10^{-8}$ ($N=64$). Proving full modular crossed-product convergence of the operator algebras to a Type~II factor remains an open algebraic step. Table~\ref{tab:ledger} separates these model checks from the remaining physical requirements.
 
 \begin{table*}[t]
 \caption{What the comparisons establish, and what remains to be established. Finite-dimensional examples and known semiclassical benchmarks are distinct from a construction of continuum quantum gravity.}
@@ -333,7 +395,7 @@ Third, tracking the finite-dimensional Type~I algebras $\calA^{(N)}$ across $N=4
 \begin{tabular}{p{0.19\textwidth}p{0.35\textwidth}p{0.37\textwidth}}
 Question & Evidence presented here & Remaining requirement \\
 \colrule
-Classical null data & Selected symbolic identities from Sec.~3 and Appendices~A--B & Global regularity and complete constrained dynamics \\
+Classical null data & Selected symbolic focusing and boundary-charge identities & Global regularity and complete constrained dynamics \\
 Clock & Smeared, vacuum-subtracted quadratic mode calculations & Nonlinear operator domain and uniform continuum bounds \\
 Finite state count & Explicit total occupation budget and finite corner sectors & Derivation of the budget and corner spectrum from gravity \\
 Closed traces & Finite matrix traces and conditional gluing examples & Continuum trace control and full cobordism consistency \\
@@ -347,69 +409,9 @@ Monte Carlo & Roughness suppression and observable-specific diagnostics & Equiva
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/review_04_graviton_spectrum.pdf}
-\caption{\textbf{Schwarzschild graviton emission.} The spectrum uses the Regge--Wheeler transmission factors and both helicities, summed over $j=2,\ldots,6$. The shaded area gives $\alpha=3.83666\times10^{-6}$ and power $P=\alpha/M^2$ in units $G=c=\hbar=1$. The calculation uses 155 frequencies over $0.06\le M\omega\le1.60$ and 2400 radial tortoise-coordinate samples. Page reports a total $3.8\times10^{-6}$~\cite{Page1976}. The quadrupole supplies $99.06\%$ of the numerical integral.}
+\caption{\textbf{A known Schwarzschild graviton-emission benchmark.} (A) Regge--Wheeler transmission probabilities for angular momenta $j=2,\ldots,6$. (B) The spectrum after thermal weighting and summation over both helicities. Its shaded integral gives $\alpha=3.83666\times10^{-6}$ and power $P=\alpha/M^2$ in units $G=c=\hbar=1$. The calculation uses 155 frequencies over $0.06\le M\omega\le1.60$ and 2400 radial tortoise-coordinate samples. Page's published total is $3.8\times10^{-6}$~\cite{Page1976}; extra precision of the numerical integral is not extra precision of that reference. The quadrupole supplies $99.06\%$ of the computed power. Agreement tests this scattering calculation, not a derivation of the full quantum theory.}
 \label{fig:hawking}
 \end{figure*}
-
-\section{Monte Carlo of the Euclidean Matrix Model}\label{sec:hmc}
-
-We study nonperturbative sampling of a finite Euclidean matrix model motivated by the preceding vertex construction. A derivation equating its measure and dynamics to the complete constrained Lorentzian action is still required. The sampled path integral is
-\begin{equation}\label{eq:hmc_Z}
-Z^{(N)} = \int \mathcal{D}\Phi\,\mathcal{D}_{\widehat{\rho}} Z\,\mathcal{D}_{\widehat{\rho}} Z^\dagger\,\exp\!\big(-S_E^{(N)}[\Phi,Z]\big)
-\end{equation}
-on a periodic radial-time lattice $T^2$ ($N_\tau\times N_r$) fibered with the fuzzy monopole bundles $\Phi(x)\in\calB_0^{(N)}$ ($N\times N$ Hermitian, representing the conformal area fluctuation $\widehat{\rho}^2/r_0^2=\exp(g_N\Phi)$) and $Z(x)\in\calB_{+2}^{(N)}$ ($(N+2)\times(N-2)$ complex spin-2 shear).
-
-Using the parity-symmetrized embedding $\iota_{N\to N\pm s}$ of Eq.~\eqref{eq:iota_map} and the exact $SU(2)$-intertwining spin-lowering map $\widehat{\bareth}:\calB_{+2}^{(N)}\to\calB_{+1}^{(N)}$ satisfying $\Tr((\widehat{\bareth}Z)^\dagger\widehat{\bareth}Z)=\Tr(Z^\dagger(L^2-2)Z)$, the Euclidean action, with a nonnegative shear contribution, is
-\begin{align}\label{eq:hmc_action}
-&S_E^{(N)} = \sum_{x\in T^2}\Bigg\{\frac{1}{2}\Tr_N\!\Big[(\nabla_\parallel\Phi)^2 + \Phi L^2\Phi + \mu^2\Phi^2 + \tfrac{\lambda_4}{2N}\Phi^4\Big] \nonumber\\
-&\quad + \frac{1}{2}\Big[\Tr_{N-2}\!\big(e^{g_N\iota_{N\to N-2}(\Phi)}|\nabla_\parallel Z|_R^2\big) \nonumber\\
-&\qquad + \Tr_{N+2}\!\big(e^{g_N\iota_{N\to N+2}(\Phi)}|\nabla_\parallel Z|_L^2\big)\Big] \nonumber\\
-&\quad + \frac{1}{2}\Big[\Tr_{N-1}\!\big(e^{g_N\iota_{N\to N-1}(\Phi)}(\widehat{\bareth}Z)^\dagger\widehat{\bareth}Z\big) \nonumber\\
-&\qquad + \Tr_{N+1}\!\big(e^{g_N\iota_{N\to N+1}(\Phi)}\widehat{\bareth}Z(\widehat{\bareth}Z)^\dagger\big)\Big]\Bigg\} + S_{\mathrm{DW}},
-\end{align}
-where $|\nabla_\parallel Z|_R^2=(\partial_\tau Z)^\dagger\partial_\tau Z+(\partial_r Z)^\dagger\partial_r Z$, $|\nabla_\parallel Z|_L^2=\partial_\tau Z(\partial_\tau Z)^\dagger+\partial_r Z(\partial_r Z)^\dagger$, and $S_{\mathrm{DW}}$ encodes the invariant DeWitt--Fujikawa spin-2 path-integral measure $\mathcal{D}_{\widehat{\rho}}Z\,\mathcal{D}_{\widehat{\rho}}Z^\dagger$:
-\begin{equation}\label{eq:dewitt_measure}
-S_{\mathrm{DW}}[\Phi] = -\frac{g_N(N^2-4)}{N}\sum_{x\in T^2}\Tr_N\!\big(\Phi(x)\big).
-\end{equation}
-Expanding Eq.~\eqref{eq:hmc_action} to $O(g_N)$ reproduces the exact parity-symmetrized Wigner-$6j$ cubic vertex~\eqref{eq:cubic_vertex}--\eqref{eq:wigner6j}, while the exponential coupling preserves strict positivity $S_{\mathrm{shear}}\ge 0$ for all configurations.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig_followup_roughness.pdf}
-\caption{\textbf{Coupling reduces roughness in the sampled matrix model.} (A) Reduction $100[1-\overline Q_2(g_N)/\overline Q_2(0)]$ relative to the measured zero-coupling ensemble at the same rank and lattice. The quartic interaction is retained in both. Lines guide the eye; bars are approximate 95\% Monte Carlo intervals. The point at zero coupling is an identity because it uses the same sample mean in numerator and denominator. (B) Strongest-coupling estimates across four ranks, the larger $12\times8$ lattice, and the extended $N=32$ run. Intervals use the archived ratio-error analysis. Colors identify rank in A; the labels in B identify every comparison. The main four-rank estimates combine new controls with archived coupled-run summaries. Intervals describe sampling uncertainty, not discretization or model uncertainty.}
-\label{fig:roughness}
-\end{figure*}
-
-We sample Eq.~\eqref{eq:hmc_Z} in double precision using Fourier-accelerated hybrid Monte Carlo on $T^2\times S_N^2$. The archived production set contains 28 ensembles with 4--8 chains each. At $N=48$ on a $12\times4$ lattice, each chain contains $N_\tau N_r(3N^2-8)=331{,}392$ real variables. The previously quoted $1{,}325{,}568$ is the sum over four independent replicas.
-
-\paragraph{Matched controls and a larger lattice.}
-We define roughness by $Q_2=V^{-1}\sum_x N^{-1}\Tr(\Phi_{\mathrm{trless}}^2)$, a measure of traceless area-field fluctuations. With $\mu^2=0.25$ and $\lambda_4=0.1$ held fixed, changing $g_N$ from zero to two reduces its mean by $48.016\%$, $47.758\%$, $47.681\%$, and $47.772\%$ at ranks $8,16,24,32$, respectively [Fig.~\ref{fig:roughness}]. The corresponding approximate 95\% Monte Carlo intervals are $[47.899,48.134]\%$, $[47.674,47.841]\%$, $[47.603,47.758]\%$, and $[47.676,47.866]\%$. The quartic-only change relative to the analytic Gaussian reference is at most $0.17\%$. These matched controls resolve the denominator ambiguity in the earlier Gaussian-baseline comparison.
-
-At $N=24$, increasing the lattice from $8\times4$ to $12\times8$ gives $47.621\%$ suppression, with interval $[47.572,47.670]\%$. The difference is $-0.060\pm0.047$ percentage points (one standard error; 95\% interval $[-0.151,+0.032]$). This supports persistence over the tested volume change. It does not establish exact rank independence or a continuum extrapolation. The four-rank headline uses archived $g_N=2$ summaries; the extended $N=32$ run provides a full-history cross-check of $47.789\%$.
-
-\paragraph{What convergence and drift mean.}
-A Monte Carlo chain is a sequence of correlated sampled configurations. Sampling drift means that estimated distributions or averages continue to change with simulation time. Rank-normalized split-$\hat R$~\cite{Vehtari2021} compares within-chain and between-chain behavior after splitting chains in half; values near one support agreement. Bulk and tail effective sample sizes (ESS) estimate the information available for typical values and distribution tails after accounting for correlations. We use $\hat R<1.01$ and both ESS values at least 400 as diagnostic targets, not proofs of stationarity. This sampling question differs from resolution dependence, the change in a computed quantity when a numerical cutoff or lattice is refined.
-
-A spatially uniform collective move changes $\Phi$ and rescales $Z$ together. The follow-up adds local Fourier-wave moves,
-$\Phi(x)\mapsto\Phi(x)+\delta(x)I_N/\sqrt N$ and $Z(x)\mapsto e^{-g_N\delta(x)/(2\sqrt N)}Z(x)$.
-The angular shear term is invariant and the measure change cancels the transformation Jacobian. The local move does change the radial-time terms; these enter its Metropolis acceptance probability. Each extended run uses 16 chains with 2000 retained draws per chain.
-
-In these follow-ups, the local mean-area rank-normalized split-$\hat R$ improves from 1.1082 to 1.0098 at fixed-coupling $N=32$, and from 1.0325 to 1.0021 at scaled-coupling $N=48$ [Fig.~\ref{fig:hmc}(A)]. Bulk/tail ESS are 2576/5624 and 4020/9123, respectively. Earlier values 1.416 and 1.181 were ordinary unsplit diagnostics and should not be labeled as the same estimator. The $N=24$, $12\times8$, $g_N=2$ run passes the roughness targets ($\hat R=1.0041$, bulk ESS 896), but its local area remains poorly mixed ($\hat R=1.3268$, bulk ESS 20). Convergence is therefore assessed separately for each observable and ensemble.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig6_modal_b200_hmc.pdf}
-\caption{\textbf{Sampling diagnostics and the scope of the geometric benchmarks.} (A) Rank-normalized split-$\hat R$ for roughness and local mean area in the extended ensembles before and after local collective moves, plus the larger-lattice test. The dashed line marks 1.01. (B) Bulk and tail ESS of local mean area for the same ensembles; the line marks 400. The larger-lattice area result remains below the target. (C) Mean minimum and maximum local area eigenvalues, with diamonds marking mean area; the $N=48$ point uses the extended run and the lower ranks use archived samples. These are means of extrema at one site, not spectral bounds; some archived area estimates fail convergence targets. (D) Archived spin-2 propagator ratios, with unblocked standard-error bars. They are finite-resolution benchmarks and do not establish a massless continuum limit.}
-\label{fig:hmc}
-\end{figure*}
-
-\paragraph{Area and spin-2 benchmarks.}
-At scaled coupling $g_N=3.3821/\sqrt N$ and $\mu^2=0.05$, the extended $N=48$ run gives local mean area $1.0142\pm0.0009$ (between-chain standard error), with mean extreme eigenvalues $(0.726,1.381)$. At fixed $g_N=2$, $N=32$, these quantities are $1.2107\pm0.0057$ and $(0.342,3.038)$. The matrix $\exp(g_N\Phi)$ is positive by construction for Hermitian $\Phi$. Its positive sampled eigenvalues alone do not prove the absence of physical spacetime caustics.
-
-The archived $N=48$ propagator is close to its free-field value, with fitted wave-function coefficient $Z_{\mathrm{wf}}=1.0008$. The mass-squared fit intercepts at increasing ranks $8,12,16,24,32,48$ are $+0.348,+0.314,+0.137,-0.065,+0.016,+0.077$. Their uncertainties and joint volume/rank extrapolation remain to be established. The Binder statistic of the invariant scalar $Q_2$ alone does not determine spontaneous breaking of $SU(2)$.
-
-\paragraph{Functional measure.}
-Earlier $g=2.5$, $\mu^2=0.5$ ensembles show a large area difference with and without the DeWitt term. The ratios of mean areas are approximately 197, 181, and 177 at ranks 8, 16, and 24 on matching lattices. At rank 32 the temporal extents differ. Establishing a phase transition requires matched volumes, observable-specific convergence, and scaling analysis beyond these comparisons.
 
 \section{Discussion}\label{sec:discussion}
 
@@ -461,7 +463,75 @@ T_{\mathrm{step}} = \sum_{M\in\{2,4\}}\!\left(V_{\mathrm{c}}^{(M\to M+2)}\otimes
 \end{equation}
 where $V_{\mathrm{c}}^{(M\to M+2)}:\calH_{\mathrm{corner}}(M)\hookrightarrow\calH_{\mathrm{corner}}(M+2)$ embeds each $(J,m)$ multiplet isometrically into the matching $(J,m)$ multiplicity sector of $M+2$ ($[T_{\mathrm{step}},J_i]=0$), and $V_{\mathrm{r}}=\mathbf{1}_{15}+0.2\sum_{a=1}^4(|1_a\rangle\langle 0|+|0\rangle\langle 1_a|)$ couples the vacuum symmetrically to both Regge--Wheeler and Zerilli single-graviton excitations.
 
+
+\section{Locations in the Original Submission}\label{app:comparison}
+
+The explanations in the main text are self-contained. The following locations in Ref.~\cite{Chandrasekaran2026}, version~1, allow readers to audit the comparison without making its section numbering part of our narrative.
+
+\begin{table*}[t]
+\caption{Source locations for the continuum concerns and benchmark comparisons. Locations identify the arguments being assessed; they do not enlarge the scope of our conclusions.}
+\begin{ruledtabular}
+\small
+\begin{tabular}{p{0.25\textwidth}p{0.37\textwidth}p{0.29\textwidth}}
+Topic & Original location & Treatment here \\
+\colrule
+Classical null data & Sec.~3; Appendices~A--B & Secs.~\ref{sec:audit_pass}, \ref{sec:unified_action} \\
+Open versus closed amplitudes & Eqs.~(4.29), (4.30); (5.30c), (5.38); (5.44), (5.45) & Sec.~\ref{sec:audit_fail}; Eq.~\eqref{eq:trace_gap} \\
+Clock domain and vacuum terms & Eqs.~(4.22), (4.27), (5.16), (C.13); Appendix~C.2; vacuum subtraction in Eq.~(D.21) & Secs.~\ref{sec:audit}, \ref{sec:unified_clock} \\
+Radiative occupation count & Appendix~D.3 & Sec.~\ref{sec:unified_H} \\
+Selected-mode Gaussian amplitude & Sec.~4.4 & Sec.~\ref{sec:orig_44} \\
+Entropy coefficients, gluing, backreaction & Secs.~5.3, 5.4, 6 & Secs.~\ref{sec:1loop}, \ref{sec:orig_54}, \ref{sec:orig_6} \\
+Conditional algebraic correspondence & Appendix~E.2; finiteness assumption in Axiom~5 & Sec.~\ref{sec:audit_pass}; Appendix~\ref{app:code} \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+\ifdefined\ReadingVersion\else\onecolumngrid\fi
+\section{Additional Benchmark Figures}\label{app:benchmark_figures}
+
+These figures report selected algebraic, oscillator, and semiclassical tests. Known reference formulas, imposed model parameters, and finite-matrix identities are labeled as such. None of these comparisons constitutes a continuum-limit or equivalence proof.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=\textwidth]{figs/fig2_unified_matrix_gravity.pdf}
+\caption{\textbf{Selected matrix and classical benchmarks.} (A) Errors in chosen Kerr and gravitational-wave matrix products versus continuum coefficients; the symmetric products decrease approximately as $N^{-2}$ over the tested range. (B) Known scalar, Regge--Wheeler, and Zerilli potentials at $j=2$. (C) Infidelity of truncated spin-2 boost wavepackets relative to the reference representation at three rapidities. The shaded range marks values near floating-point precision, not resolved evidence of exact covariance. (D) A classical focusing trajectory compared with an illustrative Ermakov--Pinney trajectory with imposed $\rho_{\min}=\sqrt{\ln3/\pi}\,\lP$. The classical curve stops at its caustic. This example does not derive singularity avoidance from the interacting matrix dynamics.}
+\label{fig:unified}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=\textwidth]{figs/fig5_v2_unification_and_clock.pdf}
+\caption{\textbf{Finite-model vertex, dynamics, amplitude, and clock tests.} (A) Cubic-vertex errors for one-sided and parity-symmetric matrix contractions. (B) Self-energy and transition-probability errors in the finite projected Hamiltonian example relative to its continuum-vertex counterpart. (C) The Gaussian pair sum with the corrected two-particle condition $2\omega_{k,j}\le B(s)=s$; the third curve is its difference from the radial-unrestricted reference. At $B=4$, no pair is allowed. (D) Second-moment, fourth-moment, and Chernoff estimates for clock-projector failure in the quadratic-mode approximation with $B(s)=0.5s$. Curves are numerical calculations or bounds, not Monte Carlo observations. These tests have the model scope described in Sec.~\ref{sec:unified}.}
+\label{fig:v2}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=\textwidth]{figs/fig1_breakthrough_1loop.pdf}
+\caption{\textbf{Clock and one-loop coefficient benchmarks.} (A) Quantum-energy-inequality (QEI) floor magnitudes and vacuum variances in the local and transversely coupled quadratic clock calculations. (B) Extracted flat-space logarithmic coefficients under sharp and smooth angular regulators, compared with known graviton and Maxwell references. (C) Schwarzschild subleading entropy, with a common additive constant removed, compared with the $106/45$ mixed and $77/90$ singlet coefficients. (D) Signed residuals $100(c_{\mathrm{est}}-c_{\mathrm{ref}})/|c_{\mathrm{ref}}|$: final-doubling estimates, five-radius fits, and exact coefficient identities are distinguished by marker. Known heat-kernel inputs and identities make these consistency checks; the plot is not an independent nonperturbative entropy derivation.}
+\label{fig:1loop}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=\textwidth]{figs/fig3_uv_completion.pdf}
+\caption{\textbf{Regulator and thermodynamic model examples.} (A) Transverse-only loop diagnostics; the horizontal line is the separately regulated single-mode sum at $B=4$. (B) Rank weights computed from the assumed entropy and energy functions for flat space and AdS, with $\beta=L=20$ in Planck units. (C) Black-hole probabilities in the rank-sum model at $L=25\,\lP$, comparing two input logarithmic entropy coefficients; the vertical line is the classical temperature $TL=1/\pi$. (D) Pixel radius as a function of the postulated local corner dimension under two entropy prescriptions. The shaded region violates the imposed radius criterion $\rho_{\min}\le\lP$. These are conditional model calculations, not a derivation of ultraviolet completion or a unique corner spectrum.}
+\label{fig:uv}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=\textwidth]{figs/fig4_original_resolution.pdf}
+\caption{\textbf{Gaussian and finite-matrix consistency examples.} (A) A radial-unrestricted Gaussian pair reference with finite angular cutoff, compared with its leading real and imaginary asymptotes. The budget-projected sum is shown separately in Fig.~\ref{fig:v2}(C). (B) Eigenvalue magnitudes of the Gram matrix for 140 constructed fillings in a 100-dimensional operator space. Forty residual magnitudes lie near floating-point precision; the rank bound follows from the chosen algebra. (C) A regulated area-focusing correlator and its large-separation $u^{-4}$ reference. (D) A one-generator Raychaudhuri calculation: retaining the metric--shear cross-term changes the residual scaling from approximately first to second order in the expansion parameter. These examples do not establish a dynamical resolution of topology sums, emergent spacetime, or complete four-dimensional backreaction.}
+\label{fig:orig}
+\end{figure*}
+
+\clearpage
+\ifdefined\ReadingVersion\else\twocolumngrid\fi
 \section{Formal Verification Catalog and Code Availability}\label{app:code}
+
+Figure design and evidence-appraisal procedures were informed by Ref.~\cite{ScientificAgentSkills}. All scientific plots and diagrams are generated as editable vector artwork from explicit geometry, equations, or archived numerical inputs. The plotting code records the inputs and distinguishes numerical estimates, illustrative model choices, and known reference expressions.
+
 
 The repository at \url{https://github.com/ricfulop/fuzzy-null-cone-gravity} contains six Lean modules, symbolic and numerical scripts, Monte Carlo data, and figure sources. The archived Lean checks concern the statements encoded in those files. Several statements take the relevant physical or analytic implication as a hypothesis. For example, \texttt{appendix\_E2\_valid\_conditionally} applies an implication supplied in \texttt{SoundRules}; it does not formalize the reconstruction of a Hilbert algebra. The clock incompatibility lemma assumes the growth bound it uses. The projection lemma verifies $(1-P)PHP=0$ under algebraic hypotheses, not the identification of $PHP$ with Einstein dynamics. Thus kernel checking certifies these logical and algebraic statements without certifying the full gravitational construction or the Monte Carlo results.
 
@@ -478,7 +548,7 @@ Lean~4 Module & Theorems & Encoded Logical or Algebraic Scope \\
 {\footnotesize\texttt{lean4\_path2\_breakthrough.lean}} & 9 & Lichnerowicz $+\frac{106}{45}$/$+\frac{77}{90}$, 4D isotropy, QEI, Type~I \\
 {\footnotesize\texttt{lean4\_path2\_frontier.lean}} & 8 & Fuzzy monopole $\calB_{s_w}^{(N)}$, $SO(3,1)$ closure, bounce \\
 {\footnotesize\texttt{lean4\_path2\_uv\_completion.lean}} & 8 & 2-loop power count, Schw.\ $W^3$, $\mathrm{AdS}_4$, $S_{\mathrm{gen}}$ additivity \\
-{\footnotesize\texttt{lean4\_original\_problem\_resolution.lean}} & 7 & Sec.~4.4 dominance, Sec.~5.4 $SU(2)$, Sec.~6 Eq.~(6.13) \\
+{\footnotesize\texttt{lean4\_original\_problem\_resolution.lean}} & 7 & Pair-sum asymptotics, $SU(2)$ sectors, backreaction identities \\
 {\footnotesize\texttt{lean4\_v2\_reviewer\_fixes.lean}} & 7 & $B(s)$ bounds, $P_B H P_B$, massive QEI, $Z_{\scrD,1}=45$ mod-8 \\
 \colrule
 \textbf{Total (zero \texttt{sorryAx}, zero warnings)} & \textbf{50} & Selected logical and algebraic statements \\
@@ -574,6 +644,9 @@ C.~J.~Fewster, L.~H.~Ford, and T.~A.~Roman, ``Probability distributions of smear
 
 \bibitem{BalianBrezin1969}
 R.~Balian and E.~Br\'ezin, ``Nonunitary Bogoliubov transformations and extension of Wick's theorem,'' Nuovo Cimento B \textbf{64}, 37 (1969).
+
+\bibitem{ScientificAgentSkills}
+T.~Kassis, V.~Agarwal, Y.~He, D.~Patel, and A.~M.~Brueckner, ``Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents,'' \href{https://doi.org/10.48550/arXiv.2609.00065}{arXiv:2609.00065} (2026).
 
 \bibitem{openresearch}
 alphaXiv, ``OpenResearch: The local-first harness and workspace for research agents'' (2026), \url{https://github.com/alphaXiv/OpenResearch}.
