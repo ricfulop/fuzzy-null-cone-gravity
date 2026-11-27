@@ -27,6 +27,8 @@ See [the research note](reports/nonlinear-consistency-2026-11-27/README.md) and 
 - Trace arguments exclude an exact canonical pair or a nontrivial unitary sl(2,R) representation on a finite-dimensional space. An exact identity quantifies errors from compressing observables.
 - A finite reduced R x SU(2) boundary example implements area matching, dual orientation, a positive projection, and associative sewing. It treats the boost angle as a gauge parameter. Its derivation from the gravitational corner phase space remains open.
 - The real Euclidean conformal-sign comparison rules out direct unreduced identification with the positive scalar sector of the archived HMC action. An effective or complex-contour relation remains an independent research question.
+- The first canonical calculation proves that angular velocity truncation and the Legendre transform do not commute. In a spin-two kinetic block, a nonconstant lapse acquires nonlinear Hamiltonian dependence through discarded-mode leakage. The first-order constrained formulation must therefore be derived independently.
+- The current bulk pullback has a guaranteed exact subgroup of base diffeomorphisms and base-dependent SO(3) rotations. This is a proved symmetry of the retained ansatz, not yet a classification of all canonical constraints or physical degrees of freedom.
 
 Reproduce this checkpoint on CPU:
 

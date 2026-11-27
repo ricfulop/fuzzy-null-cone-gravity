@@ -1,0 +1,120 @@
+{
+  "checks": [
+    {
+      "L": 2,
+      "matrix_rank_N": 3,
+      "top_mode_leakage_norm_squared": "3/49",
+      "exact_lapse_Hamiltonian_second_derivative": "-3/49",
+      "finite_difference_second_derivative": -0.061224489367184276,
+      "numerical_error": 4.287340898967429e-10,
+      "finite_amplitude_checks": [
+        {
+          "epsilon": -0.2,
+          "truncate_L_then_Legendre": 0.5273152372106987,
+          "Legendre_then_truncate": 0.5285714285714286,
+          "difference": -0.0012561913607298525
+        },
+        {
+          "epsilon": 0.1,
+          "truncate_L_then_Legendre": 0.4854109958181413,
+          "Legendre_then_truncate": 0.4857142857142857,
+          "difference": -0.0003032898961444208
+        },
+        {
+          "epsilon": 0.3,
+          "truncate_L_then_Legendre": 0.4544469638620092,
+          "Legendre_then_truncate": 0.45714285714285713,
+          "difference": -0.0026958932808479052
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "matrix_rank_N": 4,
+      "top_mode_leakage_norm_squared": "1/11",
+      "exact_lapse_Hamiltonian_second_derivative": "-1/11",
+      "finite_difference_second_derivative": -0.09090909691700233,
+      "numerical_error": 6.007911418359768e-09,
+      "finite_amplitude_checks": [
+        {
+          "epsilon": -0.2,
+          "truncate_L_then_Legendre": 0.49811463011077645,
+          "Legendre_then_truncate": 0.5,
+          "difference": -0.0018853698892235538
+        },
+        {
+          "epsilon": 0.1,
+          "truncate_L_then_Legendre": 0.4995518381622047,
+          "Legendre_then_truncate": 0.5,
+          "difference": -0.00044816183779528007
+        },
+        {
+          "epsilon": 0.3,
+          "truncate_L_then_Legendre": 0.49605194976542744,
+          "Legendre_then_truncate": 0.5,
+          "difference": -0.003948050234572564
+        }
+      ]
+    },
+    {
+      "L": 4,
+      "matrix_rank_N": 5,
+      "top_mode_leakage_norm_squared": "168/1573",
+      "exact_lapse_Hamiltonian_second_derivative": "-168/1573",
+      "finite_difference_second_derivative": -0.10680228784698542,
+      "numerical_error": 7.734850121510206e-10,
+      "finite_amplitude_checks": [
+        {
+          "epsilon": -0.2,
+          "truncate_L_then_Legendre": 0.4873818727772773,
+          "Legendre_then_truncate": 0.4896103896103896,
+          "difference": -0.002228516833112315
+        },
+        {
+          "epsilon": 0.1,
+          "truncate_L_then_Legendre": 0.5046697118354239,
+          "Legendre_then_truncate": 0.5051948051948052,
+          "difference": -0.0005250933593813345
+        },
+        {
+          "epsilon": 0.3,
+          "truncate_L_then_Legendre": 0.5109812877959552,
+          "Legendre_then_truncate": 0.5155844155844156,
+          "difference": -0.004603127788460393
+        }
+      ]
+    },
+    {
+      "L": 5,
+      "matrix_rank_N": 6,
+      "top_mode_leakage_norm_squared": "216/1859",
+      "exact_lapse_Hamiltonian_second_derivative": "-216/1859",
+      "finite_difference_second_derivative": -0.1161914994773916,
+      "numerical_error": 1.3294938205898887e-09,
+      "finite_amplitude_checks": [
+        {
+          "epsilon": -0.2,
+          "truncate_L_then_Legendre": 0.4821817269316997,
+          "Legendre_then_truncate": 0.4846153846153846,
+          "difference": -0.00243365768368492
+        },
+        {
+          "epsilon": 0.1,
+          "truncate_L_then_Legendre": 0.5071219994785513,
+          "Legendre_then_truncate": 0.5076923076923077,
+          "difference": -0.0005703082137563653
+        },
+        {
+          "epsilon": 0.3,
+          "truncate_L_then_Legendre": 0.5180923301184756,
+          "Legendre_then_truncate": 0.5230769230769231,
+          "difference": -0.0049845929584475535
+        }
+      ]
+    }
+  ],
+  "series_identity": "(P alpha^-1 P)^-1=I+epsilon M+epsilon^2(M^2-T)+O(epsilon^3), M=P u P, T=P u^2 P.",
+  "exact_identity": "(P alpha^-1 P)^-1=P alpha P-P alpha Q(Q alpha Q)^-1 Q alpha P, on ran(P), for positive invertible alpha.",
+  "conclusion": "Velocity-space truncation generates nonlinear dependence on nonconstant lapse harmonics, even though the continuum kinetic Hamiltonian is linear in lapse.",
+  "scope": "Positive traceless angular kinetic block at fixed spatial metric, with a lapse-harmonic ansatz. This does not classify the full constraints of the current metric-coefficient Galerkin action, whose ADM lapse is also field-dependent. It proves the two truncation procedures cannot be identified without analysis."
+}

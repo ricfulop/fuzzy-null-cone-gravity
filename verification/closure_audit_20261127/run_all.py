@@ -19,7 +19,8 @@ def main():
     OUT.mkdir(parents=True,exist_ok=True)
     runs=[]
     for name in ['projected_sphere_algebra','deformed_angular_candidate',
-                 'boundary_compression','reduced_boundary_gluing','euclidean_signature']:
+                 'boundary_compression','reduced_boundary_gluing','euclidean_signature',
+                 'legendre_truncation']:
         start=time.monotonic()
         with (OUT/(name+'_run.log')).open('w') as log:
             subprocess.run([sys.executable,str(HERE/(name+'.py'))],cwd=ROOT,
