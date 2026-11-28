@@ -1,0 +1,8 @@
+<signal name="endpoint_checks_passed" label="Selected endpoint checks accepted" digits="0" labels='{"0":"unaccepted","1":"passed"}' />
+<signal name="control_count" label="Controls completed" digits="0" />
+<signal name="endpoint_case_count" label="Validated endpoint cases" digits="0" />
+<signal name="matrix_dimension" label="Spatial metric dimension" digits="0" />
+<view headline="endpoint_checks_passed control_count matrix_dimension">
+  <stats of="endpoint_case_count" />
+  <text>Two Green identities and their endpoint controls for the retained axisymmetric quadrupole on the fixed oblate shell.</text>
+</view>

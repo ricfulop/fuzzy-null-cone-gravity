@@ -1,0 +1,57 @@
+{
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "base_commit": "ae32314d27e20ac682c5ed1b71b4d7f11bee7133",
+  "checker_sha256": "24f46a839f99a6c511fd539999a8a5ff618c49c6da2dcb1de7f9d1e1e44ad168",
+  "mathematical_controls_executed": false,
+  "memory_bytes": 2147483648,
+  "mocked_runner_test_count": 27,
+  "prepared_case_count": 11,
+  "prepared_control_count": 8,
+  "python_version": "3.12",
+  "review": {
+    "scientific_source": {
+      "chat": "chat_83b7b932-1532-c48c-2387-ddf128d0dde1",
+      "mode": "static source review",
+      "reference": "msg_4f69db4b",
+      "verdict": "GO"
+    },
+    "supervisor": {
+      "chat": "chat_2f3d47b3-1e7e-ace4-7757-6f7fc7900d9d",
+      "mode": "static source and schema review",
+      "reference": "msg_1002fe33",
+      "verdict": "GO"
+    }
+  },
+  "reviewed_report": {
+    "commit": "ae32314d27e20ac682c5ed1b71b4d7f11bee7133",
+    "path": "paper1/reports/oblate-common-domain-preparation-2026-11-28/README.md",
+    "sha256": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d"
+  },
+  "scientific_checker_executed": false,
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "scope": {
+    "evolution_invariance_established": false,
+    "final_Dirac_classification_established": false,
+    "full_operator_domain_established": false,
+    "physical_DOF_count_established": false,
+    "physical_null_boundary_selected": false
+  },
+  "source_count": 9,
+  "source_of_derivation_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76",
+  "source_sha256": {
+    "reports/oblate-common-domain-preparation-2026-11-28/README.md": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d",
+    "verification/oblate_lapse_endpoint_20261128/README.md": "417d2e8604e3d46dc8a481c5d28ca4689f8b9e03ff1a4177d1745dfc0d4b720e",
+    "verification/oblate_lapse_endpoint_20261128/check_lapse_endpoints.py": "24f46a839f99a6c511fd539999a8a5ff618c49c6da2dcb1de7f9d1e1e44ad168",
+    "verification/oblate_lapse_endpoint_20261128/run-config.json": "41c2f8e898685cdfd34d3968d4b053874b5a4f605174292d23f4f8533056f58e",
+    "verification/oblate_lapse_endpoint_20261128/run.sh": "cf45a4a97508fd6a184954b7c96ed223cc7b261f69bfc48ecbd305c616ef35e7",
+    "verification/oblate_lapse_endpoint_20261128/run_bounded.py": "7c0243b58443120180a40d7ca5c7f14fd6ad6334d765c712bd6fb33b7e4d2050",
+    "verification/oblate_lapse_endpoint_20261128/test_run_bounded.py": "f86ec87e4a575c951c19461b64f7a7ccd1af5e837fcf91f21e07d206ad08772b",
+    "verification/oblate_lapse_endpoint_20261128/view-config.json": "275662f49f5a5bff8900ba14d6df06906eea17fbba33ed75bacc1527174888ab",
+    "verification/oblate_lapse_endpoint_20261128/view.xml": "9ab4f972638e7af74b6eea7dd6f39520418a738d68d5a5b35b03530d66635257"
+  },
+  "state": "reviewed preparation only; scientific execution pending",
+  "sympy_version": "1.14.0",
+  "threads": 1,
+  "wall_seconds": 300
+}

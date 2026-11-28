@@ -1,0 +1,57 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "verification/oblate_lapse_endpoint_20261128",
+    "-p",
+    "test_run_bounded.py",
+    "-v"
+  ],
+  "cwd": "paper1",
+  "host_test_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "elapsed_seconds": 0.5867169159464538,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_expired_window_cannot_dispatch (test_run_bounded.DispatchTests.test_expired_window_cannot_dispatch) ... ok\ntest_missing_identity_cannot_dispatch (test_run_bounded.DispatchTests.test_missing_identity_cannot_dispatch) ... ok\ntest_modified_source_cannot_dispatch (test_run_bounded.DispatchTests.test_modified_source_cannot_dispatch) ... ok\ntest_only_snapshot_bytes_dispatched_and_fresh_directory_required (test_run_bounded.DispatchTests.test_only_snapshot_bytes_dispatched_and_fresh_directory_required) ... ok\ntest_report_mismatch_cannot_dispatch (test_run_bounded.DispatchTests.test_report_mismatch_cannot_dispatch) ... ok\ntest_console_backpressure_preserves_archived_log (test_run_bounded.EvidenceTests.test_console_backpressure_preserves_archived_log) ... ok\ntest_empty_rss_sample_set_is_unknown (test_run_bounded.EvidenceTests.test_empty_rss_sample_set_is_unknown) ... ok\ntest_endpoint_payload_rejections (test_run_bounded.EvidenceTests.test_endpoint_payload_rejections) ... ok\ntest_existing_terminal_json_is_preserved (test_run_bounded.EvidenceTests.test_existing_terminal_json_is_preserved) ... ok\ntest_failed_execution_write_cannot_commit_pass_metrics (test_run_bounded.EvidenceTests.test_failed_execution_write_cannot_commit_pass_metrics) ... ok\ntest_normal_exit_eperm_empty_and_exact_raw_log (test_run_bounded.EvidenceTests.test_normal_exit_eperm_empty_and_exact_raw_log) ... ok\ntest_pass_metrics_follow_authenticated_terminal_records (test_run_bounded.EvidenceTests.test_pass_metrics_follow_authenticated_terminal_records) ... ok\ntest_resource_stop_keeps_sample_and_fails (test_run_bounded.EvidenceTests.test_resource_stop_keeps_sample_and_fails) ... ok\ntest_sampling_timeout_is_capped_by_remaining_budget (test_run_bounded.EvidenceTests.test_sampling_timeout_is_capped_by_remaining_budget) ... ok\ntest_signal_after_terminal_boundary_is_outside_the_decision (test_run_bounded.EvidenceTests.test_signal_after_terminal_boundary_is_outside_the_decision) ... ok\ntest_signal_before_spawn (test_run_bounded.EvidenceTests.test_signal_before_spawn) ... ok\ntest_signal_during_certificate_validation_still_fails (test_run_bounded.EvidenceTests.test_signal_during_certificate_validation_still_fails) ... ok\ntest_signal_during_spawn_still_cleans_child_and_drains_log (test_run_bounded.EvidenceTests.test_signal_during_spawn_still_cleans_child_and_drains_log) ... ok\ntest_stalled_relay_join_is_bounded_and_fails_closed (test_run_bounded.EvidenceTests.test_stalled_relay_join_is_bounded_and_fails_closed) ... ok\ntest_terminal_marker_authenticates_both_records (test_run_bounded.EvidenceTests.test_terminal_marker_authenticates_both_records) ... ok\ntest_timeout_preserves_measured_sample_when_cleanup_raises (test_run_bounded.EvidenceTests.test_timeout_preserves_measured_sample_when_cleanup_raises) ... ok\ntest_timeout_with_eperm_after_term_keeps_both_records (test_run_bounded.EvidenceTests.test_timeout_with_eperm_after_term_keeps_both_records) ... ok\ntest_zero_child_exit_with_unknown_group_is_failure (test_run_bounded.EvidenceTests.test_zero_child_exit_with_unknown_group_is_failure) ... ok\ntest_zero_exit_observed_after_deadline_fails (test_run_bounded.EvidenceTests.test_zero_exit_observed_after_deadline_fails) ... ok\ntest_zero_exit_without_certificate_fails (test_run_bounded.EvidenceTests.test_zero_exit_without_certificate_fails) ... ok\ntest_permission_denied_requires_a_readable_process_table (test_run_bounded.GroupProbeTests.test_permission_denied_requires_a_readable_process_table) ... ok\ntest_stubborn_descendant_escalated_after_launcher_exit (test_run_bounded.GroupProbeTests.test_stubborn_descendant_escalated_after_launcher_exit) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.413s\n\nOK\n",
+  "test_time_source_sha256": {
+    "README.md": "417d2e8604e3d46dc8a481c5d28ca4689f8b9e03ff1a4177d1745dfc0d4b720e",
+    "check_lapse_endpoints.py": "24f46a839f99a6c511fd539999a8a5ff618c49c6da2dcb1de7f9d1e1e44ad168",
+    "run-config.json": "41c2f8e898685cdfd34d3968d4b053874b5a4f605174292d23f4f8533056f58e",
+    "run.sh": "cf45a4a97508fd6a184954b7c96ed223cc7b261f69bfc48ecbd305c616ef35e7",
+    "run_bounded.py": "7c0243b58443120180a40d7ca5c7f14fd6ad6334d765c712bd6fb33b7e4d2050",
+    "test_run_bounded.py": "f86ec87e4a575c951c19461b64f7a7ccd1af5e837fcf91f21e07d206ad08772b",
+    "view-config.json": "275662f49f5a5bff8900ba14d6df06906eea17fbba33ed75bacc1527174888ab",
+    "view.xml": "9ab4f972638e7af74b6eea7dd6f39520418a738d68d5a5b35b03530d66635257"
+  },
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "mock_scope": "The suite tests the Python supervisor with synthetic endpoint payloads, mocked child processes, group probes, signals and source lookup.",
+  "static": {
+    "ast_parse": [
+      "check_lapse_endpoints.py",
+      "run_bounded.py",
+      "test_run_bounded.py"
+    ],
+    "shell_check": {
+      "command": [
+        "sh",
+        "-n",
+        "verification/oblate_lapse_endpoint_20261128/run.sh"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "json_parse": [
+      "run-config.json",
+      "view-config.json"
+    ],
+    "view_xml_fragment_parse": true
+  }
+}
