@@ -1,0 +1,73 @@
+{
+  "run_id": "e04ffc4a-d9c3-4c8a-ad61-3bf8da079ff3",
+  "source_commit": "28973f993fec42a76cbea3fed3ec767b88f40c17",
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/e04ffc4a-d9c3-4c8a-ad61-3bf8da079ff3/repo/paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py",
+    "--input-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/e04ffc4a-d9c3-4c8a-ad61-3bf8da079ff3/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/e04ffc4a-d9c3-4c8a-ad61-3bf8da079ff3/repo/paper1/run-output/e04ffc4a-d9c3-4c8a-ad61-3bf8da079ff3/outputs",
+    "--stage",
+    "principal",
+    "--max-steps",
+    "21"
+  ],
+  "configuration": {
+    "stage": "principal",
+    "max_steps": 21,
+    "wall_seconds": 900,
+    "memory_bytes": 2147483648,
+    "approval_message": "msg_4c4bcc8d",
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "purpose": "Exact principal block and radial gauge probe; no DAE closure or seed claim."
+  },
+  "source_sha256_before": {
+    "verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "7ce3a506c94b13c688493c8a852f107d8fb9292a8b9214e4a7971755d64b2534",
+    "verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "1221ddccf6df4e7930a07382ad45b5d691a971d18aabd2a4acc25d728bcde123",
+    "verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "verification/oblate_stationary_reduction_20261128/run-config.json": "6defa7c739d93114e67bf389104b04e0e8814fa535726892fd491922a368c1fa"
+  },
+  "source_repository": "/Users/ricfulop/OpenResearch/fuzzy-null-cone-gravity",
+  "input_completion_sha256": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "scientific_invocations": 1,
+  "remote_jobs": 0,
+  "GPU_jobs": 0,
+  "rss_measurement": "sampled sum for child process group; not a hard OS cap",
+  "start_utc": "2026-11-28T04:55:55.562144+00:00",
+  "pid": 47642,
+  "exit_code": 0,
+  "elapsed_seconds": 5.371265583205968,
+  "end_utc": "2026-11-28T04:56:00.933917+00:00",
+  "stop_reason": null,
+  "relay_errors": [],
+  "received_signals": [],
+  "source_sha256_after": {
+    "verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "7ce3a506c94b13c688493c8a852f107d8fb9292a8b9214e4a7971755d64b2534",
+    "verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "1221ddccf6df4e7930a07382ad45b5d691a971d18aabd2a4acc25d728bcde123",
+    "verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "verification/oblate_stationary_reduction_20261128/run-config.json": "6defa7c739d93114e67bf389104b04e0e8814fa535726892fd491922a368c1fa"
+  },
+  "sampled_max_rss_bytes": 109608960
+}
