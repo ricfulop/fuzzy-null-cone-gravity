@@ -51,3 +51,7 @@ The tests use manufactured certificate data and replace child dispatch and proce
 | `run.sh` | `baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893` |
 | `view-config.json` | `96683101486e99547dc5b3fa6370a4ef0c90a15f9519ba083613f2f8abb1d1b0` |
 | `view.xml` | `0b7c584a47b5bd3d61496513e22975d99adae48b818364ed4e1e93e6ea1dfbeb` |
+
+## Integrated cache retry
+
+The [integrated preparation record](../../reports/oblate-stationary-state-germ-cache-retry-preparation-2026-11-28/README.md) combines the reviewed interval-cache checker with the corrected supervisor from `698d7fcd65c3e7eb9f25f6d311d96af27a73e069`. The maintained supervisor suite has 27 mocked infrastructure tests; its captured integration validation is separate from the original 20-test record above. The checker has 19 prepared mathematical controls, which have not been executed for this revision. The input pins, proof obligations, search order, 900-second wall limit and sampled 2 GiB limit are unchanged. A future invocation must still produce an authenticated physical-radius certificate before any germ or response conclusion is accepted.
