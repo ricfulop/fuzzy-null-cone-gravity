@@ -24,13 +24,51 @@ REFERENCE_HASH = "55ba3d4ba6c44104668362258aa96465bd485fef8f407f65283e12aa0c643e
 
 def exact_zero(expression, x):
     """Cancel on the chart -1<x<1; no tolerances or numerical probes."""
+    # Expand only the polynomial base, retaining the original half-integer
+    # exponent. Equal radicands then have the same representation without
+    # splitting radicals or assuming sqrt(z**2) == z.
+    expression = sp.sympify(expression).replace(
+        lambda term: (term.is_Pow and term.exp.is_Rational
+                      and term.exp.q == 2 and term.base.is_polynomial(x)),
+        lambda term: sp.Pow(sp.expand(term.base), term.exp),
+    )
     d = 1 - x**2
     for weight in (sp.S.One, sp.sqrt(d), 1 / sp.sqrt(d)):
-        value = sp.cancel(sp.powsimp(expression * weight, force=True))
+        value = sp.cancel(sp.powsimp(expression * weight, force=False))
         value = sp.simplify(value)
         if value == 0 or value.is_zero is True:
             return True
     return False
+
+
+def verify_exact_zero_controls():
+    """Replay the archived residual and reject genuinely nonzero identities."""
+    x = sp.Symbol("x", real=True)
+    factored_root = sp.Pow(-(x - 1) * (x + 1), sp.S.Half, evaluate=False)
+    expanded_root = sp.Pow(1 - x**2, sp.S.Half, evaluate=False)
+    residual = sp.Add(
+        sp.Mul(3, sp.I, factored_root, x - 1, x + 1, evaluate=False),
+        sp.Mul(-3, sp.I, expanded_root, x**2 - 1, evaluate=False),
+        evaluate=False,
+    )
+    zero_controls = {
+        "archived_m1_reference_residual": residual,
+        "unevaluated_zero_times_I": sp.Mul(0, sp.I, evaluate=False),
+        "reciprocal_chart_roots": 1 / factored_root - 1 / expanded_root,
+    }
+    nonzero_controls = {
+        "unit_offset": residual + 1,
+        "exact_small_offset": residual + sp.Rational(1, 10**30),
+        "chart_polynomial_offset": residual + 1 - x**2,
+        "wrong_relative_radical_sign": factored_root + expanded_root,
+        "square_root_branch": sp.Pow(x**2, sp.S.Half, evaluate=False) - x,
+    }
+    for label, expression in zero_controls.items():
+        assert exact_zero(expression, x), f"Exact-zero regression failed: {label}"
+    for label, expression in nonzero_controls.items():
+        assert not exact_zero(expression, x), f"Nonzero control accepted: {label}"
+    print("PASS exact-zero controls: archived residual and structural zeros; nonzero and branch controls rejected", flush=True)
+    return {"zero_controls": list(zero_controls), "nonzero_controls": list(nonzero_controls)}
 
 
 def assert_zero_matrix(matrix, x, label):
@@ -89,6 +127,7 @@ def direct_metric_tangent(data, label):
 
 def verify():
     started = time.monotonic()
+    zero_controls = verify_exact_zero_controls()
     here = Path(__file__).resolve().parent
     reference = here / "reference/all_modes_157ec0f.py"
     if hashlib.sha256(reference.read_bytes()).hexdigest() != REFERENCE_HASH:
@@ -202,6 +241,7 @@ def verify():
     print("PASS positive-sine realification including imaginary cross block", flush=True)
     return {
         "status": "passed", "counts": counts,
+        "exact_zero_controls": zero_controls,
         "legendre_control": "passed; manufactured indefinite Gram, not gravitational data",
         "realification_control": "passed; synthetic imaginary cross block",
         "density_controls": "deformed rational point, exact integrated L=2,m=2 round r=2 sector, and derivative-column Schur cancellation",
