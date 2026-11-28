@@ -1,13 +1,24 @@
 {
-  "calculation": "complete_quartic_loops",
-  "loop_quadrature_orders": [
-    64,
-    128
-  ],
-  "loop_relative_tolerance": 1e-09,
-  "external_frequencies": [
-    0.0,
-    0.7,
-    2.0
-  ]
+  "calculation": "higher_geometry_and_green",
+  "geometry_directions": ["electric_axis", "noncommuting_labels"],
+  "geometry_points": [["0.2", "-0.35", "0.5"], ["0.8", "0.4", "-0.6"]],
+  "geometry_precision": 90,
+  "geometry_steps": ["0.002", "0.001", "0.0005"],
+  "geometry_scaled_tolerance": "1e-12",
+  "finite_metric_evaluator_tolerance": "1e-70",
+  "green_pde_scaled_tolerance": 1e-8,
+  "green_moment_relative_tolerance": 2e-12,
+  "green_high_moment_relative_tolerance": 2e-10,
+  "green_quadrature_relative_tolerance": "1e-22",
+  "green_quadrature_orders": [24, 48],
+  "green_decimal_precision": 64,
+  "green_moment_mmax": 16,
+  "green_control_relative_tolerance": 2e-12,
+  "green_tail_ratio_tolerance": 1e-6,
+  "axis_radial_orders": [96, 128],
+  "axis_angular_order": 16,
+  "axis_outer_radius": 12,
+  "axis_scaled_tolerance": 2e-9,
+  "axis_tail_tolerance": 1e-30,
+  "wall_limit_seconds": 1800
 }

@@ -6,24 +6,22 @@
       "unit": "checks"
     },
     {
-      "phase": "quartic_coefficients",
-      "of": 24,
-      "unit": "directions"
-    },
-    {
-      "phase": "canonical_polynomial",
-      "of": 1,
+      "phase": "higher_geometry",
+      "of": 38,
       "unit": "checks"
     },
     {
-      "phase": "loop_kernel_controls",
-      "of": 1,
-      "unit": "suites"
+      "phase": "finite_metric",
+      "of": 4,
+      "unit": "points"
     },
     {
-      "phase": "gravitational_two_point",
-      "of": 22,
-      "unit": "cases"
+      "phase": "green_responses"
+    },
+    {
+      "phase": "axis_sixth_control",
+      "of": 2,
+      "unit": "quadratures"
     },
     {
       "phase": "export",
@@ -32,11 +30,15 @@
     }
   ],
   "brief": {
-    "question": "Does the full quartic reduced Gaunt polynomial support consistent one-loop two-point corrections with every retained physical mode and momentum interaction included?",
-    "from_parent": "Parent run 196cf70e-cad9-4208-9819-2aaaf78359de completed 24 exact directions and the 515-term quartic polynomial, then failed 32-versus-64 control convergence. All highest-order (64-point) reference checks passed. This child changes quadrature to 64/128 and keeps the same tolerances, Hamiltonian, cases, and run recipe.",
-    "healthy": "22 exact fit directions yield a polynomial reproducing all seven frozen parent cases; two new held-out mixed-functional contractions raise independent cross-invariant validation coverage from rank three to five. Direct frequency integration agrees with the analytic tadpole and bubble formula below 1e-9, normalized magnetic components agree, and mixed QP corrections vanish. The four-point bookkeeping controls pass.",
-    "noise": "N=3 and ten profiles remain fixed, with one radial profile per parity. This is a two-point coefficient under a bare midpoint/Weyl prescription, not four-graviton scattering or a physical large-N limit. Errors are displayed in units of 1e-12; report raw scientific values when interpreting. Negative perturbative corrections alone do not prove instability. The independent corner and sixth-order audits are derivations, not measured loop results.",
-    "worth_a_flag": "Any exact historical/held-out check fails; 64-versus-128 convergence fails at the same 1e-9 relative plus 1e-12 control absolute tolerance; gravitational two-point agreement, QP cancellation or normalized rotations fail; or progress stalls without a reported ingredient. A failed control must stop before any claimed successful final result.",
-    "decided": "Local CPU and standard-library Python. Parent runtime 108 seconds; exact classical work is repeated from the unchanged functions. Refined controls and gravitational two-point stages have no completed parent timing. The failed parent source stays immutable. Reports additionally give an analytic fixed-mode quantum completion; this run does not test a spectrum or that proof."
+    "question": "Do the higher local geometry and exact first Green responses agree with independent finite-metric, PDE, quadrature and tail checks?",
+    "from_parent": "The parent validated complete quartic interactions and fixed ten-mode one-loop two-point coefficients at source a078aca in 111.56 seconds. This child extends the required higher-order ingredients, not the two-point frequency grid.",
+    "healthy": "All exact legacy comparisons vanish. Independent 90-digit finite-metric coefficients and Richardson refinements agree below 1e-12 scaled error. Green identities vanish exactly; separately evaluated analytic derivatives satisfy their declared numerical bounds, and independent heat-moment quadrature converges. The Cartesian Green inverse also reproduces independent radial multipole values, exact Fourier Coulomb normalization and the already derived pure-momentum sixth-order coefficient with a bounded omitted tail.",
+    "noise": "Exact sparse-polynomial construction can spend several minutes within one Christoffel or density order. Progress records each completed order and each group of finite-amplitude samples. These checks do not evaluate the complete H5/H6 Hamiltonian, gravitational four-point loop, or a large-N limit.",
+    "worth_a_flag": "Any exact identity, independently extracted coefficient, Green residual, moment convergence, or declared tail check fails. A traceback or exceeded 1800-second wall limit ends this bounded run. Do not call ingredient validation a four-graviton result.",
+    "decided": "One local Python standard-library process, no GPU or remote spend. New higher-order stages are untimed. The previous numerical sources and failed coarse-quadrature run stay immutable."
+  },
+  "watch": {
+    "minGapS": 120,
+    "maxGapS": 600
   }
 }

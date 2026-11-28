@@ -306,6 +306,10 @@ def numerical_case(L, ell, config):
 def main():
     start = time.monotonic()
     config = json.loads((ROOT / "config.json").read_text())
+    if config["calculation"] == "higher_geometry_and_green":
+        from higher_geometry_check import main as higher_main
+        higher_main(config)
+        return
     if config["calculation"] == "complete_quartic_loops":
         from quartic_loop_check import main as quartic_loop_main
         quartic_loop_main(config)

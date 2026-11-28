@@ -1,20 +1,12 @@
-<signal name="coefficient_directions" label="Exact coefficient directions" digits="0" />
-<signal name="cubic_monomials" label="Cubic monomials" digits="0" />
-<signal name="quartic_monomials" label="Quartic monomials" digits="0" />
-<signal name="exact_polynomial_residual" label="Exact polynomial residual" better="lower" digits="0" />
-<signal name="loop_control_suites" label="Loop control suites" digits="0" />
-<signal name="case" label="External mode and variable" />
-<signal name="external_frequency" label="Euclidean frequency" digits="2" />
-<signal name="self_energy" label="Bare one-loop coefficient" digits="8" />
-<signal name="loop_error" label="Frequency-integral error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
-<signal name="maximum_loop_error" label="Maximum loop error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
-<signal name="maximum_rotation_error" label="Rotation error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
-<signal name="mixed_phase_error" label="Mixed QP error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
-<signal name="gravitational_cases" label="Diagonal two-point cases" digits="0" />
-<signal name="quartic_invariant_coefficients" label="Quartic invariant coefficients" digits="0" />
-<view headline="maximum_loop_error gravitational_cases coefficient_directions">
-  <stats of="quartic_invariant_coefficients gravitational_cases maximum_loop_error" />
-  <text>Complete one-loop two-point coefficients of ten retained physical modes. Four-point bookkeeping controls use separate test Hamiltonians; the gravitational four-point amplitude remains unfinished. Displayed errors use units of 10⁻¹².</text>
-  <table name="two_point" columns="case external_frequency self_energy loop_error" last="20" title="Bare finite-mode two-point corrections" />
-  <stats of="exact_polynomial_residual maximum_rotation_error mixed_phase_error" />
+<signal name="exact_geometry_residual" label="Exact legacy residual" digits="0" better="lower" />
+<signal name="higher_coefficient_error" label="Independent coefficient error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
+<signal name="higher_coefficient_refinement" label="Step-refinement difference" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
+<signal name="maximum_higher_coefficient_error" label="Maximum coefficient error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
+<signal name="green_checks" label="Completed Green checks" digits="0" />
+<signal name="validated_geometry_directions" label="Validated directions" digits="0" />
+<signal name="axis_sixth_control_error" label="Pure-momentum sixth-order control error" scale="1e9" unit="×10⁻⁹" digits="5" better="lower" />
+<view headline="maximum_higher_coefficient_error higher_coefficient_error exact_geometry_residual">
+  <stats of="exact_geometry_residual higher_coefficient_error higher_coefficient_refinement green_checks" />
+  <text>Required higher-order geometry and first Green responses of the fixed ten-mode candidate. The complete H5/H6 Hamiltonian and gravitational four-point loop remain pending. Coefficient errors are displayed in units of 10⁻¹².</text>
+  <stats of="maximum_higher_coefficient_error validated_geometry_directions axis_sixth_control_error" />
 </view>
