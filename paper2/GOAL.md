@@ -58,14 +58,20 @@ several regulator diagnostics. They do not establish items 1--5. Paper I's
 [nonlinear-consistency report](../paper1/reports/nonlinear-consistency-2026-11-27/README.md)
 also records unresolved canonical and Euclidean issues.
 
-The first new calculation tests the common action on continuum vacuum
-constraint data, using the complete gravitational kinetic form and the
-actual bandlimited metric coordinates. Its derivation and exact predictions
-are in [the constraint-surface calculation](reports/quantum-bridge/lapse-constraint-on-vacuum-data.md).
-The tracked baseline will compare exact rational harmonic projections with
-an independent finite-amplitude Legendre calculation. Its result will decide
-whether continuum lapse/ghost assumptions can be imported, or whether a
-Dirac completion or an explicit reduction-before-cutoff revision is required.
+The first tracked calculation has established a nonzero lapse primary--
+secondary bracket on continuum vacuum initial data in the common action.
+Exact harmonic arithmetic and an independent finite-amplitude Legendre
+calculation agree. The [result and analytic cutoff-shell limit](reports/quantum-bridge/constraint-result-and-next-calculation.md)
+show why a full Dirac completion or a declared reduction-before-cutoff
+revision is required before importing continuum lapse/ghost assumptions.
+The next calculation tests the leading Schur correction and its associated
+determinant; it is a component of a repair, not a complete repair.
+
+The [corner and reconstruction derivations](reports/quantum-bridge/corners-and-reconstruction.md)
+identify the continuum area--angle charge, the missing microscopic state
+count, and the exact transfer/reflection-positivity construction conditional
+on a physical Hamiltonian. They do not fill the missing finite-rank
+gravitational Hilbert space or establish equivalence to the simulations.
 
 All three principal deliverables remain pending. No claimed percentage of
 completion or guarantee of success is assigned to an unresolved theory.

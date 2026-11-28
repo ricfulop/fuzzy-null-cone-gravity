@@ -4,9 +4,9 @@
 <signal name="interior_curvature" label="Curvature for fixed ell=1" digits="7" />
 <signal name="lapse_block_rank" label="Axisymmetric lapse Hessian rank" digits="0" />
 <signal name="constraint_residual" label="Vacuum constraint residual" digits="0" better="lower" />
-<signal name="fd_error" label="Finite-difference absolute error" digits="12" better="lower" />
-<signal name="quadrature_difference" label="Quadrature difference" digits="12" better="lower" />
-<signal name="max_fd_error" label="Maximum derivative error" digits="12" better="lower" />
+<signal name="fd_error" label="Finite-difference absolute error" scale="100000000000000" unit="×10⁻¹⁴" digits="5" better="lower" />
+<signal name="quadrature_difference" label="Quadrature difference" scale="10000000000000000000000000000000000000000000000000000" unit="×10⁻⁵²" digits="3" better="lower" />
+<signal name="max_fd_error" label="Maximum derivative error" scale="100000000000000" unit="×10⁻¹⁴" digits="5" better="lower" />
 <signal name="checks_passed" label="Validated cases" digits="0" better="higher" />
 <signal name="case" label="Quadrature case" />
 <view headline="boundary_defect constraint_residual">
