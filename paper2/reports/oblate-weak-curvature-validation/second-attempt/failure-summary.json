@@ -1,0 +1,34 @@
+{
+  "run_id": "2e50a13f-2883-482d-b582-2313f9d1b1ad",
+  "source_commit": "0831e825ee86f7b746a16ada15ad0bfb7d87ab98",
+  "status": "incomplete_wall_budget_stop",
+  "elapsed_seconds": 900.3260373750236,
+  "peak_sampled_group_rss_bytes": 221315072,
+  "sample_count": 3032,
+  "child_return_code": 143,
+  "stop_reason": "wall_budget",
+  "completed_batches": 1,
+  "unfinished_stage": "weak_density_sector m=1; precise operation not instrumented",
+  "final_cleanup": {
+    "action": "final_disposition",
+    "status": "empty",
+    "members": []
+  },
+  "subsequent_ps_inspection_utc": "2026-11-28T05:27:50.242719+00:00",
+  "subsequent_ps_members": [],
+  "all_source_hashes_match": true,
+  "physics_assertion_failure_reported": false,
+  "final_scientific_result_present": false,
+  "comparison_checkpoints_seconds": {
+    "first_run": [
+      3.0088832918554544,
+      11.913788958918303,
+      19.924173541832715
+    ],
+    "second_run": [
+      35.88504479103722
+    ]
+  },
+  "inference": "Blanket per-component cancellation regressed the previously fast representative-sector path. The exact expensive call was not measured.",
+  "next_action": "Inspect evaluation order and rational half-root representation before another bounded invocation; no blind repeat."
+}

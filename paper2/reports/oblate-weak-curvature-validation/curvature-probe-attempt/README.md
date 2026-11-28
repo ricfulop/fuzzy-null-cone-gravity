@@ -1,0 +1,11 @@
+# Curvature diagnostic: time stop, incomplete
+
+Run `a5ae3400-3da6-481a-90b4-2bb234cbab19` used frozen source `0031aca219129d89026422278b521f1e87a3160e` in diagnostic-only mode. It stopped at the 300-second wall budget: supervisor elapsed 300.44753033318557 seconds, child code 143, peak sampled process-group RSS 191,250,432 bytes (182.390625 MiB), 1,007 samples. The monitored memory budget was 2 GiB, not an OS hard limit. Cleanup recorded a transient permission-denied probe with a live member, then an empty final group; a separate later process-table check also found group 3002 empty.
+
+Two of five diagnostic batches passed. The strict chart normalizer accepted four positive controls and rejected two exact nonzero and six unsupported controls (checkpoint at 0.040950 seconds). Raw and chart-normalized contracted Ricci both agreed exactly with the dense raw Ricci oracle on the selected nonzero offshell m=1 sample (checkpoint at 25.134455 seconds). The recorded Ricci witness is `104182865513061*sqrt(6)/6237887788090` at entry (0,0), with r=23/14, x=1/5 and epsilon=1/4. This offshell comparison is sampled evidence, not an identity over the chart.
+
+The global symbolic m=1 gauge batch completed its connection/trace preparation and logged completion of entries (0,0), (0,1), (0,2), (1,0), (1,1). The last substage starts entry (1,2). No gauge batch passed; no assertion failure or final result was reported. There is no `curvature-probe-checks.json`, `diagnostic_passed`, or full-validation result.
+
+Source-only inspection identifies separate normalization of the divergence and trace derivative before their subtraction as a plausible remaining cost. The existing timers do not identify which operation inside entry (1,2) consumed the remaining budget. The proposed next preparation delays this normalization until after subtraction and instruments the three internal operations; it does not raise the budget or weaken exact equality.
+
+This archive contains the complete log, execution record, all resource samples, both checkpoint records and six frozen source files with verified hashes. The physics modules are unchanged. The earlier full-validation failures remain separate. No complete weak-form validation, finite radial K/E/D, physical boundary domain, admissible seed, spectrum, or nonlinear consistency conclusion follows.

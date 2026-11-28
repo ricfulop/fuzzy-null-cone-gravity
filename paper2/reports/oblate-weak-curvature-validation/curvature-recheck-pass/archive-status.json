@@ -1,0 +1,69 @@
+{
+  "run_id": "025b8511-9538-4bc7-a189-5c053156fb27",
+  "source_commit": "1d3c606a8d066c2c850565616734ce9ea5c5132a",
+  "source_files_verified_against_commit_snapshot_and_worktree": true,
+  "completed_diagnostic_batches": 5,
+  "full_validation_complete": false,
+  "gauge_controls": {
+    "1": {
+      "nine_Einstein_entries": true,
+      "scalar_checked": true,
+      "Ricci_seconds": 81.9669158749748,
+      "normalization_seconds": {
+        "0,0": 10.87776158284396,
+        "0,1": 23.372897582827136,
+        "0,2": 0.6068019999656826,
+        "1,0": 25.06112629105337,
+        "1,1": 14.265578874852508,
+        "1,2": 2.0486347500700504,
+        "2,0": 0.652802542084828,
+        "2,1": 1.2349288340192288,
+        "2,2": 2.5972006251104176
+      }
+    },
+    "0": {
+      "nine_Einstein_entries": true,
+      "scalar_checked": true,
+      "Ricci_seconds": 13.557450416963547,
+      "normalization_seconds": {
+        "0,0": 1.883719707839191,
+        "0,1": 4.007805458037183,
+        "0,2": 0.0214223749935627,
+        "1,0": 3.873830958036706,
+        "1,1": 2.595449708169326,
+        "1,2": 0.05812141695059836,
+        "2,0": 0.010963207809254527,
+        "2,1": 0.015161291928961873,
+        "2,2": 0.4556999169290066
+      }
+    },
+    "2": {
+      "nine_Einstein_entries": true,
+      "scalar_checked": true,
+      "Ricci_seconds": 12.001130999997258,
+      "normalization_seconds": {
+        "0,0": 3.4169424581341445,
+        "0,1": 2.527448416920379,
+        "0,2": 0.3286618748679757,
+        "1,0": 2.3873820840381086,
+        "1,1": 1.1807672909926623,
+        "1,2": 0.18778291600756347,
+        "2,0": 0.2524201669730246,
+        "2,1": 0.11309741600416601,
+        "2,2": 0.5587344169616699
+      }
+    }
+  },
+  "sample_count": 482,
+  "peak_sampled_group_rss_bytes": 173555712,
+  "peak_sampled_mib": 165.515625,
+  "checker_seconds": 141.58138250000775,
+  "supervisor_seconds": 142.57024100003764,
+  "independent_process_check": {
+    "utc": "2026-11-28T06:06:26.467126+00:00",
+    "process_group": 28858,
+    "members": []
+  },
+  "terminal_progress": "5/5 and diagnostic_passed=1; initial terminal notification lagged final log",
+  "archive_utility_note": "Initial log-prefix slicing error corrected before report/manifest completion; raw copied files verified byte-identical."
+}

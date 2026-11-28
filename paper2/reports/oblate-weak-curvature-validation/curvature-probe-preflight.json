@@ -1,0 +1,46 @@
+{
+  "status": "source reviewed; targeted diagnostic not yet executed",
+  "created_utc": "2026-11-28T05:38:53.849116+00:00",
+  "previous_attempts": [
+    "85aa6197-97a5-4a4a-9239-4119a350d7ef",
+    "2e50a13f-2883-482d-b582-2313f9d1b1ad"
+  ],
+  "previous_result_commit": "a997dc3",
+  "authorization": "msg_ad636446 and all-other-approvals follow-up; standing overnight authority covers diagnosis and this narrower third invocation",
+  "authorization_end_utc": "2026-11-28T16:29:00Z",
+  "source_reviews": [
+    "msg_d32c3790",
+    "msg_a51aeb8e"
+  ],
+  "root_review": "Checked all contraction indices, complete root polynomial reduction, strict unsupported/nonfinite guards, independent raw dense comparison and nonzero witness; original exact_zero algebra confirmed by static AST after extracting its canonicalizer.",
+  "source_sha256": {
+    "verify_weak_forms.py": "fc9e2977bc4408a5434a32894057bbf32b885351d637e6d73eb455b8b0ce0aa3",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "dfdfbf12f64c9b4279784058f77d23a1ec1e5bedec29906e5e249bc24f8f6f6e",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "test_weak_supervisor.py": "98eeeb7a01beb466c4aab5e0055b2b62516d0476e5abe55a8627d8490fc36190"
+  },
+  "original_physics_modules_unchanged": true,
+  "preparation_validation": {
+    "mocked_supervisor_tests": 8,
+    "result": "passed",
+    "seconds": 0.001,
+    "static_python_syntax": "passed",
+    "shell_syntax": "passed",
+    "diff_whitespace": "passed",
+    "scientific_imports_or_executions": 0
+  },
+  "run_proposal": {
+    "checker_mode": "curvature-probe",
+    "backend": "local",
+    "wall_budget_seconds": 300,
+    "sampled_group_rss_bytes": 2147483648,
+    "memory_hard_limit": false,
+    "diagnostic_batches": 5,
+    "full_validation_performed": false,
+    "duration_estimate": "unknown; five-minute cap is not a promised runtime"
+  },
+  "scope": "strict chart arithmetic controls; raw and normalized contracted-vs-dense Ricci at one nonzero complex m1 sample; exact symbolic gauges m1,m0,m2; not full weak validation"
+}
