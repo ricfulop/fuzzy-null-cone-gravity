@@ -1,0 +1,65 @@
+{
+  "run_id": "09c32343-1dee-4d53-a1da-c6d1bb2e1fe3",
+  "source_commit": "0ae1c15e11b2b8c9a2f82ca86b6774b68f7e0e79",
+  "status": "wall timeout during combined regularity/rank/response search",
+  "scientific_invocations": 1,
+  "supervisor_elapsed_seconds": 900.2542698751204,
+  "child_exit": 143,
+  "framework_exit": 1,
+  "stop_reason": "wall budget reached",
+  "source_count_verified": 8,
+  "frozen_certifier_sha256": "94af8bfe83084b691d55920c001cb64d0d07bebb553a75d1a3384a09a70b5d50",
+  "sources_match_git_materialized_originals_and_postflight_hashes": true,
+  "inputs_match_configuration_originals_copies_and_child_digests": true,
+  "checker_input_sha256": {
+    "config": "a48e1ef1365cf7f0ca0fcbf7bcdc9ad68ebe907c8c0e6a1493493eff8dedb157",
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "snapshot_identity_sha256_verified": "1f3f8e9d7cc4c63deef33116ccd7728d0c590ae79a8548b8c7eeedfd4ea3cdc1",
+  "progress_events_matching_both_logs": 38,
+  "last_event": {
+    "denominator_count": 57,
+    "event": "begin",
+    "max_atan_terms": 256,
+    "seconds": 264.654623,
+    "sequence": 38,
+    "stage": "regularity_rank_and_response_search"
+  },
+  "rss_samples": 3080,
+  "peak_sampled_group_rss_bytes": 245121024,
+  "later_process_group_check": {
+    "utc": "2026-11-28T08:17:26.946410+00:00",
+    "process_group": 63736,
+    "members": []
+  },
+  "cleanup_errors": [],
+  "relay_errors": [],
+  "physical_rank_minor_certificate_exported": false,
+  "interval_germ_certificate_exported": false,
+  "formal_response_nonzero_reported_by_child": true,
+  "physical_response_nonzero": null,
+  "final_fallback_metrics": {
+    "state_germ_certificate_passed": 0,
+    "formal_response_nonzero": null,
+    "certified_response_nonzero": null,
+    "discarded_response_nonzero": null,
+    "response_determined": 0,
+    "scientific_invocations": 1
+  },
+  "watcher_flag": {
+    "id": "f7ed160e6",
+    "disposition": "kept"
+  },
+  "stack_sample": {
+    "file": "macos-stack-sample.txt",
+    "utc": "2026-11-28T08:09:45.836Z",
+    "tool": "macOS sample",
+    "duration_requested_seconds": 1,
+    "sample_interval_ms": 1,
+    "target_pid": 63738,
+    "parent_pid": 63736,
+    "main_thread_samples": 790
+  },
+  "scientific_execution_during_archive": false
+}
