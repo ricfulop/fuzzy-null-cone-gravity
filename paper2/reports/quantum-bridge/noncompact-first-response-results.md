@@ -14,6 +14,9 @@ The [protocol](noncompact-first-response-protocol.md) defines the tested scope.
 This result supports the specified noncompact inverse adapters and sampled
 first gravitational responses. It does not evaluate the independent mixed
 sixth-order energy or a four-graviton loop.
+The calculation belongs to the reduction-first candidate in its fixed raw
+ten-mode TT setting. The original coefficient-Galerkin regulator is a distinct
+theory and is not validated by these measurements.
 
 ## Memory-only repeat and reproducibility
 
