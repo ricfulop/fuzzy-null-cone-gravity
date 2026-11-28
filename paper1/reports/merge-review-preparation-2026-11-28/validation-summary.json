@@ -1,0 +1,39 @@
+{
+  "scope": "Maintained infrastructure and provenance checks only; no scientific execution or import",
+  "direct_state_supervisor_commit": "698d7fcd65c3e7eb9f25f6d311d96af27a73e069",
+  "reported_infrastructure_tests": 94,
+  "reported_canonical_metadata_tests": 12,
+  "root_rechecks": {
+    "direct_state_supervisor": 27,
+    "reducer_supervisor": 17,
+    "seed_supervisor": 6,
+    "canonical_metadata": 12
+  },
+  "root_rechecks_passed": true,
+  "source_sha256": {
+    "paper1/verification/oblate_constraint_rank_20261127/all_modes.py": "b85292607bc615bfceddd703b74f941166645120d90814c93298940b12478117",
+    "paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py": "675c8eefdf768d023d8750d968622b431f2b6dd22dfedcb750b0410e075541a2",
+    "paper1/verification/oblate_constraint_rank_20261127/leading_certificate.py": "c8d597104adc7ea11e10d8dd7f8b1c9c97f6519691d71ce7c7ba41943b0849a7",
+    "paper1/verification/oblate_constraint_rank_20261127/test_leading_certificate.py": "5fd3e48090981c6b7be18a33f743f063717c3f641afc2fda03096c38eda0224e",
+    "paper1/verification/oblate_stationary_germ_20261128/README.md": "40c939a2655340a9b276636d6f0f98748099638b53b7ba58a8f7c4e01ba8b8ee",
+    "paper1/verification/oblate_stationary_germ_20261128/run_bounded.py": "bd6540d3bb7f5c9ae60b2c3a999f96cb68148aa11162b29eab72c145819fbe62",
+    "paper1/verification/oblate_stationary_germ_20261128/test_run_bounded.py": "ba667305e9158e25c4ec59c213124fb366e57329540d1f0dcfd1008d166f7c06",
+    "paper1/verification/oblate_stationary_germ_20261128/view-config.json": "c26411307f12df7614dcea18d65d7595f46f368f05708684e67350c8f3d538f1",
+    "paper1/verification/oblate_stationary_germ_20261128/view.xml": "96cf1df4d123433cae2cf4a822b995c2e230febc0dba0141e5c50a3f84be19fd",
+    "paper1/verification/oblate_stationary_reduction_20261128/README.md": "7eb6cacf309af95f87d53f5c488a63e7142025476f0a54fcb13f488b1a14101b",
+    "paper1/verification/oblate_stationary_reduction_20261128/authenticated_export.py": "d3f46dce7c9b733d7fcb28b6b2a67427bf400787e833f17caa021551a7e4ac5c",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "afb0727764c995c915964ec01dd3788f41708ce3dbf56b3e5eea33b5f076c831",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduction_progress.py": "cf016eb19180e27d9ab63af817461905abbcec177189b506def9a4e5504cd457",
+    "paper1/verification/oblate_stationary_reduction_20261128/run_bounded.py": "ec1619fd2715432bc45fe1eab2823a2df7fd5f8e6986eb4245bc81b5c16720f8",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "a581cf8c58058fbfde96bcf55ee881ae049742ddb5962b87a8017596119697dd",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_review_infrastructure.py": "e184eb222dc397a03582a536f9a709b507632dbce11071c8f3c11ed30c3aa2ea",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "efb666ba85617bef86eb66e2dd72ebd7088658416f68b410014590707c6a8096",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_supervisor_lifecycle.py": "00fc0788f0f1d0caa841c7d85fa7e7c87de989ab168acb8d41ad226edfad1221",
+    "paper1/verification/oblate_stationary_seed_20261127/supervise_stationary_check.py": "d16f413dca0d0c63553b3238bd20cb612a8bcfab10cfbcf5f0507a1288d67369",
+    "paper1/verification/oblate_stationary_seed_20261127/test_supervise_stationary_check.py": "ef72b665f533abf88ac36aa4b2a8058646e8f680fb882a4921f741e3919abb00",
+    "paper1/verification/oblate_stationary_state_germ_20261128/README.md": "5964c67164bfad6663e5b4435c17462bdb7337441f455f38aa32c8b148339495",
+    "paper1/verification/oblate_stationary_state_germ_20261128/run_bounded.py": "29a541993e33243c21d1d31dcd407ef27ddab33f75465d142a5d8fdfc164b26e",
+    "paper1/verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "d0d2bee577e6837ef0dfa7b45aad34498a6746e9f015d47662f216a39806aaef",
+    "paper1/verification/oblate_stationary_state_germ_20261128/view.xml": "6fe11da0f22f4096fb603f60e84e4d3a06cc81c4288a240f285ce26e129879c2"
+  }
+}

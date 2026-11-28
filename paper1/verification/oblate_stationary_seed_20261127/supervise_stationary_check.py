@@ -10,6 +10,7 @@ import shutil
 import signal
 import subprocess
 import sys
+import threading
 import time
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -22,6 +23,37 @@ COMMAND = ["uv", "run", "--isolated", "--no-project", "--with",
 LIMIT_SECONDS = 900
 LIMIT_RSS_BYTES = 2 * 1024**3
 SAMPLE_SECONDS = 0.25
+
+
+_CONSOLE_LOCK = threading.Lock()
+
+
+def write_console(data):
+    """Best-effort, nonblocking forwarding; the archived child log is authoritative."""
+    if isinstance(data, str):
+        data = data.encode("utf-8", errors="replace")
+    if not _CONSOLE_LOCK.acquire(blocking=False):
+        return False
+    try:
+        fd = sys.stdout.fileno()
+        blocking = os.get_blocking(fd)
+        try:
+            os.set_blocking(fd, False)
+            pending = memoryview(data)
+            for _ in range(64):
+                if not pending:
+                    return True
+                count = os.write(fd, pending[:65536])
+                if count <= 0:
+                    return False
+                pending = pending[count:]
+            return not pending
+        finally:
+            os.set_blocking(fd, blocking)
+    except (OSError, ValueError, TypeError, AttributeError):
+        return False
+    finally:
+        _CONSOLE_LOCK.release()
 
 
 def sha(path):
@@ -53,7 +85,7 @@ def stop_group(process, grace_seconds=2):
         time.sleep(0.05)
     if group_exists(pgid):
         signal_group(pgid, signal.SIGKILL)
-    process.wait()
+    process.wait(timeout=0.5)
     return {"group_visible_after_signals": group_exists(pgid)}
 
 
@@ -109,53 +141,123 @@ def main(pin, approval_message):
     samples = []
     stop_reason = None
     process = None
-    with (OUT / "verification.log").open("xb") as log:
+    log = None
+    cleanup_errors = []
+    supervisor_error = None
+    received_signals = []
+    old_handlers = {}
+    accepting_cancellation = True
+
+    def interrupted(signum, frame):
+        if accepting_cancellation:
+            received_signals.append(int(signum))
+
+    try:
+        for sig in (signal.SIGTERM, signal.SIGINT):
+            old_handlers[sig] = signal.signal(sig, interrupted)
+        log = (OUT / "verification.log").open("xb")
+        if received_signals:
+            raise InterruptedError("Supervisor signalled before spawning")
+        process = subprocess.Popen(COMMAND, cwd=ROOT, env=env, stdout=log,
+                                   stderr=subprocess.STDOUT, start_new_session=True)
+        record["pid"] = process.pid
+        record["scientific_invocations"] = 1
+        write_console(f"Started single checker pid={process.pid}\n")
+        last_notice = 0
+        while process.poll() is None:
+            elapsed = time.monotonic() - start
+            if received_signals:
+                stop_reason = "supervisor received signal"
+                break
+            if elapsed >= LIMIT_SECONDS:
+                stop_reason = "wall budget reached"
+                break
+            raw = subprocess.check_output(["ps", "-axo", "pgid=,rss="], text=True,
+                                          timeout=min(1, LIMIT_SECONDS - elapsed))
+            rss = sum(int(parts[1]) * 1024 for line in raw.splitlines()
+                      if len(parts := line.split()) == 2 and int(parts[0]) == process.pid)
+            peak = max(peak, rss)
+            samples.append({"seconds": round(elapsed, 3), "process_group_rss_bytes": rss})
+            if time.monotonic() - start >= LIMIT_SECONDS:
+                stop_reason = "wall budget reached"
+            elif rss > LIMIT_RSS_BYTES:
+                stop_reason = "sampled process-group RSS exceeded memory budget"
+            if stop_reason:
+                break
+            if elapsed - last_notice >= 30:
+                write_console(f"Running: {elapsed:.1f}s; sampled peak RSS {peak/1024**2:.1f} MiB\n")
+                last_notice = elapsed
+            time.sleep(SAMPLE_SECONDS)
+        if stop_reason is None and time.monotonic() - start >= LIMIT_SECONDS:
+            stop_reason = "wall budget reached"
+    except Exception as error:
+        supervisor_error = repr(error)
+        stop_reason = stop_reason or "supervisor exception"
+    finally:
         try:
-            process = subprocess.Popen(COMMAND, cwd=ROOT, env=env, stdout=log,
-                                       stderr=subprocess.STDOUT, start_new_session=True)
-            record["pid"] = process.pid
-            record["scientific_invocations"] = 1
-            print(f"Started single checker pid={process.pid}", flush=True)
-            last_notice = 0
-            while process.poll() is None:
-                elapsed = time.monotonic() - start
-                raw = subprocess.check_output(["ps", "-axo", "pgid=,rss="], text=True)
-                rss = sum(int(parts[1]) * 1024 for line in raw.splitlines()
-                          if len(parts := line.split()) == 2 and int(parts[0]) == process.pid)
-                peak = max(peak, rss)
-                samples.append({"seconds": round(elapsed, 3), "process_group_rss_bytes": rss})
-                if elapsed >= LIMIT_SECONDS:
-                    stop_reason = "wall budget reached"
-                elif rss > LIMIT_RSS_BYTES:
-                    stop_reason = "sampled process-group RSS exceeded memory budget"
-                if stop_reason:
-                    record["group_cleanup"] = stop_group(process)
-                    break
-                if elapsed - last_notice >= 30:
-                    print(f"Running: {elapsed:.1f}s; sampled peak RSS {peak/1024**2:.1f} MiB", flush=True)
-                    last_notice = elapsed
-                time.sleep(SAMPLE_SECONDS)
-            process.wait()
-        finally:
-            if process is not None and group_exists(process.pid):
-                if stop_reason is None:
-                    stop_reason = "process-group cleanup required after launcher exit or supervisor exception"
-                record["final_group_cleanup"] = stop_group(process)
+            if received_signals:
+                stop_reason = stop_reason or "supervisor received signal"
             if process is not None:
-                process.wait()
+                try:
+                    live_group = group_exists(process.pid)
+                except Exception as error:
+                    live_group = True  # An unknown group still requires cleanup.
+                    cleanup_errors.append({"action": "probe_group", "error": repr(error)})
+                if live_group:
+                    stop_reason = stop_reason or "process-group cleanup required after launcher exit or supervisor exception"
+                    try:
+                        record["final_group_cleanup"] = stop_group(process)
+                    except Exception as error:
+                        cleanup_errors.append({"action": "stop_group", "error": repr(error)})
+                try:
+                    process.wait(timeout=0.5)
+                except Exception as error:
+                    cleanup_errors.append({"action": "wait_child", "error": repr(error)})
+            if log is not None:
+                try:
+                    log.close()
+                except Exception as error:
+                    cleanup_errors.append({"action": "close_log", "error": repr(error)})
+            after = {}
+            for name in expected:
+                try:
+                    after[name] = sha(ROOT / name)
+                except Exception as error:
+                    cleanup_errors.append({"action": "source_hash", "path": name, "error": repr(error)})
+            if after != expected:
+                stop_reason = stop_reason or "source files changed during invocation"
+            supervisor_hash = None
+            try:
+                supervisor_hash = sha(Path(__file__))
+            except Exception as error:
+                cleanup_errors.append({"action": "supervisor_hash", "error": repr(error)})
+            if cleanup_errors:
+                stop_reason = stop_reason or "supervisor cleanup failed"
+            accepting_cancellation = False
+            terminal_signals = list(received_signals)
+            if terminal_signals:
+                stop_reason = stop_reason or "supervisor received signal"
             record.update({
+                "status": "passed" if process is not None and process.returncode == 0 and stop_reason is None else "failed",
                 "exit_code": None if process is None else process.returncode,
                 "elapsed_seconds": round(time.monotonic() - start, 3),
                 "end_utc": datetime.now(timezone.utc).isoformat(),
                 "stop_reason": stop_reason,
-                "sampled_peak_process_group_rss_bytes": peak,
-                "source_sha256_after": {name: sha(ROOT / name) for name in expected},
-                "supervisor_sha256": sha(Path(__file__)),
+                "sampled_peak_process_group_rss_bytes": peak if samples else None,
+                "received_signals": terminal_signals,
+                "cancellation_boundary": "before terminal evidence publication",
+                "source_sha256_after": after,
+                "supervisor_sha256": supervisor_hash,
+                "supervisor_error": supervisor_error,
+                "cleanup_errors": cleanup_errors,
             })
             (OUT / "execution.json").write_text(json.dumps(record, indent=2) + "\n")
             (OUT / "resource-samples.json").write_text(json.dumps(samples, indent=2) + "\n")
-    print(json.dumps({key: record[key] for key in ["exit_code", "elapsed_seconds",
-          "sampled_peak_process_group_rss_bytes", "stop_reason"]}), flush=True)
+        finally:
+            for sig, handler in old_handlers.items():
+                signal.signal(sig, handler)
+    write_console(json.dumps({key: record[key] for key in ["exit_code", "elapsed_seconds",
+          "sampled_peak_process_group_rss_bytes", "stop_reason"]}) + "\n")
     sys.exit(0 if record["exit_code"] == 0 and not stop_reason else 1)
 
 

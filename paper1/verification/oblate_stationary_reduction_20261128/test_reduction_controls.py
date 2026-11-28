@@ -126,6 +126,8 @@ def check_variable_constraint_preservation_kills_response(red):
 
 
 def verify_controls(reducer_module):
+    if not __debug__:
+        raise RuntimeError("Manufactured-control assertions must remain enabled")
     cases = [
         check_hidden_constraints_keep_free_response_control(reducer_module),
         check_variable_constraint_preservation_kills_response(reducer_module),

@@ -1,4 +1,4 @@
-<signal name="state_germ_certificate_passed" label="Direct-state certificate accepted" digits="0" labels='{"0":"unconfirmed","1":"passed"}' />
+<signal name="state_germ_certificate_passed" label="Direct-state certificate accepted" digits="0" labels='{"0":"not passed","1":"passed"}' />
 <signal name="manufactured_case_count" label="Manufactured controls passed" digits="0" />
 <signal name="certified_response_nonzero" label="Nonzero response witness" digits="0" labels='{"0":"not certified","1":"certified"}' />
 <signal name="response_determined" label="Response determined on the certified family" digits="0" />

@@ -28,12 +28,43 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+_CONSOLE_LOCK = threading.Lock()
+
+
+def write_console(data):
+    """Best-effort, nonblocking forwarding; the archived child log is authoritative."""
+    if isinstance(data, str):
+        data = data.encode("utf-8", errors="replace")
+    if not _CONSOLE_LOCK.acquire(blocking=False):
+        return False
+    try:
+        fd = sys.stdout.fileno()
+        blocking = os.get_blocking(fd)
+        try:
+            os.set_blocking(fd, False)
+            pending = memoryview(data)
+            for _ in range(64):
+                if not pending:
+                    return True
+                count = os.write(fd, pending[:65536])
+                if count <= 0:
+                    return False
+                pending = pending[count:]
+            return not pending
+        finally:
+            os.set_blocking(fd, blocking)
+    except (OSError, ValueError, TypeError, AttributeError):
+        return False
+    finally:
+        _CONSOLE_LOCK.release()
+
+
 def report(**fields):
-    print("::orx:: " + json.dumps(fields), flush=True)
+    write_console("::orx:: " + json.dumps(fields) + "\n")
 
 
-def group_members(pgid):
-    raw = subprocess.check_output(["ps", "-axo", "pid=,pgid=,rss="], text=True, timeout=1)
+def group_members(pgid, timeout=1):
+    raw = subprocess.check_output(["ps", "-axo", "pid=,pgid=,rss="], text=True, timeout=timeout)
     if not raw.strip():
         raise ValueError("Empty process table")
     members = []
@@ -282,9 +313,11 @@ def supervise(out, record, env, cutoff):
     supervisor_error = None
     disposition = {"status": "not_spawned"}
     old_handlers = {}
+    accepting_cancellation = True
 
     def interrupted(signum, frame):
-        received_signals.append(int(signum))
+        if accepting_cancellation:
+            received_signals.append(int(signum))
 
     def relay():
         try:
@@ -292,14 +325,7 @@ def supervise(out, record, env, cutoff):
                 for line in iter(process.stdout.readline, b""):
                     log.write(line)
                     log.flush()
-                    # A blocked console must not hold Python's shared stdout lock
-                    # while the supervising thread saves evidence or exits.
-                    remaining = memoryview(line)
-                    while remaining:
-                        count = os.write(sys.stdout.fileno(), remaining)
-                        if count <= 0:
-                            raise OSError("Console relay made no progress")
-                        remaining = remaining[count:]
+                    write_console(line)  # A stalled live console cannot stop archival drain.
         except Exception as error:
             relay_errors.append(repr(error))
 
@@ -321,7 +347,12 @@ def supervise(out, record, env, cutoff):
         relay_started = True
         while not stop_reason and process.poll() is None:
             elapsed = time.monotonic() - start
-            rss = sum(member["rss_bytes"] for member in group_members(process.pid))
+            remaining = record["wall_seconds"] - elapsed
+            if remaining <= 0:
+                stop_reason = "wall budget reached"
+                break
+            rss = sum(member["rss_bytes"] for member in
+                      group_members(process.pid, timeout=min(1, remaining)))
             samples.append({"seconds": round(elapsed, 3), "rss_bytes": rss})
             if time.monotonic() - start >= record["wall_seconds"]:
                 stop_reason = "wall budget reached"
@@ -407,7 +438,11 @@ def supervise(out, record, env, cutoff):
                         success = False
                         stop_reason = "terminal certificate validation failed"
                         record["certificate_error"] = repr(error)
-                if received_signals:
+                # Freeze cancellation before publishing any terminal evidence.
+                # A later signal is outside this documented terminal decision.
+                accepting_cancellation = False
+                terminal_signals = list(received_signals)
+                if terminal_signals:
                     success = False
                     stop_reason = stop_reason or "supervisor received signal"
                     metrics = fallback_metrics(record)
@@ -425,16 +460,26 @@ def supervise(out, record, env, cutoff):
                                "group_disposition": disposition, "cleanup_events": cleanup_events,
                                "cleanup_errors": cleanup_errors, "relay_errors": relay_errors,
                                "relay_active_after_join": relay_active,
-                               "received_signals": received_signals, "metrics": metrics,
+                               "received_signals": terminal_signals, "metrics": metrics,
+                               "cancellation_boundary": "before terminal evidence publication",
+                               "terminal_commit_marker": "terminal-evidence.json",
                                "rss_sample_count": len(samples),
-                               "sampled_max_rss_bytes": max((p["rss_bytes"] for p in samples), default=0)})
+                               "sampled_max_rss_bytes": max((p["rss_bytes"] for p in samples), default=None)})
                 save_json(out / "execution.json", record)
+                if (out / "metrics.json").exists():
+                    # Standalone metrics are provisional until this last marker
+                    # authenticates both terminal files. No pass is emitted sooner.
+                    save_json(out / "terminal-evidence.json", {
+                        "status": record["status"],
+                        "execution_sha256": sha(out / "execution.json"),
+                        "metrics_sha256": sha(out / "metrics.json"),
+                    })
             finally:
                 for sig, handler in old_handlers.items():
                     signal.signal(sig, handler)
     if not relay_active:
         publish_metrics(metrics)
-        print("Saved execution evidence: " + str(out), flush=True)
+        write_console("Saved execution evidence: " + str(out) + "\n")
     return 0 if success else 1
 
 

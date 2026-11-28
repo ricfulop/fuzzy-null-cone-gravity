@@ -1,0 +1,7 @@
+{
+  "sha256": {
+    "canonical-certificate.md": "c8a771f3765245d1b47bee55186c23d818bb910213dcbed433a5b6058cf908e1",
+    "supervisor-provenance.md": "46035b86904c6380eb28b301ffe6a6e1f37de46c31de12c405d0ce5052b34ae7",
+    "validation-summary.json": "9bc072fc127d1891f1d9d70c704ad702ee293ecf7f3f952bf6c23e8dc2a00e25"
+  }
+}
