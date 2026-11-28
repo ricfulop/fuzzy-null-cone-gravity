@@ -101,3 +101,13 @@ lost by a strictly four-dimensional cut calculation. Its scalar tree and
 state-count inputs belong to continuum Einstein gravity. The reference has
 no finite angular rank and is not evidence that those inputs survive the
 Gaunt constraint obstruction.
+
+The [reduction-first canonical candidate](reports/quantum-bridge/reduced-canonical-gaunt.md)
+now specifies a distinct repair route: restrict free TT data, reconstruct
+the dependent geometry through the continuum constraints, and use a dual
+Gram matrix to make the induced symplectic form canonical. Its local
+hypotheses, change of regulator and unresolved interacting limit are
+explicit. The same quadratic Hamiltonian induces a leading uniform
+far-sphere area spectrum and positive Euclidean/Lorentzian evolution.
+Neither that limited boundary sector nor the proposed nonlinear numerical
+test completes the microscopic corner or interacting reconstruction goals.

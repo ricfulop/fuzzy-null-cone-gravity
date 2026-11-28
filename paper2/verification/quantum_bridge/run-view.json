@@ -1,17 +1,47 @@
 {
   "plan": [
-    {"phase": "setup", "of": 1, "unit": "checks"},
-    {"phase": "exact_loop", "of": 1, "unit": "derivations"},
-    {"phase": "simplex_quadrature", "of": 6, "unit": "cases"},
-    {"phase": "kinematic_checks", "of": 12, "unit": "cases"},
-    {"phase": "export", "of": 1, "unit": "reports"}
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "checks"
+    },
+    {
+      "phase": "exact_tt_basis",
+      "of": 10,
+      "unit": "modes"
+    },
+    {
+      "phase": "hamiltonian_coefficients",
+      "of": 2,
+      "unit": "quadratures"
+    },
+    {
+      "phase": "free_corner_sectors",
+      "of": 6,
+      "unit": "budgets"
+    },
+    {
+      "phase": "linear_green_refinement",
+      "of": 3,
+      "unit": "grids"
+    },
+    {
+      "phase": "nonlinear_constraints",
+      "of": 13,
+      "unit": "cases"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "reports"
+    }
   ],
   "brief": {
-    "question": "Does an explicit dimensionally regulated loop evaluation reproduce the continuum Einstein all-plus four-graviton amplitude, including its rational term?",
-    "from_parent": "The parent verified an angular kinetic determinant component. It did not integrate a complete loop observable. This child supplies a separate continuum reference; the finite-rank constraint problem remains open.",
-    "healthy": "Three box classes with multiplicity two are reconstructed from all cuts. Exact moments and independent 60-digit cube-to-simplex quadrature agree. Twelve kinematic configurations reproduce the published amplitude in magnitude and phase and pass permutation, helicity-weight and energy-scaling checks.",
-    "noise": "The deliberately incomplete strictly four-dimensional cut calculation has relative error one; omitting one real scalar state has relative error one-half. These are expected negative controls. This continuum calculation contains no angular N and cannot demonstrate a large-N limit.",
-    "worth_a_flag": "An exact formula or cut multiplicity fails; a simplex error exceeds 1e-45; a kinematic comparison exceeds 1e-10; a negative control unexpectedly agrees; or any statement calls this a finite-N Gaunt amplitude.",
-    "decided": "Local CPU and Python standard library only. Six independent integral cases and twelve scattering configurations with all 24 external permutations. Published scalar trees and the continuum state-count identity are declared inputs. Keep the source branch frozen after a meaningful run."
+    "question": "Does the declared reduction-first candidate provide canonical TT variables and convergent vacuum constraint reconstruction while retaining the required dependent harmonics?",
+    "from_parent": "The parent found a nonzero mixed constraint bracket after restricting the canonical fields before reduction. This child changes the regulator: only free TT coefficients are restricted; dependent geometry is reconstructed by the constraints.",
+    "healthy": "Ten selected smooth l=2 modes pass exact TT, Gram, stiffness and dual-pairing checks. Independent Green-function and Fourier evaluations agree. Linear radial errors fall by about four per grid doubling. The nonlinear scalar residual falls with radial refinement, and the missing angular source is strongly reduced as auxiliary J grows. These are finite-mode classical and quadratic-quantum ingredients, not a complete interacting theory.",
+    "noise": "Physical free-data rank N stays 3. Auxiliary J and the radial grid are numerical resolution controls, not a physical large-N limit. J=2 deliberately omits the dependent j=4 response and should have a nonzero constraint residual. Area-sector dimensions apply only to the quadratic far-sphere uniform matching construction with a chosen area window and vacuum subtraction; their growth is not an entropy fit.",
+    "worth_a_flag": "Any exact TT, canonical-pairing, frequency or source identity fails; independent quartic integrals disagree by more than 1e-8; the fixed-point iteration leaves positive psi or fails to converge; refinement does not improve the constraint check; or a claim upgrades this into a finite-N one-loop amplitude or complete corner Hilbert space.",
+    "decided": "Local CPU, standard library only. Ten modes, two energy quadratures, six leading area budgets, three linear radial grids and thirteen nonlinear cases. The analytic contraction bound concerns the untruncated conformal integral map; numerical projected solves are checked independently. Keep the source branch frozen after a meaningful result."
   }
 }

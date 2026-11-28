@@ -306,6 +306,10 @@ def numerical_case(L, ell, config):
 def main():
     start = time.monotonic()
     config = json.loads((ROOT / "config.json").read_text())
+    if config["calculation"] == "reduced_gaunt_completion":
+        from reduced_gaunt_completion import main as reduced_main
+        reduced_main(config)
+        return
     if config["calculation"] == "continuum_one_loop_all_plus":
         from one_loop_all_plus import main as all_plus_main
         all_plus_main(config)

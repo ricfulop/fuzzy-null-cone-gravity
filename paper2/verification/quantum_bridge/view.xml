@@ -1,20 +1,25 @@
 <signal name="case" label="Case" />
-<signal name="energy" label="Energy" digits="2" />
-<signal name="theta" label="Angle (rad)" digits="2" />
-<signal name="independent_boxes" label="Distinct box integrals" digits="0" />
-<signal name="box_coefficient" label="Integral without i/(4π)²" digits="9" />
-<signal name="quadrature_error_text" label="Integral verification error" />
-<signal name="amplitude_magnitude" label="Amplitude magnitude" digits="10" />
-<signal name="loop_exact_residual" label="Exact formula residual" digits="0" better="lower" />
-<signal name="loop_quadrature_error" label="Integral verification error" scale="1e50" unit="×10^-50" digits="6" better="lower" />
-<signal name="loop_benchmark_error" label="Einstein amplitude relative error" scale="1e12" unit="×10^-12" digits="6" better="lower" />
-<signal name="loop_bose_error" label="Permutation relative error" scale="1e12" unit="×10^-12" digits="6" better="lower" />
-<signal name="strict_4d_error" label="Error with μ set to zero first" digits="2" />
-<signal name="single_state_error" label="Error with one real state" digits="2" />
-<view headline="loop_benchmark_error independent_boxes">
-  <text>Continuum Einstein one-loop reference only. This evaluates the rational all-plus amplitude from published dimensional scalar trees. It contains no finite-N angular cutoff and does not resolve the Gaunt constraint algebra.</text>
-  <table name="amplitudes" columns="case energy theta amplitude_magnitude loop_benchmark_error loop_bose_error" />
-  <table name="simplex" columns="case box_coefficient quadrature_error_text" />
-  <text>The two incomplete calculations below should fail: four-dimensional cuts miss the entire rational term, and one real state gives half the pure-gravity answer.</text>
-  <stats of="loop_exact_residual strict_4d_error single_state_error" />
+<signal name="rho" label="Amplitude ε²K*" digits="3" />
+<signal name="auxiliary_J" label="Dependent-geometry cutoff J" digits="0" />
+<signal name="radial_intervals" label="Radial intervals" digits="0" />
+<signal name="exact_TT_residual" label="Exact TT residual" digits="0" better="lower" />
+<signal name="quartic_energy_verification_error" label="Quartic energy relative error" digits="12" better="lower" />
+<signal name="linear_green_error" label="Linear Green-function error" digits="9" better="lower" />
+<signal name="angular_constraint_defect" label="Angular scalar-constraint defect" digits="12" better="lower" />
+<signal name="full_constraint_residual" label="Scalar constraint residual" digits="9" better="lower" />
+<signal name="ADM_mass" label="ADM energy (16πG=1)" digits="9" />
+<signal name="mass_flux_difference" label="Boundary/volume difference" digits="9" better="lower" />
+<signal name="area_budget_B" label="Leading area budget B" digits="1" />
+<signal name="sector_dimension" label="Leading sector dimension" digits="0" />
+<signal name="count_residual" label="Independent count residual" digits="0" better="lower" />
+<signal name="validated_modes" label="Validated TT profiles" digits="0" />
+<signal name="validated_nonlinear_cases" label="Nonlinear cases" digits="0" />
+<view headline="full_constraint_residual exact_TT_residual">
+  <text>Declared reduction-first candidate. Physical free rank N=3 stays fixed. The dependent geometry carries higher harmonics. These checks concern constrained geometry, Hamiltonian coefficients and a quadratic uniform-area sector; the interacting quantum goals remain open.</text>
+  <chart from="linear_green" x="radial_intervals" y="linear_green_error" x-scale="log" y-scale="log" ghost="false" title="Independent radial solver check" />
+  <chart from="angular_refinement" x="auxiliary_J" y="angular_constraint_defect" y-scale="log" ghost="false" title="Restoring the dependent angular harmonics" />
+  <table name="nonlinear" columns="case angular_constraint_defect full_constraint_residual ADM_mass mass_flux_difference" />
+  <text>The area counts below use the leading far-sphere area/energy relation and ten selected free modes. They are not the full corner state count or black-hole entropy.</text>
+  <table name="area_sectors" columns="area_budget_B sector_dimension count_residual" />
+  <stats of="exact_TT_residual validated_modes validated_nonlinear_cases" />
 </view>
