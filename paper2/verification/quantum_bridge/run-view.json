@@ -6,19 +6,24 @@
       "unit": "checks"
     },
     {
-      "phase": "exact_vertices",
-      "of": 7,
+      "phase": "quartic_coefficients",
+      "of": 24,
       "unit": "directions"
     },
     {
-      "phase": "invariant_reconstruction",
+      "phase": "canonical_polynomial",
       "of": 1,
       "unit": "checks"
     },
     {
-      "phase": "independent_finite_metric",
-      "of": 4,
-      "unit": "points"
+      "phase": "loop_kernel_controls",
+      "of": 1,
+      "unit": "suites"
+    },
+    {
+      "phase": "gravitational_two_point",
+      "of": 22,
+      "unit": "cases"
     },
     {
       "phase": "export",
@@ -27,11 +32,11 @@
     }
   ],
   "brief": {
-    "question": "Do the complete reduced cubic and quartic Hamiltonian functionals agree with exact Gaussian/Gaunt identities, rotational invariants and independently evaluated finite-metric curvature?",
-    "from_parent": "The parent validated the ten-mode TT basis, the reduced canonical map and a single momentum-direction energy expansion. This child derives full H3/H4, including scalar conformal and longitudinal York responses, on that same declared reduction-first candidate.",
-    "healthy": "Seven exact directions pass TT, integrated-curvature, Gram, York inverse and Fourier normalization checks. Two cubic and five quartic potential invariants reproduce held-out directions. A rational SO(3) rotation leaves all energy terms unchanged. Four independent finite-metric cases extrapolate the curvature and projection ingredients with scaled error below 1e-10.",
-    "noise": "The actual finite-metric error is the raw signal; its view label displays units of 1e-12. Cubic and quartic coefficients are in different declared Gaussian units. The physical rank stays N=3 with one radial profile per parity. Exact zero is expected for identity residuals. No claim of an amplitude, controlled interacting limit or full interacting reconstruction follows.",
-    "worth_a_flag": "A rational identity or held-out invariant check fails, the independent finite-metric error exceeds 1e-10, the metric determinant or connection trace exceeds 1e-50, or progress stops during exact algebra. Negative quartic coefficients are not by themselves a failure: the weak-field polynomial is not a globally bounded Hamiltonian.",
-    "decided": "Local CPU, Python standard library, inherited fixed recipe. Seven exact directions and four 70-digit finite-metric checks, using 32 finite amplitudes. No separate trial changes the source before launch. Preserve a meaningful source snapshot permanently; review actual logs on the next turn."
+    "question": "Does the full quartic reduced Gaunt polynomial support consistent one-loop two-point corrections with every retained physical mode and momentum interaction included?",
+    "from_parent": "The parent verified H3/H4 spatial functionals and their local geometric ingredients. This child reconstructs all 27 quartic invariant coefficients and computes the complete bare finite-mode one-loop two-point function. General four-point loop topology controls are separate.",
+    "healthy": "22 exact fit directions yield a polynomial reproducing all seven frozen parent cases; two new held-out mixed-functional contractions raise independent cross-invariant validation coverage from rank three to five. Direct frequency integration agrees with the analytic tadpole and bubble formula below 1e-9, normalized magnetic components agree, and mixed QP corrections vanish. The four-point bookkeeping controls pass.",
+    "noise": "N=3 and ten profiles remain fixed, with one radial profile per parity. This is a two-point coefficient under a bare midpoint/Weyl prescription, not four-graviton scattering or a physical large-N limit. Errors are displayed in units of 1e-12; report raw scientific values when interpreting. Negative perturbative corrections alone do not prove instability. The independent corner and sixth-order audits are derivations, not measured loop results.",
+    "worth_a_flag": "Any exact invariant or historical contraction check fails, quadrature discrepancy exceeds 1e-9, QP cancellation or rotation invariance fails, a control omits H5/H6 while claiming full four-point coverage, or progress stalls without an ingredient report.",
+    "decided": "Local CPU and standard-library Python. Fixed inherited recipe. Source committed before launch; no full calculation run directly from the worktree. Parent runtime 71.48 seconds; new exact coefficient stages are untimed. Preserve this source node after a meaningful result."
   }
 }

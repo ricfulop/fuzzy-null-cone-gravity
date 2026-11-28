@@ -1,13 +1,13 @@
 {
-  "calculation": "reduced_weak_field_vertices",
-  "decimal_precision": 70,
-  "finite_difference_steps": ["0.0002", "0.0001", "0.00005"],
-  "coefficient_error_tolerance": "1e-10",
-  "determinant_tolerance": "1e-50",
-  "finite_metric_checks": [
-    {"case": "electric_axis", "point": ["0.2", "-0.3", "0.4"]},
-    {"case": "magnetic_axis", "point": ["0.7", "0.1", "-0.2"]},
-    {"case": "noncommuting_labels", "point": ["0.35", "-0.25", "0.45"]},
-    {"case": "held_out_mixed", "point": ["0.2", "0.3", "0.55"]}
+  "calculation": "complete_quartic_loops",
+  "loop_quadrature_orders": [
+    32,
+    64
+  ],
+  "loop_relative_tolerance": 1e-09,
+  "external_frequencies": [
+    0.0,
+    0.7,
+    2.0
   ]
 }

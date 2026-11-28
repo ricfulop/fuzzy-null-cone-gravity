@@ -116,7 +116,7 @@ radial geometry. The free rank stays $N=3$; the full sampled constraint
 residual is about $2.03\times10^{-6}$ even when the separate angular defect
 is about $2.34\times10^{-14}$. Neither that limited boundary sector nor
 this numerical result completes the microscopic corner or interacting
-reconstruction goals. The next calculation derives the full cubic and
+reconstruction goals. The subsequent calculation derives the full cubic and
 quartic Hamiltonian, including the constraint-generated nonlocal terms.
 The [interaction derivation](reports/quantum-bridge/reduced-vertices.md)
 now gives those full classical functionals for the declared reduced chart.
@@ -136,3 +136,24 @@ all one-loop four-point vertex families. These are derived evaluation
 identities, not evaluated higher gravitational couplings or an amplitude.
 The next implementation must supply those couplings, evaluate the loop,
 assemble the connected observable and check its physical limits.
+
+The [independent algebraic audit](reports/quantum-bridge/sixth-order-independent-audit.md)
+checks these identities under their stated analytic hypotheses. In particular,
+the static trace-square-root check concerns only four configuration legs at
+zero external frequency and zero background momentum; it does not test every
+phase-space vertex. The [next tracked calculation](reports/quantum-bridge/complete-quartic-and-two-point.md)
+reconstructs the complete quartic polynomial and evaluates a one-loop
+two-point coefficient in the same ten-mode model. Separate control
+Hamiltonians test all four-point loop topologies. These controls do not
+supply the missing gravitational fifth/sixth-order coefficients.
+
+The [local corner derivation](reports/quantum-bridge/local-corner-matching.md)
+finds an explicit nonzero Poisson bracket between a local reconstructed area
+and total area at finite sphere radius. Consequently, independent local
+area matching is not automatically a first-class gauge system. Imposing
+matching and zero boost as second-class conditions returns the original
+bulk symplectic form; a local canonical conversion also gives first-class
+constraints but changes the matching law away from that section. Neither
+choice derives a genuine gravitational edge algebra, microscopic state
+multiplicities, or the global interacting operator needed for reconstruction.
+All three principal deliverables remain open.

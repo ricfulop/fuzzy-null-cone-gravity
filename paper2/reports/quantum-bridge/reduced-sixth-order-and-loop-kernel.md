@@ -424,9 +424,12 @@ $\det(\nu^2I+\mathsf M\mathsf K)$; this shows why an extra
 field-dependent determinant must not be added twice when momenta are
 integrated out.
 
-Four derivatives of this expression check only the zero-external-frequency
-1PI component. They do not provide the nonzero-frequency scattering
-amplitude or prove interacting reflection positivity. The full
+Four configuration derivatives of this expression check only the
+$qqqq$ 1PI component at $p=0$ and zero external frequency. They do not
+check general phase-space components: for example the $qp^4$, $q^2p^4$
+and $p^6$ vertices are invisible to this static check. They do not provide
+the nonzero-frequency scattering amplitude or prove interacting
+reflection positivity. The full
 Hamiltonian's domain, ordering, positivity and limits remain part of the
 original goal.
 
