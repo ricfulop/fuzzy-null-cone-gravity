@@ -5,5 +5,5 @@
 <signal name="elapsed_seconds" label="Checker runtime" unit="s" as="duration" />
 <view headline="validation_passed diagnostic_passed completed_diagnostic_batches completed_batches">
   <stats of="validation_passed diagnostic_passed completed_diagnostic_batches completed_batches elapsed_seconds" />
-  <text>The curvature diagnostic tests the exact evaluator. Its success is separate from complete weak-form validation; neither establishes a physical spectrum or nonlinear consistency.</text>
+  <text>Only Bounded validation marks completion of the eight-batch weak-form check. Curvature diagnostic refers to narrower evaluator controls. Neither establishes a physical spectrum or nonlinear consistency.</text>
 </view>

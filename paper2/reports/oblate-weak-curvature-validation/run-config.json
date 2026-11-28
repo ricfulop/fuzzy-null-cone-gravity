@@ -17,12 +17,12 @@
     }
   ],
   "brief": {
-    "question": "After the single-entry diagnostic passed, does the unchanged exact curvature evaluator pass all three symbolic gauge sectors?",
-    "healthy": "Five diagnostic batches: chart controls, nine-entry offshell Ricci oracle agreement with a nonzero witness, then full global gauge tests at m=1,0,2. Each gauge sector asserts all nine Einstein entries plus scalar curvature. Internal operation timers do not advance batch progress.",
-    "noise": "The prior three-batch run intentionally checked only gauge R12 and passed. This run explicitly restores all three gauge sectors. Both are evaluator diagnostics; neither executes the eight-batch weak-form validation or claims physical consistency.",
-    "worth_a_flag": "Any assertion, unsupported expression, missing final JSON, wall/RSS stop, or unresolved cleanup. Negative scope flags about full weak validation are intended exclusions, not missing promised results.",
-    "from_parent": "The single-entry diagnostic passed in 36.748 supervisor seconds, including the previously stalled gauge R12 normalization in 2.029 seconds. Checker bytes and all physics modules remain identical; only the supervisor selects the existing five-batch mode.",
-    "decided": "One local CPU process with unchanged 300-second wall and sampled 2-GiB RSS budgets. Remaining full-gauge runtime is uncalibrated. Standing authorization ends 2026-11-28 16:29 UTC. Success requires curvature-probe-checks.json and diagnostic_passed after export."
+    "question": "Do the prepared original-regulator weak potential/lapse densities and radial fluxes pass the complete bounded independent curvature/Green validation?",
+    "healthy": "This full mode declares its own plan: setup one environment, validation eight batches, export one result. Batches are three representative sampled weak/Green sectors, three prepared symbolic gauge controls, Cartesian TT normalization, and nonzero ablation. validation_passed follows successful weak-form-checks.json export.",
+    "noise": "The preceding five-batch evaluator diagnostic passed in 142.57 supervisor seconds. It did not perform this complete weak-form check. Substage timings do not advance batch counts. Scope exclusions for finite assembly, physical boundaries and nonlinear consistency are intentional.",
+    "worth_a_flag": "Any exact residual failure, wrong-sign or omitted-term negative control unexpectedly accepted, missing final JSON, budget stop or unresolved cleanup. Do not interpret a computational stop as a gravitational no-go.",
+    "from_parent": "Checker and physics bytes match the passing curvature diagnostic. Only the supervisor selects existing full mode. Raw sampled sectors remain free of intermediate chart normalization; symbolic gauge sectors retain combined-Ricci normalization.",
+    "decided": "One local CPU invocation with unchanged 300-second wall and sampled 2-GiB RSS budgets. Standing approval ends 2026-11-28 16:29 UTC. This is bounded local validation, not a finite radial spectrum, endpoint-domain choice or consistency theorem."
   },
   "watch": {
     "minGapS": 60,
