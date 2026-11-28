@@ -10,6 +10,7 @@ from decimal import Decimal as D
 from fractions import Fraction as F
 from math import nextafter
 from pathlib import Path
+import hashlib
 import json
 import os
 import platform
@@ -24,6 +25,8 @@ from reduced_sixth_sources import prepare_sixth_sources
 from reduced_sixth_local import local_families, merge_families, prepare_local_fields, triple_tail
 from reduced_sixth_energy import prepare_sixth_data, integrate_sixth, physical_indicator
 from gaussian_fourier_bilinears import compile_scalar_bilinear, compile_york_bilinear
+from gaussian_kernel_consolidation import consolidate_kernel
+from kernel_consolidation_controls import check_consolidation, kernel_record, run_consolidation_controls
 from sixth_canonical_terms import canonical_terms, canonical_controls
 from sixth_local_controls import run_local_checks
 from sixth_source_controls import run_source_checks
@@ -85,6 +88,7 @@ def main(config):
     result = {"configuration": config, "source_commit": os.getenv("ORX_COMMIT"),
               "run": os.getenv("ORX_RUN_ID"), "python": sys.version, "platform": platform.platform(),
               "status": "in progress", "directions": [], "triple_control_checkpoints": [],
+              "consolidation_control_checkpoints": [],
               "scope": "Complete reduced H6 numerical pilot; independent mixed-functional validation and quantum goal remain open"}
     def checkpoint():
         result["wall_seconds"] = time.monotonic()-start
@@ -97,12 +101,28 @@ def main(config):
             raise AssertionError(label+" failed; recorded measurements retained in result JSON")
     def progress(row):
         print("SIXTH PILOT PROGRESS "+json.dumps(row), flush=True)
-        if "radius_result" in row or "control_result" in row:
+        if row.get("stage") == "kernel_consolidation_control":
+            result["consolidation_control_checkpoints"].append(row)
+            checkpoint()
+            report(step=row["completed"], m={"H6_kernel_controls_completed": row["completed"]})
+        elif "radius_result" in row or "control_result" in row:
             result["triple_control_checkpoints"].append(row)
             checkpoint()
-        if "control_result" in row:
-            completed = sum("control_result" in item for item in result["triple_control_checkpoints"])
-            report(step=completed, m={"H6_controls_completed": completed})
+            if "control_result" in row:
+                completed = sum("control_result" in item for item in result["triple_control_checkpoints"])
+                report(step=completed, m={"H6_controls_completed": completed})
+
+    def archive_kernel(kernel, direction, family, representation):
+        path = output.parent/(direction+"-"+family+"-"+representation+".json")
+        payload = {"source_commit": result["source_commit"], "run": result["run"],
+                   "direction": direction, "family": family, "representation": representation,
+                   **kernel_record(kernel)}
+        encoded = (json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False)+"\n").encode()
+        temp = path.with_suffix(".tmp")
+        temp.write_bytes(encoded)
+        temp.replace(path)
+        return {"path": str(path.relative_to(ROOT)), "bytes": len(encoded),
+                "sha256": hashlib.sha256(encoded).hexdigest()}
     print("CONFIGURATION "+json.dumps(result), flush=True)
     try:
         signal.signal(signal.SIGALRM, timeout)
@@ -113,6 +133,9 @@ def main(config):
             raise ValueError("Unexpected archived quartic source")
         if higher["source_commit"] != "2a59f1b60f630bd2b4e4d922dc693a7810ab2608":
             raise ValueError("Unexpected archived independent momentum reference")
+        report(phase="kernel_consolidation_controls", step=0, of=10, unit="controls")
+        result["consolidation_controls"] = run_consolidation_controls(config, progress=progress)
+        gate(result["consolidation_controls"]["passed"], "Exact kernel consolidation controls")
         report(phase="triple_integral_controls", step=0, of=9, unit="controls")
         result["indicator_controls"] = _indicator_checks()
         gate(result["indicator_controls"]["passed"], "Positive error-indicator conversion")
@@ -165,6 +188,7 @@ def main(config):
             report(phase="nested_compilation", step=0, of=2, unit="kernels")
             nested = {}
             current["nested_kernel_statistics"] = {}
+            current["nested_kernel_archives"] = {}
             for index, key in enumerate(("scalar_nested", "york_nested"), 1):
                 t0 = time.monotonic()
                 if key == "scalar_nested":
@@ -175,8 +199,30 @@ def main(config):
                         progress=case_progress, **config["nested_compile_caps"]).scale(-2)
                 nested[key] = kernel
                 current["nested_kernel_statistics"][key] = {**kernel.statistics(), "wall_seconds": time.monotonic()-t0}
+                current["nested_kernel_archives"][key] = {"raw": archive_kernel(kernel, name, key, "raw")}
                 print("SIXTH COMPILED KERNEL "+json.dumps({"name": name, "family": key,
                       **current["nested_kernel_statistics"][key]}), flush=True)
+                checkpoint()
+                report(step=index)
+
+            report(phase="nested_consolidation", step=0, of=2, unit="kernels")
+            current["nested_consolidation"] = {}
+            for index, (key, raw) in enumerate(nested.items(), 1):
+                current["nested_consolidation"][key] = {"status": "in progress"}
+                checkpoint()
+                t0 = time.monotonic()
+                compact, stats = consolidate_kernel(raw, progress=case_progress, **config["consolidation_caps"])
+                row = current["nested_consolidation"][key]
+                row.update({"statistics": stats, "rewrite_wall_seconds": time.monotonic()-t0})
+                current["nested_kernel_archives"][key]["compact"] = archive_kernel(compact, name, key, "compact")
+                checkpoint()
+                row["exact_sampled_identity"] = check_consolidation(raw, compact,
+                    points=config["consolidation_check_points"],
+                    max_exact_term_visits=config["consolidation_max_exact_term_visits"])
+                gate(row["exact_sampled_identity"]["passed"], "Exact production kernel representation "+key)
+                row["status"] = "exact sampled representation checks passed; integral still pending"
+                nested[key] = compact
+                print("SIXTH CONSOLIDATED KERNEL "+json.dumps({"name": name, "family": key, **row}), flush=True)
                 checkpoint()
                 report(step=index)
 

@@ -246,3 +246,11 @@ Laurent representation exceeded the declared 50-million evaluation cap.
 The [preserved partial result](reports/quantum-bridge/full-sixth-order-pilot.md)
 records this failure. Exact algebraic kernel consolidation is the proposed
 implementation repair; no full mixed value or four-point result exists yet.
+
+The [exact consolidation implementation](reports/quantum-bridge/gaussian-kernel-consolidation.md)
+now has preregistered representation and independent small-integral controls,
+with raw/compact kernel archival, before retrying the same provisional pilot.
+All original numerical settings remain unchanged. Its numerical execution is
+pending. The [independent unreduced reference design](reports/quantum-bridge/unreduced-sixth-order-reference.md)
+addresses spatial W2/u3/u4 inverses and their exterior-source contributions;
+it is an algebraically reviewed design, not a measured mixed-energy validation.

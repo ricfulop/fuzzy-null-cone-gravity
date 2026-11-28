@@ -28,6 +28,7 @@ Companion dynamical manuscript and reproducible symbolic/numerical verification 
 - [Validated sixth-order source and integration ingredients](reports/quantum-bridge/sixth-order-backend-validation.md): nine Fourier controls, 72 synthetic tail checks, 680 source-component checks, exact momentum parity and two gravitational tails passed, including the required nonzero-monopole case. A preserved work-cap interruption was repaired without changing tolerances or the cap. This does not yet supply a mixed H6 value or a four-point result.
 
 - [Complete sixth-order pilot and preserved partial result](reports/quantum-bridge/full-sixth-order-pilot.md): pure momentum passed its independent radial comparison; seventeen mixed energy entries and exact canonical checks completed before the declared parameter-work cap stopped the run. The full mixed energy, its independent functional reference and the four-point loop remain pending.
+- [Exact Gaussian-kernel consolidation](reports/quantum-bridge/gaussian-kernel-consolidation.md): a rational representation repair retaining the pilot's fields, quadratures, tolerances and evaluator cap. Its tracked controls and production evaluation are pending. The [unreduced sixth-order reference design](reports/quantum-bridge/unreduced-sixth-order-reference.md) specifies an independent spatial comparison with complete exterior sources; it is analytically reviewed but not yet implemented.
 
 ## Reproduce all calculations and figures
 

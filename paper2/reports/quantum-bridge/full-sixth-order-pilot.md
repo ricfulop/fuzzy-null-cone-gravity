@@ -46,6 +46,44 @@ algebraic consolidation of the redundant Laurent kernel representation;
 the original source/run remain preserved. No tolerance or work-limit
 relaxation has been selected, and the repaired evaluator has not yet run.
 
+## Exact representation repair, pending execution
+
+The same provisional experiment now adds
+[exact kernel consolidation](gaussian-kernel-consolidation.md) before the
+existing numerical integrator. Each heat weight is replaced by the rational
+identity t^(2m)=(A-beta)^m/a^m in the original variable t. Signed Laurent
+coefficients merge exactly, and a sparse Horner construction forms a common
+denominator. The compiler, fields, physical functional, all quadrature grids,
+64/96-digit precision comparison, numerical tolerances and 50-million
+parameter-evaluation cap remain unchanged. This is an implementation repair
+of the unanswered pilot, not a new physical regulator.
+
+Ten tracked controls precede the original suite: seven exact representation
+fixtures with input immutability and output idempotence, a deterministic
+rewrite-work cap boundary, and scalar/York two-parameter derivative identities
+against the spatial two-HEAT backend. Completed successes and failures are
+checkpointed. Both complete raw and compact production coefficient maps are
+saved to run output files with SHA-256 hashes before numerical integration.
+Five exact rational point checks accompany each production kernel. They
+check symmetrized stripped integrands for equal endpoints because the existing
+canonical orientation can swap individual terms after heat-weight elimination.
+These are sampled implementation checks supporting the algebraic derivation,
+not a proof of functional equality from a finite sample.
+
+The rewrite has its own preregistered 50-million-operation cap, a 200,000
+live-map support cap, numerator degree 128 and coefficient bit-length 4096.
+Exact representation checks have a one-million term-visit cap. No nonzero
+coefficient is pruned. The original raw compilation statistics are retained.
+Parameter convergence and cancellation diagnostics now refer to the compact
+Laurent basis; they need not equal or dominate the raw-basis diagnostics.
+Common-denominator expansion can worsen conditioning. A new work or
+convergence failure remains possible and must be preserved.
+
+The [independent unreduced reference design](unreduced-sixth-order-reference.md)
+specifies an additional spatial W2/u3/u4 calculation, with exterior-source
+data and finite-ball flux checks. It has received algebraic review only;
+its implementation and numerical evaluation remain separate pending work.
+
 ## Preregistered question and parent evidence
 
 The parent experiment `2a5669d5-55a0-445f-8538-0941b3615cc9` established the
@@ -147,7 +185,8 @@ automatic retry parameters.
 The calculation uses one local standard-library Python process, at most
 1800 seconds and never past the standing authorization deadline. This is
 a wall-clock cap, not an empirically calibrated runtime estimate. Production
-nested-kernel cost is unmeasured. A work-limit failure will be retained as
+nested compilation was measured in the partial attempt above; the repaired
+rewrite and complete integration costs are unmeasured. A work-limit failure will be retained as
 such; it cannot be reported as a physical result. No GPU or remote budget
 is used. The fixed entry point remains `bash verification/quantum_bridge/run.sh`
 from the Paper II folder through the tracked runner.
