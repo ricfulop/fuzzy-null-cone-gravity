@@ -254,3 +254,14 @@ All original numerical settings remain unchanged. Its numerical execution is
 pending. The [independent unreduced reference design](reports/quantum-bridge/unreduced-sixth-order-reference.md)
 addresses spatial W2/u3/u4 inverses and their exterior-source contributions;
 it is an algebraically reviewed design, not a measured mixed-energy validation.
+
+The [repaired H6 pilot](reports/quantum-bridge/full-sixth-order-results.md)
+has now completed all twenty mixed contributions at unchanged numerical
+settings. Its raw directional coefficient is 14796721.40459518 with summed
+physical diagnostic 5.79e-5; the independent pure-momentum reference and all
+new controls also passed. Exact consolidation brought both nested kernels
+within the original work cap. This establishes numerical assembly of the
+stated reduced formula, not independent full-functional validation. The
+next spatial reference and directional loop contractions remain necessary;
+no four-point loop, physical large-N limit or microscopic corner-state
+derivation has been completed by this milestone.

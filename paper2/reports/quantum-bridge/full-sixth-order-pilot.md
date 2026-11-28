@@ -1,5 +1,10 @@
 # Complete sixth-order energy: pilot protocol and first partial result
 
+The subsequent exact-representation retry completed the full pilot. Its
+[reviewed numerical result](full-sixth-order-results.md) preserves both
+attempts and the prospective protocol below. Independent mixed-functional
+validation remains pending.
+
 The protocol below was committed before execution. The first run then
 completed the pure-momentum case and seventeen mixed contributions but
 stopped at its declared parameter-evaluation work cap. **No full mixed H6
@@ -46,9 +51,9 @@ algebraic consolidation of the redundant Laurent kernel representation;
 the original source/run remain preserved. No tolerance or work-limit
 relaxation has been selected, and the repaired evaluator has not yet run.
 
-## Exact representation repair, pending execution
+## Exact representation repair protocol
 
-The same provisional experiment now adds
+The same then-provisional experiment added
 [exact kernel consolidation](gaussian-kernel-consolidation.md) before the
 existing numerical integrator. Each heat weight is replaced by the rational
 identity t^(2m)=(A-beta)^m/a^m in the original variable t. Signed Laurent

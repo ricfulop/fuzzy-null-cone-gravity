@@ -6,7 +6,10 @@ only in [gaussian_kernel_consolidation.py](../../verification/quantum_bridge/gau
 It returns the existing immutable `GaussianBilinearKernel` type. The source
 compiler and numerical integrator are unchanged. No numerical evaluation,
 consolidation call, source construction, or quadrature was executed while
-writing this implementation; its checks await a tracked calculation.
+writing this implementation. The later [tracked pilot](full-sixth-order-results.md)
+passed its ten controls and completed both production kernels under the
+unchanged evaluation cap. The derivation and limitations below describe
+the implementation independently of that measured outcome.
 
 ## Contract and normalization
 
