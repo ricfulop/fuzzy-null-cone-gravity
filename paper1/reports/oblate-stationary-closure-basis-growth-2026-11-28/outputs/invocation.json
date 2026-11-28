@@ -1,0 +1,37 @@
+{
+  "state": "started; no reduction completion asserted",
+  "identity": {
+    "T": "atan(1/(10*r))",
+    "T_prime": "-10/(100*r**2 + 1)",
+    "epsilon0": "1/100",
+    "input_dir": "/Users/ricfulop/.local/share/openresearch/local-runs/7fbed460-e7b2-4f37-b328-1b4932d91867/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "input_sha256": {
+      "completion.json": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+      "stationary-operators.json": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+      "stationary-reproducibility.json": "c6d199d542555d997aeb49186ca03ea514151ce364d16b0c952160ac24631a31"
+    },
+    "linear_algebra_backend": "QQ(r,T) DomainMatrix rref_den CD; full augmented rows retained",
+    "max_steps": 21,
+    "python": "3.12.11",
+    "python_implementation": "3.12.11 (main, Oct  7 2025, 15:53:48) [Clang 20.1.4 ]",
+    "scope": "JSON-only fixed-epsilon stationary DAE reduction",
+    "source_commit": "8335010cf170654c7e53b2371b94761d997c7efa",
+    "source_sha256": {
+      "exact_linear_algebra.py": "060705054befb8168fc9e0eef3319692cd492a7ef33967d173cf8088314fcf57",
+      "reduce_stationary.py": "2732413f58a975ca0e81f13344fdc9150df81aec699087ece6cd928a1dec010c",
+      "reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+      "run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+      "test_exact_linear_algebra.py": "8d2defd9d297aea5d9b031f43abaa300f0ee7c60e59a1153e135fe1e2045a76b",
+      "test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+      "test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5"
+    },
+    "stage": "closure",
+    "sympy": "1.14.0",
+    "upstream_identity_sha256": "96749679ba2bed1bf3e070cd43dde7697e4aaeeb26d2ae02fd130fb564282c21",
+    "upstream_source_commit": "1cd1a69c258810d38c12adc334733aff1fac6b7a"
+  },
+  "identity_sha256": "95c5e32ecd2532647a6f2896fb46e4c3e14d8700a2388d8eea4f8841cf596eef",
+  "attempt_id": "43d6bd30faea43e3abedd823fdf54793",
+  "start_utc": "2026-11-28T05:21:32.031015+00:00",
+  "checkpoint_policy": "write only; no automatic reuse or resume"
+}

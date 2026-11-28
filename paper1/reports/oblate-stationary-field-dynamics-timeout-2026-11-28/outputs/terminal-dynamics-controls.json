@@ -1,0 +1,13 @@
+{
+  "state": "terminal original-row and dynamics controls passed",
+  "cases": [
+    "all_22_valid_with_nonzero_discarded_control_response",
+    "X0_state_defect_rejected",
+    "outside_discovery_control_defect_rejected",
+    "variable_embedding_with_valid_nonzero_control",
+    "non_free_K_defect_rejected",
+    "non_free_B_defect_rejected",
+    "empty_widths",
+    "invalid_coefficients_rejected"
+  ]
+}

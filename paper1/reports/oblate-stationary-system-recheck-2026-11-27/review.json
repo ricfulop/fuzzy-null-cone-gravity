@@ -1,0 +1,8 @@
+{
+  "reviewer_chat": "chat_83b7b932-1532-c48c-2387-ddf128d0dde1",
+  "message": "msg_80a925e6",
+  "scope": "read-only raw log, source and export/checkpoint hashes, JSON and timing/provenance inspection",
+  "material_issues": [],
+  "scientific_rerun_performed": false,
+  "conclusion": "one passing extraction; all22retained rows plusresponse;8selectedrows notrankclaim; noDAEsolution/seed/B/DOF"
+}

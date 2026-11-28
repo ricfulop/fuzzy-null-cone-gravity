@@ -1,0 +1,104 @@
+{
+  "run_id": "8fa984ea-3c9b-4e85-b984-c23956fc95d8",
+  "source_commit": "e928d6c89324465018a6b5b209152dffde1a454b",
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/8fa984ea-3c9b-4e85-b984-c23956fc95d8/repo/paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py",
+    "--input-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/8fa984ea-3c9b-4e85-b984-c23956fc95d8/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/8fa984ea-3c9b-4e85-b984-c23956fc95d8/repo/paper1/run-output/8fa984ea-3c9b-4e85-b984-c23956fc95d8/outputs",
+    "--stage",
+    "closure",
+    "--max-steps",
+    "21"
+  ],
+  "configuration": {
+    "stage": "closure",
+    "max_steps": 21,
+    "wall_seconds": 900,
+    "memory_bytes": 2147483648,
+    "approval_message": "msg_4c4bcc8d",
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "purpose": "Same exact closure question: historical control-only pivot basis with direct QQ(r,T) field arithmetic, batched independence and all original22 terminal rows. No interval germ claim."
+  },
+  "source_sha256_before": {
+    "verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177",
+    "verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "f73a9d330d515998c64564f3a7928038146bf571728e6453dbe19ae1d9352b36",
+    "verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py": "4616fe18e1f655fb615b8c26b784c9e78ad30f011d3266e63fa3aae3186feecc",
+    "verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "verification/oblate_stationary_reduction_20261128/run-config.json": "06b94c5e15eaf5af18dbb420cffa06864100fe70fc0de5fb721e0f53199452ef"
+  },
+  "source_repository": "/Users/ricfulop/OpenResearch/fuzzy-null-cone-gravity",
+  "input_completion_sha256": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "scientific_invocations": 1,
+  "remote_jobs": 0,
+  "GPU_jobs": 0,
+  "rss_measurement": "sampled sum for child process group; not a hard OS cap",
+  "start_utc": "2026-11-28T05:32:33.230735+00:00",
+  "pid": 93587,
+  "status": "failed",
+  "exit_code": 143,
+  "elapsed_seconds": 900.347664166009,
+  "end_utc": "2026-11-28T05:47:33.582044+00:00",
+  "stop_reason": "wall budget reached",
+  "supervisor_error": null,
+  "group_disposition": {
+    "status": "empty",
+    "probe": "ESRCH"
+  },
+  "cleanup_events": [
+    {
+      "action": "initial_probe",
+      "status": "live",
+      "probe": "killpg"
+    },
+    {
+      "signal": 15,
+      "result": "sent"
+    },
+    {
+      "after_signal": 15,
+      "status": "empty",
+      "probe": "ESRCH"
+    }
+  ],
+  "cleanup_errors": [],
+  "relay_errors": [],
+  "relay_active_after_join": false,
+  "received_signals": [],
+  "source_sha256_after": {
+    "verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177",
+    "verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "f73a9d330d515998c64564f3a7928038146bf571728e6453dbe19ae1d9352b36",
+    "verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py": "4616fe18e1f655fb615b8c26b784c9e78ad30f011d3266e63fa3aae3186feecc",
+    "verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "verification/oblate_stationary_reduction_20261128/run-config.json": "06b94c5e15eaf5af18dbb420cffa06864100fe70fc0de5fb721e0f53199452ef"
+  },
+  "rss_sample_count": 3032,
+  "sampled_max_rss_bytes": 472268800
+}

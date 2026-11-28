@@ -1,0 +1,29 @@
+{
+  "state": "conditional_linkage_preparation_only",
+  "reference_commit": "e42d12ea91d6b92dbcea125615c72339fe7f3ba2",
+  "review_message": "msg_16e5433a",
+  "author_message": "msg_bd8e00b7",
+  "source_sha256": {
+    "paper1/sections/canonical_oblate.tex": "f7a5ac43ec4748c65d36d666e88925839f267659c18dd169064c3e437f3676ae",
+    "paper1/reports/oblate-nonlinear-null-preparation-2026-11-27/README.md": "87c13eec80ab207e464c6ad1f1e8784280bd214c4304b454aa30a92186cf2373",
+    "paper1/reports/oblate-stationary-seed-preparation-2026-11-27/README.md": "96094f9d4c11e04f1f6c746f9b2f15957170624dab294c1dccd74bb2330ac113",
+    "paper1/reports/oblate-null-map-check-2026-11-27/README.md": "a8a8d7c5552a91f69a5b3feaee947218259f83442077630dfb198fb69db9a3b1",
+    "paper1/reports/oblate-null-map-check-2026-11-27/map-checks.json": "75fc5c1036777716ef80bd1911adc9a90d2ef0582110f0ffe3ccc9ed973305cc",
+    "paper1/reports/oblate-null-map-check-2026-11-27/sources/verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "paper1/reports/oblate-null-map-check-2026-11-27/sources/verification/oblate_nonlinear_null_20261127/check_prepared_maps.py": "42dcab52527ea00fe0e2adf5c06b139747a13eec527580f7a8298d748b912569",
+    "paper1/reports/oblate-stationary-state-germ-preparation-2026-11-28/README.md": "3918330336eb62ece3e740337d4cebc7950afdc0658ea95980afe91272300dbc",
+    "paper1/reports/oblate-stationary-state-germ-preparation-2026-11-28/certificate-contract.json": "ca050e8f4a96cb326057d2d7493a402e7ea92c35fe4fb6dfe6422117e65959dd"
+  },
+  "source_bytes_match_reference_commit": true,
+  "scientific_invocations": 0,
+  "mathematical_controls_executed": false,
+  "physical_radius_minor_certified": false,
+  "smooth_solution_germ_certified": false,
+  "nonlinear_obstruction_established": false,
+  "root_clarifications": [
+    "common spacetime neighborhood",
+    "explicit descriptor and total radial derivative",
+    "real smooth compact profiles with nonnegative product"
+  ],
+  "scope": "Conditional proof linkage only; existing reports supply descriptor identities, while a future positive independently checked physical germ certificate is required."
+}

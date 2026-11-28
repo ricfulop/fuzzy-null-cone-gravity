@@ -1,0 +1,65 @@
+{
+  "status": "local stationary solution-germ route proposed; no seed supplied",
+  "action_and_normalization": "unchanged original Paper I coefficient EH action; one Sigma density and angular dx/2",
+  "N": 3,
+  "L": 2,
+  "m": 0,
+  "domain_kind": "open radial shell; smooth stationary solution germ; compact interior descriptor tests",
+  "physical_endpoint_domain_selected": false,
+  "parameter_domain_for_prepared_moments": "r>0, epsilon>0; actual regular Legendre domain remains a separate hypothesis",
+  "even_columns": [
+    [
+      "lambda",
+      0
+    ],
+    [
+      "lambda",
+      2
+    ],
+    [
+      "X",
+      0
+    ],
+    [
+      "X",
+      2
+    ],
+    [
+      "V_polar",
+      2
+    ],
+    [
+      "C_polar",
+      2
+    ],
+    [
+      "a",
+      0
+    ],
+    [
+      "a",
+      2
+    ]
+  ],
+  "shift_perturbations": 0,
+  "canonical_momentum_perturbations": 0,
+  "required_equations": "Lq=0 and Vsecond*q+Ladjoint*a=0 identically throughout interval; recheck all22 original retained Euler rows",
+  "odd_coordinate_leg": {
+    "C_axial2": "-2*(r^2+epsilon)*f/3",
+    "V_axial2": "-f_prime/3",
+    "W": 0
+  },
+  "response": "B=(4/105)*integral dr (r^2+epsilon)*w*f*D; D=6 E_X4-E_Cpolar4",
+  "full_continuum_residual_retained": true,
+  "solution_certificate_option": "smooth u=M(r)z, z_prime=K(r)z; all original retained operator rows vanish after substitution on interval",
+  "not_sufficient": [
+    "free radial jets",
+    "matrix nullspace at one radius",
+    "finite bubble discretization solution",
+    "numerical residual alone",
+    "vanishing projected secondaries at one slice"
+  ],
+  "responding_germ_found": false,
+  "response_evaluated": false,
+  "full_nonlinear_goal_complete": false
+}

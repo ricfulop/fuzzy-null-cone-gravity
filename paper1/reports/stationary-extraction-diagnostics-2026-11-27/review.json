@@ -1,0 +1,33 @@
+{
+  "reviews": [
+    {
+      "chat": "chat_83b7b932-1532-c48c-2387-ddf128d0dde1",
+      "message": "msg_42ea7387",
+      "scope": "read-only scientific coverage and timing diff",
+      "finding": "equations and controls unchanged; serialization timing and completion-versus-exit distinctions requested",
+      "resolution": "Final-expression serialization timed; marker/exit distinction documented. Follow-up msg_3fb0d6ec requested supervisor guards/descendant cleanup and historical wording; code corrected and mocked regression tests passed."
+    },
+    {
+      "chat": "chat_2f3d47b3-1e7e-ace4-7757-6f7fc7900d9d",
+      "message": "msg_aa75b776",
+      "scope": "read-only checkpoint coverage/provenance",
+      "finding": "no material issue; optional source-copy hardening",
+      "resolution": "copied source bytes now hashed immediately before computation"
+    },
+    {
+      "chat": "chat_83b7b932-1532-c48c-2387-ddf128d0dde1",
+      "message": "msg_a2b60055",
+      "scope": "read-only final guard/cleanup/test review",
+      "finding": "code corrections confirmed; manifest hashes needed refresh",
+      "resolution": "manifest refreshed after final code; validation now records4initial filesystem tests and6final infrastructure tests including2mocked supervisor checks"
+    },
+    {
+      "chat": "chat_83b7b932-1532-c48c-2387-ddf128d0dde1",
+      "message": "msg_0567b68f",
+      "scope": "final file/hash/validation metadata inspection",
+      "finding": "all7 hashes match; stale-hash blocker resolved; validation and README agree; no scientific execution"
+    }
+  ],
+  "scientific_execution_by_reviewers": false,
+  "remaining_material_preparation_issues": []
+}

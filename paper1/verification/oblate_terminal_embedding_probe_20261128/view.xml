@@ -1,0 +1,11 @@
+<signal name="diagnostic_kernel_verified" label="Diagnostic kernel verified" digits="0" better="higher" />
+<signal name="manufactured_control_count" label="Manufactured controls completed" digits="0" />
+<signal name="formal_constraint_rank" label="Saved constraint-matrix rank" digits="0" />
+<signal name="free_column_count" label="Algebraic kernel columns" digits="0" />
+<signal name="constraint_rref_seconds" label="Exact row reduction" as="duration" />
+<signal name="original_constraint_product_seconds" label="Original kernel product check" as="duration" />
+<view headline="diagnostic_kernel_verified manufactured_control_count">
+  <stats of="diagnostic_kernel_verified formal_constraint_rank free_column_count" />
+  <text>This verifies only an algebraic kernel from a pinned intermediate checkpoint. It does not certify DAE closure, an admissible solution germ, a discarded response, or a physical mode count.</text>
+  <stats of="manufactured_control_count constraint_rref_seconds original_constraint_product_seconds" />
+</view>

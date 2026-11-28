@@ -560,8 +560,9 @@ entry point. It uses Python's standard library on local CPU.
   positive frequencies, and dual-Gram canonical pairing.
 - Derive the three source Gaunt harmonics from the Cartesian tensor
   square, its norm and the exact Fourier Coulomb energy.
-- Compare the quartic energy with two independent Green-function
-  quadratures; evaluate the sixth-order coefficient with both.
+- Compare the quartic energy with the independent exact Fourier result
+  using Green-function quadrature at two resolutions; evaluate the
+  sixth-order coefficient at both resolutions as a refinement check.
 - Count six leading area windows by the level multiplicities and by an
   independent ten-mode recursion.
 - Compare the analytic linear solution with a separate Poisson solver
@@ -595,8 +596,9 @@ checks, two energy quadratures, six leading-area counts, three linear grids
 and thirteen nonlinear solves.
 
 All ten selected modes satisfy the exact TT, Gram, gradient and dual-pairing
-checks. The independent Green-function quadratures reproduce the exact
-Fourier quartic integral to relative errors of $1.22\times10^{-15}$ and
+checks. The two resolutions of the same Green-function quadrature
+implementation reproduce the independent exact Fourier quartic integral
+to relative errors of $1.22\times10^{-15}$ and
 $2.03\times10^{-16}$. The sixth-order integrals from those quadratures differ
 by $9.09\times10^{-13}$ in absolute value. In the stated $\varepsilon$
 parameter, the tested energy is
@@ -623,10 +625,18 @@ separate angular defect is:
 | 12 | $2.34190\times10^{-14}$ |
 
 Increasing the angular quadrature from 32 to 48 nodes gives the same ADM
-energy to the displayed floating-point precision. However, the **full
-sampled scalar-constraint residual is $2.02997\times10^{-6}$**, not the
-angular defect in the last row. Radial discretization remains the limiting
-error. The independent linear Green-function errors decrease by factors
+energy to the displayed floating-point precision. However, the sampled
+interior Lichnerowicz-equation residual is $2.02997\times10^{-6}$,
+evaluated using fourth-order radial derivatives on a grid of $n_r$ radial
+intervals, at indices $2\le i\le n_r-2$ and separate angular validation
+points. This diagnostic
+excludes the radial endpoints and is reported before pointwise multiplication
+by $-8\psi^{-5}$ to obtain the physical scalar-constraint residual. The
+archived result field `sampled_fourth_order_constraint_residual` and emitted
+metric field `full_constraint_residual` both refer to this unweighted
+interior diagnostic. It is distinct from the angular defect in the last row.
+Radial discretization remains the limiting error. The independent linear
+Green-function errors decrease by factors
 3.99876 and 3.99965 as the radial grid doubles; the nonlinear residual
 ratios are approximately 3.91 and 3.97 for each tested amplitude. These are
 consistent with the second-order radial solver. Sampled residuals and

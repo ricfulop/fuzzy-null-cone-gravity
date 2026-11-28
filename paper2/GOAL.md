@@ -196,7 +196,7 @@ preserve the failed parent as well. This removes the frequency-resolution
 issue and supplies actual two-point quantum coefficients under the same
 prescription. It does not evaluate the four-point observable, establish
 small quantum corrections at unit parameters, or control physical cutoff
-limits. Fifth/sixth-order spatial contractions are the next required input.
+limits. Fifth/sixth-order spatial contractions were then the next required input.
 
 The [higher geometry and first Green-response run](reports/quantum-bridge/higher-geometry-green-validation.md)
 then passed two exact geometry directions, 68 independent finite-metric
@@ -208,16 +208,17 @@ inverse contractions remained pending at that checkpoint, as did the gravitation
 observable, microscopic corner dynamics and physical large-rank limits.
 
 The [full fifth-order functional](reports/quantum-bridge/full-fifth-order-evaluation.md)
-has now been evaluated on two raw TT directions, retaining all momentum
+was then evaluated on two raw TT directions, retaining all momentum
 sectors. The first spatial-refinement attempt failed and was preserved;
 the 16/20/24-point child passed every declared family, integration-by-parts,
 tail and cancellation gate with no tolerance relaxation. Its maximum scaled
 spatial/refinement diagnostic is $7.58\times10^{-10}$. These two values do
 not reconstruct the fifth-order vertex tensor or its loop contraction.
 The complete mixed sixth-order energy, assembled four-point observable,
-microscopic corners and physical cutoff limits remain open. An independently
+microscopic corners and physical cutoff limits remained open at that
+checkpoint. An independently
 audited [sixth-order bilinear/tail reduction](reports/quantum-bridge/sixth-order-bilinear-and-tail-reduction.md)
-now guides the next implementation without deleting the nested inverses
+guided the next implementation without deleting the nested inverses
 or their algebraic exterior contributions.
 
 The [sixth-order source/backend suite](reports/quantum-bridge/sixth-order-backend-validation.md)
@@ -228,15 +229,16 @@ analytic target. An initial exterior-operation cap interruption is preserved;
 per-call reuse of exact moment triples completed the suite under the same cap
 and tolerances. This establishes tested ingredients, not the full mixed H6
 energy or the four-point observable. Canonical finite-vector terms, production
-nested pairings and complete energy integration remain the next calculation.
+nested pairings and complete energy integration were then the next calculation.
 
 The [prospective H6 pilot](reports/quantum-bridge/full-sixth-order-pilot.md)
-now specifies that calculation as twenty separately recorded energy entries,
+specified that calculation as twenty separately recorded energy entries,
 with exact canonical checks, an independent archived pure-momentum radial
 reference, Decimal triple-integral controls and a summed physical-unit error
-gate. No numerical production result is claimed by its implementation.
-Independent full mixed-functional validation remains required even if the
-pilot passes; this is still a classical prerequisite to the four-point loop.
+gate. No numerical production result was claimed at that implementation
+checkpoint. Independent full mixed-functional validation was required even
+if the pilot passed and remains open; this is still a classical prerequisite
+to the four-point loop.
 
 The first H6 pilot subsequently completed its pure-momentum reference
 (relative difference 7.81e-16), nine Decimal triple-integral controls,
@@ -244,14 +246,16 @@ both directions' pointwise and canonical checks, and seventeen mixed
 energy entries. It stopped before nested integration because its redundant
 Laurent representation exceeded the declared 50-million evaluation cap.
 The [preserved partial result](reports/quantum-bridge/full-sixth-order-pilot.md)
-records this failure. Exact algebraic kernel consolidation is the proposed
-implementation repair; no full mixed value or four-point result exists yet.
+records this failure. Exact algebraic kernel consolidation was the proposed
+implementation repair; no full mixed value or four-point result existed at
+that failed attempt.
 
 The [exact consolidation implementation](reports/quantum-bridge/gaussian-kernel-consolidation.md)
-now has preregistered representation and independent small-integral controls,
+introduced preregistered representation and independent small-integral controls,
 with raw/compact kernel archival, before retrying the same provisional pilot.
-All original numerical settings remain unchanged. Its numerical execution is
-pending. The [independent unreduced reference design](reports/quantum-bridge/unreduced-sixth-order-reference.md)
+All original numerical settings remained unchanged. Numerical execution was
+pending at that preparation checkpoint. The
+[independent unreduced reference design](reports/quantum-bridge/unreduced-sixth-order-reference.md)
 addresses spatial W2/u3/u4 inverses and their exterior-source contributions;
 it is an algebraically reviewed design, not a measured mixed-energy validation.
 

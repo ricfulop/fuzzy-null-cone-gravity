@@ -1,0 +1,16 @@
+{
+  "initial_working_directory": "repository root",
+  "command": "cd paper1 && python3 -B -W error::ResourceWarning -m unittest discover -s verification/oblate_stationary_germ_20261128 -p test_run_bounded.py -q",
+  "exit_code": 0,
+  "tests_run": 19,
+  "unittest_reported_runtime_seconds": 0.256,
+  "evidence_origin": "Verbatim combined stdout/stderr from the completed command, terminal chunk 6cf3f5. The terminal did not separate the streams. Duration is unittest's reported suite time. The archive was prepared without rerunning the command.",
+  "source_sha256": {
+    "paper1/verification/oblate_stationary_germ_20261128/run_bounded.py": "784b860db21dc08f24111a6f13f51516680c502fad01f624f17b5f67d501269a",
+    "paper1/verification/oblate_stationary_germ_20261128/test_run_bounded.py": "2ddc3e09be567983b0a7d10fcdb81e273b04c12323506635fca79e872f12d671",
+    "paper1/verification/oblate_stationary_germ_20261128/run.sh": "7266c0f7e2736401bfb6f5a999e6caa638e5b29000e4ff26177faf56d0b38f80"
+  },
+  "hash_provenance": "The listed SHA-256 values were recorded alongside the test invocation and matched a fresh read during archival.",
+  "scope": "Stdlib supervisor tests with manufactured files, certificates and mocked child processes. No scientific invocation.",
+  "combined_stdout_stderr": "----------------------------------------------------------------------\nRan 19 tests in 0.256s\n\nOK\n"
+}

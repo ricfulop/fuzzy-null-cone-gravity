@@ -1,0 +1,73 @@
+{
+  "run_id": "5d9b96ad-c712-487d-bc28-678e1a026243",
+  "source_commit": "8c693bc2ede0783ada2b872fbd8b0d2b6f0f23ef",
+  "state": "wall stop during reduced dynamics; preservation and original retained rows passed; no closure",
+  "scientific_invocations": 1,
+  "source_count": 13,
+  "source_before_after_and_git_match": true,
+  "completed_kernel_seconds": 115.051234,
+  "terminal_preservation_complete": true,
+  "all22_terminal_rows_checked": true,
+  "all22_checks_complete_at_child_seconds": 878.085473,
+  "last_begun_stage": "terminal_reduced_dynamics",
+  "reduced_dynamics_complete": false,
+  "full_dynamics_reconstruction_checked": false,
+  "closure_export_present": false,
+  "smooth_germ_certified": false,
+  "response_evaluated": false,
+  "checkpoints": {
+    "dae-step-00.json": {
+      "sha256": "0f59715ac72f8c0484e1a0d814e0b8ec3bf3da0c10b2c9bbb617ab31d9f54d86",
+      "byte_identical_to_prior_157032da": true
+    },
+    "dae-step-01.json": {
+      "sha256": "467ac1bfab145499217b08f9cda2d990bb839dff2ae3c42061f2530d097e824c",
+      "byte_identical_to_prior_157032da": true
+    },
+    "dae-step-02.json": {
+      "sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+      "byte_identical_to_prior_157032da": true
+    }
+  },
+  "terminal_snapshot": {
+    "sha256": "f3f899f32ef77b3419fe1c777198db5db5261c3fd6a1e9f3617335f372c0e157",
+    "bytes": 1004444,
+    "matrices": {
+      "C": [
+        6,
+        14
+      ],
+      "K": [
+        14,
+        14
+      ],
+      "B": [
+        14,
+        0
+      ],
+      "M": [
+        14,
+        8
+      ]
+    },
+    "status": "immutable intermediate snapshot written before preservation; later log records completed checks",
+    "identity_matches_invocation": true,
+    "canonical_identity_digest_verified": true
+  },
+  "process_check": {
+    "utc": "2026-11-28T06:55:33.541000+00:00",
+    "process_group": 73597,
+    "members": []
+  },
+  "independent_review": {
+    "message": "msg_40088be0",
+    "verdict": "no material archive/provenance/scope issue",
+    "method": "source/file/JSON/log inspection and hashes only"
+  },
+  "scientific_code_executed_during_archive": false,
+  "watcher_flag_resolution": {
+    "flag": "f6cfb92db",
+    "disposition": "keep confirmed failed record",
+    "reason": "wall stop after preservation and original22 checks; reduced dynamics incomplete"
+  }
+}

@@ -1,0 +1,29 @@
+diff --git a/paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py b/paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py
+index 0a1db88..0163c7b 100644
+--- a/paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py
++++ b/paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py
+@@ -21,0 +22 @@ x,d=a.x,a.d
++OUT=a.ROOT/'reports/oblate-lapse-consistency-2026-11-27'
+@@ -57,0 +59 @@ def calculate():
++    OUT.mkdir(parents=True,exist_ok=True)
+@@ -108 +110 @@ def calculate():
+-    (a.OUT/'lapse-leading.json').write_text(json.dumps(rows,indent=2)+'\n')
++    (OUT/'lapse-leading.json').write_text(json.dumps(rows,indent=2)+'\n')
+@@ -117 +119 @@ def calculate():
+-    (a.OUT/'lapse-summary.json').write_text(json.dumps({'exact_gradient_kernel':kernels,
++    (OUT/'lapse-summary.json').write_text(json.dumps({'exact_gradient_kernel':kernels,
+@@ -125 +127 @@ def calculate():
+-    (a.OUT/'lapse-reproducibility.json').write_text(json.dumps(manifest,indent=2)+'\n')
++    (OUT/'lapse-reproducibility.json').write_text(json.dumps(manifest,indent=2)+'\n')
+@@ -140 +142,7 @@ def gradient_kernel():
+-    assert all(s.factor(z)==0 for z in W1-c1*P1-c2*A2)
++    # In this m=1 chart the components carry sqrt(d) and 1/sqrt(d).
++    # Remove those nonzero factors for -1<x<1, then cancel rationally.
++    # factor() alone can return unevaluated 0*I, whose structural ==0 is false.
++    residual=W1-c1*P1-c2*A2
++    rational_residual=[s.cancel(residual[0]/s.sqrt(d)),
++                       s.cancel(residual[1]*s.sqrt(d))]
++    assert rational_residual==[s.S.Zero,s.S.Zero]
+@@ -145,0 +154,2 @@ def gradient_kernel():
++            'N4_gradient_m1_rationalized_residual':[str(z) for z in rational_residual],
++            'gradient_identity_domain':'-1<x<1; equality of smooth retained fields extends across the coordinate poles',

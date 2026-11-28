@@ -1,0 +1,26 @@
+{
+  "source_commit": "bdb5d4cb4a5d719b36bb0e0c9a154bedcf48b071",
+  "run_id": "6128c4ef-4b35-4ddf-9763-1b40369bd6f6",
+  "files": {
+    "README.md": "0e3a2b869474a5098f37bd6db9b4ad40ce3fd7943512d2e993224d5d99712daa",
+    "archive-status.json": "87a785edc651e31f5fef2088c03abd56647190cf6e53b06a0f502a872bc3481c",
+    "engine.log": "69535537818990eebdfd2a97a2328ffeeef3e95390e303216cb7e732185891e1",
+    "execution.json": "29356ecd55c30eee10457a76a308e0aec84b0dcef979b4fe5f9cf8144bf77fd2",
+    "framework-exit.json": "af91cc85cfaa1ee59881e424e37efe3205bad013a1bdd3dd077422ffdb265cbc",
+    "framework-wrapper.json": "207c4d9e15952d3951a8a48eae71a7d44847bf0db891c84bf6d1b93605f775c0",
+    "inputs/dae-step-02.json": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+    "launch.json": "cc44c0b429a7947845a03969043d3b1996d629618f376b1513145ffc9ef219af",
+    "outputs/embedding-probe.json": "7b46a99d6ee04ba79826aca5bcb5676d5a0b5f00e20a6e584970f9133fbdfc99",
+    "resource-samples.json": "eb712b0518d4d42fd6c0021157531dfd7765879cba8fa51c2e1f8bdf540fc30f",
+    "sources/verification/oblate_stationary_reduction_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738",
+    "sources/verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "sources/verification/oblate_terminal_embedding_probe_20261128/probe_terminal_embedding.py": "b37c01960cc4c8dbec042cac540376795d9011da9335e6a0875752ad13e82127",
+    "sources/verification/oblate_terminal_embedding_probe_20261128/run-config.json": "52e320aa5562e343d89d16c0bde0c7b7c6c6c754de001bc08b0c3f6052097d8a",
+    "sources/verification/oblate_terminal_embedding_probe_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738",
+    "sources/verification/oblate_terminal_embedding_probe_20261128/run_bounded.py": "5a55bb44632e9bcc22d754c1bf7243c32ba84251bae895dfc683704e4035e861",
+    "sources/verification/oblate_terminal_embedding_probe_20261128/test_run_bounded.py": "f37f8952b765c4468e33f4842b37797fa17a3000a5aa522c5d7ee5c2be42055a",
+    "sources/verification/oblate_terminal_embedding_probe_20261128/view-config.json": "2605ebcb9c13e985302a92215621231810187d33608b9313c59cd2d07669d7b1",
+    "sources/verification/oblate_terminal_embedding_probe_20261128/view.xml": "da851b4cac02ee30c68d4aa032dea79a8f38ef75c9c92e7c2c25d314c8336041",
+    "verification.log": "2ef9d0e4563b2c5c9a32c04251286da36aee78825a3043de7a7364efe29bdcbc"
+  }
+}

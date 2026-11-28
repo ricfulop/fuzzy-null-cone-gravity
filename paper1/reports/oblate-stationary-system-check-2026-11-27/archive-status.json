@@ -1,0 +1,43 @@
+{
+  "status": "incomplete; stopped at approved wall-time budget",
+  "source_commit": "de24fa2bb5c21c2b027498581872e64cb65da445",
+  "approval": "msg_fa2e97d4",
+  "supervisor_exit_code_observed": 1,
+  "child_exit_code": 143,
+  "completed_column_messages": 5,
+  "planned_columns": 8,
+  "logged_columns": [
+    [
+      "lambda",
+      0
+    ],
+    [
+      "lambda",
+      2
+    ],
+    [
+      "X",
+      0
+    ],
+    [
+      "X",
+      2
+    ],
+    [
+      "V_polar",
+      2
+    ]
+  ],
+  "assertion_failure_in_log": false,
+  "final_PASS_present": false,
+  "operator_export_present": false,
+  "checker_success_manifest_present": false,
+  "in_memory_partial_matrices_checkpointed": false,
+  "resource_sample_count": 1031,
+  "scientific_sources_changed": false,
+  "post_stop_scientific_diagnostics_or_reruns": 0,
+  "admissible_non_gauge_seed_supplied": false,
+  "nonlinear_obstruction_established": false,
+  "full_nonlinear_goal_complete": false,
+  "next_decision": "permission for computational diagnosis and optimization/checkpoint preparation; rerun requires separate approval"
+}

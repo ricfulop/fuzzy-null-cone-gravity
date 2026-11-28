@@ -1,0 +1,242 @@
+{
+  "state": "started; no scientific completion asserted",
+  "identity": {
+    "column_labels": [
+      [
+        "lambda",
+        0
+      ],
+      [
+        "lambda",
+        2
+      ],
+      [
+        "X",
+        0
+      ],
+      [
+        "X",
+        2
+      ],
+      [
+        "V_polar",
+        2
+      ],
+      [
+        "C_polar",
+        2
+      ],
+      [
+        "a",
+        0
+      ],
+      [
+        "a",
+        2
+      ]
+    ],
+    "command_arguments": [
+      "verification/oblate_stationary_seed_20261127/check_stationary_system.py",
+      "--output-dir",
+      "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs"
+    ],
+    "coordinates": [
+      "t",
+      "r",
+      "x",
+      "phi"
+    ],
+    "dependencies": {
+      "numpy": "2.3.5",
+      "sympy": "1.14.0"
+    },
+    "normalization": "(16 pi G)/(4 pi) I; dx/2 angular average; Sigma occurs once",
+    "parameter_domain": "r>0, epsilon>0; x=cos(theta)",
+    "python": "3.12.11",
+    "python_implementation": "3.12.11 (main, Oct  7 2025, 15:53:48) [Clang 20.1.4 ]",
+    "retained_row_labels": [
+      [
+        "lambda",
+        0
+      ],
+      [
+        "X",
+        0
+      ],
+      [
+        "lambda",
+        1
+      ],
+      [
+        "X",
+        1
+      ],
+      [
+        "V_polar",
+        1
+      ],
+      [
+        "V_axial",
+        1
+      ],
+      [
+        "lambda",
+        2
+      ],
+      [
+        "X",
+        2
+      ],
+      [
+        "V_polar",
+        2
+      ],
+      [
+        "V_axial",
+        2
+      ],
+      [
+        "C_polar",
+        2
+      ],
+      [
+        "C_axial",
+        2
+      ],
+      [
+        "a",
+        0
+      ],
+      [
+        "a",
+        1
+      ],
+      [
+        "a",
+        2
+      ],
+      [
+        "b",
+        0
+      ],
+      [
+        "b",
+        1
+      ],
+      [
+        "W_polar",
+        1
+      ],
+      [
+        "W_axial",
+        1
+      ],
+      [
+        "b",
+        2
+      ],
+      [
+        "W_polar",
+        2
+      ],
+      [
+        "W_axial",
+        2
+      ]
+    ],
+    "sha256": {
+      "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470",
+      "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+      "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "1462be3deb349e95f52de1e9f07a01abe940bdf3fcb1d54d1138155970bb3303",
+      "verification/oblate_stationary_seed_20261127/extraction_progress.py": "3534ec72a9cb0132fe0d07e31ce7a04adb7132f2559a447259b8f9f720c57a5d",
+      "verification/oblate_stationary_seed_20261127/stationary_system.py": "0e4d72f319ba7a811356f4229e56ca3e9fb903a4dbad3622e5bd7cc5027a06cd"
+    },
+    "source_commit": "1cd1a69c258810d38c12adc334733aff1fac6b7a",
+    "source_scope": "original Paper I action; stationary N=3,m=0,even/equatorially even columns",
+    "symbol_assumptions": {
+      "epsilon": {
+        "commutative": true,
+        "complex": true,
+        "extended_negative": false,
+        "extended_nonnegative": true,
+        "extended_nonpositive": false,
+        "extended_nonzero": true,
+        "extended_positive": true,
+        "extended_real": true,
+        "finite": true,
+        "hermitian": true,
+        "imaginary": false,
+        "infinite": false,
+        "negative": false,
+        "nonnegative": true,
+        "nonpositive": false,
+        "nonzero": true,
+        "positive": true,
+        "real": true,
+        "zero": false
+      },
+      "phi": {
+        "commutative": true,
+        "complex": true,
+        "extended_real": true,
+        "finite": true,
+        "hermitian": true,
+        "imaginary": false,
+        "infinite": false,
+        "real": true
+      },
+      "r": {
+        "commutative": true,
+        "complex": true,
+        "extended_negative": false,
+        "extended_nonnegative": true,
+        "extended_nonpositive": false,
+        "extended_nonzero": true,
+        "extended_positive": true,
+        "extended_real": true,
+        "finite": true,
+        "hermitian": true,
+        "imaginary": false,
+        "infinite": false,
+        "negative": false,
+        "nonnegative": true,
+        "nonpositive": false,
+        "nonzero": true,
+        "positive": true,
+        "real": true,
+        "zero": false
+      },
+      "t": {
+        "commutative": true,
+        "complex": true,
+        "extended_real": true,
+        "finite": true,
+        "hermitian": true,
+        "imaginary": false,
+        "infinite": false,
+        "real": true
+      },
+      "x": {
+        "commutative": true,
+        "complex": true,
+        "extended_real": true,
+        "finite": true,
+        "hermitian": true,
+        "imaginary": false,
+        "infinite": false,
+        "real": true
+      }
+    },
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "identity_sha256": "96749679ba2bed1bf3e070cd43dde7697e4aaeeb26d2ae02fd130fb564282c21",
+  "attempt_id": "2935e037a8d04416baa859d78c84dc3b",
+  "start_utc": "2026-11-28T04:31:18.747786+00:00",
+  "checkpoint_policy": "write only; no automatic reuse or resume"
+}

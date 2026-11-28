@@ -1,0 +1,42 @@
+[
+  {
+    "seconds": 0.003,
+    "process_group_rss_bytes": 6864896
+  },
+  {
+    "seconds": 0.305,
+    "process_group_rss_bytes": 64405504
+  },
+  {
+    "seconds": 0.596,
+    "process_group_rss_bytes": 94306304
+  },
+  {
+    "seconds": 0.889,
+    "process_group_rss_bytes": 104890368
+  },
+  {
+    "seconds": 1.183,
+    "process_group_rss_bytes": 110018560
+  },
+  {
+    "seconds": 1.476,
+    "process_group_rss_bytes": 115294208
+  },
+  {
+    "seconds": 1.764,
+    "process_group_rss_bytes": 115867648
+  },
+  {
+    "seconds": 2.053,
+    "process_group_rss_bytes": 116064256
+  },
+  {
+    "seconds": 2.341,
+    "process_group_rss_bytes": 116457472
+  },
+  {
+    "seconds": 2.633,
+    "process_group_rss_bytes": 116703232
+  }
+]

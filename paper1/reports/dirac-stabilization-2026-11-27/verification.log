@@ -1,0 +1,7 @@
+PASS: nonlinear coefficient-embedding acceleration, all-m lapse preservation, and direct coordinate constraint derivatives.
+N=3: temporal Hessian rank 8; 26 free rate functions at this step; all retained Cdot=0.
+N=4: temporal Hessian rank 12; 50 free rate functions at this step; all retained Cdot=0.
+Particular rate: adot=(32/9)*kappa*P2; alphadot=-(16/9)*kappa*P2.
+Exact Einstein two-jet obstruction: tr(R)=-(64/35)*kappa^2*P4 for any retained temporal rates.
+Maximum independent quadrature error: 5.329070518200751e-15
+Nonzero discarded acceleration remains. No claim of continued solution, final constraint classification, or physical DOF.

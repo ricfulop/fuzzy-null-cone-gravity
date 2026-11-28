@@ -1,0 +1,10 @@
+{
+  "stage": "closure",
+  "max_steps": 21,
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "approval_message": "msg_4c4bcc8d",
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+  "purpose": "Fresh complete reduction from the pinned original operators: historical control-only discovery basis; C-only fraction-free terminal kernel with exact original C*M check; all original 22 terminal rows and dynamics identities retained. No checkpoint resume or interval germ claim."
+}

@@ -1,0 +1,188 @@
+{
+  "status": "passed map/control checks",
+  "geometry": {
+    "quadrupole_pullback_matches_full_reconstruction": true,
+    "changing_tangent_defect_xx": "(1 - x**2)*(2*epsilon + 2*r**2)*f(t, r)**2",
+    "trace_j4_coefficient": "8*epsilon*f(t, r)**2/35 + 8*r**2*f(t, r)**2/35",
+    "time_and_radial_profile_derivatives_retained": true,
+    "rotation_control_exactly_retained": true,
+    "finite_orbit_leak_is_a_dynamical_obstruction": false
+  },
+  "harmonic_map": {
+    "q_labels": [
+      [
+        "lambda",
+        0
+      ],
+      [
+        "X",
+        0
+      ],
+      [
+        "lambda",
+        1
+      ],
+      [
+        "X",
+        1
+      ],
+      [
+        "V_polar",
+        1
+      ],
+      [
+        "V_axial",
+        1
+      ],
+      [
+        "lambda",
+        2
+      ],
+      [
+        "X",
+        2
+      ],
+      [
+        "V_polar",
+        2
+      ],
+      [
+        "V_axial",
+        2
+      ],
+      [
+        "C_polar",
+        2
+      ],
+      [
+        "C_axial",
+        2
+      ]
+    ],
+    "z_labels": [
+      [
+        "a",
+        0
+      ],
+      [
+        "a",
+        1
+      ],
+      [
+        "a",
+        2
+      ],
+      [
+        "b",
+        0
+      ],
+      [
+        "b",
+        1
+      ],
+      [
+        "W_polar",
+        1
+      ],
+      [
+        "W_axial",
+        1
+      ],
+      [
+        "b",
+        2
+      ],
+      [
+        "W_polar",
+        2
+      ],
+      [
+        "W_axial",
+        2
+      ]
+    ],
+    "discarded_generator_coefficients": [
+      {
+        "label": [
+          "X",
+          4
+        ],
+        "expression": "-12*C_axial_2*w(r)/35"
+      },
+      {
+        "label": [
+          "C_polar",
+          4
+        ],
+        "expression": "2*C_axial_2*w(r)/35"
+      },
+      {
+        "label": [
+          "C_axial",
+          3
+        ],
+        "expression": "-2*X_1*w(r)/15"
+      },
+      {
+        "label": [
+          "C_axial",
+          4
+        ],
+        "expression": "-2*(C_polar_2 + X_2)*w(r)/35"
+      },
+      {
+        "label": [
+          "V_axial",
+          3
+        ],
+        "expression": "-2*V_polar_1*w(r)/15"
+      },
+      {
+        "label": [
+          "V_axial",
+          4
+        ],
+        "expression": "-6*V_polar_2*w(r)/35"
+      },
+      {
+        "label": [
+          "W_axial",
+          3
+        ],
+        "expression": "-2*W_polar_1*w(r)/15"
+      },
+      {
+        "label": [
+          "W_axial",
+          4
+        ],
+        "expression": "-6*W_polar_2*w(r)/35"
+      }
+    ],
+    "independent_projection_and_reconstruction_agree": true,
+    "rotation_generator_defect_zero": true,
+    "scalar_orbit_quadrature": [
+      {
+        "nodes": 24,
+        "coefficient": 0.22857142857142881,
+        "error": 2.498001805406602e-16
+      },
+      {
+        "nodes": 48,
+        "coefficient": 0.22857142857142737,
+        "error": 1.1934897514720433e-15
+      }
+    ]
+  },
+  "continuum_euler_controls": {
+    "pure_continuum_gauge_full_linear_Einstein_zero": true,
+    "conformal_off_shell_formula_verified": true,
+    "conformal_b_test_euler_density": "(-4*epsilon - 4*r**2)*Derivative(psi(t, r), r, t)",
+    "conformal_control_is_an_admissible_seed": false,
+    "discarded_temporal_components_were_not_projected_away": true
+  },
+  "admissible_non_gauge_seed_supplied": false,
+  "quadratic_source_evaluated_on_admissible_non_gauge_seed": false,
+  "nonlinear_obstruction_established": false,
+  "full_nonlinear_Dirac_classification_established": false
+}

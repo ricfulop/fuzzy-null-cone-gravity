@@ -1,0 +1,54 @@
+{
+  "status": "prepared; scientific execution requires separate user approval",
+  "preparation_approval": "msg_55d5e65b and subsequent ok confirming preparation plan",
+  "scientific_checks_executed_in_preparation": 0,
+  "working_directory": "paper1",
+  "command": "uv run --isolated --no-project --with numpy==2.3.5 --with sympy==1.14.0 python verification/oblate_stationary_seed_20261127/check_stationary_system.py",
+  "purpose": "Extract exact stationary radial differential expressions and discarded response; validate controls, without solving the DAE or claiming a seed",
+  "resources": {
+    "backend": "local",
+    "scientific_processes": 1,
+    "GPU": 0,
+    "remote_jobs": 0,
+    "wall_budget_seconds": 300,
+    "memory_budget_GiB": 2,
+    "estimates_measured": false,
+    "script_enforces_budgets": false,
+    "supervision_required": true
+  },
+  "stop_conditions": [
+    "first assertion/exception: preserve output and request user decision",
+    "wall or sampled memory budget: terminate and report",
+    "no automatic fixes or retries"
+  ],
+  "outputs_present_now": false,
+  "expected_outputs": [
+    "reports/oblate-stationary-system-check-2026-11-27/stationary-operators.json",
+    "reports/oblate-stationary-system-check-2026-11-27/stationary-reproducibility.json",
+    "full stdout/stderr and supervised execution record"
+  ],
+  "coverage": [
+    "all22 retained axisymmetric rows and one discarded response row",
+    "eight selected columns, preserving r dependence through second derivatives",
+    "four-dimensional/static spatial-lapse split",
+    "mixed gauge/physical two-channel response identity",
+    "radial gauge, constant lapse, exact-oblate-parameter controls",
+    "off-shell lapse control rejected",
+    "exact angular moment coefficients versus48/96-node quadrature at two positive deformations"
+  ],
+  "does_not_establish": [
+    "stationary radial DAE regularity or a solution",
+    "admissible non-gauge seed",
+    "nonzero compatibility source on an admissible seed",
+    "common physical canonical boundary domain",
+    "finite radial K/E/D or spectrum",
+    "nonlinear Dirac rank or physical DOF count"
+  ],
+  "prior_source_commit": "d9add22b3509700107601b94c2da9f629050dfb3",
+  "sha256": {
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "053389e9280fcb68b96f13e5e0758d2ab9a9fb4bdc69e561e2b4ea23dbdbe380",
+    "verification/oblate_stationary_seed_20261127/stationary_system.py": "5e56ef02b427e680eab4bc015d4f6c6adae9a37984055e019e05e818eedd876c",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  }
+}

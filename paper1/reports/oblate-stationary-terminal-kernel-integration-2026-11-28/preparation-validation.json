@@ -1,0 +1,53 @@
+{
+  "validation": "static only",
+  "python_ast_parsed": [
+    "paper1/verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduction_progress.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/run_bounded.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/terminal_kernel.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_reduction_controls.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_run_bounded.py",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_terminal_kernel.py"
+  ],
+  "json_parsed": [
+    "run-config.json",
+    "view-config.json"
+  ],
+  "view_xml_parsed": true,
+  "shell_syntax_exit": 0,
+  "unchanged_against_e928d6c": [
+    "exact_linear_algebra.py",
+    "test_exact_linear_algebra.py",
+    "test_reduction_controls.py",
+    "run_bounded.py",
+    "test_run_bounded.py",
+    "reduction_progress.py",
+    "run.sh"
+  ],
+  "scientific_imports": 0,
+  "scientific_invocations": 0,
+  "new_kernel_controls_executed": false,
+  "supervisor_tests_rerun": false,
+  "reviews": {
+    "implementation": "msg_00b9b416",
+    "independent_math_and_scope": "msg_683c54e2"
+  },
+  "source_sha256": {
+    "paper1/verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "7cf97696705fccf97b930ad273a51b5e90dfd540c3880f3031db5fe1d59f487f",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "paper1/verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "paper1/verification/oblate_stationary_reduction_20261128/terminal_kernel.py": "4ae051c5a17b9ab7bac1766ea86d74a2f72d6e4fd6cec6d5eeb124c1cecf4e03",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py": "4616fe18e1f655fb615b8c26b784c9e78ad30f011d3266e63fa3aae3186feecc",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_terminal_kernel.py": "78c4e377a8e99b3316f251a69c598d534f3df362487dc71092dcce9c691f4616",
+    "paper1/verification/oblate_stationary_reduction_20261128/README.md": "ec0fb2ce6119fefe98a18c1ee1872a64a2a6c6b9b807b847d9fbec31f22ee338",
+    "paper1/verification/oblate_stationary_reduction_20261128/run-config.json": "c6809bdb90941a305ef0d5f5c97bc593615628fcb74f48782e3ca8407593d4ec",
+    "paper1/verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "paper1/verification/oblate_stationary_reduction_20261128/view-config.json": "d76522b95a2dd2b2d318ba936e44015973acb7d7e2d120697b535724d50c7319",
+    "paper1/verification/oblate_stationary_reduction_20261128/view.xml": "f6834486952b10518b793110053b7e43faaaf6509e63fba91070692d41f2c938"
+  }
+}

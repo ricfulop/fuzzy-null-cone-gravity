@@ -1,0 +1,12 @@
+{
+  "status": "failed; awaiting user approval for residual inspection, correction, and rerun",
+  "exit_code": 1,
+  "stage": "gradient_kernel, W1-c1*P1-c2*A2 identity",
+  "residual_inspected": false,
+  "diagnosis": "provisional algebraic simplification or basis-convention mismatch",
+  "passed_before_failure": "all leading lapse-normal Gram blocks and radial-form assertions",
+  "source_sha256": "cc160d303f09b11814140c5695ec8352705575e0830469799cafc2f22eb88c94",
+  "failed_log_sha256": "341edb5aacb91d4ed5b6ec821cc6379835b22c51a542a821e3f8f1921b6327b5",
+  "passing_rank_manifest": "reproducibility.json",
+  "no_correction_or_rerun_after_failure": true
+}

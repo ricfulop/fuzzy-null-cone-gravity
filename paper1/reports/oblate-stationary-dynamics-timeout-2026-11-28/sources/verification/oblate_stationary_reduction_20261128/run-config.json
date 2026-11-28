@@ -1,0 +1,10 @@
+{
+  "stage": "closure",
+  "max_steps": 21,
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "approval_message": "msg_4c4bcc8d",
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+  "purpose": "Fresh full original-operator reduction with historical discovery basis, verified C-only terminal kernel, terminal-only QQ(r,T) derivative/products for CB=0 and (DC+CK)M=0, and write-only uncertified terminal-state snapshot. All22 original rows and reduced-dynamics/response checks retained. No resume or germ claim."
+}

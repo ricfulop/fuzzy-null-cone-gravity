@@ -1,0 +1,30 @@
+{
+  "source_sha256": {
+    "paper1/verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "f73a9d330d515998c64564f3a7928038146bf571728e6453dbe19ae1d9352b36",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "paper1/verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py": "4616fe18e1f655fb615b8c26b784c9e78ad30f011d3266e63fa3aae3186feecc",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+    "paper1/verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "paper1/verification/oblate_stationary_reduction_20261128/run-config.json": "06b94c5e15eaf5af18dbb420cffa06864100fe70fc0de5fb721e0f53199452ef",
+    "paper1/verification/oblate_stationary_reduction_20261128/view.xml": "f6834486952b10518b793110053b7e43faaaf6509e63fba91070692d41f2c938",
+    "paper1/verification/oblate_stationary_reduction_20261128/view-config.json": "21156c41df73dcb7b456d6191098106e6b9cd223c903fadd700645e848fdd474"
+  },
+  "input_completion_sha256": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+  "scientific_executions_in_preparation": 0,
+  "static_ast_passed": true,
+  "source_review": "msg_da673582",
+  "design_review": "msg_b15b7d15",
+  "review_scope": "Control-only field loop and tests: no material issue; fullaugmented predecessor retained equivalent constraints but produced expensive different basis. No scientific code executed.",
+  "unchanged_supervisor_validation": "../oblate-stationary-closure-retry-preparation-2026-11-28/runner-validation.json",
+  "controls_in_next_run": {
+    "row_operation_tests": 6,
+    "differential_reduction_cases": 2
+  },
+  "wall_seconds": 900,
+  "sampled_rss_limit_bytes": 2147483648,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "approval_message": "msg_4c4bcc8d and all-other-approvals followup"
+}

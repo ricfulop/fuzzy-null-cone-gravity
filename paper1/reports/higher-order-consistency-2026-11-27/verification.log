@@ -1,0 +1,9 @@
+PASS: exact angular diffeomorphism of full coefficient reconstruction; arbitrary radial profile retained.
+PASS: geometric and coefficient derivatives give the same changing tangent; radial-profile derivatives cancel.
+PASS: first-preservation equations and all-m homogeneous lapse-rate kernel checked at N=3,4.
+N=3: C_W second derivative = -512/1575 * kappa^3 * integral r^2*w(r) dr.
+N=4: C_W second derivative = -512/1575 * kappa^3 * integral r^2*w(r) dr.
+This is nonzero for kappa != 0 and a nonnegative, nonzero compact radial bump.
+Maximum independent angular quadrature error: 8.881784197001252e-16
+CONCLUSION: the specified witness is excluded by second preservation; no smooth retained trajectory through it.
+Other initial data, final Dirac classification, physical DOF, and the full nonlinear objective remain open.

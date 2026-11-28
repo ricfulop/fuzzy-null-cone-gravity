@@ -1,0 +1,13 @@
+{"event": "invocation_begin", "seconds": 0.001503, "sequence": 1, "utc": "2026-11-28T04:59:06.842973+00:00"}
+{"event": "begin", "seconds": 0.001568, "sequence": 2, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T04:59:06.843035+00:00"}
+{"duration_seconds": 0.036716, "event": "end", "seconds": 0.03829, "sequence": 3, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T04:59:06.879758+00:00"}
+{"event": "begin", "seconds": 0.038366, "sequence": 4, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T04:59:06.879833+00:00"}
+{"duration_seconds": 2.994023, "event": "end", "seconds": 3.032393, "sequence": 5, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T04:59:09.873867+00:00"}
+{"event": "begin", "seconds": 3.032499, "sequence": 6, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T04:59:09.873971+00:00"}
+{"duration_seconds": 0.584244, "event": "end", "seconds": 3.616747, "sequence": 7, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T04:59:10.458221+00:00"}
+{"event": "begin", "seconds": 3.616876, "sequence": 8, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T04:59:10.458351+00:00"}
+{"duration_seconds": 0.39564, "event": "end", "seconds": 4.01252, "sequence": 9, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T04:59:10.853995+00:00"}
+{"event": "begin", "seconds": 4.012603, "sequence": 10, "stage": "dae_closure", "stage_id": 5, "utc": "2026-11-28T04:59:10.854077+00:00"}
+{"control_count": 7, "event": "begin", "seconds": 4.012797, "sequence": 11, "stage": "dae_step", "stage_id": 6, "step": 0, "utc": "2026-11-28T04:59:10.854271+00:00"}
+{"control_count": 7, "duration_seconds": 68.611125, "event": "end", "seconds": 72.623928, "sequence": 12, "stage": "dae_step", "stage_id": 6, "step": 0, "utc": "2026-11-28T05:00:19.465516+00:00"}
+{"control_count": 3, "event": "begin", "seconds": 72.624029, "sequence": 13, "stage": "dae_step", "stage_id": 7, "step": 1, "utc": "2026-11-28T05:00:19.465615+00:00"}

@@ -141,10 +141,15 @@ Boltzmann measure for Monte Carlo is an additional property.
 
 ## 4. Projection and reconstruction do not commute automatically
 
-For a projector P, the two candidates
+Let P be an orthogonal projector. Assume that the compressed operator
+$H_P=PH|_{D(H)\cap P\mathcal H}$ is self-adjoint on $P\mathcal H$; it
+then inherits the lower bound of H. This holds, for example, when H is
+bounded, or when $P\mathcal H$ is finite-dimensional and contained in
+$D(H)$. Orthogonality of P alone does not establish this assumption for
+an unbounded H. On $P\mathcal H$, compare the two candidates
 
 $$
-T_P(\tau)=e^{-\tau PHP/\hbar},\qquad
+T_P(\tau)=e^{-\tau H_P/\hbar},\qquad
 \widetilde T_P(\tau)=P e^{-\tau H/\hbar}P
 $$
 
@@ -160,15 +165,19 @@ $$
 Its leading difference is -tau sigma PHQHP/hbar^2, when the expansion is
 defined. Consequently an exact integration of discarded dynamical states
 usually yields memory or energy-dependent effective interactions, rather
-than simply the original budget-compressed H. The matching resolvent is
+than simply the original budget-compressed H. In a finite-dimensional
+total space, whenever the indicated inverses exist, the matching resolvent is
 
 $$
 P(E-H)^{-1}P
 =\left[E-PHP-PHQ(E-QHQ)^{-1}QHP\right]^{-1}
 $$
 
-on the stated resolvent domains. This is precisely the distinction that
-also matters for virtual intermediate states in a loop amplitude.
+For an unbounded H, this Schur-complement formula additionally requires a
+compatible block-operator domain and the indicated inverses; those
+conditions do not follow merely from orthogonality of P. This is precisely
+the distinction that also matters for virtual intermediate states in a
+loop amplitude.
 
 ## Current conclusion
 

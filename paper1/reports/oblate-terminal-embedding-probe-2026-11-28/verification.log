@@ -1,0 +1,20 @@
+::orx:: {"phase": "input_pin_verification", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "input_pin_verification", "step": 1, "of": 1, "unit": "check", "m": {"input_pin_verification_seconds": 0.0009032920934259892}}
+::orx:: {"phase": "manufactured_controls", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "manufactured_controls", "step": 1, "of": 1, "unit": "check", "m": {"manufactured_controls_seconds": 0.029601332964375615}}
+::orx:: {"m": {"manufactured_control_count": 6}}
+::orx:: {"phase": "checkpoint_expression_parsing", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "checkpoint_expression_parsing", "step": 1, "of": 1, "unit": "check", "m": {"checkpoint_expression_parsing_seconds": 0.19654733291827142}}
+::orx:: {"phase": "field_conversion", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "field_conversion", "step": 1, "of": 1, "unit": "check", "m": {"field_conversion_seconds": 0.12775124981999397}}
+::orx:: {"phase": "constraint_rref", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "constraint_rref", "step": 1, "of": 1, "unit": "check", "m": {"constraint_rref_seconds": 23.30992970895022}}
+::orx:: {"phase": "denominator_normalization", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "denominator_normalization", "step": 1, "of": 1, "unit": "check", "m": {"denominator_normalization_seconds": 1.170077916001901}}
+::orx:: {"phase": "kernel_embedding", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "kernel_embedding", "step": 1, "of": 1, "unit": "check", "m": {"kernel_embedding_seconds": 0.003018417162820697}}
+::orx:: {"phase": "original_constraint_product", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "original_constraint_product", "step": 1, "of": 1, "unit": "check", "m": {"original_constraint_product_seconds": 90.06446324987337}}
+::orx:: {"phase": "serialization", "step": 0, "of": 1, "unit": "check"}
+::orx:: {"phase": "serialization", "step": 1, "of": 1, "unit": "check", "m": {"serialization_seconds": 2.0754568751435727}}
+::orx:: {"m": {"diagnostic_kernel_verified": 1, "formal_constraint_rank": 6, "free_column_count": 8}}
