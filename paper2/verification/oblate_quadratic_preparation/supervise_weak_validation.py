@@ -20,8 +20,8 @@ MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
 CHECK_MODE = "angular-weak-slot-snapshots"
 CHECKER_NAME = "export_angular_weak_slots.py"
-# Preparation is intentionally unlaunchable until the user approves this run.
-LAUNCH_APPROVAL_MESSAGE = None
+# Explicit approval for this bounded angular diagnostic; see launch-approval.json.
+LAUNCH_APPROVAL_MESSAGE = "msg_a1e6bd28"
 APPROVAL_END = dt.datetime(2026, 11, 28, 16, 29, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
     CHECKER_NAME, "weak_forms.py", "potential_hessian.py",

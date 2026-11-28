@@ -1,6 +1,6 @@
 # Oblate angular weak-slot snapshots: preparation
 
-Status: **independently source-reviewed preparation; scientific execution not performed**.
+Status: **independently source-reviewed; one bounded local launch approved, result pending**.
 This child follows the completed [bounded local weak-form validation](../oblate-weak-curvature-validation/full-recheck-pass/README.md).
 It belongs to the original Paper I metric-coefficient Einstein–Hilbert Galerkin regulator. It does not test the distinct reduction-before-cutoff Gaunt candidate.
 
@@ -54,11 +54,11 @@ The first control batch also exercises the same rationality/regularity guard wit
 
 ## Resource and provenance plan
 
-One local scientific process is proposed, with a **300-second wall cap** and **2-GiB sampled process-group RSS threshold**. RSS sampling is not an OS hard memory limit. Runtime for this new workload is unknown; the parent’s local weak-validation timing is not a performance estimate for angular integration.
+One local scientific process is approved, with a **300-second wall cap** and **2-GiB sampled process-group RSS threshold**. RSS sampling is not an OS hard memory limit. Runtime for this new workload is unknown; the parent’s local weak-validation timing is not a performance estimate for angular integration.
 
 The inherited fixed launch command continues through the existing supervisor. This child's wrapper selects the new exporter and distinct output directory. Its cleanup, source-hash recording, isolated Python 3.12 environment, NumPy 2.3.5 and SymPy 1.14.0 remain pinned. The physics modules and prior scientific verifier are unchanged.
 
-The supervisor's `LAUNCH_APPROVAL_MESSAGE` is deliberately unset. It refuses execution until this specific run is approved and that approval reference is recorded. The previously declared overnight cutoff at `2026-11-28 16:29 UTC` remains an additional upper bound; it is not permission for this new launch.
+The user approved this diagnostic with “run it” in `msg_a1e6bd28`. The supervisor now records that explicit per-run reference. The previously declared overnight cutoff at `2026-11-28 16:29 UTC` remains an additional upper bound. The frozen preparation at `59bb27ef4fd79051838969525e4005b7f9be01e6`, its preflight record, and the durable preparation archive retain their original unapproved/unrun status; see the separate [launch approval](launch-approval.json) for the transition. Scientific source files and tolerances are unchanged from that preparation.
 
 Final success is `angular_export_passed`, emitted only after a completed result JSON is written. Partial case files, stage timings and resource records do not count as a completed diagnostic. The result records the exact labels, radii, slot convention, angular measure, quadrature orders, control coverage and source hashes.
 

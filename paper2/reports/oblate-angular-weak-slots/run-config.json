@@ -1,9 +1,25 @@
 {
   "plan": [
-    {"phase": "setup", "of": 1, "unit": "environment"},
-    {"phase": "controls", "of": 3, "unit": "batches"},
-    {"phase": "angular_export", "of": 6, "unit": "snapshots"},
-    {"phase": "export", "of": 1, "unit": "checker result"}
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "controls",
+      "of": 3,
+      "unit": "batches"
+    },
+    {
+      "phase": "angular_export",
+      "of": 6,
+      "unit": "snapshots"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "checker result"
+    }
   ],
   "brief": {
     "question": "Do complete L=2 angular weak potential/lapse and separate radial-flux slots pass normalization, regularity, reconstruction, realification and refinement checks at six fixed (m,r) cases?",
@@ -11,7 +27,10 @@
     "noise": "This is a new workload with unmeasured runtime. Fixed-radius snapshots are not a radial coefficient-function export. Scope exclusions for radial projection, domain choice, finite K/E/D, ranks, spectra, seeds and nonlinear claims are intentional. The 24/48 refinement is informative; the fixed acceptance comparison is 48/96 at 2e-10 scaled error.",
     "worth_a_flag": "Any nonfinite value, unsupported integrand, denominator root on [-1,1], normalization/reconstruction/sign/Hermiticity failure, failed 48/96 refinement, incomplete final JSON, resource stop or unresolved cleanup. A computational stop is not a physical no-go.",
     "from_parent": "The parent completed its eight-batch local weak/Green validation. This child reuses unchanged physics modules but adds complete angular integration at two radii and independent assembly controls. The parent did not perform this angular diagnostic.",
-    "decided": "Preparation only. Proposed one local process, 300-second wall cap and sampled 2-GiB RSS threshold. Per-run approval is required and not yet recorded. The inherited overnight cutoff is an additional limit, not approval. No remote or GPU compute."
+    "decided": "The user approved one local angular diagnostic in msg_a1e6bd28 (run it). One scientific process, 300-second wall cap and sampled 2-GiB RSS threshold. Runtime is unmeasured. The inherited overnight cutoff remains an additional limit. No remote or GPU compute."
   },
-  "watch": {"minGapS": 60, "maxGapS": 180}
+  "watch": {
+    "minGapS": 60,
+    "maxGapS": 180
+  }
 }

@@ -1,0 +1,43 @@
+{
+  "status": "approved_for_one_bounded_local_run_result_pending",
+  "approval_message": "msg_a1e6bd28",
+  "approval_text": "run it",
+  "approval_chat": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f",
+  "prepared_source_commit": "59bb27ef4fd79051838969525e4005b7f9be01e6",
+  "integrated_main_commit": "2b0c34947c5d8f8b5f5ab98e416aae0b8f3db1d7",
+  "integration_commit": "e5a1c704737e6e5225da23dfae2f19b3223a1b2b",
+  "experiment_id": "a2c8d7dd-84fd-4cff-97eb-c41cd507f516",
+  "backend": "local",
+  "scientific_processes": 1,
+  "wall_budget_seconds": 300,
+  "sampled_group_rss_budget_bytes": 2147483648,
+  "memory_budget_is_hard_limit": false,
+  "approval_end_utc": "2026-11-28T16:29:00+00:00",
+  "scientific_changes_since_review": false,
+  "unchanged_source_sha256": {
+    "export_angular_weak_slots.py": "ae4fa34226ca05c7652c48da8510948451732fdf6561907fd0c6d93b1cbc81e2",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "test_weak_supervisor.py": "43865db06b2b93852343b1bafd561e8e7db7b065336a54bfb30780a100500f6d"
+  },
+  "historical_preflight_preserved": true,
+  "launch_preflight": {
+    "static_compile": "passed",
+    "json_and_view_fragment": "passed",
+    "mocked_supervisor_tests": 9,
+    "scientific_execution_performed": false
+  },
+  "runtime_measured": false,
+  "negative_scope": [
+    "radial projection",
+    "physical endpoint domain",
+    "finite K/E/D",
+    "kernel preservation",
+    "spectrum",
+    "admissible seed",
+    "nonlinear consistency"
+  ]
+}
