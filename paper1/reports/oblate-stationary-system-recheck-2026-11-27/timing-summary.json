@@ -1,0 +1,117 @@
+{
+  "method": "sum completed durations separately by stage; nesting means category totals must not be blindly added",
+  "completed_stage_count": {
+    "source_snapshots": 1,
+    "two_channel_response_control": 1,
+    "coefficient_reconstruction": 8,
+    "four_dimensional_curvature": 8,
+    "static_split_control": 8,
+    "euler_density": 184,
+    "radial_coefficient_extraction": 184,
+    "angular_average": 552,
+    "column_checkpoint": 8,
+    "all_omitted_retained_rows_control": 1,
+    "all_columns_assembly": 1,
+    "radial_gauge_control": 1,
+    "constant_lapse_control": 1,
+    "oblate_parameter_control": 1,
+    "off_shell_rejection_control": 1,
+    "independent_quadrature_controls": 1,
+    "final_expression_serialization": 1,
+    "final_export": 1
+  },
+  "completed_stage_seconds": {
+    "source_snapshots": 0.011254,
+    "two_channel_response_control": 0.148946,
+    "coefficient_reconstruction": 0.005585,
+    "four_dimensional_curvature": 244.01726,
+    "static_split_control": 171.664396,
+    "euler_density": 4.922917,
+    "radial_coefficient_extraction": 2.818685,
+    "angular_average": 9.647882,
+    "column_checkpoint": 0.462952,
+    "all_omitted_retained_rows_control": 0.000218,
+    "all_columns_assembly": 433.605531,
+    "radial_gauge_control": 10.800595,
+    "constant_lapse_control": 0.025478,
+    "oblate_parameter_control": 14.22303,
+    "off_shell_rejection_control": 0.104763,
+    "independent_quadrature_controls": 2.90645,
+    "final_expression_serialization": 0.267078,
+    "final_export": 0.006997
+  },
+  "largest_completed_stages": [
+    {
+      "stage": "all_columns_assembly",
+      "duration_seconds": 433.605531
+    },
+    {
+      "stage": "four_dimensional_curvature",
+      "column": 3,
+      "duration_seconds": 98.701749
+    },
+    {
+      "stage": "four_dimensional_curvature",
+      "column": 5,
+      "duration_seconds": 88.36158
+    },
+    {
+      "stage": "static_split_control",
+      "column": 3,
+      "duration_seconds": 68.993343
+    },
+    {
+      "stage": "static_split_control",
+      "column": 5,
+      "duration_seconds": 63.214585
+    },
+    {
+      "stage": "four_dimensional_curvature",
+      "column": 2,
+      "duration_seconds": 42.19063
+    },
+    {
+      "stage": "static_split_control",
+      "column": 2,
+      "duration_seconds": 32.192985
+    },
+    {
+      "stage": "oblate_parameter_control",
+      "duration_seconds": 14.22303
+    },
+    {
+      "stage": "radial_gauge_control",
+      "duration_seconds": 10.800595
+    },
+    {
+      "stage": "four_dimensional_curvature",
+      "column": 1,
+      "duration_seconds": 6.89383
+    },
+    {
+      "stage": "four_dimensional_curvature",
+      "column": 0,
+      "duration_seconds": 5.304307
+    },
+    {
+      "stage": "static_split_control",
+      "column": 1,
+      "duration_seconds": 3.544012
+    },
+    {
+      "stage": "static_split_control",
+      "column": 0,
+      "duration_seconds": 2.993124
+    },
+    {
+      "stage": "independent_quadrature_controls",
+      "duration_seconds": 2.90645
+    },
+    {
+      "stage": "four_dimensional_curvature",
+      "column": 4,
+      "duration_seconds": 2.028322
+    }
+  ],
+  "progress_event_count": 1944
+}

@@ -1,5 +1,7 @@
 # Stationary extraction: diagnostic preparation
 
+**Subsequent execution:** the [separately authorized scientific invocation](../oblate-stationary-system-recheck-2026-11-27/README.md) passed all prepared controls. The preparation-stage statements below are historical; the original 300-second failure remains preserved.
+
 **Preparation complete; the scientific checker has not been rerun.** User message `msg_4ba97146` authorizes bottleneck inspection and preparation of timing, checkpoints, or a justified optimization, and removes the need for future approval for diagnostic/preparation work of this kind. Scientific reruns and experiment launches retain their separate approval requirement.
 
 The [original timeout](../oblate-stationary-system-check-2026-11-27/README.md) remains unchanged at result commit `7901d07a2abe291ce4a4073f3f7cd0593a50882e`, with scientific source `de24fa2bb5c21c2b027498581872e64cb65da445`. All changes here are on a child branch. No manuscript claims or mathematical definitions have been changed.

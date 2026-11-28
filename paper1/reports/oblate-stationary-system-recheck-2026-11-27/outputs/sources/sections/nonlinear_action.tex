@@ -1,0 +1,113 @@
+\subsection{Why the previous expression must be replaced}
+
+The earlier operator-ordered expression did not pass a bulk variational test even in its commuting spherical sector. Let $X=\rho^2$ and use $h_{ab}dx^a dx^b=-Fdt^2-2Ndt\,dr$. Even after replacing its angular-curvature term by $2N$, the old spherical density, modulo a total derivative, was
+\begin{align}
+\mathcal L_{\mathrm{old,patch}}&=-2X_r\vartheta+2N-2\Lambda NX,\nonumber\\
+\vartheta&=X_t/X-FX_r/(2X).
+\end{align}
+On $X=r^2$, $N=1$, $F=1-2M/r-\Lambda r^2/3$, its Euler derivatives include $\mathcal E_F=4$ and $\mathcal E_N=2-2\Lambda r^2$, which do not vanish. Boundary terms cannot cancel these residuals for compactly supported variations. Consequently the old expression is withdrawn, as are claims that the archived potential and matrix-product checks verified its first or second variation.
+
+\subsection{A definite nonlinear bulk replacement}
+
+A constructive replacement is an angular Galerkin restriction of the Einstein--Hilbert action. It uses the finite matrices as harmonic coefficient arrays, with ordinary products of their reconstructed functions. It is a different nonlinear prescription from multiplying the matrices inside a normalized trace.
+
+Choose spin-weighted harmonics normalized by $\int |{}_sY_{jm}|^2d\Omega/(4\pi)=1$, with phases matched to the matrix bases. Define
+\begin{align}\label{eq:reconstruction_map}
+\mathcal R_{s,N}(U)&=\sum_{j=|s|}^{N-1}\sum_{m=-j}^j u_{jm}\,{}_sY_{jm},\nonumber\\
+u_{jm}&=\frac{\Tr[(T^{(s,N)}_{jm})^\dagger U]}{\sqrt{N^2-s^2}}.
+\end{align}
+Use four real spin-zero coefficient arrays for the three components of a symmetric $h_{ab}$ and the angular trace $X$, two complex spin-one arrays for real shifts $A_a^A$, and one complex spin-two array for a real tracefree angular tensor $C_{AB}$. Reality is imposed with the conjugate-spin components. Reconstruct the metric by
+\begin{align}\label{eq:galerkin_metric}
+ds_N^2&=h_{ab}dx^a dx^b+\gamma_{AB}\Theta^A\Theta^B,\nonumber\\
+\Theta^A&=dy^A+A_a^A dx^a,\nonumber\\
+\gamma_{AB}&=Xq_{AB}+C_{AB},\qquad q^{AB}C_{AB}=0,
+\end{align}
+where $q_{AB}$ is the fixed unit-sphere metric and all coefficient fields have the angular cutoff in Eq.~\eqref{eq:reconstruction_map}. Work on the open domain where $h_{ab}$ is Lorentzian and $\gamma_{AB}$ positive definite pointwise. Positivity of a coefficient matrix alone does not establish this domain condition. Away from spherical symmetry, $X$ is half the $q$-trace of $\gamma$, not its area density.
+
+The replacement bulk action is
+\begin{equation}\label{eq:explicit_IFSG}
+I_{\mathrm{G},N}^{\mathrm{bulk}}[a]
+=\frac1{16\pi G_N}\int d^4x\,\sqrt{-g_N[a]}
+\big(R[g_N[a]]-2\Lambda\big).
+\end{equation}
+Here $a$ denotes all retained real coefficient fields, and $R$ is computed using the ordinary Levi-Civita connection. This defines every nonlinear coupling without an ordering ambiguity: reconstruct first, invert and multiply pointwise, differentiate, then integrate the full angular density. Products, inverses, determinants, and the density are not projected back into the retained band. Angular quadrature is a numerical approximation to this integral and must be converged separately.
+
+For compactly supported variations its coefficient equations are exactly
+\begin{align}\label{eq:galerkin_eom}
+\frac{\delta I_{\mathrm{G},N}^{\mathrm{bulk}}}{\delta a_I(t,r)}
+&=-\frac1{16\pi G_N}\int d^2y\sqrt{-g_N}\nonumber\\
+&\quad\times(\mathcal G^{\mu\nu}[g_N]+\Lambda g_N^{\mu\nu})
+\frac{\partial g^N_{\mu\nu}}{\partial a_I}=0.
+\end{align}
+Here $\mathcal G^{\mu\nu}[g_N]$ is the Einstein tensor. All ten real metric components are varied; in particular $h_{rr}$ and $A_r^A$ are retained until after variation. A solution of the full Einstein equations that lies in the retained ansatz is stationary for every admissible retained variation. Conversely, vanishing projected equations does not imply vanishing discarded harmonics of the Einstein tensor.
+
+This action is rotationally invariant and nonlinear, but finite angular truncation is not closed under arbitrary spacetime diffeomorphisms. No first-class constraint algebra at finite $N$ is inferred. The present construction specifies bulk dynamics with compactly supported variations. A causal-diamond variational principle must also pull back a chosen continuum null-boundary and joint action, with its boundary data and normalization of null generators specified~\cite{LehnerEtAl2016}. A quantized boundary algebra and a gluing measure have not been constructed here. Nor has Eq.~\eqref{eq:explicit_IFSG} been identified with the simulated action~\eqref{eq:hmc_action} or the phenomenological vertex~\eqref{eq:cubic_vertex}.
+
+\subsection{Spherical reduction and the missing constraint}
+
+For $\gamma_{AB}=Xq_{AB}$ and $A_a^A=0$, exact angular integration and integration by parts give
+\begin{align}\label{eq:spherical_repair}
+I_{\mathrm{sph}}=\frac1{4G_N}\int d^2x\sqrt{-h}\,
+\Big[&XR[h]+\frac{(\nabla X)^2}{2X}\nonumber\\
+&+2-2\Lambda X\Big].
+\end{align}
+Variation precedes null gauge fixing. In the gauge $h_{ab}dx^a dx^b=-Fdt^2-2Ndt\,dr$, $N>0$, one finds
+\begin{align}
+R[h]&=-\frac1N\partial_r\!\left(\frac{F_r-2N_t}{N}\right),\nonumber\\
+\mathcal L_{\mathrm{sph}}&=\frac{X_r(F_r-2N_t)}N-\frac{X_tX_r}X
++\frac{FX_r^2}{2NX}+2N-2\Lambda NX.\label{eq:spherical_density}
+\end{align}
+The three Euler derivatives of this gauge-fixed density vanish identically on Schwarzschild--de Sitter. They also vanish if $M=M(t)$, exposing why that check alone is insufficient. The covariant metric equation retained by varying first is
+\begin{align}
+E_{ab}={}&h_{ab}\Box X-\nabla_a\nabla_bX
++\frac{\partial_aX\partial_bX}{2X}\nonumber\\
+&-\frac{h_{ab}(\nabla X)^2}{4X}-h_{ab}(1-\Lambda X)=0.
+\end{align}
+For the time-dependent-mass ansatz $E_{tt}=-2\dot M$; hence vacuum mass conservation is restored. At $N=1$, Eq.~\eqref{eq:spherical_density} agrees with the scalar part of Chandrasekaran's Appendix~B, Eqs.~B.11a--b~\cite{Chandrasekaran2026}.
+
+\subsection{Quadratic sectors and a nonlinear check}
+
+At a spherical Einstein background the first variation of the continuum action vanishes, so the Hessian of its pullback is the continuum Hessian evaluated on the retained linear perturbations. Rotational invariance separates different $j,m$. Because Eq.~\eqref{eq:galerkin_metric} includes all metric components in each retained multiplet, its $j\ge2$ quadratic sectors are the retained Einstein sectors. This is a consequence of the replacement definition, not a property proved for the withdrawn matrix-product action.
+
+An independent symbolic calculation eliminates the constraints in the known Einstein quadratic densities~\cite{Solomon2023}. In the axial sector, with $f=1-2M/r$ and $L=(j-1)(j+2)$,
+\begin{equation}
+\mathcal L_- =\frac12\left[(\dot h_1-h_0'+2h_0/r)^2
++\frac{Lh_0^2}{r^2f}-\frac{Lf h_1^2}{r^2}\right].
+\end{equation}
+Its equations give $\dot h_0=f(fh_1)'$ and the Regge--Wheeler equation for $\Psi_-=fh_1/r$. In the polar sector, eliminating the auxiliary field and constraint in Ref.~\cite{Solomon2023}, Eq.~(150), gives the Zerilli potential without inserting it into the starting density. Both symbolic potential residuals vanish for general $j\ge2$.
+
+Map each set of real master harmonics isometrically into $\calB_2^{(N)}$. Define the normalized pairing by
+\begin{equation}
+\langle U,V\rangle_{2,N}=\frac{\Tr(U^\dagger V)}{\sqrt{N^2-4}}.
+\end{equation}
+Let $\mathsf L^2$ act with eigenvalue $j(j+1)$. The resulting quadratic action is
+\begin{align}\label{eq:quadratic_matrix_action}
+I_N^{(2)}=\frac12\sum_{\sigma=\pm}\int dt\,dr_*\Big[&
+\|\partial_t\Psi_\sigma\|_{2,N}^2-\|\partial_{r_*}\Psi_\sigma\|_{2,N}^2\nonumber\\
+&-\langle\Psi_\sigma,V_\sigma(\mathsf L^2,r)\Psi_\sigma\rangle_{2,N}\Big].
+\end{align}
+Here $\partial_{r_*}=f\partial_r$, $V_-=f[j(j+1)/r^2-6M/r^3]$, and
+\begin{align}
+V_+&=\frac{2f\,\mathcal P_\lambda(r)}{r^3(\lambda r+3M)^2},\qquad
+\lambda=\frac{(j-1)(j+2)}2,\nonumber\\
+\mathcal P_\lambda(r)&=\lambda^2(\lambda+1)r^3+3\lambda^2Mr^2\nonumber\\
+&\quad+9\lambda M^2r+9M^3.
+\end{align}
+The inverse is nonsingular for $j\ge2$ and $r>2M$. Numerical matrix-versus-harmonic bilinear checks at $N=4,6,8$ agree within $5.8\times10^{-12}$.
+
+For a nonlinear check, take $g_N=A(\theta)\bar g_{\mathrm{Schw}}$ with $A=1+\epsilon Y_{20}>0$ and $Y_{20}=\sqrt5P_2(\cos\theta)$. Its metric coefficients fit every $N\ge3$. Direct four-dimensional Ricci evaluation, independent of the conformal-transformation formula, yields the angular-integrated bulk density (with the overall $1/(4G_N)$ suppressed)
+\begin{align}
+\mathcal L_{\mathrm{ang}}&=\frac32\left\langle\frac{|\nabla_\Omega A|^2}{A}\right\rangle_\Omega\nonumber\\
+&=9\epsilon^2-\frac{9\sqrt5}{7}\epsilon^3+O(\epsilon^4).
+\end{align}
+The exact finite-amplitude integral and its first variation agree with the directly computed Einstein trace at $\epsilon=-0.2,0.1,0.3$. This tests an anisotropic nonlinear family; it is not a general constraint-closure test.
+
+\subsection{Typed matrix maps and the separate gluing example}
+
+For the matrix-product benchmarks, a type-correct scalar action on a spin-$s$ rectangular matrix is
+\begin{equation}
+F\mathbin{\triangleright_s}U=\tfrac12[\iota_{N\to N+s}(F)U+U\iota_{N\to N-s}(F)].
+\end{equation}
+It is self-adjoint in the normalized bundle pairing for Hermitian $F$ and sends the identity to the identity, but is not asserted to preserve positivity. Since $\widehat{\bareth}Z\in\calB_1^{(N)}$, its contraction uses $\mathcal S_N^{(1)}$, not $\mathcal S_N^{(2)}$. These fixes make the individual maps well-defined; they do not turn the old action into Eq.~\eqref{eq:explicit_IFSG}.
+
+The following finite gluing Hamiltonian remains a separately specified model, not a canonical quantization of the reconstructed bulk action.

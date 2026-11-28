@@ -1,0 +1,27 @@
+{
+  "status": "one completed scientific extraction invocation; exact radial DAE unsolved",
+  "source_commit": "1cd1a69c258810d38c12adc334733aff1fac6b7a",
+  "approval": "msg_4c4bcc8d",
+  "scientific_invocations": 1,
+  "supervisor_exit_code_observed": 0,
+  "child_exit_code": 0,
+  "all_export_and_checkpoint_hashes_valid": true,
+  "all_checkpoint_columns_match_final_export": true,
+  "startup_identity_hash_valid": true,
+  "source_before_after_and_snapshots_match": true,
+  "retained_rows": 22,
+  "response_rows": 1,
+  "selected_equations": 8,
+  "selected_equation_rank_not_inferred": true,
+  "matrices": 3,
+  "matrix_shape": [
+    23,
+    8
+  ],
+  "checkpoint_count": 8,
+  "admissible_seed_certified": false,
+  "nonlinear_classification_established": false,
+  "GPU_jobs": 0,
+  "remote_jobs": 0,
+  "tracked_experiments": 0
+}
