@@ -1,0 +1,100 @@
+{
+  "schema_name": "oblate-quadratic-operator-preparation",
+  "schema_version": 1,
+  "status": "prepared_not_scientifically_executed",
+  "ready_for_finite_reducer": false,
+  "physics": {
+    "action": "original Paper I metric-coefficient Einstein-Hilbert Galerkin restriction",
+    "commit": "157ec0f04866ea36509b325ec65f0a68890f9b17",
+    "normalization": "(16*pi*G)/(4*pi) times the physical action; canonical radial pairing uses dr",
+    "background": "static exact oblate Minkowski; Lambda=0; p=0; a=-1; b=V=W=0",
+    "spatial_metric": ["Sigma/rho", "Sigma/(1-x^2)", "rho*(1-x^2)"],
+    "rho": "r^2+epsilon",
+    "Sigma": "r^2+epsilon*x^2",
+    "domain": "r>0, -1<x<1, rho>0, Sigma>0; initial compact radial tests"
+  },
+  "variables": {
+    "q_species": ["lambda", "X", "V_polar", "V_axial", "C_polar", "C_axial"],
+    "z_species": ["a", "b", "W_polar", "W_axial"],
+    "w_order": "all real canonical q coordinates, then their dual canonical p coordinates",
+    "z_order": "all real a coordinates, then real s=(b,W) coordinates; explicit labels mandatory",
+    "angular_labels": ["species", "ell", "m", "real_component"],
+    "radial_labels": ["space_id", "basis_index", "coordinate_or_dual_momentum"],
+    "harmonics": "pinned associated-Legendre amplitudes with exp(i*m*phi) implicit",
+    "real_basis_m_positive": ["sqrt(2)*Re(F)", "sqrt(2)*Im(F)"],
+    "realification": "[[Re(H),Im(H)],[-Im(H),Re(H)]]",
+    "canonical_pairing": "integral dr p^T delta(q)"
+  },
+  "formal_blocks": {
+    "K_qq": "V_second_variation",
+    "K_pp": "2*S^(-1), S=T^*G_r*T",
+    "K_qp": "0 at the stated stationary background",
+    "E_aq": "L, <f,Lq>=1/2 integral sqrt(sigma) f deltaR[Tq]",
+    "E_ap": "0",
+    "E_sq": "0",
+    "E_sp": "J^*, J=J0+J1*d_r",
+    "D_aa": "0",
+    "D_as": "0",
+    "D_ss": "A=-1/2 U0^*G_r*(1-Pi)*U0"
+  },
+  "required_export_metadata": [
+    "source and configuration hashes",
+    "all field and row/column labels",
+    "radial interval and endpoint traces",
+    "radial projection order",
+    "coordinate and dual momentum bases",
+    "canonical pairing matrix and conversion",
+    "weak-form endpoint fluxes",
+    "angular and radial integration precision and convergence",
+    "structural zero/null identities and projection defects",
+    "actual finite matrices or explicit differential coefficient blocks"
+  ],
+  "radial_projection": {
+    "selected": null,
+    "candidates": [
+      "angular Legendre transform then canonical radial projection",
+      "radial Lagrangian restriction then finite Legendre transform"
+    ],
+    "equivalence_at_finite_resolution_assumed": false,
+    "common_physical_domain_proved": false,
+    "boundary_choice": null
+  },
+  "nonlinear_seed_handoff": {
+    "owner": "Paper I nonlinear preservation track",
+    "seed_available": false,
+    "representation": "labelled functions of t,r or mutually consistent jets",
+    "minimum_q_jets": "through second time and radial order, including mixed derivatives needed by the continuum linear Einstein operator",
+    "minimum_a_jets": "spatial derivatives through order two; no time derivative is needed",
+    "minimum_b_W_jets": "mixed spatial-time and second spatial derivatives; no second time derivative is needed",
+    "raw_jet_control": "A coordinate implementation may accept formal two-jets, then verify cancellation of all a time derivatives and all temporal-coefficient second time derivatives",
+    "minimal_axisymmetric_N3_scope": "q has 12 m=0 spatial labels; z has 10 m=0 temporal labels; all retained m=0 constraints and evolution equations are required",
+    "continuum_euler_pairing": "-integral dr dx dphi/(4*pi) Sigma deltaG^{mu nu} k_mu_nu; count independent off-diagonal components twice; no extra r^2",
+    "metric_perturbation_map": {
+      "h_tt": "a1",
+      "h_tr": "b1",
+      "h_tA": "gamma0_AB W1^B",
+      "h_rr": "lambda1",
+      "h_rA": "gamma0_AB V1^B",
+      "h_AB": "X1 qS_AB + C1_AB"
+    },
+    "required_evidence": [
+      "all retained linearized equations and constraints satisfied in the declared radial problem",
+      "p1=1/2 T^*G(T*qdot1-Lie_beta1 sigma0) matches the canonical momentum export",
+      "full continuum linear coefficient-Euler residual before angular projection",
+      "discarded temporal Euler components retained",
+      "field, derivative, harmonic, action and boundary provenance",
+      "pure continuum-gauge controls labelled separately from obstruction probes"
+    ],
+    "continuum_residual_from_K_E_D_alone": false,
+    "B_value_computed": false
+  },
+  "first_proposed_check": {
+    "script": "paper2/verification/oblate_quadratic_preparation/verify_kinematics.py",
+    "status": "not_run",
+    "scope": "N=3 kinematic maps at symbolic r and epsilon; direct metric/Lie derivatives; pinned r=1 reference; deformed-point and integrated round-sector density checks; derivative-column Schur cancellation; manufactured Legendre and realification controls",
+    "does_not_compute": ["full potential matrices", "finite radial spectrum", "nonlinear compatibility B", "physical degree-of-freedom count"],
+    "target": "local CPU",
+    "remote_or_GPU": false,
+    "requires_user_launch_approval": true
+  }
+}
