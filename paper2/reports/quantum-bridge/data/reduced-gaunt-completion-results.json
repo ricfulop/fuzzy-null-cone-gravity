@@ -1,0 +1,1250 @@
+{
+  "config": {
+    "calculation": "reduced_gaunt_completion",
+    "outer_radius": 10.0,
+    "radial_intervals": [
+      256,
+      512,
+      1024
+    ],
+    "amplitude_rhos": [
+      0.005,
+      0.02,
+      0.08
+    ],
+    "energy_quadratures": [
+      [
+        80,
+        8
+      ],
+      [
+        128,
+        12
+      ]
+    ],
+    "energy_relative_tolerance": 1e-08,
+    "iteration_tolerance": 2e-13,
+    "maximum_iterations": 60,
+    "validation_angular_nodes": 64,
+    "angular_quadrature_mass_tolerance": 1e-10,
+    "area_budgets": [
+      0,
+      3,
+      5,
+      8,
+      12,
+      20
+    ]
+  },
+  "source_commit": "31b80f870f4e3ce95419c3fe0d3ba990f2361688",
+  "run": "e04fe9ed-1b43-4e75-9dce-454e1b190d26",
+  "model": "Declared reduction-before-cutoff Einstein candidate; asymptotically flat maximal data.",
+  "free_mode_basis": {
+    "angular_rank_N": 3,
+    "maximum_free_total_angular_momentum": 2,
+    "electric_profiles": 5,
+    "magnetic_profiles": 5,
+    "radial_scope": "one selected smooth profile in each parity sector; not a complete radial basis",
+    "gram_divided_by_pi_to_3_over_2": [
+      [
+        "189/4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "567/16",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "189/4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "189/4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "189/4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2079/8",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "6237/32",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2079/8",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2079/8",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2079/8"
+      ]
+    ],
+    "stiffness_divided_by_pi_to_3_over_2": [
+      [
+        "2079/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "6237/32",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2079/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2079/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "2079/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "27027/16",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "81081/64",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "27027/16",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "27027/16",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "27027/16"
+      ]
+    ],
+    "frequency_squared": [
+      "11/2",
+      "11/2",
+      "11/2",
+      "11/2",
+      "11/2",
+      "13/2",
+      "13/2",
+      "13/2",
+      "13/2",
+      "13/2"
+    ],
+    "trace_divergence_and_dual_pairing_residual": "0",
+    "units": "packet width a=1 and 16*pi*G=1"
+  },
+  "exact_source": {
+    "source_harmonics": {
+      "0": {
+        "0": "54",
+        "2": "-72",
+        "4": "48",
+        "6": "-48/5",
+        "8": "3/5"
+      },
+      "2": {
+        "2": "72",
+        "4": "-444/7",
+        "6": "96/7",
+        "8": "-6/7"
+      },
+      "4": {
+        "4": "108/7",
+        "6": "-144/35",
+        "8": "9/35"
+      }
+    },
+    "source_norm_divided_by_pi_to_3_over_2": "567/16",
+    "u2_at_origin": "87/40",
+    "uniform_u2_upper_bound": "2301/56",
+    "fourier_coulomb_integral_divided_by_pi_to_3_over_2_over_sqrt2": "1305190881/18350080",
+    "energy_quartic_coefficient_divided_by_pi_to_3_over_2_over_sqrt2": "-1305190881/2621440",
+    "source_field_units": "sigma=epsilon*T; T is the electric axisymmetric l=2 profile"
+  },
+  "energy_coefficients_in_epsilon": {
+    "quadratic": 197.32762338772363,
+    "quartic": -1960.3965073074155,
+    "sixth": 32618.557080168615
+  },
+  "energy_quadratures": [
+    {
+      "radial_order": 80,
+      "angular_order": 8,
+      "source_times_u2": 280.0566439010597,
+      "source_times_u2_squared": 423.6176244177751,
+      "relative_error_against_exact_fourier_coulomb": 1.2178268953524296e-15
+    },
+    {
+      "radial_order": 128,
+      "angular_order": 12,
+      "source_times_u2": 280.0566439010593,
+      "source_times_u2_squared": 423.6176244177742,
+      "relative_error_against_exact_fourier_coulomb": 2.0297114922540494e-16
+    }
+  ],
+  "leading_uniform_area_sectors": [
+    {
+      "dimensionless_area_budget_B": "0",
+      "dimension": 1,
+      "independent_mode_recursion_count": 1,
+      "levels": [
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 0,
+          "degeneracy": 1
+        }
+      ],
+      "budget_definition": "B=(A_max-A_0)*a/(8*pi*G*hbar*R), at quadratic order and a far sphere",
+      "scope": "bulk-induced uniform-area matching sector of ten free modes; not a full corner Hilbert space or an entropy law",
+      "renormalization": "normal-ordered quadratic ADM energy; Minkowski corner area set to A_0"
+    },
+    {
+      "dimensionless_area_budget_B": "3",
+      "dimension": 11,
+      "independent_mode_recursion_count": 11,
+      "levels": [
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 0,
+          "degeneracy": 1
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 1,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 0,
+          "degeneracy": 5
+        }
+      ],
+      "budget_definition": "B=(A_max-A_0)*a/(8*pi*G*hbar*R), at quadratic order and a far sphere",
+      "scope": "bulk-induced uniform-area matching sector of ten free modes; not a full corner Hilbert space or an entropy law",
+      "renormalization": "normal-ordered quadratic ADM energy; Minkowski corner area set to A_0"
+    },
+    {
+      "dimensionless_area_budget_B": "5",
+      "dimension": 51,
+      "independent_mode_recursion_count": 51,
+      "levels": [
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 0,
+          "degeneracy": 1
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 1,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 0,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 1,
+          "degeneracy": 25
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 0,
+          "degeneracy": 15
+        }
+      ],
+      "budget_definition": "B=(A_max-A_0)*a/(8*pi*G*hbar*R), at quadratic order and a far sphere",
+      "scope": "bulk-induced uniform-area matching sector of ten free modes; not a full corner Hilbert space or an entropy law",
+      "renormalization": "normal-ordered quadratic ADM energy; Minkowski corner area set to A_0"
+    },
+    {
+      "dimensionless_area_budget_B": "8",
+      "dimension": 286,
+      "independent_mode_recursion_count": 286,
+      "levels": [
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 0,
+          "degeneracy": 1
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 1,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 2,
+          "degeneracy": 15
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 3,
+          "degeneracy": 35
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 0,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 1,
+          "degeneracy": 25
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 2,
+          "degeneracy": 75
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 0,
+          "degeneracy": 15
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 1,
+          "degeneracy": 75
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 0,
+          "degeneracy": 35
+        }
+      ],
+      "budget_definition": "B=(A_max-A_0)*a/(8*pi*G*hbar*R), at quadratic order and a far sphere",
+      "scope": "bulk-induced uniform-area matching sector of ten free modes; not a full corner Hilbert space or an entropy law",
+      "renormalization": "normal-ordered quadratic ADM energy; Minkowski corner area set to A_0"
+    },
+    {
+      "dimensionless_area_budget_B": "12",
+      "dimension": 1477,
+      "independent_mode_recursion_count": 1477,
+      "levels": [
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 0,
+          "degeneracy": 1
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 1,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 2,
+          "degeneracy": 15
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 3,
+          "degeneracy": 35
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 4,
+          "degeneracy": 70
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 0,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 1,
+          "degeneracy": 25
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 2,
+          "degeneracy": 75
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 3,
+          "degeneracy": 175
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 0,
+          "degeneracy": 15
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 1,
+          "degeneracy": 75
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 2,
+          "degeneracy": 225
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 0,
+          "degeneracy": 35
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 1,
+          "degeneracy": 175
+        },
+        {
+          "electric_quanta": 4,
+          "magnetic_quanta": 0,
+          "degeneracy": 70
+        },
+        {
+          "electric_quanta": 4,
+          "magnetic_quanta": 1,
+          "degeneracy": 350
+        },
+        {
+          "electric_quanta": 5,
+          "magnetic_quanta": 0,
+          "degeneracy": 126
+        }
+      ],
+      "budget_definition": "B=(A_max-A_0)*a/(8*pi*G*hbar*R), at quadratic order and a far sphere",
+      "scope": "bulk-induced uniform-area matching sector of ten free modes; not a full corner Hilbert space or an entropy law",
+      "renormalization": "normal-ordered quadratic ADM energy; Minkowski corner area set to A_0"
+    },
+    {
+      "dimensionless_area_budget_B": "20",
+      "dimension": 41613,
+      "independent_mode_recursion_count": 41613,
+      "levels": [
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 0,
+          "degeneracy": 1
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 1,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 2,
+          "degeneracy": 15
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 3,
+          "degeneracy": 35
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 4,
+          "degeneracy": 70
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 5,
+          "degeneracy": 126
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 6,
+          "degeneracy": 210
+        },
+        {
+          "electric_quanta": 0,
+          "magnetic_quanta": 7,
+          "degeneracy": 330
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 0,
+          "degeneracy": 5
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 1,
+          "degeneracy": 25
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 2,
+          "degeneracy": 75
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 3,
+          "degeneracy": 175
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 4,
+          "degeneracy": 350
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 5,
+          "degeneracy": 630
+        },
+        {
+          "electric_quanta": 1,
+          "magnetic_quanta": 6,
+          "degeneracy": 1050
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 0,
+          "degeneracy": 15
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 1,
+          "degeneracy": 75
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 2,
+          "degeneracy": 225
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 3,
+          "degeneracy": 525
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 4,
+          "degeneracy": 1050
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 5,
+          "degeneracy": 1890
+        },
+        {
+          "electric_quanta": 2,
+          "magnetic_quanta": 6,
+          "degeneracy": 3150
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 0,
+          "degeneracy": 35
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 1,
+          "degeneracy": 175
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 2,
+          "degeneracy": 525
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 3,
+          "degeneracy": 1225
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 4,
+          "degeneracy": 2450
+        },
+        {
+          "electric_quanta": 3,
+          "magnetic_quanta": 5,
+          "degeneracy": 4410
+        },
+        {
+          "electric_quanta": 4,
+          "magnetic_quanta": 0,
+          "degeneracy": 70
+        },
+        {
+          "electric_quanta": 4,
+          "magnetic_quanta": 1,
+          "degeneracy": 350
+        },
+        {
+          "electric_quanta": 4,
+          "magnetic_quanta": 2,
+          "degeneracy": 1050
+        },
+        {
+          "electric_quanta": 4,
+          "magnetic_quanta": 3,
+          "degeneracy": 2450
+        },
+        {
+          "electric_quanta": 4,
+          "magnetic_quanta": 4,
+          "degeneracy": 4900
+        },
+        {
+          "electric_quanta": 5,
+          "magnetic_quanta": 0,
+          "degeneracy": 126
+        },
+        {
+          "electric_quanta": 5,
+          "magnetic_quanta": 1,
+          "degeneracy": 630
+        },
+        {
+          "electric_quanta": 5,
+          "magnetic_quanta": 2,
+          "degeneracy": 1890
+        },
+        {
+          "electric_quanta": 5,
+          "magnetic_quanta": 3,
+          "degeneracy": 4410
+        },
+        {
+          "electric_quanta": 6,
+          "magnetic_quanta": 0,
+          "degeneracy": 210
+        },
+        {
+          "electric_quanta": 6,
+          "magnetic_quanta": 1,
+          "degeneracy": 1050
+        },
+        {
+          "electric_quanta": 6,
+          "magnetic_quanta": 2,
+          "degeneracy": 3150
+        },
+        {
+          "electric_quanta": 7,
+          "magnetic_quanta": 0,
+          "degeneracy": 330
+        },
+        {
+          "electric_quanta": 7,
+          "magnetic_quanta": 1,
+          "degeneracy": 1650
+        },
+        {
+          "electric_quanta": 8,
+          "magnetic_quanta": 0,
+          "degeneracy": 495
+        }
+      ],
+      "budget_definition": "B=(A_max-A_0)*a/(8*pi*G*hbar*R), at quadratic order and a far sphere",
+      "scope": "bulk-induced uniform-area matching sector of ten free modes; not a full corner Hilbert space or an entropy law",
+      "renormalization": "normal-ordered quadratic ADM energy; Minkowski corner area set to A_0"
+    }
+  ],
+  "sixth_integral_quadrature_difference": 9.094947017729282e-13,
+  "outer_domain_bounds": {
+    "uniform_linear_potential_tail_bound": 4.8377827741485106e-37,
+    "source_integral_tail_bound": 4.888611830160786e-34
+  },
+  "linear_green_checks": [
+    {
+      "radial_intervals": 256,
+      "h": 0.0390625,
+      "errors_by_ell": {
+        "0": 0.0008519400373159236,
+        "2": 6.945090450688474e-05,
+        "4": 1.0587898898108128e-05
+      },
+      "maximum_linear_green_error": 0.0008519400373159236
+    },
+    {
+      "radial_intervals": 512,
+      "h": 0.01953125,
+      "errors_by_ell": {
+        "0": 0.0002130512640952098,
+        "2": 1.737996090364624e-05,
+        "4": 2.64597177727921e-06
+      },
+      "maximum_linear_green_error": 0.0002130512640952098
+    },
+    {
+      "radial_intervals": 1024,
+      "h": 0.009765625,
+      "errors_by_ell": {
+        "0": 5.326750253598078e-05,
+        "2": 4.344943882794716e-06,
+        "4": 6.614302971510999e-07
+      },
+      "maximum_linear_green_error": 5.326750253598078e-05
+    }
+  ],
+  "nonlinear_checks": [
+    {
+      "name": "rho=0.005, radial=256",
+      "rho": 0.005,
+      "radial_intervals": 256,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.011031147872326733,
+      "epsilon_squared": 0.00012168622338113863,
+      "h": 0.0390625,
+      "analytic_contraction_bound": 0.034999999999999996,
+      "iterations": 5,
+      "last_fixed_point_change": 8.419914071522427e-16,
+      "minimum_psi_on_solver_nodes": 1.000023815202667,
+      "maximum_psi_on_solver_nodes": 1.000264399094894,
+      "sampled_angular_constraint_defect": 2.1615815516387227e-18,
+      "sampled_fourth_order_constraint_residual": 2.033040960077153e-06,
+      "ADM_mass_volume": 0.023983079777839054,
+      "ADM_mass_boundary": 0.023982339216475534,
+      "boundary_volume_difference": 7.405613635207142e-07,
+      "mass_quadratic": 0.024012053258827736,
+      "mass_through_quartic": 0.023983024615088028,
+      "mass_through_sixth": 0.023983083389593495,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.005, radial=512",
+      "rho": 0.005,
+      "radial_intervals": 512,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.011031147872326733,
+      "epsilon_squared": 0.00012168622338113863,
+      "h": 0.01953125,
+      "analytic_contraction_bound": 0.034999999999999996,
+      "iterations": 5,
+      "last_fixed_point_change": 8.415035161746243e-16,
+      "minimum_psi_on_solver_nodes": 1.000023815756278,
+      "maximum_psi_on_solver_nodes": 1.0002643215479308,
+      "sampled_angular_constraint_defect": 2.269660629220659e-18,
+      "sampled_fourth_order_constraint_residual": 5.198195440605851e-07,
+      "ADM_mass_volume": 0.023983082377564077,
+      "ADM_mass_boundary": 0.023982898324135818,
+      "boundary_volume_difference": 1.8405342825864035e-07,
+      "mass_quadratic": 0.024012053258827736,
+      "mass_through_quartic": 0.023983024615088028,
+      "mass_through_sixth": 0.023983083389593495,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.005, radial=1024",
+      "rho": 0.005,
+      "radial_intervals": 1024,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.011031147872326733,
+      "epsilon_squared": 0.00012168622338113863,
+      "h": 0.009765625,
+      "analytic_contraction_bound": 0.034999999999999996,
+      "iterations": 5,
+      "last_fixed_point_change": 8.413408858487514e-16,
+      "minimum_psi_on_solver_nodes": 1.0000238158937382,
+      "maximum_psi_on_solver_nodes": 1.0002643021536948,
+      "sampled_angular_constraint_defect": 2.1615815516387227e-18,
+      "sampled_fourth_order_constraint_residual": 1.3102354710816787e-07,
+      "ADM_mass_volume": 0.023983083027424704,
+      "ADM_mass_boundary": 0.02398303714901035,
+      "boundary_volume_difference": 4.587841435227391e-08,
+      "mass_quadratic": 0.024012053258827736,
+      "mass_through_quartic": 0.023983024615088028,
+      "mass_through_sixth": 0.023983083389593495,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.02, radial=256",
+      "rho": 0.02,
+      "radial_intervals": 256,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.022062295744653466,
+      "epsilon_squared": 0.00048674489352455453,
+      "h": 0.0390625,
+      "analytic_contraction_bound": 0.13999999999999999,
+      "iterations": 6,
+      "last_fixed_point_change": 4.402077660725645e-15,
+      "minimum_psi_on_solver_nodes": 1.0000949181101766,
+      "maximum_psi_on_solver_nodes": 1.0010531694596154,
+      "sampled_angular_constraint_defect": 9.943275137538125e-17,
+      "sampled_fourth_order_constraint_residual": 8.079396304816466e-06,
+      "ADM_mass_volume": 0.09558742467394568,
+      "ADM_mass_boundary": 0.09558447307831007,
+      "boundary_volume_difference": 2.951595635611315e-06,
+      "mass_quadratic": 0.09604821303531094,
+      "mass_through_quartic": 0.09558375473547562,
+      "mass_through_sixth": 0.09558751630382552,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.02, radial=512",
+      "rho": 0.02,
+      "radial_intervals": 512,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.022062295744653466,
+      "epsilon_squared": 0.00048674489352455453,
+      "h": 0.01953125,
+      "analytic_contraction_bound": 0.13999999999999999,
+      "iterations": 6,
+      "last_fixed_point_change": 4.3966566498632176e-15,
+      "minimum_psi_on_solver_nodes": 1.000094920347129,
+      "maximum_psi_on_solver_nodes": 1.0010528616073064,
+      "sampled_angular_constraint_defect": 9.90004350650535e-17,
+      "sampled_fourth_order_constraint_residual": 2.0656955579097594e-06,
+      "ADM_mass_volume": 0.09558746568334062,
+      "ADM_mass_boundary": 0.09558673211621492,
+      "boundary_volume_difference": 7.335671256963883e-07,
+      "mass_quadratic": 0.09604821303531094,
+      "mass_through_quartic": 0.09558375473547562,
+      "mass_through_sixth": 0.09558751630382552,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.02, radial=1024",
+      "rho": 0.02,
+      "radial_intervals": 1024,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.022062295744653466,
+      "epsilon_squared": 0.00048674489352455453,
+      "h": 0.009765625,
+      "analytic_contraction_bound": 0.13999999999999999,
+      "iterations": 6,
+      "last_fixed_point_change": 4.395572447690732e-15,
+      "minimum_psi_on_solver_nodes": 1.0000949209026107,
+      "maximum_psi_on_solver_nodes": 1.0010527846142134,
+      "sampled_angular_constraint_defect": 9.964890953054512e-17,
+      "sampled_fourth_order_constraint_residual": 5.206677486636023e-07,
+      "ADM_mass_volume": 0.09558747593460415,
+      "ADM_mass_boundary": 0.09558729308063688,
+      "boundary_volume_difference": 1.8285396727324432e-07,
+      "mass_quadratic": 0.09604821303531094,
+      "mass_through_quartic": 0.09558375473547562,
+      "mass_through_sixth": 0.09558751630382552,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.08, radial=256",
+      "rho": 0.08,
+      "radial_intervals": 256,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.04412459148930693,
+      "epsilon_squared": 0.0019469795740982181,
+      "h": 0.0390625,
+      "analytic_contraction_bound": 0.5599999999999999,
+      "iterations": 8,
+      "last_fixed_point_change": 6.868637603130168e-15,
+      "minimum_psi_on_solver_nodes": 1.0003743491365633,
+      "maximum_psi_on_solver_nodes": 1.0041440602088119,
+      "sampled_angular_constraint_defect": 2.3324329574802475e-14,
+      "sampled_fourth_order_constraint_residual": 3.150583308107399e-05,
+      "ADM_mass_volume": 0.3769922723450737,
+      "ADM_mass_boundary": 0.3769806313917804,
+      "boundary_volume_difference": 1.1640953293312606e-05,
+      "mass_quadratic": 0.38419285214124377,
+      "mass_through_quartic": 0.3767615193438785,
+      "mass_through_sixth": 0.3770022597182721,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.08, radial=512",
+      "rho": 0.08,
+      "radial_intervals": 512,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.04412459148930693,
+      "epsilon_squared": 0.0019469795740982181,
+      "h": 0.01953125,
+      "analytic_contraction_bound": 0.5599999999999999,
+      "iterations": 8,
+      "last_fixed_point_change": 6.862566070964249e-15,
+      "minimum_psi_on_solver_nodes": 1.0003743584154101,
+      "maximum_psi_on_solver_nodes": 1.004142864546943,
+      "sampled_angular_constraint_defect": 2.3424194642488183e-14,
+      "sampled_fourth_order_constraint_residual": 8.053865115079453e-06,
+      "ADM_mass_volume": 0.3769928931555815,
+      "ADM_mass_boundary": 0.37698999999808047,
+      "boundary_volume_difference": 2.8931575010160415e-06,
+      "mass_quadratic": 0.38419285214124377,
+      "mass_through_quartic": 0.3767615193438785,
+      "mass_through_sixth": 0.3770022597182721,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "rho=0.08, radial=1024",
+      "rho": 0.08,
+      "radial_intervals": 1024,
+      "auxiliary_J": 12,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.04412459148930693,
+      "epsilon_squared": 0.0019469795740982181,
+      "h": 0.009765625,
+      "analytic_contraction_bound": 0.5599999999999999,
+      "iterations": 8,
+      "last_fixed_point_change": 6.856650501816597e-15,
+      "minimum_psi_on_solver_nodes": 1.0003743607202997,
+      "maximum_psi_on_solver_nodes": 1.004142565510996,
+      "sampled_angular_constraint_defect": 2.341900684676425e-14,
+      "sampled_fourth_order_constraint_residual": 2.0299690980107865e-06,
+      "ADM_mass_volume": 0.3769930483434683,
+      "ADM_mass_boundary": 0.3769923271749867,
+      "boundary_volume_difference": 7.211684815988662e-07,
+      "mass_quadratic": 0.38419285214124377,
+      "mass_through_quartic": 0.3767615193438785,
+      "mass_through_sixth": 0.3770022597182721,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "auxiliary_J=2",
+      "rho": 0.08,
+      "radial_intervals": 1024,
+      "auxiliary_J": 2,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.04412459148930693,
+      "epsilon_squared": 0.0019469795740982181,
+      "h": 0.009765625,
+      "analytic_contraction_bound": 0.5599999999999999,
+      "iterations": 8,
+      "last_fixed_point_change": 6.822667431016782e-15,
+      "minimum_psi_on_solver_nodes": 1.0003743566994334,
+      "maximum_psi_on_solver_nodes": 1.0041426330371384,
+      "sampled_angular_constraint_defect": 0.0011795623831450577,
+      "sampled_fourth_order_constraint_residual": 0.0011795863130629487,
+      "ADM_mass_volume": 0.3770025982470105,
+      "ADM_mass_boundary": 0.3770018770602605,
+      "boundary_volume_difference": 7.211867499856695e-07,
+      "mass_quadratic": 0.38419285214124377,
+      "mass_through_quartic": 0.3767615193438785,
+      "mass_through_sixth": 0.3770022597182721,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "auxiliary_J=4",
+      "rho": 0.08,
+      "radial_intervals": 1024,
+      "auxiliary_J": 4,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.04412459148930693,
+      "epsilon_squared": 0.0019469795740982181,
+      "h": 0.009765625,
+      "analytic_contraction_bound": 0.5599999999999999,
+      "iterations": 8,
+      "last_fixed_point_change": 6.86098734247379e-15,
+      "minimum_psi_on_solver_nodes": 1.00037436072022,
+      "maximum_psi_on_solver_nodes": 1.004142565511002,
+      "sampled_angular_constraint_defect": 8.804789504032074e-07,
+      "sampled_fourth_order_constraint_residual": 2.02996866920796e-06,
+      "ADM_mass_volume": 0.376993048344218,
+      "ADM_mass_boundary": 0.3769923271757374,
+      "boundary_volume_difference": 7.211684805996654e-07,
+      "mass_quadratic": 0.38419285214124377,
+      "mass_through_quartic": 0.3767615193438785,
+      "mass_through_sixth": 0.3770022597182721,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "auxiliary_J=8",
+      "rho": 0.08,
+      "radial_intervals": 1024,
+      "auxiliary_J": 8,
+      "angular_nodes": 32,
+      "angular_rank_N": 3,
+      "epsilon": 0.04412459148930693,
+      "epsilon_squared": 0.0019469795740982181,
+      "h": 0.009765625,
+      "analytic_contraction_bound": 0.5599999999999999,
+      "iterations": 8,
+      "last_fixed_point_change": 6.856650576288895e-15,
+      "minimum_psi_on_solver_nodes": 1.0003743607202997,
+      "maximum_psi_on_solver_nodes": 1.004142565510996,
+      "sampled_angular_constraint_defect": 1.5403413968347533e-10,
+      "sampled_fourth_order_constraint_residual": 2.0299690980177254e-06,
+      "ADM_mass_volume": 0.3769930483434683,
+      "ADM_mass_boundary": 0.3769923271749867,
+      "boundary_volume_difference": 7.211684815988662e-07,
+      "mass_quadratic": 0.38419285214124377,
+      "mass_through_quartic": 0.3767615193438785,
+      "mass_through_sixth": 0.3770022597182721,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    },
+    {
+      "name": "angular_quadrature_check",
+      "rho": 0.08,
+      "radial_intervals": 1024,
+      "auxiliary_J": 12,
+      "angular_nodes": 48,
+      "angular_rank_N": 3,
+      "epsilon": 0.04412459148930693,
+      "epsilon_squared": 0.0019469795740982181,
+      "h": 0.009765625,
+      "analytic_contraction_bound": 0.5599999999999999,
+      "iterations": 8,
+      "last_fixed_point_change": 6.855783187155502e-15,
+      "minimum_psi_on_solver_nodes": 1.0003743579522444,
+      "maximum_psi_on_solver_nodes": 1.004142565510996,
+      "sampled_angular_constraint_defect": 2.341943916307458e-14,
+      "sampled_fourth_order_constraint_residual": 2.0299690980246643e-06,
+      "ADM_mass_volume": 0.3769930483434683,
+      "ADM_mass_boundary": 0.3769923271749867,
+      "boundary_volume_difference": 7.211684815988662e-07,
+      "mass_quadratic": 0.38419285214124377,
+      "mass_through_quartic": 0.3767615193438785,
+      "mass_through_sixth": 0.3770022597182721,
+      "scope": "Fixed physical free data, with auxiliary geometry and radial resolution varied."
+    }
+  ],
+  "convergence": {
+    "linear_green_refinement_ratios": [
+      3.998756078420651,
+      3.999648077198651
+    ],
+    "amplitude_series_and_radial_refinement": [
+      {
+        "rho": 0.005,
+        "richardson_mass": 0.02398308324404491,
+        "difference_between_two_extrapolations": 9.41746680638289e-14,
+        "quartic_series_difference": 5.862895688379943e-08,
+        "sixth_order_series_difference": 1.4554858360216194e-10,
+        "fourth_order_residual_refinement_ratios": [
+          3.9110514087177175,
+          3.96737499124064
+        ],
+        "caution": "Extrapolation differences are diagnostics, not rigorous error bounds."
+      },
+      {
+        "rho": 0.02,
+        "richardson_mass": 0.09558747935169198,
+        "difference_between_two_extrapolations": 1.4469536679939665e-12,
+        "quartic_series_difference": 3.7246162163662166e-06,
+        "sixth_order_series_difference": 3.69521335336076e-08,
+        "fourth_order_residual_refinement_ratios": [
+          3.9112231586497015,
+          3.9673967961560503
+        ],
+        "caution": "Extrapolation differences are diagnostics, not rigorous error bounds."
+      },
+      {
+        "rho": 0.08,
+        "richardson_mass": 0.37699310007276393,
+        "difference_between_two_extrapolations": 1.965350104882191e-11,
+        "quartic_series_difference": 0.00023158072888540548,
+        "sixth_order_series_difference": 9.159645508183267e-06,
+        "fourth_order_residual_refinement_ratios": [
+          3.911889835612572,
+          3.967481634558684
+        ],
+        "caution": "Extrapolation differences are diagnostics, not rigorous error bounds."
+      }
+    ],
+    "angular_auxiliary_refinement": [
+      {
+        "J": 2,
+        "defect": 0.0011795623831450577
+      },
+      {
+        "J": 4,
+        "defect": 8.804789504032074e-07
+      },
+      {
+        "J": 8,
+        "defect": 1.5403413968347533e-10
+      },
+      {
+        "J": 12,
+        "defect": 2.341900684676425e-14
+      }
+    ],
+    "independent_angular_quadrature_mass_difference": 0.0
+  },
+  "limitations": [
+    "This is a revision of the regulator; equivalence to either historical finite-rank action is not asserted.",
+    "The nonlinear numerical family has flat conformal metric and one TT momentum direction. The general canonical map is specified separately with local existence hypotheses.",
+    "Dependent geometry contains arbitrarily high harmonics. Auxiliary J is a computation cutoff, not the physical free-data rank N.",
+    "The ten profiles do not exhaust radial degrees of freedom. Their oscillator frequencies are basis-dependent, not a new dispersion relation.",
+    "Uniform-area counts use the quadratic far-sphere area/ADM relation, a specified vacuum subtraction and a chosen area window. They do not derive fundamental microscopic corner multiplicities.",
+    "No complete cubic-through-sixth-order interaction Hamiltonian, interacting one-loop amplitude, physical large-N limit, microscopic corner count or interacting Euclidean reconstruction is established."
+  ],
+  "status": "all specified reduced-data constraint and Hamiltonian ingredient checks passed",
+  "wall_seconds": 4.350501250009984
+}

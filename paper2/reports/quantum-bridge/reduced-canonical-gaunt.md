@@ -17,7 +17,8 @@ not additional independent oscillators.
 We give a local canonical construction, an explicit family of smooth vacuum
 data, its quadratic Hamiltonian, certain fourth- and sixth-order Hamiltonian
 coefficients, and the induced **leading uniform-area sector**. The numerical
-protocol is committed before its run; no numerical result is asserted here.
+protocol was committed before its run. Section 7 records the reviewed result
+and separates its angular and radial errors.
 
 The setting is asymptotically flat gravity on $\mathbb R^3$, with maximal
 slicing and an asymptotic time translation. This addresses the scattering
@@ -581,8 +582,71 @@ The source is
 [reduced_gaunt_exact.py](../../verification/quantum_bridge/reduced_gaunt_exact.py)
 and
 [reduced_gaunt_completion.py](../../verification/quantum_bridge/reduced_gaunt_completion.py).
-Results, source commit and raw-log provenance will be recorded after the
-tracked run is reviewed.
+
+### Reviewed result
+
+The local run `e04fe9ed-1b43-4e75-9dce-454e1b190d26` used source commit
+`31b80f870f4e3ce95419c3fe0d3ba990f2361688` and finished successfully in
+4.603 seconds. Its complete output is preserved in
+[reduced-gaunt-completion-results.json](data/reduced-gaunt-completion-results.json).
+The durable artifact bundle also contains the raw run log and the frozen
+source. The run log identifies the configuration, source, ten exact mode
+checks, two energy quadratures, six leading-area counts, three linear grids
+and thirteen nonlinear solves.
+
+All ten selected modes satisfy the exact TT, Gram, gradient and dual-pairing
+checks. The independent Green-function quadratures reproduce the exact
+Fourier quartic integral to relative errors of $1.22\times10^{-15}$ and
+$2.03\times10^{-16}$. The sixth-order integrals from those quadratures differ
+by $9.09\times10^{-13}$ in absolute value. In the stated $\varepsilon$
+parameter, the tested energy is
+
+$$
+H(\varepsilon)=197.3276233877\,\varepsilon^2
+-1960.3965073074\,\varepsilon^4
++32618.5570801686\,\varepsilon^6+O(\varepsilon^8).
+$$
+
+This is the axisymmetric momentum direction at $q=0$, not the complete
+cubic, quartic or sixth-order Hamiltonian. The quadratic and quartic
+coefficients have the exact forms in Section 3; the sixth coefficient is a
+numerical Green-function integral.
+
+At the largest amplitude $\rho=0.08$, using 1024 radial intervals, the
+separate angular defect is:
+
+| Dependent angular cutoff $J$ | Sampled angular defect |
+| --- | ---: |
+| 2 | $1.17956\times10^{-3}$ |
+| 4 | $8.80479\times10^{-7}$ |
+| 8 | $1.54034\times10^{-10}$ |
+| 12 | $2.34190\times10^{-14}$ |
+
+Increasing the angular quadrature from 32 to 48 nodes gives the same ADM
+energy to the displayed floating-point precision. However, the **full
+sampled scalar-constraint residual is $2.02997\times10^{-6}$**, not the
+angular defect in the last row. Radial discretization remains the limiting
+error. The independent linear Green-function errors decrease by factors
+3.99876 and 3.99965 as the radial grid doubles; the nonlinear residual
+ratios are approximately 3.91 and 3.97 for each tested amplitude. These are
+consistent with the second-order radial solver. Sampled residuals and
+Richardson differences are diagnostics, not rigorous uniform error bounds.
+
+The finest large-amplitude solution has positive $\psi$ on the solver
+nodes, an ADM volume energy of 0.3769930483434683, and a boundary-flux
+energy differing by $7.21\times10^{-7}$. The last fixed-point change is
+$6.86\times10^{-15}$. The contraction argument in Section 3 applies to the
+untruncated integral equation; the numerical error checks are separate.
+
+The six leading-area counts agree exactly with the independent ten-mode
+recursion: $D(B)=1,11,51,286,1477,41613$ for
+$B=0,3,5,8,12,20$. Their area-window and vacuum-subtraction assumptions
+remain those of Sections 4--5. They are not microscopic corner
+multiplicities or an entropy law.
+
+The physical free angular rank remains $N=3$ in this run. Refining the
+dependent angular cutoff and the radial grid establishes neither a
+physical large-$N$ limit nor an interacting quantum reconstruction.
 
 ## 8. What still prevents closing the full goal
 
@@ -597,6 +661,6 @@ operator reconstruction, and the observable map to the simulations remain
 open.
 
 The [continuum quantum reference](continuum-one-loop-reference.md) is now
-available to test any completed amplitude. Passing the present constraint
-and free-sector checks would make that later test well motivated; it
-would not make the three principal quantum deliverables complete.
+available to test any completed amplitude. The present constraint and
+free-sector checks justify proceeding to the full interaction vertices.
+They do not make the three principal quantum deliverables complete.

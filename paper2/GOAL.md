@@ -109,5 +109,12 @@ Gram matrix to make the induced symplectic form canonical. Its local
 hypotheses, change of regulator and unresolved interacting limit are
 explicit. The same quadratic Hamiltonian induces a leading uniform
 far-sphere area spectrum and positive Euclidean/Lorentzian evolution.
-Neither that limited boundary sector nor the proposed nonlinear numerical
-test completes the microscopic corner or interacting reconstruction goals.
+The first tracked nonlinear calculation passes its specified checks:
+ten exact TT modes, independently verified momentum-direction interaction
+coefficients, and separate convergence tests for dependent angular and
+radial geometry. The free rank stays $N=3$; the full sampled constraint
+residual is about $2.03\times10^{-6}$ even when the separate angular defect
+is about $2.34\times10^{-14}$. Neither that limited boundary sector nor
+this numerical result completes the microscopic corner or interacting
+reconstruction goals. The next calculation derives the full cubic and
+quartic Hamiltonian, including the constraint-generated nonlocal terms.
