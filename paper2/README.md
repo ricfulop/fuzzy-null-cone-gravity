@@ -8,6 +8,8 @@ Companion dynamical manuscript and reproducible symbolic/numerical verification 
 
 - [Working draft v0.2 PDF](paper2_einstein_gravity.pdf), built from [paper2_einstein_gravity.tex](paper2_einstein_gravity.tex).
 - [Paper I pre-submission interaction-and-symmetry audit](reports/paper1-action-audit.md).
+- [Oblate quadratic operator and boundary preparation](reports/oblate-quadratic-preparation/README.md): formal Hamiltonian blocks, domain requirements, and bounded kinematic verification for the original Paper I Galerkin action.
+- [Bounded oblate weak-form validation](reports/oblate-weak-curvature-validation/full-recheck-pass/README.md): all eight batches passed, including representative exact sampled Green checks and three fixed symbolic gauge controls; finite radial assembly and physical boundary choices remain open.
 
 ## Reproduce all calculations and figures
 

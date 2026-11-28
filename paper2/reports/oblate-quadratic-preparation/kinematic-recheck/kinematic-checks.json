@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "counts": {
+    "complex_spatial_tangents": 28,
+    "complex_shift_columns": 16,
+    "r1_reference_blocks": 3
+  },
+  "exact_zero_controls": {
+    "zero_controls": [
+      "archived_m1_reference_residual",
+      "unevaluated_zero_times_I",
+      "reciprocal_chart_roots"
+    ],
+    "nonzero_controls": [
+      "unit_offset",
+      "exact_small_offset",
+      "chart_polynomial_offset",
+      "wrong_relative_radical_sign",
+      "square_root_branch"
+    ]
+  },
+  "legendre_control": "passed; manufactured indefinite Gram, not gravitational data",
+  "realification_control": "passed; synthetic imaginary cross block",
+  "density_controls": "deformed rational point, exact integrated L=2,m=2 round r=2 sector, and derivative-column Schur cancellation",
+  "physics_source_commit": "157ec0f04866ea36509b325ec65f0a68890f9b17",
+  "python": "3.12.11",
+  "dependencies": {
+    "sympy": "1.14.0",
+    "numpy": "2.3.5"
+  },
+  "source_sha256": {
+    "verify_kinematics.py": "c9739d12505c513f3885efaa9494f247f8e30bf09de387d1497a431452cf9dcd",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "reference/all_modes_157ec0f.py": "55ba3d4ba6c44104668362258aa96465bd485fef8f407f65283e12aa0c643ebe"
+  },
+  "seconds": 2.3439036668278277,
+  "scope": "Kinematic tensor maps, selected density/integration controls, normalization, and r=1 reference; no potential Hessian, radial spectrum, nonlinear consistency, or physical mode count"
+}

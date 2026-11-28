@@ -1,0 +1,16 @@
+{
+  "README.md": "385970c343766f6682f7cb17fb27a5e786c732cf7a3852f182e9568c9954fb46",
+  "archive-status.json": "19be7890b4c0f7b5ca60fc0b85a180b38e12ca2cd381ce8b2bd3aa43cfb7b706",
+  "curvature-probe-checks.json": "065b5050735260798efdae4fec9bdca45f445f42a3e7594ffc7931f441669837",
+  "execution.json": "471358e420fb1412eef02913721bf757874f0917c38e2dff6ccbb428942d6187",
+  "resource-samples.json": "2ca1c9b351ee0f9446cb6ad3cfa7ad8c02f9bf6a161279aee2ceed1e96b81c16",
+  "sources/kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+  "sources/potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+  "sources/run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+  "sources/supervise_weak_validation.py": "dfdfbf12f64c9b4279784058f77d23a1ec1e5bedec29906e5e249bc24f8f6f6e",
+  "sources/verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+  "sources/weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+  "timing-events.json": "e532f542f8272f913d118735483bed474cdeb746b93d2ad313cb3f5200f8f681",
+  "verification.log": "650a30da325290a4fb9920650ee5891bde8dd5dd42627f15f1052a3377f06124",
+  "weak-form-progress.jsonl": "c32d80cbcbf464e1f873968b58dd13733af1987bec0006acb8adcda2ba167d77"
+}

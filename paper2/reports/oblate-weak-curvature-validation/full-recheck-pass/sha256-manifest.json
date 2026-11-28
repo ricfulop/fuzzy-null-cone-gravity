@@ -1,0 +1,17 @@
+{
+  "README.md": "52272df43b0dad780423a3293deeb9c1c8156667ba57bc1b9bda03d3cb34840f",
+  "archive-status.json": "50bf18901fda7f206f46082657b271bf3e93b63ebb3918b26871cd4642dda9d0",
+  "execution.json": "7f9f78168dbef8a0e1471734da1c05272bdd9d40ed55ff8abcdf419c59d9f00f",
+  "resource-samples.json": "62339d972300987ec12af69a9339692e81e0d52d22681ba75f7c2926fa2f5986",
+  "review.json": "c36b8ba61968f44fc9718df926de771a136bf88ec03d07b404a175d9554adc89",
+  "sources/kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+  "sources/potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+  "sources/run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+  "sources/supervise_weak_validation.py": "cdce51691088fcda4eb0e65397feaefda04762b87d8b0baace360c05df1f8242",
+  "sources/verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+  "sources/weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+  "timing-events.json": "996d6ebdad586e32d15ed294e1912001ea6178629b7523ff953de59b37052da4",
+  "verification.log": "635a311bae273225a52cc48970f5069ca7ab9a12ac70bb1793ae89b2febf72cc",
+  "weak-form-checks.json": "2dcfeb8c5137c0e8c243f808bf55ab2b720ae957fc3f17ef940431a8fe05bf1a",
+  "weak-form-progress.jsonl": "430afb0ca4c21fd4c06fd7d8fc9c3a55d1ff024d5319d547839e2d9742f984db"
+}

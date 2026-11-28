@@ -1,0 +1,58 @@
+{
+  "utc": "2026-11-28T05:54:00.908094+00:00",
+  "syntax_checked": [
+    "verify_weak_forms.py",
+    "supervise_weak_validation.py",
+    "test_weak_supervisor.py"
+  ],
+  "unchanged_function_ASTs": [
+    "canonicalize_half_pow_bases",
+    "_linear_mod_root",
+    "split_half_root_coefficients",
+    "chart_normalize",
+    "exact_zero",
+    "assert_zero",
+    "independent_connection",
+    "tensor_jet",
+    "linearized_christoffel",
+    "delta_gamma_divergence_component",
+    "delta_gamma_trace",
+    "covector_derivative",
+    "varied_ricci_lower_dense",
+    "scalar_and_einstein_from_ricci",
+    "direct_lie",
+    "verify_cartesian_tt",
+    "verify_hermitian_ablation"
+  ],
+  "unchanged_physics_modules": [
+    "weak_forms.py",
+    "potential_hessian.py",
+    "kinematic_blocks.py"
+  ],
+  "reporting_only_modes_checked": 3,
+  "scientific_module_imports": 0,
+  "scientific_invocations": 0,
+  "review_pending": false,
+  "source_sha256": {
+    "verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+    "supervise_weak_validation.py": "0677d0fe8cd2ab56896c486d87d241b4d1e9a74f1f2390822f464df8e31dfe8d",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501"
+  },
+  "reviews": {
+    "code_owner": "msg_d9f6ba1c",
+    "independent_source_review": "msg_d683684d",
+    "archive_review": "msg_f29ec376",
+    "diagnosis": [
+      "msg_3b2120f0",
+      "msg_ccd3db87"
+    ]
+  },
+  "root_followups": [
+    "Runtime plan moved to top-level plan payload; reporting-only AST extraction checked all three modes.",
+    "delta_gamma_trace elapsed callback made consistent.",
+    "No scientific imports or launches during preparation."
+  ]
+}
