@@ -1,0 +1,16 @@
+{
+  "purpose": "Exact discarded coefficient maps for three N=3 angular descriptors across all signed magnetic columns.",
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "threads": 1,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "python_version": "3.12",
+  "sympy_version": "1.14.0",
+  "regression_archive": {
+    "commit": "d9add22b3509700107601b94c2da9f629050dfb3",
+    "paper1_paths": {
+      "reports/oblate-null-map-check-2026-11-27/map-checks.json": "75fc5c1036777716ef80bd1911adc9a90d2ef0582110f0ffe3ccc9ed973305cc",
+      "reports/oblate-null-map-check-2026-11-27/sources/verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5"
+    }
+  }
+}
