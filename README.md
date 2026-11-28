@@ -1,6 +1,6 @@
 # Quantum Gravity
 
-**Author:** Ric Fulop, Center for Bits and Atoms, Massachusetts Institute of Technology
+**Author:** Ric Fulop, Center for Bits and Atoms, Massachusetts Institute of Technology under Prof. Neil Gershenfeld supervision. 
 
 This repository contains two companion research manuscripts. Each paper has its own source, PDFs, figures, reports, and verification scripts.
 
