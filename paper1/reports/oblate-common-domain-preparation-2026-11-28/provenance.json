@@ -1,0 +1,59 @@
+{
+  "state": "analytical preparation only",
+  "source_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76",
+  "source_files": [
+    {
+      "git_path": "paper1/sections/nonlinear_action.tex",
+      "lines": "19–44",
+      "use": "Bulk angular-Galerkin definition, compact variations, missing null boundary and joint completion",
+      "sha256": "0d3b1c9d4ab83ab98de8b05d76334cef30545ccbf82ed6ae03dbec3861024673"
+    },
+    {
+      "git_path": "paper1/sections/canonical_oblate.tex",
+      "lines": "15–39",
+      "use": "Oblate metric, normalized G, shift elimination and lapse-form scope",
+      "sha256": "f7a5ac43ec4748c65d36d666e88925839f267659c18dd169064c3e437f3676ae"
+    },
+    {
+      "git_path": "paper1/reports/canonical-analysis-2026-11-27/README.md",
+      "lines": "52–87",
+      "use": "Compact-support ADM representative and actual coefficient momenta",
+      "sha256": "4207ab0b985cd00561c142930d885ee1d8d5a419bc093a3ddfbfa088eafa4db6"
+    },
+    {
+      "git_path": "paper1/reports/oblate-constraint-rank-2026-11-27/README.md",
+      "lines": "100–136",
+      "use": "Compact lapse/shift adjoints and local angular rank",
+      "sha256": "c4ca97eb70a6e9f78d2eb174b28621e165f8fd2c158bf4011efb8bf6fd4e69f5"
+    },
+    {
+      "git_path": "paper1/reports/oblate-lapse-consistency-2026-11-27/README.md",
+      "lines": "47–89, 133–176",
+      "use": "Exact compact reduction, Hessian identity, and reduced H1_0 form extension",
+      "sha256": "63026f0684f5dca32e8e349a15a2e98289d7126fdc9998e25bb1391f85330129"
+    },
+    {
+      "git_path": "paper2/reports/oblate-quadratic-preparation/potential-hessian.md",
+      "lines": "218–251",
+      "use": "Shared original Paper I strong/weak lapse pair and spatial coefficient map",
+      "sha256": "d6fcd164db18bdfd00b9f6f2b18caf81af05c1604a21d2051c6eebdd2b577a73"
+    },
+    {
+      "git_path": "paper1/reports/shared-oblate-weak-validation-2026-11-28/README.md",
+      "lines": "3–11",
+      "use": "Shared prior local flux checks and their scope",
+      "sha256": "32abbdfa4a1b2801d9bfb1b8413df2dea5e201828e1375f5031c9961658f6238"
+    }
+  ],
+  "derived_here": [
+    "Two-integration scalar-curvature Green form and its Dirichlet area trace",
+    "One-integration Hessian flux and its Dirichlet mean-curvature trace",
+    "Single retained quadrupole test with independently selectable endpoint jets"
+  ],
+  "trial_domain": "Smooth traces on a radial shell of the static flat oblate spatial slice",
+  "proposed_calculation_executed": false,
+  "scientific_imports": 0,
+  "scientific_invocations": 0,
+  "physical_boundary_domain_established": false,
+  "full_generator_adjoint_domain_established": false
+}

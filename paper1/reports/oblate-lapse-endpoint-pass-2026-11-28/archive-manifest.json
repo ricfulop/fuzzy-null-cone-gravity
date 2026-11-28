@@ -1,0 +1,31 @@
+{
+  "files": {
+    "README.md": "d655f45f783b2520f1fe921142e5927386d045d7be8550e78dda6e6fe7057d91",
+    "archive-status.json": "3f8da81befd63cb41b4e97080a211fef01af7d3616ca4d954d344eb168093246",
+    "engine.log": "6b45c90b85d8580f052067621712281376b60203b49c175441ab153388fc037d",
+    "execution.json": "10b3b8cf53e09273d032f2ffb9a3df86fa90f6c3679672e816fe10029a7db6b6",
+    "framework-log-location.txt": "2d17ed3c1ee42fb711d5a30f55c79ed0ffe0b6aa3f847498fca3511460c2aed4",
+    "framework-runs.txt": "a3820ea436eeea1c248713231935c75227381641778f7812f48b2cbabaf0a2b7",
+    "framework-status.json": "670a2a8132b7a53d1a9930598bc2dfe817a162d6413e0620bdb765c9c069dd89",
+    "framework-view-check.txt": "74ca5c15f4d368fb1cbc7b97ddb8e9a05d030b2bbb8ff78740504a12ea45b479",
+    "framework-view.txt": "b4247de851d5d7c2813814ba302094d0274ed17cf49a659548df94a277e347eb",
+    "launch.json": "fa8281cf773ed7a35c5876af9fa43f793797a29736dabe2a7189823b99024bb9",
+    "metrics.json": "856d026926799274b4150cbb960163e474fe369432e906aa4509de1ca866d8b5",
+    "outputs/lapse-endpoint-checks.json": "5f8201fd2362b6fd4e360599f57bda4e1017b99efb3bacab3cc61fa530fdd269",
+    "resource-samples.json": "00495179cb74502f9602d2447791beb52004466fde5c02f25a0d2e53f3d8332e",
+    "review-notes.json": "413dbbbed34f37d17ac5e9c3d680b96d8dce490ce3c533d5d31155e223501a4d",
+    "sources/reports/oblate-common-domain-preparation-2026-11-28/README.md": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d",
+    "sources/verification/oblate_lapse_endpoint_20261128/README.md": "417d2e8604e3d46dc8a481c5d28ca4689f8b9e03ff1a4177d1745dfc0d4b720e",
+    "sources/verification/oblate_lapse_endpoint_20261128/check_lapse_endpoints.py": "24f46a839f99a6c511fd539999a8a5ff618c49c6da2dcb1de7f9d1e1e44ad168",
+    "sources/verification/oblate_lapse_endpoint_20261128/run-config.json": "41c2f8e898685cdfd34d3968d4b053874b5a4f605174292d23f4f8533056f58e",
+    "sources/verification/oblate_lapse_endpoint_20261128/run.sh": "cf45a4a97508fd6a184954b7c96ed223cc7b261f69bfc48ecbd305c616ef35e7",
+    "sources/verification/oblate_lapse_endpoint_20261128/run_bounded.py": "7c0243b58443120180a40d7ca5c7f14fd6ad6334d765c712bd6fb33b7e4d2050",
+    "sources/verification/oblate_lapse_endpoint_20261128/test_run_bounded.py": "f86ec87e4a575c951c19461b64f7a7ccd1af5e837fcf91f21e07d206ad08772b",
+    "sources/verification/oblate_lapse_endpoint_20261128/view-config.json": "275662f49f5a5bff8900ba14d6df06906eea17fbba33ed75bacc1527174888ab",
+    "sources/verification/oblate_lapse_endpoint_20261128/view.xml": "9ab4f972638e7af74b6eea7dd6f39520418a738d68d5a5b35b03530d66635257",
+    "terminal-evidence.json": "809773e953cdd0c53650e5d0fe704818e424f9e153a8898a2ec14531e5285285",
+    "timing-summary.json": "75aae4c0a567e982ba1cead9754cbbfd3da0cb528f039b8f64e51bca07e752dc",
+    "verification.log": "9f2295ec2b9b0f9dca67948ecf1d3c53f25adee3d6cffa3a7eecd4c600684a8f"
+  },
+  "self_hash_excluded": true
+}

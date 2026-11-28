@@ -1,0 +1,50 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "catalog",
+      "of": 1,
+      "unit": "catalog"
+    },
+    {
+      "phase": "affine_background",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "atlas_columns",
+      "of": 78,
+      "unit": "column"
+    },
+    {
+      "phase": "independent_controls",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "final_export",
+      "of": 1,
+      "unit": "bundle"
+    },
+    {
+      "phase": "complete",
+      "of": 1,
+      "unit": "certificate"
+    }
+  ],
+  "brief": {
+    "question": "Do the exact all-magnetic N=3 discarded coefficient maps reconstruct and pass the independent controls?",
+    "healthy": "Each completed column publishes three sparse Cartesian maps after reconstruction and rotation checks.",
+    "worth_a_flag": "An incomplete bundle, budget stop, failed control, or mismatched catalog or checkpoint.",
+    "decided": "One bounded local child with 900 seconds and a 2 GiB sampled group RSS threshold. Runtime is unmeasured.",
+    "noise": "Partial column counts track progress. Acceptance follows validation of the complete bundle. The calculation supplies coefficient tests only."
+  },
+  "watch": {
+    "minGapS": 90,
+    "maxGapS": 240
+  }
+}

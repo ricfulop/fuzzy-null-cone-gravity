@@ -1,0 +1,57 @@
+{
+  "run": "99b9bc29-8627-4993-aa6c-c7cea2a0d341",
+  "experiment": "09874fcd-6a86-46b7-b857-e8d56124be81",
+  "source_commit": "162383cf313d60bf50b4c92e15834834d189c6ff",
+  "result_sha256": "e801207d7f6909d5657191c237aabc09b1b31fa40812c1259872ab247f1da2bc",
+  "result_bytes": 31180950,
+  "log_sha256": "ea883eacae6a08bb6ab0b4ed1d8a4d2a59eea349afcc2a0e70da53af11b2d27c",
+  "log_bytes": 11707067,
+  "configuration_matches_source": true,
+  "source_hashes": {
+    "noncompact_inverse_check.py": "e3465e78b0d5c40262355ddbeb34d970a4f3b797c18e3578c5a9d1a2589463fd",
+    "noncompact_first_response.py": "aacf659eb0e63ae28d80259a89adeac635b08dc454d3b3b540261fd9e8aa589d",
+    "noncompact_york_controls.py": "cbe0187c23e5d14733a4a9937cf1b623a27ac0ef0fec7ca711cd31e1512e19aa",
+    "gaussian_radial_controls.py": "1bdba7ff6ba057b09d8fa4c8fab2542c13d80ed2b20660afffc0413a04b13628",
+    "gaussian_radial_reference.py": "873a6327fda07d9f8b829e20f53c4f437cb9716b070dad2b6db716844d69f1ef",
+    "spherical_york_reference.py": "366580b9321461ace0ce613f185e06b39ad615cd0698f544ca8cc745ed40b1eb",
+    "spherical_green_reference.py": "daecd88439af4a41734c968c77ab842f04a1bc58d07742cec7f29626b572fc2e",
+    "solid_harmonic_reference.py": "756d1bfd162af2faed2fa71166e5e335f1fc8f06db645d1c3d4bfd51d9b04722",
+    "kelvin_exterior_reference.py": "5d995c6bdcded5b0d5e1920427596a20cbc756068427c4184395261be8594175",
+    "sixth_unreduced_algebra.py": "233fb101ba5e10fff711b65194221536911507ab325b8b9a0e73624993942dcd",
+    "sixth_unreduced_controls.py": "bbdea52a26bf9f826eab1e6854b3c0676caf1d895e929fe4ec2831987f5fc97c",
+    "higher_local_geometry.py": "beb2b9a7c00f414d675719f690929a6364025e2ad201adf421aef7631c47075a",
+    "gaussian_green_fields.py": "c54d6e731d6a6eca5161fa2a122455c9166ba8284269170e2857f99a2044e981"
+  },
+  "status": "failed: MemoryError: Declared sampled memory ceiling exceeded",
+  "wall_seconds": 339.0549105841201,
+  "peak_rss_bytes": 2176417792,
+  "counts": {
+    "required_completed": 2157,
+    "required_failed": 1,
+    "diagnostic_failed": 0,
+    "algebra_groups": 18,
+    "gaussian_groups": 10,
+    "synthetic_levels": 9,
+    "gravitational_levels": 3
+  },
+  "completed_first_response_intervals": [
+    256,
+    512,
+    1024
+  ],
+  "sole_failed_row": {
+    "name": "angular_1024",
+    "passed": false,
+    "acceptance_required": true,
+    "exception_type": "MemoryError",
+    "exception": "Declared sampled memory ceiling exceeded"
+  },
+  "scientific_acceptance": false,
+  "memory_repair": {
+    "before_bytes": 2147483648,
+    "after_bytes": 8589934592,
+    "wall_limit_seconds": 1800,
+    "other_scientific_settings_changed": false
+  },
+  "scope": "Memory-limited attempt; completed subchecks preserved; final angular first-response slice unfinished and final aggregation unreached."
+}

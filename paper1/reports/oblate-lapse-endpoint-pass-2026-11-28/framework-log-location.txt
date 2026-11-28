@@ -1,0 +1,7 @@
+Original log: 5449 bytes.
+Kept bytes 0..5449: /Users/ricfulop/.local/share/openresearch/run-logs/95e69683-94dd-433d-b081-aba5b9e32fec.log
+Last 500 characters of the kept tail:
+9e32fec/repo/paper1/run-output/95e69683-94dd-433d-b081-aba5b9e32fec/outputs/lapse-endpoint-checks.json", "state": "atomic export written"}
+::orx:: {"phase": "complete", "step": 1, "of": 1, "unit": "certificate", "m": {"endpoint_checks_passed": 1, "scientific_invocations": 1, "endpoint_case_count": 11, "control_count": 8}}
+Saved execution evidence: /Users/ricfulop/.local/share/openresearch/local-runs/95e69683-94dd-433d-b081-aba5b9e32fec/repo/paper1/run-output/95e69683-94dd-433d-b081-aba5b9e32fec
+

@@ -1,0 +1,83 @@
+{
+  "run": "226eb930-9667-4bdf-91b6-ae8a4e0552d4",
+  "source_commit": "c771712679e729c9e60c7beb26a17cf71418d138",
+  "status": "failed: AssertionError: Independent scalar inverse controls failed; complete measurements retained",
+  "wall_seconds": 3.3838739169295877,
+  "peak_rss_bytes": 45776896,
+  "counts": {
+    "required_completed": 35,
+    "required_failed": 2,
+    "diagnostic_failed": 0,
+    "york_levels": 0,
+    "scalar_controls": 9,
+    "angular_controls": 26
+  },
+  "angular_work": 31146657,
+  "failed_scalar_cases": [
+    {
+      "name": "scalar_8_-3_p4_C",
+      "levels": [
+        {
+          "intervals": 256,
+          "regular_jet_error": 0.15727464272158898,
+          "failed_gates": [
+            "jet",
+            "regular_jet"
+          ]
+        },
+        {
+          "intervals": 512,
+          "regular_jet_error": 0.036081439492591016,
+          "failed_gates": [
+            "regular_jet"
+          ]
+        },
+        {
+          "intervals": 1024,
+          "regular_jet_error": 0.008618779248692476,
+          "failed_gates": [
+            "regular_jet"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scalar_10_7_p4_C",
+      "levels": [
+        {
+          "intervals": 256,
+          "regular_jet_error": 0.4467857991866353,
+          "failed_gates": [
+            "jet",
+            "regular_jet",
+            "origin_a0"
+          ]
+        },
+        {
+          "intervals": 512,
+          "regular_jet_error": 0.09724646751443089,
+          "failed_gates": [
+            "regular_jet"
+          ]
+        },
+        {
+          "intervals": 1024,
+          "regular_jet_error": 0.022571435444490362,
+          "failed_gates": [
+            "regular_jet"
+          ]
+        }
+      ]
+    }
+  ],
+  "files": {
+    "result": {
+      "bytes": 2423498,
+      "sha256": "071a5ce97351d865511deedc4cb7a427bd663e0c744aa202de03f6a66caf43df"
+    },
+    "log": {
+      "bytes": 811837,
+      "sha256": "c0dbd19780d7b4f9c3b0e23a0d06add24cfcad4188d8f680b576ac5ef69b7e8e"
+    }
+  }
+}

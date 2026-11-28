@@ -1,0 +1,22 @@
+{
+  "archival_scientific_invocations": 0,
+  "provenance_review": {
+    "chat": "chat_83b7b932-1532-c48c-2387-ddf128d0dde1",
+    "reference": "msg_cfb5c2a7",
+    "summary": "Nine frozen Git sources, checker/config/report pins, terminal marker, result hash, 55 raw child lines, runtime and cleanup reconciled.",
+    "verdict": "GO for archival"
+  },
+  "review_mode": "Read-only source/log/JSON/Git/hash inspection; no scientific module imports or reruns",
+  "root_evidence_audit": {
+    "all_cases_and_controls_passed": true,
+    "final_view_read": true,
+    "raw_engine_log_read": true,
+    "source_and_terminal_hashes_verified": true
+  },
+  "scientific_review": {
+    "chat": "chat_2f3d47b3-1e7e-ace4-7757-6f7fc7900d9d",
+    "reference": "msg_63bc0c47",
+    "summary": "No material issue in the selected endpoint certificate; all 11 cases and eight controls, independent curvature construction, two separate flux normalizations and conservative scope.",
+    "verdict": "GO"
+  }
+}

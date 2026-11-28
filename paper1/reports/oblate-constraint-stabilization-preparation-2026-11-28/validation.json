@@ -1,0 +1,33 @@
+{
+  "state": "reviewed analytical preparation only",
+  "source_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76",
+  "publication_parent_commit": "24a0e7c401e2401c60e09306d81d805158c806ac",
+  "independent_review": "msg_0457afae",
+  "author_reviewed_hashes_before_link_only_packaging": {
+    "README.md": "6d8b43e3f3cf721c47e127013c1bc96cef90555e6845b4564881e9b791839120",
+    "provenance.json": "a491dc5a278de55982d09027057a4b9cbdf60bd130d7203bcc2bac974c5037c6"
+  },
+  "pinned_source_file_count": 13,
+  "pinned_source_hashes_verified_against_git": true,
+  "source_link_paths_verified_against_git": [
+    "paper1/reports/oblate-constraint-rank-2026-11-27/README.md",
+    "paper1/verification/oblate_constraint_rank_20261127/all_modes.py",
+    "paper1/sections/canonical_oblate.tex",
+    "paper1/reports/oblate-lapse-consistency-2026-11-27/README.md",
+    "paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py",
+    "paper1/reports/oblate-nonlinear-null-preparation-2026-11-27/README.md",
+    "paper1/verification/oblate_nonlinear_null_20261127/null_compatibility.py",
+    "paper1/sections/nonlinear_action.tex",
+    "paper1/reports/oblate-stationary-state-germ-pass-2026-11-28/README.md",
+    "paper1/reports/oblate-stationary-input-domain-audit-2026-11-28/README.md",
+    "paper1/reports/oblate-stationary-nonlinear-linkage-preparation-2026-11-28/README.md",
+    "paper1/sections/oblate_local_obstruction.tex"
+  ],
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "checker_prepared": false,
+  "manuscript_claim_changed": false,
+  "final_constraint_classification_established": false,
+  "physical_boundary_domain_established": false,
+  "packaging_changes": "Converted external relative source links to immutable GitHub blob links; appended this validation pointer; mathematical content unchanged."
+}

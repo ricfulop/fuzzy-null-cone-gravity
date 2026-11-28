@@ -1,0 +1,170 @@
+{
+  "case_results": [
+    {
+      "name": "metric_determinant_sigma_squared",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "background_ricci_zero",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "scalar_curvature_green_density",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "two_hessian_density",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "scalar_dirichlet_radial_flux",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "hessian_dirichlet_radial_flux",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "scalar_angular_pole_fluxes",
+      "north_residual": "0",
+      "passed": true,
+      "south_residual": "0"
+    },
+    {
+      "name": "hessian_angular_pole_fluxes",
+      "north_residual": "0",
+      "passed": true,
+      "south_residual": "0"
+    },
+    {
+      "hessian_residual": "0",
+      "name": "clamped_fluxes",
+      "passed": true,
+      "scalar_residual": "0"
+    },
+    {
+      "hessian_wrong_factor": "(-180000*F1*G1*r**5*x**4 + 120000*F1*G1*r**5*x**2 - 20000*F1*G1*r**5 - 900*F1*G1*r**3*x**6 - 2100*F1*G1*r**3*x**4 + 1700*F1*G1*r**3*x**2 - 300*F1*G1*r**3 - 9*F1*G1*r*x**6 - 3*F1*G1*r*x**4 + 5*F1*G1*r*x**2 - F1*G1*r)/(80000*r**4 + 1600*r**2*x**2 + 8*x**4)",
+      "name": "sign_and_factor_defect_controls",
+      "passed": true,
+      "scalar_wrong_sign": "(1800*F1*r**2*x**4 - 1200*F1*r**2*x**2 + 200*F1*r**2 + 9*F1*x**6 + 3*F1*x**4 - 5*F1*x**2 + F1)/(200*r**2 + 2*x**2)"
+    },
+    {
+      "hessian_oriented_inner": "20301/40000",
+      "hessian_outer": "-321201/320000",
+      "name": "endpoint_orientation_signs",
+      "passed": true,
+      "scalar_oriented_inner": "-201/400",
+      "scalar_outer": "801/1600"
+    }
+  ],
+  "controls": [
+    {
+      "name": "linearized Ricci scalar constructed from varied Christoffels",
+      "passed": true
+    },
+    {
+      "name": "strong-minus-adjoint density equals radial plus angular flux divergence",
+      "passed": true
+    },
+    {
+      "name": "two-Hessian density equals radial plus angular flux divergence",
+      "passed": true
+    },
+    {
+      "name": "Dirichlet radial fluxes match reviewed endpoint predictions",
+      "passed": true
+    },
+    {
+      "name": "angular pole fluxes vanish",
+      "passed": true
+    },
+    {
+      "name": "clamped endpoint slopes kill both fluxes",
+      "passed": true
+    },
+    {
+      "name": "sign and factor defects stay nonzero",
+      "passed": true
+    },
+    {
+      "name": "outer-only and inner-only endpoint orientations have expected signs",
+      "passed": true
+    }
+  ],
+  "endpoint_fluxes_before_prefactors": {
+    "hessian_dirichlet_radial": "(-180000*F1*G1*r**5*x**4 + 120000*F1*G1*r**5*x**2 - 20000*F1*G1*r**5 - 900*F1*G1*r**3*x**6 - 2100*F1*G1*r**3*x**4 + 1700*F1*G1*r**3*x**2 - 300*F1*G1*r**3 - 9*F1*G1*r*x**6 - 3*F1*G1*r*x**4 + 5*F1*G1*r*x**2 - F1*G1*r)/(40000*r**4 + 800*r**2*x**2 + 4*x**4)",
+    "scalar_dirichlet_radial": "(1800*F1*r**2*x**4 - 1200*F1*r**2*x**2 + 200*F1*r**2 + 9*F1*x**6 + 3*F1*x**4 - 5*F1*x**2 + F1)/(400*r**2 + 4*x**2)"
+  },
+  "fixed_parameters": {
+    "N": 3,
+    "Y": "3*x**2/2 - 1/2",
+    "ell": 2,
+    "epsilon": "1/100",
+    "m": 0,
+    "radial_shell": [
+      "1",
+      "2"
+    ]
+  },
+  "identities": {
+    "angular_pole_fluxes_vanish": true,
+    "dirichlet_radial_fluxes_match": true,
+    "linearized_ricci_from_varied_christoffels": true,
+    "metric_determinant_matches_sigma_squared": true,
+    "scalar_curvature_density_divergence": true,
+    "two_hessian_density_divergence": true
+  },
+  "input_sha256": {
+    "checker": "24f46a839f99a6c511fd539999a8a5ff618c49c6da2dcb1de7f9d1e1e44ad168",
+    "config": "41c2f8e898685cdfd34d3968d4b053874b5a4f605174292d23f4f8533056f58e"
+  },
+  "normalization": {
+    "hessian_identity_prefactor": "1/(4*pi)",
+    "scalar_curvature_identity_prefactor": "1/(8*pi)"
+  },
+  "reviewed_mathematical_definitions": {
+    "report": "paper1/reports/oblate-common-domain-preparation-2026-11-28/README.md",
+    "report_commit": "ae32314d27e20ac682c5ed1b71b4d7f11bee7133",
+    "report_sha256": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d",
+    "source_of_derivation_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76"
+  },
+  "reviewed_report": "paper1/reports/oblate-common-domain-preparation-2026-11-28/README.md",
+  "reviewed_report_commit": "ae32314d27e20ac682c5ed1b71b4d7f11bee7133",
+  "reviewed_report_sha256": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d",
+  "runtime": {
+    "python_executable": "/Users/ricfulop/Library/Caches/uv/builds-v0/.tmpgpLzsz/bin/python",
+    "python_version": "3.12.11",
+    "python_version_info": {
+      "major": 3,
+      "micro": 11,
+      "minor": 12
+    },
+    "sympy_version": "1.14.0",
+    "sys_version": "3.12.11 (main, Oct  7 2025, 15:53:48) [Clang 20.1.4 ]"
+  },
+  "scope": {
+    "evolution_invariance_established": false,
+    "final_Dirac_classification_established": false,
+    "full_operator_domain_established": false,
+    "physical_DOF_count_established": false,
+    "physical_null_boundary_selected": false
+  },
+  "sign_samples": {
+    "hessian_inner_coordinate": "-20301/40000",
+    "hessian_outer_coordinate": "-321201/320000",
+    "inner_r": "1",
+    "orientation_reverses_inner_endpoint": true,
+    "outer_r": "2",
+    "scalar_inner_coordinate": "201/400",
+    "scalar_outer_coordinate": "801/1600",
+    "x": "0"
+  },
+  "source_of_derivation_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76",
+  "state": "prepared lapse endpoint identities verified"
+}

@@ -1,0 +1,4 @@
+ID                                    STATUS  EXPERIMENT                                       COMMIT   DURATION  UPDATED
+────────────────────────────────────  ──────  ───────────────────────────────────────────────  ───────  ────────  ───────
+95e69683-94dd-433d-b081-aba5b9e32fec  done    Paper I: oblate lapse endpoint Green identities  cae4d61  8s        2m ago
+95e69683-94dd-433d-b081-aba5b9e32fec  stages: setup 2s, input_config 0s, metric_and_variation 0s, christoffel_and_linearized_ricci 2s, scalar_curvature_green_identity 0s, hessian_flux_identity 4s, endpoint_flux_reduction 1s, endpoint_sign_controls 0s, result_assembly 0s, atomic_final_export 0s, complete unknown

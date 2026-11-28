@@ -1,0 +1,8 @@
+<signal name="atlas_bundle_passed" label="Complete atlas accepted" digits="0" labels='{"0":"unaccepted","1":"passed"}' />
+<signal name="checkpoint_column_count" label="Published input columns" digits="0" />
+<signal name="independent_control_count" label="Independent checks passed" digits="0" />
+<signal name="nonzero_entry_count" label="Discarded coefficients across three maps" digits="0" />
+<view headline="atlas_bundle_passed checkpoint_column_count">
+  <stats of="independent_control_count nonzero_entry_count" />
+  <text>Complete coverage requires all 78 input columns and the 160-row output catalog. Partial columns are diagnostic.</text>
+</view>

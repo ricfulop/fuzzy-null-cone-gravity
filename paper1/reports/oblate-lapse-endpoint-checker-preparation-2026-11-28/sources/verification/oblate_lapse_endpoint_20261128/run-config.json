@@ -1,0 +1,15 @@
+{
+  "purpose": "Selected oblate bulk Green identities and endpoint flux controls on the shell [1,2].",
+  "wall_seconds": 300,
+  "memory_bytes": 2147483648,
+  "threads": 1,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "report": {
+    "path": "paper1/reports/oblate-common-domain-preparation-2026-11-28/README.md",
+    "sha256": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d",
+    "commit": "ae32314d27e20ac682c5ed1b71b4d7f11bee7133"
+  },
+  "derivation_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76",
+  "python_version": "3.12",
+  "sympy_version": "1.14.0"
+}
