@@ -423,7 +423,7 @@ Additional dynamical problems remain open:
 To make every step of the audit and regularization independently inspectable, numerical scripts, archived Monte Carlo datasets, and selected logical-dependency and algebraic-identity lemmas in Lean~4.36.0 are cataloged in Appendix~\ref{app:code} and publicly archived.
 
 \begin{acknowledgments}
-We warmly thank Venkatesa Chandrasekaran for the classical null-cone reduction, gravitational clock architecture, and Lorentzian axiomatic framework of Ref.~\cite{Chandrasekaran2026}, which motivated this work, and thank independent technical reviewers for incisive comments on the $B(s)=s Q_*$ tail bound, explicit rectangular matrix vertices, the corrected oscillator clock bounds, the modular check on $Z_{\scrD,1}=45$, two-loop finiteness, and effective-field-theory naturalness bounds. We used OpenResearch~\cite{openresearch}, T3 Code, Gemini Neon, and OpenAI GPT-6 Rosalind; simulations ran on a Modal B200 cluster.
+We warmly thank Venkatesa Chandrasekaran for the classical null-cone reduction, gravitational clock architecture, and Lorentzian axiomatic framework of Ref.~\cite{Chandrasekaran2026}, which motivated this work, and thank independent technical reviewers for incisive comments on the $B(s)=s Q_*$ tail bound, explicit rectangular matrix vertices, the corrected oscillator clock bounds, the modular check on $Z_{\scrD,1}=45$, two-loop finiteness, and effective-field-theory naturalness bounds. We used OpenResearch~\cite{openresearch}, T3 Code, Gemini Neon, and OpenAI GPT-6.2 and GPT-6 Rosalind; simulations ran on a Modal B200 cluster.
 \end{acknowledgments}
 
 \appendix
@@ -537,6 +537,12 @@ Lean~4 Module & Theorems & Encoded Logical or Algebraic Scope \\
 \end{table*}
 
 \input{sections/clock_proof}
+
+\section{Model Use and Computational Resources}\label{app:model_use}
+
+The documented workflow included extensive steering and seven named hill-climb investigations (H1--H7; 210 model calls), with their usage included in the T3 totals. The supplied OpenResearch and T3 Code usage summaries jointly reported 678 model calls and 151 million processed tokens, including cached prompt reads. Additional ChatGPT/Codex work used GPT-6.2 initially and GPT-6 Rosalind subsequently, across 26 project-related user messages at the accounting cutoff; its token usage was unavailable and is excluded from those totals. Five Modal B200 simulation campaigns comprised 96 production job launches and 565{,}360 chain-level HMC trajectory updates.
+
+The production simulations consumed approximately 4.197 B200 GPU-hours. The trajectory count includes 112{,}560 warm-up updates and 452{,}800 retained updates across chains. Including four reported smoke/operator launches gives approximately 4.27 B200 GPU-hours. These runtime totals exclude billing overhead. No LLM calls were reported inside the Modal simulation jobs.
 
 \begin{thebibliography}{99}
 

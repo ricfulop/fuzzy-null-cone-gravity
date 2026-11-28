@@ -7,46 +7,46 @@
     "sympy": "1.14.0"
   },
   "integration_base_commit": "49de5fa7956dad447414c95726f53d5a2597136a",
-  "source_head_at_execution": "49de5fa7956dad447414c95726f53d5a2597136a",
+  "source_head_at_execution": "b1e6ff0f1442fa31033c34fb151c81f6b16749af",
   "runs": [
     {
       "script": "action_derivation.py",
       "status": "passed",
-      "seconds": 2.011
+      "seconds": 2.061
     },
     {
       "script": "polar_derivation.py",
       "status": "passed",
-      "seconds": 2.419
+      "seconds": 2.349
     },
     {
       "script": "matrix_realization.py",
       "status": "passed",
-      "seconds": 0.8
+      "seconds": 0.668
     },
     {
       "script": "nonlinear_galerkin.py",
       "status": "passed",
-      "seconds": 2.587
+      "seconds": 2.538
     },
     {
       "script": "clock_derivation.py",
       "status": "passed",
-      "seconds": 1.064
+      "seconds": 1.085
     },
     {
       "script": "verify_proof_bounds.py",
       "status": "passed",
-      "seconds": 0.71
+      "seconds": 0.747
     },
     {
       "script": "clock_large_budget.py",
       "status": "passed",
-      "seconds": 10.988
+      "seconds": 11.394
     }
   ],
   "sha256": {
-    "paper.tex": "3b2f2ad67265a072ffbe4f378a3a2778c3eb62134ff6600b74a902b02ffbb1c1",
+    "paper.tex": "eea4bca0b843efc867a2ac1569d6ca470610a71562776da1a6921b5d4f7f0260",
     "sections/clock_proof.tex": "527c0e6258ea87d14bce69aec05c05feda58a321b06e19ca4e6f8ccffbe157db",
     "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470",
     "sections/quadratic_clock.tex": "54de4a1f50852f5b93d78a3e2684346bb09b75f1c216bf641360a1d8aa37b3a7",

@@ -92,6 +92,6 @@
     }
   ],
   "low_mode_FFT_vs_Gauss_max_error": 5.995204332975845e-14,
-  "runtime_seconds": 10.155691385269165,
+  "runtime_seconds": 10.47459602355957,
   "scope": "Second moment and Chebyshev bound for the compressed quadratic clock, not exponential moments or a nonlinear gravitational clock."
 }
