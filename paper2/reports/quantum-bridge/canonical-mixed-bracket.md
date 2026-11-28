@@ -8,16 +8,29 @@ show that a finite canonical restriction preserves the gravitational
 constraint algebra. This report defines that candidate separately and
 derives a mixed-bracket test before a tracked independent verification.
 
-**Status at this source snapshot:** analytic derivation and verification
-code prepared; the new experiment has not yet been interpreted. Numerical
-values below are exact analytical predictions, not reported run results.
+**Reviewed result:** the predicted nonzero bracket is confirmed. Exact
+projection found 22 nonzero cases among 88 tested pairs, precisely at
+$\ell=L-1,L$. Ten independent full Hamiltonian-flow evaluations, including
+the curvature potential, agreed with the exact formulas within
+$6.73655\times10^{-59}$ in the stated normalization. The independent
+unprojected continuum controls vanish to the same tolerance.
 
-The prediction is that a radial spatial generator and a lapse generator
-have a nonzero canonical bracket on vacuum constraint data when their
-harmonic number reaches the angular cutoff. If confirmed, this would rule
-out simply importing the continuum first-class algebra for this candidate.
-It would not complete the Dirac algorithm or rule out other finite-rank
-theories.
+This rules out simply importing the continuum first-class algebra for this
+candidate. It does not complete the Dirac algorithm or rule out other
+finite-rank theories.
+
+- Experiment: 6564e653-f385-41ea-a2af-adbf0870dabd.
+- Run: b4335588-5cb9-418a-9e3f-a93841addd84, local CPU, exit code zero.
+- Source commit: 8ebbe8a01e62def37699a790a6f29fd792b4d9b6.
+- Data: [canonical-mixed-bracket-results.json](data/canonical-mixed-bracket-results.json).
+- Raw log: configuration and constraint data at lines 4--6; exact
+  $N=3,\ell=1$ bracket at line 14; independent controls at lines 214--241;
+  final summary at line 244.
+- Reported calculation runtime: 0.9000 seconds.
+
+The frozen experiment source contains the preregistered analytic prediction
+and test protocol. This report adds the interpretation without changing that
+source or relaunching the experiment.
 
 ## 1. Declare the changed theory
 
@@ -220,7 +233,9 @@ $$
 For $L=2$, the normalized coefficients are $28/75$ at $\ell=1$
 and $408/1225$ at $\ell=2$. With the specified radial profile, the
 brackets at $k=1$ are $1/1125$ and $34/42875$, respectively.
-These are predictions to be checked by the independent flow calculation.
+The independent flow calculation reproduced these radially integrated
+values. At $N=3,\ell=1$, the full-flow and gradient calculations agree
+with $1/1125$ within $2.2843\times10^{-59}$.
 
 For this sequence of unnormalized Legendre smearings the coefficient tends
 to $1/4$ as $\ell$ grows with the cutoff. Unit-$L^2$ normalization of
@@ -269,15 +284,15 @@ Its integral with $r^2dr$ vanishes by the boundary conditions, although
 the local integrand is not zero. The numerical check records both facts
 and cannot pass by simply omitting that term.
 
-The planned run uses exact rational projections for all 88 pairs
+The completed run used exact rational projections for all 88 pairs
 $L=2,\ldots,12$, $\ell=0,\ldots,L$, plus ten independent matrix-flow
-cases at 60-digit precision. The two quadratures use 24/32 angular nodes
-and 6/8 radial nodes. An additional control enlarges the *canonical*
+cases at 60-digit precision. The two quadratures used 24/32 angular nodes
+and 6/8 radial nodes. An additional exact control enlarged the *canonical*
 space to $J\geq\ell+2$, which removes this particular discarded tensor.
 That control changes the phase space; it is not just better quadrature
 or auxiliary padding of the same finite theory.
 
-## 5. Scope of a possible confirmed obstruction
+## 5. Scope of the confirmed obstruction
 
 A nonzero bracket at a point where every proposed primary and secondary
 constraint vanishes prevents this set from being first class there.

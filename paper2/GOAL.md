@@ -68,17 +68,29 @@ The [kinetic-completion result](reports/quantum-bridge/kinetic-completion-result
 verifies the leading Schur correction and its associated angular determinant.
 The second lapse derivative cancels in the five tested cases; higher-order
 Hamiltonian terms still survive at finite auxiliary cutoff. This is a
-component of a repair, not a complete repair. The next calculation tests
-the [mixed spatial/lapse constraint bracket](reports/quantum-bridge/canonical-mixed-bracket.md)
-of a separately declared Hamiltonian-first candidate; equivalence to the
-original Lagrangian regulator is not assumed. The exact analytic prediction
-and independent full-flow check are specified before interpreting the run.
+component of a repair, not a complete repair. The
+[mixed spatial/lapse constraint bracket](reports/quantum-bridge/canonical-mixed-bracket.md)
+of a separately declared Hamiltonian-first candidate is also nonzero on
+the proposed constraint surface: 22 exact cases and ten independent full
+Hamiltonian-flow checks confirm the prediction. Thus lapse linearity alone
+does not restore the gravitational algebra. Equivalence to the original
+Lagrangian regulator is not assumed. A valid loop calculation still needs
+either its actual completed constraints and measure or a fully specified
+revision that derives the corresponding physical observables.
 
 The [corner and reconstruction derivations](reports/quantum-bridge/corners-and-reconstruction.md)
 identify the continuum area--angle charge, the missing microscopic state
 count, and the exact transfer/reflection-positivity construction conditional
 on a physical Hamiltonian. They do not fill the missing finite-rank
 gravitational Hilbert space or establish equivalence to the simulations.
+The [explicit uniform-corner quantization](reports/quantum-bridge/corner-quantization-and-transfer.md)
+constructs positive-area states, solves uniform boost matching, and gives
+Euclidean and Lorentzian transfer kernels for the same boundary charge.
+Its Hilbert space remains infinite inside an area interval and has no
+finite Gibbs trace. The undeformed normal-frame algebra also cannot have
+a nontrivial finite-dimensional unitary representation. These facts
+identify requirements for a finite physical reduction; they are not a
+derivation of the postulated microscopic multiplicities.
 
 All three principal deliverables remain pending. No claimed percentage of
 completion or guarantee of success is assigned to an unresolved theory.
