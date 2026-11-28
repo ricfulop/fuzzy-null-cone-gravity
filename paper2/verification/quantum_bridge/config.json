@@ -22,15 +22,11 @@
     "max_bin_evaluations": 20000000
   },
   "spatial_radial_orders": [
-    12,
     16,
-    20
+    20,
+    24
   ],
   "spatial_angular_orders": [
-    [
-      8,
-      16
-    ],
     [
       10,
       24
@@ -38,6 +34,10 @@
     [
       12,
       32
+    ],
+    [
+      14,
+      40
     ]
   ],
   "spatial_radius": 24,

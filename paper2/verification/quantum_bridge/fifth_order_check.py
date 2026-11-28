@@ -290,8 +290,11 @@ def main(config):
                "maximum_scaled_error": maximum, "passed": maximum < config["h5_scaled_tolerance"] and roundoff_gate}
         references.append(row)
         print("H5 INDEPENDENT SPATIAL COMPARISON "+json.dumps(row), flush=True)
-        assert row["passed"], row
         report(step=(case_index+1)*levels, m={"H5_spatial_error": maximum})
+        assert row["passed"], {"direction": name, "maximum_scaled_error": maximum,
+                               "tolerance": config["h5_scaled_tolerance"],
+                               "roundoff_margin_passed": roundoff_gate,
+                               "detail": "Full comparison recorded immediately above"}
     report(phase="export", step=0, of=1, unit="reports")
     result = {"configuration": config, "source_commit": os.getenv("ORX_COMMIT"), "run": os.getenv("ORX_RUN_ID"),
               "pairing_controls": controls, "calibration": calibration, "fifth_order_integrals": radial,

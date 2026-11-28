@@ -1,9 +1,10 @@
 # Full fifth-order Hamiltonian: assembly and validation protocol
 
-This is a prospective calculation of the full classical $H_5$ functional
+This is a calculation protocol for the full classical $H_5$ functional
 of the declared reduction-first candidate. It builds on the verified higher
 geometry and first Green responses, source `2a59f1b`, reviewed at `ef48f21`.
-No fifth-order numerical result is claimed here before the tracked run.
+The first tracked attempt failed its spatial refinement gate. Its partial
+measurements are preserved below; no overall fifth-order validation is claimed.
 
 ## Functional and integration method
 
@@ -86,6 +87,39 @@ The fixed tracked command is unchanged; the committed selector is
 `full_fifth_order`. The run is one local process with a 1,800-second wall cap.
 All tolerances, work limits and quadrature grids are recorded before launch.
 Results preserve the exact source commit and failed comparisons if any.
+
+### First attempt: failed spatial refinement
+
+Run `b7057ab6-0465-4dd9-8e1d-3e01db6ca97a`, source `bf88c08`, used
+spatial radial orders 12/16/20 and angular grids 8x16, 10x24, 12x32.
+It completed the exact/numerical backend controls, both directions' H3/H4
+calibrations and York coefficient checks, and both collapsed H5 integrals.
+It stopped after the first direction's spatial reference, before testing
+the second reference or writing an overall passing result.
+
+The failed quantity was the electric-axis scalar-gradient strong-form
+16-to-20-point refinement: its scaled change was
+$1.4682497276062995\times10^{-6}$, exceeding the declared $10^{-6}$ gate.
+The weak scalar-gradient refinement also exceeded that gate at
+$1.1111768757696966\times10^{-6}$. At the final 20-point level, the total
+agreed with the collapsed calculation to $8.93\times10^{-13}$ scaled,
+and the individual families agreed within $1.31\times10^{-10}$ scaled.
+Those agreements do not waive the failed refinement requirement.
+
+The [partial JSON records](data/full-fifth-order-first-attempt.json) are
+copied from the immutable raw log and explicitly marked unaccepted. The
+original source and failed node remain unchanged. The integrator's
+`accuracy_certified=false` qualification means that its convergence
+diagnostics are not rigorous error certificates; it is distinct from
+the actual failed assertion. All H3/H4 calibration acceptance checks passed.
+
+A child retains the same fields, Gaussian pairing options, radius 24,
+panel width 3, wall cap and acceptance tolerances. It changes only the
+spatial grids to radial 16/20/24 and angular 10x24, 12x32, 14x40, and
+reports the failure metric before asserting acceptance. Both directions
+must be rerun. The shared 20-point result provides a reproducibility
+cross-check, and the new 20-to-24-point refinement must pass the original
+threshold. No revised acceptance threshold is selected from the failed data.
 
 Two directional evaluations do not reconstruct the rank-five vertex tensor
 or complete its contracted loop contribution. Complete mixed $H_6$, the
