@@ -1,0 +1,14 @@
+<signal name="green_all_required_passed" label="All required inverse controls passed" digits="0" better="higher" labels='{"1":"passed","0":"failed"}' />
+<signal name="green_controls_completed" label="Required comparisons completed" digits="0" better="higher" />
+<signal name="green_required_failures" label="Required comparisons failed" digits="0" better="lower" />
+<signal name="green_coarse_diagnostic_failures" label="Coarse diagnostic comparisons outside final tolerance" digits="0" />
+<signal name="suite" label="Suite" />
+<signal name="control" label="Control" />
+<signal name="outcome" label="Comparison" />
+<signal name="required" label="Acceptance role" />
+<view headline="green_all_required_passed green_controls_completed">
+  <text>Independent angular, scalar and two-stage York inverse controls. This run does not calculate a mixed gravitational H6 reference or a four-graviton amplitude.</text>
+  <chart y="green_required_failures" ghost="false" title="Required comparison failures" />
+  <stats of="green_controls_completed green_required_failures green_coarse_diagnostic_failures" />
+  <table name="inverse_controls" columns="suite control outcome required" last="12" />
+</view>
