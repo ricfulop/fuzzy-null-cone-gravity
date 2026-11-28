@@ -176,7 +176,7 @@ construction of DC+CK. The log does not distinguish the derivative, product,
 and simplification costs. The subsequent multiplication by M was unreached.
 The failure is archived in `reports/oblate-stationary-preservation-timeout-2026-11-28/`.
 
-The next source changes only terminal preservation to sparse exact-field
+The source prepared for run `5d9b96ad` changed only terminal preservation to sparse exact-field
 arithmetic, with D=partial_r-10/(100r^2+1) partial_T. It requires both CB=0 and
 (DC+CK)M=0 and omits zero derivative entries from sparse storage. Discovery
 uses its original function and basis. All 22 original-row, reduced-dynamics,
@@ -187,15 +187,17 @@ empty shapes and exact serialization.
 After the successful kernel, a fresh no-overwrite terminal-state JSON records
 C,K,B,M and their labels/identity before preservation. It is explicitly
 uncertified and write-only: there is no loader, resume path, closure or germ
-claim from its presence. The new controls and actual field-preservation
-runtime remain unexecuted in preparation.
+claim from its presence. The controls were unexecuted at preparation time;
+they subsequently passed in `5d9b96ad`, together with the terminal preservation
+identities. That run's evidence is preserved in
+`reports/oblate-stationary-dynamics-timeout-2026-11-28/`.
 
 ## Terminal Euler and reduced-dynamics field arithmetic
 
-The 5d9b96ad attempt passed exact preservation in 75.004 seconds and all original retained-row checks in 317.070 seconds, then reached the wall budget in reduced dynamics. The next implementation retains discovery through preservation and the discarded response unchanged. Only terminal Euler products and reduced-dynamics/reconstruction arithmetic use the exact field.
+The 5d9b96ad attempt passed exact preservation in 75.004 seconds and all original retained-row checks in 317.070 seconds, then reached the wall budget in reduced dynamics. The implementation frozen at `96916c7` retains discovery through preservation and the discarded response unchanged. Only terminal Euler products and reduced-dynamics/reconstruction arithmetic use the exact field.
 
 For the original 22-row blocks E0,E1,E2, seven acceleration rows Ka,Ba, and terminal embedding M, the helper checks ([E0|E1]+E2 Ka)M=0 and E2 Ba=0 independently. Removing the X0 column never removes its equation row. The 23rd discarded response is excluded from the zero requirement.
 
-The helper computes W=KM-DM once, selects ordered free rows J to obtain Kred=JW and Bred=JB, then checks MKred-W=0 and MBred-B=0 on every row. Products, derivatives, extraction and conversion to expressions have separate timers. Prepared controls test retained X0 and outside-discovery row defects, nonzero remaining controls, non-free-row reconstruction defects, empty widths and inexact/nonfinite entries. Their runtime is unmeasured until the next tracked invocation.
+The helper computes W=KM-DM once, selects ordered free rows J to obtain Kred=JW and Bred=JB, then checks MKred-W=0 and MBred-B=0 on every row. Products, derivatives, extraction and conversion to expressions have separate timers. Controls test retained X0 and outside-discovery row defects, nonzero remaining controls, non-free-row reconstruction defects, empty widths and inexact/nonfinite entries. These controls passed in `c2a1482f`. The original-row stage took 50.614 seconds and KM took 240.467 seconds; the run then reached its wall limit during DM. Reconstruction, response, and formal closure did not complete. See `reports/oblate-stationary-field-dynamics-timeout-2026-11-28/` for the unchanged raw evidence.
 
-The run remains a fresh 900-second original-export calculation with a sampled 2-GiB limit. There is no partial-state loading. Formal closure and any independent analytic-germ certificate remain separate milestones.
+That invocation used a 900-second wall limit. The current configuration, frozen at `c763d3a`, raises the limit to 1800 seconds with the same scientific Python files and shell entry point, a sampled 2-GiB limit, and the existing approval cutoff. See `reports/oblate-stationary-extended-budget-preparation-2026-11-28/`. It remains a fresh original-export calculation without partial-state loading. Formal closure and any independent analytic-germ certificate remain separate milestones.
