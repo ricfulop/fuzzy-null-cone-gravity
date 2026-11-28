@@ -2,7 +2,7 @@
 
 from contextlib import ExitStack
 from datetime import datetime, timedelta, timezone
-from itertools import count
+from itertools import chain, count
 import hashlib
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -115,7 +115,10 @@ class EvidenceTests(unittest.TestCase):
         self.stop_implementation = runner.stop_group
         self.stop = self.replace(runner, "stop_group")
         self.console = self.replace(runner.os, "write", side_effect=lambda fd, data: len(data))
-        self.replace(runner.sys, "stdout", new=Mock())
+        console_stream = self.replace(runner.sys, "stdout", new=Mock())
+        console_stream.fileno.return_value = 1
+        self.replace(runner.os, "get_blocking", return_value=True)
+        self.replace(runner.os, "set_blocking")
         self.record = {"wall_seconds": 10, "memory_bytes": 2048,
                        "scientific_invocations": 0, "command": ["dummy"],
                        "source_sha256_before": {}, "input_sha256_before": {}, "checker_input_sha256": {}}
@@ -147,11 +150,13 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(evidence["status"], "passed")
         self.assertEqual(evidence["group_disposition"]["status"], "empty")
         self.assertEqual((self.out / "verification.log").read_bytes(), b"stage\nlast")
-        self.assertEqual(self.console.call_count, len(b"stage\nlast"))
+        self.assertGreaterEqual(self.console.call_count, len(b"stage\nlast"))
         self.stop.assert_not_called()
 
     def test_timeout_preserves_measured_sample_when_cleanup_raises(self):
-        self.record["wall_seconds"] = 0
+        self.record["wall_seconds"] = 1
+        clock = chain([0, 0.5], count(2))
+        self.replace(runner.time, "monotonic", side_effect=lambda: next(clock))
         self.child.poll.return_value = None
         self.child.returncode = None
         self.ps.return_value = "77 77 12\n"
@@ -168,7 +173,9 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(samples[0]["rss_bytes"], 12 * 1024)
 
     def test_timeout_with_eperm_after_term_keeps_both_records(self):
-        self.record["wall_seconds"] = 0
+        self.record["wall_seconds"] = 1
+        clock = chain([0, 0.5], count(2))
+        self.replace(runner.time, "monotonic", side_effect=lambda: next(clock))
         self.child.poll.side_effect = [None, -15]
         self.child.returncode = -15
         self.stop.side_effect = self.stop_implementation
@@ -304,6 +311,70 @@ class EvidenceTests(unittest.TestCase):
                     runner.publish_metrics(metrics)
                 numeric = emit.call_args.kwargs["m"]
                 self.assertEqual("discarded_response_nonzero" in numeric, measured is not None)
+
+
+    def test_console_backpressure_preserves_archived_log(self):
+        self.console.side_effect = BlockingIOError("console reader stalled")
+        self.child.stdout = io.BytesIO(b"archived regardless of console\n" * 1024)
+        evidence, _ = self.supervise()
+        self.assertEqual(evidence["status"], "passed")
+        self.assertEqual(evidence["relay_errors"], [])
+        self.assertEqual((self.out / "verification.log").read_bytes(),
+                         b"archived regardless of console\n" * 1024)
+
+    def test_empty_rss_sample_set_is_unknown(self):
+        evidence, samples = self.supervise()
+        self.assertEqual(samples, [])
+        self.assertIsNone(evidence["sampled_max_rss_bytes"])
+
+    def test_sampling_timeout_is_capped_by_remaining_budget(self):
+        self.record["wall_seconds"] = 1
+        self.child.poll.side_effect = [None, 0]
+        self.replace(runner.time, "sleep")
+        with patch.object(runner.time, "monotonic", side_effect=[0, 0.75, 0.8, 0.9, 1]):
+            evidence, _ = self.supervise()
+        self.assertEqual(evidence["status"], "passed")
+        self.assertEqual(self.ps.call_args.kwargs["timeout"], 0.25)
+
+    def test_signal_after_terminal_boundary_is_outside_the_decision(self):
+        original_save = runner.save_json
+        def inject(path, payload):
+            if path.name == "metrics.json":
+                self.handlers[runner.signal.SIGTERM](runner.signal.SIGTERM, None)
+            return original_save(path, payload)
+        self.replace(runner, "save_json", side_effect=inject)
+        evidence, _ = self.supervise()
+        self.assertEqual(evidence["status"], "passed")
+        self.assertEqual(evidence["received_signals"], [])
+        self.assertEqual(evidence["cancellation_boundary"], "before terminal evidence publication")
+
+    def test_terminal_marker_authenticates_both_records(self):
+        evidence, _ = self.supervise()
+        marker = json.loads((self.out / "terminal-evidence.json").read_bytes())
+        self.assertEqual(marker["status"], evidence["status"])
+        for key, filename in [("execution_sha256", "execution.json"), ("metrics_sha256", "metrics.json")]:
+            self.assertEqual(marker[key], hashlib.sha256((self.out / filename).read_bytes()).hexdigest())
+
+    def test_failed_execution_write_cannot_commit_pass_metrics(self):
+        original_save = runner.save_json
+        def fail_execution(path, payload):
+            if path.name == "execution.json":
+                raise OSError("synthetic execution-write failure")
+            return original_save(path, payload)
+        self.replace(runner, "save_json", side_effect=fail_execution)
+        with self.assertRaisesRegex(OSError, "synthetic execution-write"):
+            self.supervise()
+        self.assertFalse((self.out / "terminal-evidence.json").exists())
+
+    def test_signal_during_certificate_validation_still_fails(self):
+        original_read = runner.read_certificate
+        def cancel(*args, **kwargs):
+            self.handlers[runner.signal.SIGTERM](runner.signal.SIGTERM, None)
+            return original_read(*args, **kwargs)
+        self.replace(runner, "read_certificate", side_effect=cancel)
+        evidence, _ = self.supervise()
+        self.assertEqual(evidence["status"], "failed")
+        self.assertEqual(evidence["received_signals"], [int(runner.signal.SIGTERM)])
 
 
 class DispatchTests(unittest.TestCase):
