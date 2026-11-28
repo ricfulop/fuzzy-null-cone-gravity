@@ -18,7 +18,8 @@ import sympy as s
 import reduction_progress as progress
 from exact_linear_algebra import rref_with_side, independent_extension
 from terminal_kernel import kernel_embedding
-from terminal_preservation import require_exact_finite, verify_terminal_preservation
+from terminal_preservation import field_matrix, require_exact_finite, verify_terminal_preservation
+from terminal_dynamics import reconstruct_dynamics, verify_original_rows
 
 
 EPSILON0 = s.Rational(1, 100)
@@ -506,39 +507,11 @@ def reduce_dae(gauge_matrices, recorder, max_steps):
                                      stage=recorder.stage)
 
     with recorder.stage("terminal_original_22_rows"):
-        retained_state, retained_control = retained_parts(gauge_matrices, state)
-        require(
-            all(exact_zero(value) for value in exact_matrix(retained_state * embedding)),
-            "original retained rows do not vanish on the reduced state embedding",
-        )
-        require(
-            all(exact_zero(value) for value in retained_control),
-            "original retained rows depend on remaining controls",
-        )
-
-    with recorder.stage("terminal_reduced_dynamics"):
-        km_minus_mprime = exact_matrix(state.K * embedding - field_diff_matrix(embedding))
-        reduced_K = exact_matrix(km_minus_mprime.extract(free_rows, range(embedding.cols)))
-        reduced_B = exact_matrix(state.B.extract(free_rows, range(state.B.cols)))
-
-    with recorder.stage("terminal_reconstruct_dynamics"):
-        require(
-            all(
-                exact_zero(value)
-                for value in exact_matrix(
-                    field_diff_matrix(embedding) + embedding * reduced_K
-                    - state.K * embedding
-                )
-            ),
-            "free-coordinate K does not reconstruct the embedded dynamics",
-        )
-        require(
-            all(
-                exact_zero(value)
-                for value in exact_matrix(embedding * reduced_B - state.B)
-            ),
-            "free-coordinate controls do not reconstruct embedded controls",
-        )
+        with recorder.stage("terminal_dynamics_field_conversion"):
+            k_field, b_field, m_field = map(field_matrix, (state.K, state.B, embedding))
+        verify_original_rows(gauge_matrices, k_field, b_field, m_field, stage=recorder.stage)
+    reduced_K, reduced_B = reconstruct_dynamics(k_field, b_field, m_field, free_rows,
+                                                stage=recorder.stage)
 
     with recorder.stage("terminal_discarded_response"):
         response_state, response_control = response_parts(gauge_matrices, state)
@@ -581,6 +554,7 @@ def run(input_dir, output_dir, stage, max_steps):
         "stage": stage,
         "max_steps": max_steps,
         "terminal_preservation_backend": "QQ(r,T) FracElement derivative; sparse CB and (DC+CK)M",
+        "terminal_dynamics_backend": "sparse QQ(r,T) original 22 rows and full W=KM-DM reconstruction",
         "terminal_kernel_backend": "C-only fraction-free CD RREF; original C*M checked over QQ(r,T)",
         "linear_algebra_backend": "QQ(r,T) FracElement control-only historical pivot loop; batched transpose independence",
     }
@@ -593,6 +567,8 @@ def run(input_dir, output_dir, stage, max_steps):
             recorder.write_json("terminal-kernel-controls.json", verify_kernel_controls(kernel_embedding))
             from test_terminal_preservation import verify_controls as verify_preservation_controls
             recorder.write_json("terminal-preservation-controls.json", verify_preservation_controls(snapshot_matrix))
+            from test_terminal_dynamics import verify_controls as verify_dynamics_controls
+            recorder.write_json("terminal-dynamics-controls.json", verify_dynamics_controls())
             from test_reduction_controls import verify_controls
             controls = verify_controls(sys.modules[__name__])
             recorder.write_json("manufactured-controls.json", controls)

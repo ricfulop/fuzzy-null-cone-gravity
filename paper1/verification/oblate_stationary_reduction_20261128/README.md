@@ -189,3 +189,13 @@ C,K,B,M and their labels/identity before preservation. It is explicitly
 uncertified and write-only: there is no loader, resume path, closure or germ
 claim from its presence. The new controls and actual field-preservation
 runtime remain unexecuted in preparation.
+
+## Terminal Euler and reduced-dynamics field arithmetic
+
+The 5d9b96ad attempt passed exact preservation in 75.004 seconds and all original retained-row checks in 317.070 seconds, then reached the wall budget in reduced dynamics. The next implementation retains discovery through preservation and the discarded response unchanged. Only terminal Euler products and reduced-dynamics/reconstruction arithmetic use the exact field.
+
+For the original 22-row blocks E0,E1,E2, seven acceleration rows Ka,Ba, and terminal embedding M, the helper checks ([E0|E1]+E2 Ka)M=0 and E2 Ba=0 independently. Removing the X0 column never removes its equation row. The 23rd discarded response is excluded from the zero requirement.
+
+The helper computes W=KM-DM once, selects ordered free rows J to obtain Kred=JW and Bred=JB, then checks MKred-W=0 and MBred-B=0 on every row. Products, derivatives, extraction and conversion to expressions have separate timers. Prepared controls test retained X0 and outside-discovery row defects, nonzero remaining controls, non-free-row reconstruction defects, empty widths and inexact/nonfinite entries. Their runtime is unmeasured until the next tracked invocation.
+
+The run remains a fresh 900-second original-export calculation with a sampled 2-GiB limit. There is no partial-state loading. Formal closure and any independent analytic-germ certificate remain separate milestones.

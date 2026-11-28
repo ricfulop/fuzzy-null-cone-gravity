@@ -38,11 +38,11 @@
   ],
   "brief": {
     "question": "Does exact differential constraint preservation close, and is the discarded response formally nonzero on the resulting stationary subfamily?",
-    "healthy": "Manufactured exact-row, kernel, preservation and DAE controls precede the original-operator reduction. Historical discovery is unchanged. After the verified kernel, a write-only terminal-state checkpoint precedes separately timed field differentiation and products CB and (DC+CK)M. All 22 rows, reconstruction and response checks remain.",
+    "healthy": "Exact row, kernel, preservation, terminal Euler/dynamics and DAE controls precede fresh original-operator reduction. Historical discovery is unchanged. Every original retained row and both full reconstruction identities must pass; final response stays separate. Terminal field products and derivatives have explicit timings.",
     "worth_a_flag": "A traceback, input/source mismatch, failed exact control, resource stop, or incomplete final closure export. Intermediate matrices and principal rank are not a solution certificate.",
     "noise": "This is exact symbolic algebra, not model training or a 5000-step schedule. Long polynomial products may emit no intermediate metrics. Final closure signals are deliberately absent until every terminal check passes.",
-    "decided": "One local CPU child, 900s and 2 GiB sampled group RSS. No partial-state loader or resume. Preserve the fresh terminal-state snapshot as uncertified diagnostic evidence if later checks stop. Formal closure still requires independent regularity/germ certification.",
-    "from_parent": "Run 157032da completed all three discovery steps and the 114.775s terminal kernel, then hit 900s in combined DC+CK expression construction. The failed timer does not isolate differentiation versus multiplication/simplification. The next implementation changes that terminal stage only."
+    "decided": "One local CPU child,900s and2GiB sampled group RSS. No partial-state loader or resume. Formal closure requires every terminal check and an independent regularity/germ certificate before any nonlinear conclusion.",
+    "from_parent": "Run 5d9b96ad passed preservation in75.004s and all22 original rows in317.070s, then reached900s during reduced dynamics. The next source changes only representation of those terminal products and reuses W=KM-DM while checking all reconstruction rows."
   },
   "watch": {
     "minGapS": 120,
