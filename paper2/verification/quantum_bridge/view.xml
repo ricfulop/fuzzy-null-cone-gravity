@@ -1,12 +1,14 @@
-<signal name="exact_geometry_residual" label="Exact legacy residual" digits="0" better="lower" />
-<signal name="higher_coefficient_error" label="Independent coefficient error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
-<signal name="higher_coefficient_refinement" label="Step-refinement difference" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
-<signal name="maximum_higher_coefficient_error" label="Maximum coefficient error" scale="1e12" unit="×10⁻¹²" digits="5" better="lower" />
-<signal name="green_checks" label="Completed Green checks" digits="0" />
-<signal name="validated_geometry_directions" label="Validated directions" digits="0" />
-<signal name="axis_sixth_control_error" label="Pure-momentum sixth-order control error" scale="1e9" unit="×10⁻⁹" digits="5" better="lower" />
-<view headline="maximum_higher_coefficient_error higher_coefficient_error exact_geometry_residual">
-  <stats of="exact_geometry_residual higher_coefficient_error higher_coefficient_refinement green_checks" />
-  <text>Required higher-order geometry and first Green responses of the fixed ten-mode candidate. The complete H5/H6 Hamiltonian and gravitational four-point loop remain pending. Coefficient errors are displayed in units of 10⁻¹².</text>
-  <stats of="maximum_higher_coefficient_error validated_geometry_directions axis_sixth_control_error" />
+<signal name="pairing_control_error" label="Gaussian pairing error" digits="10" better="lower" />
+<signal name="calibration_error" label="H3/H4 calibration error" digits="10" better="lower" />
+<signal name="york_operator_error" label="York coefficient error" digits="10" better="lower" />
+<signal name="H5_value" label="Raw fifth-order coefficient" digits="6" />
+<signal name="H5_refinement" label="Termwise radial refinement" digits="8" better="lower" />
+<signal name="H5_spatial_error" label="Independent spatial error" scale="1e6" unit="×10⁻⁶" digits="5" better="lower" />
+<signal name="H5_directions" label="Completed H5 directions" digits="0" />
+<signal name="H5_maximum_spatial_error" label="Maximum H5 spatial error" scale="1e6" unit="×10⁻⁶" digits="5" better="lower" />
+<view headline="H5_maximum_spatial_error H5_spatial_error H5_value calibration_error">
+  <stats of="H5_maximum_spatial_error H5_directions calibration_error" />
+  <stats of="H5_value H5_refinement H5_spatial_error" />
+  <stats of="pairing_control_error york_operator_error" />
+  <text>Two directional evaluations of the full classical H5 functional, retaining every momentum sector. H6, the complete four-point quantum observable and physical large-rank limits remain pending. These raw-profile coefficients are not canonically normalized amplitudes.</text>
 </view>

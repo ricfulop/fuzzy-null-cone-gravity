@@ -6,21 +6,33 @@
       "unit": "checks"
     },
     {
-      "phase": "higher_geometry",
-      "of": 38,
+      "phase": "pairing_controls",
+      "of": 4,
+      "unit": "cases"
+    },
+    {
+      "phase": "field_preparation",
+      "of": 30,
       "unit": "checks"
     },
     {
-      "phase": "finite_metric",
-      "of": 4,
-      "unit": "points"
-    },
-    {
-      "phase": "green_responses"
-    },
-    {
-      "phase": "axis_sixth_control",
+      "phase": "quartic_calibration",
       "of": 2,
+      "unit": "directions"
+    },
+    {
+      "phase": "h5_assembly",
+      "of": 12,
+      "unit": "families"
+    },
+    {
+      "phase": "h5_radial",
+      "of": 2,
+      "unit": "directions"
+    },
+    {
+      "phase": "spatial_reference",
+      "of": 6,
       "unit": "quadratures"
     },
     {
@@ -30,12 +42,12 @@
     }
   ],
   "brief": {
-    "question": "Do the higher local geometry and exact first Green responses agree with independent finite-metric, PDE, quadrature and tail checks?",
-    "from_parent": "The parent validated complete quartic interactions and fixed ten-mode one-loop two-point coefficients at source a078aca in 111.56 seconds. This child extends the required higher-order ingredients, not the two-point frequency grid.",
-    "healthy": "All exact legacy comparisons vanish. Independent 90-digit finite-metric coefficients and Richardson refinements agree below 1e-12 scaled error. Green identities vanish exactly; separately evaluated analytic derivatives satisfy their declared numerical bounds, and independent heat-moment quadrature converges. The Cartesian Green inverse also reproduces independent radial multipole values, exact Fourier Coulomb normalization and the already derived pure-momentum sixth-order coefficient with a bounded omitted tail.",
-    "noise": "Exact sparse-polynomial construction can spend several minutes within one Christoffel or density order. Progress records each completed order and each group of finite-amplitude samples. These checks do not evaluate the complete H5/H6 Hamiltonian, gravitational four-point loop, or a large-N limit.",
-    "worth_a_flag": "Any exact identity, independently extracted coefficient, Green residual, moment convergence, or declared tail check fails. A traceback or exceeded 1800-second wall limit ends this bounded run. Do not call ingredient validation a four-graviton result.",
-    "decided": "One local Python standard-library process, no GPU or remote spend. New higher-order stages are untimed. The previous numerical sources and failed coarse-quadrature run stay immutable."
+    "question": "Does the full fifth-order Hamiltonian of the same ten-mode reduced candidate agree between exact angular/Green pairings and an independent full-sphere strong-form calculation?",
+    "from_parent": "Source 2a59f1b passed higher local geometry and first Green-response checks in 39.56 s. This child assembles full H5, including q5, q3p2 and qp4; it is not another two-point calculation.",
+    "healthy": "Exact anisotropic and merge controls pass; analytic Gaussian pairings and separate H3/H4 Fourier families match. York operator coefficients agree with finite 90-digit metrics. Both H5 directions pass radial and family refinement, two integration-by-parts comparisons, tail and roundoff checks under the declared 1e-6 scaled spatial tolerance.",
+    "noise": "Exact angular bin contractions may take minutes within one family. Full-sphere reference logs every radial panel. The large raw H5 coefficient is a homogeneous interaction in unnormalized profiles, not a measured mass or claim of perturbative smallness. Full H6, the four-point loop and physical cutoff limit remain pending.",
+    "worth_a_flag": "Any exact, calibration or spatial gate fails; work budget exceeds; traceback; or 1800-second cap. Never infer a full four-graviton result from two directional H5 evaluations. Cancellation or loose tail bounds must fail rather than be silently ignored.",
+    "decided": "One local standard-library Python process, no GPU or remote compute. Parent timing does not predict new angular-collapse or strong-reference stages. No tolerances selected from new run measurements."
   },
   "watch": {
     "minGapS": 120,

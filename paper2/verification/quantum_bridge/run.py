@@ -306,6 +306,10 @@ def numerical_case(L, ell, config):
 def main():
     start = time.monotonic()
     config = json.loads((ROOT / "config.json").read_text())
+    if config["calculation"] == "full_fifth_order":
+        from fifth_order_check import main as fifth_main
+        fifth_main(config)
+        return
     if config["calculation"] == "higher_geometry_and_green":
         from higher_geometry_check import main as higher_main
         higher_main(config)
