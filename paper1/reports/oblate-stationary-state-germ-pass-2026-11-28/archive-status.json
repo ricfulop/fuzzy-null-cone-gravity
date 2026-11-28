@@ -1,0 +1,87 @@
+{
+  "run_id": "c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1",
+  "experiment_id": "dec7f9e9-f182-41c6-a6d5-e22a25d56a91",
+  "source_commit": "0034162b4410ecfc229c48daaa47fcf06da4eafe",
+  "framework_status": "done",
+  "status": "passed",
+  "child_exit": 0,
+  "elapsed_seconds": 262.77842020918615,
+  "source_files_matching_git_materialization_snapshots_and_pre_post_hashes": 10,
+  "verified_input_pins": {
+    "config": "6361ddabd8f846c9159ba117e2249b0ed169b60504bdff833115c0ab52209d8a",
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "certificate_sha256": "f07a00573347ed4dd037c4395124675b0dca02b5ab355909fe09e8d787030ca8",
+  "certificate_bytes": 388625,
+  "terminal_marker_verified": {
+    "status": "passed",
+    "execution_sha256": "1ee69597c8bb0a5990d438114f7ae5f65e729ffd9a052e69402204eb64d2fe4e",
+    "metrics_sha256": "c85122ac650e466459bff5a31a98eb81f3ce1a2c22646a3de9cbf47c7e47b5a5"
+  },
+  "progress_events_matching_child_and_engine": 135,
+  "group_disposition": {
+    "status": "empty",
+    "probe": "ESRCH"
+  },
+  "later_group_check": {
+    "time_utc": "2026-11-28T09:01:05.005358+00:00",
+    "pgid": 28178,
+    "member_pids": []
+  },
+  "rss_sample_count": 900,
+  "peak_sampled_group_rss_bytes": 241041408,
+  "cleanup_errors": [],
+  "relay_errors": [],
+  "received_signals": [],
+  "certificate_state": "state_germ_with_nonzero_discarded_response",
+  "manufactured_case_count": 20,
+  "proof_matrix_flags": {
+    "CM_zero": true,
+    "JM_identity": true,
+    "SM_zero": true,
+    "profile_lift_zero": true,
+    "all_22_retained_rows_zero": true
+  },
+  "retained_euler_certificate": {
+    "retained_row_count": 22,
+    "x0_equation_included_in_22_retained_rows": true,
+    "operator_identity": "(E0 Pv + E1 Pw + E2 Pw K) M",
+    "all_22_retained_rows_zero": true
+  },
+  "r0": "1",
+  "atan_terms": 25,
+  "denominator_count": 57,
+  "rank": 6,
+  "minor_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6
+  ],
+  "response_column_zero_based": 1,
+  "free_state_initial": [
+    "0",
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "physical_boundary_domain_certified": false,
+  "nonlinear_consistency_established": false,
+  "final_dirac_classification_established": false,
+  "independent_proof_review": "complete; interval-local forward stationary germ with nonzero discarded response accepted",
+  "scientific_invocations_during_archival": 0,
+  "independent_proof_review_message": "msg_aceca875",
+  "accepted_input_domain_audit": {
+    "commit": "7d67bf4",
+    "review_message": "msg_40992080",
+    "report": "../oblate-stationary-input-domain-audit-2026-11-28/README.md",
+    "scope": "Analytic original Euler coefficients and separately certified terminal-matrix regularity for the forward construction."
+  }
+}
