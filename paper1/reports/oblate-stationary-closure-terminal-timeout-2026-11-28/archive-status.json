@@ -1,0 +1,53 @@
+{
+  "run_id": "8fa984ea-3c9b-4e85-b984-c23956fc95d8",
+  "source_commit": "e928d6c89324465018a6b5b209152dffde1a454b",
+  "framework_status": "failed",
+  "framework_exit_code": 1,
+  "child_launcher_exit_code": 143,
+  "scientific_invocations": 1,
+  "supervised_elapsed_seconds": 900.347664166009,
+  "stop_reason": "wall budget reached",
+  "last_started_stage": "terminal_embedding",
+  "terminal_closure_present": false,
+  "smooth_solution_germ_certified": false,
+  "source_hash_checks_passed": true,
+  "sampled_max_rss_bytes": 472268800,
+  "rss_sample_count": 3032,
+  "post_archive_process_group": {
+    "pgid": 93587,
+    "members": [],
+    "utc": "2026-11-28T05:50:07.012882+00:00"
+  },
+  "step_checkpoints": [
+    {
+      "file": "outputs/dae-step-00.json",
+      "sha256": "0f59715ac72f8c0484e1a0d814e0b8ec3bf3da0c10b2c9bbb617ab31d9f54d86",
+      "bytes": 21882,
+      "step": 0,
+      "new_constraint_count": 4,
+      "total_constraint_count": 4,
+      "remaining_control_count": 3
+    },
+    {
+      "file": "outputs/dae-step-01.json",
+      "sha256": "467ac1bfab145499217b08f9cda2d990bb839dff2ae3c42061f2530d097e824c",
+      "bytes": 68815,
+      "step": 1,
+      "new_constraint_count": 2,
+      "total_constraint_count": 6,
+      "remaining_control_count": 2
+    },
+    {
+      "file": "outputs/dae-step-02.json",
+      "sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+      "bytes": 244963,
+      "step": 2,
+      "new_constraint_count": 0,
+      "total_constraint_count": 6,
+      "remaining_control_count": 0
+    }
+  ],
+  "historical_step0_equations_identical": true,
+  "partial_checkpoint_is_not_certified_closure": true,
+  "diagnostic_reuse_scope": "The pinned constraint matrix may be used to time and validate an algebraic kernel operation; this is not a closure-resume or a solution certificate."
+}
