@@ -1,0 +1,254 @@
+{
+  "run": "b054b86a-be75-4406-9d77-43d01dccc3e6",
+  "experiment": "c1e416d5-b1b6-48f2-8467-f7050b68044f",
+  "source_commit": "e803109b79af5e7fdd3853953661260b51574680",
+  "parent_run": "226eb930-9667-4bdf-91b6-ae8a4e0552d4",
+  "result": {
+    "original_path": "/Users/ricfulop/.local/share/openresearch/local-runs/b054b86a-be75-4406-9d77-43d01dccc3e6/repo/paper2/verification/quantum_bridge/output/spherical_green_results.json",
+    "repository_path": "paper2/reports/quantum-bridge/data/independent-inverse-results.json",
+    "bytes": 5912715,
+    "sha256": "fc7053c839d14f0afe713d15bad87b4114fd7b0f36c0992e09f054feccdd57f0"
+  },
+  "raw_log": {
+    "original_path": "/Users/ricfulop/.local/share/openresearch/run-logs/b054b86a-be75-4406-9d77-43d01dccc3e6.log",
+    "artifact": "independent-inverse-results.log",
+    "bytes": 2248553,
+    "sha256": "7bba820d85ba3e97c0a9520a3b266278c403099afffb989a75daccfc9d06d31f"
+  },
+  "line_numbers": {
+    "configuration": 4,
+    "final": 4260
+  },
+  "full_checkpoint_events_reconciled": 1255,
+  "all_checkpoint_objects_equal": true,
+  "counts": {
+    "required_completed": 903,
+    "required_failed": 0,
+    "diagnostic_failed": 9,
+    "york_levels": 12,
+    "scalar_controls": 9,
+    "angular_controls": 26
+  },
+  "all_suites_passed": true,
+  "all_cross_slices_passed": true,
+  "total_york_point_evaluations": 1606392,
+  "wall_seconds": 294.7094285420608,
+  "peak_rss_bytes": 422969344,
+  "shared_controls": {
+    "scope": "Completed angular/scalar records only; this is not a terminal whole-run result",
+    "run": "b054b86a-be75-4406-9d77-43d01dccc3e6",
+    "source_commit": "e803109b79af5e7fdd3853953661260b51574680",
+    "parent_run": "226eb930-9667-4bdf-91b6-ae8a4e0552d4",
+    "raw_log": "/Users/ricfulop/.local/share/openresearch/local-runs/b054b86a-be75-4406-9d77-43d01dccc3e6/log",
+    "configuration_line": 4,
+    "scalar_intervals": [
+      1024,
+      2048,
+      4096
+    ],
+    "angular_records_exactly_reproduced": {
+      "exact_harmonics_ell=0": true,
+      "exact_harmonics_ell=1": true,
+      "exact_harmonics_ell=2": true,
+      "exact_harmonics_ell=3": true,
+      "exact_harmonics_ell=4": true,
+      "exact_harmonics_ell=5": true,
+      "exact_harmonics_ell=6": true,
+      "exact_harmonics_ell=7": true,
+      "exact_harmonics_ell=8": true,
+      "exact_harmonics_ell=9": true,
+      "exact_harmonics_ell=10": true,
+      "angular_grid=[12, 24]": true,
+      "angular_grid=[16, 32]": true,
+      "angular_grid_refinement": true,
+      "fischer_small_signed": true,
+      "fischer_high_cartesian_low_angular": true,
+      "fischer_nonaxial_m8": true,
+      "fischer_out_of_band_rejection": true,
+      "cartesian_jets_through_three": true,
+      "gaussian_profile_beta=1/2": true,
+      "gaussian_profile_beta=3/2": true,
+      "kelvin_uniform_ball_component=0": true,
+      "kelvin_uniform_ball_component=1": true,
+      "kelvin_uniform_ball_component=2": true,
+      "kelvin_log_product_and_caps": true,
+      "bounded_field_localized_source_distinction": true
+    },
+    "shared_scalar_R4_N1024_exactly_reproduced": {
+      "scalar_0_0_p4_C": true,
+      "scalar_1_-1_p4_C": true,
+      "scalar_2_1_p4_C": true,
+      "scalar_1_1_p2_C": true,
+      "scalar_8_-3_p4_C": true,
+      "scalar_10_7_p4_C": true,
+      "scalar_2_-1_p4_P": true
+    },
+    "scalar_controls_completed": 9,
+    "scalar_all_passed": true,
+    "scalar_cases": [
+      {
+        "case": "scalar_0_0_p4_C",
+        "passed": true,
+        "raw_log_complete_line": 120,
+        "regular_jet_errors": [
+          {
+            "intervals": 1024,
+            "regular_jet_error": 7.467936828514654e-07,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 2048,
+            "regular_jet_error": 1.8671387572166687e-07,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 4096,
+            "regular_jet_error": 4.6678391041332645e-08,
+            "within_final_tolerances": true
+          }
+        ]
+      },
+      {
+        "case": "scalar_1_-1_p4_C",
+        "passed": true,
+        "raw_log_complete_line": 130,
+        "regular_jet_errors": [
+          {
+            "intervals": 1024,
+            "regular_jet_error": 3.56042003990531e-05,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 2048,
+            "regular_jet_error": 8.900981796067242e-06,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 4096,
+            "regular_jet_error": 2.2252439744185892e-06,
+            "within_final_tolerances": true
+          }
+        ]
+      },
+      {
+        "case": "scalar_2_1_p4_C",
+        "passed": true,
+        "raw_log_complete_line": 140,
+        "regular_jet_errors": [
+          {
+            "intervals": 1024,
+            "regular_jet_error": 0.0001384005991074133,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 2048,
+            "regular_jet_error": 3.446629820391678e-05,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 4096,
+            "regular_jet_error": 8.599827054034392e-06,
+            "within_final_tolerances": true
+          }
+        ]
+      },
+      {
+        "case": "scalar_1_1_p2_C",
+        "passed": true,
+        "raw_log_complete_line": 150,
+        "regular_jet_errors": [
+          {
+            "intervals": 1024,
+            "regular_jet_error": 3.560420039239176e-05,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 2048,
+            "regular_jet_error": 8.900980782655665e-06,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 4096,
+            "regular_jet_error": 2.225245730791414e-06,
+            "within_final_tolerances": true
+          }
+        ]
+      },
+      {
+        "case": "scalar_8_-3_p4_C",
+        "passed": true,
+        "raw_log_complete_line": 160,
+        "regular_jet_errors": [
+          {
+            "intervals": 1024,
+            "regular_jet_error": 0.008618779248692476,
+            "within_final_tolerances": false
+          },
+          {
+            "intervals": 2048,
+            "regular_jet_error": 0.002104727522301175,
+            "within_final_tolerances": false
+          },
+          {
+            "intervals": 4096,
+            "regular_jet_error": 0.0005199515425644563,
+            "within_final_tolerances": true
+          }
+        ]
+      },
+      {
+        "case": "scalar_10_7_p4_C",
+        "passed": true,
+        "raw_log_complete_line": 170,
+        "regular_jet_errors": [
+          {
+            "intervals": 1024,
+            "regular_jet_error": 0.022571435444490362,
+            "within_final_tolerances": false
+          },
+          {
+            "intervals": 2048,
+            "regular_jet_error": 0.005429496940458023,
+            "within_final_tolerances": false
+          },
+          {
+            "intervals": 4096,
+            "regular_jet_error": 0.0013309647254260426,
+            "within_final_tolerances": true
+          }
+        ]
+      },
+      {
+        "case": "scalar_2_-1_p4_P",
+        "passed": true,
+        "raw_log_complete_line": 180,
+        "regular_jet_errors": [
+          {
+            "intervals": 1024,
+            "regular_jet_error": 0.0011072047928593065,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 2048,
+            "regular_jet_error": 0.00027573038563133423,
+            "within_final_tolerances": true
+          },
+          {
+            "intervals": 4096,
+            "regular_jet_error": 6.879861643227514e-05,
+            "within_final_tolerances": true
+          }
+        ]
+      }
+    ],
+    "all_shared_equal": true
+  },
+  "scope": "Specified synthetic inverse primitives; no mixed gravitational H6 functional or four-point loop evaluated",
+  "accuracy_certified": false,
+  "independent_read_only_audit": {
+    "reviewer": "chat_75c8a4e0-1219-ff1f-949e-a9709559f346",
+    "reconciled_hashes_events_counts_shared_levels_and_pass_flags": true,
+    "scientific_reexecution": false,
+    "remaining_concrete_defects_reported": []
+  }
+}
