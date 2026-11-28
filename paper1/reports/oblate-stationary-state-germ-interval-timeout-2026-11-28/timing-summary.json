@@ -1,0 +1,142 @@
+{
+  "clock": "child elapsed seconds; supervisor uses a separate clock",
+  "progress_events": 38,
+  "completed_stages": [
+    {
+      "stage": "input_pin_verification",
+      "begin_child_seconds": 8.3e-05,
+      "end_child_seconds": 0.003091,
+      "duration_seconds": 0.003007
+    },
+    {
+      "stage": "identity_linkage",
+      "begin_child_seconds": 0.003112,
+      "end_child_seconds": 0.00362,
+      "duration_seconds": 0.000508
+    },
+    {
+      "stage": "manufactured_controls",
+      "begin_child_seconds": 0.003637,
+      "end_child_seconds": 0.313459,
+      "duration_seconds": 0.30982
+    },
+    {
+      "stage": "original_operator_conversion",
+      "begin_child_seconds": 0.313483,
+      "end_child_seconds": 3.426871,
+      "duration_seconds": 3.113388
+    },
+    {
+      "stage": "terminal_state_parsing",
+      "begin_child_seconds": 3.426893,
+      "end_child_seconds": 38.596789,
+      "duration_seconds": 35.169895
+    },
+    {
+      "stage": "field_conversion",
+      "begin_child_seconds": 38.596814,
+      "end_child_seconds": 44.921743,
+      "duration_seconds": 6.324928
+    },
+    {
+      "stage": "kernel_identities",
+      "begin_child_seconds": 44.921769,
+      "end_child_seconds": 133.28053,
+      "duration_seconds": 88.358759
+    },
+    {
+      "stage": "preservation_identity",
+      "begin_child_seconds": 133.280555,
+      "end_child_seconds": 204.09049,
+      "duration_seconds": 70.809932
+    },
+    {
+      "stage": "physical_lift_identity",
+      "begin_child_seconds": 204.090529,
+      "end_child_seconds": 204.09069,
+      "duration_seconds": 0.000161
+    },
+    {
+      "stage": "retained_euler_identity",
+      "begin_child_seconds": 204.090705,
+      "end_child_seconds": 247.339033,
+      "duration_seconds": 43.248327
+    },
+    {
+      "stage": "discarded_response_lift",
+      "begin_child_seconds": 247.339058,
+      "end_child_seconds": 255.911734,
+      "duration_seconds": 8.572675
+    },
+    {
+      "stage": "denominator_collection",
+      "begin_child_seconds": 255.911759,
+      "end_child_seconds": 264.654588,
+      "duration_seconds": 8.742826
+    }
+  ],
+  "unfinished_stage": {
+    "denominator_count": 57,
+    "event": "begin",
+    "max_atan_terms": 256,
+    "seconds": 264.654623,
+    "sequence": 38,
+    "stage": "regularity_rank_and_response_search"
+  },
+  "raw_child_metrics_by_stage": {
+    "input_pin_verification": {
+      "config_bytes": 1533,
+      "config_sha256": "a48e1ef1365cf7f0ca0fcbf7bcdc9ad68ebe907c8c0e6a1493493eff8dedb157",
+      "operator_bytes": 128431,
+      "stationary_operators_sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+      "terminal_state_bytes": 1004745,
+      "terminal_state_sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    },
+    "identity_linkage": {
+      "identity_link_verified": true
+    },
+    "manufactured_controls": {
+      "manufactured_case_count": 18
+    },
+    "original_operator_conversion": {
+      "operator_order_count": 3,
+      "original_column_count": 8,
+      "retained_row_count": 22
+    },
+    "terminal_state_parsing": {
+      "constraint_rows": 6,
+      "free_state_count": 8,
+      "remaining_control_count": 0,
+      "state_count": 14
+    },
+    "field_conversion": {
+      "field_free_state_count": 8,
+      "field_operator_count": 3,
+      "field_state_count": 14
+    },
+    "kernel_identities": {
+      "cm_zero": true,
+      "free_state_count": 8,
+      "jm_identity": true
+    },
+    "preservation_identity": {
+      "preservation_rows": 6,
+      "sm_zero": true
+    },
+    "physical_lift_identity": {
+      "profile_count": 7,
+      "profile_lift_zero": true
+    },
+    "retained_euler_identity": {
+      "all_22_retained_rows_zero": true,
+      "retained_row_count": 22
+    },
+    "discarded_response_lift": {
+      "formal_discarded_response_nonzero": true,
+      "response_columns": 8
+    },
+    "denominator_collection": {
+      "denominator_count": 57
+    }
+  }
+}
