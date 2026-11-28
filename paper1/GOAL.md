@@ -2,7 +2,7 @@
 
 **Requested by Ric Fulop, 27 November 2026.**
 
-**Status:** active research plan; the first obstruction and construction checkpoint is complete. The full objective is not complete.
+**Status:** active research plan; the initial checkpoint and an actual-action primary–secondary constraint calculation are complete. Tertiary stabilization and the full objective remain open.
 
 ## Objective and completion standard
 
@@ -38,6 +38,10 @@ python verification/closure_audit_20261127/run_all.py
 ```
 
 ## Next work, in dependency order
+
+The [actual-action canonical note](reports/canonical-analysis-2026-11-27/README.md) now derives the exact ADM variable map, a regular spatial Legendre domain, and the temporal primary and secondary equations. At explicit vacuum data satisfying all primaries and secondaries, the scalar lapse Hessian has rank $4(N-1)$: 8 at $N=3$ and 12 at $N=4$. A general harmonic proof and independent local checks support this result. It does not determine the final Dirac surface or physical degree-of-freedom count. The next proposed calculation is to stabilize the secondaries, including their null directions and radial derivatives, before changing the regulator. It awaits the user's next copilot decision.
+
+Reproduce this calculation from `paper1/` with `python verification/canonical_analysis_20261127/actual_adm.py` (NumPy and SymPy; no GPU jobs).
 
 1. **Derive the canonical constraints first.** Start from the first-order ADM formulation with a stated angular coefficient ansatz. Compare it with the Legendre transform of the current Lagrangian Galerkin restriction; truncation and the Legendre transform need not commute. Use N=3 and N=4 as explicit tests, then formulate the general-rank statement. Do not identify an SU(N) commutator with the hypersurface-deformation algebra without deriving the mixed and Hamiltonian brackets.
 2. **Test reduction before the state cutoff.** Preserve the gravitational constraint structure on the kinematical space, reduce it, and only then test whether the clock/occupation restriction defines the claimed finite physical sector. Prove preservation, or quantify leakage, under dynamics and the physical observables. This is a working route, not an established solution.

@@ -29,6 +29,8 @@ The clock now has a proved uniform oscillator lower bound and uses the actual to
 
 The next research objective is tracked in [GOAL.md](GOAL.md). The [first nonlinear-consistency checkpoint](reports/nonlinear-consistency-2026-11-27/README.md) supplies exact obstruction tests, an angular deformation candidate, and a reduced boundary-gluing example. The full completion tests remain open.
 
+The [actual-action canonical analysis](reports/canonical-analysis-2026-11-27/README.md) now gives the derived ADM lapse/shift, a regular spatial Legendre map, and an exact nonzero primary–secondary bracket on explicit vacuum data. The scalar lapse Hessian has ranks 8 and 12 at $N=3,4$, with a general-rank proof. This is a result on the primary–secondary surface; tertiary stabilization and a physical degree-of-freedom count remain open. Reproduce its local checks with `python verification/canonical_analysis_20261127/actual_adm.py` using NumPy and SymPy.
+
 The total occupation budget makes the specified radiative sector finite; the corner spectrum and budget remain model assumptions. Symbolic identities and known black-hole benchmarks test particular parts of the construction. They do not prove that the finite-state Hamiltonian, full constrained gravitational action, and sampled Euclidean model are equivalent.
 
 With matched measured zero-coupling controls at fixed scalar self-interaction, the strongest tested coupling reduces the matrix model's traceless-field variance Q2 by **47.68–48.02%** across four ranks. A larger lattice at rank 24 gives **47.621%**, a change of **−0.060 ± 0.047 percentage points**. This supports persistence over the tested volume change, not an exact universal percentage or a continuum extrapolation.

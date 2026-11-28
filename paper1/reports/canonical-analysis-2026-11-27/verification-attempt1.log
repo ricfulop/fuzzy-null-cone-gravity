@@ -1,0 +1,11 @@
+Installed 3 packages in 67ms
+Traceback (most recent call last):
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/verification/canonical_analysis_20261127/actual_adm.py", line 249, in <module>
+    main()
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/verification/canonical_analysis_20261127/actual_adm.py", line 227, in main
+    'vacuum_constraint_point':vacuum_witness(),
+                              ^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/verification/canonical_analysis_20261127/actual_adm.py", line 85, in vacuum_witness
+    assert all(s.trigsimp(z) == 0 for z in Ric)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
