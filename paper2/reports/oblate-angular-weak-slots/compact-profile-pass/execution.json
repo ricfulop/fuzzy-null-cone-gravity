@@ -1,0 +1,62 @@
+{
+  "started_utc": "2026-11-28T10:08:45.838974+00:00",
+  "approval_message": "msg_908bb84e",
+  "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f",
+  "approval_quote": "you dont need to ask me for approval till 10am",
+  "approval_basis": "standing_until_local_deadline",
+  "standing_window_message": "msg_908bb84e",
+  "standing_window_quote": "you dont need to ask me for approval till 10am",
+  "approval_timezone": "America/New_York",
+  "approval_end_utc": "2026-11-28T15:00:00+00:00",
+  "wall_budget_seconds": 300,
+  "sampled_group_rss_budget_bytes": 2147483648,
+  "memory_budget_is_hard_limit": false,
+  "command": [
+    "/Users/ricfulop/.local/bin/uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "-u",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2/reports/oblate-angular-weak-slots/compact-profile-probe-runtime",
+    "--mode",
+    "compact-profile-probe"
+  ],
+  "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2",
+  "source_sha256": {
+    "export_angular_weak_slots.py": "e43847f25033810af3113f939006966a931d253318fae41bdb379a20e30951b5",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "fafa6eaf2dbc25137907266583efb3377125167e9b4beecdd6f14d69c16ff690",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  },
+  "source_commit": "7d4b90ced87473ae3124878a75a74cef012e0562",
+  "run_id": "47d66179-da34-4f4e-809e-2eb2d7f19c96",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "source_equations_changed_by_supervisor": false,
+  "status": "child_exit_zero",
+  "checker_mode": "compact-profile-probe",
+  "process_group": 19378,
+  "ended_utc": "2026-11-28T10:12:59.158965+00:00",
+  "elapsed_seconds": 253.31111458409578,
+  "child_return_code": 0,
+  "stop_reason": null,
+  "peak_sampled_group_rss_bytes": 230981632,
+  "sample_count": 867,
+  "cleanup_events": [
+    {
+      "action": "final_disposition",
+      "status": "empty",
+      "members": []
+    }
+  ]
+}

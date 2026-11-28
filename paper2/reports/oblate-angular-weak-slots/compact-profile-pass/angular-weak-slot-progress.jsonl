@@ -1,0 +1,9 @@
+{"mode": "compact-profile-probe", "of": 1, "phase": "setup", "plan": [{"of": 1, "phase": "setup", "unit": "environment"}, {"of": 3, "phase": "controls", "unit": "batches"}, {"of": 1, "phase": "angular_export", "unit": "snapshots"}, {"of": 1, "phase": "export", "unit": "checker result"}], "step": 1, "unit": "environment"}
+{"m": {"completed_control_batches": 0}, "of": 3, "phase": "controls", "step": 0, "unit": "batches"}
+{"m": {"completed_control_batches": 1}, "of": 3, "phase": "controls", "step": 1, "unit": "batches"}
+{"m": {"completed_control_batches": 2}, "of": 3, "phase": "controls", "step": 2, "unit": "batches"}
+{"m": {"completed_control_batches": 3}, "of": 3, "phase": "controls", "step": 3, "unit": "batches"}
+{"m": {"completed_snapshots": 0, "max_scaled_refinement_error": 0.0}, "of": 1, "phase": "angular_export", "step": 0, "unit": "snapshots"}
+{"m": {"completed_snapshots": 1, "max_scaled_refinement_error": 5.1181281435219717e-14}, "of": 1, "phase": "angular_export", "step": 1, "unit": "snapshots"}
+{"of": 1, "phase": "export", "step": 0, "unit": "checker result"}
+{"m": {"compact_profile_probe_passed": 1, "elapsed_seconds": 252.41485787485726}, "of": 1, "phase": "export", "step": 1, "unit": "checker result"}

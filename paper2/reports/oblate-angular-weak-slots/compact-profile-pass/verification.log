@@ -1,0 +1,350 @@
+::orx:: {"phase": "setup", "step": 0, "of": 1, "unit": "environment"}
+EXECUTION {"started_utc": "2026-11-28T10:08:45.838974+00:00", "approval_message": "msg_908bb84e", "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f", "approval_quote": "you dont need to ask me for approval till 10am", "approval_basis": "standing_until_local_deadline", "standing_window_message": "msg_908bb84e", "standing_window_quote": "you dont need to ask me for approval till 10am", "approval_timezone": "America/New_York", "approval_end_utc": "2026-11-28T15:00:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2/reports/oblate-angular-weak-slots/compact-profile-probe-runtime", "--mode", "compact-profile-probe"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2", "source_sha256": {"export_angular_weak_slots.py": "e43847f25033810af3113f939006966a931d253318fae41bdb379a20e30951b5", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "fafa6eaf2dbc25137907266583efb3377125167e9b4beecdd6f14d69c16ff690", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "7d4b90ced87473ae3124878a75a74cef012e0562", "run_id": "47d66179-da34-4f4e-809e-2eb2d7f19c96", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "prepared_to_launch", "checker_mode": "compact-profile-probe"}
+::orx:: {"mode": "compact-profile-probe", "of": 1, "phase": "setup", "plan": [{"of": 1, "phase": "setup", "unit": "environment"}, {"of": 3, "phase": "controls", "unit": "batches"}, {"of": 1, "phase": "angular_export", "unit": "snapshots"}, {"of": 1, "phase": "export", "unit": "checker result"}], "step": 1, "unit": "environment"}
+::orx:: {"m": {"completed_control_batches": 0}, "of": 3, "phase": "controls", "step": 0, "unit": "batches"}
+SUBSTAGE legendre_norms start {"elapsed_seconds": null}
+SUBSTAGE legendre_norms done {"elapsed_seconds": 0.20042791683226824}
+::orx:: {"m": {"completed_control_batches": 1}, "of": 3, "phase": "controls", "step": 1, "unit": "batches"}
+SUBSTAGE round_weak_anchor start {"elapsed_seconds": null}
+SUBSTAGE round_weak_anchor done {"elapsed_seconds": 0.02996829221956432}
+::orx:: {"m": {"completed_control_batches": 2}, "of": 3, "phase": "controls", "step": 2, "unit": "batches"}
+SUBSTAGE manufactured_realification start {"elapsed_seconds": null}
+SUBSTAGE manufactured_realification done {"elapsed_seconds": 0.0004563750699162483}
+::orx:: {"m": {"completed_control_batches": 3}, "of": 3, "phase": "controls", "step": 3, "unit": "batches"}
+::orx:: {"m": {"completed_snapshots": 0, "max_scaled_refinement_error": 0.0}, "of": 1, "phase": "angular_export", "step": 0, "unit": "snapshots"}
+STAGE angular_case {"m": 0, "r": "3/2"}
+SUBSTAGE build_symbolic_slots start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+SUBSTAGE build_symbolic_slots done {"elapsed_seconds": 0.5860142500605434, "m": 0, "r": "3/2"}
+SUBSTAGE cancel_and_quad_density start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "11"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "11"}
+SUBSTAGE cancel_and_quad_density done {"elapsed_seconds": 118.82327595795505, "m": 0, "r": "3/2"}
+SUBSTAGE cancel_and_quad_flux start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "11"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "11"}
+SUBSTAGE cancel_and_quad_flux done {"elapsed_seconds": 12.975257334066555, "m": 0, "r": "3/2"}
+SUBSTAGE direct_profile_oracle start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+SUBSTAGE build_profile_jets start {"elapsed_seconds": null, "family": 0, "side": "left"}
+SUBSTAGE build_profile_jets done {"elapsed_seconds": 0.12543200002983212, "family": 0, "side": "left"}
+SUBSTAGE build_profile_jets start {"elapsed_seconds": null, "family": 1, "side": "left"}
+SUBSTAGE build_profile_jets done {"elapsed_seconds": 0.11122675007209182, "family": 1, "side": "left"}
+SUBSTAGE build_profile_jets start {"elapsed_seconds": null, "family": 0, "side": "right"}
+SUBSTAGE build_profile_jets done {"elapsed_seconds": 0.16095050005242229, "family": 0, "side": "right"}
+SUBSTAGE build_profile_jets start {"elapsed_seconds": null, "family": 1, "side": "right"}
+SUBSTAGE build_profile_jets done {"elapsed_seconds": 0.11811487493105233, "family": 1, "side": "right"}
+SUBSTAGE build_profile_jets start {"elapsed_seconds": null, "family": 0, "side": "lapse"}
+SUBSTAGE build_profile_jets done {"elapsed_seconds": 0.014011708088219166, "family": 0, "side": "lapse"}
+SUBSTAGE build_profile_jets start {"elapsed_seconds": null, "family": 1, "side": "lapse"}
+SUBSTAGE build_profile_jets done {"elapsed_seconds": 0.005300165852531791, "family": 1, "side": "lapse"}
+SUBSTAGE compact_actual_profile_oracle start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "side": "left"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "family": 0, "side": "left"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 1.3805450000800192, "family": 0, "jets": 12, "side": "left"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "family": 1, "side": "left"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 1.2768150840420276, "family": 1, "jets": 12, "side": "left"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 2.6575029578525573, "equality_checks": 1032, "families": 2, "side": "left"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "side": "right"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "family": 0, "side": "right"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 1.3869915420655161, "family": 0, "jets": 12, "side": "right"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "family": 1, "side": "right"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 1.2888716668821871, "family": 1, "jets": 12, "side": "right"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 2.6760315001010895, "equality_checks": 1032, "families": 2, "side": "right"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "side": "lapse"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "family": 0, "side": "lapse"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 0.005943166092038155, "family": 0, "profiles": 3, "side": "lapse"}
+SUBSTAGE compact_profile_family start {"elapsed_seconds": null, "family": 1, "side": "lapse"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 0.00504108308814466, "family": 1, "profiles": 3, "side": "lapse"}
+SUBSTAGE compact_profile_family done {"elapsed_seconds": 0.011087125167250633, "equality_checks": 12, "families": 2, "side": "lapse"}
+SUBSTAGE compact_actual_profile_oracle done {"elapsed_seconds": 5.345077166100964, "equality_checks": 2076, "m": 0, "r": "3/2"}
+SUBSTAGE direct_pair_sum start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 144, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 1.5962660000659525, "expected_total_terms": 144, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 2.524107708130032, "expected_total_terms": 144, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 1.597514167195186, "expected_total_terms": 144, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 2.611692207865417, "expected_total_terms": 144, "left_index": 3, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 1.9993881660047919, "expected_total_terms": 144, "left_index": 4, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.6533050420694053, "expected_total_terms": 144, "left_index": 5, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 1.9207532920408994, "expected_total_terms": 144, "left_index": 6, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 2.7877979159820825, "expected_total_terms": 144, "left_index": 7, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 2.162079749861732, "expected_total_terms": 144, "left_index": 8, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.6102749172132462, "expected_total_terms": 144, "left_index": 9, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 2.986929958919063, "expected_total_terms": 144, "left_index": 10, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.6662600000854582, "expected_total_terms": 144, "left_index": 11, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "potential_density", "elapsed_seconds": 22.11783583299257, "lf": 0, "rf": 0, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 144, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.34058091696351767, "expected_total_terms": 144, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.6457940828986466, "expected_total_terms": 144, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.3130723328795284, "expected_total_terms": 144, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 0.6052400001790375, "expected_total_terms": 144, "left_index": 3, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 0.309428249951452, "expected_total_terms": 144, "left_index": 4, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.14843858405947685, "expected_total_terms": 144, "left_index": 5, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 0.4255395829677582, "expected_total_terms": 144, "left_index": 6, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 0.6839234579820186, "expected_total_terms": 144, "left_index": 7, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 0.29243441694416106, "expected_total_terms": 144, "left_index": 8, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.14392004092223942, "expected_total_terms": 144, "left_index": 9, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 0.644686667015776, "expected_total_terms": 144, "left_index": 10, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.044137292075902224, "expected_total_terms": 144, "left_index": 11, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "potential_radial_flux", "elapsed_seconds": 4.5981580840889364, "lf": 0, "rf": 0, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 144, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 1.6468550418503582, "expected_total_terms": 144, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 2.40984591585584, "expected_total_terms": 144, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 1.6030878750607371, "expected_total_terms": 144, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 2.6870395839214325, "expected_total_terms": 144, "left_index": 3, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 2.285881167044863, "expected_total_terms": 144, "left_index": 4, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.6127667080145329, "expected_total_terms": 144, "left_index": 5, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 2.0068238750100136, "expected_total_terms": 144, "left_index": 6, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 2.769321999978274, "expected_total_terms": 144, "left_index": 7, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 2.24802204198204, "expected_total_terms": 144, "left_index": 8, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.6212374579627067, "expected_total_terms": 144, "left_index": 9, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 3.052962124813348, "expected_total_terms": 144, "left_index": 10, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.6569877921137959, "expected_total_terms": 144, "left_index": 11, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "potential_density", "elapsed_seconds": 22.601956834085286, "lf": 0, "rf": 1, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 144, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.3414375828579068, "expected_total_terms": 144, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.6309998750220984, "expected_total_terms": 144, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.31913658301346004, "expected_total_terms": 144, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 0.6016423751134425, "expected_total_terms": 144, "left_index": 3, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 0.31485516601242125, "expected_total_terms": 144, "left_index": 4, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.1528951250948012, "expected_total_terms": 144, "left_index": 5, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 0.420008041895926, "expected_total_terms": 144, "left_index": 6, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 0.6856917499098927, "expected_total_terms": 144, "left_index": 7, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 0.28662195801734924, "expected_total_terms": 144, "left_index": 8, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.1352883749641478, "expected_total_terms": 144, "left_index": 9, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 0.6213948340155184, "expected_total_terms": 144, "left_index": 10, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.04302449990063906, "expected_total_terms": 144, "left_index": 11, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "potential_radial_flux", "elapsed_seconds": 4.554041708121076, "lf": 0, "rf": 1, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 144, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 2.2008958752267063, "expected_total_terms": 144, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 2.548794792033732, "expected_total_terms": 144, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 1.5123238328378648, "expected_total_terms": 144, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 2.624010958010331, "expected_total_terms": 144, "left_index": 3, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 2.0968617498874664, "expected_total_terms": 144, "left_index": 4, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.5967023749835789, "expected_total_terms": 144, "left_index": 5, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 2.1709745838306844, "expected_total_terms": 144, "left_index": 6, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 2.8482130831107497, "expected_total_terms": 144, "left_index": 7, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 2.1967342500574887, "expected_total_terms": 144, "left_index": 8, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.6977505411487073, "expected_total_terms": 144, "left_index": 9, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 2.911602791864425, "expected_total_terms": 144, "left_index": 10, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.6590641248039901, "expected_total_terms": 144, "left_index": 11, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "potential_density", "elapsed_seconds": 23.067499707918614, "lf": 1, "rf": 0, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 144, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.4113585001323372, "expected_total_terms": 144, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.6273528328165412, "expected_total_terms": 144, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.3001762079074979, "expected_total_terms": 144, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 0.6084783340338618, "expected_total_terms": 144, "left_index": 3, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 0.3009217500220984, "expected_total_terms": 144, "left_index": 4, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.1508032907731831, "expected_total_terms": 144, "left_index": 5, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 0.41861112508922815, "expected_total_terms": 144, "left_index": 6, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 0.6952839158475399, "expected_total_terms": 144, "left_index": 7, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 0.29387995903380215, "expected_total_terms": 144, "left_index": 8, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.1326335419435054, "expected_total_terms": 144, "left_index": 9, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 0.6261745418887585, "expected_total_terms": 144, "left_index": 10, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.047075208043679595, "expected_total_terms": 144, "left_index": 11, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "potential_radial_flux", "elapsed_seconds": 4.613780583022162, "lf": 1, "rf": 0, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 144, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 1.5958986249752343, "expected_total_terms": 144, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 2.4191642079968005, "expected_total_terms": 144, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 1.5834638751111925, "expected_total_terms": 144, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 2.6156486249528825, "expected_total_terms": 144, "left_index": 3, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 2.0667065421584994, "expected_total_terms": 144, "left_index": 4, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.6324727081228048, "expected_total_terms": 144, "left_index": 5, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 1.9036423747893423, "expected_total_terms": 144, "left_index": 6, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 2.884956083027646, "expected_total_terms": 144, "left_index": 7, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 2.3401202498935163, "expected_total_terms": 144, "left_index": 8, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.624013583175838, "expected_total_terms": 144, "left_index": 9, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 3.091284666908905, "expected_total_terms": 144, "left_index": 10, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_density", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.6577537499833852, "expected_total_terms": 144, "left_index": 11, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "potential_density", "elapsed_seconds": 22.41627054219134, "lf": 1, "rf": 1, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 144, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.3219082080759108, "expected_total_terms": 144, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.6279314998537302, "expected_total_terms": 144, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.28895491594448686, "expected_total_terms": 144, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 3, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 48, "elapsed_seconds": 0.6146018328145146, "expected_total_terms": 144, "left_index": 3, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 4, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 60, "elapsed_seconds": 0.29576595802791417, "expected_total_terms": 144, "left_index": 4, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 5, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 72, "elapsed_seconds": 0.15100058307871222, "expected_total_terms": 144, "left_index": 5, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 6, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 84, "elapsed_seconds": 0.41895670793019235, "expected_total_terms": 144, "left_index": 6, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 7, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 96, "elapsed_seconds": 0.696207124972716, "expected_total_terms": 144, "left_index": 7, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 8, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 108, "elapsed_seconds": 0.30308187496848404, "expected_total_terms": 144, "left_index": 8, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 9, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 120, "elapsed_seconds": 0.13083416689187288, "expected_total_terms": 144, "left_index": 9, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 10, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 132, "elapsed_seconds": 0.6199632920324802, "expected_total_terms": 144, "left_index": 10, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "potential_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 11, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "potential_radial_flux", "completed_terms": 12, "cumulative_terms": 144, "elapsed_seconds": 0.04122341703623533, "expected_total_terms": 144, "left_index": 11, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "potential_radial_flux", "elapsed_seconds": 4.51146737486124, "lf": 1, "rf": 1, "terms": 144}
+SUBSTAGE direct_pair_sum start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 36, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.2166468750219792, "expected_total_terms": 36, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.3148665002081543, "expected_total_terms": 36, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.3653500000946224, "expected_total_terms": 36, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "lapse_density", "elapsed_seconds": 0.8971063329372555, "lf": 0, "rf": 0, "terms": 36}
+SUBSTAGE direct_pair_sum start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 36, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.20594945806078613, "expected_total_terms": 36, "left_index": 0, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.10770333302207291, "expected_total_terms": 36, "left_index": 1, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.1254352079704404, "expected_total_terms": 36, "left_index": 2, "lf": 0, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "lapse_radial_flux", "elapsed_seconds": 0.43932895897887647, "lf": 0, "rf": 0, "terms": 36}
+SUBSTAGE direct_pair_sum start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 36, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.20584408403374255, "expected_total_terms": 36, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.36736466619186103, "expected_total_terms": 36, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.35942562483251095, "expected_total_terms": 36, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "lapse_density", "elapsed_seconds": 0.9328861250542104, "lf": 0, "rf": 1, "terms": 36}
+SUBSTAGE direct_pair_sum start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 36, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.197020374936983, "expected_total_terms": 36, "left_index": 0, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.10999804106540978, "expected_total_terms": 36, "left_index": 1, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.1295798330102116, "expected_total_terms": 36, "left_index": 2, "lf": 0, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "lapse_radial_flux", "elapsed_seconds": 0.43683183402754366, "lf": 0, "rf": 1, "terms": 36}
+SUBSTAGE direct_pair_sum start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 36, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.19579879194498062, "expected_total_terms": 36, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.3286186659242958, "expected_total_terms": 36, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.35470629087649286, "expected_total_terms": 36, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "lapse_density", "elapsed_seconds": 0.8793533330317587, "lf": 1, "rf": 0, "terms": 36}
+SUBSTAGE direct_pair_sum start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 36, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.19877383299171925, "expected_total_terms": 36, "left_index": 0, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.10388016700744629, "expected_total_terms": 36, "left_index": 1, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.13088341592811048, "expected_total_terms": 36, "left_index": 2, "lf": 1, "rf": 0}
+SUBSTAGE direct_pair_sum done {"block": "lapse_radial_flux", "elapsed_seconds": 0.43375116609968245, "lf": 1, "rf": 0, "terms": 36}
+SUBSTAGE direct_pair_sum start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 36, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.2033758331090212, "expected_total_terms": 36, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.3155248330440372, "expected_total_terms": 36, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_density", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_density", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.35092883300967515, "expected_total_terms": 36, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "lapse_density", "elapsed_seconds": 0.8707606659736484, "lf": 1, "rf": 1, "terms": 36}
+SUBSTAGE direct_pair_sum start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 36, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 12, "elapsed_seconds": 0.19789954088628292, "expected_total_terms": 36, "left_index": 0, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 24, "elapsed_seconds": 0.11071762489154935, "expected_total_terms": 36, "left_index": 1, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row start {"block": "lapse_radial_flux", "elapsed_seconds": null, "expected_terms": 12, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_row done {"block": "lapse_radial_flux", "completed_terms": 12, "cumulative_terms": 36, "elapsed_seconds": 0.1350244169589132, "expected_total_terms": 36, "left_index": 2, "lf": 1, "rf": 1}
+SUBSTAGE direct_pair_sum done {"block": "lapse_radial_flux", "elapsed_seconds": 0.44389162492007017, "lf": 1, "rf": 1, "terms": 36}
+SUBSTAGE direct_profile_oracle done {"elapsed_seconds": 119.6998997500632, "m": 0, "r": "3/2"}
+SUBSTAGE hermiticity_and_realify start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+SUBSTAGE hermiticity_and_realify done {"elapsed_seconds": 0.000161041971296072, "m": 0, "r": "3/2"}
+::orx:: {"m": {"completed_snapshots": 1, "max_scaled_refinement_error": 5.1181281435219717e-14}, "of": 1, "phase": "angular_export", "step": 1, "unit": "snapshots"}
+::orx:: {"of": 1, "phase": "export", "step": 0, "unit": "checker result"}
+::orx:: {"m": {"compact_profile_probe_passed": 1, "elapsed_seconds": 252.41485787485726}, "of": 1, "phase": "export", "step": 1, "unit": "checker result"}
+PASS compact-profile-probe angular weak-slot diagnostic snapshots
+EXECUTION_FINAL {"started_utc": "2026-11-28T10:08:45.838974+00:00", "approval_message": "msg_908bb84e", "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f", "approval_quote": "you dont need to ask me for approval till 10am", "approval_basis": "standing_until_local_deadline", "standing_window_message": "msg_908bb84e", "standing_window_quote": "you dont need to ask me for approval till 10am", "approval_timezone": "America/New_York", "approval_end_utc": "2026-11-28T15:00:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2/reports/oblate-angular-weak-slots/compact-profile-probe-runtime", "--mode", "compact-profile-probe"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/47d66179-da34-4f4e-809e-2eb2d7f19c96/repo/paper2", "source_sha256": {"export_angular_weak_slots.py": "e43847f25033810af3113f939006966a931d253318fae41bdb379a20e30951b5", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "fafa6eaf2dbc25137907266583efb3377125167e9b4beecdd6f14d69c16ff690", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "7d4b90ced87473ae3124878a75a74cef012e0562", "run_id": "47d66179-da34-4f4e-809e-2eb2d7f19c96", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "child_exit_zero", "checker_mode": "compact-profile-probe", "process_group": 19378, "ended_utc": "2026-11-28T10:12:59.158965+00:00", "elapsed_seconds": 253.31111458409578, "child_return_code": 0, "stop_reason": null, "peak_sampled_group_rss_bytes": 230981632, "sample_count": 867, "cleanup_events": [{"action": "final_disposition", "status": "empty", "members": []}]}
