@@ -1,0 +1,92 @@
+{
+  "run_id": "c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1",
+  "source_commit": "0034162b4410ecfc229c48daaa47fcf06da4eafe",
+  "source_repository": "/Users/ricfulop/OpenResearch/fuzzy-null-cone-gravity",
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "scientific_invocations": 0,
+  "remote_jobs": 0,
+  "GPU_jobs": 0,
+  "rss_measurement": "sampled child process-group RSS; not a hard OS cap",
+  "start_utc": "2026-11-28T08:53:53.515730+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "source_sha256_before": {
+    "verification/oblate_stationary_state_germ_20261128/run_bounded.py": "1021f899bb4676a79ef049d3fba672e748743a12585664b0ead7f4f9017019e6",
+    "verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "ea1fdd4a04124305be8a50c35cc66811a40143d36e844a2b6fd52b1fccdc649c",
+    "verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "57ea1554afa67f636f049d20b527b25b588c2025d810ac60165fd4adbd920186",
+    "verification/oblate_stationary_state_germ_20261128/exact_decimal.py": "62eac0b8ff5af11259f57cdc14a6a3101015606c29c765fb2b27744693c56119",
+    "verification/oblate_stationary_state_germ_20261128/test_exact_decimal.py": "ad00d2c6084cf51e7eb81fd63159aee2959b8a8e52525c3b235e692fbd1d519d",
+    "verification/oblate_stationary_state_germ_20261128/run-config.json": "6361ddabd8f846c9159ba117e2249b0ed169b60504bdff833115c0ab52209d8a",
+    "verification/oblate_stationary_state_germ_20261128/view-config.json": "c8dc8e83bd67daec9b197dbe3be1e982fd9f45dd95a5dd43342754ef8a0f04b1",
+    "verification/oblate_stationary_state_germ_20261128/view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e",
+    "verification/oblate_stationary_state_germ_20261128/README.md": "f3b3a12344ab44f34c119eef0b4b869755dd0f0b79c57551778a67516eab27a9"
+  },
+  "configuration": {
+    "purpose": "Independent direct fourteen-state stationary germ certificate from authenticated candidate matrices: recheck the exact kernel, invariance, physical lift and all 22 original Euler rows; certify a physical rank-six minor and coefficient regularity, and test the separate discarded response at the same radius. No reduced-coordinate dynamics, checkpoint resumption, global boundary, universal-zero, or Dirac classification claim. Cache exact interval-search polynomials and per-radius specializations while preserving rational enclosures and search order; report detailed refinement progress. Same bounded budget. Serialize computed exact rational endpoints with bounded decimal chunks to avoid the host integer-to-string digit limit; no mathematical arithmetic or search-order change.",
+    "wall_seconds": 900,
+    "memory_bytes": 2147483648,
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "max_atan_terms": 256,
+    "inputs": {
+      "stationary_operators": {
+        "path": "reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+        "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+      },
+      "terminal_state": {
+        "path": "reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+        "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+      }
+    },
+    "candidate_state_provenance": {
+      "run_id": "c2a1482f-4dc7-40f5-8f6d-b8f4700df6de",
+      "source_commit": "96916c7fe47b5542c4a5cf1c5a199ac11c1f488b",
+      "publication_status": "write-only intermediate terminal state before preservation; not a closure or germ certificate"
+    },
+    "scientific_input_policy": "Use original pinned operator bytes and candidate state bytes; independently recheck every listed certificate obligation without relying on snapshot success flags."
+  },
+  "input_paths": {
+    "stationary_operators": "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+    "terminal_state": "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json"
+  },
+  "input_sha256_before": {
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "checker_input_sha256": {
+    "config": "6361ddabd8f846c9159ba117e2249b0ed169b60504bdff833115c0ab52209d8a",
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/run-output/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py",
+    "--config",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/run-output/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/sources/verification/oblate_stationary_state_germ_20261128/run-config.json",
+    "--operators",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/run-output/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/inputs/stationary-operators.json",
+    "--state",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/run-output/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/inputs/terminal-state.json",
+    "--output",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/run-output/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/outputs/state-germ-certificate.json",
+    "--max-atan-terms",
+    "256"
+  ]
+}

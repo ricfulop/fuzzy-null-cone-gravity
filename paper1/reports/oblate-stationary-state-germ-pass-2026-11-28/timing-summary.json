@@ -1,0 +1,226 @@
+{
+  "clock": "child monotonic seconds",
+  "completed_stages": [
+    {
+      "stage": "input_pin_verification",
+      "begin_seconds": 8.8e-05,
+      "end_seconds": 0.003904,
+      "duration_seconds": 0.003816
+    },
+    {
+      "stage": "identity_linkage",
+      "begin_seconds": 0.003927,
+      "end_seconds": 0.004855,
+      "duration_seconds": 0.000926
+    },
+    {
+      "stage": "manufactured_controls",
+      "begin_seconds": 0.00488,
+      "end_seconds": 0.280609,
+      "duration_seconds": 0.275728
+    },
+    {
+      "stage": "original_operator_conversion",
+      "begin_seconds": 0.280634,
+      "end_seconds": 3.347621,
+      "duration_seconds": 3.066986
+    },
+    {
+      "stage": "terminal_state_parsing",
+      "begin_seconds": 3.347646,
+      "end_seconds": 39.757122,
+      "duration_seconds": 36.409473
+    },
+    {
+      "stage": "field_conversion",
+      "begin_seconds": 39.757159,
+      "end_seconds": 46.101544,
+      "duration_seconds": 6.344384
+    },
+    {
+      "stage": "kernel_identities",
+      "begin_seconds": 46.10157,
+      "end_seconds": 136.112114,
+      "duration_seconds": 90.010541
+    },
+    {
+      "stage": "preservation_identity",
+      "begin_seconds": 136.112151,
+      "end_seconds": 204.879734,
+      "duration_seconds": 68.76758
+    },
+    {
+      "stage": "physical_lift_identity",
+      "begin_seconds": 204.879773,
+      "end_seconds": 204.879884,
+      "duration_seconds": 0.000111
+    },
+    {
+      "stage": "retained_euler_identity",
+      "begin_seconds": 204.8799,
+      "end_seconds": 248.760648,
+      "duration_seconds": 43.880746
+    },
+    {
+      "stage": "discarded_response_lift",
+      "begin_seconds": 248.76068,
+      "end_seconds": 257.606385,
+      "duration_seconds": 8.845704
+    },
+    {
+      "stage": "denominator_collection",
+      "begin_seconds": 257.60641,
+      "end_seconds": 259.52228,
+      "duration_seconds": 1.915869
+    },
+    {
+      "stage": "regularity_rank_and_response_search",
+      "begin_seconds": 259.522304,
+      "end_seconds": 261.552924,
+      "duration_seconds": 2.030617
+    },
+    {
+      "stage": "response_outcome_reporting",
+      "begin_seconds": 261.552959,
+      "end_seconds": 261.552978,
+      "duration_seconds": 1.9e-05
+    },
+    {
+      "stage": "final_export",
+      "begin_seconds": 261.562599,
+      "end_seconds": 261.567518,
+      "duration_seconds": 0.00492
+    }
+  ],
+  "reported_metrics": [
+    {
+      "config_bytes": 1889,
+      "config_sha256": "6361ddabd8f846c9159ba117e2249b0ed169b60504bdff833115c0ab52209d8a",
+      "event": "metric",
+      "operator_bytes": 128431,
+      "seconds": 0.003854,
+      "sequence": 3,
+      "stationary_operators_sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+      "terminal_state_bytes": 1004745,
+      "terminal_state_sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    },
+    {
+      "event": "metric",
+      "identity_link_verified": true,
+      "seconds": 0.004765,
+      "sequence": 6
+    },
+    {
+      "event": "metric",
+      "manufactured_case_count": 20,
+      "seconds": 0.280561,
+      "sequence": 9
+    },
+    {
+      "event": "metric",
+      "operator_order_count": 3,
+      "original_column_count": 8,
+      "retained_row_count": 22,
+      "seconds": 3.347574,
+      "sequence": 12
+    },
+    {
+      "constraint_rows": 6,
+      "event": "metric",
+      "free_state_count": 8,
+      "remaining_control_count": 0,
+      "seconds": 39.757055,
+      "sequence": 15,
+      "state_count": 14
+    },
+    {
+      "event": "metric",
+      "field_free_state_count": 8,
+      "field_operator_count": 3,
+      "field_state_count": 14,
+      "seconds": 46.101481,
+      "sequence": 18
+    },
+    {
+      "cm_zero": true,
+      "event": "metric",
+      "free_state_count": 8,
+      "jm_identity": true,
+      "seconds": 136.112041,
+      "sequence": 21
+    },
+    {
+      "event": "metric",
+      "preservation_rows": 6,
+      "seconds": 204.879659,
+      "sequence": 24,
+      "sm_zero": true
+    },
+    {
+      "event": "metric",
+      "profile_count": 7,
+      "profile_lift_zero": true,
+      "seconds": 204.879869,
+      "sequence": 27
+    },
+    {
+      "all_22_retained_rows_zero": true,
+      "event": "metric",
+      "retained_row_count": 22,
+      "seconds": 248.760591,
+      "sequence": 30
+    },
+    {
+      "event": "metric",
+      "formal_discarded_response_nonzero": true,
+      "response_columns": 8,
+      "seconds": 257.606332,
+      "sequence": 33
+    },
+    {
+      "denominator_count": 57,
+      "event": "metric",
+      "seconds": 259.522221,
+      "sequence": 36
+    },
+    {
+      "denominator_count": 57,
+      "event": "metric",
+      "r0": "1",
+      "rank": 6,
+      "seconds": 261.552859,
+      "sequence": 127,
+      "terms": 25
+    },
+    {
+      "certified_response_nonzero": true,
+      "event": "metric",
+      "formal_response_nonzero": true,
+      "seconds": 261.552966,
+      "sequence": 130,
+      "status": "response_nonzero_at_certified_r0"
+    },
+    {
+      "event": "metric",
+      "output_path": "/Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/run-output/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/outputs/state-germ-certificate.json",
+      "seconds": 261.567501,
+      "sequence": 133
+    }
+  ],
+  "interval_selection": {
+    "column": 1,
+    "event": "interval_detail",
+    "operation": "serialize_selected",
+    "outcome": "responding",
+    "r0": "1",
+    "seconds": 261.24914,
+    "sequence": 126,
+    "terms": 25
+  },
+  "last_child_event": {
+    "event": "invocation_return",
+    "seconds": 261.567537,
+    "sequence": 135
+  },
+  "supervised_seconds": 262.77842020918615
+}

@@ -1,0 +1,77 @@
+{
+  "state": "integrated mocked infrastructure validation passed",
+  "created_utc": "2026-11-28T08:34:32.109668+00:00",
+  "base_integration_commit": "7f27a9516976abc3bf6ee6e3c09756a4241389a3",
+  "supervisor_source_commit": "698d7fcd65c3e7eb9f25f6d311d96af27a73e069",
+  "cache_source_commit": "da24c65ae16f048f8687432be58ebfeebf031861",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-W",
+        "error::ResourceWarning",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "verification/oblate_stationary_state_germ_20261128",
+        "-p",
+        "test_run_bounded.py",
+        "-q"
+      ],
+      "cwd": "paper1",
+      "exit_code": 0,
+      "elapsed_seconds": 0.564468750031665,
+      "combined_output": "----------------------------------------------------------------------\nRan 27 tests in 0.395s\n\nOK\n"
+    },
+    {
+      "command": [
+        "sh",
+        "-n",
+        "verification/oblate_stationary_state_germ_20261128/run.sh"
+      ],
+      "cwd": "paper1",
+      "exit_code": 0,
+      "elapsed_seconds": 0.00986920902505517,
+      "combined_output": ""
+    }
+  ],
+  "source_sha256_before": {
+    "README.md": "3d46d296a40156cf6ba5e7f0e76cfc256dc84060fcfd1c7cc83aacba2f84231d",
+    "certify_state_germ.py": "2bd72d22cefc830967e0a1b42bcc2d8220ad4d63295293f56cfbdc9176cd1fb2",
+    "run-config.json": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+    "run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "run_bounded.py": "29a541993e33243c21d1d31dcd407ef27ddab33f75465d142a5d8fdfc164b26e",
+    "test_run_bounded.py": "d0d2bee577e6837ef0dfa7b45aad34498a6746e9f015d47662f216a39806aaef",
+    "view-config.json": "3b11ba8aa3c6f7ee66d43768bc88dd04ab6246af00b4f14f106ea56269158d0d",
+    "view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e"
+  },
+  "source_sha256_after": {
+    "README.md": "3d46d296a40156cf6ba5e7f0e76cfc256dc84060fcfd1c7cc83aacba2f84231d",
+    "certify_state_germ.py": "2bd72d22cefc830967e0a1b42bcc2d8220ad4d63295293f56cfbdc9176cd1fb2",
+    "run-config.json": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+    "run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "run_bounded.py": "29a541993e33243c21d1d31dcd407ef27ddab33f75465d142a5d8fdfc164b26e",
+    "test_run_bounded.py": "d0d2bee577e6837ef0dfa7b45aad34498a6746e9f015d47662f216a39806aaef",
+    "view-config.json": "3b11ba8aa3c6f7ee66d43768bc88dd04ab6246af00b4f14f106ea56269158d0d",
+    "view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e"
+  },
+  "source_bytes_unchanged_during_checks": true,
+  "mocked_test_count": 27,
+  "prepared_mathematical_control_count": 19,
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "mathematical_controls_executed": false,
+  "input_pins": {
+    "stationary_operators": {
+      "path": "reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+      "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+    },
+    "terminal_state": {
+      "path": "reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+      "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    }
+  },
+  "view_phase_count": 17
+}

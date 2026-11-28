@@ -1,0 +1,36 @@
+{
+  "state": "reviewed_cache_preparation_only",
+  "source_sha256": {
+    "verification/oblate_stationary_state_germ_20261128/README.md": "cef82590baee5dc215a8ed9db8f0ece9c03f075013c66c2c1a8f1555366eac87",
+    "verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "2bd72d22cefc830967e0a1b42bcc2d8220ad4d63295293f56cfbdc9176cd1fb2",
+    "verification/oblate_stationary_state_germ_20261128/run-config.json": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+    "verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "verification/oblate_stationary_state_germ_20261128/run_bounded.py": "819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5",
+    "verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231",
+    "verification/oblate_stationary_state_germ_20261128/view-config.json": "3b11ba8aa3c6f7ee66d43768bc88dd04ab6246af00b4f14f106ea56269158d0d",
+    "verification/oblate_stationary_state_germ_20261128/view.xml": "b001f280906125434c909a6ad105dc08bdae8e407b3a9e1173ff52638578afb7"
+  },
+  "original_failed_run": "09c32343-1dee-4d53-a1da-c6d1bb2e1fe3",
+  "original_source_commit": "0ae1c15e11b2b8c9a2f82ca86b6774b68f7e0e79",
+  "inputs": {
+    "stationary_operators": {
+      "path": "reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+      "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+    },
+    "terminal_state": {
+      "path": "reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+      "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    }
+  },
+  "limits": {
+    "wall_seconds": 900,
+    "memory_bytes": 2147483648,
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "max_atan_terms": 256
+  },
+  "scientific_checker_executed": false,
+  "runtime_measured": false,
+  "physical_germ_certified": false,
+  "supervisor_integration_pending": true,
+  "supervisor_note": "These copied supervisor files are the original20-test implementation; a separately reviewed future-run infrastructure correction must be integrated before the next launch."
+}

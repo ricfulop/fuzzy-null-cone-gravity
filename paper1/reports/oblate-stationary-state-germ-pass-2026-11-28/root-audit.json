@@ -1,0 +1,50 @@
+{
+  "run_id": "c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1",
+  "audit": "stdlib parsing, SHA/Git/source comparisons, recorded rational endpoint ordering/sign checks; no polynomial or matrix recomputation",
+  "source_count": 10,
+  "input_count": 2,
+  "matching_progress_event_count": 135,
+  "terminal_marker_hashes_match": true,
+  "certificate_sha256": "f07a00573347ed4dd037c4395124675b0dca02b5ab355909fe09e8d787030ca8",
+  "same_r0": "1",
+  "terms": 25,
+  "certified_response_column_zero_based": 1,
+  "unit_initial_vector": [
+    "0",
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "separated_intervals": {
+    "denominators": 57,
+    "determinant": 1,
+    "pivots": 6,
+    "response_numerator": 1
+  },
+  "all_recorded_intervals_ordered_and_separated": true,
+  "max_checked_endpoint_text_length": 10671,
+  "rank": 6,
+  "minor_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6
+  ],
+  "row_permutation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "row_swap_count": 0,
+  "postflight_process_group_28178_members": [],
+  "scientific_reexecution": false
+}

@@ -1,0 +1,43 @@
+{
+  "state": "reviewed serialization preparation only",
+  "created_utc": "2026-11-28T08:49:42.899530+00:00",
+  "failed_run": "9afcd73b-3499-4f08-8185-0f162c716cfb",
+  "failed_source": "3ff249cbb95f604cc3dbef60edb4e0624dcb10df",
+  "failure_archive_commit": "b23e8674ae62ecb92904020ccc0418f28e8d9d25",
+  "independent_static_review": "msg_5b7209fd",
+  "source_sha256": {
+    "verification/oblate_stationary_state_germ_20261128/README.md": "f3b3a12344ab44f34c119eef0b4b869755dd0f0b79c57551778a67516eab27a9",
+    "verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "57ea1554afa67f636f049d20b527b25b588c2025d810ac60165fd4adbd920186",
+    "verification/oblate_stationary_state_germ_20261128/exact_decimal.py": "62eac0b8ff5af11259f57cdc14a6a3101015606c29c765fb2b27744693c56119",
+    "verification/oblate_stationary_state_germ_20261128/test_exact_decimal.py": "ad00d2c6084cf51e7eb81fd63159aee2959b8a8e52525c3b235e692fbd1d519d",
+    "verification/oblate_stationary_state_germ_20261128/run_bounded.py": "1021f899bb4676a79ef049d3fba672e748743a12585664b0ead7f4f9017019e6",
+    "verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "ea1fdd4a04124305be8a50c35cc66811a40143d36e844a2b6fd52b1fccdc649c",
+    "verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "verification/oblate_stationary_state_germ_20261128/run-config.json": "6361ddabd8f846c9159ba117e2249b0ed169b60504bdff833115c0ab52209d8a",
+    "verification/oblate_stationary_state_germ_20261128/view-config.json": "c8dc8e83bd67daec9b197dbe3be1e982fd9f45dd95a5dd43342754ef8a0f04b1",
+    "verification/oblate_stationary_state_germ_20261128/view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e"
+  },
+  "input_pins": {
+    "stationary_operators": {
+      "path": "reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+      "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+    },
+    "terminal_state": {
+      "path": "reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+      "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    }
+  },
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "max_atan_terms": 256,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "mathematical_controls_executed": false,
+  "prepared_mathematical_control_count": 20,
+  "stdlib_formatter_test_count": 6,
+  "mocked_supervisor_test_count": 27,
+  "view_plan_unchanged": true,
+  "fixed_shell_entrypoint_unchanged": true,
+  "terminal_evidence_protocol_unchanged": true
+}

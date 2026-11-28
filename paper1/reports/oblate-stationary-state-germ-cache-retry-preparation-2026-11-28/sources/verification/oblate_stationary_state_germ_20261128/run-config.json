@@ -1,0 +1,23 @@
+{
+  "purpose": "Independent direct fourteen-state stationary germ certificate from authenticated candidate matrices: recheck the exact kernel, invariance, physical lift and all 22 original Euler rows; certify a physical rank-six minor and coefficient regularity, and test the separate discarded response at the same radius. No reduced-coordinate dynamics, checkpoint resumption, global boundary, universal-zero, or Dirac classification claim. Cache exact interval-search polynomials and per-radius specializations while preserving rational enclosures and search order; report detailed refinement progress. Same bounded budget.",
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "max_atan_terms": 256,
+  "inputs": {
+    "stationary_operators": {
+      "path": "reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+      "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+    },
+    "terminal_state": {
+      "path": "reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+      "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    }
+  },
+  "candidate_state_provenance": {
+    "run_id": "c2a1482f-4dc7-40f5-8f6d-b8f4700df6de",
+    "source_commit": "96916c7fe47b5542c4a5cf1c5a199ac11c1f488b",
+    "publication_status": "write-only intermediate terminal state before preservation; not a closure or germ certificate"
+  },
+  "scientific_input_policy": "Use original pinned operator bytes and candidate state bytes; independently recheck every listed certificate obligation without relying on snapshot success flags."
+}

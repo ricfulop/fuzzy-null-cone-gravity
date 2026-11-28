@@ -1,0 +1,94 @@
+{
+  "state": "stdlib serialization and mocked supervisor controls passed",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-W",
+        "error::ResourceWarning",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "verification/oblate_stationary_state_germ_20261128",
+        "-p",
+        "test_exact_decimal.py",
+        "-v"
+      ],
+      "cwd": "paper1",
+      "combined_output": "test_above_default_limit_preserves_exact_digits (test_exact_decimal.ExactDecimalTests.test_above_default_limit_preserves_exact_digits) ... ok\ntest_digit_limit_is_unchanged (test_exact_decimal.ExactDecimalTests.test_digit_limit_is_unchanged) ... ok\ntest_inexact_boolean_and_invalid_denominator_rejected (test_exact_decimal.ExactDecimalTests.test_inexact_boolean_and_invalid_denominator_rejected) ... ok\ntest_large_rational_text_and_json (test_exact_decimal.ExactDecimalTests.test_large_rational_text_and_json) ... ok\ntest_repeated_decimal_pattern (test_exact_decimal.ExactDecimalTests.test_repeated_decimal_pattern) ... ok\ntest_zero_sign_and_chunk_boundaries (test_exact_decimal.ExactDecimalTests.test_zero_sign_and_chunk_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.008s\n\nOK\n",
+      "exit_code": 0,
+      "elapsed_seconds": 0.09575729118660092
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-W",
+        "error::ResourceWarning",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "verification/oblate_stationary_state_germ_20261128",
+        "-p",
+        "test_run_bounded.py",
+        "-q"
+      ],
+      "cwd": "paper1",
+      "combined_output": "----------------------------------------------------------------------\nRan 27 tests in 0.354s\n\nOK\n",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5134516248945147
+    },
+    {
+      "command": [
+        "sh",
+        "-n",
+        "verification/oblate_stationary_state_germ_20261128/run.sh"
+      ],
+      "cwd": "paper1",
+      "combined_output": "",
+      "exit_code": 0,
+      "elapsed_seconds": 0.009018583921715617
+    }
+  ],
+  "scientific_modules_imported": false,
+  "scientific_invocations": 0,
+  "mathematical_controls_executed": false,
+  "serialization_test_count": 6,
+  "mocked_supervisor_test_count": 27,
+  "prepared_mathematical_control_count": 20,
+  "base_source": "3ff249cbb95f604cc3dbef60edb4e0624dcb10df",
+  "unchanged_existing_checker_functions": 84,
+  "changed_checker_functions": [
+    "atan_controls",
+    "certify_denominators_at_r0",
+    "certify_regularity_and_response",
+    "reference_certify_at_r0",
+    "serialize_minor",
+    "serialize_regularity",
+    "verify_manufactured_controls"
+  ],
+  "source_sha256_at_test": {
+    "run_bounded.py": "1021f899bb4676a79ef049d3fba672e748743a12585664b0ead7f4f9017019e6",
+    "exact_decimal.py": "62eac0b8ff5af11259f57cdc14a6a3101015606c29c765fb2b27744693c56119",
+    "test_run_bounded.py": "ea1fdd4a04124305be8a50c35cc66811a40143d36e844a2b6fd52b1fccdc649c",
+    "test_exact_decimal.py": "ad00d2c6084cf51e7eb81fd63159aee2959b8a8e52525c3b235e692fbd1d519d",
+    "run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "certify_state_germ.py": "a8b94aa5e5d5ad1240be5f762362e80d590b73b86b2cfaf4dd49628ac8f34c45",
+    "run-config.json": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+    "view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e",
+    "view-config.json": "3b11ba8aa3c6f7ee66d43768bc88dd04ab6246af00b4f14f106ea56269158d0d"
+  },
+  "output_only_AST_equivalence": {
+    "passed": true,
+    "all_existing_functions_compared": 91,
+    "normalizations": [
+      "equate old endpoint str lists and new rational_interval_text calls",
+      "remove only the added large-rational serialization control call from cases"
+    ],
+    "proof_and_search_statements_otherwise_unchanged": true
+  },
+  "post_test_edits": "An additional reference-only atan-control endpoint text path uses the same tested formatter; README/config purpose/view brief updated. Helper, its tests, supervisor lifecycle and mocked test files are unchanged since validation."
+}

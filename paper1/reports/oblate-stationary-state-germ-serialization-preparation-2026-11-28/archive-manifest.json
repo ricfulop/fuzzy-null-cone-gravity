@@ -1,0 +1,17 @@
+{
+  "files": {
+    "README.md": "2db597bb3228555184c901578739b11e6ad7ee1172621e6624638a01b492afb4",
+    "preparation-provenance.json": "a5f83ab72c3528074384e7aefc5068402f51a7ed7dbc7eeceeaba5c187e78271",
+    "sources/verification/oblate_stationary_state_germ_20261128/README.md": "f3b3a12344ab44f34c119eef0b4b869755dd0f0b79c57551778a67516eab27a9",
+    "sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "57ea1554afa67f636f049d20b527b25b588c2025d810ac60165fd4adbd920186",
+    "sources/verification/oblate_stationary_state_germ_20261128/exact_decimal.py": "62eac0b8ff5af11259f57cdc14a6a3101015606c29c765fb2b27744693c56119",
+    "sources/verification/oblate_stationary_state_germ_20261128/run-config.json": "6361ddabd8f846c9159ba117e2249b0ed169b60504bdff833115c0ab52209d8a",
+    "sources/verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "sources/verification/oblate_stationary_state_germ_20261128/run_bounded.py": "1021f899bb4676a79ef049d3fba672e748743a12585664b0ead7f4f9017019e6",
+    "sources/verification/oblate_stationary_state_germ_20261128/test_exact_decimal.py": "ad00d2c6084cf51e7eb81fd63159aee2959b8a8e52525c3b235e692fbd1d519d",
+    "sources/verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "ea1fdd4a04124305be8a50c35cc66811a40143d36e844a2b6fd52b1fccdc649c",
+    "sources/verification/oblate_stationary_state_germ_20261128/view-config.json": "c8dc8e83bd67daec9b197dbe3be1e982fd9f45dd95a5dd43342754ef8a0f04b1",
+    "sources/verification/oblate_stationary_state_germ_20261128/view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e",
+    "validation.json": "ff6757bcf4728164ae34bc5a32479c116405b273b3cc8e55acc5b4c588f30e60"
+  }
+}
