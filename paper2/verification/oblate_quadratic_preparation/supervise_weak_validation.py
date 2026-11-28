@@ -18,9 +18,9 @@ import time
 
 MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
-CHECK_MODE = "direct-profile-probe"
+CHECK_MODE = "profile-arithmetic-probe"
 CHECKER_NAME = "export_angular_weak_slots.py"
-# Renewed user approval; see direct-profile-probe-preparation.md.
+# Renewed user approval; see profile-arithmetic-probe-preparation.md.
 LAUNCH_APPROVAL_MESSAGE = "msg_c7ac8e6c"
 APPROVAL_END = dt.datetime(2026, 11, 28, 16, 29, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
@@ -161,7 +161,7 @@ def main():
         raise RuntimeError("Launch through the recorded local experiment contract")
     script_dir = Path(__file__).resolve().parent
     paper_dir = script_dir.parent.parent
-    output = paper_dir / "reports" / "oblate-angular-weak-slots" / "direct-profile-probe-runtime"
+    output = paper_dir / "reports" / "oblate-angular-weak-slots" / "profile-arithmetic-probe-runtime"
     output.mkdir(parents=True, exist_ok=False)
     uv = shutil.which("uv")
     if not uv:

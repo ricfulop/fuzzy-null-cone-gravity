@@ -42,9 +42,11 @@ SLOTS = ("00", "01", "10", "11")
 ZERO_TOL = 1e-11
 RESULT_NAME = "angular-weak-slot-checks.json"
 PROBE_RESULT_NAME = "direct-profile-probe-checks.json"
+ARITHMETIC_PROBE_RESULT_NAME = "profile-arithmetic-probe-checks.json"
 PROGRESS_NAME = "angular-weak-slot-progress.jsonl"
 CHECKPOINT_NAME = "angular-weak-slot-checkpoint.json"
 DENOMINATOR_CACHE: set[tuple[sp.Rational, ...]] = set()
+ARITHMETIC_PROBE_PAIRS = 12
 
 
 class RegularityError(ValueError):
@@ -141,11 +143,26 @@ def write_checkpoint(
     safe_write_json(output_dir / CHECKPOINT_NAME, checkpoint)
 
 
+def reset_denominator_cache() -> int:
+    size = len(DENOMINATOR_CACHE)
+    DENOMINATOR_CACHE.clear()
+    return size
+
+
 def runtime_plan(snapshot_count: int = ANGULAR_CASES) -> list[dict[str, Any]]:
     return [
         {"phase": "setup", "of": 1, "unit": "environment"},
         {"phase": "controls", "of": CONTROL_BATCHES, "unit": "batches"},
         {"phase": "angular_export", "of": snapshot_count, "unit": "snapshots"},
+        {"phase": "export", "of": 1, "unit": "checker result"},
+    ]
+
+
+def arithmetic_runtime_plan() -> list[dict[str, Any]]:
+    return [
+        {"phase": "setup", "of": 1, "unit": "environment"},
+        {"phase": "controls", "of": CONTROL_BATCHES, "unit": "batches"},
+        {"phase": "arithmetic", "of": ARITHMETIC_PROBE_PAIRS, "unit": "pairs"},
         {"phase": "export", "of": 1, "unit": "checker result"},
     ]
 
@@ -206,6 +223,128 @@ def _check_denominator_roots(denominator: sp.Expr, x: sp.Symbol) -> None:
     DENOMINATOR_CACHE.add(cache_key)
 
 
+def _validate_qq_i_rational(value: sp.Expr, x: sp.Symbol) -> None:
+    qq_i = sp.QQ.algebraic_field(sp.I)
+    numerator, denominator = sp.fraction(value)
+    try:
+        sp.Poly(numerator, x, domain=qq_i)
+        denominator_poly = sp.Poly(denominator, x, domain=qq_i)
+    except Exception as exc:
+        raise RegularityError(f"component is not rational over QQ(I)(x): {value}") from exc
+    if denominator_poly.is_zero:
+        raise RegularityError(f"component has zero denominator: {value}")
+
+
+def compact_component(value: sp.Expr, x: sp.Symbol) -> sp.Expr:
+    if value.has(sp.Float, sp.nan, sp.zoo, sp.oo, -sp.oo):
+        raise RegularityError(f"nonexact or nonfinite component: {value}")
+    try:
+        compacted = sp.cancel(sp.together(value))
+    except Exception as exc:
+        raise RegularityError(f"could not compact component: {value}") from exc
+    if compacted.has(sp.Float, sp.nan, sp.zoo, sp.oo, -sp.oo):
+        raise RegularityError(f"nonexact or nonfinite compacted component: {compacted}")
+    for power in compacted.atoms(sp.Pow):
+        if power.exp.is_Rational and not power.exp.is_Integer:
+            raise RegularityError(f"unsupported component radical: {power}")
+    if compacted.has(sp.Abs):
+        raise RegularityError(f"unsupported component Abs: {compacted}")
+    _validate_qq_i_rational(compacted, x)
+    return compacted
+
+
+def compact_matrix(matrix: sp.Matrix, x: sp.Symbol) -> sp.Matrix:
+    return matrix.applyfunc(lambda value: compact_component(value, x))
+
+
+def compact_jet(jet: dict[str, Any], x: sp.Symbol) -> dict[str, Any]:
+    return {
+        "h": compact_matrix(jet["h"], x),
+        "nabla": [compact_matrix(nabla_a, x) for nabla_a in jet["nabla"]],
+        "trace": compact_component(jet["trace"], x),
+        "trace_gradient": [
+            compact_component(value, x) for value in jet["trace_gradient"]
+        ],
+        "divergence_lower": [
+            compact_component(value, x) for value in jet["divergence_lower"]
+        ],
+    }
+
+
+def assert_compacted_jet_equal(
+    raw: dict[str, Any],
+    compacted: dict[str, Any],
+    x: sp.Symbol,
+    cache: dict[str, sp.Expr],
+) -> int:
+    assert_jet_shape(raw, "equality_raw")
+    assert_jet_shape(compacted, "equality_compact")
+    checks = 0
+    for raw_value, compact_value in zip(list(raw["h"]), list(compacted["h"])):
+        if clean_expr(raw_value - compact_value, x, cache) != 0:
+            raise AssertionError("compacted h component changed")
+        checks += 1
+    for raw_nabla, compact_nabla in zip(raw["nabla"], compacted["nabla"]):
+        for raw_value, compact_value in zip(list(raw_nabla), list(compact_nabla)):
+            if clean_expr(raw_value - compact_value, x, cache) != 0:
+                raise AssertionError("compacted nabla component changed")
+            checks += 1
+    if clean_expr(raw["trace"] - compacted["trace"], x, cache) != 0:
+        raise AssertionError("compacted trace changed")
+    checks += 1
+    for raw_value, compact_value in zip(
+        raw["trace_gradient"], compacted["trace_gradient"]
+    ):
+        if clean_expr(raw_value - compact_value, x, cache) != 0:
+            raise AssertionError("compacted trace gradient changed")
+        checks += 1
+    for raw_value, compact_value in zip(
+        raw["divergence_lower"], compacted["divergence_lower"]
+    ):
+        if clean_expr(raw_value - compact_value, x, cache) != 0:
+            raise AssertionError("compacted divergence changed")
+        checks += 1
+    return checks
+
+
+def verify_component_compaction_controls(x: sp.Symbol) -> dict[str, Any]:
+    positives = {
+        "endpoint_pole_allowed": 1 / (1 - x),
+        "removable_endpoint_pole": (1 - x**2) / (1 - x),
+        "imaginary_rational": sp.I * x / (x**2 + 2),
+    }
+    for label, value in positives.items():
+        compacted = compact_component(value, x)
+        if clean_expr(value - compacted, x, {}) != 0:
+            raise AssertionError(f"component compaction changed {label}")
+    try:
+        clean_expr(positives["endpoint_pole_allowed"], x, {})
+    except RegularityError:
+        pass
+    else:
+        raise AssertionError("final scalar guard accepted a component endpoint pole")
+    rejects = {
+        "unsupported_function": sp.sin(x),
+        "unsupported_radical": sp.sqrt(x),
+        "inexact_float": sp.Float("0.1") * x,
+        "nonfinite_nan": sp.nan,
+        "nonfinite_infinity": sp.oo,
+    }
+    for label, value in rejects.items():
+        try:
+            compact_component(value, x)
+        except RegularityError:
+            continue
+        raise AssertionError(f"component compaction accepted negative control: {label}")
+    return {
+        "positive_controls": list(positives),
+        "component_pole_rejected_by_final_scalar_guard": True,
+        "rejected_controls": list(rejects),
+        "endpoint_poles_allowed": True,
+        "final_density_regularization_applied_to_components": False,
+    }
+
+
 def split_complex(value: sp.Expr, x: sp.Symbol, cache: dict[str, sp.Expr]) -> tuple[sp.Expr, sp.Expr]:
     expanded = sp.expand(value)
     real = clean_expr(expanded.coeff(sp.I, 0), x, cache)
@@ -258,6 +397,90 @@ class FixedChartEvaluator:
         if not math.isfinite(integral):
             raise FloatingPointError("nonfinite quadrature integral")
         return integral
+
+
+class TimedChartEvaluator(FixedChartEvaluator):
+    def __init__(
+        self,
+        x: sp.Symbol,
+        substitutions: dict[sp.Symbol, sp.Rational],
+        context: dict[str, Any] | None = None,
+    ):
+        super().__init__(x, substitutions)
+        self.context = context or {}
+
+    def timed_normalize(
+        self,
+        value: sp.Expr,
+        context: dict[str, Any],
+    ) -> tuple[sp.Expr, sp.Expr, dict[str, float]]:
+        timings: dict[str, float] = {}
+        tick = substage("fixed_substitution", "start", None, **context)
+        substituted = value.subs(self.substitutions)
+        timings["fixed_substitution_seconds"] = now() - tick
+        substage("fixed_substitution", "done", tick, **context)
+
+        tick = substage("expand_split", "start", None, **context)
+        expanded = sp.expand(substituted)
+        timings["expand_split_seconds"] = now() - tick
+        substage("expand_split", "done", tick, **context)
+
+        tick = substage("cancel_qq_root_guard", "start", None, **context)
+        real = clean_expr(expanded.coeff(sp.I, 0), self.x, self.cache)
+        imag = clean_expr(expanded.coeff(sp.I, 1), self.x, self.cache)
+        residual = sp.expand(expanded - real - sp.I * imag)
+        if residual != 0:
+            residual = clean_expr(residual, self.x, self.cache)
+            if residual != 0:
+                raise RegularityError(f"nonlinear I residual after split: {residual}")
+        timings["cancel_qq_root_guard_seconds"] = now() - tick
+        substage("cancel_qq_root_guard", "done", tick, **context)
+        return real, imag, timings
+
+    def timed_integrate(
+        self,
+        value: sp.Expr,
+        order: int,
+    ) -> tuple[complex, dict[str, float], sp.Expr, sp.Expr]:
+        context = {**self.context, "order": order}
+        real, imag, timings = self.timed_normalize(value, context)
+        tick = substage("legendre_nodes", "start", None, order=order, **self.context)
+        if order not in self.nodes:
+            nodes, weights = np.polynomial.legendre.leggauss(order)
+            self.nodes[order] = nodes
+            self.weights[order] = weights
+        timings["legendre_nodes_seconds"] = now() - tick
+        substage("legendre_nodes", "done", tick, order=order, **self.context)
+
+        parts = []
+        lambdify_seconds = 0.0
+        evaluation_seconds = 0.0
+        lambdify_tick = substage("lambdify", "start", None, order=order, **self.context)
+        for value_part in (real, imag):
+            key = sp.srepr(value_part)
+            tick = now()
+            if key not in self.lambda_cache:
+                self.lambda_cache[key] = sp.lambdify(self.x, value_part, "numpy")
+            lambdify_seconds += now() - tick
+        substage("lambdify", "done", lambdify_tick, order=order, **self.context)
+        quadrature_tick = substage("quadrature", "start", None, order=order, **self.context)
+        for value_part in (real, imag):
+            key = sp.srepr(value_part)
+            tick = now()
+            evaluated = np.asarray(self.lambda_cache[key](self.nodes[order]), dtype=np.float64)
+            if evaluated.shape == ():
+                evaluated = np.full(order, float(evaluated), dtype=np.float64)
+            if not np.all(np.isfinite(evaluated)):
+                raise FloatingPointError("nonfinite quadrature integrand value")
+            integral = float(np.dot(self.weights[order], evaluated) / 2)
+            if not math.isfinite(integral):
+                raise FloatingPointError("nonfinite quadrature integral")
+            parts.append(integral)
+            evaluation_seconds += now() - tick
+        substage("quadrature", "done", quadrature_tick, order=order, **self.context)
+        timings["lambdify_seconds"] = lambdify_seconds
+        timings["quadrature_evaluation_seconds"] = evaluation_seconds
+        return complex(parts[0], parts[1]), timings, real, imag
 
 
 def realify_rectangular(matrix: np.ndarray, m: int) -> np.ndarray:
@@ -471,6 +694,39 @@ def fixed_profile_spatial_jets(
         values.append(complex(sp.N((coefficient * profile).subs(substitutions), 30)))
         derivatives.append(complex(sp.N((coefficient * derivative).subs(substitutions), 30)))
     return jets, values, derivatives
+
+
+def fixed_single_profile_spatial_jet(
+    data: dict[str, Any],
+    coeff: sp.Expr,
+    side: str,
+    family: int,
+    index: int,
+    gamma: Any,
+    substitutions: dict[sp.Symbol, sp.Rational],
+) -> dict[str, Any]:
+    r = data["r"]
+    profile, _ = profile_values(r, index, side, family)
+    field = coeff * profile * data["spatial_tangents"][index]
+    return substitute_jet(weak.tensor_jet(field, data, 1, 0, gamma), substitutions)
+
+
+def assert_jet_shape(jet: dict[str, Any], label: str) -> None:
+    if jet["h"].shape != (3, 3):
+        raise AssertionError(f"{label} h has shape {jet['h'].shape}")
+    if len(jet["nabla"]) != 3:
+        raise AssertionError(f"{label} nabla has {len(jet['nabla'])} entries")
+    for index, matrix in enumerate(jet["nabla"]):
+        if matrix.shape != (3, 3):
+            raise AssertionError(f"{label} nabla[{index}] has shape {matrix.shape}")
+    if len(jet["trace_gradient"]) != 3:
+        raise AssertionError(
+            f"{label} trace_gradient has {len(jet['trace_gradient'])} entries"
+        )
+    if len(jet["divergence_lower"]) != 3:
+        raise AssertionError(
+            f"{label} divergence_lower has {len(jet['divergence_lower'])} entries"
+        )
 
 
 def fixed_dense_lapse_profile(
@@ -749,7 +1005,7 @@ def verify_rational_guard_controls(x: sp.Symbol) -> dict[str, Any]:
     return {"positive_controls": 2, "rejected_controls": list(rejects)}
 
 
-def verify_legendre_norms() -> dict[str, Any]:
+def verify_legendre_norms(include_component_compaction: bool = False) -> dict[str, Any]:
     x = sp.Symbol("x", real=True)
     regularity = verify_rational_guard_controls(x)
     evaluator = FixedChartEvaluator(x, {})
@@ -775,7 +1031,13 @@ def verify_legendre_norms() -> dict[str, Any]:
                 "norm_dx_over_2": str(expected),
                 "quadrature": numeric,
             })
-    return {"checked": checked, "regularity_guard_controls": regularity}
+    result = {
+        "checked": checked,
+        "regularity_guard_controls": regularity,
+    }
+    if include_component_compaction:
+        result["component_compaction_controls"] = verify_component_compaction_controls(x)
+    return result
 
 
 def verify_manual_round_anchor() -> dict[str, Any]:
@@ -1299,6 +1561,368 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
     }
 
 
+def timed_quadrature_ladder(
+    evaluator: TimedChartEvaluator,
+    value: sp.Expr,
+) -> tuple[dict[str, Any], float, str | None, dict[str, float]]:
+    orders: dict[int, complex] = {}
+    timings: dict[str, float] = {}
+    exact_nonzero = None
+    for order in QUADRATURE_ORDERS:
+        orders[order], order_timings, real, imag = evaluator.timed_integrate(value, order)
+        if exact_nonzero is None:
+            if real != 0:
+                exact_nonzero = str(real)
+            elif imag != 0:
+                exact_nonzero = f"I*({imag})"
+        timings[str(order)] = sum(order_timings.values())
+        for key, elapsed in order_timings.items():
+            timings[f"{order}_{key}"] = elapsed
+    err24_48 = abs(orders[48] - orders[24])
+    err48_96 = abs(orders[96] - orders[48])
+    scale = max(1.0, abs(orders[48]), abs(orders[96]))
+    scaled = err48_96 / scale
+    if scaled > REFINEMENT_RTOL:
+        raise AssertionError(f"arithmetic probe quadrature refinement failed: {scaled}")
+    payload = {
+        "values": {str(order): cscalar(orders[order]) for order in QUADRATURE_ORDERS},
+        "max_abs_24_48": float(err24_48),
+        "max_abs_48_96": float(err48_96),
+        "max_scaled_48_96": float(scaled),
+        "timings": timings,
+    }
+    return payload, float(scaled), exact_nonzero, timings
+
+
+def compact_profile_jets(
+    left_raw: dict[str, Any],
+    right_raw: list[dict[str, Any]],
+    x: sp.Symbol,
+) -> tuple[dict[str, Any], list[dict[str, Any]], int]:
+    tick = substage("compact_profile_jets", "start", None)
+    left_compact = compact_jet(left_raw, x)
+    right_compact = [compact_jet(jet, x) for jet in right_raw]
+    equality_cache: dict[str, sp.Expr] = {}
+    equality_checks = assert_compacted_jet_equal(left_raw, left_compact, x, equality_cache)
+    for raw, compacted in zip(right_raw, right_compact):
+        equality_checks += assert_compacted_jet_equal(raw, compacted, x, equality_cache)
+    substage(
+        "compact_profile_jets",
+        "done",
+        tick,
+        equality_checks=equality_checks,
+        jets=1 + len(right_raw),
+    )
+    return left_compact, right_compact, equality_checks
+
+
+def evaluate_arithmetic_pair(
+    output_dir: Path | None,
+    fixed_data: dict[str, Any],
+    x: sp.Symbol,
+    left_raw: dict[str, Any],
+    left_compact: dict[str, Any],
+    right_raw: dict[str, Any],
+    right_compact: dict[str, Any],
+    right_index: int,
+    metadata: dict[str, Any],
+) -> tuple[dict[str, Any], float]:
+    pair_started = now()
+    write_progress(output_dir, {
+        "phase": "arithmetic",
+        "step": right_index,
+        "of": ARITHMETIC_PROBE_PAIRS,
+        "unit": "pairs",
+        "m": {"active_right_index": right_index},
+    })
+
+    tick = substage("arithmetic_density", "start", None, arm="raw", right_index=right_index)
+    raw_density = weak.potential_density(left_raw, right_raw, fixed_data)
+    raw_construct_seconds = now() - tick
+    substage(
+        "arithmetic_density",
+        "done",
+        tick,
+        arm="raw",
+        right_index=right_index,
+    )
+
+    tick = substage("arithmetic_density", "start", None, arm="compact", right_index=right_index)
+    compact_density = weak.potential_density(left_compact, right_compact, fixed_data)
+    compact_construct_seconds = now() - tick
+    substage(
+        "arithmetic_density",
+        "done",
+        tick,
+        arm="compact",
+        right_index=right_index,
+    )
+
+    reset_raw = reset_denominator_cache()
+    raw_evaluator = TimedChartEvaluator(
+        x,
+        {},
+        {"arm": "raw", "right_index": right_index},
+    )
+    raw_payload, raw_scaled, raw_nonzero, _ = timed_quadrature_ladder(
+        raw_evaluator, raw_density
+    )
+    reset_compact = reset_denominator_cache()
+    compact_evaluator = TimedChartEvaluator(
+        x,
+        {},
+        {"arm": "compact", "right_index": right_index},
+    )
+    compact_payload, compact_scaled, compact_nonzero, _ = timed_quadrature_ladder(
+        compact_evaluator, compact_density
+    )
+
+    exact_tick = substage("exact_density_difference", "start", None, right_index=right_index)
+    exact_cache: dict[str, sp.Expr] = {}
+    exact_difference = clean_expr(raw_density - compact_density, x, exact_cache)
+    if exact_difference != 0:
+        raise AssertionError(f"raw compact density mismatch at right_index={right_index}")
+    substage("exact_density_difference", "done", exact_tick, right_index=right_index)
+
+    for order in QUADRATURE_ORDERS:
+        raw_value = complex(*raw_payload["values"][str(order)])
+        compact_value = complex(*compact_payload["values"][str(order)])
+        assert_close(
+            raw_value,
+            compact_value,
+            f"raw compact arithmetic probe right_index={right_index} order={order}",
+        )
+
+    pair = {
+        **metadata,
+        "right_index": right_index,
+        "raw": raw_payload,
+        "compact": compact_payload,
+        "raw_density_construct_seconds": raw_construct_seconds,
+        "compact_density_construct_seconds": compact_construct_seconds,
+        "exact_raw_minus_compact_zero": True,
+        "raw_nonzero": raw_nonzero is not None,
+        "compact_nonzero": compact_nonzero is not None,
+        "raw_nonzero_witness": raw_nonzero,
+        "compact_nonzero_witness": compact_nonzero,
+        "denominator_cache_reset_before_raw": reset_raw,
+        "denominator_cache_reset_before_compact": reset_compact,
+        "diagnostic_timing_only": True,
+        "diagnostic_only": True,
+        "snapshot": False,
+        "quadrature_orders": list(QUADRATURE_ORDERS),
+        "refinement_rtol": REFINEMENT_RTOL,
+        "raw_compact_rtol": REFINEMENT_RTOL,
+        "angular_measure": "dx/2",
+        "elapsed_seconds": now() - pair_started,
+    }
+    if output_dir is not None:
+        safe_write_json(output_dir / f"profile-arithmetic-pair-r{right_index}.json", pair)
+    return pair, max(raw_scaled, compact_scaled)
+
+
+def verify_profile_arithmetic_probe(output_dir: Path | None) -> dict[str, Any]:
+    started = now()
+    if output_dir is not None:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir / PROGRESS_NAME).write_text("")
+
+    write_progress(output_dir, {
+        "phase": "setup",
+        "step": 1,
+        "of": 1,
+        "unit": "environment",
+        "plan": arithmetic_runtime_plan(),
+        "mode": "profile-arithmetic-probe",
+    })
+    write_progress(output_dir, {
+        "phase": "controls",
+        "step": 0,
+        "of": CONTROL_BATCHES,
+        "unit": "batches",
+        "m": {"completed_control_batches": 0},
+    })
+    controls: dict[str, Any] = {}
+    control_steps: tuple[tuple[str, Callable[[], dict[str, Any]]], ...] = (
+        ("legendre_norms", lambda: verify_legendre_norms(True)),
+        ("round_weak_anchor", verify_manual_round_anchor),
+        ("manufactured_realification", verify_realification_controls),
+    )
+    for index, (name, control) in enumerate(control_steps, start=1):
+        tick = substage(name, "start")
+        controls[name] = control()
+        substage(name, "done", tick)
+        write_checkpoint(output_dir, started, f"control_{name}", controls[name])
+        write_progress(output_dir, {
+            "phase": "controls",
+            "step": index,
+            "of": CONTROL_BATCHES,
+            "unit": "batches",
+            "m": {"completed_control_batches": index},
+        })
+
+    m = 0
+    r_value = sp.Rational(3, 2)
+    lf = rf = 0
+    left_index = 10
+    pairs = []
+    max_scaled = 0.0
+    nonzero_witnesses = []
+    write_progress(output_dir, {
+        "phase": "arithmetic",
+        "step": 0,
+        "of": ARITHMETIC_PROBE_PAIRS,
+        "unit": "pairs",
+        "m": {"completed_arithmetic_pairs": 0, "max_scaled_refinement_error": max_scaled},
+    })
+    data = kinematics.sector(L_CUTOFF, m)
+    if len(data["spatial_labels"]) != ARITHMETIC_PROBE_PAIRS:
+        raise AssertionError(f"m=0 probe expected 12 spatial labels, got {len(data['spatial_labels'])}")
+    if len(data["spatial_tangents"]) != ARITHMETIC_PROBE_PAIRS:
+        raise AssertionError(
+            f"m=0 probe expected 12 spatial tangents, got {len(data['spatial_tangents'])}"
+        )
+    x = data["x"]
+    substitutions = {data["r"]: r_value, data["epsilon"]: EPSILON_VALUE}
+    fixed_data = fixed_metric_data(data, substitutions)
+    gamma = weak.connection(data)
+    left_coeff = sp.Rational(left_index + 1, 13)
+    if data["spatial_labels"][left_index] != ("C_polar", 2, 0):
+        raise AssertionError(
+            f"probe left index changed: {data['spatial_labels'][left_index]}"
+        )
+    right_coeffs = [sp.Rational(2 * index + 3, 17) for index in range(len(data["spatial_labels"]))]
+
+    build_tick = substage("arithmetic_build_jets", "start", None)
+    left_raw = fixed_single_profile_spatial_jet(
+        data, left_coeff, "left", lf, left_index, gamma, substitutions
+    )
+    right_raw = [
+        fixed_single_profile_spatial_jet(
+            data, coefficient, "right", rf, right_index, gamma, substitutions
+        )
+        for right_index, coefficient in enumerate(right_coeffs)
+    ]
+    substage("arithmetic_build_jets", "done", build_tick)
+    assert_jet_shape(left_raw, "left_raw")
+    for right_index, jet in enumerate(right_raw):
+        assert_jet_shape(jet, f"right_raw[{right_index}]")
+    left_compact, right_compact, equality_checks = compact_profile_jets(left_raw, right_raw, x)
+    assert_jet_shape(left_compact, "left_compact")
+    for right_index, jet in enumerate(right_compact):
+        assert_jet_shape(jet, f"right_compact[{right_index}]")
+
+    for right_index, right in enumerate(right_raw):
+        pair_metadata = {
+            "m": m,
+            "r": str(r_value),
+            "epsilon": str(EPSILON_VALUE),
+            "lf": lf,
+            "rf": rf,
+            "left_index": left_index,
+            "left_label": label_tuple(data["spatial_labels"][left_index]),
+            "left_coefficient": str(left_coeff),
+            "left_profile": str(polynomial_profile(data["r"], left_index, "left", lf)),
+            "right_label": label_tuple(data["spatial_labels"][right_index]),
+            "right_coefficient": str(right_coeffs[right_index]),
+            "right_profile": str(polynomial_profile(data["r"], right_index, "right", rf)),
+        }
+        pair, scaled = evaluate_arithmetic_pair(
+            output_dir,
+            fixed_data,
+            x,
+            left_raw,
+            left_compact,
+            right,
+            right_compact[right_index],
+            right_index,
+            pair_metadata,
+        )
+        pairs.append(pair)
+        max_scaled = max(max_scaled, scaled)
+        if pair["raw_nonzero"]:
+            nonzero_witnesses.append(right_index)
+        write_checkpoint(output_dir, started, f"arithmetic_right_{right_index}", pair)
+        write_progress(output_dir, {
+            "phase": "arithmetic",
+            "step": right_index + 1,
+            "of": ARITHMETIC_PROBE_PAIRS,
+            "unit": "pairs",
+            "m": {
+                "completed_arithmetic_pairs": right_index + 1,
+                "max_scaled_refinement_error": max_scaled,
+            },
+        })
+    if not nonzero_witnesses:
+        raise AssertionError("profile arithmetic probe saw only zero raw densities")
+
+    result = {
+        "status": "passed",
+        "mode": "profile-arithmetic-probe",
+        "scope": "single-row raw versus component-compacted arithmetic diagnostic",
+        "diagnostic_only": True,
+        "row_arithmetic_comparison_only": True,
+        "full_slots_built": False,
+        "production_path_compaction": False,
+        "profile_block_completed": False,
+        "snapshot_file_written": False,
+        "six_snapshot_export_performed": False,
+        "production_compaction_integrated": False,
+        "full_snapshot_performed": False,
+        "angular_snapshot": False,
+        "m_values": [m],
+        "r_values": [str(r_value)],
+        "m": m,
+        "r": str(r_value),
+        "epsilon": str(EPSILON_VALUE),
+        "lf": lf,
+        "rf": rf,
+        "left_index": left_index,
+        "right_terms": ARITHMETIC_PROBE_PAIRS,
+        "right_indices": list(range(ARITHMETIC_PROBE_PAIRS)),
+        "left_label": label_tuple(data["spatial_labels"][left_index]),
+        "right_labels": [label_tuple(label) for label in data["spatial_labels"]],
+        "left_coefficient": str(left_coeff),
+        "right_coefficients": [str(coefficient) for coefficient in right_coeffs],
+        "left_profile": str(polynomial_profile(data["r"], left_index, "left", lf)),
+        "right_profiles": [
+            str(polynomial_profile(data["r"], right_index, "right", rf))
+            for right_index in range(ARITHMETIC_PROBE_PAIRS)
+        ],
+        "component_equality_checks": equality_checks,
+        "component_endpoint_poles_allowed": True,
+        "final_scalar_regularity_guard": "existing FixedChartEvaluator/clean_expr path",
+        "nonzero_witness_right_indices": nonzero_witnesses,
+        "pairs": pairs,
+        "max_scaled_refinement_error": max_scaled,
+        "controls": controls,
+        "source_sha256": source_sha256(),
+        "python": platform.python_version(),
+        "dependencies": {"numpy": np.__version__, "sympy": sp.__version__},
+        "elapsed_seconds": now() - started,
+    }
+    if output_dir is not None:
+        write_progress(output_dir, {
+            "phase": "export",
+            "step": 0,
+            "of": 1,
+            "unit": "checker result",
+        })
+        safe_write_json(output_dir / ARITHMETIC_PROBE_RESULT_NAME, result)
+        write_progress(output_dir, {
+            "phase": "export",
+            "step": 1,
+            "of": 1,
+            "unit": "checker result",
+            "m": {
+                "profile_arithmetic_probe_passed": 1,
+                "elapsed_seconds": now() - started,
+            },
+        })
+    print("PASS profile-arithmetic-probe", flush=True)
+    return result
+
+
 def mode_cases(mode: str) -> list[tuple[int, sp.Rational]]:
     if mode == "full":
         return [(m, r_value) for m in M_VALUES for r_value in R_VALUES]
@@ -1484,13 +2108,20 @@ def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--mode", choices=("full", "direct-profile-probe"), default="full")
+    parser.add_argument(
+        "--mode",
+        choices=("full", "direct-profile-probe", "profile-arithmetic-probe"),
+        default="full",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    verify_export(args.output_dir, args.mode)
+    if args.mode == "profile-arithmetic-probe":
+        verify_profile_arithmetic_probe(args.output_dir)
+    else:
+        verify_export(args.output_dir, args.mode)
 
 
 if __name__ == "__main__":
