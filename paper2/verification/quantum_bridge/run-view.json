@@ -1,0 +1,16 @@
+{
+  "plan": [
+    {"phase": "setup", "of": 1, "unit": "checks"},
+    {"phase": "constraint_data", "of": 1, "unit": "cases"},
+    {"phase": "exact_hessians", "of": 11, "unit": "cutoffs"},
+    {"phase": "independent_quadrature", "of": 9, "unit": "cases"},
+    {"phase": "export", "of": 1, "unit": "reports"}
+  ],
+  "brief": {
+    "question": "Does the common finite-rank metric-coefficient action inherit continuum lapse constraints on vacuum initial data?",
+    "healthy": "Exact rational constraint residuals vanish. The axisymmetric lapse Hessian has predicted nonzero cutoff entries. Independent finite-amplitude quadrature agrees with its exact curvature; the final summary and JSON report are written.",
+    "noise": "A positive boundary_defect is the expected physical obstruction being tested, not numerical divergence. Fixed ell=1 and ell=L are different cutoff sequences. The first setup stage has no package installs because the recipe uses only the Python standard library.",
+    "worth_a_flag": "A nonzero vacuum constraint residual, failed assertion, independent quadrature disagreement, or a claim that this run is a completed graviton loop amplitude.",
+    "decided": "Local CPU only. No GPU or external compute. This is a prerequisite calculation and does not establish full Dirac stabilization, boundary quantization or reconstruction."
+  }
+}

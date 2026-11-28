@@ -9,6 +9,7 @@ Companion dynamical manuscript and reproducible symbolic/numerical verification 
 - [Working draft v0.2 PDF](paper2_einstein_gravity.pdf), built from [paper2_einstein_gravity.tex](paper2_einstein_gravity.tex).
 - [Paper I pre-submission interaction-and-symmetry audit](reports/paper1-action-audit.md).
 - [Proposed common regulator for both papers](reports/common-regulator-bridge.md): exact product-mismatch identities and a prescription for evaluating one Galerkin action with complete Gaunt tensors. This is a follow-up proposal; the v0.2 manuscript and its archived calculations are unchanged. Check its algebra with `python3 verification/common_regulator_identities.py` (Python standard library only).
+- [Active quantum research objective](GOAL.md): completion criteria for finite-rank one-loop amplitudes, dynamical corner states, and Euclidean--Lorentzian reconstruction from one theory. The first tracked prerequisite is the [lapse-constraint test on vacuum initial data](reports/quantum-bridge/lapse-constraint-on-vacuum-data.md); its local CPU recipe is `bash verification/quantum_bridge/run.sh`, launched through the project's experiment runner.
 
 ## Reproduce all calculations and figures
 
