@@ -1,0 +1,70 @@
+{
+  "started_utc": "2026-11-28T05:10:06.705120+00:00",
+  "approval_message": "msg_ad636446",
+  "approval_end_utc": "2026-11-28T16:29:00+00:00",
+  "wall_budget_seconds": 900,
+  "sampled_group_rss_budget_bytes": 2147483648,
+  "memory_budget_is_hard_limit": false,
+  "command": [
+    "/Users/ricfulop/.local/bin/uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "-u",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/2e50a13f-2883-482d-b582-2313f9d1b1ad/repo/paper2/verification/oblate_quadratic_preparation/verify_weak_forms.py",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/2e50a13f-2883-482d-b582-2313f9d1b1ad/repo/paper2/reports/oblate-weak-curvature-validation/runtime"
+  ],
+  "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/2e50a13f-2883-482d-b582-2313f9d1b1ad/repo/paper2",
+  "source_sha256": {
+    "verify_weak_forms.py": "b7e499e28f1d19611b9c7639faa69d76063a73c35c4746265c255ce844f2a34a",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "7763c4429fce1de1ebc65c7964647b54f29fc68e0a55cb3bc5b01082df8aa1b8",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  },
+  "source_commit": "0831e825ee86f7b746a16ada15ad0bfb7d87ab98",
+  "run_id": "2e50a13f-2883-482d-b582-2313f9d1b1ad",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "source_equations_changed_by_supervisor": false,
+  "status": "failed",
+  "process_group": 66868,
+  "ended_utc": "2026-11-28T05:25:07.042534+00:00",
+  "elapsed_seconds": 900.3260373750236,
+  "child_return_code": 143,
+  "stop_reason": "wall_budget",
+  "peak_sampled_group_rss_bytes": 221315072,
+  "sample_count": 3032,
+  "cleanup_events": [
+    {
+      "action": "signal",
+      "signal": 15,
+      "status": "sent"
+    },
+    {
+      "action": "probe",
+      "status": "permission_error_live",
+      "errno": 1,
+      "message": "[Errno 1] Operation not permitted",
+      "members": [
+        {
+          "pid": 66868,
+          "rss_bytes": 31211520
+        }
+      ]
+    },
+    {
+      "action": "final_disposition",
+      "status": "empty",
+      "members": []
+    }
+  ]
+}

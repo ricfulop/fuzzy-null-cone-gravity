@@ -1,6 +1,6 @@
 # Bounded oblate weak-curvature validation
 
-Status: the first invocation passed its three representative weak-density/Green batches, then exceeded its monitored memory budget during the first symbolic pure-gauge control. Full validation remains incomplete. The preserved attempt is in [first-attempt/README.md](first-attempt/README.md); the bounded repair proposal is in [retry-preparation.md](retry-preparation.md).
+Status: two invocations are incomplete. The first passed three representative weak-density/Green batches, then reached its monitored memory limit in the symbolic gauge control. The retry timed out in the second sampled sector after completing only the first. The records are preserved in [first-attempt/README.md](first-attempt/README.md) and [second-attempt/README.md](second-attempt/README.md). The historical retry proposal is [retry-preparation.md](retry-preparation.md); it is not a passing result.
 
 This check tests the potential and lapse densities prepared at `510e7d87d0e8cd1581ffc7233122a7bedafea969`, for the original Paper I coefficient-Galerkin action and its oblate flat background. It does not test the separate reduction-before-cutoff Gaunt candidate. The source action and retained harmonic conventions remain pinned to the prior preparation; no scientific equation in `weak_forms.py`, `potential_hessian.py`, or `kinematic_blocks.py` is changed here.
 
