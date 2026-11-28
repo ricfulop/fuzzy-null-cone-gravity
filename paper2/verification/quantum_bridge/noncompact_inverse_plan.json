@@ -1,0 +1,19 @@
+{
+  "plan": [
+    {"phase": "setup", "of": 1, "unit": "checks"},
+    {"phase": "unreduced_algebra", "of": 18, "unit": "controls"},
+    {"phase": "gaussian_exterior_controls", "of": 10, "unit": "controls"},
+    {"phase": "noncompact_synthetic", "of": 9, "unit": "levels"},
+    {"phase": "mixed_first_responses", "of": 4, "unit": "levels"},
+    {"phase": "final_checks", "of": 1, "unit": "reports"}
+  ],
+  "brief": {
+    "question": "Do explicit noncompact Gaussian exterior corrections pass independent controls and reproduce the actual mixed gravitational first responses within declared finite-grid thresholds?",
+    "healthy": "All structural comparisons pass. Coarse physical discrepancies are retained as diagnostics. Required physical and final-refinement comparisons pass only if the finest declared grid is adequate.",
+    "noise": "The earlier scalar inverse refinement established synthetic primitives only. A coarse diagnostic failure is allowed; it does not waive any finest-grid or structural requirement.",
+    "worth_a_flag": "Any required comparison failure, work-cap rejection, nonfinite value, or source/exterior mismatch is material. The first mixed-source levels may be underresolved; preserve a failed gate rather than relaxing tolerances.",
+    "from_parent": "The inverse-primitive parent passed 903 required comparisons in about 295 seconds. Full-mode noncompact adapters have not been timed; the new bounded workload may cost more.",
+    "decided": "One local CPU run, 1800-second wall limit, 2-GiB sampled memory ceiling. No GPU or remote compute. No W2, u3, u4 or mixed-H6 acceptance is claimed by this run. All completed evidence is checkpointed."
+  },
+  "watch": {"minGapS": 120, "maxGapS": 600}
+}
