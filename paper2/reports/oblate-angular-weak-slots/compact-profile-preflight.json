@@ -1,0 +1,57 @@
+{
+  "status": "static_preflight_passed_scientific_execution_not_performed",
+  "created_utc": "2026-11-28T10:07:35.437807+00:00",
+  "parent_source_commit": "aeafd47aae703908dc72ba3dde534cc5afce86b9",
+  "parent_run": "b173211f-b492-4d14-9866-84342c279986",
+  "experiment_id": "b2d01d2c-80ae-43b1-9f12-7a9f71189807",
+  "mode": "compact-profile-probe",
+  "static_python": "3.13.7",
+  "ast_and_compile_without_import": true,
+  "json_and_xml_parse": true,
+  "source_sha256": {
+    "export_angular_weak_slots.py": "e43847f25033810af3113f939006966a931d253318fae41bdb379a20e30951b5",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "fafa6eaf2dbc25137907266583efb3377125167e9b4beecdd6f14d69c16ff690",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "test_weak_supervisor.py": "43865db06b2b93852343b1bafd561e8e7db7b065336a54bfb30780a100500f6d"
+  },
+  "unchanged_from_parent": [
+    "weak_forms.py",
+    "potential_hessian.py",
+    "kinematic_blocks.py",
+    "run_weak_validation.sh",
+    "test_weak_supervisor.py",
+    "verify_weak_forms.py"
+  ],
+  "mocked_supervisor_tests_previously_passed": 9,
+  "mocked_tests_note": "Passed during this preparation before the final source freeze; no scientific checker was imported or executed.",
+  "independent_source_review": "msg_3ee20a8f",
+  "source_author_freeze": "msg_ffba7dac",
+  "expected_spatial_equalities": 2064,
+  "expected_lapse_equalities": 12,
+  "scientific_execution_performed": false,
+  "approval": {
+    "ref": "msg_908bb84e",
+    "quote": "you dont need to ask me for approval till 10am",
+    "basis": "standing_until_local_deadline",
+    "timezone": "America/New_York",
+    "deadline_utc": "2026-11-28T15:00:00+00:00"
+  },
+  "bounds": {
+    "wall_seconds": 300,
+    "sampled_group_rss_bytes": 2147483648,
+    "memory_is_hard_limit": false,
+    "local_scientific_processes": 1
+  },
+  "scope": {
+    "first_m0_r3_2_snapshot_only": true,
+    "raw_slot_export_unchanged": true,
+    "six_snapshot_export_performed": false,
+    "radial_projection_performed": false,
+    "physical_domain_selected": false,
+    "finite_KED_performed": false,
+    "spectrum_performed": false
+  }
+}

@@ -18,10 +18,10 @@ import time
 
 MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
-CHECK_MODE = "profile-arithmetic-probe"
+CHECK_MODE = "compact-profile-probe"
 CHECKER_NAME = "export_angular_weak_slots.py"
-# Explicit per-run approval; see profile-arithmetic-probe-launch-approval.json.
-LAUNCH_APPROVAL_MESSAGE = "msg_37a2dc0f"
+# Standing user approval through 10am New York; see compact-profile-preparation.md.
+LAUNCH_APPROVAL_MESSAGE = "msg_908bb84e"
 APPROVAL_END = dt.datetime(2026, 11, 28, 15, 0, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
     CHECKER_NAME, "weak_forms.py", "potential_hessian.py",
@@ -161,7 +161,7 @@ def main():
         raise RuntimeError("Launch through the recorded local experiment contract")
     script_dir = Path(__file__).resolve().parent
     paper_dir = script_dir.parent.parent
-    output = paper_dir / "reports" / "oblate-angular-weak-slots" / "profile-arithmetic-probe-runtime"
+    output = paper_dir / "reports" / "oblate-angular-weak-slots" / "compact-profile-probe-runtime"
     output.mkdir(parents=True, exist_ok=False)
     uv = shutil.which("uv")
     if not uv:
@@ -175,8 +175,8 @@ def main():
     manifest = {
         "started_utc": started.isoformat(), "approval_message": LAUNCH_APPROVAL_MESSAGE,
         "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f",
-        "approval_quote": "you have launch approval",
-        "approval_basis": "explicit_per_run",
+        "approval_quote": "you dont need to ask me for approval till 10am",
+        "approval_basis": "standing_until_local_deadline",
         "standing_window_message": "msg_908bb84e",
         "standing_window_quote": "you dont need to ask me for approval till 10am",
         "approval_timezone": "America/New_York",

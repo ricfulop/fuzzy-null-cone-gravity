@@ -1,0 +1,24 @@
+{
+  "status": "independent_source_review_go",
+  "review_ref": "msg_3ee20a8f",
+  "author_freeze_ref": "msg_ffba7dac",
+  "scientific_execution_performed": false,
+  "source_sha256": {
+    "export_angular_weak_slots.py": "e43847f25033810af3113f939006966a931d253318fae41bdb379a20e30951b5",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "fafa6eaf2dbc25137907266583efb3377125167e9b4beecdd6f14d69c16ff690",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "test_weak_supervisor.py": "43865db06b2b93852343b1bafd561e8e7db7b065336a54bfb30780a100500f6d"
+  },
+  "reviewed_contract": [
+    "actual profile differentiation before exact radius substitution and component compaction",
+    "all spatial and lapse components checked for exact equality",
+    "all four family combinations for all four density/flux forms",
+    "raw slot matrices independent and unchanged",
+    "strict final scalar endpoint/interior regularity gates retained",
+    "new mode restricted to m=0,r=3/2 and distinct partial/result/pass metric",
+    "300-second,2-GiB sampled local bounds and 15:00UTC approval cutoff"
+  ]
+}

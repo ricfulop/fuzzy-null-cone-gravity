@@ -43,6 +43,7 @@ ZERO_TOL = 1e-11
 RESULT_NAME = "angular-weak-slot-checks.json"
 PROBE_RESULT_NAME = "direct-profile-probe-checks.json"
 ARITHMETIC_PROBE_RESULT_NAME = "profile-arithmetic-probe-checks.json"
+COMPACT_PROFILE_PROBE_RESULT_NAME = "compact-profile-probe-checks.json"
 PROGRESS_NAME = "angular-weak-slot-progress.jsonl"
 CHECKPOINT_NAME = "angular-weak-slot-checkpoint.json"
 DENOMINATOR_CACHE: set[tuple[sp.Rational, ...]] = set()
@@ -766,6 +767,111 @@ def fixed_profile_lapse_profiles(
     return profiles, values, derivatives
 
 
+def compact_lapse_profiles(
+    profiles: list[tuple[sp.Expr, sp.Expr]],
+    x: sp.Symbol,
+    cache: dict[str, sp.Expr],
+) -> tuple[list[tuple[sp.Expr, sp.Expr]], int]:
+    compacted = []
+    checks = 0
+    for scalar, scalar_r in profiles:
+        compact_scalar = compact_component(scalar, x)
+        compact_scalar_r = compact_component(scalar_r, x)
+        if clean_expr(scalar - compact_scalar, x, cache) != 0:
+            raise AssertionError("compacted lapse scalar changed")
+        checks += 1
+        if clean_expr(scalar_r - compact_scalar_r, x, cache) != 0:
+            raise AssertionError("compacted lapse radial derivative changed")
+        checks += 1
+        compacted.append((compact_scalar, compact_scalar_r))
+    return compacted, checks
+
+
+def compact_profile_spatial_families(
+    families: list[tuple[list[dict[str, Any]], list[complex], list[complex]]],
+    x: sp.Symbol,
+    side: str,
+) -> tuple[list[tuple[list[dict[str, Any]], list[complex], list[complex]]], dict[str, Any]]:
+    tick = substage("compact_profile_family", "start", None, side=side)
+    equality_cache: dict[str, sp.Expr] = {}
+    equality_checks = 0
+    compacted = []
+    for family, (jets, values, derivatives) in enumerate(families):
+        family_tick = substage("compact_profile_family", "start", None, side=side, family=family)
+        compact_jets = []
+        for index, jet in enumerate(jets):
+            compacted_jet = compact_jet(jet, x)
+            equality_checks += assert_compacted_jet_equal(jet, compacted_jet, x, equality_cache)
+            assert_jet_shape(compacted_jet, f"{side}[{family}][{index}]")
+            compact_jets.append(compacted_jet)
+        compacted.append((compact_jets, values, derivatives))
+        substage(
+            "compact_profile_family",
+            "done",
+            family_tick,
+            side=side,
+            family=family,
+            jets=len(jets),
+        )
+    elapsed = now() - tick
+    substage(
+        "compact_profile_family",
+        "done",
+        tick,
+        side=side,
+        equality_checks=equality_checks,
+        families=len(families),
+        elapsed_seconds=elapsed,
+    )
+    return compacted, {
+        "equality_checks": equality_checks,
+        "families": len(families),
+        "elapsed_seconds": elapsed,
+    }
+
+
+def compact_profile_lapse_families(
+    families: list[tuple[list[tuple[sp.Expr, sp.Expr]], list[complex], list[complex]]],
+    x: sp.Symbol,
+) -> tuple[list[tuple[list[tuple[sp.Expr, sp.Expr]], list[complex], list[complex]]], dict[str, Any]]:
+    tick = substage("compact_profile_family", "start", None, side="lapse")
+    equality_cache: dict[str, sp.Expr] = {}
+    equality_checks = 0
+    compacted = []
+    for family, (profiles, values, derivatives) in enumerate(families):
+        family_tick = substage(
+            "compact_profile_family", "start", None, side="lapse", family=family
+        )
+        compact_profiles, family_checks = compact_lapse_profiles(
+            profiles, x, equality_cache
+        )
+        equality_checks += family_checks
+        compacted.append((compact_profiles, values, derivatives))
+        substage(
+            "compact_profile_family",
+            "done",
+            family_tick,
+            side="lapse",
+            family=family,
+            profiles=len(profiles),
+        )
+    elapsed = now() - tick
+    substage(
+        "compact_profile_family",
+        "done",
+        tick,
+        side="lapse",
+        equality_checks=equality_checks,
+        families=len(families),
+        elapsed_seconds=elapsed,
+    )
+    return compacted, {
+        "equality_checks": equality_checks,
+        "families": len(families),
+        "elapsed_seconds": elapsed,
+    }
+
+
 def fsum_complex(values: list[complex]) -> complex:
     return complex(
         math.fsum(value.real for value in values),
@@ -1314,7 +1420,11 @@ def realfield_oracle(
     }
 
 
-def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
+def evaluate_case(
+    m: int,
+    r_value: sp.Rational,
+    compact_actual_profiles: bool = False,
+) -> dict[str, Any]:
     started = now()
     data = kinematics.sector(L_CUTOFF, m)
     x = data["x"]
@@ -1376,6 +1486,56 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
             fixed_profile_lapse_profiles(data, lapse_coeffs, family, substitutions)
         )
         substage("build_profile_jets", "done", build_tick, side="lapse", family=family)
+
+    profile_compaction = {
+        "performed": False,
+        "m_gt_0_radical_compaction": False,
+        "spatial_equality_checks": 0,
+        "lapse_equality_checks": 0,
+        "total_equality_checks": 0,
+        "by_side": {},
+    }
+    if compact_actual_profiles:
+        if m != 0:
+            raise AssertionError("compact-profile-probe intentionally supports only m=0")
+        compaction_tick = substage(
+            "compact_actual_profile_oracle", "start", None, m=m, r=str(r_value)
+        )
+        left_families, left_compaction = compact_profile_spatial_families(
+            left_families, x, "left"
+        )
+        right_families, right_compaction = compact_profile_spatial_families(
+            right_families, x, "right"
+        )
+        lapse_families, lapse_compaction = compact_profile_lapse_families(
+            lapse_families, x
+        )
+        spatial_checks = (
+            left_compaction["equality_checks"] + right_compaction["equality_checks"]
+        )
+        lapse_checks = lapse_compaction["equality_checks"]
+        profile_compaction = {
+            "performed": True,
+            "m_gt_0_radical_compaction": False,
+            "spatial_equality_checks": spatial_checks,
+            "lapse_equality_checks": lapse_checks,
+            "total_equality_checks": spatial_checks + lapse_checks,
+            "by_side": {
+                "left": left_compaction,
+                "right": right_compaction,
+                "lapse": lapse_compaction,
+            },
+            "component_endpoint_poles_allowed": True,
+            "final_scalar_regularity_guard": "existing FixedChartEvaluator/clean_expr path",
+        }
+        substage(
+            "compact_actual_profile_oracle",
+            "done",
+            compaction_tick,
+            m=m,
+            r=str(r_value),
+            equality_checks=profile_compaction["total_equality_checks"],
+        )
 
     reconstruction_errors: dict[str, list[float]] = {
         "potential_density_scaled_error": [],
@@ -1473,7 +1633,13 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
         for key, errors in reconstruction_errors.items()
     }
     reconstruction["term_timing"] = direct_term_timings
-    reconstruction["oracle_method"] = "pairwise integration of independently profile-weighted fields"
+    reconstruction["oracle_method"] = (
+        "pairwise integration of compacted independently profile-weighted fields"
+        if compact_actual_profiles
+        else "pairwise integration of independently profile-weighted fields"
+    )
+    reconstruction["actual_profile_compaction"] = profile_compaction
+    reconstruction["raw_slot_export_unchanged"] = compact_actual_profiles
     substage("direct_profile_oracle", "done", tick, m=m, r=str(r_value))
 
     tick = substage("hermiticity_and_realify", "start", None, m=m, r=str(r_value))
@@ -1556,6 +1722,7 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
         "real_block_shapes": real_shapes,
         "realified_matrices": real_matrices,
         "actual_realfield_oracle": realfield,
+        "actual_profile_compaction": profile_compaction,
         "structural_zero_flux_slots": flux_structural_zeros,
         "elapsed_seconds": now() - started,
     }
@@ -1926,7 +2093,7 @@ def verify_profile_arithmetic_probe(output_dir: Path | None) -> dict[str, Any]:
 def mode_cases(mode: str) -> list[tuple[int, sp.Rational]]:
     if mode == "full":
         return [(m, r_value) for m in M_VALUES for r_value in R_VALUES]
-    if mode == "direct-profile-probe":
+    if mode in ("direct-profile-probe", "compact-profile-probe"):
         return [(0, sp.Rational(3, 2))]
     raise ValueError(f"unsupported mode: {mode}")
 
@@ -1938,8 +2105,15 @@ def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]
         (output_dir / PROGRESS_NAME).write_text("")
 
     cases_to_run = mode_cases(mode)
-    result_name = RESULT_NAME if mode == "full" else PROBE_RESULT_NAME
-    pass_metric = "angular_export_passed" if mode == "full" else "direct_profile_probe_passed"
+    if mode == "full":
+        result_name = RESULT_NAME
+        pass_metric = "angular_export_passed"
+    elif mode == "compact-profile-probe":
+        result_name = COMPACT_PROFILE_PROBE_RESULT_NAME
+        pass_metric = "compact_profile_probe_passed"
+    else:
+        result_name = PROBE_RESULT_NAME
+        pass_metric = "direct_profile_probe_passed"
     write_progress(output_dir, {
         "phase": "setup",
         "step": 1,
@@ -1958,7 +2132,7 @@ def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]
 
     controls: dict[str, Any] = {}
     control_steps: tuple[tuple[str, Callable[[], dict[str, Any]]], ...] = (
-        ("legendre_norms", verify_legendre_norms),
+        ("legendre_norms", lambda: verify_legendre_norms(mode == "compact-profile-probe")),
         ("round_weak_anchor", verify_manual_round_anchor),
         ("manufactured_realification", verify_realification_controls),
     )
@@ -1991,10 +2165,14 @@ def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]
     })
     for m, r_value in cases_to_run:
         stage("angular_case", m=m, r=str(r_value))
-        case = evaluate_case(m, r_value)
+        compact_profiles = mode == "compact-profile-probe"
+        case = evaluate_case(m, r_value, compact_actual_profiles=compact_profiles)
         if output_dir is not None:
+            snapshot_prefix = (
+                "compact-profile-snapshot" if compact_profiles else "angular-snapshot"
+            )
             safe_write_json(
-                output_dir / f"angular-snapshot-m{m}-r{str(r_value).replace('/', '_')}.json",
+                output_dir / f"{snapshot_prefix}-m{m}-r{str(r_value).replace('/', '_')}.json",
                 case,
             )
         cases.append(case)
@@ -2030,6 +2208,8 @@ def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]
         "scope": (
             "fixed-radius angular weak-slot diagnostic snapshots"
             if mode == "full"
+            else "first-case compact actual-profile diagnostic snapshot"
+            if mode == "compact-profile-probe"
             else "first-case direct-profile diagnostic snapshot"
         ),
         "kind": "angular_snapshot",
@@ -2038,8 +2218,13 @@ def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]
         "L": L_CUTOFF,
         "m_values": list(dict.fromkeys(m for m, _ in cases_to_run)),
         "r_values": list(dict.fromkeys(str(r_value) for _, r_value in cases_to_run)),
-        "first_case_only": mode == "direct-profile-probe",
+        "first_case_only": mode in ("direct-profile-probe", "compact-profile-probe"),
+        "full_mode_unchanged": True,
+        "raw_slot_export_unchanged": True,
+        "m_gt_0_radical_compaction": False,
+        "compact_actual_profile_oracle": mode == "compact-profile-probe",
         "full_six_snapshots_performed": mode == "full",
+        "six_snapshot_export_performed": mode == "full",
         "epsilon": str(EPSILON_VALUE),
         "angular_measure": "dx/2 after equal-m azimuthal averaging",
         "slot_convention": "ab: radial derivative order a on conjugated left profile, b on right",
@@ -2077,6 +2262,18 @@ def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]
         },
         "controls": controls,
         "cases": cases,
+        "compact_profile_spatial_equality_checks": sum(
+            case["actual_profile_compaction"]["spatial_equality_checks"]
+            for case in cases
+        ),
+        "compact_profile_lapse_equality_checks": sum(
+            case["actual_profile_compaction"]["lapse_equality_checks"]
+            for case in cases
+        ),
+        "compact_profile_total_equality_checks": sum(
+            case["actual_profile_compaction"]["total_equality_checks"]
+            for case in cases
+        ),
         "max_scaled_refinement_error": max_scaled_refinement_error,
         "source_sha256": source_sha256(),
         "python": platform.python_version(),
@@ -2110,7 +2307,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument(
         "--mode",
-        choices=("full", "direct-profile-probe", "profile-arithmetic-probe"),
+        choices=(
+            "full",
+            "direct-profile-probe",
+            "profile-arithmetic-probe",
+            "compact-profile-probe",
+        ),
         default="full",
     )
     return parser.parse_args()
