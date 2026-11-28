@@ -1,0 +1,52 @@
+{
+  "method_id": "rational_specialization_hermite_lindemann_v1",
+  "status": "preparation_only",
+  "independent_mathematical_review": "msg_c1875cdf",
+  "physical_certificates_produced": [],
+  "scope": "Paper I N=3, stationary linearized axisymmetric reflection-even sector, epsilon=1/100, X0=0, zero remaining controls; one interval-local forward solution germ",
+  "theorem": {
+    "reference": "Manuel Eberl, Hermite_Lindemann, Archive of Formal Proofs",
+    "url": "https://isa-afp.org/browser_info/current/AFP/Hermite_Lindemann/Hermite_Lindemann.html",
+    "lemmas": ["algebraic_exp_complex_iff", "transcendental_Arctan"],
+    "physical_argument": "q=1/(10*r0) is positive rational, algebraic and outside {0,i,-i}; T0 is the real arctan(q)",
+    "transfer": "Evaluation at T0 embeds Q(T) in R after a defined radial specialization r=r0"
+  },
+  "required_inputs": ["hash-pinned original stationary operators and labels", "hash-pinned candidate snapshot with producing and upstream identities", "ordered state labels, ordered free rows and discarded response definition"],
+  "shapes": {"C": [6,14], "K": [14,14], "B": [14,0], "M": [14,8], "J": [8,14]},
+  "field": "Q(r,T)",
+  "total_derivative": "Form D=partial_r-10/(100*r^2+1)*partial_T before substituting r=r0 or T=t_star",
+  "required_field_identities": [
+    "CM=0", "JM=I8", "S=DC+CK and SM=0", "(Pv K-Pw)M=0",
+    "(E0 Pv+E1 Pw+E2 Pw K)M=0 on all 22 retained rows including X0",
+    "Independently lift the original discarded row d=D0 Pv+D1 Pw+D2 Pw K and compute dM"
+  ],
+  "responding_certificate": {
+    "pair": "One positive rational r0 in the physical domain and one rational t_star, shared by denominator, minor and response checks",
+    "denominator_coverage": [
+      "all original fixed operator coefficients in the three orders including the retained and discarded rows before gauge-column removal",
+      "C, K, B, M and original coefficient domain restrictions, including canceled input factors unless analytic extension has independent justification",
+      "the total derivative factor, DC, S, profile lift, retained and discarded lifted operators and products on M",
+      "all other denominators or divisions used in the proof, including minor and response evaluation"
+    ],
+    "denominator_evidence": "Replayable inventory of exact denominator polynomials, source locations and nonzero rational evaluations at the pair",
+    "minor_evidence": "Six distinct original C column indices, exact 6x6 evaluated entries or replayable pinned references, and exact nonzero rational determinant",
+    "response_evidence": "Column j in the ordered 8-column dM and exact nonzero rational evaluation of its numerator with verified denominator, or of the defined quotient",
+    "physical_initial_data": "y0=e_j and z(r0)=M(r0,arctan(1/(10*r0))) e_j",
+    "local_argument": "Continuity preserves regularity and the minor on one open interval. im(M)=ker(C), S=LC with L=S[:,P] inverse(C[:,P]), and h=Cz obeys h'=Lh, h(r0)=0. The profile lift and all 22 field identities then hold along z'=Kz."
+  },
+  "required_controls": [
+    "Reject r0 outside the positive physical radial domain and inexact evaluation data.",
+    "P=r-a at r0=a specializes identically to zero: changing only t_star cannot certify this P.",
+    "P=T-b at t_star=b vanishes at one dummy point: retry is allowed and this does not prove a zero physical response.",
+    "Reject evaluation at any required zero denominator, including a hidden input restriction after cancellation.",
+    "Reject a singular original minor or a zero selected response as positive evidence; exercise a nonsingular original minor requiring a row swap.",
+    "Reject mixed-radius or mixed-pair positive evidence and a physical initial datum evaluated at t_star.",
+    "Require formal identities over Q(r,T) independently of dummy-point success."
+  ],
+  "outcomes": {
+    "responding_forward_germ": "Requires every field identity and all nonvanishing checks at the common pair.",
+    "bounded_search_without_witness": "unresolved",
+    "exact_zero_on_forward_family": "A separate formal dM=0 check bounds silence to the forward family."
+  },
+  "excluded_claims": ["physical sign", "physical magnitude", "numerical interval width", "stationary universal zero", "global boundary domain", "nonlinear consistency", "final Dirac classification or degree-of-freedom count"]
+}

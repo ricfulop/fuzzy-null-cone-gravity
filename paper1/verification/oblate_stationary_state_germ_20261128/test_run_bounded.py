@@ -394,7 +394,8 @@ class DispatchTests(unittest.TestCase):
             data = json.dumps({"manufactured": key}).encode()
             path.write_bytes(data)
             self.config["inputs"][key] = {"path": filename, "sha256": hashlib.sha256(data).hexdigest()}
-        for name in ("run.sh", "run_bounded.py", "test_run_bounded.py", "certify_state_germ.py", "view.xml", "view-config.json", "README.md"):
+        for name in ("run.sh", "run_bounded.py", "test_run_bounded.py", "certify_state_germ.py",
+                     "exact_decimal.py", "test_exact_decimal.py", "view.xml", "view-config.json", "README.md"):
             (self.here / name).write_text("mock source " + name)
         (self.here / "run-config.json").write_text(json.dumps(self.config))
         self.committed = {path.relative_to(self.root).as_posix(): path.read_bytes()

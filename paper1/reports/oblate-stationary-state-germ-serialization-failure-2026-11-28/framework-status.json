@@ -1,0 +1,50 @@
+{
+  "experimentId": "dec7f9e9-f182-41c6-a6d5-e22a25d56a91",
+  "runId": "9afcd73b-3499-4f08-8185-0f162c716cfb",
+  "status": "failed",
+  "stage": "regularity_rank_and_response_search",
+  "progress": {
+    "done": 0.0,
+    "of": 1.0,
+    "unit": "interval",
+    "whole": null
+  },
+  "latest": {
+    "all_22_retained_rows_zero": 1,
+    "cm_zero": 1,
+    "config_bytes": 1717,
+    "constraint_rows": 6,
+    "denominator_count": 57,
+    "field_free_state_count": 8,
+    "field_operator_count": 3,
+    "field_state_count": 14,
+    "formal_discarded_response_nonzero": 1,
+    "free_state_count": 8,
+    "identity_link_verified": 1,
+    "jm_identity": 1,
+    "manufactured_case_count": 19,
+    "operator_bytes": 128431,
+    "operator_order_count": 3,
+    "original_column_count": 8,
+    "preservation_rows": 6,
+    "profile_count": 7,
+    "profile_lift_zero": 1,
+    "remaining_control_count": 0,
+    "response_columns": 8,
+    "response_determined": 0,
+    "retained_row_count": 22,
+    "scientific_invocations": 1,
+    "sm_zero": 1,
+    "state_count": 14,
+    "state_germ_certificate_passed": 0,
+    "terminal_state_bytes": 1004745
+  },
+  "estimate": null,
+  "flags": [
+    {
+      "id": "f2f42071d",
+      "state": "kept",
+      "text": "Certificate failed: oversized integer conversion"
+    }
+  ]
+}

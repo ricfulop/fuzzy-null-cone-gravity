@@ -1,0 +1,15 @@
+{
+  "files": {
+    "README.md": "f81902d3a82d9c3327268f44831458858c4af0e0a5efd58881154fdeb32ba995",
+    "preparation-provenance.json": "a35a0740d5cf1a30fd025570b338ab3ed5f749608cd7cce91fc721bf349ea5f2",
+    "sources/verification/oblate_stationary_state_germ_20261128/README.md": "cef82590baee5dc215a8ed9db8f0ece9c03f075013c66c2c1a8f1555366eac87",
+    "sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "2bd72d22cefc830967e0a1b42bcc2d8220ad4d63295293f56cfbdc9176cd1fb2",
+    "sources/verification/oblate_stationary_state_germ_20261128/run-config.json": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+    "sources/verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "sources/verification/oblate_stationary_state_germ_20261128/run_bounded.py": "819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5",
+    "sources/verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231",
+    "sources/verification/oblate_stationary_state_germ_20261128/view-config.json": "3b11ba8aa3c6f7ee66d43768bc88dd04ab6246af00b4f14f106ea56269158d0d",
+    "sources/verification/oblate_stationary_state_germ_20261128/view.xml": "b001f280906125434c909a6ad105dc08bdae8e407b3a9e1173ff52638578afb7",
+    "static-validation.json": "3cd9bb984659e8b3443f62e8a1cd9baa420e41e463ef0ce2b89016c503e79412"
+  }
+}

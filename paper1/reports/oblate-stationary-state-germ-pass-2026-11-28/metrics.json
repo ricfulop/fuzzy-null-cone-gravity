@@ -1,0 +1,9 @@
+{
+  "state_germ_certificate_passed": 1,
+  "formal_response_nonzero": 1,
+  "certified_response_nonzero": 1,
+  "discarded_response_nonzero": 1,
+  "response_determined": 1,
+  "scientific_invocations": 1,
+  "manufactured_case_count": 20
+}

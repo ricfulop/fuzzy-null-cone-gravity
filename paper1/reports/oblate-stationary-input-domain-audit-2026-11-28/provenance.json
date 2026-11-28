@@ -1,0 +1,73 @@
+{
+  "kind": "source- and input-domain audit",
+  "reference_message": "msg_40992080",
+  "input_files": {
+    "original_stationary_operators": {
+      "path": "paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+      "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+    },
+    "candidate_terminal_state": {
+      "path": "paper1/reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+      "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    }
+  },
+  "exporter": {
+    "source_commit": "1cd1a69c258810d38c12adc334733aff1fac6b7a",
+    "sources_verified_against_git": [
+      {
+        "git_path": "paper1/verification/oblate_stationary_seed_20261127/stationary_system.py",
+        "archived_copy": "paper1/reports/oblate-stationary-system-recheck-2026-11-27/sources/verification/oblate_stationary_seed_20261127/stationary_system.py",
+        "sha256": "0e4d72f319ba7a811356f4229e56ca3e9fb903a4dbad3622e5bd7cc5027a06cd"
+      },
+      {
+        "git_path": "paper1/verification/oblate_stationary_seed_20261127/check_stationary_system.py",
+        "archived_copy": "paper1/reports/oblate-stationary-system-recheck-2026-11-27/sources/verification/oblate_stationary_seed_20261127/check_stationary_system.py",
+        "sha256": "1462be3deb349e95f52de1e9f07a01abe940bdf3fcb1d54d1138155970bb3303"
+      },
+      {
+        "git_path": "paper1/verification/oblate_nonlinear_null_20261127/null_compatibility.py",
+        "archived_copy": "paper1/reports/oblate-stationary-system-recheck-2026-11-27/sources/verification/oblate_nonlinear_null_20261127/null_compatibility.py",
+        "sha256": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5"
+      }
+    ]
+  },
+  "terminal_snapshot_producer": {
+    "source_commit": "96916c7fe47b5542c4a5cf1c5a199ac11c1f488b",
+    "source_run": "c2a1482f-4dc7-40f5-8f6d-b8f4700df6de",
+    "sources_verified_against_git": [
+      {
+        "git_path": "paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py",
+        "archived_copy": "paper1/reports/oblate-stationary-field-dynamics-timeout-2026-11-28/sources/verification/oblate_stationary_reduction_20261128/reduce_stationary.py",
+        "sha256": "ff9c51a9f327c8efc3c74b4bd27157b3b57c889245647e6eb80c4cb4ea8973f1"
+      },
+      {
+        "git_path": "paper1/verification/oblate_stationary_reduction_20261128/terminal_kernel.py",
+        "archived_copy": "paper1/reports/oblate-stationary-field-dynamics-timeout-2026-11-28/sources/verification/oblate_stationary_reduction_20261128/terminal_kernel.py",
+        "sha256": "4ae051c5a17b9ab7bac1766ea86d74a2f72d6e4fd6cec6d5eeb124c1cecf4e03"
+      },
+      {
+        "git_path": "paper1/verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py",
+        "archived_copy": "paper1/reports/oblate-stationary-field-dynamics-timeout-2026-11-28/sources/verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py",
+        "sha256": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177"
+      }
+    ]
+  },
+  "interval_checker": {
+    "source_commit": "0034162b4410ecfc229c48daaa47fcf06da4eafe",
+    "git_path": "paper1/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py",
+    "sha256": "57ea1554afa67f636f049d20b527b25b588c2025d810ac60165fd4adbd920186",
+    "both_pinned_input_files_match_git_bytes": true
+  },
+  "validation": {
+    "cwd": "paper1",
+    "command": [
+      "python3",
+      "-B",
+      "reports/oblate-stationary-input-domain-audit-2026-11-28/inspect_syntax.py"
+    ],
+    "exit_code": 0,
+    "stdout_record": "validation.json",
+    "scientific_invocations": 0,
+    "physical_candidate_evaluations": 0
+  }
+}

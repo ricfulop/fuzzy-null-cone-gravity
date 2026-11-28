@@ -1,0 +1,30 @@
+{
+  "run_id": "9afcd73b-3499-4f08-8185-0f162c716cfb",
+  "source_commit": "3ff249cbb95f604cc3dbef60edb4e0624dcb10df",
+  "files": {
+    "README.md": "a0a6c45fe9af3924f6419f78f26af46baee5d95a44d0af66c3ad2ef30710d2bb",
+    "archive-status.json": "4a0eaf6b40db3961caa6e15b6e9ba1574ffdb01fe96b40d627cf66c421ac2ee7",
+    "engine.log": "324361de022dd282a18c697cb560d5b6099d051f1ff8d9504d69b23f7a395aaf",
+    "execution.json": "c2b1dc6a60a74b5b96ce12c4540bc87edae549ced973144aa599ad7d44f5da7e",
+    "framework-exit.json": "1c6d4d0d5529bc67ce201705898f567ebbcf5db6efec36960b10779668bad76d",
+    "framework-logs.txt": "8f10b2b593f7f314d70eb33fbacb9d18bccc270715b6252f3a94734afa03f57f",
+    "framework-status.json": "db672de5fe4ca01136f12f29560b58a809454f76512f398a73f8ac5b48055507",
+    "framework-wrapper.json": "d927d677f84c114bc6fbe867168a20b4e0ed75d971f5851cf2610de75ead4c7f",
+    "inputs/stationary-operators.json": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "inputs/terminal-state.json": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08",
+    "launch.json": "55e48791f83b8a54eaebf60b54948782fd5b81dc5661cd23e426fe0a8c0f3051",
+    "metrics.json": "b6377f2b8960dc644029733bf99265c730ebdfd1dc13a304b7b05de17f0b9b70",
+    "resource-samples.json": "7afc9d71a4eb12f1e993b37842e673aaefd7d4c38d3bfccbc8c3370cf9a212b7",
+    "sources/verification/oblate_stationary_state_germ_20261128/README.md": "3d46d296a40156cf6ba5e7f0e76cfc256dc84060fcfd1c7cc83aacba2f84231d",
+    "sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "2bd72d22cefc830967e0a1b42bcc2d8220ad4d63295293f56cfbdc9176cd1fb2",
+    "sources/verification/oblate_stationary_state_germ_20261128/run-config.json": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+    "sources/verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "sources/verification/oblate_stationary_state_germ_20261128/run_bounded.py": "29a541993e33243c21d1d31dcd407ef27ddab33f75465d142a5d8fdfc164b26e",
+    "sources/verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "d0d2bee577e6837ef0dfa7b45aad34498a6746e9f015d47662f216a39806aaef",
+    "sources/verification/oblate_stationary_state_germ_20261128/view-config.json": "3b11ba8aa3c6f7ee66d43768bc88dd04ab6246af00b4f14f106ea56269158d0d",
+    "sources/verification/oblate_stationary_state_germ_20261128/view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e",
+    "terminal-evidence.json": "f42059953d1b42089354c5f7d0a4698983883040f3bb68bea3f83c3492aaea15",
+    "timing-summary.json": "307ede743d171e5a59825911a15c1e2638af0c3f8525852bfd44bb5740557385",
+    "verification.log": "c568350661f8b998fb2fd39d29d8027cc3c7991da824d733cc8e250dc8e5660e"
+  }
+}

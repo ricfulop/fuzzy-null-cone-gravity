@@ -1,5 +1,5 @@
 {
-  "purpose": "Independent direct fourteen-state stationary germ certificate from authenticated candidate matrices: recheck the exact kernel, invariance, physical lift and all 22 original Euler rows; certify a physical rank-six minor and coefficient regularity, and test the separate discarded response at the same radius. No reduced-coordinate dynamics, checkpoint resumption, global boundary, universal-zero, or Dirac classification claim.",
+  "purpose": "Independent direct fourteen-state stationary germ certificate from authenticated candidate matrices: recheck the exact kernel, invariance, physical lift and all 22 original Euler rows; certify a physical rank-six minor and coefficient regularity, and test the separate discarded response at the same radius. No reduced-coordinate dynamics, checkpoint resumption, global boundary, universal-zero, or Dirac classification claim. Cache exact interval-search polynomials and per-radius specializations while preserving rational enclosures and search order; report detailed refinement progress. Same bounded budget. Serialize computed exact rational endpoints with bounded decimal chunks to avoid the host integer-to-string digit limit; no mathematical arithmetic or search-order change.",
   "wall_seconds": 900,
   "memory_bytes": 2147483648,
   "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",

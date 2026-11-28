@@ -1,0 +1,873 @@
+{
+  "status": "stationary differential expressions and controls passed; radial DAE unsolved",
+  "column_labels": [
+    [
+      "lambda",
+      0
+    ],
+    [
+      "lambda",
+      2
+    ],
+    [
+      "X",
+      0
+    ],
+    [
+      "X",
+      2
+    ],
+    [
+      "V_polar",
+      2
+    ],
+    [
+      "C_polar",
+      2
+    ],
+    [
+      "a",
+      0
+    ],
+    [
+      "a",
+      2
+    ]
+  ],
+  "retained_row_labels": [
+    [
+      "lambda",
+      0
+    ],
+    [
+      "X",
+      0
+    ],
+    [
+      "lambda",
+      1
+    ],
+    [
+      "X",
+      1
+    ],
+    [
+      "V_polar",
+      1
+    ],
+    [
+      "V_axial",
+      1
+    ],
+    [
+      "lambda",
+      2
+    ],
+    [
+      "X",
+      2
+    ],
+    [
+      "V_polar",
+      2
+    ],
+    [
+      "V_axial",
+      2
+    ],
+    [
+      "C_polar",
+      2
+    ],
+    [
+      "C_axial",
+      2
+    ],
+    [
+      "a",
+      0
+    ],
+    [
+      "a",
+      1
+    ],
+    [
+      "a",
+      2
+    ],
+    [
+      "b",
+      0
+    ],
+    [
+      "b",
+      1
+    ],
+    [
+      "W_polar",
+      1
+    ],
+    [
+      "W_axial",
+      1
+    ],
+    [
+      "b",
+      2
+    ],
+    [
+      "W_polar",
+      2
+    ],
+    [
+      "W_axial",
+      2
+    ]
+  ],
+  "selected_row_indices": [
+    0,
+    6,
+    1,
+    7,
+    8,
+    10,
+    12,
+    14
+  ],
+  "automatic_zero_row_indices": [
+    2,
+    3,
+    4,
+    5,
+    9,
+    11,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "operator_convention": "sum_j M_j(r,epsilon) u^(j)(r); no derivative acts on M_j here",
+  "last_row": "discarded response D=6 E_X4-E_Cpolar4; not a retained equation",
+  "angular_measure": "dx/2; Sigma already occurs once in Euler density",
+  "parameter_domain": "r>0, epsilon>0; no explicit regular-Legendre epsilon radius certified",
+  "quadrature_controls": {
+    "nonzero_density_comparisons": 772,
+    "maximum_scaled_errors": {
+      "epsilon=1/5;nodes=48": 1.636225877010844e-13,
+      "epsilon=1/5;nodes=96": 7.407616187116162e-14,
+      "epsilon=1/100;nodes=48": 1.769991488445588e-13,
+      "epsilon=1/100;nodes=96": 7.911889459560895e-14
+    },
+    "tolerance": 1e-11,
+    "r": "3/2",
+    "purpose": "angular coefficient control; radius is not frozen in the exported operators"
+  },
+  "radial_projection_performed": false,
+  "radial_DAE_reduced": false,
+  "smooth_solution_germ_certified": false,
+  "admissible_non_gauge_seed_supplied": false,
+  "response_evaluated_on_admissible_non_gauge_seed": false,
+  "full_nonlinear_Dirac_classification_established": false,
+  "matrices_by_derivative_order": [
+    [
+      [
+        "(3*epsilon**(9/2)*r + 14*epsilon**(7/2)*r**3 + 24*epsilon**(5/2)*r**5 + 18*epsilon**(3/2)*r**7 + 5*sqrt(epsilon)*r**9 + 3*epsilon**5*atan(sqrt(epsilon)/r) + 15*epsilon**4*r**2*atan(sqrt(epsilon)/r) + 30*epsilon**3*r**4*atan(sqrt(epsilon)/r) + 30*epsilon**2*r**6*atan(sqrt(epsilon)/r) + 15*epsilon*r**8*atan(sqrt(epsilon)/r) + 3*r**10*atan(sqrt(epsilon)/r))/(8*epsilon**(7/2)*r**3 + 24*epsilon**(5/2)*r**5 + 24*epsilon**(3/2)*r**7 + 8*sqrt(epsilon)*r**9)",
+        "(-3*epsilon**(21/2)*r - 23*epsilon**(19/2)*r**3 - 80*epsilon**(17/2)*r**5 - 168*epsilon**(15/2)*r**7 - 238*epsilon**(13/2)*r**9 - 238*epsilon**(11/2)*r**11 - 168*epsilon**(9/2)*r**13 - 80*epsilon**(7/2)*r**15 - 23*epsilon**(5/2)*r**17 - 3*epsilon**(3/2)*r**19 - 3*epsilon**11*atan(sqrt(epsilon)/r) - 24*epsilon**10*r**2*atan(sqrt(epsilon)/r) - 81*epsilon**9*r**4*atan(sqrt(epsilon)/r) - 144*epsilon**8*r**6*atan(sqrt(epsilon)/r) - 126*epsilon**7*r**8*atan(sqrt(epsilon)/r) + 126*epsilon**5*r**12*atan(sqrt(epsilon)/r) + 144*epsilon**4*r**14*atan(sqrt(epsilon)/r) + 81*epsilon**3*r**16*atan(sqrt(epsilon)/r) + 24*epsilon**2*r**18*atan(sqrt(epsilon)/r) + 3*epsilon*r**20*atan(sqrt(epsilon)/r))/(16*epsilon**(19/2)*r**3 + 112*epsilon**(17/2)*r**5 + 336*epsilon**(15/2)*r**7 + 560*epsilon**(13/2)*r**9 + 560*epsilon**(11/2)*r**11 + 336*epsilon**(9/2)*r**13 + 112*epsilon**(7/2)*r**15 + 16*epsilon**(5/2)*r**17)",
+        "(epsilon**(17/2)*r + 9*epsilon**(15/2)*r**3 + 33*epsilon**(13/2)*r**5 + 65*epsilon**(11/2)*r**7 + 75*epsilon**(9/2)*r**9 + 51*epsilon**(7/2)*r**11 + 19*epsilon**(5/2)*r**13 + 3*epsilon**(3/2)*r**15 + epsilon**9*atan(sqrt(epsilon)/r) + 12*epsilon**8*r**2*atan(sqrt(epsilon)/r) + 56*epsilon**7*r**4*atan(sqrt(epsilon)/r) + 140*epsilon**6*r**6*atan(sqrt(epsilon)/r) + 210*epsilon**5*r**8*atan(sqrt(epsilon)/r) + 196*epsilon**4*r**10*atan(sqrt(epsilon)/r) + 112*epsilon**3*r**12*atan(sqrt(epsilon)/r) + 36*epsilon**2*r**14*atan(sqrt(epsilon)/r) + 5*epsilon*r**16*atan(sqrt(epsilon)/r))/(8*epsilon**(17/2)*r**3 + 56*epsilon**(15/2)*r**5 + 168*epsilon**(13/2)*r**7 + 280*epsilon**(11/2)*r**9 + 280*epsilon**(9/2)*r**11 + 168*epsilon**(7/2)*r**13 + 56*epsilon**(5/2)*r**15 + 8*epsilon**(3/2)*r**17)",
+        "(-epsilon**(53/2)*r + 37*epsilon**(51/2)*r**3 + 833*epsilon**(49/2)*r**5 + 7531*epsilon**(47/2)*r**7 + 41276*epsilon**(45/2)*r**9 + 157012*epsilon**(43/2)*r**11 + 443156*epsilon**(41/2)*r**13 + 964444*epsilon**(39/2)*r**15 + 1657058*epsilon**(37/2)*r**17 + 2280278*epsilon**(35/2)*r**19 + 2533102*epsilon**(33/2)*r**21 + 2277626*epsilon**(31/2)*r**23 + 1653964*epsilon**(29/2)*r**25 + 962948*epsilon**(27/2)*r**27 + 443428*epsilon**(25/2)*r**29 + 157964*epsilon**(23/2)*r**31 + 42007*epsilon**(21/2)*r**33 + 7853*epsilon**(19/2)*r**35 + 921*epsilon**(17/2)*r**37 + 51*epsilon**(15/2)*r**39 - epsilon**27*atan(sqrt(epsilon)/r) - 38*epsilon**26*r**2*atan(sqrt(epsilon)/r) - 564*epsilon**25*r**4*atan(sqrt(epsilon)/r) - 4794*epsilon**24*r**6*atan(sqrt(epsilon)/r) - 27183*epsilon**23*r**8*atan(sqrt(epsilon)/r) - 111384*epsilon**22*r**10*atan(sqrt(epsilon)/r) - 345984*epsilon**21*r**12*atan(sqrt(epsilon)/r) - 840072*epsilon**20*r**14*atan(sqrt(epsilon)/r) - 1627002*epsilon**19*r**16*atan(sqrt(epsilon)/r) - 2546804*epsilon**18*r**18*atan(sqrt(epsilon)/r) - 3247816*epsilon**17*r**20*atan(sqrt(epsilon)/r) - 3386604*epsilon**16*r**22*atan(sqrt(epsilon)/r) - 2886702*epsilon**15*r**24*atan(sqrt(epsilon)/r) - 2002872*epsilon**14*r**26*atan(sqrt(epsilon)/r) - 1121184*epsilon**13*r**28*atan(sqrt(epsilon)/r) - 498984*epsilon**12*r**30*atan(sqrt(epsilon)/r) - 172533*epsilon**11*r**32*atan(sqrt(epsilon)/r) - 44694*epsilon**10*r**34*atan(sqrt(epsilon)/r) - 8164*epsilon**9*r**36*atan(sqrt(epsilon)/r) - 938*epsilon**8*r**38*atan(sqrt(epsilon)/r) - 51*epsilon**7*r**40*atan(sqrt(epsilon)/r))/(16*epsilon**(53/2)*r**3 + 288*epsilon**(51/2)*r**5 + 2448*epsilon**(49/2)*r**7 + 13056*epsilon**(47/2)*r**9 + 48960*epsilon**(45/2)*r**11 + 137088*epsilon**(43/2)*r**13 + 297024*epsilon**(41/2)*r**15 + 509184*epsilon**(39/2)*r**17 + 700128*epsilon**(37/2)*r**19 + 777920*epsilon**(35/2)*r**21 + 700128*epsilon**(33/2)*r**23 + 509184*epsilon**(31/2)*r**25 + 297024*epsilon**(29/2)*r**27 + 137088*epsilon**(27/2)*r**29 + 48960*epsilon**(25/2)*r**31 + 13056*epsilon**(23/2)*r**33 + 2448*epsilon**(21/2)*r**35 + 288*epsilon**(19/2)*r**37 + 16*epsilon**(17/2)*r**39)",
+        "(3*epsilon**(5/2)*atan(sqrt(epsilon)/r) + 12*epsilon**(3/2)*r**2*atan(sqrt(epsilon)/r) + 9*sqrt(epsilon)*r**4*atan(sqrt(epsilon)/r) - 9*epsilon**2*r - 9*epsilon*r**3)/epsilon**2",
+        "(3*epsilon**(53/2)*r + 99*epsilon**(51/2)*r**3 + 1269*epsilon**(49/2)*r**5 + 9333*epsilon**(47/2)*r**7 + 45900*epsilon**(45/2)*r**9 + 163404*epsilon**(43/2)*r**11 + 441252*epsilon**(41/2)*r**13 + 930852*epsilon**(39/2)*r**15 + 1563354*epsilon**(37/2)*r**17 + 2114970*epsilon**(35/2)*r**19 + 2319174*epsilon**(33/2)*r**21 + 2064582*epsilon**(31/2)*r**23 + 1487772*epsilon**(29/2)*r**25 + 861084*epsilon**(27/2)*r**27 + 394740*epsilon**(25/2)*r**29 + 140148*epsilon**(23/2)*r**31 + 37179*epsilon**(21/2)*r**33 + 6939*epsilon**(19/2)*r**35 + 813*epsilon**(17/2)*r**37 + 45*epsilon**(15/2)*r**39 + 3*epsilon**27*atan(sqrt(epsilon)/r) + 36*epsilon**26*r**2*atan(sqrt(epsilon)/r) + 90*epsilon**25*r**4*atan(sqrt(epsilon)/r) - 1116*epsilon**24*r**6*atan(sqrt(epsilon)/r) - 12393*epsilon**23*r**8*atan(sqrt(epsilon)/r) - 66096*epsilon**22*r**10*atan(sqrt(epsilon)/r) - 236232*epsilon**21*r**12*atan(sqrt(epsilon)/r) - 624240*epsilon**20*r**14*atan(sqrt(epsilon)/r) - 1276938*epsilon**19*r**16*atan(sqrt(epsilon)/r) - 2073864*epsilon**18*r**18*atan(sqrt(epsilon)/r) - 2712996*epsilon**17*r**20*atan(sqrt(epsilon)/r) - 2880072*epsilon**16*r**22*atan(sqrt(epsilon)/r) - 2486250*epsilon**15*r**24*atan(sqrt(epsilon)/r) - 1740528*epsilon**14*r**26*atan(sqrt(epsilon)/r) - 980424*epsilon**13*r**28*atan(sqrt(epsilon)/r) - 438192*epsilon**12*r**30*atan(sqrt(epsilon)/r) - 151929*epsilon**11*r**32*atan(sqrt(epsilon)/r) - 39420*epsilon**10*r**34*atan(sqrt(epsilon)/r) - 7206*epsilon**9*r**36*atan(sqrt(epsilon)/r) - 828*epsilon**8*r**38*atan(sqrt(epsilon)/r) - 45*epsilon**7*r**40*atan(sqrt(epsilon)/r))/(16*epsilon**(53/2)*r**3 + 288*epsilon**(51/2)*r**5 + 2448*epsilon**(49/2)*r**7 + 13056*epsilon**(47/2)*r**9 + 48960*epsilon**(45/2)*r**11 + 137088*epsilon**(43/2)*r**13 + 297024*epsilon**(41/2)*r**15 + 509184*epsilon**(39/2)*r**17 + 700128*epsilon**(37/2)*r**19 + 777920*epsilon**(35/2)*r**21 + 700128*epsilon**(33/2)*r**23 + 509184*epsilon**(31/2)*r**25 + 297024*epsilon**(29/2)*r**27 + 137088*epsilon**(27/2)*r**29 + 48960*epsilon**(25/2)*r**31 + 13056*epsilon**(23/2)*r**33 + 2448*epsilon**(21/2)*r**35 + 288*epsilon**(19/2)*r**37 + 16*epsilon**(17/2)*r**39)",
+        "0",
+        "(3*epsilon**(15/2)*atan(sqrt(epsilon)/r) + 21*epsilon**(13/2)*r**2*atan(sqrt(epsilon)/r) + 54*epsilon**(11/2)*r**4*atan(sqrt(epsilon)/r) + 66*epsilon**(9/2)*r**6*atan(sqrt(epsilon)/r) + 39*epsilon**(7/2)*r**8*atan(sqrt(epsilon)/r) + 9*epsilon**(5/2)*r**10*atan(sqrt(epsilon)/r) - 9*epsilon**7*r - 36*epsilon**6*r**3 - 54*epsilon**5*r**5 - 36*epsilon**4*r**7 - 9*epsilon**3*r**9)/(4*epsilon**7*r + 12*epsilon**6*r**3 + 12*epsilon**5*r**5 + 4*epsilon**4*r**7)"
+      ],
+      [
+        "(-7*epsilon**(21/2)*atan(sqrt(epsilon)/r) - 51*epsilon**(19/2)*r**2*atan(sqrt(epsilon)/r) - 156*epsilon**(17/2)*r**4*atan(sqrt(epsilon)/r) - 252*epsilon**(15/2)*r**6*atan(sqrt(epsilon)/r) - 210*epsilon**(13/2)*r**8*atan(sqrt(epsilon)/r) - 42*epsilon**(11/2)*r**10*atan(sqrt(epsilon)/r) + 84*epsilon**(9/2)*r**12*atan(sqrt(epsilon)/r) + 84*epsilon**(7/2)*r**14*atan(sqrt(epsilon)/r) + 33*epsilon**(5/2)*r**16*atan(sqrt(epsilon)/r) + 5*epsilon**(3/2)*r**18*atan(sqrt(epsilon)/r) - 7*epsilon**10*r - 54*epsilon**9*r**3 - 182*epsilon**8*r**5 - 350*epsilon**7*r**7 - 420*epsilon**6*r**9 - 322*epsilon**5*r**11 - 154*epsilon**4*r**13 - 42*epsilon**3*r**15 - 5*epsilon**2*r**17)/(8*epsilon**10*r**3 + 64*epsilon**9*r**5 + 224*epsilon**8*r**7 + 448*epsilon**7*r**9 + 560*epsilon**6*r**11 + 448*epsilon**5*r**13 + 224*epsilon**4*r**15 + 64*epsilon**3*r**17 + 8*epsilon**2*r**19)",
+        "(7*epsilon**(35/2)*atan(sqrt(epsilon)/r) + 88*epsilon**(33/2)*r**2*atan(sqrt(epsilon)/r) + 555*epsilon**(31/2)*r**4*atan(sqrt(epsilon)/r) + 2344*epsilon**(29/2)*r**6*atan(sqrt(epsilon)/r) + 7315*epsilon**(27/2)*r**8*atan(sqrt(epsilon)/r) + 17424*epsilon**(25/2)*r**10*atan(sqrt(epsilon)/r) + 31911*epsilon**(23/2)*r**12*atan(sqrt(epsilon)/r) + 44880*epsilon**(21/2)*r**14*atan(sqrt(epsilon)/r) + 48213*epsilon**(19/2)*r**16*atan(sqrt(epsilon)/r) + 39160*epsilon**(17/2)*r**18*atan(sqrt(epsilon)/r) + 23617*epsilon**(15/2)*r**20*atan(sqrt(epsilon)/r) + 10248*epsilon**(13/2)*r**22*atan(sqrt(epsilon)/r) + 3025*epsilon**(11/2)*r**24*atan(sqrt(epsilon)/r) + 544*epsilon**(9/2)*r**26*atan(sqrt(epsilon)/r) + 45*epsilon**(7/2)*r**28*atan(sqrt(epsilon)/r) + 7*epsilon**17*r + 43*epsilon**16*r**3 - 34*epsilon**15*r**5 - 1210*epsilon**14*r**7 - 5775*epsilon**13*r**9 - 15411*epsilon**12*r**11 - 27324*epsilon**11*r**13 - 34188*epsilon**10*r**15 - 30855*epsilon**9*r**17 - 20075*epsilon**8*r**19 - 9218*epsilon**7*r**21 - 2842*epsilon**6*r**23 - 529*epsilon**5*r**25 - 45*epsilon**4*r**27)/(16*epsilon**17*r**3 + 192*epsilon**16*r**5 + 1056*epsilon**15*r**7 + 3520*epsilon**14*r**9 + 7920*epsilon**13*r**11 + 12672*epsilon**12*r**13 + 14784*epsilon**11*r**15 + 12672*epsilon**10*r**17 + 7920*epsilon**9*r**19 + 3520*epsilon**8*r**21 + 1056*epsilon**7*r**23 + 192*epsilon**6*r**25 + 16*epsilon**5*r**27)",
+        "(-5*epsilon**(33/2)*atan(sqrt(epsilon)/r) - 62*epsilon**(31/2)*r**2*atan(sqrt(epsilon)/r) - 359*epsilon**(29/2)*r**4*atan(sqrt(epsilon)/r) - 1292*epsilon**(27/2)*r**6*atan(sqrt(epsilon)/r) - 3245*epsilon**(25/2)*r**8*atan(sqrt(epsilon)/r) - 6050*epsilon**(23/2)*r**10*atan(sqrt(epsilon)/r) - 8679*epsilon**(21/2)*r**12*atan(sqrt(epsilon)/r) - 9768*epsilon**(19/2)*r**14*atan(sqrt(epsilon)/r) - 8679*epsilon**(17/2)*r**16*atan(sqrt(epsilon)/r) - 6050*epsilon**(15/2)*r**18*atan(sqrt(epsilon)/r) - 3245*epsilon**(13/2)*r**20*atan(sqrt(epsilon)/r) - 1292*epsilon**(11/2)*r**22*atan(sqrt(epsilon)/r) - 359*epsilon**(9/2)*r**24*atan(sqrt(epsilon)/r) - 62*epsilon**(7/2)*r**26*atan(sqrt(epsilon)/r) - 5*epsilon**(5/2)*r**28*atan(sqrt(epsilon)/r) - 5*epsilon**16*r - 71*epsilon**15*r**3 - 462*epsilon**14*r**5 - 1826*epsilon**13*r**7 - 4895*epsilon**12*r**9 - 9405*epsilon**11*r**11 - 13332*epsilon**10*r**13 - 14124*epsilon**9*r**15 - 11187*epsilon**8*r**17 - 6545*epsilon**7*r**19 - 2750*epsilon**6*r**21 - 786*epsilon**5*r**23 - 137*epsilon**4*r**25 - 11*epsilon**3*r**27)/(8*epsilon**17*r**3 + 112*epsilon**16*r**5 + 728*epsilon**15*r**7 + 2912*epsilon**14*r**9 + 8008*epsilon**13*r**11 + 16016*epsilon**12*r**13 + 24024*epsilon**11*r**15 + 27456*epsilon**10*r**17 + 24024*epsilon**9*r**19 + 16016*epsilon**8*r**21 + 8008*epsilon**7*r**23 + 2912*epsilon**6*r**25 + 728*epsilon**5*r**27 + 112*epsilon**4*r**29 + 8*epsilon**3*r**31)",
+        "(5*epsilon**(55/2)*r + 176*epsilon**(53/2)*r**3 + 2382*epsilon**(51/2)*r**5 + 18480*epsilon**(49/2)*r**7 + 96033*epsilon**(47/2)*r**9 + 362304*epsilon**(45/2)*r**11 + 1040808*epsilon**(43/2)*r**13 + 2346816*epsilon**(41/2)*r**15 + 4236570*epsilon**(39/2)*r**17 + 6202144*epsilon**(37/2)*r**19 + 7419412*epsilon**(35/2)*r**21 + 7277088*epsilon**(33/2)*r**23 + 5848986*epsilon**(31/2)*r**25 + 3835200*epsilon**(29/2)*r**27 + 2033064*epsilon**(27/2)*r**29 + 858432*epsilon**(25/2)*r**31 + 282081*epsilon**(23/2)*r**33 + 69552*epsilon**(21/2)*r**35 + 12110*epsilon**(19/2)*r**37 + 1328*epsilon**(17/2)*r**39 + 69*epsilon**(15/2)*r**41 + 5*epsilon**28*atan(sqrt(epsilon)/r) + 71*epsilon**27*r**2*atan(sqrt(epsilon)/r) + 314*epsilon**26*r**4*atan(sqrt(epsilon)/r) - 858*epsilon**25*r**6*atan(sqrt(epsilon)/r) - 18123*epsilon**24*r**8*atan(sqrt(epsilon)/r) - 114801*epsilon**23*r**10*atan(sqrt(epsilon)/r) - 459816*epsilon**22*r**12*atan(sqrt(epsilon)/r) - 1338648*epsilon**21*r**14*atan(sqrt(epsilon)/r) - 3000534*epsilon**20*r**16*atan(sqrt(epsilon)/r) - 5338034*epsilon**19*r**18*atan(sqrt(epsilon)/r) - 7670468*epsilon**18*r**20*atan(sqrt(epsilon)/r) - 8991164*epsilon**17*r**22*atan(sqrt(epsilon)/r) - 8636238*epsilon**16*r**24*atan(sqrt(epsilon)/r) - 6797994*epsilon**15*r**26*atan(sqrt(epsilon)/r) - 4366824*epsilon**14*r**28*atan(sqrt(epsilon)/r) - 2268888*epsilon**13*r**30*atan(sqrt(epsilon)/r) - 939471*epsilon**12*r**32*atan(sqrt(epsilon)/r) - 302901*epsilon**11*r**34*atan(sqrt(epsilon)/r) - 73318*epsilon**10*r**36*atan(sqrt(epsilon)/r) - 12538*epsilon**9*r**38*atan(sqrt(epsilon)/r) - 1351*epsilon**8*r**40*atan(sqrt(epsilon)/r) - 69*epsilon**7*r**42*atan(sqrt(epsilon)/r))/(16*epsilon**(57/2)*r**3 + 320*epsilon**(55/2)*r**5 + 3040*epsilon**(53/2)*r**7 + 18240*epsilon**(51/2)*r**9 + 77520*epsilon**(49/2)*r**11 + 248064*epsilon**(47/2)*r**13 + 620160*epsilon**(45/2)*r**15 + 1240320*epsilon**(43/2)*r**17 + 2015520*epsilon**(41/2)*r**19 + 2687360*epsilon**(39/2)*r**21 + 2956096*epsilon**(37/2)*r**23 + 2687360*epsilon**(35/2)*r**25 + 2015520*epsilon**(33/2)*r**27 + 1240320*epsilon**(31/2)*r**29 + 620160*epsilon**(29/2)*r**31 + 248064*epsilon**(27/2)*r**33 + 77520*epsilon**(25/2)*r**35 + 18240*epsilon**(23/2)*r**37 + 3040*epsilon**(21/2)*r**39 + 320*epsilon**(19/2)*r**41 + 16*epsilon**(17/2)*r**43)",
+        "(9*epsilon**(17/2)*r + 36*epsilon**(15/2)*r**3 + 54*epsilon**(13/2)*r**5 + 36*epsilon**(11/2)*r**7 + 9*epsilon**(9/2)*r**9 - 3*epsilon**9*atan(sqrt(epsilon)/r) - 21*epsilon**8*r**2*atan(sqrt(epsilon)/r) - 54*epsilon**7*r**4*atan(sqrt(epsilon)/r) - 66*epsilon**6*r**6*atan(sqrt(epsilon)/r) - 39*epsilon**5*r**8*atan(sqrt(epsilon)/r) - 9*epsilon**4*r**10*atan(sqrt(epsilon)/r))/(epsilon**(19/2) + 4*epsilon**(17/2)*r**2 + 6*epsilon**(15/2)*r**4 + 4*epsilon**(13/2)*r**6 + epsilon**(11/2)*r**8)",
+        "(-15*epsilon**(53/2)*r - 234*epsilon**(51/2)*r**3 - 1620*epsilon**(49/2)*r**5 - 6246*epsilon**(47/2)*r**7 - 12393*epsilon**(45/2)*r**9 + 3672*epsilon**(43/2)*r**11 + 112608*epsilon**(41/2)*r**13 + 422280*epsilon**(39/2)*r**15 + 990522*epsilon**(37/2)*r**17 + 1705236*epsilon**(35/2)*r**19 + 2275416*epsilon**(33/2)*r**21 + 2410668*epsilon**(31/2)*r**23 + 2048670*epsilon**(29/2)*r**25 + 1399032*epsilon**(27/2)*r**27 + 763776*epsilon**(25/2)*r**29 + 329256*epsilon**(23/2)*r**31 + 109701*epsilon**(21/2)*r**33 + 27270*epsilon**(19/2)*r**35 + 4764*epsilon**(17/2)*r**37 + 522*epsilon**(15/2)*r**39 + 27*epsilon**(13/2)*r**41 - 15*epsilon**27*atan(sqrt(epsilon)/r) - 303*epsilon**26*r**2*atan(sqrt(epsilon)/r) - 2934*epsilon**25*r**4*atan(sqrt(epsilon)/r) - 18126*epsilon**24*r**6*atan(sqrt(epsilon)/r) - 80199*epsilon**23*r**8*atan(sqrt(epsilon)/r) - 270351*epsilon**22*r**10*atan(sqrt(epsilon)/r) - 720936*epsilon**21*r**12*atan(sqrt(epsilon)/r) - 1558152*epsilon**20*r**14*atan(sqrt(epsilon)/r) - 2773278*epsilon**19*r**16*atan(sqrt(epsilon)/r) - 4106622*epsilon**18*r**18*atan(sqrt(epsilon)/r) - 5089188*epsilon**17*r**20*atan(sqrt(epsilon)/r) - 5290740*epsilon**16*r**22*atan(sqrt(epsilon)/r) - 4610502*epsilon**15*r**24*atan(sqrt(epsilon)/r) - 3354678*epsilon**14*r**26*atan(sqrt(epsilon)/r) - 2023272*epsilon**13*r**28*atan(sqrt(epsilon)/r) - 1000008*epsilon**12*r**30*atan(sqrt(epsilon)/r) - 398259*epsilon**11*r**32*atan(sqrt(epsilon)/r) - 124659*epsilon**10*r**34*atan(sqrt(epsilon)/r) - 29526*epsilon**9*r**36*atan(sqrt(epsilon)/r) - 4974*epsilon**8*r**38*atan(sqrt(epsilon)/r) - 531*epsilon**7*r**40*atan(sqrt(epsilon)/r) - 27*epsilon**6*r**42*atan(sqrt(epsilon)/r))/(16*epsilon**(55/2)*r**3 + 320*epsilon**(53/2)*r**5 + 3040*epsilon**(51/2)*r**7 + 18240*epsilon**(49/2)*r**9 + 77520*epsilon**(47/2)*r**11 + 248064*epsilon**(45/2)*r**13 + 620160*epsilon**(43/2)*r**15 + 1240320*epsilon**(41/2)*r**17 + 2015520*epsilon**(39/2)*r**19 + 2687360*epsilon**(37/2)*r**21 + 2956096*epsilon**(35/2)*r**23 + 2687360*epsilon**(33/2)*r**25 + 2015520*epsilon**(31/2)*r**27 + 1240320*epsilon**(29/2)*r**29 + 620160*epsilon**(27/2)*r**31 + 248064*epsilon**(25/2)*r**33 + 77520*epsilon**(23/2)*r**35 + 18240*epsilon**(21/2)*r**37 + 3040*epsilon**(19/2)*r**39 + 320*epsilon**(17/2)*r**41 + 16*epsilon**(15/2)*r**43)",
+        "0",
+        "(-13*epsilon**(17/2)*r - 54*epsilon**(15/2)*r**3 - 84*epsilon**(13/2)*r**5 - 58*epsilon**(11/2)*r**7 - 15*epsilon**(9/2)*r**9 + 3*epsilon**9*atan(sqrt(epsilon)/r) + 27*epsilon**8*r**2*atan(sqrt(epsilon)/r) + 78*epsilon**7*r**4*atan(sqrt(epsilon)/r) + 102*epsilon**6*r**6*atan(sqrt(epsilon)/r) + 63*epsilon**5*r**8*atan(sqrt(epsilon)/r) + 15*epsilon**4*r**10*atan(sqrt(epsilon)/r))/(4*epsilon**(19/2)*r + 16*epsilon**(17/2)*r**3 + 24*epsilon**(15/2)*r**5 + 16*epsilon**(13/2)*r**7 + 4*epsilon**(11/2)*r**9)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(-3*epsilon**(21/2)*r - 23*epsilon**(19/2)*r**3 - 80*epsilon**(17/2)*r**5 - 168*epsilon**(15/2)*r**7 - 238*epsilon**(13/2)*r**9 - 238*epsilon**(11/2)*r**11 - 168*epsilon**(9/2)*r**13 - 80*epsilon**(7/2)*r**15 - 23*epsilon**(5/2)*r**17 - 3*epsilon**(3/2)*r**19 - 3*epsilon**11*atan(sqrt(epsilon)/r) - 24*epsilon**10*r**2*atan(sqrt(epsilon)/r) - 81*epsilon**9*r**4*atan(sqrt(epsilon)/r) - 144*epsilon**8*r**6*atan(sqrt(epsilon)/r) - 126*epsilon**7*r**8*atan(sqrt(epsilon)/r) + 126*epsilon**5*r**12*atan(sqrt(epsilon)/r) + 144*epsilon**4*r**14*atan(sqrt(epsilon)/r) + 81*epsilon**3*r**16*atan(sqrt(epsilon)/r) + 24*epsilon**2*r**18*atan(sqrt(epsilon)/r) + 3*epsilon*r**20*atan(sqrt(epsilon)/r))/(16*epsilon**(19/2)*r**3 + 112*epsilon**(17/2)*r**5 + 336*epsilon**(15/2)*r**7 + 560*epsilon**(13/2)*r**9 + 560*epsilon**(11/2)*r**11 + 336*epsilon**(9/2)*r**13 + 112*epsilon**(7/2)*r**15 + 16*epsilon**(5/2)*r**17)",
+        "(3*epsilon**(39/2)*atan(sqrt(epsilon)/r) + 36*epsilon**(37/2)*r**2*atan(sqrt(epsilon)/r) + 216*epsilon**(35/2)*r**4*atan(sqrt(epsilon)/r) + 924*epsilon**(33/2)*r**6*atan(sqrt(epsilon)/r) + 3276*epsilon**(31/2)*r**8*atan(sqrt(epsilon)/r) + 9828*epsilon**(29/2)*r**10*atan(sqrt(epsilon)/r) + 24024*epsilon**(27/2)*r**12*atan(sqrt(epsilon)/r) + 46332*epsilon**(25/2)*r**14*atan(sqrt(epsilon)/r) + 69498*epsilon**(23/2)*r**16*atan(sqrt(epsilon)/r) + 80652*epsilon**(21/2)*r**18*atan(sqrt(epsilon)/r) + 72072*epsilon**(19/2)*r**20*atan(sqrt(epsilon)/r) + 49140*epsilon**(17/2)*r**22*atan(sqrt(epsilon)/r) + 25116*epsilon**(15/2)*r**24*atan(sqrt(epsilon)/r) + 9324*epsilon**(13/2)*r**26*atan(sqrt(epsilon)/r) + 2376*epsilon**(11/2)*r**28*atan(sqrt(epsilon)/r) + 372*epsilon**(9/2)*r**30*atan(sqrt(epsilon)/r) + 27*epsilon**(7/2)*r**32*atan(sqrt(epsilon)/r) + 3*epsilon**19*r + 35*epsilon**18*r**3 + 147*epsilon**17*r**5 + 99*epsilon**16*r**7 - 1633*epsilon**15*r**9 - 8481*epsilon**14*r**11 - 23265*epsilon**13*r**13 - 42801*epsilon**12*r**15 - 56727*epsilon**11*r**17 - 55671*epsilon**10*r**19 - 40711*epsilon**9*r**21 - 21975*epsilon**8*r**23 - 8523*epsilon**7*r**25 - 2251*epsilon**6*r**27 - 363*epsilon**5*r**29 - 27*epsilon**4*r**31)/(32*epsilon**18*r**3 + 384*epsilon**17*r**5 + 2112*epsilon**16*r**7 + 7040*epsilon**15*r**9 + 15840*epsilon**14*r**11 + 25344*epsilon**13*r**13 + 29568*epsilon**12*r**15 + 25344*epsilon**11*r**17 + 15840*epsilon**10*r**19 + 7040*epsilon**9*r**21 + 2112*epsilon**8*r**23 + 384*epsilon**7*r**25 + 32*epsilon**6*r**27)",
+        "(-epsilon**(35/2)*atan(sqrt(epsilon)/r) - 8*epsilon**(33/2)*r**2*atan(sqrt(epsilon)/r) + 3*epsilon**(31/2)*r**4*atan(sqrt(epsilon)/r) + 296*epsilon**(29/2)*r**6*atan(sqrt(epsilon)/r) + 1771*epsilon**(27/2)*r**8*atan(sqrt(epsilon)/r) + 5808*epsilon**(25/2)*r**10*atan(sqrt(epsilon)/r) + 12639*epsilon**(23/2)*r**12*atan(sqrt(epsilon)/r) + 19536*epsilon**(21/2)*r**14*atan(sqrt(epsilon)/r) + 22077*epsilon**(19/2)*r**16*atan(sqrt(epsilon)/r) + 18392*epsilon**(17/2)*r**18*atan(sqrt(epsilon)/r) + 11209*epsilon**(15/2)*r**20*atan(sqrt(epsilon)/r) + 4872*epsilon**(13/2)*r**22*atan(sqrt(epsilon)/r) + 1433*epsilon**(11/2)*r**24*atan(sqrt(epsilon)/r) + 256*epsilon**(9/2)*r**26*atan(sqrt(epsilon)/r) + 21*epsilon**(7/2)*r**28*atan(sqrt(epsilon)/r) - epsilon**17*r - 29*epsilon**16*r**3 - 274*epsilon**15*r**5 - 1386*epsilon**14*r**7 - 4455*epsilon**13*r**9 - 9867*epsilon**12*r**11 - 15708*epsilon**11*r**13 - 18348*epsilon**10*r**15 - 15807*epsilon**9*r**17 - 9955*epsilon**8*r**19 - 4466*epsilon**7*r**21 - 1354*epsilon**6*r**23 - 249*epsilon**5*r**25 - 21*epsilon**4*r**27)/(16*epsilon**17*r**3 + 192*epsilon**16*r**5 + 1056*epsilon**15*r**7 + 3520*epsilon**14*r**9 + 7920*epsilon**13*r**11 + 12672*epsilon**12*r**13 + 14784*epsilon**11*r**15 + 12672*epsilon**10*r**17 + 7920*epsilon**9*r**19 + 3520*epsilon**8*r**21 + 1056*epsilon**7*r**23 + 192*epsilon**6*r**25 + 16*epsilon**5*r**27)",
+        "(epsilon**(87/2)*r + 57*epsilon**(85/2)*r**3 + 1119*epsilon**(83/2)*r**5 + 12383*epsilon**(81/2)*r**7 + 92142*epsilon**(79/2)*r**9 + 503838*epsilon**(77/2)*r**11 + 2133802*epsilon**(75/2)*r**13 + 7242378*epsilon**(73/2)*r**15 + 20168907*epsilon**(71/2)*r**17 + 46863443*epsilon**(69/2)*r**19 + 91962717*epsilon**(67/2)*r**21 + 153758013*epsilon**(65/2)*r**23 + 220403572*epsilon**(63/2)*r**25 + 271990548*epsilon**(61/2)*r**27 + 289641852*epsilon**(59/2)*r**29 + 266344508*epsilon**(57/2)*r**31 + 211303047*epsilon**(55/2)*r**33 + 144253263*epsilon**(53/2)*r**35 + 84367657*epsilon**(51/2)*r**37 + 41993193*epsilon**(49/2)*r**39 + 17622462*epsilon**(47/2)*r**41 + 6154478*epsilon**(45/2)*r**43 + 1756602*epsilon**(43/2)*r**45 + 399258*epsilon**(41/2)*r**47 + 69517*epsilon**(39/2)*r**49 + 8709*epsilon**(37/2)*r**51 + 699*epsilon**(35/2)*r**53 + 27*epsilon**(33/2)*r**55 + epsilon**44*atan(sqrt(epsilon)/r) + 36*epsilon**43*r**2*atan(sqrt(epsilon)/r) + 542*epsilon**42*r**4*atan(sqrt(epsilon)/r) + 4748*epsilon**41*r**6*atan(sqrt(epsilon)/r) + 27375*epsilon**40*r**8*atan(sqrt(epsilon)/r) + 108280*epsilon**39*r**10*atan(sqrt(epsilon)/r) + 281980*epsilon**38*r**12*atan(sqrt(epsilon)/r) + 333960*epsilon**37*r**14*atan(sqrt(epsilon)/r) - 909535*epsilon**36*r**16*atan(sqrt(epsilon)/r) - 6704500*epsilon**35*r**18*atan(sqrt(epsilon)/r) - 22929390*epsilon**34*r**20*atan(sqrt(epsilon)/r) - 56206940*epsilon**33*r**22*atan(sqrt(epsilon)/r) - 108797705*epsilon**32*r**24*atan(sqrt(epsilon)/r) - 172947120*epsilon**31*r**26*atan(sqrt(epsilon)/r) - 230299000*epsilon**30*r**28*atan(sqrt(epsilon)/r) - 259717840*epsilon**29*r**30*atan(sqrt(epsilon)/r) - 249502965*epsilon**28*r**32*atan(sqrt(epsilon)/r) - 204664580*epsilon**27*r**34*atan(sqrt(epsilon)/r) - 143296670*epsilon**26*r**36*atan(sqrt(epsilon)/r) - 85387500*epsilon**25*r**38*atan(sqrt(epsilon)/r) - 43064395*epsilon**24*r**40*atan(sqrt(epsilon)/r) - 18226120*epsilon**23*r**42*atan(sqrt(epsilon)/r) - 6393540*epsilon**22*r**44*atan(sqrt(epsilon)/r) - 1826360*epsilon**21*r**46*atan(sqrt(epsilon)/r) - 414125*epsilon**20*r**48*atan(sqrt(epsilon)/r) - 71724*epsilon**19*r**50*atan(sqrt(epsilon)/r) - 8914*epsilon**18*r**52*atan(sqrt(epsilon)/r) - 708*epsilon**17*r**54*atan(sqrt(epsilon)/r) - 27*epsilon**16*r**56*atan(sqrt(epsilon)/r))/(32*epsilon**(87/2)*r**3 + 800*epsilon**(85/2)*r**5 + 9600*epsilon**(83/2)*r**7 + 73600*epsilon**(81/2)*r**9 + 404800*epsilon**(79/2)*r**11 + 1700160*epsilon**(77/2)*r**13 + 5667200*epsilon**(75/2)*r**15 + 15382400*epsilon**(73/2)*r**17 + 34610400*epsilon**(71/2)*r**19 + 65375200*epsilon**(69/2)*r**21 + 104600320*epsilon**(67/2)*r**23 + 142636800*epsilon**(65/2)*r**25 + 166409600*epsilon**(63/2)*r**27 + 166409600*epsilon**(61/2)*r**29 + 142636800*epsilon**(59/2)*r**31 + 104600320*epsilon**(57/2)*r**33 + 65375200*epsilon**(55/2)*r**35 + 34610400*epsilon**(53/2)*r**37 + 15382400*epsilon**(51/2)*r**39 + 5667200*epsilon**(49/2)*r**41 + 1700160*epsilon**(47/2)*r**43 + 404800*epsilon**(45/2)*r**45 + 73600*epsilon**(43/2)*r**47 + 9600*epsilon**(41/2)*r**49 + 800*epsilon**(39/2)*r**51 + 32*epsilon**(37/2)*r**53)",
+        "(9*epsilon**(9/2)*r + 36*epsilon**(7/2)*r**3 + 27*epsilon**(5/2)*r**5 - 3*epsilon**5*atan(sqrt(epsilon)/r) - 21*epsilon**4*r**2*atan(sqrt(epsilon)/r) - 45*epsilon**3*r**4*atan(sqrt(epsilon)/r) - 27*epsilon**2*r**6*atan(sqrt(epsilon)/r))/(2*epsilon**(9/2))",
+        "(-3*epsilon**(87/2)*r - 93*epsilon**(85/2)*r**3 - 1377*epsilon**(83/2)*r**5 - 12975*epsilon**(81/2)*r**7 - 87450*epsilon**(79/2)*r**9 - 449190*epsilon**(77/2)*r**11 - 1829190*epsilon**(75/2)*r**13 - 6064410*epsilon**(73/2)*r**15 - 16679025*epsilon**(71/2)*r**17 - 38576175*epsilon**(69/2)*r**19 - 75782355*epsilon**(67/2)*r**21 - 127370205*epsilon**(65/2)*r**23 - 184090620*epsilon**(63/2)*r**25 - 229556100*epsilon**(61/2)*r**27 - 247385700*epsilon**(59/2)*r**29 - 230447580*epsilon**(57/2)*r**31 - 185316405*epsilon**(55/2)*r**33 - 128274795*epsilon**(53/2)*r**35 - 76070775*epsilon**(51/2)*r**37 - 38386425*epsilon**(49/2)*r**39 - 16326090*epsilon**(47/2)*r**41 - 5775990*epsilon**(45/2)*r**43 - 1669110*epsilon**(43/2)*r**45 - 383850*epsilon**(41/2)*r**47 - 67575*epsilon**(39/2)*r**49 - 8553*epsilon**(37/2)*r**51 - 693*epsilon**(35/2)*r**53 - 27*epsilon**(33/2)*r**55 - 3*epsilon**44*atan(sqrt(epsilon)/r) - 30*epsilon**43*r**2*atan(sqrt(epsilon)/r) + 252*epsilon**42*r**4*atan(sqrt(epsilon)/r) + 7302*epsilon**41*r**6*atan(sqrt(epsilon)/r) + 74325*epsilon**40*r**8*atan(sqrt(epsilon)/r) + 480060*epsilon**39*r**10*atan(sqrt(epsilon)/r) + 2263200*epsilon**38*r**12*atan(sqrt(epsilon)/r) + 8303460*epsilon**37*r**14*atan(sqrt(epsilon)/r) + 24602985*epsilon**36*r**16*atan(sqrt(epsilon)/r) + 60302550*epsilon**35*r**18*atan(sqrt(epsilon)/r) + 124309020*epsilon**34*r**20*atan(sqrt(epsilon)/r) + 218084850*epsilon**33*r**22*atan(sqrt(epsilon)/r) + 328398945*epsilon**32*r**24*atan(sqrt(epsilon)/r) + 427018920*epsilon**31*r**26*atan(sqrt(epsilon)/r) + 481399200*epsilon**30*r**28*atan(sqrt(epsilon)/r) + 471592920*epsilon**29*r**30*atan(sqrt(epsilon)/r) + 401723175*epsilon**28*r**32*atan(sqrt(epsilon)/r) + 297295470*epsilon**27*r**34*atan(sqrt(epsilon)/r) + 190645620*epsilon**26*r**36*atan(sqrt(epsilon)/r) + 105463050*epsilon**25*r**38*atan(sqrt(epsilon)/r) + 49991535*epsilon**24*r**40*atan(sqrt(epsilon)/r) + 20113500*epsilon**23*r**42*atan(sqrt(epsilon)/r) + 6778560*epsilon**22*r**44*atan(sqrt(epsilon)/r) + 1878660*epsilon**21*r**46*atan(sqrt(epsilon)/r) + 417075*epsilon**20*r**48*atan(sqrt(epsilon)/r) + 71322*epsilon**19*r**50*atan(sqrt(epsilon)/r) + 8820*epsilon**18*r**52*atan(sqrt(epsilon)/r) + 702*epsilon**17*r**54*atan(sqrt(epsilon)/r) + 27*epsilon**16*r**56*atan(sqrt(epsilon)/r))/(32*epsilon**(87/2)*r**3 + 800*epsilon**(85/2)*r**5 + 9600*epsilon**(83/2)*r**7 + 73600*epsilon**(81/2)*r**9 + 404800*epsilon**(79/2)*r**11 + 1700160*epsilon**(77/2)*r**13 + 5667200*epsilon**(75/2)*r**15 + 15382400*epsilon**(73/2)*r**17 + 34610400*epsilon**(71/2)*r**19 + 65375200*epsilon**(69/2)*r**21 + 104600320*epsilon**(67/2)*r**23 + 142636800*epsilon**(65/2)*r**25 + 166409600*epsilon**(63/2)*r**27 + 166409600*epsilon**(61/2)*r**29 + 142636800*epsilon**(59/2)*r**31 + 104600320*epsilon**(57/2)*r**33 + 65375200*epsilon**(55/2)*r**35 + 34610400*epsilon**(53/2)*r**37 + 15382400*epsilon**(51/2)*r**39 + 5667200*epsilon**(49/2)*r**41 + 1700160*epsilon**(47/2)*r**43 + 404800*epsilon**(45/2)*r**45 + 73600*epsilon**(43/2)*r**47 + 9600*epsilon**(41/2)*r**49 + 800*epsilon**(39/2)*r**51 + 32*epsilon**(37/2)*r**53)",
+        "0",
+        "(-3*epsilon**(27/2)*r - 6*epsilon**(25/2)*r**3 + 15*epsilon**(23/2)*r**5 + 60*epsilon**(21/2)*r**7 + 75*epsilon**(19/2)*r**9 + 42*epsilon**(17/2)*r**11 + 9*epsilon**(15/2)*r**13 - 3*epsilon**14*atan(sqrt(epsilon)/r) - 15*epsilon**13*r**2*atan(sqrt(epsilon)/r) - 39*epsilon**12*r**4*atan(sqrt(epsilon)/r) - 75*epsilon**11*r**6*atan(sqrt(epsilon)/r) - 105*epsilon**10*r**8*atan(sqrt(epsilon)/r) - 93*epsilon**9*r**10*atan(sqrt(epsilon)/r) - 45*epsilon**8*r**12*atan(sqrt(epsilon)/r) - 9*epsilon**7*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(27/2)*r + 32*epsilon**(25/2)*r**3 + 48*epsilon**(23/2)*r**5 + 32*epsilon**(21/2)*r**7 + 8*epsilon**(19/2)*r**9)"
+      ],
+      [
+        "(7*epsilon**(51/2)*r + 157*epsilon**(49/2)*r**3 + 1625*epsilon**(47/2)*r**5 + 10387*epsilon**(45/2)*r**7 + 46172*epsilon**(43/2)*r**9 + 152116*epsilon**(41/2)*r**11 + 386036*epsilon**(39/2)*r**13 + 773500*epsilon**(37/2)*r**15 + 1243346*epsilon**(35/2)*r**17 + 1619046*epsilon**(33/2)*r**19 + 1716286*epsilon**(31/2)*r**21 + 1482026*epsilon**(29/2)*r**23 + 1038700*epsilon**(27/2)*r**25 + 585956*epsilon**(25/2)*r**27 + 262276*epsilon**(23/2)*r**29 + 91052*epsilon**(21/2)*r**31 + 23647*epsilon**(19/2)*r**33 + 4325*epsilon**(17/2)*r**35 + 497*epsilon**(15/2)*r**37 + 27*epsilon**(13/2)*r**39 + 7*epsilon**26*atan(sqrt(epsilon)/r) + 106*epsilon**25*r**2*atan(sqrt(epsilon)/r) + 684*epsilon**24*r**4*atan(sqrt(epsilon)/r) + 2166*epsilon**23*r**6*atan(sqrt(epsilon)/r) + 969*epsilon**22*r**8*atan(sqrt(epsilon)/r) - 23256*epsilon**21*r**10*atan(sqrt(epsilon)/r) - 124032*epsilon**20*r**12*atan(sqrt(epsilon)/r) - 379848*epsilon**19*r**14*atan(sqrt(epsilon)/r) - 831402*epsilon**18*r**16*atan(sqrt(epsilon)/r) - 1394068*epsilon**17*r**18*atan(sqrt(epsilon)/r) - 1847560*epsilon**16*r**20*atan(sqrt(epsilon)/r) - 1965132*epsilon**15*r**22*atan(sqrt(epsilon)/r) - 1687998*epsilon**14*r**24*atan(sqrt(epsilon)/r) - 1170552*epsilon**13*r**26*atan(sqrt(epsilon)/r) - 651168*epsilon**12*r**28*atan(sqrt(epsilon)/r) - 286824*epsilon**11*r**30*atan(sqrt(epsilon)/r) - 97869*epsilon**10*r**32*atan(sqrt(epsilon)/r) - 24966*epsilon**9*r**34*atan(sqrt(epsilon)/r) - 4484*epsilon**8*r**36*atan(sqrt(epsilon)/r) - 506*epsilon**7*r**38*atan(sqrt(epsilon)/r) - 27*epsilon**6*r**40*atan(sqrt(epsilon)/r))/(16*epsilon**(51/2)*r**3 + 288*epsilon**(49/2)*r**5 + 2448*epsilon**(47/2)*r**7 + 13056*epsilon**(45/2)*r**9 + 48960*epsilon**(43/2)*r**11 + 137088*epsilon**(41/2)*r**13 + 297024*epsilon**(39/2)*r**15 + 509184*epsilon**(37/2)*r**17 + 700128*epsilon**(35/2)*r**19 + 777920*epsilon**(33/2)*r**21 + 700128*epsilon**(31/2)*r**23 + 509184*epsilon**(29/2)*r**25 + 297024*epsilon**(27/2)*r**27 + 137088*epsilon**(25/2)*r**29 + 48960*epsilon**(23/2)*r**31 + 13056*epsilon**(21/2)*r**33 + 2448*epsilon**(19/2)*r**35 + 288*epsilon**(17/2)*r**37 + 16*epsilon**(15/2)*r**39)",
+        "(-7*epsilon**(57/2)*r + 26*epsilon**(55/2)*r**3 + 2116*epsilon**(53/2)*r**5 + 25670*epsilon**(51/2)*r**7 + 171751*epsilon**(49/2)*r**9 + 774248*epsilon**(47/2)*r**11 + 2557888*epsilon**(45/2)*r**13 + 6482168*epsilon**(43/2)*r**15 + 12952810*epsilon**(41/2)*r**17 + 20762508*epsilon**(39/2)*r**19 + 26974376*epsilon**(37/2)*r**21 + 28550548*epsilon**(35/2)*r**23 + 24636638*epsilon**(33/2)*r**25 + 17269960*epsilon**(31/2)*r**27 + 9752288*epsilon**(29/2)*r**29 + 4373080*epsilon**(27/2)*r**31 + 1522061*epsilon**(25/2)*r**33 + 396586*epsilon**(23/2)*r**35 + 72820*epsilon**(21/2)*r**37 + 8406*epsilon**(19/2)*r**39 + 459*epsilon**(17/2)*r**41 - 7*epsilon**29*atan(sqrt(epsilon)/r) - 115*epsilon**28*r**2*atan(sqrt(epsilon)/r) - 1170*epsilon**27*r**4*atan(sqrt(epsilon)/r) - 9834*epsilon**26*r**6*atan(sqrt(epsilon)/r) - 66147*epsilon**25*r**8*atan(sqrt(epsilon)/r) - 338895*epsilon**24*r**10*atan(sqrt(epsilon)/r) - 1319064*epsilon**23*r**12*atan(sqrt(epsilon)/r) - 3967800*epsilon**22*r**14*atan(sqrt(epsilon)/r) - 9402462*epsilon**21*r**16*atan(sqrt(epsilon)/r) - 17831606*epsilon**20*r**18*atan(sqrt(epsilon)/r) - 27374828*epsilon**19*r**20*atan(sqrt(epsilon)/r) - 34266492*epsilon**18*r**22*atan(sqrt(epsilon)/r) - 35092590*epsilon**17*r**24*atan(sqrt(epsilon)/r) - 29392422*epsilon**16*r**26*atan(sqrt(epsilon)/r) - 20047896*epsilon**15*r**28*atan(sqrt(epsilon)/r) - 11037624*epsilon**14*r**30*atan(sqrt(epsilon)/r) - 4833627*epsilon**13*r**32*atan(sqrt(epsilon)/r) - 1645335*epsilon**12*r**34*atan(sqrt(epsilon)/r) - 419794*epsilon**11*r**36*atan(sqrt(epsilon)/r) - 75562*epsilon**10*r**38*atan(sqrt(epsilon)/r) - 8559*epsilon**9*r**40*atan(sqrt(epsilon)/r) - 459*epsilon**8*r**42*atan(sqrt(epsilon)/r))/(32*epsilon**(57/2)*r**3 + 576*epsilon**(55/2)*r**5 + 4896*epsilon**(53/2)*r**7 + 26112*epsilon**(51/2)*r**9 + 97920*epsilon**(49/2)*r**11 + 274176*epsilon**(47/2)*r**13 + 594048*epsilon**(45/2)*r**15 + 1018368*epsilon**(43/2)*r**17 + 1400256*epsilon**(41/2)*r**19 + 1555840*epsilon**(39/2)*r**21 + 1400256*epsilon**(37/2)*r**23 + 1018368*epsilon**(35/2)*r**25 + 594048*epsilon**(33/2)*r**27 + 274176*epsilon**(31/2)*r**29 + 97920*epsilon**(29/2)*r**31 + 26112*epsilon**(27/2)*r**33 + 4896*epsilon**(25/2)*r**35 + 576*epsilon**(23/2)*r**37 + 32*epsilon**(21/2)*r**39)",
+        "(5*epsilon**(55/2)*r + 176*epsilon**(53/2)*r**3 + 2382*epsilon**(51/2)*r**5 + 18480*epsilon**(49/2)*r**7 + 96033*epsilon**(47/2)*r**9 + 362304*epsilon**(45/2)*r**11 + 1040808*epsilon**(43/2)*r**13 + 2346816*epsilon**(41/2)*r**15 + 4236570*epsilon**(39/2)*r**17 + 6202144*epsilon**(37/2)*r**19 + 7419412*epsilon**(35/2)*r**21 + 7277088*epsilon**(33/2)*r**23 + 5848986*epsilon**(31/2)*r**25 + 3835200*epsilon**(29/2)*r**27 + 2033064*epsilon**(27/2)*r**29 + 858432*epsilon**(25/2)*r**31 + 282081*epsilon**(23/2)*r**33 + 69552*epsilon**(21/2)*r**35 + 12110*epsilon**(19/2)*r**37 + 1328*epsilon**(17/2)*r**39 + 69*epsilon**(15/2)*r**41 + 5*epsilon**28*atan(sqrt(epsilon)/r) + 71*epsilon**27*r**2*atan(sqrt(epsilon)/r) + 314*epsilon**26*r**4*atan(sqrt(epsilon)/r) - 858*epsilon**25*r**6*atan(sqrt(epsilon)/r) - 18123*epsilon**24*r**8*atan(sqrt(epsilon)/r) - 114801*epsilon**23*r**10*atan(sqrt(epsilon)/r) - 459816*epsilon**22*r**12*atan(sqrt(epsilon)/r) - 1338648*epsilon**21*r**14*atan(sqrt(epsilon)/r) - 3000534*epsilon**20*r**16*atan(sqrt(epsilon)/r) - 5338034*epsilon**19*r**18*atan(sqrt(epsilon)/r) - 7670468*epsilon**18*r**20*atan(sqrt(epsilon)/r) - 8991164*epsilon**17*r**22*atan(sqrt(epsilon)/r) - 8636238*epsilon**16*r**24*atan(sqrt(epsilon)/r) - 6797994*epsilon**15*r**26*atan(sqrt(epsilon)/r) - 4366824*epsilon**14*r**28*atan(sqrt(epsilon)/r) - 2268888*epsilon**13*r**30*atan(sqrt(epsilon)/r) - 939471*epsilon**12*r**32*atan(sqrt(epsilon)/r) - 302901*epsilon**11*r**34*atan(sqrt(epsilon)/r) - 73318*epsilon**10*r**36*atan(sqrt(epsilon)/r) - 12538*epsilon**9*r**38*atan(sqrt(epsilon)/r) - 1351*epsilon**8*r**40*atan(sqrt(epsilon)/r) - 69*epsilon**7*r**42*atan(sqrt(epsilon)/r))/(16*epsilon**(57/2)*r**3 + 320*epsilon**(55/2)*r**5 + 3040*epsilon**(53/2)*r**7 + 18240*epsilon**(51/2)*r**9 + 77520*epsilon**(49/2)*r**11 + 248064*epsilon**(47/2)*r**13 + 620160*epsilon**(45/2)*r**15 + 1240320*epsilon**(43/2)*r**17 + 2015520*epsilon**(41/2)*r**19 + 2687360*epsilon**(39/2)*r**21 + 2956096*epsilon**(37/2)*r**23 + 2687360*epsilon**(35/2)*r**25 + 2015520*epsilon**(33/2)*r**27 + 1240320*epsilon**(31/2)*r**29 + 620160*epsilon**(29/2)*r**31 + 248064*epsilon**(27/2)*r**33 + 77520*epsilon**(25/2)*r**35 + 18240*epsilon**(23/2)*r**37 + 3040*epsilon**(21/2)*r**39 + 320*epsilon**(19/2)*r**41 + 16*epsilon**(17/2)*r**43)",
+        "(-5*epsilon**(89/2)*r - 382*epsilon**(87/2)*r**3 - 8732*epsilon**(85/2)*r**5 - 109306*epsilon**(83/2)*r**7 - 909725*epsilon**(81/2)*r**9 - 5532100*epsilon**(79/2)*r**11 - 25969760*epsilon**(77/2)*r**13 - 97511260*epsilon**(75/2)*r**15 - 300079505*epsilon**(73/2)*r**17 - 770144650*epsilon**(71/2)*r**19 - 1669471100*epsilon**(69/2)*r**21 - 3085355470*epsilon**(67/2)*r**23 - 4894262345*epsilon**(65/2)*r**25 - 6695311960*epsilon**(63/2)*r**27 - 7922285600*epsilon**(61/2)*r**29 - 8119897000*epsilon**(59/2)*r**31 - 7208767295*epsilon**(57/2)*r**33 - 5535221170*epsilon**(55/2)*r**35 - 3664760660*epsilon**(53/2)*r**37 - 2082076150*epsilon**(51/2)*r**39 - 1008021575*epsilon**(49/2)*r**41 - 411889060*epsilon**(47/2)*r**43 - 140178560*epsilon**(45/2)*r**45 - 39013180*epsilon**(43/2)*r**47 - 8650475*epsilon**(41/2)*r**49 - 1469830*epsilon**(39/2)*r**51 - 179732*epsilon**(37/2)*r**53 - 14082*epsilon**(35/2)*r**55 - 531*epsilon**(33/2)*r**57 - 5*epsilon**45*atan(sqrt(epsilon)/r) - 85*epsilon**44*r**2*atan(sqrt(epsilon)/r) - 34*epsilon**43*r**4*atan(sqrt(epsilon)/r) + 13134*epsilon**42*r**6*atan(sqrt(epsilon)/r) + 193681*epsilon**41*r**8*atan(sqrt(epsilon)/r) + 1620625*epsilon**40*r**10*atan(sqrt(epsilon)/r) + 9557100*epsilon**39*r**12*atan(sqrt(epsilon)/r) + 43107980*epsilon**38*r**14*atan(sqrt(epsilon)/r) + 155345795*epsilon**37*r**16*atan(sqrt(epsilon)/r) + 459532755*epsilon**36*r**18*atan(sqrt(epsilon)/r) + 1136438050*epsilon**35*r**20*atan(sqrt(epsilon)/r) + 2380011250*epsilon**34*r**22*atan(sqrt(epsilon)/r) + 4260140385*epsilon**33*r**24*atan(sqrt(epsilon)/r) + 6560438465*epsilon**32*r**26*atan(sqrt(epsilon)/r) + 8730857960*epsilon**31*r**28*atan(sqrt(epsilon)/r) + 10069266600*epsilon**30*r**30*atan(sqrt(epsilon)/r) + 10076138425*epsilon**29*r**32*atan(sqrt(epsilon)/r) + 8746994185*epsilon**28*r**34*atan(sqrt(epsilon)/r) + 6576225090*epsilon**27*r**36*atan(sqrt(epsilon)/r) + 4268355410*epsilon**26*r**38*atan(sqrt(epsilon)/r) + 2379914075*epsilon**25*r**40*atan(sqrt(epsilon)/r) + 1131915675*epsilon**24*r**42*atan(sqrt(epsilon)/r) + 454771180*epsilon**23*r**44*atan(sqrt(epsilon)/r) + 152305420*epsilon**22*r**46*atan(sqrt(epsilon)/r) + 41743305*epsilon**21*r**48*atan(sqrt(epsilon)/r) + 9121145*epsilon**20*r**50*atan(sqrt(epsilon)/r) + 1528190*epsilon**19*r**52*atan(sqrt(epsilon)/r) + 184366*epsilon**18*r**54*atan(sqrt(epsilon)/r) + 14259*epsilon**17*r**56*atan(sqrt(epsilon)/r) + 531*epsilon**16*r**58*atan(sqrt(epsilon)/r))/(32*epsilon**(91/2)*r**3 + 864*epsilon**(89/2)*r**5 + 11232*epsilon**(87/2)*r**7 + 93600*epsilon**(85/2)*r**9 + 561600*epsilon**(83/2)*r**11 + 2583360*epsilon**(81/2)*r**13 + 9472320*epsilon**(79/2)*r**15 + 28416960*epsilon**(77/2)*r**17 + 71042400*epsilon**(75/2)*r**19 + 149978400*epsilon**(73/2)*r**21 + 269961120*epsilon**(71/2)*r**23 + 417212640*epsilon**(69/2)*r**25 + 556283520*epsilon**(67/2)*r**27 + 641865600*epsilon**(65/2)*r**29 + 641865600*epsilon**(63/2)*r**31 + 556283520*epsilon**(61/2)*r**33 + 417212640*epsilon**(59/2)*r**35 + 269961120*epsilon**(57/2)*r**37 + 149978400*epsilon**(55/2)*r**39 + 71042400*epsilon**(53/2)*r**41 + 28416960*epsilon**(51/2)*r**43 + 9472320*epsilon**(49/2)*r**45 + 2583360*epsilon**(47/2)*r**47 + 561600*epsilon**(45/2)*r**49 + 93600*epsilon**(43/2)*r**51 + 11232*epsilon**(41/2)*r**53 + 864*epsilon**(39/2)*r**55 + 32*epsilon**(37/2)*r**57)",
+        "(15*epsilon**(33/2)*atan(sqrt(epsilon)/r) + 345*epsilon**(31/2)*r**2*atan(sqrt(epsilon)/r) + 1815*epsilon**(29/2)*r**4*atan(sqrt(epsilon)/r) + 4425*epsilon**(27/2)*r**6*atan(sqrt(epsilon)/r) + 5925*epsilon**(25/2)*r**8*atan(sqrt(epsilon)/r) + 4515*epsilon**(23/2)*r**10*atan(sqrt(epsilon)/r) + 1845*epsilon**(21/2)*r**12*atan(sqrt(epsilon)/r) + 315*epsilon**(19/2)*r**14*atan(sqrt(epsilon)/r) - 177*epsilon**16*r - 1188*epsilon**15*r**3 - 3297*epsilon**14*r**5 - 4848*epsilon**13*r**7 - 3987*epsilon**12*r**9 - 1740*epsilon**11*r**11 - 315*epsilon**10*r**13)/(10*epsilon**17 + 50*epsilon**16*r**2 + 100*epsilon**15*r**4 + 100*epsilon**14*r**6 + 50*epsilon**13*r**8 + 10*epsilon**12*r**10)",
+        "(15*epsilon**(85/2)*r + 468*epsilon**(83/2)*r**3 + 6858*epsilon**(81/2)*r**5 + 63180*epsilon**(79/2)*r**7 + 412425*epsilon**(77/2)*r**9 + 2035800*epsilon**(75/2)*r**11 + 7911540*epsilon**(73/2)*r**13 + 24864840*epsilon**(71/2)*r**15 + 64382175*epsilon**(69/2)*r**17 + 139124700*epsilon**(67/2)*r**19 + 253088550*epsilon**(65/2)*r**21 + 389602980*epsilon**(63/2)*r**23 + 508477905*epsilon**(61/2)*r**25 + 561632400*epsilon**(59/2)*r**27 + 521515800*epsilon**(57/2)*r**29 + 401166000*epsilon**(55/2)*r**31 + 247720005*epsilon**(53/2)*r**33 + 113506380*epsilon**(51/2)*r**35 + 28120950*epsilon**(49/2)*r**37 - 8880300*epsilon**(47/2)*r**39 - 15540525*epsilon**(45/2)*r**41 - 10656360*epsilon**(43/2)*r**43 - 5005260*epsilon**(41/2)*r**45 - 1755000*epsilon**(39/2)*r**47 - 465075*epsilon**(37/2)*r**49 - 91260*epsilon**(35/2)*r**51 - 12582*epsilon**(33/2)*r**53 - 1092*epsilon**(31/2)*r**55 - 45*epsilon**(29/2)*r**57 + 15*epsilon**43*atan(sqrt(epsilon)/r) + 345*epsilon**42*r**2*atan(sqrt(epsilon)/r) + 3642*epsilon**41*r**4*atan(sqrt(epsilon)/r) + 22782*epsilon**40*r**6*atan(sqrt(epsilon)/r) + 87945*epsilon**39*r**8*atan(sqrt(epsilon)/r) + 164775*epsilon**38*r**10*atan(sqrt(epsilon)/r) - 331500*epsilon**37*r**12*atan(sqrt(epsilon)/r) - 3964740*epsilon**36*r**14*atan(sqrt(epsilon)/r) - 17711265*epsilon**35*r**16*atan(sqrt(epsilon)/r) - 54515175*epsilon**34*r**18*atan(sqrt(epsilon)/r) - 129751050*epsilon**33*r**20*atan(sqrt(epsilon)/r) - 249679950*epsilon**32*r**22*atan(sqrt(epsilon)/r) - 396846255*epsilon**31*r**24*atan(sqrt(epsilon)/r) - 526307505*epsilon**30*r**26*atan(sqrt(epsilon)/r) - 583919400*epsilon**29*r**28*atan(sqrt(epsilon)/r) - 539345400*epsilon**28*r**30*atan(sqrt(epsilon)/r) - 408409275*epsilon**27*r**32*atan(sqrt(epsilon)/r) - 244311405*epsilon**26*r**34*atan(sqrt(epsilon)/r) - 104132730*epsilon**25*r**36*atan(sqrt(epsilon)/r) - 18253950*epsilon**24*r**38*atan(sqrt(epsilon)/r) + 16033875*epsilon**23*r**40*atan(sqrt(epsilon)/r) + 19487325*epsilon**22*r**42*atan(sqrt(epsilon)/r) + 12360660*epsilon**21*r**44*atan(sqrt(epsilon)/r) + 5582460*epsilon**20*r**46*atan(sqrt(epsilon)/r) + 1906125*epsilon**19*r**48*atan(sqrt(epsilon)/r) + 494715*epsilon**18*r**50*atan(sqrt(epsilon)/r) + 95370*epsilon**17*r**52*atan(sqrt(epsilon)/r) + 12942*epsilon**16*r**54*atan(sqrt(epsilon)/r) + 1107*epsilon**15*r**56*atan(sqrt(epsilon)/r) + 45*epsilon**14*r**58*atan(sqrt(epsilon)/r))/(32*epsilon**(87/2)*r**3 + 864*epsilon**(85/2)*r**5 + 11232*epsilon**(83/2)*r**7 + 93600*epsilon**(81/2)*r**9 + 561600*epsilon**(79/2)*r**11 + 2583360*epsilon**(77/2)*r**13 + 9472320*epsilon**(75/2)*r**15 + 28416960*epsilon**(73/2)*r**17 + 71042400*epsilon**(71/2)*r**19 + 149978400*epsilon**(69/2)*r**21 + 269961120*epsilon**(67/2)*r**23 + 417212640*epsilon**(65/2)*r**25 + 556283520*epsilon**(63/2)*r**27 + 641865600*epsilon**(61/2)*r**29 + 641865600*epsilon**(59/2)*r**31 + 556283520*epsilon**(57/2)*r**33 + 417212640*epsilon**(55/2)*r**35 + 269961120*epsilon**(53/2)*r**37 + 149978400*epsilon**(51/2)*r**39 + 71042400*epsilon**(49/2)*r**41 + 28416960*epsilon**(47/2)*r**43 + 9472320*epsilon**(45/2)*r**45 + 2583360*epsilon**(43/2)*r**47 + 561600*epsilon**(41/2)*r**49 + 93600*epsilon**(39/2)*r**51 + 11232*epsilon**(37/2)*r**53 + 864*epsilon**(35/2)*r**55 + 32*epsilon**(33/2)*r**57)",
+        "0",
+        "(-15*epsilon**(33/2)*atan(sqrt(epsilon)/r) - 285*epsilon**(31/2)*r**2*atan(sqrt(epsilon)/r) - 1515*epsilon**(29/2)*r**4*atan(sqrt(epsilon)/r) - 3825*epsilon**(27/2)*r**6*atan(sqrt(epsilon)/r) - 5325*epsilon**(25/2)*r**8*atan(sqrt(epsilon)/r) - 4215*epsilon**(23/2)*r**10*atan(sqrt(epsilon)/r) - 1785*epsilon**(21/2)*r**12*atan(sqrt(epsilon)/r) - 315*epsilon**(19/2)*r**14*atan(sqrt(epsilon)/r) + 89*epsilon**16*r + 776*epsilon**15*r**3 + 2529*epsilon**14*r**5 + 4136*epsilon**13*r**7 + 3659*epsilon**12*r**9 + 1680*epsilon**11*r**11 + 315*epsilon**10*r**13)/(40*epsilon**17*r + 200*epsilon**16*r**3 + 400*epsilon**15*r**5 + 400*epsilon**14*r**7 + 200*epsilon**13*r**9 + 40*epsilon**12*r**11)"
+      ],
+      [
+        "(-9*epsilon**(9/2)*r - 27*epsilon**(7/2)*r**3 - 27*epsilon**(5/2)*r**5 - 9*epsilon**(3/2)*r**7 + 3*epsilon**5*atan(sqrt(epsilon)/r) + 18*epsilon**4*r**2*atan(sqrt(epsilon)/r) + 36*epsilon**3*r**4*atan(sqrt(epsilon)/r) + 30*epsilon**2*r**6*atan(sqrt(epsilon)/r) + 9*epsilon*r**8*atan(sqrt(epsilon)/r))/(epsilon**(9/2) + 2*epsilon**(7/2)*r**2 + epsilon**(5/2)*r**4)",
+        "(9*epsilon**(11/2)*r + 54*epsilon**(9/2)*r**3 + 108*epsilon**(7/2)*r**5 + 90*epsilon**(5/2)*r**7 + 27*epsilon**(3/2)*r**9 - 3*epsilon**6*atan(sqrt(epsilon)/r) - 27*epsilon**5*r**2*atan(sqrt(epsilon)/r) - 90*epsilon**4*r**4*atan(sqrt(epsilon)/r) - 138*epsilon**3*r**6*atan(sqrt(epsilon)/r) - 99*epsilon**2*r**8*atan(sqrt(epsilon)/r) - 27*epsilon*r**10*atan(sqrt(epsilon)/r))/(2*epsilon**(11/2) + 4*epsilon**(9/2)*r**2 + 2*epsilon**(7/2)*r**4)",
+        "(9*epsilon**(7/2)*r + 18*epsilon**(5/2)*r**3 + 9*epsilon**(3/2)*r**5 - 3*epsilon**4*atan(sqrt(epsilon)/r) - 15*epsilon**3*r**2*atan(sqrt(epsilon)/r) - 21*epsilon**2*r**4*atan(sqrt(epsilon)/r) - 9*epsilon*r**6*atan(sqrt(epsilon)/r))/(epsilon**(9/2) + 2*epsilon**(7/2)*r**2 + epsilon**(5/2)*r**4)",
+        "(-177*epsilon**(29/2)*r - 1011*epsilon**(27/2)*r**3 - 2286*epsilon**(25/2)*r**5 - 2562*epsilon**(23/2)*r**7 - 1425*epsilon**(21/2)*r**9 - 315*epsilon**(19/2)*r**11 + 15*epsilon**15*atan(sqrt(epsilon)/r) + 330*epsilon**14*r**2*atan(sqrt(epsilon)/r) + 1485*epsilon**13*r**4*atan(sqrt(epsilon)/r) + 2940*epsilon**12*r**6*atan(sqrt(epsilon)/r) + 2985*epsilon**11*r**8*atan(sqrt(epsilon)/r) + 1530*epsilon**10*r**10*atan(sqrt(epsilon)/r) + 315*epsilon**9*r**12*atan(sqrt(epsilon)/r))/(10*epsilon**(31/2) + 40*epsilon**(29/2)*r**2 + 60*epsilon**(27/2)*r**4 + 40*epsilon**(25/2)*r**6 + 10*epsilon**(23/2)*r**8)",
+        "(-180*epsilon**(7/2)*r**3*atan(sqrt(epsilon)/r) - 360*epsilon**(5/2)*r**5*atan(sqrt(epsilon)/r) - 180*epsilon**(3/2)*r**7*atan(sqrt(epsilon)/r) - 12*epsilon**5 + 108*epsilon**4*r**2 + 300*epsilon**3*r**4 + 180*epsilon**2*r**6)/(5*epsilon**4)",
+        "(3*epsilon**(29/2)*r - 21*epsilon**(27/2)*r**3 - 126*epsilon**(25/2)*r**5 - 222*epsilon**(23/2)*r**7 - 165*epsilon**(21/2)*r**9 - 45*epsilon**(19/2)*r**11 - 45*epsilon**15*atan(sqrt(epsilon)/r) - 180*epsilon**14*r**2*atan(sqrt(epsilon)/r) - 225*epsilon**13*r**4*atan(sqrt(epsilon)/r) + 225*epsilon**11*r**8*atan(sqrt(epsilon)/r) + 180*epsilon**10*r**10*atan(sqrt(epsilon)/r) + 45*epsilon**9*r**12*atan(sqrt(epsilon)/r))/(10*epsilon**(31/2) + 40*epsilon**(29/2)*r**2 + 60*epsilon**(27/2)*r**4 + 40*epsilon**(25/2)*r**6 + 10*epsilon**(23/2)*r**8)",
+        "0",
+        "(-9*epsilon**(5/2)*r**2*atan(sqrt(epsilon)/r) - 18*epsilon**(3/2)*r**4*atan(sqrt(epsilon)/r) - 9*sqrt(epsilon)*r**6*atan(sqrt(epsilon)/r) + 6*epsilon**3*r + 15*epsilon**2*r**3 + 9*epsilon*r**5)/epsilon**3"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(3*epsilon**(33/2)*atan(sqrt(epsilon)/r) + 15*epsilon**(31/2)*r**2*atan(sqrt(epsilon)/r) - 78*epsilon**(29/2)*r**4*atan(sqrt(epsilon)/r) - 990*epsilon**(27/2)*r**6*atan(sqrt(epsilon)/r) - 4455*epsilon**(25/2)*r**8*atan(sqrt(epsilon)/r) - 11979*epsilon**(23/2)*r**10*atan(sqrt(epsilon)/r) - 21780*epsilon**(21/2)*r**12*atan(sqrt(epsilon)/r) - 28116*epsilon**(19/2)*r**14*atan(sqrt(epsilon)/r) - 26235*epsilon**(17/2)*r**16*atan(sqrt(epsilon)/r) - 17655*epsilon**(15/2)*r**18*atan(sqrt(epsilon)/r) - 8382*epsilon**(13/2)*r**20*atan(sqrt(epsilon)/r) - 2670*epsilon**(11/2)*r**22*atan(sqrt(epsilon)/r) - 513*epsilon**(9/2)*r**24*atan(sqrt(epsilon)/r) - 45*epsilon**(7/2)*r**26*atan(sqrt(epsilon)/r) + 3*epsilon**16*r + 78*epsilon**15*r**3 + 660*epsilon**14*r**5 + 2970*epsilon**13*r**7 + 8415*epsilon**12*r**9 + 16236*epsilon**11*r**11 + 22176*epsilon**10*r**13 + 21780*epsilon**9*r**15 + 15345*epsilon**8*r**17 + 7590*epsilon**7*r**19 + 2508*epsilon**6*r**21 + 498*epsilon**5*r**23 + 45*epsilon**4*r**25)/(16*epsilon**16*r**3 + 176*epsilon**15*r**5 + 880*epsilon**14*r**7 + 2640*epsilon**13*r**9 + 5280*epsilon**12*r**11 + 7392*epsilon**11*r**13 + 7392*epsilon**10*r**15 + 5280*epsilon**9*r**17 + 2640*epsilon**8*r**19 + 880*epsilon**7*r**21 + 176*epsilon**6*r**23 + 16*epsilon**5*r**25)",
+        "(-3*epsilon**(55/2)*r - 72*epsilon**(53/2)*r**3 - 810*epsilon**(51/2)*r**5 - 5688*epsilon**(49/2)*r**7 - 27999*epsilon**(47/2)*r**9 - 102816*epsilon**(45/2)*r**11 - 292536*epsilon**(43/2)*r**13 - 660960*epsilon**(41/2)*r**15 - 1205334*epsilon**(39/2)*r**17 - 1792752*epsilon**(37/2)*r**19 - 2187900*epsilon**(35/2)*r**21 - 2195856*epsilon**(33/2)*r**23 - 1809990*epsilon**(31/2)*r**25 - 1219104*epsilon**(29/2)*r**27 - 664632*epsilon**(27/2)*r**29 - 288864*epsilon**(25/2)*r**31 - 97767*epsilon**(23/2)*r**33 - 24840*epsilon**(21/2)*r**35 - 4458*epsilon**(19/2)*r**37 - 504*epsilon**(17/2)*r**39 - 27*epsilon**(15/2)*r**41 - 3*epsilon**28*atan(sqrt(epsilon)/r) - 9*epsilon**27*r**2*atan(sqrt(epsilon)/r) + 378*epsilon**26*r**4*atan(sqrt(epsilon)/r) + 4950*epsilon**25*r**6*atan(sqrt(epsilon)/r) + 32157*epsilon**24*r**8*atan(sqrt(epsilon)/r) + 138159*epsilon**23*r**10*atan(sqrt(epsilon)/r) + 434520*epsilon**22*r**12*atan(sqrt(epsilon)/r) + 1053864*epsilon**21*r**14*atan(sqrt(epsilon)/r) + 2033370*epsilon**20*r**16*atan(sqrt(epsilon)/r) + 3183726*epsilon**19*r**18*atan(sqrt(epsilon)/r) + 4097340*epsilon**18*r**20*atan(sqrt(epsilon)/r) + 4367844*epsilon**17*r**22*atan(sqrt(epsilon)/r) + 3870594*epsilon**16*r**24*atan(sqrt(epsilon)/r) + 2850390*epsilon**15*r**26*atan(sqrt(epsilon)/r) + 1736856*epsilon**14*r**28*atan(sqrt(epsilon)/r) + 867816*epsilon**13*r**30*atan(sqrt(epsilon)/r) + 350217*epsilon**12*r**32*atan(sqrt(epsilon)/r) + 111483*epsilon**11*r**34*atan(sqrt(epsilon)/r) + 26970*epsilon**10*r**36*atan(sqrt(epsilon)/r) + 4662*epsilon**9*r**38*atan(sqrt(epsilon)/r) + 513*epsilon**8*r**40*atan(sqrt(epsilon)/r) + 27*epsilon**7*r**42*atan(sqrt(epsilon)/r))/(32*epsilon**(55/2)*r**3 + 576*epsilon**(53/2)*r**5 + 4896*epsilon**(51/2)*r**7 + 26112*epsilon**(49/2)*r**9 + 97920*epsilon**(47/2)*r**11 + 274176*epsilon**(45/2)*r**13 + 594048*epsilon**(43/2)*r**15 + 1018368*epsilon**(41/2)*r**17 + 1400256*epsilon**(39/2)*r**19 + 1555840*epsilon**(37/2)*r**21 + 1400256*epsilon**(35/2)*r**23 + 1018368*epsilon**(33/2)*r**25 + 594048*epsilon**(31/2)*r**27 + 274176*epsilon**(29/2)*r**29 + 97920*epsilon**(27/2)*r**31 + 26112*epsilon**(25/2)*r**33 + 4896*epsilon**(23/2)*r**35 + 576*epsilon**(21/2)*r**37 + 32*epsilon**(19/2)*r**39)",
+        "(9*epsilon**(53/2)*r + 174*epsilon**(51/2)*r**3 + 1620*epsilon**(49/2)*r**5 + 9666*epsilon**(47/2)*r**7 + 41463*epsilon**(45/2)*r**9 + 135864*epsilon**(43/2)*r**11 + 352512*epsilon**(41/2)*r**13 + 740520*epsilon**(39/2)*r**15 + 1276938*epsilon**(37/2)*r**17 + 1821924*epsilon**(35/2)*r**19 + 2158728*epsilon**(33/2)*r**21 + 2124252*epsilon**(31/2)*r**23 + 1730430*epsilon**(29/2)*r**25 + 1159128*epsilon**(27/2)*r**27 + 631584*epsilon**(25/2)*r**29 + 275400*epsilon**(23/2)*r**31 + 93789*epsilon**(21/2)*r**33 + 24030*epsilon**(19/2)*r**35 + 4356*epsilon**(17/2)*r**37 + 498*epsilon**(15/2)*r**39 + 27*epsilon**(13/2)*r**41 + 9*epsilon**27*atan(sqrt(epsilon)/r) + 177*epsilon**26*r**2*atan(sqrt(epsilon)/r) + 1626*epsilon**25*r**4*atan(sqrt(epsilon)/r) + 9234*epsilon**24*r**6*atan(sqrt(epsilon)/r) + 36081*epsilon**23*r**8*atan(sqrt(epsilon)/r) + 101745*epsilon**22*r**10*atan(sqrt(epsilon)/r) + 209304*epsilon**21*r**12*atan(sqrt(epsilon)/r) + 302328*epsilon**20*r**14*atan(sqrt(epsilon)/r) + 250002*epsilon**19*r**16*atan(sqrt(epsilon)/r) - 75582*epsilon**18*r**18*atan(sqrt(epsilon)/r) - 655044*epsilon**17*r**20*atan(sqrt(epsilon)/r) - 1259700*epsilon**16*r**22*atan(sqrt(epsilon)/r) - 1587222*epsilon**15*r**24*atan(sqrt(epsilon)/r) - 1494198*epsilon**14*r**26*atan(sqrt(epsilon)/r) - 1093032*epsilon**13*r**28*atan(sqrt(epsilon)/r) - 627912*epsilon**12*r**30*atan(sqrt(epsilon)/r) - 281979*epsilon**11*r**32*atan(sqrt(epsilon)/r) - 97299*epsilon**10*r**34*atan(sqrt(epsilon)/r) - 24966*epsilon**9*r**36*atan(sqrt(epsilon)/r) - 4494*epsilon**8*r**38*atan(sqrt(epsilon)/r) - 507*epsilon**7*r**40*atan(sqrt(epsilon)/r) - 27*epsilon**6*r**42*atan(sqrt(epsilon)/r))/(16*epsilon**(55/2)*r**3 + 320*epsilon**(53/2)*r**5 + 3040*epsilon**(51/2)*r**7 + 18240*epsilon**(49/2)*r**9 + 77520*epsilon**(47/2)*r**11 + 248064*epsilon**(45/2)*r**13 + 620160*epsilon**(43/2)*r**15 + 1240320*epsilon**(41/2)*r**17 + 2015520*epsilon**(39/2)*r**19 + 2687360*epsilon**(37/2)*r**21 + 2956096*epsilon**(35/2)*r**23 + 2687360*epsilon**(33/2)*r**25 + 2015520*epsilon**(31/2)*r**27 + 1240320*epsilon**(29/2)*r**29 + 620160*epsilon**(27/2)*r**31 + 248064*epsilon**(25/2)*r**33 + 77520*epsilon**(23/2)*r**35 + 18240*epsilon**(21/2)*r**37 + 3040*epsilon**(19/2)*r**39 + 320*epsilon**(17/2)*r**41 + 16*epsilon**(15/2)*r**43)",
+        "(-9*epsilon**(83/2)*r + 84*epsilon**(81/2)*r**3 + 5658*epsilon**(79/2)*r**5 + 88140*epsilon**(77/2)*r**7 + 794625*epsilon**(75/2)*r**9 + 4981080*epsilon**(73/2)*r**11 + 23555220*epsilon**(71/2)*r**13 + 88013640*epsilon**(69/2)*r**15 + 267642375*epsilon**(67/2)*r**17 + 675889500*epsilon**(65/2)*r**19 + 1437917910*epsilon**(63/2)*r**21 + 2603829540*epsilon**(61/2)*r**23 + 4043196105*epsilon**(59/2)*r**25 + 5411283600*epsilon**(57/2)*r**27 + 6262647000*epsilon**(55/2)*r**29 + 6277802160*epsilon**(53/2)*r**31 + 5451288765*epsilon**(51/2)*r**33 + 4094751180*epsilon**(49/2)*r**35 + 2652742950*epsilon**(47/2)*r**37 + 1475116500*epsilon**(45/2)*r**39 + 699224955*epsilon**(43/2)*r**41 + 279828120*epsilon**(41/2)*r**43 + 93305940*epsilon**(39/2)*r**45 + 25451400*epsilon**(37/2)*r**47 + 5533125*epsilon**(35/2)*r**49 + 922116*epsilon**(33/2)*r**51 + 110634*epsilon**(31/2)*r**53 + 8508*epsilon**(29/2)*r**55 + 315*epsilon**(27/2)*r**57 - 9*epsilon**42*atan(sqrt(epsilon)/r) - 303*epsilon**41*r**2*atan(sqrt(epsilon)/r) - 5142*epsilon**40*r**4*atan(sqrt(epsilon)/r) - 57138*epsilon**39*r**6*atan(sqrt(epsilon)/r) - 459615*epsilon**38*r**8*atan(sqrt(epsilon)/r) - 2825745*epsilon**37*r**10*atan(sqrt(epsilon)/r) - 13753740*epsilon**36*r**12*atan(sqrt(epsilon)/r) - 54340260*epsilon**35*r**14*atan(sqrt(epsilon)/r) - 177556665*epsilon**34*r**16*atan(sqrt(epsilon)/r) - 486689775*epsilon**33*r**18*atan(sqrt(epsilon)/r) - 1131448890*epsilon**32*r**20*atan(sqrt(epsilon)/r) - 2249846430*epsilon**31*r**22*atan(sqrt(epsilon)/r) - 3851121495*epsilon**30*r**24*atan(sqrt(epsilon)/r) - 5701348905*epsilon**29*r**26*atan(sqrt(epsilon)/r) - 7323508200*epsilon**28*r**28*atan(sqrt(epsilon)/r) - 8177546040*epsilon**27*r**30*atan(sqrt(epsilon)/r) - 7942306755*epsilon**26*r**32*atan(sqrt(epsilon)/r) - 6704971845*epsilon**25*r**34*atan(sqrt(epsilon)/r) - 4910258730*epsilon**24*r**36*atan(sqrt(epsilon)/r) - 3108598350*epsilon**23*r**38*atan(sqrt(epsilon)/r) - 1692535845*epsilon**22*r**40*atan(sqrt(epsilon)/r) - 786843915*epsilon**21*r**42*atan(sqrt(epsilon)/r) - 309267660*epsilon**20*r**44*atan(sqrt(epsilon)/r) - 101402340*epsilon**19*r**46*atan(sqrt(epsilon)/r) - 27226875*epsilon**18*r**48*atan(sqrt(epsilon)/r) - 5831709*epsilon**17*r**50*atan(sqrt(epsilon)/r) - 958278*epsilon**16*r**52*atan(sqrt(epsilon)/r) - 113442*epsilon**15*r**54*atan(sqrt(epsilon)/r) - 8613*epsilon**14*r**56*atan(sqrt(epsilon)/r) - 315*epsilon**13*r**58*atan(sqrt(epsilon)/r))/(32*epsilon**(85/2)*r**3 + 864*epsilon**(83/2)*r**5 + 11232*epsilon**(81/2)*r**7 + 93600*epsilon**(79/2)*r**9 + 561600*epsilon**(77/2)*r**11 + 2583360*epsilon**(75/2)*r**13 + 9472320*epsilon**(73/2)*r**15 + 28416960*epsilon**(71/2)*r**17 + 71042400*epsilon**(69/2)*r**19 + 149978400*epsilon**(67/2)*r**21 + 269961120*epsilon**(65/2)*r**23 + 417212640*epsilon**(63/2)*r**25 + 556283520*epsilon**(61/2)*r**27 + 641865600*epsilon**(59/2)*r**29 + 641865600*epsilon**(57/2)*r**31 + 556283520*epsilon**(55/2)*r**33 + 417212640*epsilon**(53/2)*r**35 + 269961120*epsilon**(51/2)*r**37 + 149978400*epsilon**(49/2)*r**39 + 71042400*epsilon**(47/2)*r**41 + 28416960*epsilon**(45/2)*r**43 + 9472320*epsilon**(43/2)*r**45 + 2583360*epsilon**(41/2)*r**47 + 561600*epsilon**(39/2)*r**49 + 93600*epsilon**(37/2)*r**51 + 11232*epsilon**(35/2)*r**53 + 864*epsilon**(33/2)*r**55 + 32*epsilon**(31/2)*r**57)",
+        "(45*epsilon**(33/2)*atan(sqrt(epsilon)/r) + 765*epsilon**(31/2)*r**2*atan(sqrt(epsilon)/r) + 3645*epsilon**(29/2)*r**4*atan(sqrt(epsilon)/r) + 8325*epsilon**(27/2)*r**6*atan(sqrt(epsilon)/r) + 10575*epsilon**(25/2)*r**8*atan(sqrt(epsilon)/r) + 7695*epsilon**(23/2)*r**10*atan(sqrt(epsilon)/r) + 3015*epsilon**(21/2)*r**12*atan(sqrt(epsilon)/r) + 495*epsilon**(19/2)*r**14*atan(sqrt(epsilon)/r) - 387*epsilon**16*r - 2418*epsilon**15*r**3 - 6297*epsilon**14*r**5 - 8748*epsilon**13*r**7 - 6837*epsilon**12*r**9 - 2850*epsilon**11*r**11 - 495*epsilon**10*r**13)/(10*epsilon**17 + 50*epsilon**16*r**2 + 100*epsilon**15*r**4 + 100*epsilon**14*r**6 + 50*epsilon**13*r**8 + 10*epsilon**12*r**10)",
+        "(27*epsilon**(85/2)*r + 1014*epsilon**(83/2)*r**3 + 17100*epsilon**(81/2)*r**5 + 177186*epsilon**(79/2)*r**7 + 1285275*epsilon**(77/2)*r**9 + 7008660*epsilon**(75/2)*r**11 + 30034320*epsilon**(73/2)*r**13 + 104210700*epsilon**(71/2)*r**15 + 299004255*epsilon**(69/2)*r**17 + 720404850*epsilon**(67/2)*r**19 + 1474114620*epsilon**(65/2)*r**21 + 2583312390*epsilon**(63/2)*r**23 + 3900782175*epsilon**(61/2)*r**25 + 5096591160*epsilon**(59/2)*r**27 + 5776790400*epsilon**(57/2)*r**29 + 5686750920*epsilon**(55/2)*r**31 + 4860683265*epsilon**(53/2)*r**33 + 3601251450*epsilon**(51/2)*r**35 + 2305341060*epsilon**(49/2)*r**37 + 1268782350*epsilon**(47/2)*r**39 + 596129985*epsilon**(45/2)*r**41 + 236792820*epsilon**(43/2)*r**43 + 78466800*epsilon**(41/2)*r**45 + 21295980*epsilon**(39/2)*r**47 + 4611525*epsilon**(37/2)*r**49 + 766302*epsilon**(35/2)*r**51 + 91764*epsilon**(33/2)*r**53 + 7050*epsilon**(31/2)*r**55 + 261*epsilon**(29/2)*r**57 + 27*epsilon**43*atan(sqrt(epsilon)/r) + 639*epsilon**42*r**2*atan(sqrt(epsilon)/r) + 6786*epsilon**41*r**4*atan(sqrt(epsilon)/r) + 40338*epsilon**40*r**6*atan(sqrt(epsilon)/r) + 118989*epsilon**39*r**8*atan(sqrt(epsilon)/r) - 163215*epsilon**38*r**10*atan(sqrt(epsilon)/r) - 3853980*epsilon**37*r**12*atan(sqrt(epsilon)/r) - 23734620*epsilon**36*r**14*atan(sqrt(epsilon)/r) - 97239285*epsilon**35*r**16*atan(sqrt(epsilon)/r) - 305038305*epsilon**34*r**18*atan(sqrt(epsilon)/r) - 773474130*epsilon**33*r**20*atan(sqrt(epsilon)/r) - 1630503810*epsilon**32*r**22*atan(sqrt(epsilon)/r) - 2905916715*epsilon**31*r**24*atan(sqrt(epsilon)/r) - 4425863895*epsilon**30*r**26*atan(sqrt(epsilon)/r) - 5800860360*epsilon**29*r**28*atan(sqrt(epsilon)/r) - 6571099080*epsilon**28*r**30*atan(sqrt(epsilon)/r) - 6447740535*epsilon**27*r**32*atan(sqrt(epsilon)/r) - 5482818315*epsilon**26*r**34*atan(sqrt(epsilon)/r) - 4035611970*epsilon**25*r**36*atan(sqrt(epsilon)/r) - 2563742610*epsilon**24*r**38*atan(sqrt(epsilon)/r) - 1399091265*epsilon**23*r**40*atan(sqrt(epsilon)/r) - 651370005*epsilon**22*r**42*atan(sqrt(epsilon)/r) - 256237020*epsilon**21*r**44*atan(sqrt(epsilon)/r) - 84050460*epsilon**20*r**46*atan(sqrt(epsilon)/r) - 22571055*epsilon**19*r**48*atan(sqrt(epsilon)/r) - 4834323*epsilon**18*r**50*atan(sqrt(epsilon)/r) - 794286*epsilon**17*r**52*atan(sqrt(epsilon)/r) - 94014*epsilon**16*r**54*atan(sqrt(epsilon)/r) - 7137*epsilon**15*r**56*atan(sqrt(epsilon)/r) - 261*epsilon**14*r**58*atan(sqrt(epsilon)/r))/(32*epsilon**(87/2)*r**3 + 864*epsilon**(85/2)*r**5 + 11232*epsilon**(83/2)*r**7 + 93600*epsilon**(81/2)*r**9 + 561600*epsilon**(79/2)*r**11 + 2583360*epsilon**(77/2)*r**13 + 9472320*epsilon**(75/2)*r**15 + 28416960*epsilon**(73/2)*r**17 + 71042400*epsilon**(71/2)*r**19 + 149978400*epsilon**(69/2)*r**21 + 269961120*epsilon**(67/2)*r**23 + 417212640*epsilon**(65/2)*r**25 + 556283520*epsilon**(63/2)*r**27 + 641865600*epsilon**(61/2)*r**29 + 641865600*epsilon**(59/2)*r**31 + 556283520*epsilon**(57/2)*r**33 + 417212640*epsilon**(55/2)*r**35 + 269961120*epsilon**(53/2)*r**37 + 149978400*epsilon**(51/2)*r**39 + 71042400*epsilon**(49/2)*r**41 + 28416960*epsilon**(47/2)*r**43 + 9472320*epsilon**(45/2)*r**45 + 2583360*epsilon**(43/2)*r**47 + 561600*epsilon**(41/2)*r**49 + 93600*epsilon**(39/2)*r**51 + 11232*epsilon**(37/2)*r**53 + 864*epsilon**(35/2)*r**55 + 32*epsilon**(33/2)*r**57)",
+        "0",
+        "(45*epsilon**(33/2)*atan(sqrt(epsilon)/r) + 585*epsilon**(31/2)*r**2*atan(sqrt(epsilon)/r) + 2565*epsilon**(29/2)*r**4*atan(sqrt(epsilon)/r) + 5625*epsilon**(27/2)*r**6*atan(sqrt(epsilon)/r) + 6975*epsilon**(25/2)*r**8*atan(sqrt(epsilon)/r) + 4995*epsilon**(23/2)*r**10*atan(sqrt(epsilon)/r) + 1935*epsilon**(21/2)*r**12*atan(sqrt(epsilon)/r) + 315*epsilon**(19/2)*r**14*atan(sqrt(epsilon)/r) - 291*epsilon**16*r - 1734*epsilon**15*r**3 - 4341*epsilon**14*r**5 - 5844*epsilon**13*r**7 - 4461*epsilon**12*r**9 - 1830*epsilon**11*r**11 - 315*epsilon**10*r**13)/(40*epsilon**17*r + 200*epsilon**16*r**3 + 400*epsilon**15*r**5 + 400*epsilon**14*r**7 + 200*epsilon**13*r**9 + 40*epsilon**12*r**11)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(epsilon**(9/2)*atan(sqrt(epsilon)/r) + 2*epsilon**(7/2)*r**2*atan(sqrt(epsilon)/r) - 2*epsilon**(5/2)*r**4*atan(sqrt(epsilon)/r) - 6*epsilon**(3/2)*r**6*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**8*atan(sqrt(epsilon)/r) + epsilon**4*r + 3*epsilon**3*r**3 + 3*epsilon**2*r**5 + epsilon*r**7)/(2*epsilon**3*r**3 + 4*epsilon**2*r**5 + 2*epsilon*r**7)",
+        "(-epsilon**(17/2)*atan(sqrt(epsilon)/r) - 3*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) + 14*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) + 27*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) + 21*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) + 6*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) - epsilon**8*r - 4*epsilon**7*r**3 - 12*epsilon**6*r**5 - 22*epsilon**5*r**7 - 19*epsilon**4*r**9 - 6*epsilon**3*r**11)/(4*epsilon**7*r**3 + 12*epsilon**6*r**5 + 12*epsilon**5*r**7 + 4*epsilon**4*r**9)",
+        "(epsilon**(15/2)*atan(sqrt(epsilon)/r) + 5*epsilon**(13/2)*r**2*atan(sqrt(epsilon)/r) + 10*epsilon**(11/2)*r**4*atan(sqrt(epsilon)/r) + 10*epsilon**(9/2)*r**6*atan(sqrt(epsilon)/r) + 5*epsilon**(7/2)*r**8*atan(sqrt(epsilon)/r) + epsilon**(5/2)*r**10*atan(sqrt(epsilon)/r) + epsilon**7*r + 4*epsilon**6*r**3 + 8*epsilon**5*r**5 + 10*epsilon**4*r**7 + 7*epsilon**3*r**9 + 2*epsilon**2*r**11)/(2*epsilon**7*r**3 + 10*epsilon**6*r**5 + 20*epsilon**5*r**7 + 20*epsilon**4*r**9 + 10*epsilon**3*r**11 + 2*epsilon**2*r**13)",
+        "(-epsilon**(27/2)*r - 3*epsilon**(25/2)*r**3 + 3*epsilon**(23/2)*r**5 + 25*epsilon**(21/2)*r**7 + 45*epsilon**(19/2)*r**9 + 39*epsilon**(17/2)*r**11 + 17*epsilon**(15/2)*r**13 + 3*epsilon**(13/2)*r**15 - epsilon**14*atan(sqrt(epsilon)/r) - 6*epsilon**13*r**2*atan(sqrt(epsilon)/r) - 18*epsilon**12*r**4*atan(sqrt(epsilon)/r) - 38*epsilon**11*r**6*atan(sqrt(epsilon)/r) - 60*epsilon**10*r**8*atan(sqrt(epsilon)/r) - 66*epsilon**9*r**10*atan(sqrt(epsilon)/r) - 46*epsilon**8*r**12*atan(sqrt(epsilon)/r) - 18*epsilon**7*r**14*atan(sqrt(epsilon)/r) - 3*epsilon**6*r**16*atan(sqrt(epsilon)/r))/(4*epsilon**(27/2)*r**3 + 24*epsilon**(25/2)*r**5 + 60*epsilon**(23/2)*r**7 + 80*epsilon**(21/2)*r**9 + 60*epsilon**(19/2)*r**11 + 24*epsilon**(17/2)*r**13 + 4*epsilon**(15/2)*r**15)",
+        "(-13*epsilon**(17/2)*r - 54*epsilon**(15/2)*r**3 - 84*epsilon**(13/2)*r**5 - 58*epsilon**(11/2)*r**7 - 15*epsilon**(9/2)*r**9 + 3*epsilon**9*atan(sqrt(epsilon)/r) + 27*epsilon**8*r**2*atan(sqrt(epsilon)/r) + 78*epsilon**7*r**4*atan(sqrt(epsilon)/r) + 102*epsilon**6*r**6*atan(sqrt(epsilon)/r) + 63*epsilon**5*r**8*atan(sqrt(epsilon)/r) + 15*epsilon**4*r**10*atan(sqrt(epsilon)/r))/(epsilon**(17/2) + 3*epsilon**(15/2)*r**2 + 3*epsilon**(13/2)*r**4 + epsilon**(11/2)*r**6)",
+        "(3*epsilon**(27/2)*r + 17*epsilon**(25/2)*r**3 + 33*epsilon**(23/2)*r**5 + 19*epsilon**(21/2)*r**7 - 19*epsilon**(19/2)*r**9 - 33*epsilon**(17/2)*r**11 - 17*epsilon**(15/2)*r**13 - 3*epsilon**(13/2)*r**15 + 3*epsilon**14*atan(sqrt(epsilon)/r) + 18*epsilon**13*r**2*atan(sqrt(epsilon)/r) + 48*epsilon**12*r**4*atan(sqrt(epsilon)/r) + 78*epsilon**11*r**6*atan(sqrt(epsilon)/r) + 90*epsilon**10*r**8*atan(sqrt(epsilon)/r) + 78*epsilon**9*r**10*atan(sqrt(epsilon)/r) + 48*epsilon**8*r**12*atan(sqrt(epsilon)/r) + 18*epsilon**7*r**14*atan(sqrt(epsilon)/r) + 3*epsilon**6*r**16*atan(sqrt(epsilon)/r))/(4*epsilon**(27/2)*r**3 + 24*epsilon**(25/2)*r**5 + 60*epsilon**(23/2)*r**7 + 80*epsilon**(21/2)*r**9 + 60*epsilon**(19/2)*r**11 + 24*epsilon**(17/2)*r**13 + 4*epsilon**(15/2)*r**15)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(-epsilon**(17/2)*atan(sqrt(epsilon)/r) + 21*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) + 68*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) + 93*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) + 60*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) + 15*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) - epsilon**8*r - 13*epsilon**7*r**3 - 48*epsilon**6*r**5 - 76*epsilon**5*r**7 - 55*epsilon**4*r**9 - 15*epsilon**3*r**11)/(4*epsilon**7*r**3 + 12*epsilon**6*r**5 + 12*epsilon**5*r**7 + 4*epsilon**4*r**9)",
+        "(epsilon**(29/2)*r - 10*epsilon**(27/2)*r**3 - 95*epsilon**(25/2)*r**5 - 278*epsilon**(23/2)*r**7 - 397*epsilon**(21/2)*r**9 - 302*epsilon**(19/2)*r**11 - 117*epsilon**(17/2)*r**13 - 18*epsilon**(15/2)*r**15 + epsilon**15*atan(sqrt(epsilon)/r) + epsilon**14*r**2*atan(sqrt(epsilon)/r) + 15*epsilon**13*r**4*atan(sqrt(epsilon)/r) + 121*epsilon**12*r**6*atan(sqrt(epsilon)/r) + 337*epsilon**11*r**8*atan(sqrt(epsilon)/r) + 459*epsilon**10*r**10*atan(sqrt(epsilon)/r) + 333*epsilon**9*r**12*atan(sqrt(epsilon)/r) + 123*epsilon**8*r**14*atan(sqrt(epsilon)/r) + 18*epsilon**7*r**16*atan(sqrt(epsilon)/r))/(8*epsilon**(27/2)*r**3 + 32*epsilon**(25/2)*r**5 + 48*epsilon**(23/2)*r**7 + 32*epsilon**(21/2)*r**9 + 8*epsilon**(19/2)*r**11)",
+        "(-epsilon**(27/2)*r - 16*epsilon**(25/2)*r**3 - 77*epsilon**(23/2)*r**5 - 180*epsilon**(21/2)*r**7 - 235*epsilon**(19/2)*r**9 - 176*epsilon**(17/2)*r**11 - 71*epsilon**(15/2)*r**13 - 12*epsilon**(13/2)*r**15 - epsilon**14*atan(sqrt(epsilon)/r) - 3*epsilon**13*r**2*atan(sqrt(epsilon)/r) + 15*epsilon**12*r**4*atan(sqrt(epsilon)/r) + 97*epsilon**11*r**6*atan(sqrt(epsilon)/r) + 225*epsilon**10*r**8*atan(sqrt(epsilon)/r) + 279*epsilon**9*r**10*atan(sqrt(epsilon)/r) + 197*epsilon**8*r**12*atan(sqrt(epsilon)/r) + 75*epsilon**7*r**14*atan(sqrt(epsilon)/r) + 12*epsilon**6*r**16*atan(sqrt(epsilon)/r))/(4*epsilon**(27/2)*r**3 + 24*epsilon**(25/2)*r**5 + 60*epsilon**(23/2)*r**7 + 80*epsilon**(21/2)*r**9 + 60*epsilon**(19/2)*r**11 + 24*epsilon**(17/2)*r**13 + 4*epsilon**(15/2)*r**15)",
+        "(5*epsilon**(47/2)*r + 45*epsilon**(45/2)*r**3 + 248*epsilon**(43/2)*r**5 + 860*epsilon**(41/2)*r**7 + 1850*epsilon**(39/2)*r**9 + 2510*epsilon**(37/2)*r**11 + 2160*epsilon**(35/2)*r**13 + 1148*epsilon**(33/2)*r**15 + 345*epsilon**(31/2)*r**17 + 45*epsilon**(29/2)*r**19 + 5*epsilon**24*atan(sqrt(epsilon)/r) + 20*epsilon**23*r**2*atan(sqrt(epsilon)/r) - 45*epsilon**22*r**4*atan(sqrt(epsilon)/r) - 500*epsilon**21*r**6*atan(sqrt(epsilon)/r) - 1610*epsilon**20*r**8*atan(sqrt(epsilon)/r) - 2940*epsilon**19*r**10*atan(sqrt(epsilon)/r) - 3430*epsilon**18*r**12*atan(sqrt(epsilon)/r) - 2620*epsilon**17*r**14*atan(sqrt(epsilon)/r) - 1275*epsilon**16*r**16*atan(sqrt(epsilon)/r) - 360*epsilon**15*r**18*atan(sqrt(epsilon)/r) - 45*epsilon**14*r**20*atan(sqrt(epsilon)/r))/(40*epsilon**(47/2)*r**3 + 280*epsilon**(45/2)*r**5 + 840*epsilon**(43/2)*r**7 + 1400*epsilon**(41/2)*r**9 + 1400*epsilon**(39/2)*r**11 + 840*epsilon**(37/2)*r**13 + 280*epsilon**(35/2)*r**15 + 40*epsilon**(33/2)*r**17)",
+        "(-15*epsilon**(33/2)*atan(sqrt(epsilon)/r) - 375*epsilon**(31/2)*r**2*atan(sqrt(epsilon)/r) - 2055*epsilon**(29/2)*r**4*atan(sqrt(epsilon)/r) - 5175*epsilon**(27/2)*r**6*atan(sqrt(epsilon)/r) - 7125*epsilon**(25/2)*r**8*atan(sqrt(epsilon)/r) - 5565*epsilon**(23/2)*r**10*atan(sqrt(epsilon)/r) - 2325*epsilon**(21/2)*r**12*atan(sqrt(epsilon)/r) - 405*epsilon**(19/2)*r**14*atan(sqrt(epsilon)/r) + 197*epsilon**16*r + 1358*epsilon**15*r**3 + 3867*epsilon**14*r**5 + 5828*epsilon**13*r**7 + 4907*epsilon**12*r**9 + 2190*epsilon**11*r**11 + 405*epsilon**10*r**13)/(10*epsilon**16 + 40*epsilon**15*r**2 + 60*epsilon**14*r**4 + 40*epsilon**13*r**6 + 10*epsilon**12*r**8)",
+        "(-15*epsilon**(47/2)*r - 295*epsilon**(45/2)*r**3 - 1642*epsilon**(43/2)*r**5 - 4550*epsilon**(41/2)*r**7 - 7440*epsilon**(39/2)*r**9 - 7660*epsilon**(37/2)*r**11 - 5030*epsilon**(35/2)*r**13 - 2042*epsilon**(33/2)*r**15 - 465*epsilon**(31/2)*r**17 - 45*epsilon**(29/2)*r**19 - 15*epsilon**24*atan(sqrt(epsilon)/r) - 60*epsilon**23*r**2*atan(sqrt(epsilon)/r) + 165*epsilon**22*r**4*atan(sqrt(epsilon)/r) + 1620*epsilon**21*r**6*atan(sqrt(epsilon)/r) + 4830*epsilon**20*r**8*atan(sqrt(epsilon)/r) + 7980*epsilon**19*r**10*atan(sqrt(epsilon)/r) + 8190*epsilon**18*r**12*atan(sqrt(epsilon)/r) + 5340*epsilon**17*r**14*atan(sqrt(epsilon)/r) + 2145*epsilon**16*r**16*atan(sqrt(epsilon)/r) + 480*epsilon**15*r**18*atan(sqrt(epsilon)/r) + 45*epsilon**14*r**20*atan(sqrt(epsilon)/r))/(40*epsilon**(47/2)*r**3 + 280*epsilon**(45/2)*r**5 + 840*epsilon**(43/2)*r**7 + 1400*epsilon**(41/2)*r**9 + 1400*epsilon**(39/2)*r**11 + 840*epsilon**(37/2)*r**13 + 280*epsilon**(35/2)*r**15 + 40*epsilon**(33/2)*r**17)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(-24*epsilon**(53/2)*r - 123*epsilon**(51/2)*r**3 + 3441*epsilon**(49/2)*r**5 + 55635*epsilon**(47/2)*r**7 + 416415*epsilon**(45/2)*r**9 + 2008788*epsilon**(43/2)*r**11 + 6964356*epsilon**(41/2)*r**13 + 18318588*epsilon**(39/2)*r**15 + 37724700*epsilon**(37/2)*r**17 + 62010390*epsilon**(35/2)*r**19 + 82308798*epsilon**(33/2)*r**21 + 88750506*epsilon**(31/2)*r**23 + 77840178*epsilon**(29/2)*r**25 + 55356420*epsilon**(27/2)*r**27 + 31663860*epsilon**(25/2)*r**29 + 14363436*epsilon**(23/2)*r**31 + 5051652*epsilon**(21/2)*r**33 + 1328781*epsilon**(19/2)*r**35 + 246105*epsilon**(17/2)*r**37 + 28635*epsilon**(15/2)*r**39 + 1575*epsilon**(13/2)*r**41 - 24*epsilon**27*atan(sqrt(epsilon)/r) - 387*epsilon**26*r**2*atan(sqrt(epsilon)/r) - 3672*epsilon**25*r**4*atan(sqrt(epsilon)/r) - 28854*epsilon**24*r**6*atan(sqrt(epsilon)/r) - 189000*epsilon**23*r**8*atan(sqrt(epsilon)/r) - 969867*epsilon**22*r**10*atan(sqrt(epsilon)/r) - 3823776*epsilon**21*r**12*atan(sqrt(epsilon)/r) - 11687976*epsilon**20*r**14*atan(sqrt(epsilon)/r) - 28149552*epsilon**19*r**16*atan(sqrt(epsilon)/r) - 54213510*epsilon**18*r**18*atan(sqrt(epsilon)/r) - 84429072*epsilon**17*r**20*atan(sqrt(epsilon)/r) - 107095716*epsilon**16*r**22*atan(sqrt(epsilon)/r) - 111033936*epsilon**15*r**24*atan(sqrt(epsilon)/r) - 94066542*epsilon**14*r**26*atan(sqrt(epsilon)/r) - 64847520*epsilon**13*r**28*atan(sqrt(epsilon)/r) - 36060264*epsilon**12*r**30*atan(sqrt(epsilon)/r) - 15940152*epsilon**11*r**32*atan(sqrt(epsilon)/r) - 5474007*epsilon**10*r**34*atan(sqrt(epsilon)/r) - 1408344*epsilon**9*r**36*atan(sqrt(epsilon)/r) - 255510*epsilon**8*r**38*atan(sqrt(epsilon)/r) - 29160*epsilon**7*r**40*atan(sqrt(epsilon)/r) - 1575*epsilon**6*r**42*atan(sqrt(epsilon)/r))/(16*epsilon**(53/2)*r**3 + 288*epsilon**(51/2)*r**5 + 2448*epsilon**(49/2)*r**7 + 13056*epsilon**(47/2)*r**9 + 48960*epsilon**(45/2)*r**11 + 137088*epsilon**(43/2)*r**13 + 297024*epsilon**(41/2)*r**15 + 509184*epsilon**(39/2)*r**17 + 700128*epsilon**(37/2)*r**19 + 777920*epsilon**(35/2)*r**21 + 700128*epsilon**(33/2)*r**23 + 509184*epsilon**(31/2)*r**25 + 297024*epsilon**(29/2)*r**27 + 137088*epsilon**(27/2)*r**29 + 48960*epsilon**(25/2)*r**31 + 13056*epsilon**(23/2)*r**33 + 2448*epsilon**(21/2)*r**35 + 288*epsilon**(19/2)*r**37 + 16*epsilon**(17/2)*r**39)",
+        "(24*epsilon**(91/2)*r - 1137*epsilon**(89/2)*r**3 - 50523*epsilon**(87/2)*r**5 - 840627*epsilon**(85/2)*r**7 - 8412873*epsilon**(83/2)*r**9 - 58767582*epsilon**(81/2)*r**11 - 308656458*epsilon**(79/2)*r**13 - 1274389842*epsilon**(77/2)*r**15 - 4259630958*epsilon**(75/2)*r**17 - 11764509867*epsilon**(73/2)*r**19 - 27246071193*epsilon**(71/2)*r**21 - 53484299337*epsilon**(69/2)*r**23 - 89686208763*epsilon**(67/2)*r**25 - 129177145812*epsilon**(65/2)*r**27 - 160384472988*epsilon**(63/2)*r**29 - 171983340972*epsilon**(61/2)*r**31 - 159336092508*epsilon**(59/2)*r**33 - 127389734967*epsilon**(57/2)*r**35 - 87646122333*epsilon**(55/2)*r**37 - 51654324117*epsilon**(53/2)*r**39 - 25901070063*epsilon**(51/2)*r**41 - 10945825902*epsilon**(49/2)*r**43 - 3847787898*epsilon**(47/2)*r**45 - 1104824802*epsilon**(45/2)*r**47 - 252469998*epsilon**(43/2)*r**49 - 44167053*epsilon**(41/2)*r**51 - 5555535*epsilon**(39/2)*r**53 - 447375*epsilon**(37/2)*r**55 - 17325*epsilon**(35/2)*r**57 + 24*epsilon**46*atan(sqrt(epsilon)/r) + 663*epsilon**45*r**2*atan(sqrt(epsilon)/r) + 13770*epsilon**44*r**4*atan(sqrt(epsilon)/r) + 219000*epsilon**43*r**6*atan(sqrt(epsilon)/r) + 2464950*epsilon**42*r**8*atan(sqrt(epsilon)/r) + 20001195*epsilon**41*r**10*atan(sqrt(epsilon)/r) + 122039340*epsilon**40*r**12*atan(sqrt(epsilon)/r) + 581242200*epsilon**39*r**14*atan(sqrt(epsilon)/r) + 2223945900*epsilon**38*r**16*atan(sqrt(epsilon)/r) + 6985171875*epsilon**37*r**18*atan(sqrt(epsilon)/r) + 18303899790*epsilon**36*r**20*atan(sqrt(epsilon)/r) + 40504236480*epsilon**35*r**22*atan(sqrt(epsilon)/r) + 76381940850*epsilon**34*r**24*atan(sqrt(epsilon)/r) + 123568599975*epsilon**33*r**26*atan(sqrt(epsilon)/r) + 172300797000*epsilon**32*r**28*atan(sqrt(epsilon)/r) + 207695227440*epsilon**31*r**30*atan(sqrt(epsilon)/r) + 216750881280*epsilon**30*r**32*atan(sqrt(epsilon)/r) + 195836753925*epsilon**29*r**34*atan(sqrt(epsilon)/r) + 152965710150*epsilon**28*r**36*atan(sqrt(epsilon)/r) + 102978843000*epsilon**27*r**38*atan(sqrt(epsilon)/r) + 59466610170*epsilon**26*r**40*atan(sqrt(epsilon)/r) + 29252569665*epsilon**25*r**42*atan(sqrt(epsilon)/r) + 12140791500*epsilon**24*r**44*atan(sqrt(epsilon)/r) + 4195524600*epsilon**23*r**46*atan(sqrt(epsilon)/r) + 1185301500*epsilon**22*r**48*atan(sqrt(epsilon)/r) + 266718849*epsilon**21*r**50*atan(sqrt(epsilon)/r) + 45979938*epsilon**20*r**52*atan(sqrt(epsilon)/r) + 5703120*epsilon**19*r**54*atan(sqrt(epsilon)/r) + 453150*epsilon**18*r**56*atan(sqrt(epsilon)/r) + 17325*epsilon**17*r**58*atan(sqrt(epsilon)/r))/(32*epsilon**(91/2)*r**3 + 800*epsilon**(89/2)*r**5 + 9600*epsilon**(87/2)*r**7 + 73600*epsilon**(85/2)*r**9 + 404800*epsilon**(83/2)*r**11 + 1700160*epsilon**(81/2)*r**13 + 5667200*epsilon**(79/2)*r**15 + 15382400*epsilon**(77/2)*r**17 + 34610400*epsilon**(75/2)*r**19 + 65375200*epsilon**(73/2)*r**21 + 104600320*epsilon**(71/2)*r**23 + 142636800*epsilon**(69/2)*r**25 + 166409600*epsilon**(67/2)*r**27 + 166409600*epsilon**(65/2)*r**29 + 142636800*epsilon**(63/2)*r**31 + 104600320*epsilon**(61/2)*r**33 + 65375200*epsilon**(59/2)*r**35 + 34610400*epsilon**(57/2)*r**37 + 15382400*epsilon**(55/2)*r**39 + 5667200*epsilon**(53/2)*r**41 + 1700160*epsilon**(51/2)*r**43 + 404800*epsilon**(49/2)*r**45 + 73600*epsilon**(47/2)*r**47 + 9600*epsilon**(45/2)*r**49 + 800*epsilon**(43/2)*r**51 + 32*epsilon**(41/2)*r**53)",
+        "(-1757*epsilon**(85/2)*r - 48725*epsilon**(83/2)*r**3 - 649935*epsilon**(81/2)*r**5 - 5551975*epsilon**(79/2)*r**7 - 34116550*epsilon**(77/2)*r**9 - 160589910*epsilon**(75/2)*r**11 - 602051450*epsilon**(73/2)*r**13 - 1845293450*epsilon**(71/2)*r**15 - 4709765775*epsilon**(69/2)*r**17 - 10143851575*epsilon**(67/2)*r**19 - 18615756445*epsilon**(65/2)*r**21 - 29313533925*epsilon**(63/2)*r**23 - 39799381700*epsilon**(61/2)*r**25 - 46735096100*epsilon**(59/2)*r**27 - 47535942300*epsilon**(57/2)*r**29 - 41881581820*epsilon**(55/2)*r**31 - 31916284075*epsilon**(53/2)*r**33 - 20973541875*epsilon**(51/2)*r**35 - 11827984025*epsilon**(49/2)*r**37 - 5684789825*epsilon**(47/2)*r**39 - 2306213910*epsilon**(45/2)*r**41 - 779328550*epsilon**(43/2)*r**43 - 215384650*epsilon**(41/2)*r**45 - 47429850*epsilon**(39/2)*r**47 - 8004425*epsilon**(37/2)*r**49 - 972257*epsilon**(35/2)*r**51 - 75675*epsilon**(33/2)*r**53 - 2835*epsilon**(31/2)*r**55 + 291*epsilon**43*atan(sqrt(epsilon)/r) + 10380*epsilon**42*r**2*atan(sqrt(epsilon)/r) + 170670*epsilon**41*r**4*atan(sqrt(epsilon)/r) + 1747260*epsilon**40*r**6*atan(sqrt(epsilon)/r) + 12617025*epsilon**39*r**8*atan(sqrt(epsilon)/r) + 68803080*epsilon**38*r**10*atan(sqrt(epsilon)/r) + 295699500*epsilon**37*r**12*atan(sqrt(epsilon)/r) + 1030873800*epsilon**36*r**14*atan(sqrt(epsilon)/r) + 2975374875*epsilon**35*r**16*atan(sqrt(epsilon)/r) + 7216496100*epsilon**34*r**18*atan(sqrt(epsilon)/r) + 14871079410*epsilon**33*r**20*atan(sqrt(epsilon)/r) + 26249759700*epsilon**32*r**22*atan(sqrt(epsilon)/r) + 39924374625*epsilon**31*r**24*atan(sqrt(epsilon)/r) + 52534916400*epsilon**30*r**26*atan(sqrt(epsilon)/r) + 59956487400*epsilon**29*r**28*atan(sqrt(epsilon)/r) + 59410010160*epsilon**28*r**30*atan(sqrt(epsilon)/r) + 51094619025*epsilon**27*r**32*atan(sqrt(epsilon)/r) + 38073930900*epsilon**26*r**34*atan(sqrt(epsilon)/r) + 24502000050*epsilon**25*r**36*atan(sqrt(epsilon)/r) + 13549592100*epsilon**24*r**38*atan(sqrt(epsilon)/r) + 6393242955*epsilon**23*r**40*atan(sqrt(epsilon)/r) + 2548873800*epsilon**22*r**42*atan(sqrt(epsilon)/r) + 847257900*epsilon**21*r**44*atan(sqrt(epsilon)/r) + 230526600*epsilon**20*r**46*atan(sqrt(epsilon)/r) + 50015025*epsilon**19*r**48*atan(sqrt(epsilon)/r) + 8321916*epsilon**18*r**50*atan(sqrt(epsilon)/r) + 997230*epsilon**17*r**52*atan(sqrt(epsilon)/r) + 76620*epsilon**16*r**54*atan(sqrt(epsilon)/r) + 2835*epsilon**15*r**56*atan(sqrt(epsilon)/r))/(16*epsilon**(89/2)*r + 432*epsilon**(87/2)*r**3 + 5616*epsilon**(85/2)*r**5 + 46800*epsilon**(83/2)*r**7 + 280800*epsilon**(81/2)*r**9 + 1291680*epsilon**(79/2)*r**11 + 4736160*epsilon**(77/2)*r**13 + 14208480*epsilon**(75/2)*r**15 + 35521200*epsilon**(73/2)*r**17 + 74989200*epsilon**(71/2)*r**19 + 134980560*epsilon**(69/2)*r**21 + 208606320*epsilon**(67/2)*r**23 + 278141760*epsilon**(65/2)*r**25 + 320932800*epsilon**(63/2)*r**27 + 320932800*epsilon**(61/2)*r**29 + 278141760*epsilon**(59/2)*r**31 + 208606320*epsilon**(57/2)*r**33 + 134980560*epsilon**(55/2)*r**35 + 74989200*epsilon**(53/2)*r**37 + 35521200*epsilon**(51/2)*r**39 + 14208480*epsilon**(49/2)*r**41 + 4736160*epsilon**(47/2)*r**43 + 1291680*epsilon**(45/2)*r**45 + 280800*epsilon**(43/2)*r**47 + 46800*epsilon**(41/2)*r**49 + 5616*epsilon**(39/2)*r**51 + 432*epsilon**(37/2)*r**53 + 16*epsilon**(35/2)*r**55)",
+        "(5345*epsilon**(139/2)*r + 209592*epsilon**(137/2)*r**3 + 3972366*epsilon**(135/2)*r**5 + 48516136*epsilon**(133/2)*r**7 + 429467577*epsilon**(131/2)*r**9 + 2937865920*epsilon**(129/2)*r**11 + 16168839632*epsilon**(127/2)*r**13 + 73588105536*epsilon**(125/2)*r**15 + 282501871476*epsilon**(123/2)*r**17 + 928442293152*epsilon**(121/2)*r**19 + 2642080125960*epsilon**(119/2)*r**21 + 6568215544800*epsilon**(117/2)*r**23 + 14364615815940*epsilon**(115/2)*r**25 + 27789560907840*epsilon**(113/2)*r**27 + 47762882466480*epsilon**(111/2)*r**29 + 73176432331200*epsilon**(109/2)*r**31 + 100185665778990*epsilon**(107/2)*r**33 + 122785843680720*epsilon**(105/2)*r**35 + 134851065476820*epsilon**(103/2)*r**37 + 132768437923440*epsilon**(101/2)*r**39 + 117155322687150*epsilon**(99/2)*r**41 + 92568891074880*epsilon**(97/2)*r**43 + 65390564222640*epsilon**(95/2)*r**45 + 41200140968640*epsilon**(93/2)*r**47 + 23080073586180*epsilon**(91/2)*r**49 + 11447932597920*epsilon**(89/2)*r**51 + 5000979718152*epsilon**(87/2)*r**53 + 1911069660896*epsilon**(85/2)*r**55 + 633341440116*epsilon**(83/2)*r**57 + 180016638912*epsilon**(81/2)*r**59 + 43250503120*epsilon**(79/2)*r**61 + 8614174272*epsilon**(77/2)*r**63 + 1384233081*epsilon**(75/2)*r**65 + 172458296*epsilon**(73/2)*r**67 + 15632142*epsilon**(71/2)*r**69 + 917160*epsilon**(69/2)*r**71 + 26145*epsilon**(67/2)*r**73 - 543*epsilon**70*atan(sqrt(epsilon)/r) - 30717*epsilon**69*r**2*atan(sqrt(epsilon)/r) - 758046*epsilon**68*r**4*atan(sqrt(epsilon)/r) - 11400306*epsilon**67*r**6*atan(sqrt(epsilon)/r) - 120029787*epsilon**66*r**8*atan(sqrt(epsilon)/r) - 954129561*epsilon**65*r**10*atan(sqrt(epsilon)/r) - 6002266512*epsilon**64*r**12*atan(sqrt(epsilon)/r) - 30850029936*epsilon**63*r**14*atan(sqrt(epsilon)/r) - 132535841196*epsilon**62*r**16*atan(sqrt(epsilon)/r) - 484077507012*epsilon**61*r**18*atan(sqrt(epsilon)/r) - 1522757981448*epsilon**60*r**20*atan(sqrt(epsilon)/r) - 4167427162680*epsilon**59*r**22*atan(sqrt(epsilon)/r) - 10001979793260*epsilon**58*r**24*atan(sqrt(epsilon)/r) - 21185041855140*epsilon**57*r**26*atan(sqrt(epsilon)/r) - 39799124768880*epsilon**56*r**28*atan(sqrt(epsilon)/r) - 66577480264080*epsilon**55*r**30*atan(sqrt(epsilon)/r) - 99473097072690*epsilon**54*r**32*atan(sqrt(epsilon)/r) - 133039484238870*epsilon**53*r**34*atan(sqrt(epsilon)/r) - 159520694927220*epsilon**52*r**36*atan(sqrt(epsilon)/r) - 171630964876140*epsilon**51*r**38*atan(sqrt(epsilon)/r) - 165739079985930*epsilon**50*r**40*atan(sqrt(epsilon)/r) - 143596636897230*epsilon**49*r**42*atan(sqrt(epsilon)/r) - 111510960096240*epsilon**48*r**44*atan(sqrt(epsilon)/r) - 77484868039440*epsilon**47*r**46*atan(sqrt(epsilon)/r) - 48061246991580*epsilon**46*r**48*atan(sqrt(epsilon)/r) - 26524282787028*epsilon**45*r**50*atan(sqrt(epsilon)/r) - 12969799145352*epsilon**44*r**52*atan(sqrt(epsilon)/r) - 5588916526776*epsilon**43*r**54*atan(sqrt(epsilon)/r) - 2107956288636*epsilon**42*r**56*atan(sqrt(epsilon)/r) - 689864105172*epsilon**41*r**58*atan(sqrt(epsilon)/r) - 193727179536*epsilon**40*r**60*atan(sqrt(epsilon)/r) - 46006413552*epsilon**39*r**62*atan(sqrt(epsilon)/r) - 9060955431*epsilon**38*r**64*atan(sqrt(epsilon)/r) - 1440371541*epsilon**37*r**66*atan(sqrt(epsilon)/r) - 177588702*epsilon**36*r**68*atan(sqrt(epsilon)/r) - 15935538*epsilon**35*r**70*atan(sqrt(epsilon)/r) - 925875*epsilon**34*r**72*atan(sqrt(epsilon)/r) - 26145*epsilon**33*r**74*atan(sqrt(epsilon)/r))/(32*epsilon**(143/2)*r + 1120*epsilon**(141/2)*r**3 + 19040*epsilon**(139/2)*r**5 + 209440*epsilon**(137/2)*r**7 + 1675520*epsilon**(135/2)*r**9 + 10388224*epsilon**(133/2)*r**11 + 51941120*epsilon**(131/2)*r**13 + 215184640*epsilon**(129/2)*r**15 + 753146240*epsilon**(127/2)*r**17 + 2259438720*epsilon**(125/2)*r**19 + 5874540672*epsilon**(123/2)*r**21 + 13351228800*epsilon**(121/2)*r**23 + 26702457600*epsilon**(119/2)*r**25 + 47242809600*epsilon**(117/2)*r**27 + 74238700800*epsilon**(115/2)*r**29 + 103934181120*epsilon**(113/2)*r**31 + 129917726400*epsilon**(111/2)*r**33 + 145202164800*epsilon**(109/2)*r**35 + 145202164800*epsilon**(107/2)*r**37 + 129917726400*epsilon**(105/2)*r**39 + 103934181120*epsilon**(103/2)*r**41 + 74238700800*epsilon**(101/2)*r**43 + 47242809600*epsilon**(99/2)*r**45 + 26702457600*epsilon**(97/2)*r**47 + 13351228800*epsilon**(95/2)*r**49 + 5874540672*epsilon**(93/2)*r**51 + 2259438720*epsilon**(91/2)*r**53 + 753146240*epsilon**(89/2)*r**55 + 215184640*epsilon**(87/2)*r**57 + 51941120*epsilon**(85/2)*r**59 + 10388224*epsilon**(83/2)*r**61 + 1675520*epsilon**(81/2)*r**63 + 209440*epsilon**(79/2)*r**65 + 19040*epsilon**(77/2)*r**67 + 1120*epsilon**(75/2)*r**69 + 32*epsilon**(73/2)*r**71)",
+        "(-135*epsilon**(47/2)*r - 1623*epsilon**(45/2)*r**3 - 7545*epsilon**(43/2)*r**5 - 18735*epsilon**(41/2)*r**7 - 27855*epsilon**(39/2)*r**9 - 25725*epsilon**(37/2)*r**11 - 14523*epsilon**(35/2)*r**13 - 4605*epsilon**(33/2)*r**15 - 630*epsilon**(31/2)*r**17 + 9*epsilon**24*atan(sqrt(epsilon)/r) + 396*epsilon**23*r**2*atan(sqrt(epsilon)/r) + 3222*epsilon**22*r**4*atan(sqrt(epsilon)/r) + 12150*epsilon**21*r**6*atan(sqrt(epsilon)/r) + 26280*epsilon**20*r**8*atan(sqrt(epsilon)/r) + 35334*epsilon**19*r**10*atan(sqrt(epsilon)/r) + 30186*epsilon**18*r**12*atan(sqrt(epsilon)/r) + 16002*epsilon**17*r**14*atan(sqrt(epsilon)/r) + 4815*epsilon**16*r**16*atan(sqrt(epsilon)/r) + 630*epsilon**15*r**18*atan(sqrt(epsilon)/r))/(2*epsilon**(49/2) + 12*epsilon**(47/2)*r**2 + 30*epsilon**(45/2)*r**4 + 40*epsilon**(43/2)*r**6 + 30*epsilon**(41/2)*r**8 + 12*epsilon**(39/2)*r**10 + 2*epsilon**(37/2)*r**12)",
+        "(-1755*epsilon**(139/2)*r - 58242*epsilon**(137/2)*r**3 - 931956*epsilon**(135/2)*r**5 - 9563166*epsilon**(133/2)*r**7 - 70572777*epsilon**(131/2)*r**9 - 397871760*epsilon**(129/2)*r**11 - 1775011392*epsilon**(127/2)*r**13 - 6392636976*epsilon**(125/2)*r**15 - 18727827756*epsilon**(123/2)*r**17 - 44300425752*epsilon**(121/2)*r**19 - 81546276240*epsilon**(119/2)*r**21 - 101913912360*epsilon**(117/2)*r**23 - 21286935540*epsilon**(115/2)*r**25 + 316718634960*epsilon**(113/2)*r**27 + 1110722123520*epsilon**(111/2)*r**29 + 2503099724400*epsilon**(109/2)*r**31 + 4443206713110*epsilon**(107/2)*r**33 + 6602181400980*epsilon**(105/2)*r**35 + 8433652879080*epsilon**(103/2)*r**37 + 9390144846060*epsilon**(101/2)*r**39 + 9182842826850*epsilon**(99/2)*r**41 + 7920013867920*epsilon**(97/2)*r**43 + 6035427725760*epsilon**(95/2)*r**45 + 4064010266160*epsilon**(93/2)*r**47 + 2414637746820*epsilon**(91/2)*r**49 + 1262326426920*epsilon**(89/2)*r**51 + 578154768048*epsilon**(87/2)*r**53 + 230607287064*epsilon**(85/2)*r**55 + 79466382204*epsilon**(83/2)*r**57 + 23408547888*epsilon**(81/2)*r**59 + 5811949440*epsilon**(79/2)*r**61 + 1193217168*epsilon**(77/2)*r**63 + 197208429*epsilon**(75/2)*r**65 + 25220574*epsilon**(73/2)*r**67 + 2342508*epsilon**(71/2)*r**69 + 140610*epsilon**(69/2)*r**71 + 4095*epsilon**(67/2)*r**73 + 549*epsilon**70*atan(sqrt(epsilon)/r) + 20277*epsilon**69*r**2*atan(sqrt(epsilon)/r) + 360018*epsilon**68*r**4*atan(sqrt(epsilon)/r) + 4091562*epsilon**67*r**6*atan(sqrt(epsilon)/r) + 33421473*epsilon**66*r**8*atan(sqrt(epsilon)/r) + 208750905*epsilon**65*r**10*atan(sqrt(epsilon)/r) + 1034816112*epsilon**64*r**12*atan(sqrt(epsilon)/r) + 4166327088*epsilon**63*r**14*atan(sqrt(epsilon)/r) + 13803097572*epsilon**62*r**16*atan(sqrt(epsilon)/r) + 37770956388*epsilon**61*r**18*atan(sqrt(epsilon)/r) + 84620014776*epsilon**60*r**20*atan(sqrt(epsilon)/r) + 149986750680*epsilon**59*r**22*atan(sqrt(epsilon)/r) + 187215221700*epsilon**58*r**24*atan(sqrt(epsilon)/r) + 70553358180*epsilon**57*r**26*atan(sqrt(epsilon)/r) - 417625703280*epsilon**56*r**28*atan(sqrt(epsilon)/r) - 1531426290480*epsilon**55*r**30*atan(sqrt(epsilon)/r) - 3421128129210*epsilon**54*r**32*atan(sqrt(epsilon)/r) - 5963039409690*epsilon**53*r**34*atan(sqrt(epsilon)/r) - 8680646674260*epsilon**52*r**36*atan(sqrt(epsilon)/r) - 10861463097540*epsilon**51*r**38*atan(sqrt(epsilon)/r) - 11851833295170*epsilon**50*r**40*atan(sqrt(epsilon)/r) - 11367917057970*epsilon**49*r**42*atan(sqrt(epsilon)/r) - 9625131920880*epsilon**48*r**44*atan(sqrt(epsilon)/r) - 7206989638320*epsilon**47*r**46*atan(sqrt(epsilon)/r) - 4772432496780*epsilon**46*r**48*atan(sqrt(epsilon)/r) - 2790804971916*epsilon**45*r**50*atan(sqrt(epsilon)/r) - 1437050342088*epsilon**44*r**52*atan(sqrt(epsilon)/r) - 648745377192*epsilon**43*r**54*atan(sqrt(epsilon)/r) - 255221759628*epsilon**42*r**56*atan(sqrt(epsilon)/r) - 86797298412*epsilon**41*r**58*atan(sqrt(epsilon)/r) - 25247558160*epsilon**40*r**60*atan(sqrt(epsilon)/r) - 6193197648*epsilon**39*r**62*atan(sqrt(epsilon)/r) - 1256812227*epsilon**38*r**64*atan(sqrt(epsilon)/r) - 205413363*epsilon**37*r**66*atan(sqrt(epsilon)/r) - 25989102*epsilon**36*r**68*atan(sqrt(epsilon)/r) - 2389014*epsilon**35*r**70*atan(sqrt(epsilon)/r) - 141975*epsilon**34*r**72*atan(sqrt(epsilon)/r) - 4095*epsilon**33*r**74*atan(sqrt(epsilon)/r))/(32*epsilon**(143/2)*r + 1120*epsilon**(141/2)*r**3 + 19040*epsilon**(139/2)*r**5 + 209440*epsilon**(137/2)*r**7 + 1675520*epsilon**(135/2)*r**9 + 10388224*epsilon**(133/2)*r**11 + 51941120*epsilon**(131/2)*r**13 + 215184640*epsilon**(129/2)*r**15 + 753146240*epsilon**(127/2)*r**17 + 2259438720*epsilon**(125/2)*r**19 + 5874540672*epsilon**(123/2)*r**21 + 13351228800*epsilon**(121/2)*r**23 + 26702457600*epsilon**(119/2)*r**25 + 47242809600*epsilon**(117/2)*r**27 + 74238700800*epsilon**(115/2)*r**29 + 103934181120*epsilon**(113/2)*r**31 + 129917726400*epsilon**(111/2)*r**33 + 145202164800*epsilon**(109/2)*r**35 + 145202164800*epsilon**(107/2)*r**37 + 129917726400*epsilon**(105/2)*r**39 + 103934181120*epsilon**(103/2)*r**41 + 74238700800*epsilon**(101/2)*r**43 + 47242809600*epsilon**(99/2)*r**45 + 26702457600*epsilon**(97/2)*r**47 + 13351228800*epsilon**(95/2)*r**49 + 5874540672*epsilon**(93/2)*r**51 + 2259438720*epsilon**(91/2)*r**53 + 753146240*epsilon**(89/2)*r**55 + 215184640*epsilon**(87/2)*r**57 + 51941120*epsilon**(85/2)*r**59 + 10388224*epsilon**(83/2)*r**61 + 1675520*epsilon**(81/2)*r**63 + 209440*epsilon**(79/2)*r**65 + 19040*epsilon**(77/2)*r**67 + 1120*epsilon**(75/2)*r**69 + 32*epsilon**(73/2)*r**71)",
+        "0",
+        "(-444*epsilon**(47/2)*r - 5487*epsilon**(45/2)*r**3 - 26445*epsilon**(43/2)*r**5 - 68295*epsilon**(41/2)*r**7 - 105765*epsilon**(39/2)*r**9 - 101829*epsilon**(37/2)*r**11 - 59967*epsilon**(35/2)*r**13 - 19845*epsilon**(33/2)*r**15 - 2835*epsilon**(31/2)*r**17 + 36*epsilon**24*atan(sqrt(epsilon)/r) + 1341*epsilon**23*r**2*atan(sqrt(epsilon)/r) + 11070*epsilon**22*r**4*atan(sqrt(epsilon)/r) + 43110*epsilon**21*r**6*atan(sqrt(epsilon)/r) + 96750*epsilon**20*r**8*atan(sqrt(epsilon)/r) + 135216*epsilon**19*r**10*atan(sqrt(epsilon)/r) + 120186*epsilon**18*r**12*atan(sqrt(epsilon)/r) + 66330*epsilon**17*r**14*atan(sqrt(epsilon)/r) + 20790*epsilon**16*r**16*atan(sqrt(epsilon)/r) + 2835*epsilon**15*r**18*atan(sqrt(epsilon)/r))/(8*epsilon**(49/2)*r + 48*epsilon**(47/2)*r**3 + 120*epsilon**(45/2)*r**5 + 160*epsilon**(43/2)*r**7 + 120*epsilon**(41/2)*r**9 + 48*epsilon**(39/2)*r**11 + 8*epsilon**(37/2)*r**13)"
+      ]
+    ],
+    [
+      [
+        "0",
+        "0",
+        "(-epsilon**(3/2)*r - sqrt(epsilon)*r**3 - epsilon**2*atan(sqrt(epsilon)/r) - 2*epsilon*r**2*atan(sqrt(epsilon)/r) - r**4*atan(sqrt(epsilon)/r))/(2*epsilon**(3/2)*r**2 + 2*sqrt(epsilon)*r**4)",
+        "(epsilon**(9/2)*atan(sqrt(epsilon)/r) - 6*epsilon**(5/2)*r**4*atan(sqrt(epsilon)/r) - 8*epsilon**(3/2)*r**6*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**8*atan(sqrt(epsilon)/r) + epsilon**4*r + 5*epsilon**3*r**3 + 7*epsilon**2*r**5 + 3*epsilon*r**7)/(4*epsilon**4*r**2 + 8*epsilon**3*r**4 + 4*epsilon**2*r**6)",
+        "0",
+        "0",
+        "(epsilon**(9/2)*atan(sqrt(epsilon)/r) + 6*epsilon**(7/2)*r**2*atan(sqrt(epsilon)/r) + 12*epsilon**(5/2)*r**4*atan(sqrt(epsilon)/r) + 10*epsilon**(3/2)*r**6*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**8*atan(sqrt(epsilon)/r) + epsilon**4*r + 3*epsilon**3*r**3 + 3*epsilon**2*r**5 + epsilon*r**7)/(4*epsilon**3*r**2 + 8*epsilon**2*r**4 + 4*epsilon*r**6)",
+        "(-epsilon**(17/2)*atan(sqrt(epsilon)/r) - 4*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) - 9*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) - 16*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) - 19*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) - 12*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) - 3*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) - epsilon**8*r - epsilon**7*r**3 + 6*epsilon**6*r**5 + 14*epsilon**5*r**7 + 11*epsilon**4*r**9 + 3*epsilon**3*r**11)/(8*epsilon**7*r**2 + 24*epsilon**6*r**4 + 24*epsilon**5*r**6 + 8*epsilon**4*r**8)"
+      ],
+      [
+        "(epsilon**(3/2)*r + sqrt(epsilon)*r**3 + epsilon**2*atan(sqrt(epsilon)/r) + 2*epsilon*r**2*atan(sqrt(epsilon)/r) + r**4*atan(sqrt(epsilon)/r))/(2*epsilon**(3/2)*r**2 + 2*sqrt(epsilon)*r**4)",
+        "(-epsilon**(9/2)*atan(sqrt(epsilon)/r) + 6*epsilon**(5/2)*r**4*atan(sqrt(epsilon)/r) + 8*epsilon**(3/2)*r**6*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**8*atan(sqrt(epsilon)/r) - epsilon**4*r - 5*epsilon**3*r**3 - 7*epsilon**2*r**5 - 3*epsilon*r**7)/(4*epsilon**4*r**2 + 8*epsilon**3*r**4 + 4*epsilon**2*r**6)",
+        "(sqrt(epsilon)*r + epsilon*atan(sqrt(epsilon)/r) + r**2*atan(sqrt(epsilon)/r))/(epsilon**(3/2)*r**2 + sqrt(epsilon)*r**4)",
+        "(-epsilon**(7/2)*atan(sqrt(epsilon)/r) + epsilon**(5/2)*r**2*atan(sqrt(epsilon)/r) + 5*epsilon**(3/2)*r**4*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**6*atan(sqrt(epsilon)/r) - epsilon**3*r - 4*epsilon**2*r**3 - 3*epsilon*r**5)/(2*epsilon**4*r**2 + 4*epsilon**3*r**4 + 2*epsilon**2*r**6)",
+        "0",
+        "(3*epsilon**(13/2)*atan(sqrt(epsilon)/r) + 3*epsilon**(11/2)*r**2*atan(sqrt(epsilon)/r) - 18*epsilon**(9/2)*r**4*atan(sqrt(epsilon)/r) - 42*epsilon**(7/2)*r**6*atan(sqrt(epsilon)/r) - 33*epsilon**(5/2)*r**8*atan(sqrt(epsilon)/r) - 9*epsilon**(3/2)*r**10*atan(sqrt(epsilon)/r) + 3*epsilon**6*r + 18*epsilon**5*r**3 + 36*epsilon**4*r**5 + 30*epsilon**3*r**7 + 9*epsilon**2*r**9)/(4*epsilon**7*r**2 + 16*epsilon**6*r**4 + 24*epsilon**5*r**6 + 16*epsilon**4*r**8 + 4*epsilon**3*r**10)",
+        "(-epsilon**(13/2)*atan(sqrt(epsilon)/r) - epsilon**(11/2)*r**2*atan(sqrt(epsilon)/r) + 6*epsilon**(9/2)*r**4*atan(sqrt(epsilon)/r) + 14*epsilon**(7/2)*r**6*atan(sqrt(epsilon)/r) + 11*epsilon**(5/2)*r**8*atan(sqrt(epsilon)/r) + 3*epsilon**(3/2)*r**10*atan(sqrt(epsilon)/r) - epsilon**6*r - 2*epsilon**5*r**3 + 2*epsilon**3*r**7 + epsilon**2*r**9)/(4*epsilon**6*r**2 + 16*epsilon**5*r**4 + 24*epsilon**4*r**6 + 16*epsilon**3*r**8 + 4*epsilon**2*r**10)",
+        "(epsilon**(25/2)*r + 20*epsilon**(23/2)*r**3 + 85*epsilon**(21/2)*r**5 + 160*epsilon**(19/2)*r**7 + 155*epsilon**(17/2)*r**9 + 76*epsilon**(15/2)*r**11 + 15*epsilon**(13/2)*r**13 + epsilon**13*atan(sqrt(epsilon)/r) - epsilon**12*r**2*atan(sqrt(epsilon)/r) - 35*epsilon**11*r**4*atan(sqrt(epsilon)/r) - 125*epsilon**10*r**6*atan(sqrt(epsilon)/r) - 205*epsilon**9*r**8*atan(sqrt(epsilon)/r) - 179*epsilon**8*r**10*atan(sqrt(epsilon)/r) - 81*epsilon**7*r**12*atan(sqrt(epsilon)/r) - 15*epsilon**6*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(25/2)*r**2 + 40*epsilon**(23/2)*r**4 + 80*epsilon**(21/2)*r**6 + 80*epsilon**(19/2)*r**8 + 40*epsilon**(17/2)*r**10 + 8*epsilon**(15/2)*r**12)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(epsilon**(9/2)*atan(sqrt(epsilon)/r) - 6*epsilon**(5/2)*r**4*atan(sqrt(epsilon)/r) - 8*epsilon**(3/2)*r**6*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**8*atan(sqrt(epsilon)/r) + epsilon**4*r + 5*epsilon**3*r**3 + 7*epsilon**2*r**5 + 3*epsilon*r**7)/(4*epsilon**4*r**2 + 8*epsilon**3*r**4 + 4*epsilon**2*r**6)",
+        "(-epsilon**(17/2)*atan(sqrt(epsilon)/r) + 2*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) + 45*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) + 140*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) + 185*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) + 114*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) + 27*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) - epsilon**8*r - 27*epsilon**7*r**3 - 102*epsilon**6*r**5 - 154*epsilon**5*r**7 - 105*epsilon**4*r**9 - 27*epsilon**3*r**11)/(8*epsilon**8*r**2 + 24*epsilon**7*r**4 + 24*epsilon**6*r**6 + 8*epsilon**5*r**8)",
+        "0",
+        "0",
+        "(-epsilon**(17/2)*atan(sqrt(epsilon)/r) - 4*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) - 9*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) - 16*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) - 19*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) - 12*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) - 3*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) - epsilon**8*r - epsilon**7*r**3 + 6*epsilon**6*r**5 + 14*epsilon**5*r**7 + 11*epsilon**4*r**9 + 3*epsilon**3*r**11)/(8*epsilon**7*r**2 + 24*epsilon**6*r**4 + 24*epsilon**5*r**6 + 8*epsilon**4*r**8)",
+        "(epsilon**(29/2)*r + 23*epsilon**(27/2)*r**3 + 109*epsilon**(25/2)*r**5 + 235*epsilon**(23/2)*r**7 + 275*epsilon**(21/2)*r**9 + 181*epsilon**(19/2)*r**11 + 63*epsilon**(17/2)*r**13 + 9*epsilon**(15/2)*r**15 + epsilon**15*atan(sqrt(epsilon)/r) + 2*epsilon**14*r**2*atan(sqrt(epsilon)/r) - 26*epsilon**13*r**4*atan(sqrt(epsilon)/r) - 134*epsilon**12*r**6*atan(sqrt(epsilon)/r) - 280*epsilon**11*r**8*atan(sqrt(epsilon)/r) - 314*epsilon**10*r**10*atan(sqrt(epsilon)/r) - 198*epsilon**9*r**12*atan(sqrt(epsilon)/r) - 66*epsilon**8*r**14*atan(sqrt(epsilon)/r) - 9*epsilon**7*r**16*atan(sqrt(epsilon)/r))/(16*epsilon**(27/2)*r**2 + 64*epsilon**(25/2)*r**4 + 96*epsilon**(23/2)*r**6 + 64*epsilon**(21/2)*r**8 + 16*epsilon**(19/2)*r**10)"
+      ],
+      [
+        "(-epsilon**(9/2)*atan(sqrt(epsilon)/r) + 6*epsilon**(5/2)*r**4*atan(sqrt(epsilon)/r) + 8*epsilon**(3/2)*r**6*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**8*atan(sqrt(epsilon)/r) - epsilon**4*r - 5*epsilon**3*r**3 - 7*epsilon**2*r**5 - 3*epsilon*r**7)/(4*epsilon**4*r**2 + 8*epsilon**3*r**4 + 4*epsilon**2*r**6)",
+        "(epsilon**(17/2)*atan(sqrt(epsilon)/r) - 2*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) - 45*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) - 140*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) - 185*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) - 114*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) - 27*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) + epsilon**8*r + 27*epsilon**7*r**3 + 102*epsilon**6*r**5 + 154*epsilon**5*r**7 + 105*epsilon**4*r**9 + 27*epsilon**3*r**11)/(8*epsilon**8*r**2 + 24*epsilon**7*r**4 + 24*epsilon**6*r**6 + 8*epsilon**5*r**8)",
+        "(-epsilon**(7/2)*atan(sqrt(epsilon)/r) + epsilon**(5/2)*r**2*atan(sqrt(epsilon)/r) + 5*epsilon**(3/2)*r**4*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**6*atan(sqrt(epsilon)/r) - epsilon**3*r - 4*epsilon**2*r**3 - 3*epsilon*r**5)/(2*epsilon**4*r**2 + 4*epsilon**3*r**4 + 2*epsilon**2*r**6)",
+        "(epsilon**(15/2)*atan(sqrt(epsilon)/r) - 3*epsilon**(13/2)*r**2*atan(sqrt(epsilon)/r) - 42*epsilon**(11/2)*r**4*atan(sqrt(epsilon)/r) - 98*epsilon**(9/2)*r**6*atan(sqrt(epsilon)/r) - 87*epsilon**(7/2)*r**8*atan(sqrt(epsilon)/r) - 27*epsilon**(5/2)*r**10*atan(sqrt(epsilon)/r) + epsilon**7*r + 26*epsilon**6*r**3 + 76*epsilon**5*r**5 + 78*epsilon**4*r**7 + 27*epsilon**3*r**9)/(4*epsilon**8*r**2 + 12*epsilon**7*r**4 + 12*epsilon**6*r**6 + 4*epsilon**5*r**8)",
+        "-6/5",
+        "(-3*epsilon**(23/2)*r - 60*epsilon**(21/2)*r**3 - 255*epsilon**(19/2)*r**5 - 480*epsilon**(17/2)*r**7 - 465*epsilon**(15/2)*r**9 - 228*epsilon**(13/2)*r**11 - 45*epsilon**(11/2)*r**13 - 3*epsilon**12*atan(sqrt(epsilon)/r) + 3*epsilon**11*r**2*atan(sqrt(epsilon)/r) + 105*epsilon**10*r**4*atan(sqrt(epsilon)/r) + 375*epsilon**9*r**6*atan(sqrt(epsilon)/r) + 615*epsilon**8*r**8*atan(sqrt(epsilon)/r) + 537*epsilon**7*r**10*atan(sqrt(epsilon)/r) + 243*epsilon**6*r**12*atan(sqrt(epsilon)/r) + 45*epsilon**5*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(25/2)*r**2 + 40*epsilon**(23/2)*r**4 + 80*epsilon**(21/2)*r**6 + 80*epsilon**(19/2)*r**8 + 40*epsilon**(17/2)*r**10 + 8*epsilon**(15/2)*r**12)",
+        "(epsilon**(25/2)*r + 20*epsilon**(23/2)*r**3 + 85*epsilon**(21/2)*r**5 + 160*epsilon**(19/2)*r**7 + 155*epsilon**(17/2)*r**9 + 76*epsilon**(15/2)*r**11 + 15*epsilon**(13/2)*r**13 + epsilon**13*atan(sqrt(epsilon)/r) - epsilon**12*r**2*atan(sqrt(epsilon)/r) - 35*epsilon**11*r**4*atan(sqrt(epsilon)/r) - 125*epsilon**10*r**6*atan(sqrt(epsilon)/r) - 205*epsilon**9*r**8*atan(sqrt(epsilon)/r) - 179*epsilon**8*r**10*atan(sqrt(epsilon)/r) - 81*epsilon**7*r**12*atan(sqrt(epsilon)/r) - 15*epsilon**6*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(25/2)*r**2 + 40*epsilon**(23/2)*r**4 + 80*epsilon**(21/2)*r**6 + 80*epsilon**(19/2)*r**8 + 40*epsilon**(17/2)*r**10 + 8*epsilon**(15/2)*r**12)",
+        "(-5*epsilon**(45/2)*r - 202*epsilon**(43/2)*r**3 - 1430*epsilon**(41/2)*r**5 - 4610*epsilon**(39/2)*r**7 - 8320*epsilon**(37/2)*r**9 - 8990*epsilon**(35/2)*r**11 - 5802*epsilon**(33/2)*r**13 - 2070*epsilon**(31/2)*r**15 - 315*epsilon**(29/2)*r**17 - 5*epsilon**23*atan(sqrt(epsilon)/r) + 15*epsilon**22*r**2*atan(sqrt(epsilon)/r) + 480*epsilon**21*r**4*atan(sqrt(epsilon)/r) + 2600*epsilon**20*r**6*atan(sqrt(epsilon)/r) + 6990*epsilon**19*r**8*atan(sqrt(epsilon)/r) + 11070*epsilon**18*r**10*atan(sqrt(epsilon)/r) + 10840*epsilon**17*r**12*atan(sqrt(epsilon)/r) + 6480*epsilon**16*r**14*atan(sqrt(epsilon)/r) + 2175*epsilon**15*r**16*atan(sqrt(epsilon)/r) + 315*epsilon**14*r**18*atan(sqrt(epsilon)/r))/(80*epsilon**(45/2)*r**2 + 480*epsilon**(43/2)*r**4 + 1200*epsilon**(41/2)*r**6 + 1600*epsilon**(39/2)*r**8 + 1200*epsilon**(37/2)*r**10 + 480*epsilon**(35/2)*r**12 + 80*epsilon**(33/2)*r**14)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "6/5",
+        "0",
+        "(-45*epsilon**(7/2)*r*atan(sqrt(epsilon)/r) - 90*epsilon**(5/2)*r**3*atan(sqrt(epsilon)/r) - 45*epsilon**(3/2)*r**5*atan(sqrt(epsilon)/r) + 36*epsilon**4 + 75*epsilon**3*r**2 + 45*epsilon**2*r**4)/(5*epsilon**4)",
+        "(-3*epsilon**(5/2)*r*atan(sqrt(epsilon)/r) - 6*epsilon**(3/2)*r**3*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**5*atan(sqrt(epsilon)/r) + 2*epsilon**3 + 5*epsilon**2*r**2 + 3*epsilon*r**4)/epsilon**2",
+        "(15*epsilon**(9/2)*r*atan(sqrt(epsilon)/r) + 75*epsilon**(7/2)*r**3*atan(sqrt(epsilon)/r) + 105*epsilon**(5/2)*r**5*atan(sqrt(epsilon)/r) + 45*epsilon**(3/2)*r**7*atan(sqrt(epsilon)/r) - 16*epsilon**5 - 61*epsilon**4*r**2 - 90*epsilon**3*r**4 - 45*epsilon**2*r**6)/(10*epsilon**4)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(-3*epsilon**(13/2)*atan(sqrt(epsilon)/r) - 3*epsilon**(11/2)*r**2*atan(sqrt(epsilon)/r) + 18*epsilon**(9/2)*r**4*atan(sqrt(epsilon)/r) + 42*epsilon**(7/2)*r**6*atan(sqrt(epsilon)/r) + 33*epsilon**(5/2)*r**8*atan(sqrt(epsilon)/r) + 9*epsilon**(3/2)*r**10*atan(sqrt(epsilon)/r) - 3*epsilon**6*r - 18*epsilon**5*r**3 - 36*epsilon**4*r**5 - 30*epsilon**3*r**7 - 9*epsilon**2*r**9)/(4*epsilon**7*r**2 + 16*epsilon**6*r**4 + 24*epsilon**5*r**6 + 16*epsilon**4*r**8 + 4*epsilon**3*r**10)",
+        "(3*epsilon**(23/2)*r + 60*epsilon**(21/2)*r**3 + 255*epsilon**(19/2)*r**5 + 480*epsilon**(17/2)*r**7 + 465*epsilon**(15/2)*r**9 + 228*epsilon**(13/2)*r**11 + 45*epsilon**(11/2)*r**13 + 3*epsilon**12*atan(sqrt(epsilon)/r) - 3*epsilon**11*r**2*atan(sqrt(epsilon)/r) - 105*epsilon**10*r**4*atan(sqrt(epsilon)/r) - 375*epsilon**9*r**6*atan(sqrt(epsilon)/r) - 615*epsilon**8*r**8*atan(sqrt(epsilon)/r) - 537*epsilon**7*r**10*atan(sqrt(epsilon)/r) - 243*epsilon**6*r**12*atan(sqrt(epsilon)/r) - 45*epsilon**5*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(25/2)*r**2 + 40*epsilon**(23/2)*r**4 + 80*epsilon**(21/2)*r**6 + 80*epsilon**(19/2)*r**8 + 40*epsilon**(17/2)*r**10 + 8*epsilon**(15/2)*r**12)",
+        "(-36*epsilon**(9/2) - 75*epsilon**(7/2)*r**2 - 45*epsilon**(5/2)*r**4 + 45*epsilon**4*r*atan(sqrt(epsilon)/r) + 90*epsilon**3*r**3*atan(sqrt(epsilon)/r) + 45*epsilon**2*r**5*atan(sqrt(epsilon)/r))/(5*epsilon**(9/2))",
+        "(-9*epsilon**(15/2)*atan(sqrt(epsilon)/r) - 9*epsilon**(13/2)*r**2*atan(sqrt(epsilon)/r) + 54*epsilon**(11/2)*r**4*atan(sqrt(epsilon)/r) + 126*epsilon**(9/2)*r**6*atan(sqrt(epsilon)/r) + 99*epsilon**(7/2)*r**8*atan(sqrt(epsilon)/r) + 27*epsilon**(5/2)*r**10*atan(sqrt(epsilon)/r) - 9*epsilon**7*r - 54*epsilon**6*r**3 - 108*epsilon**5*r**5 - 90*epsilon**4*r**7 - 27*epsilon**3*r**9)/(4*epsilon**8*r**2 + 12*epsilon**7*r**4 + 12*epsilon**6*r**6 + 4*epsilon**5*r**8)",
+        "(-3*epsilon**(21/2)*r - 34*epsilon**(19/2)*r**3 - 121*epsilon**(17/2)*r**5 - 204*epsilon**(15/2)*r**7 - 181*epsilon**(13/2)*r**9 - 82*epsilon**(11/2)*r**11 - 15*epsilon**(9/2)*r**13 - 3*epsilon**11*atan(sqrt(epsilon)/r) - 3*epsilon**10*r**2*atan(sqrt(epsilon)/r) + 45*epsilon**9*r**4*atan(sqrt(epsilon)/r) + 165*epsilon**8*r**6*atan(sqrt(epsilon)/r) + 255*epsilon**7*r**8*atan(sqrt(epsilon)/r) + 207*epsilon**6*r**10*atan(sqrt(epsilon)/r) + 87*epsilon**5*r**12*atan(sqrt(epsilon)/r) + 15*epsilon**4*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(21/2)*r**2 + 40*epsilon**(19/2)*r**4 + 80*epsilon**(17/2)*r**6 + 80*epsilon**(15/2)*r**8 + 40*epsilon**(13/2)*r**10 + 8*epsilon**(11/2)*r**12)",
+        "(15*epsilon**(37/2)*r + 428*epsilon**(35/2)*r**3 + 2560*epsilon**(33/2)*r**5 + 7220*epsilon**(31/2)*r**7 + 11630*epsilon**(29/2)*r**9 + 11380*epsilon**(27/2)*r**11 + 6728*epsilon**(25/2)*r**13 + 2220*epsilon**(23/2)*r**15 + 315*epsilon**(21/2)*r**17 + 15*epsilon**19*atan(sqrt(epsilon)/r) - 15*epsilon**18*r**2*atan(sqrt(epsilon)/r) - 840*epsilon**17*r**4*atan(sqrt(epsilon)/r) - 4200*epsilon**16*r**6*atan(sqrt(epsilon)/r) - 10290*epsilon**15*r**8*atan(sqrt(epsilon)/r) - 14910*epsilon**14*r**10*atan(sqrt(epsilon)/r) - 13440*epsilon**13*r**12*atan(sqrt(epsilon)/r) - 7440*epsilon**12*r**14*atan(sqrt(epsilon)/r) - 2325*epsilon**11*r**16*atan(sqrt(epsilon)/r) - 315*epsilon**10*r**18*atan(sqrt(epsilon)/r))/(80*epsilon**(37/2)*r**2 + 480*epsilon**(35/2)*r**4 + 1200*epsilon**(33/2)*r**6 + 1600*epsilon**(31/2)*r**8 + 1200*epsilon**(29/2)*r**10 + 480*epsilon**(27/2)*r**12 + 80*epsilon**(25/2)*r**14)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(-epsilon**(9/2)*atan(sqrt(epsilon)/r) - 6*epsilon**(7/2)*r**2*atan(sqrt(epsilon)/r) - 12*epsilon**(5/2)*r**4*atan(sqrt(epsilon)/r) - 10*epsilon**(3/2)*r**6*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**8*atan(sqrt(epsilon)/r) - epsilon**4*r - 3*epsilon**3*r**3 - 3*epsilon**2*r**5 - epsilon*r**7)/(4*epsilon**3*r**2 + 8*epsilon**2*r**4 + 4*epsilon*r**6)",
+        "(epsilon**(17/2)*atan(sqrt(epsilon)/r) + 4*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) + 9*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) + 16*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) + 19*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) + 12*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) + 3*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) + epsilon**8*r + epsilon**7*r**3 - 6*epsilon**6*r**5 - 14*epsilon**5*r**7 - 11*epsilon**4*r**9 - 3*epsilon**3*r**11)/(8*epsilon**7*r**2 + 24*epsilon**6*r**4 + 24*epsilon**5*r**6 + 8*epsilon**4*r**8)",
+        "(-3*epsilon**(13/2)*atan(sqrt(epsilon)/r) - 11*epsilon**(11/2)*r**2*atan(sqrt(epsilon)/r) - 14*epsilon**(9/2)*r**4*atan(sqrt(epsilon)/r) - 6*epsilon**(7/2)*r**6*atan(sqrt(epsilon)/r) + epsilon**(5/2)*r**8*atan(sqrt(epsilon)/r) + epsilon**(3/2)*r**10*atan(sqrt(epsilon)/r) - 3*epsilon**6*r - 14*epsilon**5*r**3 - 24*epsilon**4*r**5 - 18*epsilon**3*r**7 - 5*epsilon**2*r**9)/(4*epsilon**6*r**2 + 16*epsilon**5*r**4 + 24*epsilon**4*r**6 + 16*epsilon**3*r**8 + 4*epsilon**2*r**10)",
+        "(3*epsilon**(23/2)*r + 36*epsilon**(21/2)*r**3 + 135*epsilon**(19/2)*r**5 + 240*epsilon**(17/2)*r**7 + 225*epsilon**(15/2)*r**9 + 108*epsilon**(13/2)*r**11 + 21*epsilon**(11/2)*r**13 + 3*epsilon**12*atan(sqrt(epsilon)/r) + 5*epsilon**11*r**2*atan(sqrt(epsilon)/r) - 41*epsilon**10*r**4*atan(sqrt(epsilon)/r) - 175*epsilon**9*r**6*atan(sqrt(epsilon)/r) - 295*epsilon**8*r**8*atan(sqrt(epsilon)/r) - 257*epsilon**7*r**10*atan(sqrt(epsilon)/r) - 115*epsilon**6*r**12*atan(sqrt(epsilon)/r) - 21*epsilon**5*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(23/2)*r**2 + 40*epsilon**(21/2)*r**4 + 80*epsilon**(19/2)*r**6 + 80*epsilon**(17/2)*r**8 + 40*epsilon**(15/2)*r**10 + 8*epsilon**(13/2)*r**12)",
+        "(3*epsilon**(5/2)*r*atan(sqrt(epsilon)/r) + 6*epsilon**(3/2)*r**3*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**5*atan(sqrt(epsilon)/r) - 2*epsilon**3 - 5*epsilon**2*r**2 - 3*epsilon*r**4)/epsilon**2",
+        "(-9*epsilon**(23/2)*r - 62*epsilon**(21/2)*r**3 - 179*epsilon**(19/2)*r**5 - 276*epsilon**(17/2)*r**7 - 239*epsilon**(15/2)*r**9 - 110*epsilon**(13/2)*r**11 - 21*epsilon**(11/2)*r**13 - 9*epsilon**12*atan(sqrt(epsilon)/r) - 33*epsilon**11*r**2*atan(sqrt(epsilon)/r) - 9*epsilon**10*r**4*atan(sqrt(epsilon)/r) + 135*epsilon**9*r**6*atan(sqrt(epsilon)/r) + 285*epsilon**8*r**8*atan(sqrt(epsilon)/r) + 261*epsilon**7*r**10*atan(sqrt(epsilon)/r) + 117*epsilon**6*r**12*atan(sqrt(epsilon)/r) + 21*epsilon**5*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(23/2)*r**2 + 40*epsilon**(21/2)*r**4 + 80*epsilon**(19/2)*r**6 + 80*epsilon**(17/2)*r**8 + 40*epsilon**(15/2)*r**10 + 8*epsilon**(13/2)*r**12)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(epsilon**(17/2)*atan(sqrt(epsilon)/r) + 4*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) + 9*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) + 16*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) + 19*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) + 12*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) + 3*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) + epsilon**8*r + epsilon**7*r**3 - 6*epsilon**6*r**5 - 14*epsilon**5*r**7 - 11*epsilon**4*r**9 - 3*epsilon**3*r**11)/(8*epsilon**7*r**2 + 24*epsilon**6*r**4 + 24*epsilon**5*r**6 + 8*epsilon**4*r**8)",
+        "(-epsilon**(29/2)*r - 23*epsilon**(27/2)*r**3 - 109*epsilon**(25/2)*r**5 - 235*epsilon**(23/2)*r**7 - 275*epsilon**(21/2)*r**9 - 181*epsilon**(19/2)*r**11 - 63*epsilon**(17/2)*r**13 - 9*epsilon**(15/2)*r**15 - epsilon**15*atan(sqrt(epsilon)/r) - 2*epsilon**14*r**2*atan(sqrt(epsilon)/r) + 26*epsilon**13*r**4*atan(sqrt(epsilon)/r) + 134*epsilon**12*r**6*atan(sqrt(epsilon)/r) + 280*epsilon**11*r**8*atan(sqrt(epsilon)/r) + 314*epsilon**10*r**10*atan(sqrt(epsilon)/r) + 198*epsilon**9*r**12*atan(sqrt(epsilon)/r) + 66*epsilon**8*r**14*atan(sqrt(epsilon)/r) + 9*epsilon**7*r**16*atan(sqrt(epsilon)/r))/(16*epsilon**(27/2)*r**2 + 64*epsilon**(25/2)*r**4 + 96*epsilon**(23/2)*r**6 + 64*epsilon**(21/2)*r**8 + 16*epsilon**(19/2)*r**10)",
+        "(3*epsilon**(23/2)*r + 36*epsilon**(21/2)*r**3 + 135*epsilon**(19/2)*r**5 + 240*epsilon**(17/2)*r**7 + 225*epsilon**(15/2)*r**9 + 108*epsilon**(13/2)*r**11 + 21*epsilon**(11/2)*r**13 + 3*epsilon**12*atan(sqrt(epsilon)/r) + 5*epsilon**11*r**2*atan(sqrt(epsilon)/r) - 41*epsilon**10*r**4*atan(sqrt(epsilon)/r) - 175*epsilon**9*r**6*atan(sqrt(epsilon)/r) - 295*epsilon**8*r**8*atan(sqrt(epsilon)/r) - 257*epsilon**7*r**10*atan(sqrt(epsilon)/r) - 115*epsilon**6*r**12*atan(sqrt(epsilon)/r) - 21*epsilon**5*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(23/2)*r**2 + 40*epsilon**(21/2)*r**4 + 80*epsilon**(19/2)*r**6 + 80*epsilon**(17/2)*r**8 + 40*epsilon**(15/2)*r**10 + 8*epsilon**(13/2)*r**12)",
+        "(-15*epsilon**(43/2)*r - 518*epsilon**(41/2)*r**3 - 3370*epsilon**(39/2)*r**5 - 10190*epsilon**(37/2)*r**7 - 17480*epsilon**(35/2)*r**9 - 18130*epsilon**(33/2)*r**11 - 11318*epsilon**(31/2)*r**13 - 3930*epsilon**(29/2)*r**15 - 585*epsilon**(27/2)*r**17 - 15*epsilon**22*atan(sqrt(epsilon)/r) + 5*epsilon**21*r**2*atan(sqrt(epsilon)/r) + 960*epsilon**20*r**4*atan(sqrt(epsilon)/r) + 5400*epsilon**19*r**6*atan(sqrt(epsilon)/r) + 14410*epsilon**18*r**8*atan(sqrt(epsilon)/r) + 22410*epsilon**17*r**10*atan(sqrt(epsilon)/r) + 21480*epsilon**16*r**12*atan(sqrt(epsilon)/r) + 12560*epsilon**15*r**14*atan(sqrt(epsilon)/r) + 4125*epsilon**14*r**16*atan(sqrt(epsilon)/r) + 585*epsilon**13*r**18*atan(sqrt(epsilon)/r))/(80*epsilon**(43/2)*r**2 + 480*epsilon**(41/2)*r**4 + 1200*epsilon**(39/2)*r**6 + 1600*epsilon**(37/2)*r**8 + 1200*epsilon**(35/2)*r**10 + 480*epsilon**(33/2)*r**12 + 80*epsilon**(31/2)*r**14)",
+        "(16*epsilon**(11/2) + 61*epsilon**(9/2)*r**2 + 90*epsilon**(7/2)*r**4 + 45*epsilon**(5/2)*r**6 - 15*epsilon**5*r*atan(sqrt(epsilon)/r) - 75*epsilon**4*r**3*atan(sqrt(epsilon)/r) - 105*epsilon**3*r**5*atan(sqrt(epsilon)/r) - 45*epsilon**2*r**7*atan(sqrt(epsilon)/r))/(10*epsilon**(9/2))",
+        "(45*epsilon**(41/2)*r + 892*epsilon**(39/2)*r**3 + 5000*epsilon**(37/2)*r**5 + 13780*epsilon**(35/2)*r**7 + 21970*epsilon**(33/2)*r**9 + 21380*epsilon**(31/2)*r**11 + 12592*epsilon**(29/2)*r**13 + 4140*epsilon**(27/2)*r**15 + 585*epsilon**(25/2)*r**17 + 45*epsilon**21*atan(sqrt(epsilon)/r) + 75*epsilon**20*r**2*atan(sqrt(epsilon)/r) - 1320*epsilon**19*r**4*atan(sqrt(epsilon)/r) - 7560*epsilon**18*r**6*atan(sqrt(epsilon)/r) - 19110*epsilon**17*r**8*atan(sqrt(epsilon)/r) - 27930*epsilon**16*r**10*atan(sqrt(epsilon)/r) - 25200*epsilon**15*r**12*atan(sqrt(epsilon)/r) - 13920*epsilon**14*r**14*atan(sqrt(epsilon)/r) - 4335*epsilon**13*r**16*atan(sqrt(epsilon)/r) - 585*epsilon**12*r**18*atan(sqrt(epsilon)/r))/(80*epsilon**(41/2)*r**2 + 480*epsilon**(39/2)*r**4 + 1200*epsilon**(37/2)*r**6 + 1600*epsilon**(35/2)*r**8 + 1200*epsilon**(33/2)*r**10 + 480*epsilon**(31/2)*r**12 + 80*epsilon**(29/2)*r**14)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(9*epsilon**(17/2)*atan(sqrt(epsilon)/r) - 54*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) - 621*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) - 1764*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) - 2241*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) - 1350*epsilon**(7/2)*r**10*atan(sqrt(epsilon)/r) - 315*epsilon**(5/2)*r**12*atan(sqrt(epsilon)/r) + 9*epsilon**8*r + 327*epsilon**7*r**3 + 1242*epsilon**6*r**5 + 1854*epsilon**5*r**7 + 1245*epsilon**4*r**9 + 315*epsilon**3*r**11)/(8*epsilon**8*r**2 + 24*epsilon**7*r**4 + 24*epsilon**6*r**6 + 8*epsilon**5*r**8)",
+        "(-9*epsilon**(29/2)*r - 693*epsilon**(27/2)*r**3 - 4857*epsilon**(25/2)*r**5 - 14253*epsilon**(23/2)*r**7 - 21987*epsilon**(21/2)*r**9 - 18807*epsilon**(19/2)*r**11 - 8475*epsilon**(17/2)*r**13 - 1575*epsilon**(15/2)*r**15 - 9*epsilon**15*atan(sqrt(epsilon)/r) + 72*epsilon**14*r**2*atan(sqrt(epsilon)/r) + 1620*epsilon**13*r**4*atan(sqrt(epsilon)/r) + 8280*epsilon**12*r**6*atan(sqrt(epsilon)/r) + 20250*epsilon**11*r**8*atan(sqrt(epsilon)/r) + 27576*epsilon**10*r**10*atan(sqrt(epsilon)/r) + 21492*epsilon**9*r**12*atan(sqrt(epsilon)/r) + 9000*epsilon**8*r**14*atan(sqrt(epsilon)/r) + 1575*epsilon**7*r**16*atan(sqrt(epsilon)/r))/(16*epsilon**(29/2)*r**2 + 64*epsilon**(27/2)*r**4 + 96*epsilon**(25/2)*r**6 + 64*epsilon**(23/2)*r**8 + 16*epsilon**(21/2)*r**10)",
+        "(3*epsilon**(27/2)*r + 112*epsilon**(25/2)*r**3 + 523*epsilon**(23/2)*r**5 + 1032*epsilon**(21/2)*r**7 + 1033*epsilon**(19/2)*r**9 + 520*epsilon**(17/2)*r**11 + 105*epsilon**(15/2)*r**13 + 3*epsilon**14*atan(sqrt(epsilon)/r) - 15*epsilon**13*r**2*atan(sqrt(epsilon)/r) - 225*epsilon**12*r**4*atan(sqrt(epsilon)/r) - 795*epsilon**11*r**6*atan(sqrt(epsilon)/r) - 1335*epsilon**10*r**8*atan(sqrt(epsilon)/r) - 1197*epsilon**9*r**10*atan(sqrt(epsilon)/r) - 555*epsilon**8*r**12*atan(sqrt(epsilon)/r) - 105*epsilon**7*r**14*atan(sqrt(epsilon)/r))/(8*epsilon**(29/2)*r**2 + 40*epsilon**(27/2)*r**4 + 80*epsilon**(25/2)*r**6 + 80*epsilon**(23/2)*r**8 + 40*epsilon**(21/2)*r**10 + 8*epsilon**(19/2)*r**12)",
+        "(-3*epsilon**(47/2)*r - 298*epsilon**(45/2)*r**3 - 2630*epsilon**(43/2)*r**5 - 9730*epsilon**(41/2)*r**7 - 19420*epsilon**(39/2)*r**9 - 22718*epsilon**(37/2)*r**11 - 15658*epsilon**(35/2)*r**13 - 5910*epsilon**(33/2)*r**15 - 945*epsilon**(31/2)*r**17 - 3*epsilon**24*atan(sqrt(epsilon)/r) + 21*epsilon**23*r**2*atan(sqrt(epsilon)/r) + 744*epsilon**22*r**4*atan(sqrt(epsilon)/r) + 4800*epsilon**21*r**6*atan(sqrt(epsilon)/r) + 14730*epsilon**20*r**8*atan(sqrt(epsilon)/r) + 25842*epsilon**19*r**10*atan(sqrt(epsilon)/r) + 27456*epsilon**18*r**12*atan(sqrt(epsilon)/r) + 17544*epsilon**17*r**14*atan(sqrt(epsilon)/r) + 6225*epsilon**16*r**16*atan(sqrt(epsilon)/r) + 945*epsilon**15*r**18*atan(sqrt(epsilon)/r))/(16*epsilon**(49/2)*r**2 + 96*epsilon**(47/2)*r**4 + 240*epsilon**(45/2)*r**6 + 320*epsilon**(43/2)*r**8 + 240*epsilon**(41/2)*r**10 + 96*epsilon**(39/2)*r**12 + 16*epsilon**(37/2)*r**14)",
+        "(45*epsilon**(15/2)*r*atan(sqrt(epsilon)/r) + 405*epsilon**(13/2)*r**3*atan(sqrt(epsilon)/r) + 675*epsilon**(11/2)*r**5*atan(sqrt(epsilon)/r) + 315*epsilon**(9/2)*r**7*atan(sqrt(epsilon)/r) - 243*epsilon**7*r**2 - 570*epsilon**6*r**4 - 315*epsilon**5*r**6)/(2*epsilon**8)",
+        "(-63*epsilon**(47/2)*r - 1818*epsilon**(45/2)*r**3 - 10530*epsilon**(43/2)*r**5 - 28530*epsilon**(41/2)*r**7 - 43920*epsilon**(39/2)*r**9 - 40878*epsilon**(37/2)*r**11 - 22878*epsilon**(35/2)*r**13 - 7110*epsilon**(33/2)*r**15 - 945*epsilon**(31/2)*r**17 - 63*epsilon**24*atan(sqrt(epsilon)/r) + 81*epsilon**23*r**2*atan(sqrt(epsilon)/r) + 3564*epsilon**22*r**4*atan(sqrt(epsilon)/r) + 17100*epsilon**21*r**6*atan(sqrt(epsilon)/r) + 40230*epsilon**20*r**8*atan(sqrt(epsilon)/r) + 55782*epsilon**19*r**10*atan(sqrt(epsilon)/r) + 47916*epsilon**18*r**12*atan(sqrt(epsilon)/r) + 25164*epsilon**17*r**14*atan(sqrt(epsilon)/r) + 7425*epsilon**16*r**16*atan(sqrt(epsilon)/r) + 945*epsilon**15*r**18*atan(sqrt(epsilon)/r))/(16*epsilon**(49/2)*r**2 + 96*epsilon**(47/2)*r**4 + 240*epsilon**(45/2)*r**6 + 320*epsilon**(43/2)*r**8 + 240*epsilon**(41/2)*r**10 + 96*epsilon**(39/2)*r**12 + 16*epsilon**(37/2)*r**14)",
+        "(-12*epsilon**(29/2)*r - 651*epsilon**(27/2)*r**3 - 3814*epsilon**(25/2)*r**5 - 9721*epsilon**(23/2)*r**7 - 13344*epsilon**(21/2)*r**9 - 10333*epsilon**(19/2)*r**11 - 4270*epsilon**(17/2)*r**13 - 735*epsilon**(15/2)*r**15 - 12*epsilon**15*atan(sqrt(epsilon)/r) + 81*epsilon**14*r**2*atan(sqrt(epsilon)/r) + 1425*epsilon**13*r**4*atan(sqrt(epsilon)/r) + 6225*epsilon**12*r**6*atan(sqrt(epsilon)/r) + 13425*epsilon**11*r**8*atan(sqrt(epsilon)/r) + 16443*epsilon**10*r**10*atan(sqrt(epsilon)/r) + 11691*epsilon**9*r**12*atan(sqrt(epsilon)/r) + 4515*epsilon**8*r**14*atan(sqrt(epsilon)/r) + 735*epsilon**7*r**16*atan(sqrt(epsilon)/r))/(8*epsilon**(29/2)*r**2 + 40*epsilon**(27/2)*r**4 + 80*epsilon**(25/2)*r**6 + 80*epsilon**(23/2)*r**8 + 40*epsilon**(21/2)*r**10 + 8*epsilon**(19/2)*r**12)",
+        "(12*epsilon**(49/2)*r + 1107*epsilon**(47/2)*r**3 + 9952*epsilon**(45/2)*r**5 + 39980*epsilon**(43/2)*r**7 + 91360*epsilon**(41/2)*r**9 + 129442*epsilon**(39/2)*r**11 + 116432*epsilon**(37/2)*r**13 + 64972*epsilon**(35/2)*r**15 + 20580*epsilon**(33/2)*r**17 + 2835*epsilon**(31/2)*r**19 + 12*epsilon**25*atan(sqrt(epsilon)/r) - 105*epsilon**24*r**2*atan(sqrt(epsilon)/r) - 2847*epsilon**23*r**4*atan(sqrt(epsilon)/r) - 18720*epsilon**22*r**6*atan(sqrt(epsilon)/r) - 62760*epsilon**21*r**8*atan(sqrt(epsilon)/r) - 126618*epsilon**20*r**10*atan(sqrt(epsilon)/r) - 163350*epsilon**19*r**12*atan(sqrt(epsilon)/r) - 136392*epsilon**18*r**14*atan(sqrt(epsilon)/r) - 71580*epsilon**17*r**16*atan(sqrt(epsilon)/r) - 21525*epsilon**16*r**18*atan(sqrt(epsilon)/r) - 2835*epsilon**15*r**20*atan(sqrt(epsilon)/r))/(16*epsilon**(49/2)*r**2 + 96*epsilon**(47/2)*r**4 + 240*epsilon**(45/2)*r**6 + 320*epsilon**(43/2)*r**8 + 240*epsilon**(41/2)*r**10 + 96*epsilon**(39/2)*r**12 + 16*epsilon**(37/2)*r**14)"
+      ]
+    ],
+    [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-atan(sqrt(epsilon)/r)/(sqrt(epsilon)*r)",
+        "(epsilon**(3/2)*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**2*atan(sqrt(epsilon)/r) - 3*epsilon*r)/(2*epsilon**2*r)",
+        "0",
+        "0",
+        "(epsilon**(3/2)*atan(sqrt(epsilon)/r) + sqrt(epsilon)*r**2*atan(sqrt(epsilon)/r) + epsilon*r)/(2*epsilon*r)",
+        "(-epsilon**(5/2)*atan(sqrt(epsilon)/r) - 4*epsilon**(3/2)*r**2*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**4*atan(sqrt(epsilon)/r) + 3*epsilon**2*r + 3*epsilon*r**3)/(4*epsilon**2*r)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(epsilon**(3/2)*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**2*atan(sqrt(epsilon)/r) - 3*epsilon*r)/(2*epsilon**2*r)",
+        "(3*epsilon**(7/2)*r + 9*epsilon**(5/2)*r**3 - epsilon**4*atan(sqrt(epsilon)/r) - 6*epsilon**3*r**2*atan(sqrt(epsilon)/r) - 9*epsilon**2*r**4*atan(sqrt(epsilon)/r))/(4*epsilon**(9/2)*r)",
+        "0",
+        "0",
+        "(-epsilon**(5/2)*atan(sqrt(epsilon)/r) - 4*epsilon**(3/2)*r**2*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**4*atan(sqrt(epsilon)/r) + 3*epsilon**2*r + 3*epsilon*r**3)/(4*epsilon**2*r)",
+        "(-11*epsilon**(9/2)*r - 60*epsilon**(7/2)*r**3 - 45*epsilon**(5/2)*r**5 + 5*epsilon**5*atan(sqrt(epsilon)/r) + 35*epsilon**4*r**2*atan(sqrt(epsilon)/r) + 75*epsilon**3*r**4*atan(sqrt(epsilon)/r) + 45*epsilon**2*r**6*atan(sqrt(epsilon)/r))/(40*epsilon**(9/2)*r)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "(-15*epsilon**(7/2)*r - 9*epsilon**(5/2)*r**3 + 9*epsilon**4*atan(sqrt(epsilon)/r) + 18*epsilon**3*r**2*atan(sqrt(epsilon)/r) + 9*epsilon**2*r**4*atan(sqrt(epsilon)/r))/(4*epsilon**(9/2)*r)",
+        "(3*epsilon**(5/2)*atan(sqrt(epsilon)/r) + 6*epsilon**(3/2)*r**2*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**4*atan(sqrt(epsilon)/r) - 5*epsilon**2*r - 3*epsilon*r**3)/(4*epsilon**2*r)",
+        "(49*epsilon**(9/2)*r + 90*epsilon**(7/2)*r**3 + 45*epsilon**(5/2)*r**5 - 15*epsilon**5*atan(sqrt(epsilon)/r) - 75*epsilon**4*r**2*atan(sqrt(epsilon)/r) - 105*epsilon**3*r**4*atan(sqrt(epsilon)/r) - 45*epsilon**2*r**6*atan(sqrt(epsilon)/r))/(40*epsilon**(9/2)*r)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(epsilon**(3/2)*atan(sqrt(epsilon)/r) + sqrt(epsilon)*r**2*atan(sqrt(epsilon)/r) + epsilon*r)/(2*epsilon*r)",
+        "(-epsilon**(5/2)*atan(sqrt(epsilon)/r) - 4*epsilon**(3/2)*r**2*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**4*atan(sqrt(epsilon)/r) + 3*epsilon**2*r + 3*epsilon*r**3)/(4*epsilon**2*r)",
+        "0",
+        "(3*epsilon**(5/2)*atan(sqrt(epsilon)/r) + 6*epsilon**(3/2)*r**2*atan(sqrt(epsilon)/r) + 3*sqrt(epsilon)*r**4*atan(sqrt(epsilon)/r) - 5*epsilon**2*r - 3*epsilon*r**3)/(4*epsilon**2*r)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(-epsilon**(5/2)*atan(sqrt(epsilon)/r) - 4*epsilon**(3/2)*r**2*atan(sqrt(epsilon)/r) - 3*sqrt(epsilon)*r**4*atan(sqrt(epsilon)/r) + 3*epsilon**2*r + 3*epsilon*r**3)/(4*epsilon**2*r)",
+        "(-11*epsilon**(9/2)*r - 60*epsilon**(7/2)*r**3 - 45*epsilon**(5/2)*r**5 + 5*epsilon**5*atan(sqrt(epsilon)/r) + 35*epsilon**4*r**2*atan(sqrt(epsilon)/r) + 75*epsilon**3*r**4*atan(sqrt(epsilon)/r) + 45*epsilon**2*r**6*atan(sqrt(epsilon)/r))/(40*epsilon**(9/2)*r)",
+        "0",
+        "(49*epsilon**(9/2)*r + 90*epsilon**(7/2)*r**3 + 45*epsilon**(5/2)*r**5 - 15*epsilon**5*atan(sqrt(epsilon)/r) - 75*epsilon**4*r**2*atan(sqrt(epsilon)/r) - 105*epsilon**3*r**4*atan(sqrt(epsilon)/r) - 45*epsilon**2*r**6*atan(sqrt(epsilon)/r))/(40*epsilon**(9/2)*r)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(55*epsilon**(7/2)*r + 105*epsilon**(5/2)*r**3 - 9*epsilon**4*atan(sqrt(epsilon)/r) - 90*epsilon**3*r**2*atan(sqrt(epsilon)/r) - 105*epsilon**2*r**4*atan(sqrt(epsilon)/r))/(4*epsilon**(9/2)*r)",
+        "(9*epsilon**(15/2)*atan(sqrt(epsilon)/r) + 117*epsilon**(13/2)*r**2*atan(sqrt(epsilon)/r) + 375*epsilon**(11/2)*r**4*atan(sqrt(epsilon)/r) + 315*epsilon**(9/2)*r**6*atan(sqrt(epsilon)/r) - 55*epsilon**7*r - 270*epsilon**6*r**3 - 315*epsilon**5*r**5)/(8*epsilon**8*r)",
+        "0",
+        "(45*epsilon**(15/2)*atan(sqrt(epsilon)/r) + 405*epsilon**(13/2)*r**2*atan(sqrt(epsilon)/r) + 675*epsilon**(11/2)*r**4*atan(sqrt(epsilon)/r) + 315*epsilon**(9/2)*r**6*atan(sqrt(epsilon)/r) - 243*epsilon**7*r - 570*epsilon**6*r**3 - 315*epsilon**5*r**5)/(8*epsilon**8*r)",
+        "(-68*epsilon**(9/2)*r - 175*epsilon**(7/2)*r**3 - 105*epsilon**(5/2)*r**5 + 12*epsilon**5*atan(sqrt(epsilon)/r) + 117*epsilon**4*r**2*atan(sqrt(epsilon)/r) + 210*epsilon**3*r**4*atan(sqrt(epsilon)/r) + 105*epsilon**2*r**6*atan(sqrt(epsilon)/r))/(4*epsilon**(9/2)*r)",
+        "(-12*epsilon**(17/2)*atan(sqrt(epsilon)/r) - 153*epsilon**(15/2)*r**2*atan(sqrt(epsilon)/r) - 561*epsilon**(13/2)*r**4*atan(sqrt(epsilon)/r) - 735*epsilon**(11/2)*r**6*atan(sqrt(epsilon)/r) - 315*epsilon**(9/2)*r**8*atan(sqrt(epsilon)/r) + 68*epsilon**8*r + 379*epsilon**7*r**3 + 630*epsilon**6*r**5 + 315*epsilon**5*r**7)/(8*epsilon**8*r)"
+      ]
+    ]
+  ]
+}
