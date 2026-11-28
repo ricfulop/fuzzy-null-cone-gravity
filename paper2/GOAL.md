@@ -197,3 +197,12 @@ issue and supplies actual two-point quantum coefficients under the same
 prescription. It does not evaluate the four-point observable, establish
 small quantum corrections at unit parameters, or control physical cutoff
 limits. Fifth/sixth-order spatial contractions are the next required input.
+
+The [higher geometry and first Green-response run](reports/quantum-bridge/higher-geometry-green-validation.md)
+then passed two exact geometry directions, 68 independent finite-metric
+evaluations and 27 inverse/evaluator checks. Its largest independent
+coefficient error was $1.33\times10^{-15}$; the same Green implementation
+reproduced the known pure-momentum sixth-order integral through a separate
+radial comparison. Full fifth-order assembly and mixed sixth-order nested
+inverse contractions remain pending, as do the gravitational four-point
+observable, microscopic corner dynamics and physical large-rank limits.

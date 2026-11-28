@@ -1,9 +1,36 @@
-# Higher-order geometry and first Green responses: validation protocol
+# Higher-order geometry and first Green responses: verified ingredient checks
 
-This is a prospective protocol, not a numerical result. It supplies required
+Run `6ffbc441-ac18-4c69-90e3-e3d3827feb85` completed all the specified checks
+at source `2a59f1b60f630bd2b4e4d922dc693a7810ab2608` in 39.56 seconds.
+The complete [unaltered run JSON](data/higher-geometry-results.json) records
+the configuration, comparisons and tolerances. This supplies required
 ingredients for the [contracted four-point calculation](contracted-four-point-implementation.md)
 after the complete quartic and finite-mode two-point checkpoint `6bd4090`.
 The nonlinear regulator remains the declared reduction-first canonical candidate.
+
+## Observed result
+
+- Both exact geometry directions matched their archived low-order formulas.
+  Independent finite-metric extraction used 17 distinct amplitudes at each of
+  four points, with maximum scaled coefficient error $1.33144\times10^{-15}$
+  and maximum extrapolation change $8.38866\times10^{-14}$.
+- All 27 Green checks passed, including four actual scalar sources and two
+  vector sources. Their exact PDE residuals vanished; the largest separately
+  evaluated numerical PDE error was $7.94068\times10^{-16}$.
+- Ordinary heat moments agreed with independent Decimal quadrature to relative
+  error $7.73258\times10^{-16}$. The deliberately large-degree logarithmic
+  stress cases had a larger error, $1.16609\times10^{-11}$, within their
+  separate preregistered $2\times10^{-10}$ tolerance. They are not claimed
+  to have ordinary-degree machine precision.
+- The pure-momentum sixth-order control was $32618.557080168644$ in the
+  stated raw axial-profile units. Its 96/128-point integral refinement changed
+  by scaled error $2.67740\times10^{-16}$; the full pointwise radial-inverse
+  comparison reached $3.08826\times10^{-14}$. The conservative omitted
+  sixth-order tail bound was $2.40415\times10^{-47}$.
+
+These results validate the selected ingredients and the previously derived
+pure-momentum control. They do not evaluate the full mixed $H_5,H_6$ or the
+gravitational four-point loop. The protocol and pre-launch review follow.
 
 ## Independent local geometry check
 
@@ -56,7 +83,7 @@ The calculation selector is `higher_geometry_and_green`; the committed config
 declares a 1,800-second local wall-clock limit and no GPU or remote work.
 Completed stage records and the final JSON preserve the source commit and run ID.
 
-A pass would validate these selected higher-order ingredients. Nested nonlinear
+The pass validates these selected higher-order ingredients. Nested nonlinear
 Green sources, the full $H_5,H_6$ functional, the contracted gravitational
 four-point integral and connected scattering conversion would remain pending.
 No physical large-rank limit or microscopic corner multiplicity follows from
@@ -71,4 +98,4 @@ acceptance gates that were added before launch: enforce the finite metric's
 determinant/connection/jet-tail diagnostics, and explicitly compare the axial
 Cartesian source with the independent positive-frame expression at each test
 point. This is an internal mathematical/code review, not external peer review
-or a substitute for the pending tracked calculation.
+or a substitute for the tracked calculation recorded above.
