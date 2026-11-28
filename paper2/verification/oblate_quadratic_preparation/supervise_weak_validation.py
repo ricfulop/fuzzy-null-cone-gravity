@@ -20,9 +20,9 @@ MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
 CHECK_MODE = "profile-arithmetic-probe"
 CHECKER_NAME = "export_angular_weak_slots.py"
-# Renewed user approval; see profile-arithmetic-probe-preparation.md.
-LAUNCH_APPROVAL_MESSAGE = "msg_c7ac8e6c"
-APPROVAL_END = dt.datetime(2026, 11, 28, 16, 29, tzinfo=dt.timezone.utc)
+# Explicit per-run approval; see profile-arithmetic-probe-launch-approval.json.
+LAUNCH_APPROVAL_MESSAGE = "msg_37a2dc0f"
+APPROVAL_END = dt.datetime(2026, 11, 28, 15, 0, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
     CHECKER_NAME, "weak_forms.py", "potential_hessian.py",
     "kinematic_blocks.py", "supervise_weak_validation.py", "run_weak_validation.sh",
@@ -174,9 +174,12 @@ def main():
               for name in SOURCE_NAMES}
     manifest = {
         "started_utc": started.isoformat(), "approval_message": LAUNCH_APPROVAL_MESSAGE,
-        "approval_chat_id": "chat_5351fc4a-9bc3-4992-9e39-0a9505c63137",
-        "approval_quote": "ok I am going back to sleep, you have my approval for any of the upcoming experiments that come up on the chat or other requests to keep going till I wake up",
-        "standing_window_message": "msg_ad636446",
+        "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f",
+        "approval_quote": "you have launch approval",
+        "approval_basis": "explicit_per_run",
+        "standing_window_message": "msg_908bb84e",
+        "standing_window_quote": "you dont need to ask me for approval till 10am",
+        "approval_timezone": "America/New_York",
         "approval_end_utc": APPROVAL_END.isoformat(), "wall_budget_seconds": budget,
         "sampled_group_rss_budget_bytes": MAX_RSS_BYTES,
         "memory_budget_is_hard_limit": False, "command": command,

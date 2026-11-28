@@ -1,0 +1,36 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "controls",
+      "of": 3,
+      "unit": "batches"
+    },
+    {
+      "phase": "arithmetic",
+      "of": 12,
+      "unit": "pairs"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "checker result"
+    }
+  ],
+  "brief": {
+    "question": "Does exact component compaction preserve the actual-profile potential densities and reduce the identified arithmetic workload for m=0,r=3/2,left index 10 against all 12 right columns?",
+    "healthy": "Three control batches and twelve row-pair comparisons, then export. Timings identify density construction, normalization and quadrature. profile_arithmetic_probe_passed appears only after final JSON write; pair partial files are not a snapshot.",
+    "noise": "Runtime is unmeasured;300 seconds is a cap. Component coordinate poles are allowed, while each final scalar retains exact rationality and pole exclusion. Timings share a Python process and may include cache effects. No speedup threshold is required.",
+    "worth_a_flag": "Any exact mismatch, nonfinite value, unsupported compacted component or final integrand, final scalar pole, quadrature/refinement failure, resource stop or unresolved cleanup. No completed_snapshots or angular_export_passed is expected. Initial zero error is not convergence.",
+    "from_parent": "Two angular attempts timed out with no snapshot. The pairwise attempt completed 120 of 144 terms in its first family 00 potential block; row 10 started but did not finish. Jet construction was cheap; inner symbolic cost remained unmeasured.",
+    "decided": "Explicit per-run user approval msg_37a2dc0f authorizes this prepared diagnostic; msg_908bb84e also authorizes reviewed bounded local work until10am America/New_York (15:00UTC) today. One process, 300s wall, 2GiB sampled RSS, fixed environment and existing numerical gates. Probe-only compaction; production snapshot modes and physics formulas retain their behavior. No GPU/remote compute; no angular/radial/domain/KED/spectrum/seed/nonlinear claim."
+  },
+  "watch": {
+    "minGapS": 60,
+    "maxGapS": 180
+  }
+}
