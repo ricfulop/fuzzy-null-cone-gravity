@@ -1,5 +1,7 @@
 # Second-order null compatibility near the oblate solution
 
+**Subsequent execution:** the separately approved single local map/control check [passed](../oblate-null-map-check-2026-11-27/README.md). The text below preserves the preparation-stage status. Its unexecuted statements refer to that stage; the later execution has its own log and provenance. No admissible non-gauge source has yet been evaluated.
+
 Preparation checkpoint, 27 November 2026. Scientific source: 157ec0f04866ea36509b325ec65f0a68890f9b17. User approval msg_7c4562eb, relayed by the coordinating chat, authorizes derivation and implementation preparation only. **No scientific checker or experiment has been executed for this checkpoint.**
 
 The calculation uses the [original Paper I coefficient action](../../sections/nonlinear_action.tex), the [certified oblate shift kernel](../oblate-constraint-rank-2026-11-27/README.md), and the [linearized lapse result](../oblate-lapse-consistency-2026-11-27/README.md). No action, regulator, harmonic convention, or canonical normalization changes.

@@ -1,0 +1,16 @@
+{
+  "status": "read-only outcome and report review complete; no material scope or provenance issue",
+  "review_message": "msg_86627d23",
+  "reviewer_scientific_executions": 0,
+  "scientific_source_commit": "53b06316547d0a5a47754f0de71f8c91c7a42a40",
+  "scope": "Axisymmetric N=3 map and control checks; sampled RSS is not a hard memory cap; no admissible mixed-parity non-gauge source evaluation",
+  "independent_static_packaging_checks": [
+    "source hashes before/after and frozen snapshots",
+    "original generated JSON equals execution archive copies",
+    "JSON parsing and Python AST without scientific imports",
+    "report local links and control characters",
+    "single invocation exit0 and three PASS lines",
+    "git diff whitespace check"
+  ],
+  "full_nonlinear_goal_complete": false
+}

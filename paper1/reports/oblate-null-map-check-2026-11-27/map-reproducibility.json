@@ -1,0 +1,17 @@
+{
+  "base_commit_at_execution": "53b06316547d0a5a47754f0de71f8c91c7a42a40",
+  "python": "3.12.11",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0"
+  },
+  "seconds": 2.108,
+  "GPU_jobs": 0,
+  "remote_jobs": 0,
+  "tracked_experiment_launches": 0,
+  "sha256": {
+    "verification/oblate_nonlinear_null_20261127/check_prepared_maps.py": "42dcab52527ea00fe0e2adf5c06b139747a13eec527580f7a8298d748b912569",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  }
+}
