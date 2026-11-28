@@ -1,8 +1,27 @@
 {
   "schema_name": "oblate-quadratic-operator-preparation",
   "schema_version": 1,
-  "status": "prepared_not_scientifically_executed",
+  "status": "bounded_kinematic_and_local_weak_checks_passed_finite_assembly_pending",
   "ready_for_finite_reducer": false,
+  "validation_records": {
+    "kinematic": {
+      "status": "bounded_check_passed",
+      "source_commit": "2986a52960840cc846f88a0665acbc44e4c6bf6e",
+      "report": "kinematic-recheck/README.md"
+    },
+    "local_weak_forms": {
+      "status": "eight_batches_passed",
+      "run_id": "32b93879-a4f2-426f-82ac-2fa455844477",
+      "source_commit": "b59be9535b38e25d59a8437efe9873094b2bc4bd",
+      "report": "../oblate-weak-curvature-validation/full-recheck-pass/README.md",
+      "potential_pairs_at_recorded_points": 108,
+      "lapse_pairs_at_recorded_points": 36,
+      "fixed_symbolic_gauge_controls": 3,
+      "all_label_green_identity_proved": false,
+      "finite_radial_kernel_preservation_checked": false,
+      "physical_boundary_domain_selected": false
+    }
+  },
   "physics": {
     "action": "original Paper I metric-coefficient Einstein-Hilbert Galerkin restriction",
     "commit": "157ec0f04866ea36509b325ec65f0a68890f9b17",
@@ -90,7 +109,7 @@
   },
   "first_proposed_check": {
     "script": "paper2/verification/oblate_quadratic_preparation/verify_kinematics.py",
-    "status": "not_run",
+    "status": "historical_proposal; see validation_records for subsequent execution",
     "scope": "N=3 kinematic maps at symbolic r and epsilon; direct metric/Lie derivatives; pinned r=1 reference; deformed-point and integrated round-sector density checks; derivative-column Schur cancellation; manufactured Legendre and realification controls",
     "does_not_compute": ["full potential matrices", "finite radial spectrum", "nonlinear compatibility B", "physical degree-of-freedom count"],
     "target": "local CPU",

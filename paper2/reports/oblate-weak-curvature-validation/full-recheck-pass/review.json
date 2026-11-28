@@ -1,0 +1,27 @@
+{
+  "run_id": "32b93879-a4f2-426f-82ac-2fa455844477",
+  "source_commit": "b59be9535b38e25d59a8437efe9873094b2bc4bd",
+  "reviews": [
+    {
+      "chat_id": "chat_b7e604c6-fac6-4816-8cfb-cc2494b16671",
+      "message_id": "msg_05c31715",
+      "scope": "Independent read-only raw-log, result, source, checkpoint, resource and bounded scientific-scope audit",
+      "finding": "No blocker; full eight-batch local validation passed"
+    },
+    {
+      "chat_id": "chat_b7e604c6-fac6-4816-8cfb-cc2494b16671",
+      "message_id": "msg_6aa9451a",
+      "scope": "Repository and durable archive byte agreement, original runtime/log/source agreement and SHA256 verification",
+      "finding": "No discrepancies found"
+    },
+    {
+      "chat_id": "chat_9d8d0b02-2283-a76c-550e-9b1228cf5a64",
+      "message_id": "msg_d88daac5",
+      "scope": "Source-only coverage and remaining original-regulator operator/domain requirements",
+      "finding": "Bounded weak-form checkpoint closed; finite assembly, physical domain and seed remain open"
+    }
+  ],
+  "scientific_code_rerun_by_reviews": false,
+  "external_peer_review": false,
+  "post_integrity_review_changes": "Added this review record and README evidence links/review provenance; raw run files and frozen sources unchanged"
+}
