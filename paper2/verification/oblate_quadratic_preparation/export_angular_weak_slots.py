@@ -41,6 +41,7 @@ ANGULAR_CASES = len(M_VALUES) * len(R_VALUES)
 SLOTS = ("00", "01", "10", "11")
 ZERO_TOL = 1e-11
 RESULT_NAME = "angular-weak-slot-checks.json"
+PROBE_RESULT_NAME = "direct-profile-probe-checks.json"
 PROGRESS_NAME = "angular-weak-slot-progress.jsonl"
 CHECKPOINT_NAME = "angular-weak-slot-checkpoint.json"
 DENOMINATOR_CACHE: set[tuple[sp.Rational, ...]] = set()
@@ -140,11 +141,11 @@ def write_checkpoint(
     safe_write_json(output_dir / CHECKPOINT_NAME, checkpoint)
 
 
-def runtime_plan() -> list[dict[str, Any]]:
+def runtime_plan(snapshot_count: int = ANGULAR_CASES) -> list[dict[str, Any]]:
     return [
         {"phase": "setup", "of": 1, "unit": "environment"},
         {"phase": "controls", "of": CONTROL_BATCHES, "unit": "batches"},
-        {"phase": "angular_export", "of": ANGULAR_CASES, "unit": "snapshots"},
+        {"phase": "angular_export", "of": snapshot_count, "unit": "snapshots"},
         {"phase": "export", "of": 1, "unit": "checker result"},
     ]
 
@@ -450,6 +451,28 @@ def fixed_dense_spatial_jet(
     )
 
 
+def fixed_profile_spatial_jets(
+    data: dict[str, Any],
+    coeffs: list[sp.Expr],
+    side: str,
+    family: int,
+    gamma: Any,
+    substitutions: dict[sp.Symbol, sp.Rational],
+) -> tuple[list[dict[str, Any]], list[complex], list[complex]]:
+    r = data["r"]
+    jets = []
+    values: list[complex] = []
+    derivatives: list[complex] = []
+    for index, (coefficient, tensor) in enumerate(zip(coeffs, data["spatial_tangents"])):
+        profile, derivative = profile_values(r, index, side, family)
+        field = coefficient * profile * tensor
+        jet = weak.tensor_jet(field, data, 1, 0, gamma)
+        jets.append(substitute_jet(jet, substitutions))
+        values.append(complex(sp.N((coefficient * profile).subs(substitutions), 30)))
+        derivatives.append(complex(sp.N((coefficient * derivative).subs(substitutions), 30)))
+    return jets, values, derivatives
+
+
 def fixed_dense_lapse_profile(
     data: dict[str, Any],
     coeffs: list[sp.Expr],
@@ -464,6 +487,131 @@ def fixed_dense_lapse_profile(
         values.append(complex(sp.N((coefficient * profile).subs(substitutions), 30)))
         derivatives.append(complex(sp.N((coefficient * derivative).subs(substitutions), 30)))
     return scalar.subs(substitutions), scalar_r.subs(substitutions), values, derivatives
+
+
+def fixed_profile_lapse_profiles(
+    data: dict[str, Any],
+    coeffs: list[sp.Expr],
+    family: int,
+    substitutions: dict[sp.Symbol, sp.Rational],
+) -> tuple[list[tuple[sp.Expr, sp.Expr]], list[complex], list[complex]]:
+    r = data["r"]
+    x = data["x"]
+    profiles = []
+    values: list[complex] = []
+    derivatives: list[complex] = []
+    for index, (coefficient, (_, ell, _)) in enumerate(zip(coeffs, data["lapse_labels"])):
+        y = kinematics.harmonic_amplitudes(ell, data["m"], x)[0]
+        profile, derivative = profile_values(r, index, "lapse", family)
+        scalar = coefficient * profile * y
+        profiles.append((scalar.subs(substitutions), sp.diff(scalar, r).subs(substitutions)))
+        values.append(complex(sp.N((coefficient * profile).subs(substitutions), 30)))
+        derivatives.append(complex(sp.N((coefficient * derivative).subs(substitutions), 30)))
+    return profiles, values, derivatives
+
+
+def fsum_complex(values: list[complex]) -> complex:
+    return complex(
+        math.fsum(value.real for value in values),
+        math.fsum(value.imag for value in values),
+    )
+
+
+def integrate_spatial_pair_sum(
+    evaluator: FixedChartEvaluator,
+    fixed_data: dict[str, Any],
+    left_jets: list[dict[str, Any]],
+    right_jets: list[dict[str, Any]],
+    density: Callable[[dict[str, Any], dict[str, Any], dict[str, Any]], sp.Expr],
+    block: str,
+    lf: int,
+    rf: int,
+) -> tuple[complex, dict[str, Any]]:
+    expected_terms = len(left_jets) * len(right_jets)
+    tick = substage("direct_pair_sum", "start", None, block=block, lf=lf, rf=rf,
+                    expected_terms=expected_terms)
+    row_timings = []
+    terms = []
+    for left_index, left in enumerate(left_jets):
+        row_started = substage("direct_pair_row", "start", None, block=block,
+                               lf=lf, rf=rf, left_index=left_index,
+                               expected_terms=len(right_jets))
+        completed_terms = 0
+        for right in right_jets:
+            terms.append(evaluator.integrate(density(left, right, fixed_data), 96))
+            completed_terms += 1
+        row_timings.append({
+            "left_index": left_index,
+            "completed_terms": completed_terms,
+            "elapsed_seconds": now() - row_started,
+        })
+        substage("direct_pair_row", "done", row_started, block=block, lf=lf, rf=rf,
+                 left_index=left_index, completed_terms=completed_terms,
+                 cumulative_terms=len(terms), expected_total_terms=expected_terms)
+    substage(
+        "direct_pair_sum",
+        "done",
+        tick,
+        block=block,
+        lf=lf,
+        rf=rf,
+        terms=len(terms),
+    )
+    return (
+        fsum_complex(terms),
+        {"block": block, "lf": lf, "rf": rf, "completed_terms": len(terms),
+         "expected_terms": expected_terms, "elapsed_seconds": now() - tick, "rows": row_timings},
+    )
+
+
+def integrate_lapse_pair_sum(
+    evaluator: FixedChartEvaluator,
+    fixed_data: dict[str, Any],
+    lapse_profiles: list[tuple[sp.Expr, sp.Expr]],
+    right_jets: list[dict[str, Any]],
+    density: Callable[..., sp.Expr],
+    block: str,
+    lf: int,
+    rf: int,
+) -> tuple[complex, dict[str, Any]]:
+    expected_terms = len(lapse_profiles) * len(right_jets)
+    tick = substage("direct_pair_sum", "start", None, block=block, lf=lf, rf=rf,
+                    expected_terms=expected_terms)
+    row_timings = []
+    terms = []
+    for left_index, (scalar, scalar_r) in enumerate(lapse_profiles):
+        row_started = substage("direct_pair_row", "start", None, block=block,
+                               lf=lf, rf=rf, left_index=left_index,
+                               expected_terms=len(right_jets))
+        completed_terms = 0
+        for right in right_jets:
+            if block == "lapse_density":
+                terms.append(evaluator.integrate(density(scalar, scalar_r, right, fixed_data), 96))
+            else:
+                terms.append(evaluator.integrate(density(scalar, right, fixed_data), 96))
+            completed_terms += 1
+        row_timings.append({
+            "left_index": left_index,
+            "completed_terms": completed_terms,
+            "elapsed_seconds": now() - row_started,
+        })
+        substage("direct_pair_row", "done", row_started, block=block, lf=lf, rf=rf,
+                 left_index=left_index, completed_terms=completed_terms,
+                 cumulative_terms=len(terms), expected_total_terms=expected_terms)
+    substage(
+        "direct_pair_sum",
+        "done",
+        tick,
+        block=block,
+        lf=lf,
+        rf=rf,
+        terms=len(terms),
+    )
+    return (
+        fsum_complex(terms),
+        {"block": block, "lf": lf, "rf": rf, "completed_terms": len(terms),
+         "expected_terms": expected_terms, "elapsed_seconds": now() - tick, "rows": row_timings},
+    )
 
 
 def combine_slot_matrices(
@@ -941,18 +1089,31 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
 
     tick = substage("direct_profile_oracle", "start", None, m=m, r=str(r_value))
     gamma = weak.connection(data)
-    left_families = [
-        fixed_dense_spatial_jet(data, left_coeffs, "left", family, gamma, substitutions)
-        for family in range(2)
-    ]
-    right_families = [
-        fixed_dense_spatial_jet(data, right_coeffs, "right", family, gamma, substitutions)
-        for family in range(2)
-    ]
-    lapse_families = [
-        fixed_dense_lapse_profile(data, lapse_coeffs, family, substitutions)
-        for family in range(2)
-    ]
+    left_families = []
+    for family in range(2):
+        build_tick = substage("build_profile_jets", "start", None, side="left", family=family)
+        left_families.append(
+            fixed_profile_spatial_jets(
+                data, left_coeffs, "left", family, gamma, substitutions
+            )
+        )
+        substage("build_profile_jets", "done", build_tick, side="left", family=family)
+    right_families = []
+    for family in range(2):
+        build_tick = substage("build_profile_jets", "start", None, side="right", family=family)
+        right_families.append(
+            fixed_profile_spatial_jets(
+                data, right_coeffs, "right", family, gamma, substitutions
+            )
+        )
+        substage("build_profile_jets", "done", build_tick, side="right", family=family)
+    lapse_families = []
+    for family in range(2):
+        build_tick = substage("build_profile_jets", "start", None, side="lapse", family=family)
+        lapse_families.append(
+            fixed_profile_lapse_profiles(data, lapse_coeffs, family, substitutions)
+        )
+        substage("build_profile_jets", "done", build_tick, side="lapse", family=family)
 
     reconstruction_errors: dict[str, list[float]] = {
         "potential_density_scaled_error": [],
@@ -966,14 +1127,36 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
         "lapse_density": np.zeros((2, 2), dtype=np.complex128),
         "lapse_radial_flux": np.zeros((2, 2), dtype=np.complex128),
     }
-    for lf, (left_jet, left_v, left_d) in enumerate(left_families):
-        for rf, (right_jet, right_v, right_d) in enumerate(right_families):
-            direct_potential_density = evaluator.integrate(
-                weak.potential_density(left_jet, right_jet, fixed_data), 96
+    direct_term_timings = {
+        "potential_density": [],
+        "potential_radial_flux": [],
+        "lapse_density": [],
+        "lapse_radial_flux": [],
+    }
+    for lf, (left_jets, left_v, left_d) in enumerate(left_families):
+        for rf, (right_jets, right_v, right_d) in enumerate(right_families):
+            direct_potential_density, timing = integrate_spatial_pair_sum(
+                evaluator,
+                fixed_data,
+                left_jets,
+                right_jets,
+                weak.potential_density,
+                "potential_density",
+                lf,
+                rf,
             )
-            direct_potential_flux = evaluator.integrate(
-                weak.potential_boundary_flux(left_jet, right_jet, fixed_data), 96
+            direct_term_timings["potential_density"].append(timing)
+            direct_potential_flux, timing = integrate_spatial_pair_sum(
+                evaluator,
+                fixed_data,
+                left_jets,
+                right_jets,
+                weak.potential_boundary_flux,
+                "potential_radial_flux",
+                lf,
+                rf,
             )
+            direct_term_timings["potential_radial_flux"].append(timing)
             family_matrices["potential_density"][lf, rf] = direct_potential_density
             family_matrices["potential_radial_flux"][lf, rf] = direct_potential_flux
             reconstruction_errors["potential_density_scaled_error"].append(assert_close(
@@ -987,14 +1170,30 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
                 f"potential flux reconstruction m={m} r={r_value} {(lf, rf)}",
             ))
 
-    for lf, (lapse_scalar, lapse_scalar_r, lapse_v, lapse_d) in enumerate(lapse_families):
-        for rf, (right_jet, right_v, right_d) in enumerate(right_families):
-            direct_lapse_density = evaluator.integrate(
-                lapse_density_for_scalar(lapse_scalar, lapse_scalar_r, right_jet, fixed_data), 96
+    for lf, (lapse_profiles, lapse_v, lapse_d) in enumerate(lapse_families):
+        for rf, (right_jets, right_v, right_d) in enumerate(right_families):
+            direct_lapse_density, timing = integrate_lapse_pair_sum(
+                evaluator,
+                fixed_data,
+                lapse_profiles,
+                right_jets,
+                lapse_density_for_scalar,
+                "lapse_density",
+                lf,
+                rf,
             )
-            direct_lapse_flux = evaluator.integrate(
-                lapse_flux_for_scalar(lapse_scalar, right_jet, fixed_data), 96
+            direct_term_timings["lapse_density"].append(timing)
+            direct_lapse_flux, timing = integrate_lapse_pair_sum(
+                evaluator,
+                fixed_data,
+                lapse_profiles,
+                right_jets,
+                lapse_flux_for_scalar,
+                "lapse_radial_flux",
+                lf,
+                rf,
             )
+            direct_term_timings["lapse_radial_flux"].append(timing)
             family_matrices["lapse_density"][lf, rf] = direct_lapse_density
             family_matrices["lapse_radial_flux"][lf, rf] = direct_lapse_flux
             reconstruction_errors["lapse_density_scaled_error"].append(assert_close(
@@ -1011,6 +1210,8 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
         key: {"max_scaled_error": max(errors), "combinations": len(errors)}
         for key, errors in reconstruction_errors.items()
     }
+    reconstruction["term_timing"] = direct_term_timings
+    reconstruction["oracle_method"] = "pairwise integration of independently profile-weighted fields"
     substage("direct_profile_oracle", "done", tick, m=m, r=str(r_value))
 
     tick = substage("hermiticity_and_realify", "start", None, m=m, r=str(r_value))
@@ -1043,15 +1244,31 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
             for key, value in lapse_flux96.items()
         },
     }
-    realfield = realfield_oracle(
-        evaluator,
-        fixed_data,
-        [item[0] for item in left_families],
-        [item[0] for item in right_families],
-        [(item[0], item[1]) for item in lapse_families],
-        family_matrices,
-        m,
-    )
+    if m == 0:
+        realfield = realfield_oracle(evaluator, fixed_data, [], [], [], family_matrices, m)
+    else:
+        realfield = realfield_oracle(
+            evaluator,
+            fixed_data,
+            [
+                fixed_dense_spatial_jet(
+                    data, left_coeffs, "left", family, gamma, substitutions
+                )[0]
+                for family in range(2)
+            ],
+            [
+                fixed_dense_spatial_jet(
+                    data, right_coeffs, "right", family, gamma, substitutions
+                )[0]
+                for family in range(2)
+            ],
+            [
+                fixed_dense_lapse_profile(data, lapse_coeffs, family, substitutions)[:2]
+                for family in range(2)
+            ],
+            family_matrices,
+            m,
+        )
     substage("hermiticity_and_realify", "done", tick, m=m, r=str(r_value))
 
     return {
@@ -1082,18 +1299,30 @@ def evaluate_case(m: int, r_value: sp.Rational) -> dict[str, Any]:
     }
 
 
-def verify_export(output_dir: Path | None) -> dict[str, Any]:
+def mode_cases(mode: str) -> list[tuple[int, sp.Rational]]:
+    if mode == "full":
+        return [(m, r_value) for m in M_VALUES for r_value in R_VALUES]
+    if mode == "direct-profile-probe":
+        return [(0, sp.Rational(3, 2))]
+    raise ValueError(f"unsupported mode: {mode}")
+
+
+def verify_export(output_dir: Path | None, mode: str = "full") -> dict[str, Any]:
     started = now()
     if output_dir is not None:
         output_dir.mkdir(parents=True, exist_ok=True)
         (output_dir / PROGRESS_NAME).write_text("")
 
+    cases_to_run = mode_cases(mode)
+    result_name = RESULT_NAME if mode == "full" else PROBE_RESULT_NAME
+    pass_metric = "angular_export_passed" if mode == "full" else "direct_profile_probe_passed"
     write_progress(output_dir, {
         "phase": "setup",
         "step": 1,
         "of": 1,
         "unit": "environment",
-        "plan": runtime_plan(),
+        "plan": runtime_plan(len(cases_to_run)),
+        "mode": mode,
     })
     write_progress(output_dir, {
         "phase": "controls",
@@ -1129,58 +1358,64 @@ def verify_export(output_dir: Path | None) -> dict[str, Any]:
     write_progress(output_dir, {
         "phase": "angular_export",
         "step": completed,
-        "of": ANGULAR_CASES,
+        "of": len(cases_to_run),
         "unit": "snapshots",
         "m": {
             "completed_snapshots": completed,
             "max_scaled_refinement_error": max_scaled_refinement_error,
         },
     })
-    for m in M_VALUES:
-        for r_value in R_VALUES:
-            stage("angular_case", m=m, r=str(r_value))
-            case = evaluate_case(m, r_value)
-            if output_dir is not None:
-                safe_write_json(
-                    output_dir / f"angular-snapshot-m{m}-r{str(r_value).replace('/', '_')}.json",
-                    case,
-                )
-            cases.append(case)
-            completed += 1
-            max_scaled_refinement_error = max(
-                max_scaled_refinement_error,
-                max_case_refinement(case),
+    for m, r_value in cases_to_run:
+        stage("angular_case", m=m, r=str(r_value))
+        case = evaluate_case(m, r_value)
+        if output_dir is not None:
+            safe_write_json(
+                output_dir / f"angular-snapshot-m{m}-r{str(r_value).replace('/', '_')}.json",
+                case,
             )
-            write_checkpoint(
-                output_dir,
-                started,
-                f"angular_m{m}_r{r_value}",
-                {
-                    "m": m,
-                    "r": str(r_value),
-                    "max_scaled_refinement_error": max_scaled_refinement_error,
-                    "elapsed_seconds": case["elapsed_seconds"],
-                },
-            )
-            write_progress(output_dir, {
-                "phase": "angular_export",
-                "step": completed,
-                "of": ANGULAR_CASES,
-                "unit": "snapshots",
-                "m": {
-                    "completed_snapshots": completed,
-                    "max_scaled_refinement_error": max_scaled_refinement_error,
-                },
-            })
+        cases.append(case)
+        completed += 1
+        max_scaled_refinement_error = max(
+            max_scaled_refinement_error,
+            max_case_refinement(case),
+        )
+        write_checkpoint(
+            output_dir,
+            started,
+            f"angular_m{m}_r{r_value}",
+            {
+                "m": m,
+                "r": str(r_value),
+                "max_scaled_refinement_error": max_scaled_refinement_error,
+                "elapsed_seconds": case["elapsed_seconds"],
+            },
+        )
+        write_progress(output_dir, {
+            "phase": "angular_export",
+            "step": completed,
+            "of": len(cases_to_run),
+            "unit": "snapshots",
+            "m": {
+                "completed_snapshots": completed,
+                "max_scaled_refinement_error": max_scaled_refinement_error,
+            },
+        })
 
     result = {
         "status": "passed",
-        "scope": "fixed-radius angular weak-slot diagnostic snapshots",
+        "scope": (
+            "fixed-radius angular weak-slot diagnostic snapshots"
+            if mode == "full"
+            else "first-case direct-profile diagnostic snapshot"
+        ),
         "kind": "angular_snapshot",
+        "mode": mode,
         "diagnostic_snapshots": True,
         "L": L_CUTOFF,
-        "m_values": list(M_VALUES),
-        "r_values": [str(value) for value in R_VALUES],
+        "m_values": list(dict.fromkeys(m for m, _ in cases_to_run)),
+        "r_values": list(dict.fromkeys(str(r_value) for _, r_value in cases_to_run)),
+        "first_case_only": mode == "direct-profile-probe",
+        "full_six_snapshots_performed": mode == "full",
         "epsilon": str(EPSILON_VALUE),
         "angular_measure": "dx/2 after equal-m azimuthal averaging",
         "slot_convention": "ab: radial derivative order a on conjugated left profile, b on right",
@@ -1231,30 +1466,31 @@ def verify_export(output_dir: Path | None) -> dict[str, Any]:
             "of": 1,
             "unit": "checker result",
         })
-        safe_write_json(output_dir / RESULT_NAME, result)
+        safe_write_json(output_dir / result_name, result)
         write_progress(output_dir, {
             "phase": "export",
             "step": 1,
             "of": 1,
             "unit": "checker result",
             "m": {
-                "angular_export_passed": 1,
+                pass_metric: 1,
                 "elapsed_seconds": now() - started,
             },
         })
-    print("PASS angular weak-slot diagnostic snapshots", flush=True)
+    print(f"PASS {mode} angular weak-slot diagnostic snapshots", flush=True)
     return result
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--mode", choices=("full", "direct-profile-probe"), default="full")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    verify_export(args.output_dir)
+    verify_export(args.output_dir, args.mode)
 
 
 if __name__ == "__main__":

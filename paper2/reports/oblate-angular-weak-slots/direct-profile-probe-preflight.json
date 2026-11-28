@@ -1,0 +1,49 @@
+{
+  "status": "source_reviewed_approved_for_bounded_probe_unrun",
+  "approval_message": "msg_c7ac8e6c",
+  "approval_directly_read": true,
+  "previous_run": "b092637e-9aa2-406e-86a8-963593e30f47",
+  "previous_source": "ffc5fcd0855932596e4d51fc6232aa754af2c2b4",
+  "previous_archive": "first-attempt/README.md",
+  "mode": "direct-profile-probe",
+  "target": {
+    "L": 2,
+    "m": 0,
+    "r": "3/2",
+    "epsilon": "1/4"
+  },
+  "wall_budget_seconds": 300,
+  "sampled_group_rss_budget_bytes": 2147483648,
+  "runtime_measured": false,
+  "scientific_execution_performed": false,
+  "static_checks": {
+    "ast_and_in_memory_compile": "passed",
+    "json_and_view_fragment": "passed",
+    "git_diff_check": "passed",
+    "mocked_supervisor_tests_passed": 9
+  },
+  "preserved": {
+    "physics_source_bytes": true,
+    "run_sh_bytes": true,
+    "prior_weak_checker_bytes": true,
+    "profiles_coefficients_tolerances": true,
+    "three_controls": true,
+    "four_family_combinations": true
+  },
+  "source_sha256": {
+    "export_angular_weak_slots.py": "c11f9b3641967d1aac4dfea1ed6ede6078d997dd4d5ddd7e23b18788be946623",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "5b2ebb65606dc8d20bf438ace801bb9172847521c11eececc3379d6e92a8ff48",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "test_weak_supervisor.py": "43865db06b2b93852343b1bafd561e8e7db7b065336a54bfb30780a100500f6d"
+  },
+  "implementation_author_review": "msg_28f368a3",
+  "independent_source_review": [
+    "msg_25b87cf7",
+    "msg_36bbf637"
+  ],
+  "scope": "One angular snapshot and independent profile reconstruction only; six-case export incomplete.",
+  "independent_failure_archive_review": "msg_da598ec4"
+}

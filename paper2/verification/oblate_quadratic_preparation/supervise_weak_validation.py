@@ -18,10 +18,10 @@ import time
 
 MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
-CHECK_MODE = "angular-weak-slot-snapshots"
+CHECK_MODE = "direct-profile-probe"
 CHECKER_NAME = "export_angular_weak_slots.py"
-# Explicit approval for this bounded angular diagnostic; see launch-approval.json.
-LAUNCH_APPROVAL_MESSAGE = "msg_a1e6bd28"
+# Renewed user approval; see direct-profile-probe-preparation.md.
+LAUNCH_APPROVAL_MESSAGE = "msg_c7ac8e6c"
 APPROVAL_END = dt.datetime(2026, 11, 28, 16, 29, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
     CHECKER_NAME, "weak_forms.py", "potential_hessian.py",
@@ -161,18 +161,21 @@ def main():
         raise RuntimeError("Launch through the recorded local experiment contract")
     script_dir = Path(__file__).resolve().parent
     paper_dir = script_dir.parent.parent
-    output = paper_dir / "reports" / "oblate-angular-weak-slots" / "runtime"
+    output = paper_dir / "reports" / "oblate-angular-weak-slots" / "direct-profile-probe-runtime"
     output.mkdir(parents=True, exist_ok=False)
     uv = shutil.which("uv")
     if not uv:
         raise RuntimeError("The prepared isolated uv environment requires uv")
     command = [uv, "run", "--isolated", "--no-project", "--python", "3.12",
                "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u",
-               str(script_dir / CHECKER_NAME), "--output-dir", str(output)]
+               str(script_dir / CHECKER_NAME), "--output-dir", str(output),
+               "--mode", CHECK_MODE]
     hashes = {name: hashlib.sha256((script_dir / name).read_bytes()).hexdigest()
               for name in SOURCE_NAMES}
     manifest = {
         "started_utc": started.isoformat(), "approval_message": LAUNCH_APPROVAL_MESSAGE,
+        "approval_chat_id": "chat_5351fc4a-9bc3-4992-9e39-0a9505c63137",
+        "approval_quote": "ok I am going back to sleep, you have my approval for any of the upcoming experiments that come up on the chat or other requests to keep going till I wake up",
         "standing_window_message": "msg_ad636446",
         "approval_end_utc": APPROVAL_END.isoformat(), "wall_budget_seconds": budget,
         "sampled_group_rss_budget_bytes": MAX_RSS_BYTES,

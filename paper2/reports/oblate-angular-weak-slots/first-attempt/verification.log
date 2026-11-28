@@ -1,0 +1,39 @@
+::orx:: {"phase": "setup", "step": 0, "of": 1, "unit": "environment"}
+EXECUTION {"started_utc": "2026-11-28T09:07:12.664476+00:00", "approval_message": "msg_a1e6bd28", "standing_window_message": "msg_ad636446", "approval_end_utc": "2026-11-28T16:29:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/b092637e-9aa2-406e-86a8-963593e30f47/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/b092637e-9aa2-406e-86a8-963593e30f47/repo/paper2/reports/oblate-angular-weak-slots/runtime"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/b092637e-9aa2-406e-86a8-963593e30f47/repo/paper2", "source_sha256": {"export_angular_weak_slots.py": "ae4fa34226ca05c7652c48da8510948451732fdf6561907fd0c6d93b1cbc81e2", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "8e06e7753e50bbb33b07e2876359f0cb7229fee60d0f343fd0a608b511ce9123", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "ffc5fcd0855932596e4d51fc6232aa754af2c2b4", "run_id": "b092637e-9aa2-406e-86a8-963593e30f47", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "prepared_to_launch", "checker_mode": "angular-weak-slot-snapshots"}
+::orx:: {"of": 1, "phase": "setup", "plan": [{"of": 1, "phase": "setup", "unit": "environment"}, {"of": 3, "phase": "controls", "unit": "batches"}, {"of": 6, "phase": "angular_export", "unit": "snapshots"}, {"of": 1, "phase": "export", "unit": "checker result"}], "step": 1, "unit": "environment"}
+::orx:: {"m": {"completed_control_batches": 0}, "of": 3, "phase": "controls", "step": 0, "unit": "batches"}
+SUBSTAGE legendre_norms start {"elapsed_seconds": null}
+SUBSTAGE legendre_norms done {"elapsed_seconds": 0.3515522088855505}
+::orx:: {"m": {"completed_control_batches": 1}, "of": 3, "phase": "controls", "step": 1, "unit": "batches"}
+SUBSTAGE round_weak_anchor start {"elapsed_seconds": null}
+SUBSTAGE round_weak_anchor done {"elapsed_seconds": 0.029487624997273088}
+::orx:: {"m": {"completed_control_batches": 2}, "of": 3, "phase": "controls", "step": 2, "unit": "batches"}
+SUBSTAGE manufactured_realification start {"elapsed_seconds": null}
+SUBSTAGE manufactured_realification done {"elapsed_seconds": 0.0003283328842371702}
+::orx:: {"m": {"completed_control_batches": 3}, "of": 3, "phase": "controls", "step": 3, "unit": "batches"}
+::orx:: {"m": {"completed_snapshots": 0, "max_scaled_refinement_error": 0.0}, "of": 6, "phase": "angular_export", "step": 0, "unit": "snapshots"}
+STAGE angular_case {"m": 0, "r": "3/2"}
+SUBSTAGE build_symbolic_slots start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+SUBSTAGE build_symbolic_slots done {"elapsed_seconds": 0.6020381657872349, "m": 0, "r": "3/2"}
+SUBSTAGE cancel_and_quad_density start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "11"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "11"}
+SUBSTAGE cancel_and_quad_density done {"elapsed_seconds": 117.31369525007904, "m": 0, "r": "3/2"}
+SUBSTAGE cancel_and_quad_flux start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 12, "slot": "11"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "00"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "01"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "10"}
+STAGE integrate_slot {"cols": 12, "rows": 3, "slot": "11"}
+SUBSTAGE cancel_and_quad_flux done {"elapsed_seconds": 12.950344083132222, "m": 0, "r": "3/2"}
+SUBSTAGE direct_profile_oracle start {"elapsed_seconds": null, "m": 0, "r": "3/2"}
+EXECUTION_FINAL {"started_utc": "2026-11-28T09:07:12.664476+00:00", "approval_message": "msg_a1e6bd28", "standing_window_message": "msg_ad636446", "approval_end_utc": "2026-11-28T16:29:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/b092637e-9aa2-406e-86a8-963593e30f47/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/b092637e-9aa2-406e-86a8-963593e30f47/repo/paper2/reports/oblate-angular-weak-slots/runtime"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/b092637e-9aa2-406e-86a8-963593e30f47/repo/paper2", "source_sha256": {"export_angular_weak_slots.py": "ae4fa34226ca05c7652c48da8510948451732fdf6561907fd0c6d93b1cbc81e2", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "8e06e7753e50bbb33b07e2876359f0cb7229fee60d0f343fd0a608b511ce9123", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "ffc5fcd0855932596e4d51fc6232aa754af2c2b4", "run_id": "b092637e-9aa2-406e-86a8-963593e30f47", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "failed", "checker_mode": "angular-weak-slot-snapshots", "process_group": 42881, "ended_utc": "2026-11-28T09:12:13.072451+00:00", "elapsed_seconds": 300.39899766701274, "child_return_code": 143, "stop_reason": "wall_budget", "peak_sampled_group_rss_bytes": 1051885568, "sample_count": 1028, "cleanup_events": [{"action": "signal", "signal": 15, "status": "sent"}, {"action": "probe", "status": "permission_error_live", "errno": 1, "message": "[Errno 1] Operation not permitted", "members": [{"pid": 42881, "rss_bytes": 31293440}, {"pid": 42883, "rss_bytes": 0}]}, {"action": "final_disposition", "status": "empty", "members": []}]}
