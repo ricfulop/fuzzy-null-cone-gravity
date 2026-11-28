@@ -61,3 +61,14 @@ Green sources, the full $H_5,H_6$ functional, the contracted gravitational
 four-point integral and connected scattering conversion would remain pending.
 No physical large-rank limit or microscopic corner multiplicity follows from
 these checks.
+
+## Pre-launch review
+
+A separate read-only model audit checked the local geometry index conventions,
+Gaussian rates, interpolation factorials, Richardson powers, Green constants,
+quadrature normalization and omitted-tail inequalities. It identified two useful
+acceptance gates that were added before launch: enforce the finite metric's
+determinant/connection/jet-tail diagnostics, and explicitly compare the axial
+Cartesian source with the independent positive-frame expression at each test
+point. This is an internal mathematical/code review, not external peer review
+or a substitute for the pending tracked calculation.

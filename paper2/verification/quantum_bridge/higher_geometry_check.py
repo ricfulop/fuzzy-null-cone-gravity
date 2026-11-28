@@ -148,6 +148,7 @@ def axis_sixth_check(s, config, progress=None):
     from reduced_gaunt_exact import axisymmetric_source
     from reduced_gaunt_completion import (
         quadrature, linear_green, legendre_values, energy_integrals, radial_majorant_tails,
+        source_point,
     )
     source, potential_bound, metadata = axisymmetric_source(s)
     poly = tensor_square(s)
@@ -160,8 +161,13 @@ def axis_sixth_check(s, config, progress=None):
             reference = fsum(linear_green(ell, r, source)*legendre[ell] for ell in source)
             current = field.evaluate(point)
             error = abs(current-reference)/(1+abs(reference))
+            source_value = evaluate_source(poly, point, F(1))
+            source_reference = source_point(r, mu)
+            source_error = abs(source_value-source_reference)/(1+abs(source_reference))
             values.append({"r": r, "cos_theta": mu, "heat_value": current,
-                           "radial_value": reference, "scaled_error": error})
+                           "radial_value": reference, "scaled_error": error,
+                           "cartesian_source": source_value, "positive_frame_source": source_reference,
+                           "source_scaled_error": source_error})
     radius = float(config["axis_outer_radius"])
     angular_order = int(config["axis_angular_order"])
     rows = []
@@ -193,7 +199,8 @@ def axis_sixth_check(s, config, progress=None):
                      (1+abs(rows[-1]["heat_integrals"][key])) for key in rows[-1]["heat_integrals"])
     tails = radial_majorant_tails(radius, source)
     sixth_tail = 77*float(potential_bound)**2*tails["source_integral_tail_bound"]
-    maximum = max(max(v["scaled_error"] for v in values), refinement,
+    maximum = max(max(v["scaled_error"] for v in values),
+                  max(v["source_scaled_error"] for v in values), refinement,
                   max(error for row in rows for error in row["scaled_errors"].values()))
     tolerance = float(config["axis_scaled_tolerance"])
     return {"points": values, "quadratures": rows, "refinement_scaled_error": refinement,
