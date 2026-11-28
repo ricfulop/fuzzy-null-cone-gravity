@@ -1,19 +1,21 @@
 <signal name="case" label="Case" />
-<signal name="naive_curvature" label="Uncorrected lapse derivative" digits="8" />
-<signal name="completed_curvature" label="Completed lapse derivative" digits="0" />
-<signal name="quartic_correction" label="Required quartic correction" digits="8" />
-<signal name="omitted_high_error" label="Error without high-block determinant" digits="8" />
-<signal name="omitted_mixed_error" label="Error without mixed Schur terms" digits="8" />
-<signal name="determinant_identity_residual" label="Exact determinant residual" digits="0" better="lower" />
-<signal name="auxiliary_J" label="Auxiliary angular cutoff" digits="0" />
-<signal name="epsilon" label="Lapse amplitude" />
-<signal name="absolute_H" label="Remaining Hamiltonian magnitude" digits="12" better="lower" />
-<signal name="quadrature_difference" label="Quadrature difference" digits="12" better="lower" />
-<signal name="checks_passed" label="Validated cases" digits="0" better="higher" />
-<view headline="completed_curvature determinant_identity_residual">
-  <table name="completion" columns="case naive_curvature completed_curvature quartic_correction" />
-  <text>This checks the gravitational angular kinetic restriction. A zero completed derivative validates this correction only; it is not a full graviton-loop amplitude or proof of nonlinear constraint closure.</text>
-  <stats of="completed_curvature determinant_identity_residual checks_passed" />
-  <table name="determinants" columns="case omitted_high_error omitted_mixed_error determinant_identity_residual" />
-  <chart from="padding" x="auxiliary_J" y="absolute_H" by="epsilon" y-scale="log" ghost="false" />
+<signal name="N" label="Angular rank N" digits="0" />
+<signal name="ell" label="Smearing harmonic" digits="0" />
+<signal name="shell" label="Cutoff shell" />
+<signal name="mixed_bracket" label="Bracket / (k² Rf)" digits="8" />
+<signal name="continuum_bracket" label="Continuum reference" digits="0" />
+<signal name="enlarged_bracket" label="Enlarged canonical space" digits="0" />
+<signal name="integrated_bracket" label="Radially integrated bracket" digits="9" />
+<signal name="verification_error_text" label="Full-flow verification error" />
+<signal name="max_verification_error" label="Maximum full-flow error" scale="1e50" unit="×10^-50" digits="6" better="lower" />
+<signal name="exact_identity_residual" label="Exact formula residual" digits="0" better="lower" />
+<signal name="constraint_residual" label="Initial constraint residual" digits="0" better="lower" />
+<signal name="checks_passed" label="Validated cases" digits="0" />
+<signal name="nonzero_cases" label="Nonzero mixed brackets" digits="0" />
+<view headline="mixed_bracket exact_identity_residual">
+  <table name="witnesses" columns="case continuum_bracket mixed_bracket enlarged_bracket" />
+  <text>This is an explicitly different Hamiltonian-first Gaunt candidate. All initial constraints vanish. A nonzero mixed bracket obstructs importing the continuum first-class algebra; it is not a full Dirac classification or a scattering result.</text>
+  <chart from="edges" x="N" y="mixed_bracket" by="shell" ghost="false" title="Mixed bracket for cutoff-dependent smearings" />
+  <table name="flow_checks" columns="case integrated_bracket verification_error_text" />
+  <stats of="constraint_residual exact_identity_residual nonzero_cases" />
 </view>

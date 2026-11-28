@@ -69,9 +69,10 @@ verifies the leading Schur correction and its associated angular determinant.
 The second lapse derivative cancels in the five tested cases; higher-order
 Hamiltonian terms still survive at finite auxiliary cutoff. This is a
 component of a repair, not a complete repair. The next calculation tests
-the mixed spatial/lapse constraint bracket of a separately declared
-Hamiltonian-first candidate; equivalence to the original Lagrangian
-regulator is not assumed.
+the [mixed spatial/lapse constraint bracket](reports/quantum-bridge/canonical-mixed-bracket.md)
+of a separately declared Hamiltonian-first candidate; equivalence to the
+original Lagrangian regulator is not assumed. The exact analytic prediction
+and independent full-flow check are specified before interpreting the run.
 
 The [corner and reconstruction derivations](reports/quantum-bridge/corners-and-reconstruction.md)
 identify the continuum area--angle charge, the missing microscopic state

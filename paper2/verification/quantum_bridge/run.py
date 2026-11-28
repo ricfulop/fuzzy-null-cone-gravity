@@ -310,6 +310,10 @@ def main():
         from kinetic_completion import main as completion_main
         completion_main(config)
         return
+    if config["calculation"] == "canonical_mixed_bracket":
+        from canonical_mixed_bracket import main as bracket_main
+        bracket_main(config)
+        return
     if config["calculation"] != "constraint_surface_lapse":
         raise ValueError("Unsupported calculation")
     print(json.dumps({"configuration": config, "python": sys.version,

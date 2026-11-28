@@ -1,16 +1,17 @@
 {
   "plan": [
     {"phase": "setup", "of": 1, "unit": "checks"},
-    {"phase": "exact_completion", "of": 5, "unit": "cases"},
-    {"phase": "finite_amplitude", "of": 21, "unit": "cases"},
+    {"phase": "constraint_data", "of": 1, "unit": "cases"},
+    {"phase": "exact_brackets", "of": 88, "unit": "cases"},
+    {"phase": "independent_flow", "of": 10, "unit": "cases"},
     {"phase": "export", "of": 1, "unit": "reports"}
   ],
   "brief": {
-    "question": "Does eliminating the discarded kinetic block repair the verified lapse defect and retain its necessary fourth-order determinant contribution?",
-    "from_parent": "The parent proved a nonzero lapse primary/secondary block on vacuum data. Its unit-L2 cutoff-harmonic defect has analytic limit 1/2, not zero; its fixed-low-harmonic second derivative eventually vanishes.",
-    "healthy": "Exact Schur completion cancels the second lapse derivative in the five specified kinetic cases. Full and factored determinants agree through fourth order. Deliberately omitted high or mixed blocks change coefficients. Increasing auxiliary padding is checked at finite amplitudes; finite residuals do not imply the perturbative identity failed.",
-    "noise": "Zero completed_curvature and determinant_identity_residual are expected exact results. The determinant is only an axisymmetric angular kinetic block. There is no full scattering amplitude, quantum measure, corner Hilbert space, or reconstruction in this run.",
-    "worth_a_flag": "A failed exact identity or independent quadrature assertion; a claim that determinant coefficients are physical four-graviton amplitudes; or a claim that vanishing second derivative proves full Dirac closure.",
-    "decided": "Local CPU, Python standard library only. Preserve the frozen parent experiment. Independent finite-amplitude tests use 60-digit arithmetic and 96/128-node quadrature."
+    "question": "Does a Hamiltonian-first canonical Gaunt restriction preserve the mixed spatial/lapse constraint bracket on vacuum data?",
+    "from_parent": "The parent verified cancellation of a second lapse derivative and exact angular kinetic determinant factorization. Higher-order terms survive at finite auxiliary cutoff. Neither result establishes the mixed constraint algebra.",
+    "healthy": "All initial constraints vanish. Exact projection is predicted to give nonzero mixed brackets for ell=L-1,L and zero for ell<=L-2. The independent full Hamiltonian flow, including the curvature-potential term, should reproduce those brackets. A larger canonical space removes this witness. Nonzero bracket values are the scientific test, not numerical verification failures.",
+    "noise": "The candidate changes the original Lagrangian regulator. The cutoff-shell smearings change with N; this is not fixed-physical-momentum convergence. Case counts are coverage, not a measure that is better than the parent's case count.",
+    "worth_a_flag": "An exact identity fails; full-flow quadratures disagree with the projection calculation; the unprojected continuum bracket or integrated potential does not vanish within tolerance; or a claim equates this test with a physical one-loop amplitude or final Dirac no-go.",
+    "decided": "Local CPU, Python standard library only. Check 88 exact cases and 10 independent flow cases with 60-digit arithmetic and two angular/radial quadratures. Keep the source experiment frozen after a meaningful result."
   }
 }
