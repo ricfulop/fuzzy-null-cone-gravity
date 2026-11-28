@@ -120,7 +120,9 @@ reconstruction goals. The next calculation derives the full cubic and
 quartic Hamiltonian, including the constraint-generated nonlocal terms.
 The [interaction derivation](reports/quantum-bridge/reduced-vertices.md)
 now gives those full classical functionals for the declared reduced chart.
-Its exact coefficient and independent finite-metric checks are preregistered;
-no numerical result is assigned before the tracked run is reviewed. A
+Its seven exact coefficient directions, held-out rotational invariants and
+32 independent finite-metric evaluations passed their specified checks.
+The largest scaled geometric-coefficient error is about
+$3.04\times10^{-14}$. These are verified classical ingredients. A
 finite-basis four-point loop can also require fifth/sixth-order vertices and
 quantization terms, so this step does not complete the requested amplitude.

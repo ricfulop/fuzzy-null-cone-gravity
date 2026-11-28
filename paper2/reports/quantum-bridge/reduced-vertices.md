@@ -9,11 +9,12 @@ flat boundary conditions, maximal slicing and dual-Gram momentum map.
 It is a change of regulator, not an equivalence theorem for the historical
 Paper I or Paper II actions. No repeated binary angular projection is used.
 
-The proposed verification evaluates the functionals on the ten selected
+The verification evaluates the functionals on the ten selected
 $j=2$ profiles, reconstructs their complete cubic and quartic
 configuration potentials by rotational invariants, and checks the local
 geometry with an independent finite matrix exponential. The test protocol
-and source are recorded before launch. Its measured result is pending.
+and source were recorded before launch. The run passed its specified checks;
+the reviewed coefficients and numerical limits are recorded below.
 
 These are interaction vertices, not a one-loop scattering amplitude.
 Fifth- and sixth-order vertices, quantization and a physical scattering
@@ -298,6 +299,69 @@ second nonlinear solver for the entire finite-$q,p$ constraint problem.
 Exact normalization controls, the aligned York identity, the previously
 independent pure-momentum coefficient and the held-out rotations provide
 additional checks.
+
+### Reviewed coefficients and independent check
+
+Run 63e0ae36-ddf8-459e-88b1-4bc29a49fcf2 used source
+fb41c4bb0b423696ea12eb90cf75afd6214bc64c. The calculation took
+71.4825 seconds and passed the seven exact-direction checks, the invariant
+reconstruction, the rational rotation check and the four independent
+finite-metric checks. The full output is preserved in
+[reduced-vertices-results.json](data/reduced-vertices-results.json);
+the durable artifact bundle also contains the raw log and frozen source.
+
+The exact cubic potential for the two retained STF multiplets is
+
+$$
+H_3=\left(\frac{2\pi}{3}\right)^{3/2}
+\left[\frac{446}{3}\operatorname{tr}E^3+
+\frac{25004}{9}\operatorname{tr}(EB^2)\right].
+$$
+
+Thus the coordinate cancellation of the cubic kinetic term does not remove
+the cubic gravitational potential. In the five-invariant quartic basis
+listed above,
+
+$$
+H_4^{(q^4)}=\frac{\pi^{3/2}}{\sqrt2}
+\sum_{a=1}^{5}c_a I_a(E,B),
+$$
+
+with
+
+$$
+(c_1,c_2,c_3,c_4,c_5)=
+\left(
+\frac{2978145633}{33554432},
+\frac{69776871602481}{18790481920},
+\frac{3047052105933}{2348810240},
+\frac{1364019815211}{1174405120},
+-\frac{40507834761}{146800640}
+\right).
+$$
+
+The two held-out directions reproduce these coefficients exactly.
+The simultaneous rational rotation of configuration and momentum labels
+also leaves every separately evaluated Hamiltonian contribution unchanged.
+The mixed and pure-momentum directional coefficients, and their separate
+local/longitudinal/scalar contributions, are in the result JSON.
+
+The independent finite-metric errors are:
+
+| Configuration | Largest scaled coefficient error |
+| --- | ---: |
+| Electric axis | $3.14\times10^{-17}$ |
+| Magnetic axis | $3.04\times10^{-14}$ |
+| Noncommuting labels | $5.64\times10^{-15}$ |
+| Held-out mixed labels | $9.83\times10^{-16}$ |
+
+The denominator of each scaled error is $1+|\text{target}|$.
+The largest error concerns the magnetic-axis quartic
+$\Gamma\Gamma$ density. Metric determinants differ from unity by at most
+$4\times10^{-69}$ at the stated precision.
+These measurements check the expansion's local geometric ingredients and
+selected exact contractions. They are not numerical error bounds for a
+finite-$N$ scattering amplitude, which this run did not evaluate.
 
 ## 6. Consequences for the remaining quantum calculation
 
