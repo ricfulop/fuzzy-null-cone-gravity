@@ -1,7 +1,9 @@
 <signal name="validation_passed" label="Bounded validation" labels='{"0":"incomplete","1":"passed"}' better="higher" />
 <signal name="completed_batches" label="Completed batches" better="higher" />
+<signal name="diagnostic_passed" label="Curvature diagnostic" labels='{"0":"incomplete","1":"passed"}' better="higher" />
+<signal name="completed_diagnostic_batches" label="Diagnostic batches" better="higher" />
 <signal name="elapsed_seconds" label="Checker runtime" unit="s" as="duration" />
-<view headline="validation_passed completed_batches">
-  <stats of="validation_passed completed_batches elapsed_seconds" />
-  <text>Checks representative weak curvature and Green identities. This is not a physical spectrum or nonlinear consistency test.</text>
+<view headline="validation_passed diagnostic_passed completed_diagnostic_batches completed_batches">
+  <stats of="validation_passed diagnostic_passed completed_diagnostic_batches completed_batches elapsed_seconds" />
+  <text>The curvature diagnostic tests the exact evaluator. Its success is separate from complete weak-form validation; neither establishes a physical spectrum or nonlinear consistency.</text>
 </view>

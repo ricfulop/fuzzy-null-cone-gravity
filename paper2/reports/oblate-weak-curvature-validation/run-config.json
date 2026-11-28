@@ -6,8 +6,8 @@
       "unit": "environment"
     },
     {
-      "phase": "validation",
-      "of": 8,
+      "phase": "diagnostic",
+      "of": 5,
       "unit": "batches"
     },
     {
@@ -17,15 +17,15 @@
     }
   ],
   "brief": {
-    "question": "Do the prepared oblate potential and lapse weak densities and Green fluxes agree with independent curvature variations in the bounded representative sectors?",
-    "healthy": "Three angular-sector batches, three gauge controls, a Cartesian TT normalization control and an ablation control pass, then weak-form-checks.json is written. SymPy batches may be silent between per-stage messages.",
-    "noise": "Exact sampled sector checks and global symbolic gauge checks have different costs. Substage events identify current construction or normalization work; coarse batch count advances only after a completed control. The 900-second budget is a cap, not a target.",
-    "worth_a_flag": "An AssertionError, nonzero child exit, supervisor timeout or memory stop, or a missing final result means the validation is incomplete. A pass does not establish a finite radial operator, physical boundary domain, admissible seed or nonlinear constraint theorem.",
-    "from_parent": "First attempt 85aa6197 passed all three representative sector batches then exceeded its monitored memory budget during symbolic gauge m=0; cleanup had a secondary PermissionError. This provisional-node repair preserves all scientific controls, normalizes intermediate algebra and avoids repeated Ricci construction.",
-    "decided": "One local CPU child, pinned SymPy and NumPy, 900-second cap and 2-GiB sampled process-group RSS budget. Prepared physics modules and all scientific controls are unchanged; evaluation order and lifecycle reporting are repaired. Runs must fit within authorization ending 2026-11-28 16:29 UTC."
+    "question": "Can the exact contracted Ricci evaluator preserve the original varied-metric result and all three symbolic gauge zeros without the previous expression-growth and normalization costs?",
+    "healthy": "Five diagnostic batches: half-root field controls, nonzero off-shell agreement with the raw metric-variation path, and exact symbolic gauge m=1,0,2. Fine start/done timings locate each expensive construction.",
+    "noise": "This is a targeted evaluator diagnostic. A pass is not the complete eight-batch weak-form validation. Setup and export each count one unit; substage timings do not advance batch counts.",
+    "worth_a_flag": "Any assertion, unsupported radical or denominator, missing output, budget stop, or unresolved cleanup. Do not infer a gravitational obstruction from an unfinished evaluator check.",
+    "from_parent": "First attempt passed all sampled sectors then exceeded memory in gauge m0; second attempt globally normalized intermediates and timed out in sampled m1. Raw sampled path is restored and only the symbolic gauge path uses contracted Ricci and explicit half-root rational arithmetic. Both failures remain archived.",
+    "decided": "One local CPU process; 300-second cap and 2-GiB sampled group RSS budget; no physical modules changed. Standing authorization through 2026-11-28 16:29 UTC. No full-validation success metric in this diagnostic."
   },
   "watch": {
-    "minGapS": 120,
-    "maxGapS": 600
+    "minGapS": 60,
+    "maxGapS": 180
   }
 }

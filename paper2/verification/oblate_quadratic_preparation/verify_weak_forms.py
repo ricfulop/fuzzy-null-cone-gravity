@@ -38,6 +38,11 @@ STAGE_SCOPE = (
 
 
 VALIDATION_BATCHES = 8
+CURVATURE_PROBE_BATCHES = 5
+
+
+class UnsupportedChartRadical(ValueError):
+    """Raised when an exact residual leaves the supported sqrt(1-x^2) field."""
 
 
 def emit(stage, **payload):
@@ -54,8 +59,12 @@ def emit_substage(batch, m, name, t0):
     return now
 
 
-def normalize_rational(value):
-    return sp.cancel(value)
+def emit_substage_start(batch, m, name):
+    emit("SUBSTAGE", batch=batch, m=m, name=f"{name}_start")
+
+
+def maybe_normalize(value, data_or_x):
+    return chart_normalize(value, data_or_x) if data_or_x is not None else value
 
 
 def chart_conjugate(value):
@@ -82,19 +91,113 @@ def background_derivative(value, coord, data):
     return field_derivative(value, coord, data, 0)
 
 
-def exact_zero(expression, x):
-    """Chart exact zero on -1<x<1."""
-    expression = sp.sympify(expression).replace(
+def canonicalize_half_pow_bases(expression, x):
+    return sp.sympify(expression).replace(
         lambda term: (term.is_Pow and term.exp.is_Rational
                       and term.exp.q == 2 and term.base.is_polynomial(x)),
         lambda term: sp.Pow(sp.expand(term.base), term.exp),
     )
+
+
+def _linear_mod_root(poly_expr, root, d):
+    poly = sp.Poly(sp.expand(poly_expr), root)
+    even = sp.S.Zero
+    odd = sp.S.Zero
+    for (power,), coeff in poly.terms():
+        reduced = coeff * d ** (power // 2)
+        if power % 2:
+            odd += reduced
+        else:
+            even += reduced
+    return even, odd
+
+
+def split_half_root_coefficients(expression, x):
+    """Return A,B for expression=A+sqrt(1-x^2)B on -1<x<1."""
+    d = 1 - x**2
+    root = sp.Dummy("sqrt_one_minus_x2")
+
+    def as_root_power(term):
+        exponent = term.exp
+        integer_power = sp.floor(exponent)
+        return root * d ** integer_power
+
+    rewritten = canonicalize_half_pow_bases(expression, x).replace(
+        lambda term: (
+            term.is_Pow
+            and term.exp.is_Rational
+            and term.exp.q == 2
+            and sp.expand(term.base - d) == 0
+        ),
+        as_root_power,
+    )
+    forbidden = next((
+        term for term in sp.preorder_traversal(rewritten)
+        if (
+            isinstance(term, sp.Abs)
+            or (
+                term.is_Pow
+                and not term.exp.is_integer
+            )
+        )
+    ), None)
+    if forbidden is not None:
+        raise UnsupportedChartRadical(f"unsupported chart term {forbidden}")
+    if rewritten.has(sp.nan, sp.zoo, sp.oo, -sp.oo):
+        raise UnsupportedChartRadical("nonfinite chart expression or zero denominator")
+    if rewritten.is_rational_function(*rewritten.free_symbols) is not True:
+        raise UnsupportedChartRadical("nonrational chart coefficient")
+
+    numerator, denominator = sp.fraction(sp.together(rewritten))
+    num_even, num_odd = _linear_mod_root(numerator, root, d)
+    den_even, den_odd = _linear_mod_root(denominator, root, d)
+    den_even = sp.cancel(den_even)
+    den_odd = sp.cancel(den_odd)
+    if den_odd == 0:
+        if den_even == 0:
+            raise UnsupportedChartRadical("zero reduced denominator")
+        return sp.cancel(num_even / den_even), sp.cancel(num_odd / den_even)
+    if den_even == 0:
+        if den_odd == 0:
+            raise UnsupportedChartRadical("zero reduced denominator")
+        return sp.cancel(num_odd / den_odd), sp.cancel(num_even / (d * den_odd))
+    raise UnsupportedChartRadical(
+        f"mixed sqrt(1-x^2) denominator {den_even} + sqrt(d)*{den_odd}"
+    )
+
+
+def chart_normalize(value, data_or_x):
+    x = data_or_x["x"] if isinstance(data_or_x, dict) else data_or_x
+    rational, half_root = split_half_root_coefficients(value, x)
+    d = 1 - x**2
+    # Both coefficients are already rationally canceled. Recombining them
+    # must not trigger generic cancellation over the radical expression.
+    return rational + sp.sqrt(d) * half_root
+
+
+def exact_zero(expression, x):
+    """Chart exact zero on -1<x<1."""
+    expression = canonicalize_half_pow_bases(expression, x)
     d = 1 - x**2
     for weight in (sp.S.One, sp.sqrt(d), 1 / sp.sqrt(d)):
         value = sp.factor(sp.cancel(sp.powsimp(expression * weight, force=False)))
         if value == 0 or value.is_zero is True:
             return True
     return False
+
+
+def assert_chart_normalize(expression, x, expected, label):
+    actual = chart_normalize(expression, x)
+    if not exact_zero(actual - expected, x):
+        raise AssertionError(f"{label}: {actual} != {expected}")
+
+
+def assert_unsupported_chart_normalize(expression, x, label):
+    try:
+        chart_normalize(expression, x)
+    except UnsupportedChartRadical:
+        return True
+    raise AssertionError(f"{label}: unsupported radical was accepted")
 
 
 def assert_zero(expression, x, label):
@@ -156,62 +259,129 @@ def tensor_jet(tensor, data, value_slot, derivative_slot, gamma):
     }
 
 
-def linearized_christoffel(jet, data):
+def linearized_christoffel(jet, data, normalize=False):
     inverse = data["inverse_diagonal"]
+    normalizer = data if normalize else None
     return sp.MutableDenseNDimArray([
-        normalize_rational(inverse[i] * (
+        maybe_normalize(inverse[i] * (
             jet["nabla"][j][i, k]
             + jet["nabla"][k][i, j]
             - jet["nabla"][i][j, k]
-        ) / 2)
+        ) / 2, normalizer)
         for i in range(3) for j in range(3) for k in range(3)
     ], (3, 3, 3))
 
 
-def covariant_derivative_delta_gamma(delta_gamma, first_index, data, gamma):
+def covariant_derivative_delta_gamma(delta_gamma, first_index, data, gamma,
+                                     normalize=False):
+    normalizer = data if normalize else None
     return sp.MutableDenseNDimArray([
-        normalize_rational(
+        maybe_normalize(
             derivative(delta_gamma[a, b, c], first_index, data)
             + sum(gamma[a][first_index][d] * delta_gamma[d, b, c]
                   - gamma[d][first_index][b] * delta_gamma[a, d, c]
                   - gamma[d][first_index][c] * delta_gamma[a, b, d]
-                  for d in range(3))
+                  for d in range(3)),
+            normalizer,
         )
         for a in range(3) for b in range(3) for c in range(3)
     ], (3, 3, 3))
 
 
-def varied_ricci_lower(jet, data, gamma):
-    delta_gamma = linearized_christoffel(jet, data)
-    covariant = [
-        covariant_derivative_delta_gamma(delta_gamma, i, data, gamma)
+def delta_gamma_divergence_component(delta_gamma, i, j, data, gamma, normalize):
+    normalizer = data if normalize else None
+    value = sp.S.Zero
+    for a in range(3):
+        value += derivative(delta_gamma[a, i, j], a, data)
+        value += sum(
+            gamma[a][a][d] * delta_gamma[d, i, j]
+            - gamma[d][a][i] * delta_gamma[a, d, j]
+            - gamma[d][a][j] * delta_gamma[a, i, d]
+            for d in range(3)
+        )
+    return maybe_normalize(value, normalizer)
+
+
+def delta_gamma_trace(jet, data, gamma, normalize):
+    delta_gamma = linearized_christoffel(jet, data, normalize)
+    normalizer = data if normalize else None
+    trace = [
+        maybe_normalize(sum(delta_gamma[a, i, a] for a in range(3)), normalizer)
         for i in range(3)
     ]
-    return sp.Matrix(3, 3, lambda i, j: normalize_rational(
+    return delta_gamma, trace
+
+
+def covector_derivative(covector, first_index, lower, data, gamma, normalize):
+    normalizer = data if normalize else None
+    value = derivative(covector[lower], first_index, data) - sum(
+        gamma[d][first_index][lower] * covector[d] for d in range(3)
+    )
+    return maybe_normalize(value, normalizer)
+
+
+def varied_ricci_lower_dense(jet, data, gamma, normalize=False):
+    normalizer = data if normalize else None
+    delta_gamma = linearized_christoffel(jet, data, normalize)
+    covariant = [
+        covariant_derivative_delta_gamma(delta_gamma, i, data, gamma, normalize)
+        for i in range(3)
+    ]
+    return sp.Matrix(3, 3, lambda i, j: maybe_normalize(
         sum(covariant[a][a, i, j] - covariant[j][a, i, a]
-            for a in range(3))
+            for a in range(3)),
+        normalizer,
     ))
 
 
-def scalar_and_einstein_from_ricci(ricci, data):
-    scalar = normalize_rational(
-        sum(data["inverse_diagonal"][i] * ricci[i, i] for i in range(3))
+def varied_ricci_lower(jet, data, gamma, normalize=False, substage=None):
+    normalizer = data if normalize else None
+    if substage is not None:
+        substage("delta_gamma_trace", None, None, "start")
+    delta_gamma, trace = delta_gamma_trace(jet, data, gamma, normalize)
+    if substage is not None:
+        substage("delta_gamma_trace", None, None, "done")
+    ricci = sp.zeros(3)
+    for i in range(3):
+        for j in range(3):
+            if substage is not None:
+                substage("ricci_entry", i, j, "start")
+            divergence = delta_gamma_divergence_component(
+                delta_gamma, i, j, data, gamma, normalize
+            )
+            trace_derivative = covector_derivative(
+                trace, j, i, data, gamma, normalize
+            )
+            ricci[i, j] = maybe_normalize(
+                divergence - trace_derivative, normalizer
+            )
+            if substage is not None:
+                substage("ricci_entry", i, j, "done")
+    return ricci
+
+
+def scalar_and_einstein_from_ricci(ricci, data, normalize=False):
+    normalizer = data if normalize else None
+    scalar = maybe_normalize(
+        sum(data["inverse_diagonal"][i] * ricci[i, i] for i in range(3)),
+        normalizer,
     )
-    einstein = sp.Matrix(3, 3, lambda i, j: normalize_rational(
-        ricci[i, j] - data["metric"][i, j] * scalar / 2
+    einstein = sp.Matrix(3, 3, lambda i, j: maybe_normalize(
+        ricci[i, j] - data["metric"][i, j] * scalar / 2,
+        normalizer,
     ))
     return scalar, einstein
 
 
-def linearized_scalar_curvature(jet, data, gamma):
-    ricci = varied_ricci_lower(jet, data, gamma)
-    scalar, _ = scalar_and_einstein_from_ricci(ricci, data)
+def linearized_scalar_curvature(jet, data, gamma, normalize=False):
+    ricci = varied_ricci_lower(jet, data, gamma, normalize)
+    scalar, _ = scalar_and_einstein_from_ricci(ricci, data, normalize)
     return scalar
 
 
-def linearized_einstein_lower(jet, data, gamma):
-    ricci = varied_ricci_lower(jet, data, gamma)
-    _, einstein = scalar_and_einstein_from_ricci(ricci, data)
+def linearized_einstein_lower(jet, data, gamma, normalize=False):
+    ricci = varied_ricci_lower(jet, data, gamma, normalize)
+    _, einstein = scalar_and_einstein_from_ricci(ricci, data, normalize)
     return einstein
 
 
@@ -427,6 +597,23 @@ def emit_validation_progress(completed_batches):
     })
 
 
+def emit_curvature_probe_progress(completed_batches):
+    emit_orx({
+        "phase": "diagnostic",
+        "step": completed_batches,
+        "of": CURVATURE_PROBE_BATCHES,
+        "unit": "batches",
+        "m": {"completed_diagnostic_batches": completed_batches},
+    })
+
+
+def emit_progress(mode, completed_batches):
+    if mode == "curvature-probe":
+        emit_curvature_probe_progress(completed_batches)
+    else:
+        emit_validation_progress(completed_batches)
+
+
 def verify_derivative_slots(output_dir=None, started=None, completed_batches=0):
     counts = {}
     for m in range(3):
@@ -464,10 +651,12 @@ def verify_derivative_slots(output_dir=None, started=None, completed_batches=0):
                  for i in sample_labels(data)]
         right_cache = []
         for j, right_jet in enumerate(right):
+            ricci = varied_ricci_lower(right_jet, data, gamma)
+            scalar, einstein = scalar_and_einstein_from_ricci(ricci, data)
             cached = {
-                "einstein": linearized_einstein_lower(right_jet, data, gamma),
+                "einstein": einstein,
                 "einstein_formula": formula_einstein_lower(right_jet, data, gamma),
-                "scalar": linearized_scalar_curvature(right_jet, data, gamma),
+                "scalar": scalar,
                 "scalar_formula": formula_scalar_curvature(right_jet, data, gamma),
             }
             assert_zero_matrix(
@@ -548,46 +737,253 @@ def verify_derivative_slots(output_dir=None, started=None, completed_batches=0):
     return counts, completed_batches
 
 
-def verify_gauge_controls(output_dir=None, started=None, completed_batches=0):
+def verify_single_gauge_control(m, output_dir=None, started=None, normalize=True):
+    emit("STAGE", name="pure_gauge_control", m=m)
+    batch_started = time.monotonic()
+    data = kinematics.sector(2, m)
+    gamma = independent_connection(data)
+    batch_started = emit_substage(
+        "pure_gauge_control", m, "connection", batch_started
+    )
+    r, x = data["r"], data["x"]
+    y = kinematics.harmonic_amplitudes(max(m, 1), m, x)[0]
+    vector = sp.Matrix([r * (2 - r) * y, x * y, sp.I * y])
+    gauge = direct_lie(data["metric"], vector, data)
+    batch_started = emit_substage(
+        "pure_gauge_control", m, "coordinate_lie", batch_started
+    )
+    jet = tensor_jet(gauge, data, 1, 0, gamma)
+    batch_started = emit_substage(
+        "pure_gauge_control", m, "tensor_jet", batch_started
+    )
+
+    def ricci_substage(name, i, j, event):
+        emit(
+            "SUBSTAGE",
+            batch="pure_gauge_control",
+            m=m,
+            name=f"{name}_{event}",
+            i=i,
+            j=j,
+        )
+
+    emit_substage_start("pure_gauge_control", m, "varied_ricci")
+    ricci = varied_ricci_lower(
+        jet, data, gamma, normalize=normalize, substage=ricci_substage
+    )
+    batch_started = emit_substage(
+        "pure_gauge_control", m, "varied_ricci", batch_started
+    )
+    emit_substage_start("pure_gauge_control", m, "scalar_einstein")
+    scalar, einstein = scalar_and_einstein_from_ricci(
+        ricci, data, normalize=normalize
+    )
+    batch_started = emit_substage(
+        "pure_gauge_control", m, "scalar_einstein", batch_started
+    )
+    for i in range(3):
+        for j in range(3):
+            emit(
+                "SUBSTAGE",
+                batch="pure_gauge_control",
+                m=m,
+                name="exact_zero_einstein_entry_start",
+                i=i,
+                j=j,
+            )
+            assert_zero(einstein[i, j], x, f"pure gauge Einstein m={m} {(i, j)}")
+            emit(
+                "SUBSTAGE",
+                batch="pure_gauge_control",
+                m=m,
+                name="exact_zero_einstein_entry_done",
+                i=i,
+                j=j,
+            )
+    emit_substage_start("pure_gauge_control", m, "exact_zero_scalar")
+    assert_zero(scalar, x, f"pure gauge scalar curvature m={m}")
+    emit_substage("pure_gauge_control", m, "exact_zero_scalar", batch_started)
+
+    print(f"PASS continuum pure-gauge zero m={m}", flush=True)
+    write_checkpoint(output_dir, f"pure_gauge_m{m}", {"m": m}, started)
+    return f"m={m}"
+
+
+def verify_gauge_controls(output_dir=None, started=None, completed_batches=0,
+                          modes=(0, 1, 2), progress_mode="validation"):
     results = []
-    for m in range(3):
-        emit("STAGE", name="pure_gauge_control", m=m)
-        batch_started = time.monotonic()
-        data = kinematics.sector(2, m)
-        gamma = independent_connection(data)
-        batch_started = emit_substage(
-            "pure_gauge_control", m, "connection", batch_started
-        )
-        r, x = data["r"], data["x"]
-        y = kinematics.harmonic_amplitudes(max(m, 1), m, x)[0]
-        vector = sp.Matrix([r * (2 - r) * y, x * y, sp.I * y])
-        gauge = direct_lie(data["metric"], vector, data)
-        batch_started = emit_substage(
-            "pure_gauge_control", m, "coordinate_lie", batch_started
-        )
-        jet = tensor_jet(gauge, data, 1, 0, gamma)
-        batch_started = emit_substage(
-            "pure_gauge_control", m, "tensor_jet", batch_started
-        )
-        ricci = varied_ricci_lower(jet, data, gamma)
-        batch_started = emit_substage(
-            "pure_gauge_control", m, "varied_ricci", batch_started
-        )
-        scalar, einstein = scalar_and_einstein_from_ricci(ricci, data)
-        batch_started = emit_substage(
-            "pure_gauge_control", m, "scalar_einstein", batch_started
-        )
-        for i in range(3):
-            for j in range(3):
-                assert_zero(einstein[i, j], x, f"pure gauge Einstein m={m} {(i, j)}")
-        assert_zero(scalar, x, f"pure gauge scalar curvature m={m}")
-        emit_substage("pure_gauge_control", m, "exact_zero", batch_started)
-        results.append(f"m={m}")
-        print(f"PASS continuum pure-gauge zero m={m}", flush=True)
-        write_checkpoint(output_dir, f"pure_gauge_m{m}", {"m": m}, started)
+    for m in modes:
+        results.append(verify_single_gauge_control(m, output_dir, started))
         completed_batches += 1
-        emit_validation_progress(completed_batches)
+        emit_progress(progress_mode, completed_batches)
     return results, completed_batches
+
+
+def verify_half_root_controls(output_dir=None, started=None, completed_batches=0):
+    emit("STAGE", name="half_root_controls")
+    x = sp.Symbol("x", real=True)
+    d = 1 - x**2
+    positive_controls = (
+        (sp.sqrt(-(x - 1) * (x + 1)), sp.sqrt(d), "equivalent chart base"),
+        (d ** sp.Rational(3, 2) / d, sp.sqrt(d), "positive chart power"),
+        (d ** sp.Rational(-1, 2), sp.sqrt(d) / d, "reciprocal chart power"),
+        (sp.sqrt(d) + 1, sp.sqrt(d) + 1, "rational plus root"),
+    )
+    for expression, expected, label in positive_controls:
+        assert_chart_normalize(expression, x, expected, f"half-root {label}")
+
+    negative_controls = (
+        (sp.sqrt(d) + sp.Rational(1, 10**30), "tiny rational offset"),
+        (-sp.sqrt(d), "wrong root sign"),
+    )
+    for expression, label in negative_controls:
+        if exact_zero(chart_normalize(expression, x) - sp.sqrt(d), x):
+            raise AssertionError(f"half-root negative {label}: {expression}")
+
+    zero_denominator = sp.Mul(
+        sp.S.One,
+        sp.Pow(
+            sp.Add(sp.sqrt(d), -sp.sqrt(d), evaluate=False),
+            -1,
+            evaluate=False,
+        ),
+        evaluate=False,
+    )
+    unsupported_controls = (
+        (sp.sqrt(x**2), "sqrt(x**2)"),
+        (sp.sqrt(1 - x), "sqrt(1 - x)"),
+        (1 / (1 + sp.sqrt(d)), "mixed denominator"),
+        (zero_denominator, "zero reduced denominator"),
+        (sp.sin(x), "nonrational coefficient"),
+        (sp.sqrt(sp.Symbol("r", positive=True)), "unrelated radial radical"),
+    )
+    for expression, label in unsupported_controls:
+        assert_unsupported_chart_normalize(expression, x, label)
+    print("PASS half-root exact predicate controls", flush=True)
+    result = {
+        "positive_controls": len(positive_controls),
+        "negative_controls": len(negative_controls),
+        "unsupported_controls": len(unsupported_controls),
+    }
+    write_checkpoint(output_dir, "half_root_controls", result, started)
+    completed_batches += 1
+    emit_curvature_probe_progress(completed_batches)
+    return result, completed_batches
+
+
+def verify_contracted_raw_probe(output_dir=None, started=None, completed_batches=0):
+    emit("STAGE", name="contracted_raw_ricci_probe", m=1)
+    data = kinematics.sector(2, 1)
+    gamma = independent_connection(data)
+    tensors = data["spatial_tangents"]
+    labels = sample_labels(data)
+    tensor_label = (data["spatial_labels"][labels[0]], data["spatial_labels"][labels[2]])
+    tensor = tensors[labels[0]] + 2 * tensors[labels[2]]
+    profile, profile_prime = polynomial_profiles(data, "right_a")
+    jet = tensor_jet(tensor, data, profile, profile_prime, gamma)
+    point = sample_point(data, 1)
+    tick = time.monotonic()
+    emit_substage_start("contracted_raw_ricci_probe", 1, "raw_contracted")
+    raw_contracted = varied_ricci_lower(jet, data, gamma, normalize=False)
+    tick = emit_substage("contracted_raw_ricci_probe", 1, "raw_contracted", tick)
+    emit_substage_start("contracted_raw_ricci_probe", 1, "raw_dense")
+    dense = varied_ricci_lower_dense(jet, data, gamma, normalize=False)
+    tick = emit_substage("contracted_raw_ricci_probe", 1, "raw_dense", tick)
+
+    def normalized_substage(name, i, j, event):
+        emit("SUBSTAGE", batch="contracted_raw_ricci_probe", m=1,
+             name=f"{name}_{event}", i=i, j=j)
+
+    emit_substage_start("contracted_raw_ricci_probe", 1, "normalized_contracted")
+    normalized_contracted = varied_ricci_lower(
+        jet, data, gamma, normalize=True, substage=normalized_substage
+    )
+    tick = emit_substage("contracted_raw_ricci_probe", 1, "normalized_contracted", tick)
+    emit_substage_start("contracted_raw_ricci_probe", 1, "exact_comparisons")
+    assert_zero_matrix((raw_contracted - dense).subs(point), data["x"],
+                       "contracted raw Ricci m=1")
+    assert_zero_matrix((normalized_contracted - dense).subs(point), data["x"],
+                       "contracted normalized Ricci m=1")
+    nonzero_witness = None
+    for i in range(3):
+        for j in range(3):
+            value = raw_contracted[i, j].subs(point)
+            if not exact_zero(value, data["x"]):
+                nonzero_witness = {"i": i, "j": j, "value": str(value)}
+                break
+        if nonzero_witness is not None:
+            break
+    if nonzero_witness is None:
+        raise AssertionError("contracted raw Ricci m=1 probe was identically zero")
+    emit_substage("contracted_raw_ricci_probe", 1, "exact_comparisons", tick)
+    print("PASS contracted raw Ricci agrees with dense Ricci at m=1 point", flush=True)
+    result = {
+        "m": 1,
+        "point": {str(key): str(value) for key, value in point.items()},
+        "labels": [str(label) for label in tensor_label],
+        "profile": str(profile),
+        "nonzero_witness": nonzero_witness,
+        "scope": "genuine nonzero offshell m=1 tensor at one rational point",
+    }
+    write_checkpoint(output_dir, "contracted_raw_m1", result, started)
+    completed_batches += 1
+    emit_curvature_probe_progress(completed_batches)
+    return result, completed_batches
+
+
+def verify_curvature_probe(output_dir=None):
+    started = time.monotonic()
+    if output_dir is not None:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir / "weak-form-progress.jsonl").write_text("")
+    completed_batches = 0
+    emit_curvature_probe_progress(completed_batches)
+    half_root, completed_batches = verify_half_root_controls(
+        output_dir, started, completed_batches
+    )
+    contracted_raw, completed_batches = verify_contracted_raw_probe(
+        output_dir, started, completed_batches
+    )
+    gauge_controls, completed_batches = verify_gauge_controls(
+        output_dir,
+        started,
+        completed_batches,
+        modes=(1, 0, 2),
+        progress_mode="curvature-probe",
+    )
+    here = Path(__file__).resolve().parent
+    result = {
+        "status": "passed",
+        "scope": (
+            "half-root chart positive and negative controls",
+            "raw and chart-normalized contracted Ricci against dense raw Ricci at one nonzero m=1 point",
+            "continuum pure-gauge zero controls for m=1,0,2",
+        ),
+        "diagnostic_only": True,
+        "full_validation_performed": False,
+        "nonlinear_theorem_claimed": False,
+        "finite_assembly_performed": False,
+        "operator_spectrum_performed": False,
+        "half_root_controls": half_root,
+        "contracted_raw": contracted_raw,
+        "gauge_controls": gauge_controls,
+        "python": platform.python_version(),
+        "dependencies": {
+            name: importlib.metadata.version(name) for name in ("sympy", "numpy")
+        },
+        "source_sha256": {
+            str(path.relative_to(here)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in (
+                Path(__file__).resolve(),
+                here / "weak_forms.py",
+                here / "potential_hessian.py",
+                here / "kinematic_blocks.py",
+            )
+        },
+        "seconds": time.monotonic() - started,
+    }
+    print("PASS curvature diagnostic probe", flush=True)
+    return result
 
 
 def verify_cartesian_tt(output_dir=None, started=None, completed_batches=0):
@@ -709,9 +1105,19 @@ def verify(output_dir=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument(
+        "--mode",
+        choices=("full", "curvature-probe"),
+        default="full",
+        help="run the full eight-batch validation or the five-batch curvature diagnostic",
+    )
     args = parser.parse_args()
     emit_orx({"phase": "setup", "step": 1, "of": 1, "unit": "environment"})
-    checks = verify(args.output_dir)
+    checks = (
+        verify_curvature_probe(args.output_dir)
+        if args.mode == "curvature-probe"
+        else verify(args.output_dir)
+    )
     emit_orx({
         "phase": "export",
         "step": 0,
@@ -719,14 +1125,23 @@ if __name__ == "__main__":
         "unit": "checker result",
         "m": {"elapsed_seconds": checks["seconds"]},
     })
-    (args.output_dir / "weak-form-checks.json").write_text(
+    output_name = (
+        "curvature-probe-checks.json"
+        if args.mode == "curvature-probe"
+        else "weak-form-checks.json"
+    )
+    (args.output_dir / output_name).write_text(
         json.dumps(checks, indent=2) + "\n"
+    )
+    success_key = (
+        "diagnostic_passed" if args.mode == "curvature-probe"
+        else "validation_passed"
     )
     emit_orx({
         "phase": "export",
         "step": 1,
         "of": 1,
         "unit": "checker result",
-        "m": {"validation_passed": 1, "elapsed_seconds": checks["seconds"]},
+        "m": {success_key: 1, "elapsed_seconds": checks["seconds"]},
     })
     print(json.dumps(checks, indent=2))

@@ -16,8 +16,9 @@ import sys
 import time
 
 
-MAX_SECONDS = 900
+MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
+CHECK_MODE = "curvature-probe"
 APPROVAL_END = dt.datetime(2026, 11, 28, 16, 29, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
     "verify_weak_forms.py", "weak_forms.py", "potential_hessian.py",
@@ -162,7 +163,8 @@ def main():
         raise RuntimeError("The prepared isolated uv environment requires uv")
     command = [uv, "run", "--isolated", "--no-project", "--python", "3.12",
                "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u",
-               str(script_dir / "verify_weak_forms.py"), "--output-dir", str(output)]
+               str(script_dir / "verify_weak_forms.py"), "--output-dir", str(output),
+               "--mode", CHECK_MODE]
     hashes = {name: hashlib.sha256((script_dir / name).read_bytes()).hexdigest()
               for name in SOURCE_NAMES}
     manifest = {
@@ -174,7 +176,7 @@ def main():
         "source_commit": os.environ.get("ORX_COMMIT"),
         "run_id": os.environ.get("ORX_RUN_ID"), "supervisor_python": sys.version,
         "source_equations_changed_by_supervisor": False,
-        "status": "prepared_to_launch",
+        "status": "prepared_to_launch", "checker_mode": CHECK_MODE,
     }
     save_json(output / "execution.json", manifest)
     print("::orx:: " + json.dumps({
