@@ -1,0 +1,251 @@
+{
+  "timings_are_nested": true,
+  "completed": [
+    {
+      "stage_id": 1,
+      "stage": "manufactured_controls",
+      "duration_seconds": 0.084835,
+      "end_child_seconds": 0.086303
+    },
+    {
+      "stage_id": 2,
+      "stage": "fixed_epsilon_field_conversion",
+      "duration_seconds": 2.9474,
+      "end_child_seconds": 3.033773
+    },
+    {
+      "stage_id": 3,
+      "stage": "radial_x0_gauge_right_kernel",
+      "duration_seconds": 0.634542,
+      "end_child_seconds": 3.668468
+    },
+    {
+      "stage_id": 4,
+      "stage": "principal_block_probe",
+      "duration_seconds": 0.260442,
+      "end_child_seconds": 3.929054
+    },
+    {
+      "stage_id": 7,
+      "stage": "solve_controls",
+      "duration_seconds": 0.422494,
+      "end_child_seconds": 4.351855
+    },
+    {
+      "stage_id": 8,
+      "stage": "apply_control_solution",
+      "duration_seconds": 0.203168,
+      "end_child_seconds": 4.555189
+    },
+    {
+      "stage_id": 9,
+      "stage": "independent_constraints",
+      "duration_seconds": 0.460853,
+      "end_child_seconds": 5.016146
+    },
+    {
+      "stage_id": 10,
+      "stage": "dae_checkpoint",
+      "duration_seconds": 0.523237,
+      "end_child_seconds": 5.539512
+    },
+    {
+      "stage_id": 11,
+      "stage": "differentiate_constraints",
+      "duration_seconds": 29.937589,
+      "end_child_seconds": 35.47719
+    },
+    {
+      "stage_id": 6,
+      "stage": "dae_step",
+      "duration_seconds": 31.54797,
+      "end_child_seconds": 35.477298
+    },
+    {
+      "stage_id": 13,
+      "stage": "solve_controls",
+      "duration_seconds": 1.113342,
+      "end_child_seconds": 36.5907
+    },
+    {
+      "stage_id": 14,
+      "stage": "apply_control_solution",
+      "duration_seconds": 1.020374,
+      "end_child_seconds": 37.611193
+    },
+    {
+      "stage_id": 15,
+      "stage": "independent_constraints",
+      "duration_seconds": 18.198148,
+      "end_child_seconds": 55.809424
+    },
+    {
+      "stage_id": 16,
+      "stage": "dae_checkpoint",
+      "duration_seconds": 1.317724,
+      "end_child_seconds": 57.127291
+    },
+    {
+      "stage_id": 17,
+      "stage": "differentiate_constraints",
+      "duration_seconds": 145.162102,
+      "end_child_seconds": 202.289464
+    },
+    {
+      "stage_id": 12,
+      "stage": "dae_step",
+      "duration_seconds": 166.812249,
+      "end_child_seconds": 202.289582
+    },
+    {
+      "stage_id": 19,
+      "stage": "solve_controls",
+      "duration_seconds": 9.156441,
+      "end_child_seconds": 211.446083
+    },
+    {
+      "stage_id": 20,
+      "stage": "apply_control_solution",
+      "duration_seconds": 153.0797,
+      "end_child_seconds": 364.525891
+    },
+    {
+      "stage_id": 21,
+      "stage": "independent_constraints",
+      "duration_seconds": 0.000112,
+      "end_child_seconds": 364.526106
+    },
+    {
+      "stage_id": 22,
+      "stage": "dae_checkpoint",
+      "duration_seconds": 4.11267,
+      "end_child_seconds": 368.638805
+    },
+    {
+      "stage_id": 18,
+      "stage": "dae_step",
+      "duration_seconds": 166.349267,
+      "end_child_seconds": 368.638884
+    },
+    {
+      "stage_id": 24,
+      "stage": "kernel_field_conversion",
+      "duration_seconds": 0.133769,
+      "end_child_seconds": 368.772704
+    },
+    {
+      "stage_id": 25,
+      "stage": "kernel_constraint_rref",
+      "duration_seconds": 23.66725,
+      "end_child_seconds": 392.440063
+    },
+    {
+      "stage_id": 26,
+      "stage": "kernel_denominator_normalization",
+      "duration_seconds": 1.147957,
+      "end_child_seconds": 393.588137
+    },
+    {
+      "stage_id": 27,
+      "stage": "kernel_build_embedding",
+      "duration_seconds": 0.002172,
+      "end_child_seconds": 393.590407
+    },
+    {
+      "stage_id": 28,
+      "stage": "kernel_original_constraint_product",
+      "duration_seconds": 88.556711,
+      "end_child_seconds": 482.147166
+    },
+    {
+      "stage_id": 29,
+      "stage": "kernel_to_expressions",
+      "duration_seconds": 1.540503,
+      "end_child_seconds": 483.687804
+    },
+    {
+      "stage_id": 23,
+      "stage": "terminal_embedding",
+      "duration_seconds": 115.051234,
+      "end_child_seconds": 483.690151
+    },
+    {
+      "stage_id": 30,
+      "stage": "terminal_state_snapshot",
+      "duration_seconds": 2.32092,
+      "end_child_seconds": 486.011124
+    },
+    {
+      "stage_id": 32,
+      "stage": "preservation_field_conversion",
+      "duration_seconds": 6.413721,
+      "end_child_seconds": 492.424931
+    },
+    {
+      "stage_id": 33,
+      "stage": "preservation_DC",
+      "duration_seconds": 0.235071,
+      "end_child_seconds": 492.660118
+    },
+    {
+      "stage_id": 34,
+      "stage": "preservation_CK",
+      "duration_seconds": 5.410212,
+      "end_child_seconds": 498.070424
+    },
+    {
+      "stage_id": 35,
+      "stage": "preservation_sum",
+      "duration_seconds": 0.010133,
+      "end_child_seconds": 498.080663
+    },
+    {
+      "stage_id": 36,
+      "stage": "preservation_CB",
+      "duration_seconds": 3.6e-05,
+      "end_child_seconds": 498.080765
+    },
+    {
+      "stage_id": 37,
+      "stage": "preservation_SM",
+      "duration_seconds": 62.931202,
+      "end_child_seconds": 561.012001
+    },
+    {
+      "stage_id": 38,
+      "stage": "preservation_zero_checks",
+      "duration_seconds": 2.7e-05,
+      "end_child_seconds": 561.012143
+    },
+    {
+      "stage_id": 31,
+      "stage": "terminal_constraint_preservation",
+      "duration_seconds": 75.003976,
+      "end_child_seconds": 561.015164
+    },
+    {
+      "stage_id": 39,
+      "stage": "terminal_original_22_rows",
+      "duration_seconds": 317.07022,
+      "end_child_seconds": 878.085473
+    }
+  ],
+  "unfinished": [
+    {
+      "event": "begin",
+      "seconds": 3.929134,
+      "sequence": 10,
+      "stage": "dae_closure",
+      "stage_id": 5,
+      "utc": "2026-11-28T06:37:31.376535+00:00"
+    },
+    {
+      "event": "begin",
+      "seconds": 878.08558,
+      "sequence": 79,
+      "stage": "terminal_reduced_dynamics",
+      "stage_id": 40,
+      "utc": "2026-11-28T06:52:05.534662+00:00"
+    }
+  ]
+}

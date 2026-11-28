@@ -1,0 +1,10 @@
+{
+  "state": "terminal kernel controls passed",
+  "cases": [
+    "dependent_rational_rows",
+    "empty_dimensions",
+    "zero_matrix",
+    "full_column_rank",
+    "float_rejected"
+  ]
+}

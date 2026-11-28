@@ -93,3 +93,5 @@ Reproduce the corrected linearized lapse checks with `python verification/oblate
 - Do not count trivial added gauge variables as recovery of Einstein's constraint algebra.
 - Begin with bounded local CPU calculations. Any proposed large external computation should have a concrete scientific purpose, cost estimate, and validation plan before execution.
 - If a candidate fails, preserve the counterexample and state precisely which formulation it excludes. Continue with the next justified construction; do not silently redefine the goal as a completed theory.
+
+The next [terminal verification attempt](reports/oblate-stationary-dynamics-timeout-2026-11-28/README.md) passed exact constraint preservation and all 22 original retained-row checks, then stopped at 900 seconds while constructing reduced dynamics. Its authenticated intermediate state is preserved; full dynamics reconstruction, the discarded response, and interval/germ certification remain unfinished.

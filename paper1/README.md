@@ -55,6 +55,9 @@ The [terminal-embedding timeout](reports/oblate-stationary-closure-terminal-time
 
 The subsequent [full retry](reports/oblate-stationary-preservation-timeout-2026-11-28/README.md) completed the repaired kernel in 114.775 seconds but reached the 900-second limit during terminal constraint preservation. Its shutdown was clean and all partial evidence is preserved. The next repair changes only terminal preservation arithmetic; all original equations and the independent germ certificate remain required.
 
+
+The next [terminal verification attempt](reports/oblate-stationary-dynamics-timeout-2026-11-28/README.md) passed exact constraint preservation and all 22 original retained-row checks, then stopped at 900 seconds while constructing reduced dynamics. Its authenticated intermediate state is preserved; full dynamics reconstruction, the discarded response, and interval/germ certification remain unfinished.
+
 The [shared local weak-form validation](reports/shared-oblate-weak-validation-2026-11-28/README.md) now passes all eight batches for the original Paper I action: representative exact sampled potential/lapse/Green checks, three fixed symbolic gauge vectors, and nonzero sign/ablation controls. This is separate supporting evidence; it does not certify the stationary DAE, a physical radial domain, an admissible seed, or nonlinear consistency.
 
 With matched measured zero-coupling controls at fixed scalar self-interaction, the strongest tested coupling reduces the matrix model's traceless-field variance Q2 by **47.68–48.02%** across four ranks. A larger lattice at rank 24 gives **47.621%**, a change of **−0.060 ± 0.047 percentage points**. This supports persistence over the tested volume change, not an exact universal percentage or a continuum extrapolation.
