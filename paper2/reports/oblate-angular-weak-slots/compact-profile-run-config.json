@@ -1,0 +1,36 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "controls",
+      "of": 3,
+      "unit": "batches"
+    },
+    {
+      "phase": "angular_export",
+      "of": 1,
+      "unit": "snapshots"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "checker result"
+    }
+  ],
+  "brief": {
+    "question": "Does exact component compaction in the independent actual-profile oracle allow the complete first L=2,m=0,r=3/2 angular snapshot to pass under unchanged numerical and resource gates?",
+    "healthy": "Setup1,controls3,angular_export1 snapshot,export1. All four profile-family combinations of potential/lapse density and radial flux compare against unchanged raw slot matrices. compact_profile_probe_passed appears only after final JSON write.",
+    "noise": "Runtime is unmeasured. Raw slot integration previously took about135seconds; the subsequent row arithmetic probe showed smaller symbolic work with compacted components, but did not measure this complete snapshot. Component coordinate poles are permitted; assembled scalar poles remain forbidden. A single snapshot is not the six-case export.",
+    "worth_a_flag": "Any component exact-equality failure, nonfinite scalar, unsupported integrand, endpoint/interior pole, reconstruction/Hermiticity/refinement failure, resource stop, incomplete result or unresolved cleanup. Initial error zero is not measured convergence.",
+    "from_parent": "Parent b173211f passed559 exact component identities and12 raw-versus-compact density identities on row10, with a nonzero witness and unchanged quadrature gates. Raw/compact recorded row work99.509s/3.137s is diagnostic with shared-process cache caveats.",
+    "decided": "User msg_908bb84e authorizes reviewed bounded local follow-ons until10am America/New_York today (15:00UTC). One local process,300s wall,2GiB sampled RSS; unchanged profiles/physics/tolerances. Raw slot export unchanged; default full/direct/arithmetic modes preserved. Compaction only in fixed m0 first-case mode, no odd-m extension. No radial/domain/KED/kernel/spectrum/seed/nonlinear claim."
+  },
+  "watch": {
+    "minGapS": 60,
+    "maxGapS": 180
+  }
+}

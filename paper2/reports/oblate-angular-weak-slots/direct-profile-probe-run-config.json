@@ -1,0 +1,36 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "controls",
+      "of": 3,
+      "unit": "batches"
+    },
+    {
+      "phase": "angular_export",
+      "of": 1,
+      "unit": "snapshots"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "checker result"
+    }
+  ],
+  "brief": {
+    "question": "Does pairwise evaluation of independently profile-weighted fields complete the m=0,r=3/2 angular snapshot and all four profile-family reconstructions under unchanged gates?",
+    "healthy": "One setup environment, three control batches, one fixed angular snapshot, one export. direct_profile_probe_passed appears only after writing direct-profile-probe-checks.json. Pair/block timers and term counts are substages, not additional snapshots.",
+    "noise": "Runtime is unmeasured. This is one first-case diagnostic, not all six snapshots. Pairwise integration distributes the independent actual-profile density/flux calculation and must not use exported slots for the direct value. Refinement differences are numerical indicators, not rigorous bounds.",
+    "worth_a_flag": "Any nonfinite value, unsupported integrand, endpoint/interior pole, control/reconstruction/Hermiticity/refinement failure, resource stop, incomplete result or unresolved cleanup. Initial refinement zero is not measured convergence.",
+    "from_parent": "The bounded local weak validation passed. The first angular attempt b092637e timed out after three controls and zero snapshots during the dense-profile oracle; its full evidence is preserved. Density/flux stages of the first case took about117s/13s, but pairwise oracle runtime is unknown.",
+    "decided": "Renewed user approval msg_c7ac8e6c covers one reviewed local probe, 300s wall and2GiB sampled group RSS; one scientific process, unchanged physics, profiles, four family combinations, quadrature and tolerances. No GPU/remote compute. No six-snapshot, radial/domain/KED/kernel/spectrum/seed/nonlinear claim."
+  },
+  "watch": {
+    "minGapS": 60,
+    "maxGapS": 180
+  }
+}

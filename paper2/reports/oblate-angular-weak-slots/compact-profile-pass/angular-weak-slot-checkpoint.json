@@ -1,0 +1,11 @@
+{
+  "elapsed_seconds": 252.40109429205768,
+  "payload": {
+    "elapsed_seconds": 252.14199574990198,
+    "m": 0,
+    "max_scaled_refinement_error": 5.1181281435219717e-14,
+    "r": "3/2"
+  },
+  "stage": "angular_m0_r3/2",
+  "status": "running"
+}

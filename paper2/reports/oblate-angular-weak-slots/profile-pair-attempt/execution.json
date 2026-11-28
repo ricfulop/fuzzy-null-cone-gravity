@@ -1,0 +1,76 @@
+{
+  "started_utc": "2026-11-28T09:22:08.724588+00:00",
+  "approval_message": "msg_c7ac8e6c",
+  "approval_chat_id": "chat_5351fc4a-9bc3-4992-9e39-0a9505c63137",
+  "approval_quote": "ok I am going back to sleep, you have my approval for any of the upcoming experiments that come up on the chat or other requests to keep going till I wake up",
+  "standing_window_message": "msg_ad636446",
+  "approval_end_utc": "2026-11-28T16:29:00+00:00",
+  "wall_budget_seconds": 300,
+  "sampled_group_rss_budget_bytes": 2147483648,
+  "memory_budget_is_hard_limit": false,
+  "command": [
+    "/Users/ricfulop/.local/bin/uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "-u",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/5e8d761b-ccb2-440a-8f9d-07098036d1af/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/5e8d761b-ccb2-440a-8f9d-07098036d1af/repo/paper2/reports/oblate-angular-weak-slots/direct-profile-probe-runtime",
+    "--mode",
+    "direct-profile-probe"
+  ],
+  "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/5e8d761b-ccb2-440a-8f9d-07098036d1af/repo/paper2",
+  "source_sha256": {
+    "export_angular_weak_slots.py": "c11f9b3641967d1aac4dfea1ed6ede6078d997dd4d5ddd7e23b18788be946623",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "5b2ebb65606dc8d20bf438ace801bb9172847521c11eececc3379d6e92a8ff48",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  },
+  "source_commit": "8eab4afd1a153331c2252669e3cfde2b6017b13f",
+  "run_id": "5e8d761b-ccb2-440a-8f9d-07098036d1af",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "source_equations_changed_by_supervisor": false,
+  "status": "failed",
+  "checker_mode": "direct-profile-probe",
+  "process_group": 62481,
+  "ended_utc": "2026-11-28T09:27:09.117606+00:00",
+  "elapsed_seconds": 300.3893613750115,
+  "child_return_code": 143,
+  "stop_reason": "wall_budget",
+  "peak_sampled_group_rss_bytes": 286277632,
+  "sample_count": 1025,
+  "cleanup_events": [
+    {
+      "action": "signal",
+      "signal": 15,
+      "status": "sent"
+    },
+    {
+      "action": "probe",
+      "status": "permission_error_live",
+      "errno": 1,
+      "message": "[Errno 1] Operation not permitted",
+      "members": [
+        {
+          "pid": 62481,
+          "rss_bytes": 31244288
+        }
+      ]
+    },
+    {
+      "action": "final_disposition",
+      "status": "empty",
+      "members": []
+    }
+  ]
+}

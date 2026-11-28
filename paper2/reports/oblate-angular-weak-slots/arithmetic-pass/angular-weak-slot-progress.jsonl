@@ -1,0 +1,32 @@
+{"mode": "profile-arithmetic-probe", "of": 1, "phase": "setup", "plan": [{"of": 1, "phase": "setup", "unit": "environment"}, {"of": 3, "phase": "controls", "unit": "batches"}, {"of": 12, "phase": "arithmetic", "unit": "pairs"}, {"of": 1, "phase": "export", "unit": "checker result"}], "step": 1, "unit": "environment"}
+{"m": {"completed_control_batches": 0}, "of": 3, "phase": "controls", "step": 0, "unit": "batches"}
+{"m": {"completed_control_batches": 1}, "of": 3, "phase": "controls", "step": 1, "unit": "batches"}
+{"m": {"completed_control_batches": 2}, "of": 3, "phase": "controls", "step": 2, "unit": "batches"}
+{"m": {"completed_control_batches": 3}, "of": 3, "phase": "controls", "step": 3, "unit": "batches"}
+{"m": {"completed_arithmetic_pairs": 0, "max_scaled_refinement_error": 0.0}, "of": 12, "phase": "arithmetic", "step": 0, "unit": "pairs"}
+{"m": {"active_right_index": 0}, "of": 12, "phase": "arithmetic", "step": 0, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 1, "max_scaled_refinement_error": 6.245004513516506e-16}, "of": 12, "phase": "arithmetic", "step": 1, "unit": "pairs"}
+{"m": {"active_right_index": 1}, "of": 12, "phase": "arithmetic", "step": 1, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 2, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 2, "unit": "pairs"}
+{"m": {"active_right_index": 2}, "of": 12, "phase": "arithmetic", "step": 2, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 3, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 3, "unit": "pairs"}
+{"m": {"active_right_index": 3}, "of": 12, "phase": "arithmetic", "step": 3, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 4, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 4, "unit": "pairs"}
+{"m": {"active_right_index": 4}, "of": 12, "phase": "arithmetic", "step": 4, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 5, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 5, "unit": "pairs"}
+{"m": {"active_right_index": 5}, "of": 12, "phase": "arithmetic", "step": 5, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 6, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 6, "unit": "pairs"}
+{"m": {"active_right_index": 6}, "of": 12, "phase": "arithmetic", "step": 6, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 7, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 7, "unit": "pairs"}
+{"m": {"active_right_index": 7}, "of": 12, "phase": "arithmetic", "step": 7, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 8, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 8, "unit": "pairs"}
+{"m": {"active_right_index": 8}, "of": 12, "phase": "arithmetic", "step": 8, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 9, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 9, "unit": "pairs"}
+{"m": {"active_right_index": 9}, "of": 12, "phase": "arithmetic", "step": 9, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 10, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 10, "unit": "pairs"}
+{"m": {"active_right_index": 10}, "of": 12, "phase": "arithmetic", "step": 10, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 11, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 11, "unit": "pairs"}
+{"m": {"active_right_index": 11}, "of": 12, "phase": "arithmetic", "step": 11, "unit": "pairs"}
+{"m": {"completed_arithmetic_pairs": 12, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 12, "unit": "pairs"}
+{"of": 1, "phase": "export", "step": 0, "unit": "checker result"}
+{"m": {"elapsed_seconds": 153.36316437507048, "profile_arithmetic_probe_passed": 1}, "of": 1, "phase": "export", "step": 1, "unit": "checker result"}

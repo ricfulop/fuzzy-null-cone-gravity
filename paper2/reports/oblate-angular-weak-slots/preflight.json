@@ -1,0 +1,50 @@
+{
+  "status": "source_reviewed_preparation_not_scientifically_run",
+  "experiment_id": "a2c8d7dd-84fd-4cff-97eb-c41cd507f516",
+  "parent_experiment_id": "ff6ae51d-bd38-4471-b87a-7b808012605d",
+  "base_commit": "7479d44056215ea91dfed27cd01d8560ffc7997f",
+  "fixed_command": "bash paper2/verification/oblate_quadratic_preparation/run_weak_validation.sh",
+  "source_sha256": {
+    "export_angular_weak_slots.py": "ae4fa34226ca05c7652c48da8510948451732fdf6561907fd0c6d93b1cbc81e2",
+    "supervise_weak_validation.py": "89bdd83a7a298ed0772d46563ff21d94b542edc588caeb8a7c21e2f20a5f1259",
+    "test_weak_supervisor.py": "43865db06b2b93852343b1bafd561e8e7db7b065336a54bfb30780a100500f6d",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501"
+  },
+  "unchanged_parent_sources_sha256": {
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  },
+  "review_messages": [
+    "msg_3412be83",
+    "msg_24db192f"
+  ],
+  "static_python_compilation": "passed_without_import_or_execution",
+  "plan_json_and_view_xml": "parsed",
+  "mocked_supervisor_tests": {
+    "passed": 9,
+    "seconds": 0.002,
+    "real_subprocesses": 0,
+    "real_os_signals": 0
+  },
+  "git_diff_check": "passed",
+  "scientific_execution_performed": false,
+  "launch_approved": false,
+  "approval_guard": "LAUNCH_APPROVAL_MESSAGE remains None; main refuses before output creation or child launch",
+  "proposed_compute": {
+    "backend": "local",
+    "scientific_processes": 1,
+    "wall_cap_seconds": 300,
+    "sampled_group_rss_bytes": 2147483648,
+    "hard_memory_limit": false,
+    "remote_or_gpu": false,
+    "runtime_measured": false,
+    "standing_cutoff_utc": "2026-11-28T16:29:00+00:00"
+  },
+  "estimate": "Unmeasured setup/control/angular phases; inherited export timing alone is not a runtime prediction."
+}

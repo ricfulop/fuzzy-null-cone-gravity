@@ -1,0 +1,404 @@
+[
+  {
+    "name": "legendre_norms",
+    "event": "start",
+    "elapsed_seconds": null
+  },
+  {
+    "name": "legendre_norms",
+    "event": "done",
+    "elapsed_seconds": 0.18096958403475583
+  },
+  {
+    "name": "round_weak_anchor",
+    "event": "start",
+    "elapsed_seconds": null
+  },
+  {
+    "name": "round_weak_anchor",
+    "event": "done",
+    "elapsed_seconds": 0.029833415988832712
+  },
+  {
+    "name": "manufactured_realification",
+    "event": "start",
+    "elapsed_seconds": null
+  },
+  {
+    "name": "manufactured_realification",
+    "event": "done",
+    "elapsed_seconds": 0.000544167123734951
+  },
+  {
+    "name": "build_symbolic_slots",
+    "event": "start",
+    "elapsed_seconds": null,
+    "m": 0,
+    "r": "3/2"
+  },
+  {
+    "name": "build_symbolic_slots",
+    "event": "done",
+    "elapsed_seconds": 0.5946222499478608,
+    "m": 0,
+    "r": "3/2"
+  },
+  {
+    "name": "cancel_and_quad_density",
+    "event": "start",
+    "elapsed_seconds": null,
+    "m": 0,
+    "r": "3/2"
+  },
+  {
+    "name": "cancel_and_quad_density",
+    "event": "done",
+    "elapsed_seconds": 121.71737804193981,
+    "m": 0,
+    "r": "3/2"
+  },
+  {
+    "name": "cancel_and_quad_flux",
+    "event": "start",
+    "elapsed_seconds": null,
+    "m": 0,
+    "r": "3/2"
+  },
+  {
+    "name": "cancel_and_quad_flux",
+    "event": "done",
+    "elapsed_seconds": 13.769565375056118,
+    "m": 0,
+    "r": "3/2"
+  },
+  {
+    "name": "direct_profile_oracle",
+    "event": "start",
+    "elapsed_seconds": null,
+    "m": 0,
+    "r": "3/2"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "start",
+    "elapsed_seconds": null,
+    "family": 0,
+    "side": "left"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "done",
+    "elapsed_seconds": 0.1200381659436971,
+    "family": 0,
+    "side": "left"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "start",
+    "elapsed_seconds": null,
+    "family": 1,
+    "side": "left"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "done",
+    "elapsed_seconds": 0.10830662492662668,
+    "family": 1,
+    "side": "left"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "start",
+    "elapsed_seconds": null,
+    "family": 0,
+    "side": "right"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "done",
+    "elapsed_seconds": 0.16799945896491408,
+    "family": 0,
+    "side": "right"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "start",
+    "elapsed_seconds": null,
+    "family": 1,
+    "side": "right"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "done",
+    "elapsed_seconds": 0.1101209579501301,
+    "family": 1,
+    "side": "right"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "start",
+    "elapsed_seconds": null,
+    "family": 0,
+    "side": "lapse"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "done",
+    "elapsed_seconds": 0.010611833073198795,
+    "family": 0,
+    "side": "lapse"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "start",
+    "elapsed_seconds": null,
+    "family": 1,
+    "side": "lapse"
+  },
+  {
+    "name": "build_profile_jets",
+    "event": "done",
+    "elapsed_seconds": 0.004599832929670811,
+    "family": 1,
+    "side": "lapse"
+  },
+  {
+    "name": "direct_pair_sum",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 144,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 0,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 12,
+    "elapsed_seconds": 4.499477416975424,
+    "expected_total_terms": 144,
+    "left_index": 0,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 1,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 24,
+    "elapsed_seconds": 24.125897207995877,
+    "expected_total_terms": 144,
+    "left_index": 1,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 2,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 36,
+    "elapsed_seconds": 6.907404582947493,
+    "expected_total_terms": 144,
+    "left_index": 2,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 3,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 48,
+    "elapsed_seconds": 24.46209937497042,
+    "expected_total_terms": 144,
+    "left_index": 3,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 4,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 60,
+    "elapsed_seconds": 10.621256833896041,
+    "expected_total_terms": 144,
+    "left_index": 4,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 5,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 72,
+    "elapsed_seconds": 2.6763935841154307,
+    "expected_total_terms": 144,
+    "left_index": 5,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 6,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 84,
+    "elapsed_seconds": 8.10162679082714,
+    "expected_total_terms": 144,
+    "left_index": 6,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 7,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 96,
+    "elapsed_seconds": 26.64524483284913,
+    "expected_total_terms": 144,
+    "left_index": 7,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 8,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 108,
+    "elapsed_seconds": 11.122634000144899,
+    "expected_total_terms": 144,
+    "left_index": 8,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 9,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "done",
+    "block": "potential_density",
+    "completed_terms": 12,
+    "cumulative_terms": 120,
+    "elapsed_seconds": 2.715061916038394,
+    "expected_total_terms": 144,
+    "left_index": 9,
+    "lf": 0,
+    "rf": 0
+  },
+  {
+    "name": "direct_pair_row",
+    "event": "start",
+    "block": "potential_density",
+    "elapsed_seconds": null,
+    "expected_terms": 12,
+    "left_index": 10,
+    "lf": 0,
+    "rf": 0
+  }
+]

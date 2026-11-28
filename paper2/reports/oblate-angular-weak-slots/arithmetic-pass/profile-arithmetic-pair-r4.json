@@ -1,0 +1,120 @@
+{
+  "angular_measure": "dx/2",
+  "compact": {
+    "max_abs_24_48": 1.3010426069826053e-16,
+    "max_abs_48_96": 3.694961003830599e-16,
+    "max_scaled_48_96": 3.694961003830599e-16,
+    "timings": {
+      "24": 0.2878785834182054,
+      "24_cancel_qq_root_guard_seconds": 0.25012387498281896,
+      "24_expand_split_seconds": 0.03568929107859731,
+      "24_fixed_substitution_seconds": 1.5415949746966362e-05,
+      "24_lambdify_seconds": 0.0017003761604428291,
+      "24_legendre_nodes_seconds": 0.0002792500890791416,
+      "24_quadrature_evaluation_seconds": 7.037515752017498e-05,
+      "48": 0.011830961098894477,
+      "48_cancel_qq_root_guard_seconds": 0.011248166905716062,
+      "48_expand_split_seconds": 4.708999767899513e-06,
+      "48_fixed_substitution_seconds": 1.1875061318278313e-05,
+      "48_lambdify_seconds": 9.168870747089386e-07,
+      "48_legendre_nodes_seconds": 0.0005235420539975166,
+      "48_quadrature_evaluation_seconds": 4.17511910200119e-05,
+      "96": 0.009776875143870711,
+      "96_cancel_qq_root_guard_seconds": 0.008683874970301986,
+      "96_expand_split_seconds": 4.875008016824722e-06,
+      "96_fixed_substitution_seconds": 1.4958903193473816e-05,
+      "96_lambdify_seconds": 8.330680429935455e-07,
+      "96_legendre_nodes_seconds": 0.001031333114951849,
+      "96_quadrature_evaluation_seconds": 4.100007936358452e-05
+    },
+    "values": {
+      "24": [
+        3.0531133177191805e-16,
+        0.0
+      ],
+      "48": [
+        1.7520707107365752e-16,
+        0.0
+      ],
+      "96": [
+        -1.942890293094024e-16,
+        0.0
+      ]
+    }
+  },
+  "compact_density_construct_seconds": 0.006184207974001765,
+  "compact_nonzero": true,
+  "compact_nonzero_witness": "(-69433463*x**7 - 1564028411*x**5 - 11833986989*x**3 + 13467448863*x)/(742560*x**4 + 13366080*x**2 + 60147360)",
+  "denominator_cache_reset_before_compact": 2,
+  "denominator_cache_reset_before_raw": 2,
+  "diagnostic_only": true,
+  "diagnostic_timing_only": true,
+  "elapsed_seconds": 9.001049417071044,
+  "epsilon": "1/4",
+  "exact_raw_minus_compact_zero": true,
+  "left_coefficient": "11/13",
+  "left_index": 10,
+  "left_label": "C_polar_2_0",
+  "left_profile": "r**2 + 11*r/7 + 3/5",
+  "lf": 0,
+  "m": 0,
+  "quadrature_orders": [
+    24,
+    48,
+    96
+  ],
+  "r": "3/2",
+  "raw": {
+    "max_abs_24_48": 1.3010426069826053e-16,
+    "max_abs_48_96": 3.694961003830599e-16,
+    "max_scaled_48_96": 3.694961003830599e-16,
+    "timings": {
+      "24": 5.073313335189596,
+      "24_cancel_qq_root_guard_seconds": 4.231601542094722,
+      "24_expand_split_seconds": 0.8401127499528229,
+      "24_fixed_substitution_seconds": 1.2124888598918915e-05,
+      "24_lambdify_seconds": 0.0012414180673658848,
+      "24_legendre_nodes_seconds": 0.0003040831070393324,
+      "24_quadrature_evaluation_seconds": 4.14170790463686e-05,
+      "48": 0.35188737395219505,
+      "48_cancel_qq_root_guard_seconds": 0.3512945829425007,
+      "48_expand_split_seconds": 5.333917215466499e-06,
+      "48_fixed_substitution_seconds": 1.291581429541111e-05,
+      "48_lambdify_seconds": 8.749775588512421e-07,
+      "48_legendre_nodes_seconds": 0.0005302911158651114,
+      "48_quadrature_evaluation_seconds": 4.337518475949764e-05,
+      "96": 0.29874783381819725,
+      "96_cancel_qq_root_guard_seconds": 0.2976407501846552,
+      "96_expand_split_seconds": 5.00003807246685e-06,
+      "96_fixed_substitution_seconds": 1.4791963621973991e-05,
+      "96_lambdify_seconds": 7.918570190668106e-07,
+      "96_legendre_nodes_seconds": 0.0010425420477986336,
+      "96_quadrature_evaluation_seconds": 4.3957727029919624e-05
+    },
+    "values": {
+      "24": [
+        3.0531133177191805e-16,
+        0.0
+      ],
+      "48": [
+        1.7520707107365752e-16,
+        0.0
+      ],
+      "96": [
+        -1.942890293094024e-16,
+        0.0
+      ]
+    }
+  },
+  "raw_compact_rtol": 2e-10,
+  "raw_density_construct_seconds": 0.007751165889203548,
+  "raw_nonzero": true,
+  "raw_nonzero_witness": "(-69433463*x**7 - 1564028411*x**5 - 11833986989*x**3 + 13467448863*x)/(742560*x**4 + 13366080*x**2 + 60147360)",
+  "refinement_rtol": 2e-10,
+  "rf": 0,
+  "right_coefficient": "11/17",
+  "right_index": 4,
+  "right_label": "V_polar_1_0",
+  "right_profile": "r**3 - 5*r/11 + 4/9",
+  "snapshot": false
+}

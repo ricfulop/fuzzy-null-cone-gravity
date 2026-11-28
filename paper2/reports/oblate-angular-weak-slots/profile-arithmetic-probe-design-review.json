@@ -1,0 +1,15 @@
+{
+  "status": "independently_source_reviewed_ready_for_bounded_diagnostic",
+  "diagnostic": "profile-arithmetic-probe",
+  "failure_archive_commit": "9104ce3a6ab48ba227b62f1ed7680173c6a2553b",
+  "archive_review": "msg_21eb60d5",
+  "design_review": "msg_7544de5e",
+  "initial_source_review": "msg_33b5ea9b",
+  "hardening_review": "msg_3dd741a7",
+  "scientific_execution_performed": false,
+  "remaining_before_launch": [
+    "commit and authenticate reviewed source"
+  ],
+  "scope": "raw versus compact actual-profile potential-density row10, m0,r3/2,epsilon1/4; all12 right columns; no completed snapshot claim",
+  "final_source_review": "msg_53ecdd46"
+}

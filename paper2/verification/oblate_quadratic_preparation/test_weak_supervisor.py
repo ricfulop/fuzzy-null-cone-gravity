@@ -36,6 +36,15 @@ class FakeClock:
 
 
 class SupervisorCleanupTests(unittest.TestCase):
+    def test_unapproved_diagnostic_does_not_launch_or_write(self):
+        with mock.patch.object(supervisor, "LAUNCH_APPROVAL_MESSAGE", None), \
+             mock.patch.object(supervisor.subprocess, "Popen") as launch, \
+             mock.patch.object(supervisor, "save_json") as save:
+            with self.assertRaisesRegex(RuntimeError, "per-run user approval"):
+                supervisor.main()
+        launch.assert_not_called()
+        save.assert_not_called()
+
     def test_empty_group_permission_probe_is_treated_as_empty_race(self):
         events = []
         with mock.patch.object(supervisor, "process_group_members", return_value=[]), \

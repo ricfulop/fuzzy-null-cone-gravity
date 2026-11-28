@@ -1,0 +1,90 @@
+{
+  "status": "accepted_single_angular_snapshot",
+  "run_id": "47d66179-da34-4f4e-809e-2eb2d7f19c96",
+  "source_commit": "7d4b90ced87473ae3124878a75a74cef012e0562",
+  "mode": "compact-profile-probe",
+  "independent_result_review": "msg_c0ce11d6",
+  "independent_interpretation": "msg_12d4d048",
+  "completed_control_batches": 3,
+  "completed_snapshots": 1,
+  "m": 0,
+  "r": "3/2",
+  "epsilon": "1/4",
+  "spatial_labels": 12,
+  "lapse_labels": 3,
+  "spatial_exact_equalities": 2064,
+  "lapse_exact_equalities": 12,
+  "total_exact_equalities": 2076,
+  "reconstruction_comparisons": 16,
+  "direct_integrated_terms_by_form": {
+    "lapse_density": 144,
+    "lapse_radial_flux": 144,
+    "potential_density": 576,
+    "potential_radial_flux": 576
+  },
+  "exported_scalar_matrix_entries": 1440,
+  "max_scaled_refinement_error": 5.1181281435219717e-14,
+  "reconstruction_errors": {
+    "lapse_density_scaled_error": {
+      "combinations": 4,
+      "max_scaled_error": 1.9806674970262414e-16
+    },
+    "lapse_flux_scaled_error": {
+      "combinations": 4,
+      "max_scaled_error": 1.591391579588683e-16
+    },
+    "potential_density_scaled_error": {
+      "combinations": 4,
+      "max_scaled_error": 1.3913296818324662e-16
+    },
+    "potential_flux_scaled_error": {
+      "combinations": 4,
+      "max_scaled_error": 1.9375462980544153e-16
+    }
+  },
+  "checker_result_seconds": 252.40709133283235,
+  "checker_export_seconds": 252.41485787485726,
+  "supervisor_seconds": 253.31111458409578,
+  "peak_sampled_group_rss_bytes": 230981632,
+  "resource_samples": 867,
+  "timing_event_count": 320,
+  "nonincreasing_refinement_false_blocks": [
+    "potential_density/00",
+    "potential_density/01",
+    "potential_density/10",
+    "potential_density/11",
+    "lapse_density/00",
+    "lapse_density/01",
+    "lapse_density/10",
+    "lapse_density/11",
+    "potential_radial_flux/00",
+    "potential_radial_flux/01",
+    "lapse_radial_flux/00",
+    "lapse_radial_flux/01"
+  ],
+  "refinement_ratios_are_metadata_not_acceptance_gate": true,
+  "quadrature_is_not_certified_error_bound": true,
+  "final_process_group": "empty",
+  "independent_ps_check": {
+    "checked_utc": "2026-11-28T10:16:39.702271+00:00",
+    "process_group": 19378,
+    "members": []
+  },
+  "scope": {
+    "boundary_domain": false,
+    "domain_selected": false,
+    "finite_KED_performed": false,
+    "finite_assembly": false,
+    "full_radial_operator_export": false,
+    "kernel_preservation": false,
+    "nonlinear_theorem": false,
+    "operator_spectrum_performed": false,
+    "radial_projection": false,
+    "radial_projection_performed": false,
+    "seed": false,
+    "spectrum": false
+  },
+  "six_snapshot_export_performed": false,
+  "external_publication": "manuscript_release_submission_on_hold",
+  "github_backup": "reviewed_backup_authorized_coordinator_owned"
+}

@@ -1,0 +1,62 @@
+{
+  "started_utc": "2026-11-28T09:55:32.386587+00:00",
+  "approval_message": "msg_37a2dc0f",
+  "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f",
+  "approval_quote": "you have launch approval",
+  "approval_basis": "explicit_per_run",
+  "standing_window_message": "msg_908bb84e",
+  "standing_window_quote": "you dont need to ask me for approval till 10am",
+  "approval_timezone": "America/New_York",
+  "approval_end_utc": "2026-11-28T15:00:00+00:00",
+  "wall_budget_seconds": 300,
+  "sampled_group_rss_budget_bytes": 2147483648,
+  "memory_budget_is_hard_limit": false,
+  "command": [
+    "/Users/ricfulop/.local/bin/uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "-u",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2/reports/oblate-angular-weak-slots/profile-arithmetic-probe-runtime",
+    "--mode",
+    "profile-arithmetic-probe"
+  ],
+  "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2",
+  "source_sha256": {
+    "export_angular_weak_slots.py": "d8344bd3dde1688b1cc3c5f3791ce098ffe20964ec24a7e94cf4d8caa78e11d7",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "30636481185ea01e71862c32cddfcbaa551bc89d41538c55e668ee751774aa6e",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  },
+  "source_commit": "aeafd47aae703908dc72ba3dde534cc5afce86b9",
+  "run_id": "b173211f-b492-4d14-9866-84342c279986",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "source_equations_changed_by_supervisor": false,
+  "status": "child_exit_zero",
+  "checker_mode": "profile-arithmetic-probe",
+  "process_group": 3022,
+  "ended_utc": "2026-11-28T09:58:07.270897+00:00",
+  "elapsed_seconds": 154.8756507090293,
+  "child_return_code": 0,
+  "stop_reason": null,
+  "peak_sampled_group_rss_bytes": 245514240,
+  "sample_count": 524,
+  "cleanup_events": [
+    {
+      "action": "final_disposition",
+      "status": "empty",
+      "members": []
+    }
+  ]
+}

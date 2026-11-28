@@ -1,0 +1,30 @@
+{
+  "status": "static_checks_passed",
+  "scientific_execution_performed": false,
+  "scientific_import_performed": false,
+  "AST_and_in_memory_compilation_passed": true,
+  "existing_definition_changes": [
+    "verify_legendre_norms",
+    "parse_args",
+    "main"
+  ],
+  "existing_formula_evaluator_bodies_unchanged": true,
+  "physics_shim_and_prior_weak_checker_match": "8eab4afd1a153331c2252669e3cfde2b6017b13f",
+  "json_xml_checks_passed": true,
+  "mocked_supervisor_tests_passed": 9,
+  "mocked_test_command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest verification/oblate_quadratic_preparation/test_weak_supervisor.py",
+  "source_sha256": {
+    "export_angular_weak_slots.py": "d8344bd3dde1688b1cc3c5f3791ce098ffe20964ec24a7e94cf4d8caa78e11d7",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "ce44700f734a73de4763fe6818a86f58707d2ec3c63d0249f3d40089d77351f5",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "test_weak_supervisor.py": "43865db06b2b93852343b1bafd561e8e7db7b065336a54bfb30780a100500f6d"
+  },
+  "approval_ref": "msg_c7ac8e6c",
+  "wall_cap_seconds": 300,
+  "sampled_group_RSS_cap_bytes": 2147483648,
+  "runtime_unmeasured": true,
+  "preparation_only": true
+}

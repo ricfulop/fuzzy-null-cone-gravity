@@ -1,4 +1,4 @@
-"""Bound one local weak-curvature check and preserve its execution record.
+"""Bound one local angular weak-slot diagnostic and preserve its execution record.
 
 Resource accounting is sampled process-group RSS, not a hard memory limit.
 The scientific process runs from the framework's immutable source snapshot.
@@ -18,10 +18,13 @@ import time
 
 MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
-CHECK_MODE = "full"
-APPROVAL_END = dt.datetime(2026, 11, 28, 16, 29, tzinfo=dt.timezone.utc)
+CHECK_MODE = "compact-profile-probe"
+CHECKER_NAME = "export_angular_weak_slots.py"
+# Standing user approval through 10am New York; see compact-profile-preparation.md.
+LAUNCH_APPROVAL_MESSAGE = "msg_908bb84e"
+APPROVAL_END = dt.datetime(2026, 11, 28, 15, 0, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
-    "verify_weak_forms.py", "weak_forms.py", "potential_hessian.py",
+    CHECKER_NAME, "weak_forms.py", "potential_hessian.py",
     "kinematic_blocks.py", "supervise_weak_validation.py", "run_weak_validation.sh",
 )
 
@@ -146,6 +149,8 @@ def final_disposition(group, child, cleanup_events):
 
 
 def main():
+    if not LAUNCH_APPROVAL_MESSAGE:
+        raise RuntimeError("This angular diagnostic still requires per-run user approval")
     started = utc_now()
     # Reserve cleanup time; never start a run beyond the approval window.
     remaining = (APPROVAL_END - started).total_seconds() - 10
@@ -156,19 +161,25 @@ def main():
         raise RuntimeError("Launch through the recorded local experiment contract")
     script_dir = Path(__file__).resolve().parent
     paper_dir = script_dir.parent.parent
-    output = paper_dir / "reports" / "oblate-weak-curvature-validation" / "runtime"
+    output = paper_dir / "reports" / "oblate-angular-weak-slots" / "compact-profile-probe-runtime"
     output.mkdir(parents=True, exist_ok=False)
     uv = shutil.which("uv")
     if not uv:
         raise RuntimeError("The prepared isolated uv environment requires uv")
     command = [uv, "run", "--isolated", "--no-project", "--python", "3.12",
                "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u",
-               str(script_dir / "verify_weak_forms.py"), "--output-dir", str(output),
+               str(script_dir / CHECKER_NAME), "--output-dir", str(output),
                "--mode", CHECK_MODE]
     hashes = {name: hashlib.sha256((script_dir / name).read_bytes()).hexdigest()
               for name in SOURCE_NAMES}
     manifest = {
-        "started_utc": started.isoformat(), "approval_message": "msg_ad636446",
+        "started_utc": started.isoformat(), "approval_message": LAUNCH_APPROVAL_MESSAGE,
+        "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f",
+        "approval_quote": "you dont need to ask me for approval till 10am",
+        "approval_basis": "standing_until_local_deadline",
+        "standing_window_message": "msg_908bb84e",
+        "standing_window_quote": "you dont need to ask me for approval till 10am",
+        "approval_timezone": "America/New_York",
         "approval_end_utc": APPROVAL_END.isoformat(), "wall_budget_seconds": budget,
         "sampled_group_rss_budget_bytes": MAX_RSS_BYTES,
         "memory_budget_is_hard_limit": False, "command": command,

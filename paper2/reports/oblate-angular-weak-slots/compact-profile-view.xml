@@ -1,0 +1,10 @@
+<signal name="compact_profile_probe_passed" label="Compacted first snapshot" labels='{"0":"incomplete","1":"passed"}' better="higher" />
+<signal name="completed_snapshots" label="Completed snapshots" better="higher" />
+<signal name="completed_control_batches" label="Control batches" better="higher" />
+<signal name="max_scaled_refinement_error" label="48/96 refinement indicator" better="lower" digits="12" />
+<signal name="elapsed_seconds" label="Checker runtime" unit="s" as="duration" />
+<view headline="compact_profile_probe_passed completed_snapshots completed_control_batches">
+  <stats of="compact_profile_probe_passed completed_snapshots elapsed_seconds" />
+  <chart phase="angular_export" y="max_scaled_refinement_error" ghost="false" />
+  <text>One m=0,r=3/2 snapshot: compacted actual-profile oracle versus raw angular slots, with separate radial fluxes. The six-snapshot export remains incomplete. Refinement is a numerical indicator. This does not assemble a radial operator or select a physical boundary domain.</text>
+</view>

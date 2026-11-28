@@ -1,0 +1,20 @@
+{
+  "run_id": "b092637e-9aa2-406e-86a8-963593e30f47",
+  "source_commit": "ffc5fcd0855932596e4d51fc6232aa754af2c2b4",
+  "status": "incomplete_diagnostic_wall_timeout",
+  "sha256": {
+    "README.md": "ae15773d90c8ae0e77fe0ac1d5a19d76308249917c6ccc84d299108ba48359ec",
+    "angular-weak-slot-checkpoint.json": "a0a1b19bec635651801673f59c9c09c2b04b7d0b701256ffd75a6d0f81b0e524",
+    "angular-weak-slot-progress.jsonl": "d3f7df9600a6153638ac03115bb4229e20ea70cdd8cee8e2b7cb8e698bc3c215",
+    "archive-status.json": "2343ee8e3546b6322cdacafee5d5853ade686f152b7d108c0ef7bbc74e10eb3e",
+    "execution.json": "7d6a86573d29e10670f207b99ed6beafdf6716679ca492734271965b8d2db7e6",
+    "resource-samples.json": "62f24fe4e2829090e4a602eca28663e5eca5b0852843ca650e422ead254dc152",
+    "sources/export_angular_weak_slots.py": "ae4fa34226ca05c7652c48da8510948451732fdf6561907fd0c6d93b1cbc81e2",
+    "sources/kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "sources/potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "sources/run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "sources/supervise_weak_validation.py": "8e06e7753e50bbb33b07e2876359f0cb7229fee60d0f343fd0a608b511ce9123",
+    "sources/weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "verification.log": "9039cb48248096598bd716d90fb52cc89391626861dbbaaf50dae3552432fad3"
+  }
+}

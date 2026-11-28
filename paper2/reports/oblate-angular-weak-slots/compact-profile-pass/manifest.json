@@ -1,0 +1,23 @@
+{
+  "run_id": "47d66179-da34-4f4e-809e-2eb2d7f19c96",
+  "source_commit": "7d4b90ced87473ae3124878a75a74cef012e0562",
+  "status": "accepted_single_angular_snapshot",
+  "payload_sha256": {
+    "README.md": "e443bf3573283f314f42f3ca199c306827066585f574612b6b2a60ab4d821a00",
+    "angular-weak-slot-checkpoint.json": "4803754e984af0ae3f659f57625faa8f7dfeef8870233f9b2c08d33c3ea08517",
+    "angular-weak-slot-progress.jsonl": "e6ad6f653dd88a22534fb974b77c7f3894c4810fd4cf11b3403200ee62d702b8",
+    "archive-status.json": "7bd5436318b6ee2af18ee12c1b756ec1ef8bcc5e8a970f6043e7cd04488b6bc6",
+    "compact-profile-probe-checks.json": "6e674fc02a7a77bc107a31547639c8a8b715bc62b83cc23f574f62408a241dbe",
+    "compact-profile-snapshot-m0-r3_2.json": "5227c36de72d69610e04591a755b54f912129c25c8973c0ac317a6b28eb523c0",
+    "execution.json": "8dee556937d95a11ee0b9be3799c0c3ac6277162581f5cd82b9098050a99da3b",
+    "resource-samples.json": "886d9321de8e2d32f7a675f041c30577cc337d75d6b0358ba8bc2954fcbceb83",
+    "sources/export_angular_weak_slots.py": "e43847f25033810af3113f939006966a931d253318fae41bdb379a20e30951b5",
+    "sources/kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "sources/potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "sources/run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "sources/supervise_weak_validation.py": "fafa6eaf2dbc25137907266583efb3377125167e9b4beecdd6f14d69c16ff690",
+    "sources/weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "timing-events.json": "1cff800f8dec1838bc2ceaf105c08e9aaf9776888396b85f9d22d22adef553c5",
+    "verification.log": "2ffb0bf8e7aaedcc198205d3e4fc88f7fb4b89949cd3c7a78c9a63d06528d2e3"
+  }
+}
