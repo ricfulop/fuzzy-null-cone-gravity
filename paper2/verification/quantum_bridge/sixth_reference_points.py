@@ -154,6 +154,7 @@ class UnreducedPointOracle:
             "R": {n: self._tree(geometry["R"][n], (), n) for n in (2, 3, 4)},
             "b": {n: self._tree(geometry["b"][n], (3,), n+1) for n in (1, 2, 3)},
             "L6": self._tree(geometry["L"][6], (), 6)}
+        self._plans = {order: self._make_plan(order) for order in (3, 4, 6)}
         if progress is not None:
             progress({"stage": "unreduced_point_oracle_prepared", "statistics": self.statistics()})
 
@@ -204,17 +205,14 @@ class UnreducedPointOracle:
     def statistics(self):
         return {"caps": dict(self._caps), "work": dict(self._work),
                 "unique_polynomials": len(self._compiled),
+                "evaluation_plans": {str(order): self.evaluation_plan(order=order) for order in (3, 4, 6)},
                 "coefficient_arithmetic": "exact compilation, binary64 physical evaluation",
                 "work_units": "coefficient visits/derivative upper bounds and evaluated monomial terms",
                 "geometry_recomputed": False, "inverse_fields_constructed": False,
                 "accuracy_certified": False}
 
-    def local_point(self, point, *, order=3):
-        """Evaluate physical local data for third, fourth, or energy (6) stage."""
-        if type(order) is not int or order not in (3, 4, 6):
-            raise ValueError("order must be 3, 4 or 6")
-        point = _array(point, (3,), "point")
-        radius_squared = _finite(fsum(x*x for x in point), "radius squared")
+    def _make_plan(self, order):
+        """Cache structural selection only; no physical point is evaluated."""
         nmax = 1 if order == 3 else 2
         layouts = {name: self._layouts[name] for name in ("q", "s")}
         layouts.update({name: self._layouts[name][:nmax+1]
@@ -223,16 +221,35 @@ class UnreducedPointOracle:
         layouts["b"] = {n: self._layouts["b"][n] for n in range(1, 4 if order == 6 else 3)}
         if order == 6:
             layouts["L6"] = self._layouts["L6"]
-        indices = sorted(_indices(layouts))
+        indices = tuple(sorted(_indices(layouts)))
         term_count = sum(len(self._compiled[i][1]) for i in indices)
+        maxima = tuple(max((p[a] for i in indices for p, _ in self._compiled[i][1]), default=0)
+                       for a in range(3))
+        return {"layouts": layouts, "indices": indices, "terms": term_count, "maxima": maxima}
+
+    def evaluation_plan(self, *, order=3):
+        """Exact per-point charged work, independent of coordinates and values."""
+        if type(order) is not int or order not in (3, 4, 6):
+            raise ValueError("order must be 3, 4 or 6")
+        plan = self._plans[order]
+        return {"order": order, "point_evaluations": 1, "term_evaluations": plan["terms"],
+                "unique_polynomials": len(plan["indices"]), "maximum_coordinate_powers": list(plan["maxima"]),
+                "physical_fields_evaluated": False}
+
+    def local_point(self, point, *, order=3):
+        """Evaluate physical local data for third, fourth, or energy (6) stage."""
+        if type(order) is not int or order not in (3, 4, 6):
+            raise ValueError("order must be 3, 4 or 6")
+        point = _array(point, (3,), "point")
+        radius_squared = _finite(fsum(x*x for x in point), "radius squared")
+        plan = self._plans[order]
+        layouts, indices, term_count, maxima = (plan[key] for key in ("layouts", "indices", "terms", "maxima"))
         if self._work["point_evaluations"]+1 > self._caps["point_evaluations"]:
             raise ValueError("max_point_evaluations exceeded")
         if self._work["term_evaluations"]+term_count > self._caps["term_evaluations"]:
             raise ValueError("max_term_evaluations exceeded")
         self._work["point_evaluations"] += 1
         self._work["term_evaluations"] += term_count
-        maxima = tuple(max((p[a] for i in indices for p, _ in self._compiled[i][1]), default=0)
-                       for a in range(3))
         powers = []
         for x, maximum in zip(point, maxima):
             row = [1.0]
