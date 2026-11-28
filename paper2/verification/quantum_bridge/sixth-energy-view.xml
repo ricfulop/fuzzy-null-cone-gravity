@@ -1,6 +1,6 @@
 <signal name="H6_mixed_value" label="Raw mixed sixth-order coefficient" digits="6" />
 <signal name="H6_total_error_indicator" label="Summed physical error diagnostic" digits="9" better="lower" />
-<signal name="H6_families_completed" label="Energy families completed in current direction" digits="0" />
+<signal name="H6_families_completed" label="Families in most recent integration stage" digits="0" />
 <signal name="H6_controls_completed" label="Triple integral controls completed" digits="0" />
 <signal name="direction" label="Raw TT direction" />
 <signal name="family" label="Signed energy contribution" />

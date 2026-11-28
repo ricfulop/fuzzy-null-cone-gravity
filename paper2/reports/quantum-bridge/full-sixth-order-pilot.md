@@ -1,12 +1,52 @@
-# Complete sixth-order energy: prospective bounded pilot
+# Complete sixth-order energy: pilot protocol and first partial result
 
-This protocol is written **before execution**. It specifies a numerical
-assembly of the reduction-first, fixed ten-mode Hamiltonian. No mixed H6
-value or full four-point quantum observable has yet been obtained by this
-pilot. The code has independent read-only algebra and interface review;
-AST/import checks do not constitute numerical validation.
+The protocol below was committed before execution. The first run then
+completed the pure-momentum case and seventeen mixed contributions but
+stopped at its declared parameter-evaluation work cap. **No full mixed H6
+value or four-point quantum observable was obtained.**
 
-## Question and parent evidence
+## Reviewed first attempt
+
+- Experiment: `84e19d09-b756-4cfd-b07c-2c22d83172e8`.
+- Run: `2624f0fc-47a2-499d-af2f-ec8b923998b3`.
+- Immutable source: `afac83580b7eafd5b329aff57d66bfd93f72211b`.
+- Recorded calculation time: 312.326 seconds; runner duration 312.706 seconds.
+- [Complete byte-preserved partial output](data/sixth-energy-first-attempt.json).
+
+All nine triple-integral controls and the indicator-conversion controls
+passed. The driver preserved thirteen completed control/radius records.
+Pointwise source and T1/T2 checks passed for both directions, together with
+87 pure-momentum and 76 mixed exact canonical checks.
+
+Pure momentum completed all twenty entries, with only the two required
+families nonzero. Their exact bin ratio passed. The total was
+32618.557080168644, versus the independent archived radial value
+32618.55708016862, a scaled difference of 7.81e-16. The summed physical
+numerical indicator was 1.74e-8. The separate 49I and 28I comparisons also
+passed; no cancellation between them was needed to pass the reference.
+
+The mixed direction completed fifteen local and two canonical entries,
+each satisfying its own numerical gate. Both nested kernels compiled:
+
+| Kernel | Compiled terms | Two-parameter terms | Compilation seconds | Planned term evaluations |
+|---|---:|---:|---:|---:|
+| Scalar | 18,065 | 14,753 | 16.092 | 76,805,028 |
+| York | 42,435 | 36,391 | 147.856 | 189,253,918 |
+
+The planned counts include all 16/24/32 grids, independent final-axis
+refinements and the 96-digit repeat. The scalar preflight rejected work
+above the declared 50-million limit before integrating either nested term.
+The triple term and total energy gate were consequently not reached.
+This is a computational work-limit failure, not a measured failure of
+the gravitational formula, and it leaves the energy question unanswered.
+
+The partial JSON, complete raw log and exact source archive are retained
+as durable project artifacts. The proposed implementation repair is exact
+algebraic consolidation of the redundant Laurent kernel representation;
+the original source/run remain preserved. No tolerance or work-limit
+relaxation has been selected, and the repaired evaluator has not yet run.
+
+## Preregistered question and parent evidence
 
 The parent experiment `2a5669d5-55a0-445f-8538-0941b3615cc9` established the
 source, Fourier-kernel and exterior-tail ingredients, as documented in

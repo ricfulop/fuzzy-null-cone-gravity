@@ -27,7 +27,7 @@ Companion dynamical manuscript and reproducible symbolic/numerical verification 
 - [Sixth-order bilinear and tail reduction](reports/quantum-bridge/sixth-order-bilinear-and-tail-reduction.md): removes explicit second-response fields from the integrated Hamiltonian while retaining their scalar/York bilinears, and isolates the three-HEAT algebraic tail. The formulas have independent algebra checks; the complete mixed energy remains unevaluated.
 - [Validated sixth-order source and integration ingredients](reports/quantum-bridge/sixth-order-backend-validation.md): nine Fourier controls, 72 synthetic tail checks, 680 source-component checks, exact momentum parity and two gravitational tails passed, including the required nonzero-monopole case. A preserved work-cap interruption was repaired without changing tolerances or the cap. This does not yet supply a mixed H6 value or a four-point result.
 
-- [Complete sixth-order prospective pilot](reports/quantum-bridge/full-sixth-order-pilot.md): preregistered twenty-term energy assembly, exact ten-mode canonical controls, independent pure-momentum reference, Decimal triple-integral checks and a common-unit total error gate. Production execution and independent full mixed-functional validation are separate outstanding steps.
+- [Complete sixth-order pilot and preserved partial result](reports/quantum-bridge/full-sixth-order-pilot.md): pure momentum passed its independent radial comparison; seventeen mixed energy entries and exact canonical checks completed before the declared parameter-work cap stopped the run. The full mixed energy, its independent functional reference and the four-point loop remain pending.
 
 ## Reproduce all calculations and figures
 

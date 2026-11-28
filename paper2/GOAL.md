@@ -237,3 +237,12 @@ reference, Decimal triple-integral controls and a summed physical-unit error
 gate. No numerical production result is claimed by its implementation.
 Independent full mixed-functional validation remains required even if the
 pilot passes; this is still a classical prerequisite to the four-point loop.
+
+The first H6 pilot subsequently completed its pure-momentum reference
+(relative difference 7.81e-16), nine Decimal triple-integral controls,
+both directions' pointwise and canonical checks, and seventeen mixed
+energy entries. It stopped before nested integration because its redundant
+Laurent representation exceeded the declared 50-million evaluation cap.
+The [preserved partial result](reports/quantum-bridge/full-sixth-order-pilot.md)
+records this failure. Exact algebraic kernel consolidation is the proposed
+implementation repair; no full mixed value or four-point result exists yet.
