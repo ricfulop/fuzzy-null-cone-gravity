@@ -27,8 +27,9 @@ extrapolated in this run.
 
 The first run completed the exact classical reconstruction but failed its
 frequency-quadrature convergence control before reaching the gravitational
-two-point stage. Section 5 records this partial result and the resolution
-change for a separate child; no gravitational loop result is available yet.
+two-point stage. Section 5 preserves that failure. The higher-resolution
+child subsequently passed all specified checks and evaluated the finite-mode
+two-point function; Section 6 records its reviewed result.
 
 ## 1. Complete finite-mode interaction polynomial
 
@@ -279,3 +280,61 @@ There is therefore no gravitational loop number from this run. The next
 child uses 64 and 128 quadrature points while retaining the tolerance,
 Hamiltonian, cases, and fixed run recipe. The failed source node and log
 remain immutable evidence of the resolution requirement.
+
+## 6. Refined run: complete finite-mode two-point result
+
+Experiment 21802d5c-0bde-4106-adb2-509c55ad1725 used source
+a078aca003f0bb3878c0edf992489424866b0532.
+Run 6a824475-9579-43bc-aeff-4b05e26bca0e completed in 111.56 seconds
+on the recorded local CPU. The effective configuration, complete raw
+output, final export and stage record were reviewed. Quadrature orders
+were 64 and 128; all acceptance tolerances and case definitions were
+unchanged from the failed parent.
+
+All specified bookkeeping controls pass, including ordered-partition
+counts, higher-vertex controls, nonzero frequencies, external permutations,
+canonical rotations, and cross-resolution agreement. The maximum absolute
+64-versus-128 control difference is $2.78\times10^{-17}$.
+
+The gravitational calculation then passes twenty diagonal cases and two
+mixed QP checks, with all ten retained internal modes. The maximum
+analytic-versus-frequency-quadrature error is
+
+$$
+\max\frac{|\Pi_{\rm quadrature}-\Pi_{\rm analytic}|}
+ {1+|\Pi_{\rm analytic}|}
+=8.4872\times10^{-17}.
+$$
+
+This is a scaled comparison error, not a relative uncertainty for every
+small coefficient and not an error estimate for the physical regulator.
+Normalized rotational comparisons agree to $1.1358\times10^{-16}$ in
+the same scaled convention. Both directly tested mixed QP coefficients
+are zero, as predicted by the analytic tensor argument in Section 3.
+
+The independent canonical data, rational polynomials, all controls,
+individual diagram contributions and frequency cases are in
+[quartic-loop-results.json](data/quartic-loop-results.json).
+For the representative electric and magnetic modes, the configuration
+inverse-propagator corrections, including the momentum contribution, are:
+
+| Euclidean frequency | Electric $\delta\mathcal D_Q$ | Magnetic $\delta\mathcal D_Q$ |
+| ---: | ---: | ---: |
+| 0 | -0.313961352291 | -0.473776011227 |
+| 0.7 | 0.145360782553 | 0.000709666816 |
+| 2 | 3.429559242846 | 3.392831576140 |
+
+Every entry is the coefficient of $\hbar$ with packet width one and
+$16\pi G=1$, under the declared bare Weyl prescription. The underlying
+momentum corrections are frequency-independent at this order:
+$\Pi_{PP,E}=-0.925462661884$ and
+$\Pi_{PP,B}=-0.954906829696$. They are comparable with the unit free
+PP Hessian if one simply sets $\hbar=1$. Therefore the small numerical
+comparison errors do not imply that the loop expansion itself is small
+or convergent at those unit parameters.
+
+This is an evaluated quantum two-point coefficient of the declared
+finite-mode gravitational Hamiltonian, including its momentum interactions.
+It is not a four-graviton amplitude, a graviton mass prediction, or a
+physical large-N extrapolation. The missing spatial fifth/sixth-order
+inputs and connected four-point construction remain required.

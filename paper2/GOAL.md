@@ -186,3 +186,14 @@ spectral-theorem statement. The extension is an additional physical choice,
 exact finite-hbar correlators may depend on it, and no uniform-rank bound,
 archived Monte Carlo identification, microscopic edge theory, or full
 relativistic reconstruction has been derived.
+
+The 64/128-point refinement subsequently passed all specified loop controls
+and evaluated twenty diagonal plus two mixed one-loop two-point cases
+from the complete finite-mode gravitational polynomial. Its maximum
+scaled analytic-versus-quadrature error is $8.49\times10^{-17}$;
+[the reviewed result and complete data](reports/quantum-bridge/complete-quartic-and-two-point.md)
+preserve the failed parent as well. This removes the frequency-resolution
+issue and supplies actual two-point quantum coefficients under the same
+prescription. It does not evaluate the four-point observable, establish
+small quantum corrections at unit parameters, or control physical cutoff
+limits. Fifth/sixth-order spatial contractions are the next required input.
