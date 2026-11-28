@@ -7,9 +7,12 @@ four-graviton amplitude of continuum pure Einstein gravity. It supplies a
 quantum reference for the ongoing finite-rank investigation. **It is not a
 finite-$N$ Gaunt amplitude, a large-$N$ extrapolation, or a constraint repair.**
 
-The numerical verification described below is preregistered here. Its
-tracked run has not yet been reviewed in this revision. An analytic formula
-below is distinguished from a measured numerical residual.
+The numerical verification has now been reviewed from the raw log and JSON
+of run 0739df69-40f4-4d5e-a0e0-2a03f3d9d93c, immutable source
+39ca48c3f1c5746bc826ea4e85067d6b53c9b6b3. The maximum relative difference
+from the published amplitude is $3.304020110188979\times10^{-14}$ across
+the twelve specified configurations. This verifies the stated continuum
+reference calculation, with the scope limitations above intact.
 
 The inputs are published scalar Compton tree amplitudes, their KLT relation,
 and a continuum state-count identity. We evaluate their dimensionally
@@ -180,7 +183,7 @@ and loses this nonzero answer. Thus a test using strictly four-dimensional
 cuts can miss the entire rational contribution. This is one reason that
 matching the earlier tree amplitude does not determine the quantum result.
 
-## Independent numerical checks to run
+## Independent numerical checks and reviewed result
 
 The implementation is
 [one_loop_all_plus.py](../../verification/quantum_bridge/one_loop_all_plus.py).
@@ -188,7 +191,7 @@ The fixed experiment entry point dispatches to it through the committed
 configuration. No third-party Python packages, GPU or remote compute are
 required.
 
-The planned checks are:
+The protocol committed before the run specified:
 
 1. Exact rational simplex moments, Gamma-polynomial cancellation and the
    full on-shell polynomial identity, plus box multiplicities reconstructed
@@ -209,10 +212,29 @@ The planned checks are:
    entire amplitude; retaining only one real scalar state gives half the
    pure-gravity result.
 
-These are finite, deterministic coverage checks. They do not constitute
-an off-shell Ward-identity proof or evaluations of the other helicity
-channels. The numerical result will be reported from the tracked output,
-including its immutable source commit.
+All specified checks passed. The saved result is
+[one-loop-all-plus-results.json](data/one-loop-all-plus-results.json).
+
+| Quantity | Reviewed result |
+| --- | --- |
+| Exact on-shell polynomial residual | $0$ |
+| Box classes reconstructed from all cuts | $3$, each with coefficient $2$ |
+| Independent simplex cases | $6$, at $4^3$ and $6^3$ quadrature nodes |
+| Maximum simplex absolute error | $9\times10^{-60}$ |
+| Scattering configurations | $12$ |
+| Maximum amplitude relative error | $3.304020110188979\times10^{-14}$ |
+| Maximum error over all $24$ external permutations per configuration | $1.670259046861677\times10^{-14}$ |
+| Maximum spin-two little-group error | $1.0809335029680053\times10^{-15}$ |
+| Maximum fourth-power energy-scaling error | $8.382321287552153\times10^{-16}$ |
+| Maximum scalar-tree KLT algebra error | $2.244581332394338\times10^{-16}$ |
+| Relative error after setting $\mu=0$ before integration | $1$ |
+| Relative error after retaining one real state | $1/2$ |
+
+These are finite, deterministic coverage checks and arithmetic residuals.
+They do not constitute an off-shell Ward-identity proof, uncertainty bounds
+for a gravitational model, or evaluations of the other helicity channels.
+The reported script time is $0.0711$ seconds; total runner duration was
+$0.329$ seconds. No GPU or remote computation was used.
 
 ## What a finite-$N$ calculation still must supply
 
