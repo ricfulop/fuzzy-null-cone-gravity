@@ -58,6 +58,9 @@ The subsequent [full retry](reports/oblate-stationary-preservation-timeout-2026-
 
 The next [terminal verification attempt](reports/oblate-stationary-dynamics-timeout-2026-11-28/README.md) passed exact constraint preservation and all 22 original retained-row checks, then stopped at 900 seconds while constructing reduced dynamics. Its authenticated intermediate state is preserved; full dynamics reconstruction, the discarded response, and interval/germ certification remain unfinished.
 
+
+The [exact-field dynamics attempt](reports/oblate-stationary-field-dynamics-timeout-2026-11-28/README.md) reduced the original-row check to 50.614 seconds and completed KM in 240.467 seconds, but stopped at the 900-second limit during differentiation of the embedding. The next invocation extends the wall budget with scientific code and checks unchanged. Reduced dynamics, response and interval/germ certification remain open.
+
 The [shared local weak-form validation](reports/shared-oblate-weak-validation-2026-11-28/README.md) now passes all eight batches for the original Paper I action: representative exact sampled potential/lapse/Green checks, three fixed symbolic gauge vectors, and nonzero sign/ablation controls. This is separate supporting evidence; it does not certify the stationary DAE, a physical radial domain, an admissible seed, or nonlinear consistency.
 
 With matched measured zero-coupling controls at fixed scalar self-interaction, the strongest tested coupling reduces the matrix model's traceless-field variance Q2 by **47.68–48.02%** across four ranks. A larger lattice at rank 24 gives **47.621%**, a change of **−0.060 ± 0.047 percentage points**. This supports persistence over the tested volume change, not an exact universal percentage or a continuum extrapolation.

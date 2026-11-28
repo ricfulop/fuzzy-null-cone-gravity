@@ -95,3 +95,5 @@ Reproduce the corrected linearized lapse checks with `python verification/oblate
 - If a candidate fails, preserve the counterexample and state precisely which formulation it excludes. Continue with the next justified construction; do not silently redefine the goal as a completed theory.
 
 The next [terminal verification attempt](reports/oblate-stationary-dynamics-timeout-2026-11-28/README.md) passed exact constraint preservation and all 22 original retained-row checks, then stopped at 900 seconds while constructing reduced dynamics. Its authenticated intermediate state is preserved; full dynamics reconstruction, the discarded response, and interval/germ certification remain unfinished.
+
+The [exact-field dynamics attempt](reports/oblate-stationary-field-dynamics-timeout-2026-11-28/README.md) reduced the original-row check to 50.614 seconds and completed KM in 240.467 seconds, but stopped at the 900-second limit during differentiation of the embedding. The next invocation extends the wall budget with scientific code and checks unchanged. Reduced dynamics, response and interval/germ certification remain open.
