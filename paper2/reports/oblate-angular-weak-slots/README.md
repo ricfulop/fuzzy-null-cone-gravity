@@ -1,12 +1,12 @@
 # Oblate angular weak-slot snapshots: preparation
 
-Status: **first angular run timed out with three controls and zero snapshots; narrow profile-probe repair reviewed and approved, not yet run**.
+Status: **two bounded attempts timed out; three controls passed in each, but no angular snapshot completed**.
 This child follows the completed [bounded local weak-form validation](../oblate-weak-curvature-validation/full-recheck-pass/README.md).
 It belongs to the original Paper I metric-coefficient Einstein–Hilbert Galerkin regulator. It does not test the distinct reduction-before-cutoff Gaunt candidate.
 
 The question is whether the validated local densities can be integrated into consistently labelled angular matrices at a small, declared set of radii. This is an interface diagnostic, not a finite radial operator calculation.
 
-The [first attempt](first-attempt/README.md) preserves run `b092637e-9aa2-406e-86a8-963593e30f47` unchanged. Its source hashes and cleanup were verified. The [narrow follow-up](direct-profile-probe-preparation.md) targets only `m=0,r=3/2` under the same resource and numerical limits; a pass would not complete the six-snapshot target below.
+The [first attempt](first-attempt/README.md) preserves run `b092637e-9aa2-406e-86a8-963593e30f47` unchanged. Its source hashes and cleanup were verified. The [narrow follow-up preparation](direct-profile-probe-preparation.md) targeted only `m=0,r=3/2` under the same resource and numerical limits. Its [preserved attempt](profile-pair-attempt/README.md) also hit the wall limit: profile jets built in 0.522 seconds, and at least 120 pair integrals in the first 144-term potential-density family block completed before row 10 was interrupted. No block reconstruction or snapshot passed. The next arithmetic diagnostic remains a proposal; the six-snapshot target below is incomplete.
 
 ## Fixed scientific scope
 

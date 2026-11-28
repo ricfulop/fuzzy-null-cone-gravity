@@ -1,0 +1,48 @@
+{
+  "run_id": "5e8d761b-ccb2-440a-8f9d-07098036d1af",
+  "source_commit": "8eab4afd1a153331c2252669e3cfde2b6017b13f",
+  "status": "incomplete_direct_profile_probe_wall_timeout",
+  "elapsed_seconds": 300.3893613750115,
+  "stop_reason": "wall_budget",
+  "child_return_code": 143,
+  "completed_control_batches": 3,
+  "completed_snapshots": 0,
+  "expected_snapshots": 1,
+  "completed_pair_blocks": 0,
+  "first_block": {
+    "block": "potential_density",
+    "lf": 0,
+    "rf": 0,
+    "expected_terms": 144,
+    "recorded_completed_terms_lower_bound": 120,
+    "completed_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "interrupted_left_row": 10
+  },
+  "profile_jet_build_seconds": 0.5216768737882376,
+  "completed_pair_rows_seconds": 121.87709654076025,
+  "peak_sampled_group_rss_bytes": 286277632,
+  "sample_count": 1025,
+  "source_hashes_verified": true,
+  "final_result_present": false,
+  "snapshot_file_present": false,
+  "independent_process_check": {
+    "utc": "2026-11-28T09:29:12.346217+00:00",
+    "group": 62481,
+    "members": []
+  },
+  "inner_operation_unresolved": "row timer combines density construction, substitution, normalization and quadrature",
+  "initial_refinement_zero_is_measurement": false,
+  "prior_run": "b092637e-9aa2-406e-86a8-963593e30f47",
+  "next_scientific_run_launched": false
+}

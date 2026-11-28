@@ -1,0 +1,21 @@
+{
+  "run_id": "5e8d761b-ccb2-440a-8f9d-07098036d1af",
+  "source_commit": "8eab4afd1a153331c2252669e3cfde2b6017b13f",
+  "status": "incomplete_direct_profile_probe_wall_timeout",
+  "sha256": {
+    "README.md": "7287c33354ece892c7544fa385b5ee6905f0a3aa0a9b16fa71bbee8d5c66be28",
+    "angular-weak-slot-checkpoint.json": "37015ec35d88acdf29fbdbb86a082421fea23de7843be70a643c9a0d5f250d27",
+    "angular-weak-slot-progress.jsonl": "488bae5263d652b72227e4dd6d6b0b40593f1efdf53886d759f17fa194b56a9e",
+    "archive-status.json": "286926ea4de31d7129dec87463ee43e1cb11eb26482be36ac7311ba330110953",
+    "execution.json": "9df2d783bd171772a51f06254a5554228152f87610dbad07427878ea5e9f6c86",
+    "resource-samples.json": "02f6bea66a0a1361e08c53f3dda6f68ca246908e3bdde05521ce8461dacc09fc",
+    "sources/export_angular_weak_slots.py": "c11f9b3641967d1aac4dfea1ed6ede6078d997dd4d5ddd7e23b18788be946623",
+    "sources/kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "sources/potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "sources/run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "sources/supervise_weak_validation.py": "5b2ebb65606dc8d20bf438ace801bb9172847521c11eececc3379d6e92a8ff48",
+    "sources/weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "timing-events.json": "1b4c40e6620eb25b9718f25ec27b4d0b9200de11c2db48b7a958575a08f881d5",
+    "verification.log": "4ac5d8fd965eb44aa251395561c490b0538cfc688308f0593fe94385618a2889"
+  }
+}
