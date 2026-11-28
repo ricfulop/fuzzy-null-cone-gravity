@@ -11,6 +11,6 @@ __pycache__/
 *.pyc
 .DS_Store
 # Generated numerical outputs retained locally pending publication approval.
-verification/review_data/*.csv
-verification/review_data/v2_projected_reviewed.json
-verification/reviewed_hmc_summary.json
+paper1/verification/review_data/*.csv
+paper1/verification/review_data/v2_projected_reviewed.json
+paper1/verification/reviewed_hmc_summary.json

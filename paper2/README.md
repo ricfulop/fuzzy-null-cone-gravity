@@ -2,7 +2,7 @@
 
 **Author:** Ric Fulop, Center for Bits and Atoms, Massachusetts Institute of Technology
 
-Companion dynamical manuscript and reproducible symbolic/numerical verification suite inside the `ricfulop/fuzzy-null-cone-gravity` repository. Paper I lives at the repository root (`../paper.tex`), while Paper II lives in this dedicated `paper2/` folder under a distinct manuscript filename so both papers coexist without filename collisions or merge conflicts with Paper I pull requests.
+Companion dynamical manuscript and reproducible symbolic/numerical verification suite inside the `ricfulop/fuzzy-null-cone-gravity` repository. [Paper I](../paper1/README.md) lives in `paper1/` (`../paper1/paper.tex`), while Paper II lives in this dedicated `paper2/` folder. Run all commands below from `paper2/`; each paper's source, PDFs, figures, reports, and verification scripts stay in its own folder.
 
 ## Read the draft and audit
 
