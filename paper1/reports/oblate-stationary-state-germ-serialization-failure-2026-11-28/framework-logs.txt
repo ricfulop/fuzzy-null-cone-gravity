@@ -1,0 +1,10 @@
+Original log: 28852 bytes.
+Kept bytes 0..28852: /Users/ricfulop/.local/share/openresearch/run-logs/9afcd73b-3499-4f08-8185-0f162c716cfb.log
+Last 500 characters of the kept tail:
+ in _print_Rational
+    return "%s/%s" % (expr.p, expr.q)
+                      ^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit
+::orx:: {"m": {"state_germ_certificate_passed": 0, "response_determined": 0, "scientific_invocations": 1}}
+Saved execution evidence: /Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb
+

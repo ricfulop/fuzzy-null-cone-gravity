@@ -1,0 +1,43 @@
+{
+  "state": "reviewed integration ready for one bounded retry",
+  "created_utc": "2026-11-28T08:35:12.376429+00:00",
+  "base_integration_commit": "7f27a9516976abc3bf6ee6e3c09756a4241389a3",
+  "origin_main_commit": "2b0c34947c5d8f8b5f5ab98e416aae0b8f3db1d7",
+  "cache_commit": "da24c65ae16f048f8687432be58ebfeebf031861",
+  "supervisor_commit": "698d7fcd65c3e7eb9f25f6d311d96af27a73e069",
+  "source_sha256": {
+    "verification/oblate_stationary_state_germ_20261128/README.md": "3d46d296a40156cf6ba5e7f0e76cfc256dc84060fcfd1c7cc83aacba2f84231d",
+    "verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "2bd72d22cefc830967e0a1b42bcc2d8220ad4d63295293f56cfbdc9176cd1fb2",
+    "verification/oblate_stationary_state_germ_20261128/run-config.json": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+    "verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "verification/oblate_stationary_state_germ_20261128/run_bounded.py": "29a541993e33243c21d1d31dcd407ef27ddab33f75465d142a5d8fdfc164b26e",
+    "verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "d0d2bee577e6837ef0dfa7b45aad34498a6746e9f015d47662f216a39806aaef",
+    "verification/oblate_stationary_state_germ_20261128/view-config.json": "3b11ba8aa3c6f7ee66d43768bc88dd04ab6246af00b4f14f106ea56269158d0d",
+    "verification/oblate_stationary_state_germ_20261128/view.xml": "c4844f38cc5f5f680e0d72130c6948e5a3dd0f8ef8b7b4627345ddd4b3e65a5e"
+  },
+  "input_pins": {
+    "stationary_operators": {
+      "path": "reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+      "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+    },
+    "terminal_state": {
+      "path": "reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+      "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    }
+  },
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "max_atan_terms": 256,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "scientific_invocations": 0,
+  "scientific_controls_executed": false,
+  "mocked_supervisor_tests": 27,
+  "prepared_mathematical_controls": 19,
+  "supervisor_integration_pending": false,
+  "review_refs": [
+    "msg_686ca093",
+    "msg_077879e2"
+  ],
+  "terminal_acceptance_marker": "terminal-evidence.json",
+  "scope": "Preparation only; no physical interval, response witness or germ certificate."
+}

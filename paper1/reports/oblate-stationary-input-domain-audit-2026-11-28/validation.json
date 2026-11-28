@@ -1,0 +1,27 @@
+{
+  "audit_kind": "static JSON syntax inspection",
+  "operator_sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+  "terminal_state_sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08",
+  "operator_entries": 552,
+  "distinct_positive_operator_division_rhs_ast": 79,
+  "all_operator_exponents_positive_rational_literals": true,
+  "all_operator_sqrt_arguments_positive_on_shell": true,
+  "terminal_entry_shapes": {
+    "C": {
+      "polynomial": 30,
+      "outer_quotient_with_variable_polynomial_denominator": 54
+    },
+    "K": {
+      "polynomial": 117,
+      "outer_quotient_with_variable_polynomial_denominator": 79
+    },
+    "B": {},
+    "M": {
+      "polynomial": 70,
+      "outer_quotient_with_variable_polynomial_denominator": 42
+    }
+  },
+  "candidate_evaluated": false,
+  "scientific_modules_imported": false,
+  "certificate_accepted_by_audit": false
+}

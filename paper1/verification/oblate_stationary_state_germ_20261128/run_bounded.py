@@ -137,7 +137,8 @@ def prepare(out, record):
         ["git", "-C", str(SOURCE_REPOSITORY), "rev-parse", commit + "^{commit}"], text=True).strip()
     require(resolved == commit, "Source commit did not resolve to its full immutable revision")
     sources = [HERE / name for name in ("run_bounded.py", "test_run_bounded.py", "run.sh",
-                                         "certify_state_germ.py", "run-config.json", "view-config.json", "view.xml", "README.md")]
+                                         "certify_state_germ.py", "exact_decimal.py", "test_exact_decimal.py",
+                                         "run-config.json", "view-config.json", "view.xml", "README.md")]
     record["source_sha256_before"] = {}
     for path in sources:
         relative = path.relative_to(ROOT).as_posix()

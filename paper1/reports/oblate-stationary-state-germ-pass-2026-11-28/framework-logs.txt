@@ -1,0 +1,7 @@
+Original log: 26889 bytes.
+Kept bytes 0..26889: /Users/ricfulop/.local/share/openresearch/run-logs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1.log
+Last 500 characters of the kept tail:
+tationary germ certified.
+::orx:: {"phase": "complete", "step": 1, "of": 1, "unit": "certificate", "m": {"state_germ_certificate_passed": 1, "formal_response_nonzero": 1, "certified_response_nonzero": 1, "discarded_response_nonzero": 1, "response_determined": 1, "scientific_invocations": 1, "manufactured_case_count": 20}}
+Saved execution evidence: /Users/ricfulop/.local/share/openresearch/local-runs/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1/repo/paper1/run-output/c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1
+

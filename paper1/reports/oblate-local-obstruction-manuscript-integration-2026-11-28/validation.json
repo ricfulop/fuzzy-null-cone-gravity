@@ -1,0 +1,99 @@
+{
+  "kind": "manuscript build and scope validation",
+  "builds": [
+    {
+      "layout": "technical",
+      "pass": 1,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "paper.tex"
+      ],
+      "cwd": "paper1",
+      "exit_code": 0,
+      "log": "technical-pass-1.log"
+    },
+    {
+      "layout": "technical",
+      "pass": 2,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "paper.tex"
+      ],
+      "cwd": "paper1",
+      "exit_code": 0,
+      "log": "technical-pass-2.log"
+    },
+    {
+      "layout": "reading",
+      "pass": 1,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "paper_reading.tex"
+      ],
+      "cwd": "paper1",
+      "exit_code": 0,
+      "log": "reading-pass-1.log"
+    },
+    {
+      "layout": "reading",
+      "pass": 2,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "paper_reading.tex"
+      ],
+      "cwd": "paper1",
+      "exit_code": 0,
+      "log": "reading-pass-2.log"
+    }
+  ],
+  "final_build_checks": {
+    "technical": {
+      "output": "Output written on paper.pdf (27 pages, 924811 bytes).",
+      "overfull_boxes": 0,
+      "undefined_references": 0,
+      "multiply_defined_labels": false,
+      "fatal_errors": 0,
+      "nonfatal_warning_count": 17,
+      "underfull_boxes": 32
+    },
+    "reading": {
+      "output": "Output written on paper_reading.pdf (45 pages, 850924 bytes).",
+      "overfull_boxes": 0,
+      "undefined_references": 0,
+      "multiply_defined_labels": false,
+      "fatal_errors": 0,
+      "nonfatal_warning_count": 14,
+      "underfull_boxes": 7
+    }
+  },
+  "proof_pages_visually_inspected": {
+    "paper.pdf": [
+      16
+    ],
+    "paper_reading.pdf": [
+      29
+    ]
+  },
+  "scientific_invocations_during_integration": 0,
+  "independent_certificate_review": "msg_aceca875",
+  "independent_proposition_review": "msg_b9f3143f",
+  "review_nits_applied": [
+    "explicit d(r)z(r) response product",
+    "flat oblate spacetime wording",
+    "f and w_* in C_c^infinity(I)",
+    "adjacent insertion after canonical_oblate"
+  ],
+  "canonical_rank_section_unchanged": true
+}

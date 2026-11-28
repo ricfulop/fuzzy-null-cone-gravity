@@ -1,0 +1,51 @@
+{
+  "source_base_commit": "84f5e8bbd106c081924213189d5830919c54f703",
+  "source_sha256": {
+    "paper.tex": "c41e2f3534c655e2de13e6591c7e94b9b06a957fdd43365f4de3c100714396e9",
+    "paper_reading.tex": "a50587a9b4605cf63f70eef3f1d342c996aa78c282432cebf466f8f9c61b7818",
+    "sections/nonlinear_action.tex": "0d3b1c9d4ab83ab98de8b05d76334cef30545ccbf82ed6ae03dbec3861024673",
+    "sections/canonical_oblate.tex": "f7a5ac43ec4748c65d36d666e88925839f267659c18dd169064c3e437f3676ae",
+    "sections/oblate_local_obstruction.tex": "650ccdd0a118b28e074fe4206fe8e1d64ded1ff9b3c4075b966262bfb1136015",
+    "README.md": "d35ee463cc2eb47a060671749d06d05b1c6461bc12ff79a34703394cfcdad4f2",
+    "GOAL.md": "7803b01b2fd39e9b0a207c27a8868db11087160e6e85e5fd3c2c8e800a3bb695"
+  },
+  "run_id": "c925d4a2-1531-4fb7-96e0-a8a0f4baa5e1",
+  "executed_source_commit": "0034162b4410ecfc229c48daaa47fcf06da4eafe",
+  "supporting_file_sha256": {
+    "reports/oblate-stationary-state-germ-pass-2026-11-28/outputs/state-germ-certificate.json": "f07a00573347ed4dd037c4395124675b0dca02b5ab355909fe09e8d787030ca8",
+    "reports/oblate-stationary-state-germ-pass-2026-11-28/archive-manifest.json": "0ffa751df40e08746047bdab88807a08874bcbe060b882e9b0bfb99c6a754ebe",
+    "reports/oblate-stationary-input-domain-audit-2026-11-28/archive-manifest.json": "f09846e6356ab125c7bf8575b1f9481e4884fdc7a5772a12626d07432c725a97",
+    "reports/oblate-null-map-check-2026-11-27/map-checks.json": "75fc5c1036777716ef80bd1911adc9a90d2ef0582110f0ffe3ccc9ed973305cc",
+    "reports/oblate-nonlinear-null-preparation-2026-11-27/README.md": "87c13eec80ab207e464c6ad1f1e8784280bd214c4304b454aa30a92186cf2373",
+    "reports/oblate-stationary-seed-preparation-2026-11-27/README.md": "96094f9d4c11e04f1f6c746f9b2f15957170624dab294c1dccd74bb2330ac113",
+    "reports/oblate-stationary-nonlinear-linkage-preparation-2026-11-28/README.md": "a5162e0446f5ee5d16c221a640e409eaac9565f3bb12b4834165ec3a87c9f20e"
+  },
+  "claims": [
+    {
+      "manuscript": "prop:oblate_local_obstruction, forward-germ portion",
+      "evidence": "Pinned original operators and terminal state; exact CM/JM/SM, profile lift and all 22 Euler rows; 57 denominator enclosures and original rank-six minor at r0=1; nonzero response column 1 using the same 25-term atan enclosure.",
+      "interpretation": "Real analytic local stationary polar germ, selected by the second unit vector in eight free coordinates."
+    },
+    {
+      "manuscript": "eq:oblate_mixed_obstruction",
+      "evidence": "Passed eight-channel coefficient map, full Einstein/Euler controls, odd continuum coordinate leg and parity reduction from the stationary seed derivation.",
+      "interpretation": "For c1=e+g_f, B_xi=(4/105) integral rho*w_*f*D[e] dr; no extra radial measure."
+    },
+    {
+      "manuscript": "eq:oblate_quadratic_compatibility and proposition conclusion",
+      "evidence": "Off-shell angular Noether identity restricted to hypothetical retained solutions; E_full(c0)=0 and QF_xi(c0)=0 remove both c2 contributions.",
+      "interpretation": "Continuity and compact tests make B nonzero, ruling out C2-in-amplitude exact retained families with this specified spacetime tangent even with time-dependent second-order corrections."
+    }
+  ],
+  "excluded_claims": [
+    "global radial boundary realization",
+    "N=4 obstruction",
+    "obstruction for the polar leg e alone",
+    "all representatives after adding linearized gauge directions",
+    "completeness of the forward stationary family",
+    "final nonlinear Dirac classification",
+    "physical degree-of-freedom count",
+    "equivalence with a different regulator or the sampled Euclidean action",
+    "complete quantum gravity theory"
+  ]
+}
