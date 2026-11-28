@@ -1,0 +1,9 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "dc76cd4956f83668503687102cd0b9617280404fb03194aaf945f87ac98624b5",
+    "inspect_syntax.py": "e801bc149c5722be14a8f34961faa35ad188189fa9c31ee18c830496e5615c40",
+    "provenance.json": "e1ae47f582a9180545208ed49197dcf479f036da2d6c90a6c3e40374411d112a",
+    "validation.json": "2da60c2276e993a5ce8b839d4dc9d8c52fe8b0afcbb3cbdf07316aa5443020b9"
+  }
+}
