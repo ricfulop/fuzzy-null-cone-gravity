@@ -1,0 +1,369 @@
+{
+  "timings_are_nested": true,
+  "clock": "child elapsed seconds in the progress journal",
+  "event_count": 100,
+  "completed": [
+    {
+      "stage_id": 1,
+      "stage": "manufactured_controls",
+      "begin_child_seconds": 0.001648,
+      "duration_seconds": 0.109028,
+      "end_child_seconds": 0.11068
+    },
+    {
+      "stage_id": 2,
+      "stage": "fixed_epsilon_field_conversion",
+      "begin_child_seconds": 0.110752,
+      "duration_seconds": 3.06258,
+      "end_child_seconds": 3.173337
+    },
+    {
+      "stage_id": 3,
+      "stage": "radial_x0_gauge_right_kernel",
+      "begin_child_seconds": 3.173442,
+      "duration_seconds": 0.601873,
+      "end_child_seconds": 3.77532
+    },
+    {
+      "stage_id": 4,
+      "stage": "principal_block_probe",
+      "begin_child_seconds": 3.775439,
+      "duration_seconds": 0.256075,
+      "end_child_seconds": 4.031519
+    },
+    {
+      "stage_id": 7,
+      "stage": "solve_controls",
+      "begin_child_seconds": 4.031944,
+      "duration_seconds": 0.452241,
+      "end_child_seconds": 4.484189
+    },
+    {
+      "stage_id": 8,
+      "stage": "apply_control_solution",
+      "begin_child_seconds": 4.484273,
+      "duration_seconds": 0.212035,
+      "end_child_seconds": 4.696312
+    },
+    {
+      "stage_id": 9,
+      "stage": "independent_constraints",
+      "begin_child_seconds": 4.696381,
+      "duration_seconds": 0.471856,
+      "end_child_seconds": 5.168244
+    },
+    {
+      "stage_id": 10,
+      "stage": "dae_checkpoint",
+      "begin_child_seconds": 5.168377,
+      "duration_seconds": 0.441169,
+      "end_child_seconds": 5.609549
+    },
+    {
+      "stage_id": 11,
+      "stage": "differentiate_constraints",
+      "begin_child_seconds": 5.609615,
+      "duration_seconds": 30.706448,
+      "end_child_seconds": 36.31607
+    },
+    {
+      "stage_id": 6,
+      "stage": "dae_step",
+      "begin_child_seconds": 4.031914,
+      "duration_seconds": 32.284264,
+      "end_child_seconds": 36.316179
+    },
+    {
+      "stage_id": 13,
+      "stage": "solve_controls",
+      "begin_child_seconds": 36.316235,
+      "duration_seconds": 1.111286,
+      "end_child_seconds": 37.427526
+    },
+    {
+      "stage_id": 14,
+      "stage": "apply_control_solution",
+      "begin_child_seconds": 37.427634,
+      "duration_seconds": 0.869027,
+      "end_child_seconds": 38.296667
+    },
+    {
+      "stage_id": 15,
+      "stage": "independent_constraints",
+      "begin_child_seconds": 38.29675,
+      "duration_seconds": 17.667813,
+      "end_child_seconds": 55.964569
+    },
+    {
+      "stage_id": 16,
+      "stage": "dae_checkpoint",
+      "begin_child_seconds": 55.964698,
+      "duration_seconds": 1.31303,
+      "end_child_seconds": 57.277733
+    },
+    {
+      "stage_id": 17,
+      "stage": "differentiate_constraints",
+      "begin_child_seconds": 57.277805,
+      "duration_seconds": 145.765435,
+      "end_child_seconds": 203.043246
+    },
+    {
+      "stage_id": 12,
+      "stage": "dae_step",
+      "begin_child_seconds": 36.316212,
+      "duration_seconds": 166.727128,
+      "end_child_seconds": 203.043341
+    },
+    {
+      "stage_id": 19,
+      "stage": "solve_controls",
+      "begin_child_seconds": 203.043399,
+      "duration_seconds": 9.825471,
+      "end_child_seconds": 212.868877
+    },
+    {
+      "stage_id": 20,
+      "stage": "apply_control_solution",
+      "begin_child_seconds": 212.868988,
+      "duration_seconds": 153.234585,
+      "end_child_seconds": 366.103579
+    },
+    {
+      "stage_id": 21,
+      "stage": "independent_constraints",
+      "begin_child_seconds": 366.103699,
+      "duration_seconds": 0.00012,
+      "end_child_seconds": 366.10382
+    },
+    {
+      "stage_id": 22,
+      "stage": "dae_checkpoint",
+      "begin_child_seconds": 366.103845,
+      "duration_seconds": 3.799797,
+      "end_child_seconds": 369.903646
+    },
+    {
+      "stage_id": 18,
+      "stage": "dae_step",
+      "begin_child_seconds": 203.043375,
+      "duration_seconds": 166.860348,
+      "end_child_seconds": 369.903725
+    },
+    {
+      "stage_id": 24,
+      "stage": "kernel_field_conversion",
+      "begin_child_seconds": 369.903771,
+      "duration_seconds": 0.128996,
+      "end_child_seconds": 370.032773
+    },
+    {
+      "stage_id": 25,
+      "stage": "kernel_constraint_rref",
+      "begin_child_seconds": 370.032876,
+      "duration_seconds": 23.573094,
+      "end_child_seconds": 393.605976
+    },
+    {
+      "stage_id": 26,
+      "stage": "kernel_denominator_normalization",
+      "begin_child_seconds": 393.606094,
+      "duration_seconds": 1.159448,
+      "end_child_seconds": 394.765549
+    },
+    {
+      "stage_id": 27,
+      "stage": "kernel_build_embedding",
+      "begin_child_seconds": 394.765657,
+      "duration_seconds": 0.002134,
+      "end_child_seconds": 394.767792
+    },
+    {
+      "stage_id": 28,
+      "stage": "kernel_original_constraint_product",
+      "begin_child_seconds": 394.767831,
+      "duration_seconds": 87.954308,
+      "end_child_seconds": 482.722145
+    },
+    {
+      "stage_id": 29,
+      "stage": "kernel_to_expressions",
+      "begin_child_seconds": 482.722254,
+      "duration_seconds": 1.761784,
+      "end_child_seconds": 484.484044
+    },
+    {
+      "stage_id": 23,
+      "stage": "terminal_embedding",
+      "begin_child_seconds": 369.903752,
+      "duration_seconds": 114.582787,
+      "end_child_seconds": 484.486543
+    },
+    {
+      "stage_id": 30,
+      "stage": "terminal_state_snapshot",
+      "begin_child_seconds": 484.486609,
+      "duration_seconds": 2.276816,
+      "end_child_seconds": 486.763429
+    },
+    {
+      "stage_id": 32,
+      "stage": "preservation_field_conversion",
+      "begin_child_seconds": 486.763499,
+      "duration_seconds": 6.246694,
+      "end_child_seconds": 493.010199
+    },
+    {
+      "stage_id": 33,
+      "stage": "preservation_DC",
+      "begin_child_seconds": 493.010289,
+      "duration_seconds": 0.256418,
+      "end_child_seconds": 493.266713
+    },
+    {
+      "stage_id": 34,
+      "stage": "preservation_CK",
+      "begin_child_seconds": 493.266801,
+      "duration_seconds": 5.618944,
+      "end_child_seconds": 498.88575
+    },
+    {
+      "stage_id": 35,
+      "stage": "preservation_sum",
+      "begin_child_seconds": 498.885846,
+      "duration_seconds": 0.009994,
+      "end_child_seconds": 498.895843
+    },
+    {
+      "stage_id": 36,
+      "stage": "preservation_CB",
+      "begin_child_seconds": 498.895898,
+      "duration_seconds": 2.8e-05,
+      "end_child_seconds": 498.895926
+    },
+    {
+      "stage_id": 37,
+      "stage": "preservation_SM",
+      "begin_child_seconds": 498.895949,
+      "duration_seconds": 62.988413,
+      "end_child_seconds": 561.884367
+    },
+    {
+      "stage_id": 38,
+      "stage": "preservation_zero_checks",
+      "begin_child_seconds": 561.88448,
+      "duration_seconds": 2.4e-05,
+      "end_child_seconds": 561.884505
+    },
+    {
+      "stage_id": 31,
+      "stage": "terminal_constraint_preservation",
+      "begin_child_seconds": 486.763479,
+      "duration_seconds": 75.123611,
+      "end_child_seconds": 561.887093
+    },
+    {
+      "stage_id": 40,
+      "stage": "terminal_dynamics_field_conversion",
+      "begin_child_seconds": 561.88715,
+      "duration_seconds": 6.060206,
+      "end_child_seconds": 567.947361
+    },
+    {
+      "stage_id": 41,
+      "stage": "original_rows_field_blocks",
+      "begin_child_seconds": 567.947456,
+      "duration_seconds": 0.048074,
+      "end_child_seconds": 567.995535
+    },
+    {
+      "stage_id": 42,
+      "stage": "original_rows_acceleration_state",
+      "begin_child_seconds": 567.995624,
+      "duration_seconds": 0.059028,
+      "end_child_seconds": 568.054658
+    },
+    {
+      "stage_id": 43,
+      "stage": "original_rows_state_product",
+      "begin_child_seconds": 568.054749,
+      "duration_seconds": 43.860821,
+      "end_child_seconds": 611.915577
+    },
+    {
+      "stage_id": 44,
+      "stage": "original_rows_control_product",
+      "begin_child_seconds": 611.915683,
+      "duration_seconds": 3.9e-05,
+      "end_child_seconds": 611.915723
+    },
+    {
+      "stage_id": 39,
+      "stage": "terminal_original_22_rows",
+      "begin_child_seconds": 561.887133,
+      "duration_seconds": 50.028805,
+      "end_child_seconds": 611.915939
+    },
+    {
+      "stage_id": 46,
+      "stage": "reduced_KM",
+      "begin_child_seconds": 611.915974,
+      "duration_seconds": 234.080508,
+      "end_child_seconds": 845.996489
+    },
+    {
+      "stage_id": 47,
+      "stage": "reduced_DM",
+      "begin_child_seconds": 845.99661,
+      "duration_seconds": 517.413152,
+      "end_child_seconds": 1363.409768
+    },
+    {
+      "stage_id": 48,
+      "stage": "reduced_difference",
+      "begin_child_seconds": 1363.409871,
+      "duration_seconds": 0.48147,
+      "end_child_seconds": 1363.891347
+    },
+    {
+      "stage_id": 49,
+      "stage": "reduced_free_rows",
+      "begin_child_seconds": 1363.891447,
+      "duration_seconds": 5.6e-05,
+      "end_child_seconds": 1363.891503
+    },
+    {
+      "stage_id": 45,
+      "stage": "terminal_reduced_dynamics",
+      "begin_child_seconds": 611.915959,
+      "duration_seconds": 751.975571,
+      "end_child_seconds": 1363.891531
+    }
+  ],
+  "unfinished": [
+    {
+      "event": "begin",
+      "seconds": 4.031687,
+      "sequence": 10,
+      "stage": "dae_closure",
+      "stage_id": 5,
+      "utc": "2026-11-28T07:25:07.298232+00:00"
+    },
+    {
+      "event": "begin",
+      "seconds": 1363.891799,
+      "sequence": 99,
+      "stage": "terminal_reconstruct_dynamics",
+      "stage_id": 50,
+      "utc": "2026-11-28T07:47:47.160975+00:00"
+    },
+    {
+      "event": "begin",
+      "seconds": 1363.891817,
+      "sequence": 100,
+      "stage": "reconstruct_state_product",
+      "stage_id": 51,
+      "utc": "2026-11-28T07:47:47.160992+00:00"
+    }
+  ]
+}

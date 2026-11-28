@@ -1,0 +1,46 @@
+{
+  "state": "started; no reduction completion asserted",
+  "identity": {
+    "T": "atan(1/(10*r))",
+    "T_prime": "-10/(100*r**2 + 1)",
+    "epsilon0": "1/100",
+    "input_dir": "/Users/ricfulop/.local/share/openresearch/local-runs/874b4e9c-d962-4595-8e76-ece483c13e07/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "input_sha256": {
+      "completion.json": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+      "stationary-operators.json": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+      "stationary-reproducibility.json": "c6d199d542555d997aeb49186ca03ea514151ce364d16b0c952160ac24631a31"
+    },
+    "linear_algebra_backend": "QQ(r,T) FracElement control-only historical pivot loop; batched transpose independence",
+    "max_steps": 21,
+    "python": "3.12.11",
+    "python_implementation": "3.12.11 (main, Oct  7 2025, 15:53:48) [Clang 20.1.4 ]",
+    "scope": "JSON-only fixed-epsilon stationary DAE reduction",
+    "source_commit": "c763d3a4624526b5d9b3ef995993cc1fe000554a",
+    "source_sha256": {
+      "exact_linear_algebra.py": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177",
+      "reduce_stationary.py": "ff9c51a9f327c8efc3c74b4bd27157b3b57c889245647e6eb80c4cb4ea8973f1",
+      "reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+      "run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+      "terminal_dynamics.py": "f2530a69a8abaadc57234a999d4c78b61268d8b9cd007290596693da25a14a30",
+      "terminal_kernel.py": "4ae051c5a17b9ab7bac1766ea86d74a2f72d6e4fd6cec6d5eeb124c1cecf4e03",
+      "terminal_preservation.py": "d54c2aa32949cca311d507272fea2af3e813203e9eddefc33068554fa1f3f441",
+      "test_exact_linear_algebra.py": "4616fe18e1f655fb615b8c26b784c9e78ad30f011d3266e63fa3aae3186feecc",
+      "test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+      "test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+      "test_terminal_dynamics.py": "031f2190646bac5a572317dfc276424d397db7171be7c80be58e0670f2cf75be",
+      "test_terminal_kernel.py": "78c4e377a8e99b3316f251a69c598d534f3df362487dc71092dcce9c691f4616",
+      "test_terminal_preservation.py": "9d9040c78026a1328eddfbed3e09c6a8f24e6dbbf5e71f692f88b5aa200cc14a"
+    },
+    "stage": "closure",
+    "sympy": "1.14.0",
+    "terminal_dynamics_backend": "sparse QQ(r,T) original 22 rows and full W=KM-DM reconstruction",
+    "terminal_kernel_backend": "C-only fraction-free CD RREF; original C*M checked over QQ(r,T)",
+    "terminal_preservation_backend": "QQ(r,T) FracElement derivative; sparse CB and (DC+CK)M",
+    "upstream_identity_sha256": "96749679ba2bed1bf3e070cd43dde7697e4aaeeb26d2ae02fd130fb564282c21",
+    "upstream_source_commit": "1cd1a69c258810d38c12adc334733aff1fac6b7a"
+  },
+  "identity_sha256": "6fcb671c869406745dda017f31e8c27afce5427353d1ae87b7b95f22129ac292",
+  "attempt_id": "ee82f08250014f9790a63db76f19b05b",
+  "start_utc": "2026-11-28T07:25:03.266682+00:00",
+  "checkpoint_policy": "write only; no automatic reuse or resume"
+}
