@@ -1,0 +1,148 @@
+{
+  "calculation": "sixth_energy_pilot",
+  "energy_directions": [
+    "pure_momentum_axis",
+    "monopole_mixed"
+  ],
+  "source_points": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0.2,
+      -0.35,
+      0.5
+    ],
+    [
+      -0.6,
+      0.45,
+      0.3
+    ],
+    [
+      1.1,
+      -0.8,
+      0.65
+    ],
+    [
+      4,
+      -3,
+      2
+    ]
+  ],
+  "source_scaled_tolerance": 1e-08,
+  "canonical_compile_caps": {
+    "max_pair_products": 20000000,
+    "max_fourier_terms": 200000,
+    "max_terms": 200000,
+    "max_degree": 64
+  },
+  "nested_compile_caps": {
+    "max_pair_products": 50000000,
+    "max_fourier_terms": 200000,
+    "max_terms": 200000,
+    "max_degree": 64
+  },
+  "max_pair_products": 20000000,
+  "local_options": {
+    "quadrature_orders": [
+      16,
+      24,
+      32
+    ],
+    "absolute_tolerance": 1e-08,
+    "relative_tolerance": 1e-09,
+    "decimal_precision": 64,
+    "max_bin_evaluations": 20000000
+  },
+  "fourier_options": {
+    "orders": [
+      16,
+      24,
+      32
+    ],
+    "precision": 64,
+    "check_precision": 96,
+    "absolute_tolerance": "1e-10",
+    "relative_tolerance": "1e-9",
+    "max_term_evaluations": 50000000
+  },
+  "triple_options": {
+    "radius": 12,
+    "panel_width": 2,
+    "orders": [
+      16,
+      24,
+      32
+    ],
+    "precision": 64,
+    "check_precision": 96,
+    "absolute_tolerance": "1e-10",
+    "relative_tolerance": "1e-9",
+    "max_term_evaluations": 20000000,
+    "max_heat_steps": 5000000,
+    "max_series_terms": 4096,
+    "max_exterior_products": 1000000
+  },
+  "triple_control_radii": [
+    10,
+    12
+  ],
+  "triple_control_panel_width": 2,
+  "triple_control_orders": [
+    16,
+    24,
+    32
+  ],
+  "triple_control_absolute_tolerance": "1e-10",
+  "triple_control_relative_tolerance": "1e-9",
+  "triple_control_reference_orders": [
+    24,
+    48
+  ],
+  "triple_control_moment_relative_tolerance": "1e-24",
+  "triple_control_reference_relative_tolerance": "1e-24",
+  "triple_control_reference_tail_relative_tolerance": "1e-24",
+  "triple_control_max_term_evaluations": 20000000,
+  "triple_control_max_heat_steps": 5000000,
+  "triple_control_max_series_terms": 4096,
+  "triple_control_max_exterior_products": 1000000,
+  "total_absolute_tolerance": 1e-06,
+  "total_relative_tolerance": 1e-07,
+  "roundoff_safety_factor": 100,
+  "pure_momentum_tolerance": 1e-08,
+  "wall_limit_seconds": 1800,
+  "authorization_deadline_utc": "2026-11-28T16:29:00Z",
+  "consolidation_caps": {
+    "max_expansion_products": 50000000,
+    "max_terms": 200000,
+    "max_degree": 128,
+    "max_coefficient_bits": 4096
+  },
+  "consolidation_comparison_tolerance": "1e-10",
+  "consolidation_spatial_tolerance": 1e-09,
+  "consolidation_check_points": [
+    [
+      0,
+      0
+    ],
+    [
+      "1/4",
+      "2/3"
+    ],
+    [
+      "2/5",
+      "1/7"
+    ],
+    [
+      "3/4",
+      "1/4"
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "consolidation_max_exact_term_visits": 1000000
+}

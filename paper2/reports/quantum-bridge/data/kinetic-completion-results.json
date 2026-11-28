@@ -1,0 +1,1012 @@
+{
+  "config": {
+    "calculation": "kinetic_completion",
+    "series_order": 4,
+    "block_cases": [
+      [
+        2,
+        1,
+        4
+      ],
+      [
+        2,
+        2,
+        4
+      ],
+      [
+        3,
+        3,
+        5
+      ],
+      [
+        4,
+        4,
+        6
+      ],
+      [
+        6,
+        6,
+        8
+      ]
+    ],
+    "finite_amplitude_ell": 2,
+    "auxiliary_cutoffs": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "amplitudes": [
+      "0.1",
+      "0.2",
+      "0.3"
+    ],
+    "decimal_precision": 60,
+    "quadrature_orders": [
+      96,
+      128
+    ],
+    "quadrature_absolute_tolerance": "1e-35"
+  },
+  "source_commit": "fac157a2ec8f8ea29cbcca67cbbe9034635700a1",
+  "run": "d29c46d3-f648-426b-ab3f-b83a014c45c1",
+  "parent_run": "82f9a0a7-3fd7-432b-9913-27738446ad38",
+  "exact_completion": [
+    {
+      "L": 2,
+      "N": 3,
+      "ell": 1,
+      "auxiliary_J": 4,
+      "naive_H_coefficients": [
+        "0",
+        "0",
+        "-2/15",
+        "0",
+        "-467/2625"
+      ],
+      "schur_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "enlarged_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "naive_lapse_curvature": "-4/15",
+      "completed_lapse_curvature": "0",
+      "required_H_quartic_correction": "2/15",
+      "determinants": [
+        {
+          "spin_block": 0,
+          "full_logdet_coefficients": [
+            "0",
+            "0",
+            "515/198",
+            "0",
+            "14241265/3567564"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "0",
+            "93/70",
+            "0",
+            "8717/4900"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "0",
+            "4409/3465",
+            "0",
+            "690781127/312161850"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "0",
+            "111/70",
+            "0",
+            "11987/4900"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "690781127/312161850",
+          "quartic_error_if_mixed_schur_terms_omitted": "-327/490",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 1,
+          "full_logdet_coefficients": [
+            "0",
+            "0",
+            "56/33",
+            "0",
+            "225262/99099"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "0",
+            "18/35",
+            "0",
+            "1466/3675"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "0",
+            "1366/1155",
+            "0",
+            "32502796/17342325"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "0",
+            "26/35",
+            "0",
+            "3326/3675"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "32502796/17342325",
+          "quartic_error_if_mixed_schur_terms_omitted": "-124/245",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 2,
+          "full_logdet_coefficients": [
+            "0",
+            "0",
+            "65/66",
+            "0",
+            "62083/56628"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "0",
+            "1/14",
+            "0",
+            "19/588"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "0",
+            "211/231",
+            "0",
+            "1476203/1387386"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "0",
+            "3/14",
+            "0",
+            "109/588"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "1476203/1387386",
+          "quartic_error_if_mixed_schur_terms_omitted": "-15/98",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        }
+      ],
+      "scope": "axisymmetric angular kinetic matrices only; no frequency/radial integral, other m loops, ghosts or gravitational measure"
+    },
+    {
+      "L": 2,
+      "N": 3,
+      "ell": 2,
+      "auxiliary_J": 4,
+      "naive_H_coefficients": [
+        "0",
+        "0",
+        "-12/175",
+        "288/8575",
+        "-19602/300125"
+      ],
+      "schur_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-6/2695"
+      ],
+      "enlarged_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-6/2695"
+      ],
+      "naive_lapse_curvature": "-24/175",
+      "completed_lapse_curvature": "0",
+      "required_H_quartic_correction": "12/175",
+      "determinants": [
+        {
+          "spin_block": 0,
+          "full_logdet_coefficients": [
+            "0",
+            "-40/33",
+            "359465/198198",
+            "-15441355/9810801",
+            "1637554388605/667801602468"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "-24/35",
+            "1941/2450",
+            "-254773/471625",
+            "6868926903/9441932500"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "-608/1155",
+            "17713819/17342325",
+            "-62116907126/60091156125",
+            "17635931615832581/10225712037791250"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "-24/35",
+            "2679/2450",
+            "-427393/471625",
+            "1237464867/858357500"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "17635931615832581/10225712037791250",
+          "quartic_error_if_mixed_schur_terms_omitted": "-3371593317/4720966250",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 1,
+          "full_logdet_coefficients": [
+            "0",
+            "-4/11",
+            "10954/11011",
+            "-197752/363363",
+            "1988534095/2061116057"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "2/35",
+            "212/1225",
+            "-17552/1414875",
+            "186569137/2360483125"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "-162/385",
+            "1583474/1926925",
+            "-394540568/741866125",
+            "55909811366858/63121679245625"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "2/35",
+            "488/1225",
+            "-143552/1414875",
+            "66182783/214589375"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "55909811366858/63121679245625",
+          "quartic_error_if_mixed_schur_terms_omitted": "-541441476/2360483125",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 2,
+          "full_logdet_coefficients": [
+            "0",
+            "2/11",
+            "1609/3146",
+            "-2503/51909",
+            "53961227/168254372"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "2/7",
+            "11/98",
+            "613/11319",
+            "562145/15107092"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "-8/77",
+            "30769/77077",
+            "-1822778/17804787",
+            "57264293291/201989373586"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "2/7",
+            "17/98",
+            "865/11319",
+            "113317/1373372"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "57264293291/201989373586",
+          "quartic_error_if_mixed_schur_terms_omitted": "-342171/7553546",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        }
+      ],
+      "scope": "axisymmetric angular kinetic matrices only; no frequency/radial integral, other m loops, ghosts or gravitational measure"
+    },
+    {
+      "L": 3,
+      "N": 4,
+      "ell": 3,
+      "auxiliary_J": 5,
+      "naive_H_coefficients": [
+        "0",
+        "0",
+        "-20/441",
+        "0",
+        "-801659206/22943895975"
+      ],
+      "schur_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "890/3006003"
+      ],
+      "enlarged_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "890/3006003"
+      ],
+      "naive_lapse_curvature": "-40/441",
+      "completed_lapse_curvature": "0",
+      "required_H_quartic_correction": "20/441",
+      "determinants": [
+        {
+          "spin_block": 0,
+          "full_logdet_coefficients": [
+            "0",
+            "0",
+            "4143331/2433431",
+            "0",
+            "33026843310769885/15526399624077342"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "0",
+            "68312/77077",
+            "0",
+            "274810532476/338629243953"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "0",
+            "1264215/1548547",
+            "0",
+            "2757306739011983/2095850086996666"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "0",
+            "71936/63063",
+            "0",
+            "1786321619690/1284552255987"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "2757306739011983/2095850086996666",
+          "quartic_error_if_mixed_schur_terms_omitted": "-4737204293474/8180569630233",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 1,
+          "full_logdet_coefficients": [
+            "0",
+            "0",
+            "1918555/2085798",
+            "0",
+            "1406525106579655/1901191790703348"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "0",
+            "139991/462462",
+            "0",
+            "10504149720157/69080365766412"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "0",
+            "955624/1548547",
+            "0",
+            "615923570142217/1047925043498333"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "0",
+            "59393/126126",
+            "0",
+            "1556283039743/5138209023948"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "615923570142217/1047925043498333",
+          "quartic_error_if_mixed_schur_terms_omitted": "-2467707903355/16361139260466",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 2,
+          "full_logdet_coefficients": [
+            "0",
+            "0",
+            "541012/1042899",
+            "0",
+            "114525462613316/475297947675837"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "0",
+            "7649/33033",
+            "0",
+            "58837267381/704901691494"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "0",
+            "63535/221221",
+            "0",
+            "6736076717021/42772450755034"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "0",
+            "349/1287",
+            "0",
+            "762247477/7490100618"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "6736076717021/42772450755034",
+          "quartic_error_if_mixed_schur_terms_omitted": "-3054952805/166950400617",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        }
+      ],
+      "scope": "axisymmetric angular kinetic matrices only; no frequency/radial integral, other m loops, ghosts or gravitational measure"
+    },
+    {
+      "L": 4,
+      "N": 5,
+      "ell": 4,
+      "auxiliary_J": 6,
+      "naive_H_coefficients": [
+        "0",
+        "0",
+        "-10/297",
+        "9860/1090089",
+        "-10041085975/500851201851"
+      ],
+      "schur_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "116200/478690641"
+      ],
+      "enlarged_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "116200/478690641"
+      ],
+      "naive_lapse_curvature": "-20/297",
+      "completed_lapse_curvature": "0",
+      "required_H_quartic_correction": "10/297",
+      "determinants": [
+        {
+          "spin_block": 0,
+          "full_logdet_coefficients": [
+            "0",
+            "-2268/2431",
+            "3311537425/2021138262",
+            "-7706276034009/6278216869067",
+            "403086210423209650939/209591916618330299196"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "-90/143",
+            "41624315/43801758",
+            "-11188821815/19834896081",
+            "13506596178519502445/15930086014303352892"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "-738/2431",
+            "1622684705/2357994639",
+            "-87459698109884/131842554250407",
+            "346780515621769559557/322488045618058938618"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "-90/143",
+            "154128245/131405274",
+            "-149968921735/178514064729",
+            "10120441149705978995/7545830217301588212"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "346780515621769559557/322488045618058938618",
+          "quartic_error_if_mixed_schur_terms_omitted": "-17682254059434519725/35842693532182544007",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 1,
+          "full_logdet_coefficients": [
+            "0",
+            "-334/2431",
+            "297460180/336856377",
+            "-5610171349316/18834650607201",
+            "46198768563675626581/75685969889952608043"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "34/429",
+            "8432771/21900879",
+            "-2599334758/41195553399",
+            "1439432614898552003/7965043007151676446"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "-1580/7293",
+            "3522878747/7073983917",
+            "-835711269247186/3559748964760989",
+            "28683429127697138307299/66755025442938200293926"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "34/429",
+            "346777/663663",
+            "-46276990414/535542194187",
+            "13585409820171583/46579198872232026"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "28683429127697138307299/66755025442938200293926",
+          "quartic_error_if_mixed_schur_terms_omitted": "-441836232175394345/3982521503575838223",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 2,
+          "full_logdet_coefficients": [
+            "0",
+            "655/2431",
+            "60412615/112285459",
+            "21453279800/991297400379",
+            "1705006723080265235/8409552209994734227"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "113/429",
+            "962066/3128697",
+            "4510292686/76506027741",
+            "15735199992118949/162551898105136254"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "4/663",
+            "21178747/91869921",
+            "-156813082202/4202773275987",
+            "1192846099215322781/11259069900984685494"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "113/429",
+            "1058116/3128697",
+            "4631429086/76506027741",
+            "928921551826771/8555363058165066"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "1192846099215322781/11259069900984685494",
+          "quartic_error_if_mixed_schur_terms_omitted": "-41615423751950/3533736915329049",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        }
+      ],
+      "scope": "axisymmetric angular kinetic matrices only; no frequency/radial integral, other m loops, ghosts or gravitational measure"
+    },
+    {
+      "L": 6,
+      "N": 7,
+      "ell": 6,
+      "auxiliary_J": 8,
+      "naive_H_coefficients": [
+        "0",
+        "0",
+        "-56/2535",
+        "5600/1377519",
+        "-2664937578492/272783486958125"
+      ],
+      "schur_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "5155290/1128581148409"
+      ],
+      "enlarged_H_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "5155290/1128581148409"
+      ],
+      "naive_lapse_curvature": "-112/2535",
+      "completed_lapse_curvature": "0",
+      "required_H_quartic_correction": "56/2535",
+      "determinants": [
+        {
+          "spin_block": 0,
+          "full_logdet_coefficients": [
+            "0",
+            "-79200/96577",
+            "47164606499529/29753503003510",
+            "-9647090459474249532/8907862584666954337",
+            "355754067271565719595638131571131/208158182707303752511789986713500"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "-28000/46189",
+            "2593834770107/2453437279150",
+            "-197358446484049228/321714667021600281",
+            "185411959034923319838230992061/200221788158813652987344517500"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "-227200/1062347",
+            "33229444838951/62940102507425",
+            "-1518244091177973789488/3233554118234104424331",
+            "49305305646776077860095350991507207/62967850268959385134816470980833750"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "-28000/46189",
+            "3028518185497/2453437279150",
+            "-4969591488814855924/6112578673410405339",
+            "260203420977531201870878995579/200221788158813652987344517500"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "49305305646776077860095350991507207/62967850268959385134816470980833750",
+          "quartic_error_if_mixed_schur_terms_omitted": "-1010695431656863270711459507/2705699839983968283612763750",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 1,
+          "full_logdet_coefficients": [
+            "0",
+            "-5132/96577",
+            "756406375658/875103029515",
+            "-185872338674666624/862051217870995581",
+            "5051915917932511738787903047841/10407909135365187625589499335675"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "4126/46189",
+            "620731350972/1226718639575",
+            "-368001207993421544/6112578673410405339",
+            "10779576228006122043207863751/50055447039703413246836129375"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "-151350/1062347",
+            "293212150141906/818221332596525",
+            "-12885500085644987432/82911644057284728829",
+            "8501897016278329360974481369751294/31483925134479692567408235490416875"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "4126/46189",
+            "43469026136/72159919975",
+            "-479016039485981000/6112578673410405339",
+            "14078073142643438702966652839/50055447039703413246836129375"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "8501897016278329360974481369751294/31483925134479692567408235490416875",
+          "quartic_error_if_mixed_schur_terms_omitted": "-89148565260468017831318624/1352849919991984141806381875",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        },
+        {
+          "spin_block": 2,
+          "full_logdet_coefficients": [
+            "0",
+            "27356/96577",
+            "1575150770837/2704863909410",
+            "15912942007722641/391841462668634355",
+            "3057872623440121259412769171/18108584837520987604331447300"
+          ],
+          "effective_low_logdet_coefficients": [
+            "0",
+            "904/3553",
+            "199315141897/490687455830",
+            "1562586635125959539/30562893367052026695",
+            "838192966787707050504241259/8008871526352546119493780700"
+          ],
+          "discarded_logdet_coefficients": [
+            "0",
+            "30620/1062347",
+            "28825021812989/163644266519305",
+            "-34004885960197741166/3233554118234104424331",
+            "32342849807285072348897654389253/503742802151675081078531767846670"
+          ],
+          "naive_low_logdet_coefficients": [
+            "0",
+            "904/3553",
+            "211980401707/490687455830",
+            "347870441864874979/6112578673410405339",
+            "901741344808488826848238349/8008871526352546119493780700"
+          ],
+          "quartic_error_if_discarded_determinant_omitted": "32342849807285072348897654389253/503742802151675081078531767846670",
+          "quartic_error_if_mixed_schur_terms_omitted": "-171752373029139936064857/21645598719871746268902110",
+          "exact_factorization": true,
+          "cyclic_fourth_order_formula": true
+        }
+      ],
+      "scope": "axisymmetric angular kinetic matrices only; no frequency/radial integral, other m loops, ghosts or gravitational measure"
+    }
+  ],
+  "finite_amplitude_checks": [
+    {
+      "auxiliary_J": 2,
+      "ell": 2,
+      "epsilon": "0.1",
+      "H_values": [
+        "-0.000658048747703747192878669185040303742141093468098481487807",
+        "-0.000658048747703747192878669185040303742141093468098481487800"
+      ],
+      "absolute_H": "0.000658048747703747192878669185040303742141093468098481487800",
+      "quadrature_difference": "7E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 4,
+      "ell": 2,
+      "epsilon": "0.1",
+      "H_values": [
+        "-1.98725468094353371499890803671919181858662795757445657E-7",
+        "-1.98725468094353371499890803671919181858662795757445650E-7"
+      ],
+      "absolute_H": "1.98725468094353371499890803671919181858662795757445650E-7",
+      "quadrature_difference": "7E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 6,
+      "ell": 2,
+      "epsilon": "0.1",
+      "H_values": [
+        "-2.48580045459138633670820674810010995150823351250402E-10",
+        "-2.48580045459138633670820674810010995150823351250395E-10"
+      ],
+      "absolute_H": "2.48580045459138633670820674810010995150823351250395E-10",
+      "quadrature_difference": "7E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 8,
+      "ell": 2,
+      "epsilon": "0.1",
+      "H_values": [
+        "-4.91997226481735807584052719626505030254027225228E-13",
+        "-4.91997226481735807584052719626505030254027225222E-13"
+      ],
+      "absolute_H": "4.91997226481735807584052719626505030254027225222E-13",
+      "quadrature_difference": "6E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 10,
+      "ell": 2,
+      "epsilon": "0.1",
+      "H_values": [
+        "-1.228833192631500697954267848731671148906403146E-15",
+        "-1.228833192631500697954267848731671148906403138E-15"
+      ],
+      "absolute_H": "1.228833192631500697954267848731671148906403138E-15",
+      "quadrature_difference": "8E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 12,
+      "ell": 2,
+      "epsilon": "0.1",
+      "H_values": [
+        "-3.535012011351908433590113903465180062213480E-18",
+        "-3.535012011351908433590113903465180062213474E-18"
+      ],
+      "absolute_H": "3.535012011351908433590113903465180062213474E-18",
+      "quadrature_difference": "6E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 14,
+      "ell": 2,
+      "epsilon": "0.1",
+      "H_values": [
+        "-1.1183534445643898138571823657064409300772E-20",
+        "-1.1183534445643898138571823657064409300764E-20"
+      ],
+      "absolute_H": "1.1183534445643898138571823657064409300764E-20",
+      "quadrature_difference": "8E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 2,
+      "ell": 2,
+      "epsilon": "0.2",
+      "H_values": [
+        "-0.002561727583326812718012209544732388448152567778704552244566",
+        "-0.002561727583326812718012209544732388448152567778704552244568"
+      ],
+      "absolute_H": "0.002561727583326812718012209544732388448152567778704552244568",
+      "quadrature_difference": "2E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 4,
+      "ell": 2,
+      "epsilon": "0.2",
+      "H_values": [
+        "-0.000002934162283368832958493483990027931296470780493251590718",
+        "-0.000002934162283368832958493483990027931296470780493251590718"
+      ],
+      "absolute_H": "0.000002934162283368832958493483990027931296470780493251590718",
+      "quadrature_difference": "0E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 6,
+      "ell": 2,
+      "epsilon": "0.2",
+      "H_values": [
+        "-1.3822160930928568036073928565918720443472248383767735E-8",
+        "-1.3822160930928568036073928565918720443472248383767738E-8"
+      ],
+      "absolute_H": "1.3822160930928568036073928565918720443472248383767738E-8",
+      "quadrature_difference": "3E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 8,
+      "ell": 2,
+      "epsilon": "0.2",
+      "H_values": [
+        "-1.02786184380440425894900644536021776825454539074390E-10",
+        "-1.02786184380440425894900644536021776825454539074388E-10"
+      ],
+      "absolute_H": "1.02786184380440425894900644536021776825454539074388E-10",
+      "quadrature_difference": "2E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 10,
+      "ell": 2,
+      "epsilon": "0.2",
+      "H_values": [
+        "-9.63585647070975015304840379127280780519724710318E-13",
+        "-9.63585647070975015304840379127280780519724710316E-13"
+      ],
+      "absolute_H": "9.63585647070975015304840379127280780519724710316E-13",
+      "quadrature_difference": "2E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 12,
+      "ell": 2,
+      "epsilon": "0.2",
+      "H_values": [
+        "-1.0399029682854519462935856721908863210076563096E-14",
+        "-1.0399029682854519462935856721908863210076563096E-14"
+      ],
+      "absolute_H": "1.0399029682854519462935856721908863210076563096E-14",
+      "quadrature_difference": "0E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 14,
+      "ell": 2,
+      "epsilon": "0.2",
+      "H_values": [
+        "-1.23384658298716571008117580794638574775365260E-16",
+        "-1.23384658298716571008117580794638574775365263E-16"
+      ],
+      "absolute_H": "1.23384658298716571008117580794638574775365263E-16",
+      "quadrature_difference": "3E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 2,
+      "ell": 2,
+      "epsilon": "0.3",
+      "H_values": [
+        "-0.005681317656808257152253336820310483990639043423045789644728",
+        "-0.005681317656808257152253336820310483990639043423045789644738"
+      ],
+      "absolute_H": "0.005681317656808257152253336820310483990639043423045789644738",
+      "quadrature_difference": "1.0E-59",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 4,
+      "ell": 2,
+      "epsilon": "0.3",
+      "H_values": [
+        "-0.000014120277814821155737977014770209736365535498016410952588",
+        "-0.000014120277814821155737977014770209736365535498016410952600"
+      ],
+      "absolute_H": "0.000014120277814821155737977014770209736365535498016410952600",
+      "quadrature_difference": "1.2E-59",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 6,
+      "ell": 2,
+      "epsilon": "0.3",
+      "H_values": [
+        "-1.43401879197953309113137302943025409908336515457858257E-7",
+        "-1.43401879197953309113137302943025409908336515457858269E-7"
+      ],
+      "absolute_H": "1.43401879197953309113137302943025409908336515457858269E-7",
+      "quadrature_difference": "1.2E-59",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 8,
+      "ell": 2,
+      "epsilon": "0.3",
+      "H_values": [
+        "-2.294661306255259419491454955550452310191065481699540E-9",
+        "-2.294661306255259419491454955550452310191065481699555E-9"
+      ],
+      "absolute_H": "2.294661306255259419491454955550452310191065481699555E-9",
+      "quadrature_difference": "1.5E-59",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 10,
+      "ell": 2,
+      "epsilon": "0.3",
+      "H_values": [
+        "-4.6256965915844354049519578102245800864215561617788E-11",
+        "-4.6256965915844354049519578102245800864215561617796E-11"
+      ],
+      "absolute_H": "4.6256965915844354049519578102245800864215561617796E-11",
+      "quadrature_difference": "8E-60",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 12,
+      "ell": 2,
+      "epsilon": "0.3",
+      "H_values": [
+        "-1.073132750627974885817246709417705759793124634806E-12",
+        "-1.073132750627974885817246709417705759793124634820E-12"
+      ],
+      "absolute_H": "1.073132750627974885817246709417705759793124634820E-12",
+      "quadrature_difference": "1.4E-59",
+      "continuum_phase_space_restricted_H": "0"
+    },
+    {
+      "auxiliary_J": 14,
+      "ell": 2,
+      "epsilon": "0.3",
+      "H_values": [
+        "-2.7367517922369425379944056510801989858388937179E-14",
+        "-2.7367517922369425379944056510801989858388937190E-14"
+      ],
+      "absolute_H": "2.7367517922369425379944056510801989858388937190E-14",
+      "quadrature_difference": "1.1E-59",
+      "continuum_phase_space_restricted_H": "0"
+    }
+  ],
+  "limitations": [
+    "This completes only the tested kinetic restriction; the full gravitational constraint algebra is not derived.",
+    "The determinant checks are for m=0 angular kinetic blocks, not the full fluctuation operator or a graviton amplitude.",
+    "Finite padding is exact only to the stated perturbative order; the finite-amplitude residual is recorded separately.",
+    "A dynamical integration of discarded fields also needs spatial derivatives, propagators, boundary data and the actual gauge/constraint measure.",
+    "Corner-state derivation and Euclidean--Lorentzian reconstruction for that physical gravitational theory remain open."
+  ],
+  "status": "all specified exact completion and independent finite-amplitude checks passed",
+  "wall_seconds": 1.1220912088174373
+}

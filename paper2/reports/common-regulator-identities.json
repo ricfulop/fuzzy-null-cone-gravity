@@ -1,0 +1,73 @@
+{
+  "arithmetic": "exact rational; no floating-point tolerances",
+  "scope": "axisymmetric scalar angular identities and the specified conformal Einstein restriction; not full spin-2 scattering or quantum consistency",
+  "tensor_checks": [
+    {
+      "L": 2,
+      "N": 3,
+      "cubic_tuples": 27,
+      "quartic_tuples": 81,
+      "exact_identities": "passed"
+    },
+    {
+      "L": 3,
+      "N": 4,
+      "cubic_tuples": 64,
+      "quartic_tuples": 256,
+      "exact_identities": "passed"
+    }
+  ],
+  "quartic_example": {
+    "L": 2,
+    "N": 3,
+    "field": "P_2(cos(theta))",
+    "product_legendre_coefficients": {
+      "0": "1/5",
+      "2": "2/7",
+      "4": "18/35"
+    },
+    "full": "3/35",
+    "projected": "69/1225",
+    "missing": "36/1225",
+    "relative_missing": "12/35"
+  },
+  "sextic_example": {
+    "L": 4,
+    "N": 5,
+    "field": "P_2(cos(theta))",
+    "quartic_agrees": true,
+    "full": "53/1001",
+    "repeated_projected_product": "289/5929",
+    "missing": "324/77077",
+    "discarded_cube_coefficients": {
+      "6": "18/77"
+    }
+  },
+  "inverse_series_difference_at_order_3": {
+    "2": "-36/245"
+  },
+  "field_redefinition_difference_at_order_2": {
+    "4": "9/35"
+  },
+  "conformal_Einstein_density": [
+    {
+      "order": 2,
+      "full_pointwise": "9/5",
+      "specified_projected_comparator": "9/5",
+      "difference_full_minus_projected": "0"
+    },
+    {
+      "order": 3,
+      "full_pointwise": "-9/35",
+      "specified_projected_comparator": "-9/35",
+      "difference_full_minus_projected": "0"
+    },
+    {
+      "order": 4,
+      "full_pointwise": "9/35",
+      "specified_projected_comparator": "531/1225",
+      "difference_full_minus_projected": "-216/1225"
+    }
+  ],
+  "status": "all exact checks passed"
+}

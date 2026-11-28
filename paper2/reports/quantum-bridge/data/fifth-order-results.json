@@ -1,0 +1,4667 @@
+{
+  "configuration": {
+    "calculation": "full_fifth_order",
+    "h5_directions": [
+      "electric_axis",
+      "noncommuting_labels"
+    ],
+    "york_test_point": [
+      "0.2",
+      "-0.35",
+      "0.5"
+    ],
+    "max_pair_products": 20000000,
+    "pairing_options": {
+      "quadrature_orders": [
+        16,
+        24,
+        32
+      ],
+      "absolute_tolerance": 1e-09,
+      "relative_tolerance": 1e-08,
+      "decimal_precision": 64,
+      "max_bin_evaluations": 20000000
+    },
+    "spatial_radial_orders": [
+      16,
+      20,
+      24
+    ],
+    "spatial_angular_orders": [
+      [
+        10,
+        24
+      ],
+      [
+        12,
+        32
+      ],
+      [
+        14,
+        40
+      ]
+    ],
+    "spatial_radius": 24,
+    "spatial_panel_width": 3,
+    "h5_scaled_tolerance": 1e-06,
+    "roundoff_safety_factor": 100,
+    "wall_limit_seconds": 1800
+  },
+  "source_commit": "502f75d96fe8c838469570eb7ae7f41eebf3e742",
+  "run": "116088d3-0ed7-4fb7-95c0-fdeafcdc9072",
+  "pairing_controls": [
+    {
+      "name": "anisotropic_gaussian",
+      "expected": 0.33677931636275726,
+      "scaled_error": 0.0,
+      "integral": {
+        "value": 0.33677931636275726,
+        "converged": true,
+        "exact_angular_zero": false,
+        "accuracy_certified": false,
+        "acceptance_budget": 3.467793163627573e-11,
+        "tail": {
+          "radius": 6.313193047939452,
+          "absolute_bound": 3.1721137780404766e-23,
+          "log_absolute_bound": -51.80505896623801,
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [],
+              "absolute_bound": 3.1721137780404766e-23,
+              "log_absolute_bound": -51.80505896623801
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "radius_search": [
+          {
+            "radius": 6.313193047939452,
+            "absolute_tail_bound": 3.1721137780404766e-23
+          }
+        ],
+        "refinement_absolute_change": 5.551115123125783e-17,
+        "termwise_refinement_change": 5.551115123125783e-17,
+        "absolute_bin_integral": 0.33677931636275726,
+        "cancellation_ratio": 1.0,
+        "cancellation_ratio_overflow": false,
+        "machine_epsilon_times_bin_l1": 7.478003024869057e-17,
+        "levels": [
+          {
+            "order": 16,
+            "panels": 8,
+            "nodes": 128,
+            "value": 0.3367793163627573,
+            "absolute_bin_integral": 0.3367793163627573,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 7.478003024869058e-17,
+            "group_values": [
+              0.3367793163627573
+            ]
+          },
+          {
+            "order": 24,
+            "panels": 8,
+            "nodes": 192,
+            "value": 0.3367793163627573,
+            "absolute_bin_integral": 0.3367793163627573,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 7.478003024869058e-17,
+            "group_values": [
+              0.3367793163627573
+            ],
+            "refinement_absolute_change": 0.0,
+            "termwise_refinement_change": 0.0,
+            "group_refinement_changes": [
+              0.0
+            ]
+          },
+          {
+            "order": 32,
+            "panels": 8,
+            "nodes": 256,
+            "value": 0.33677931636275726,
+            "absolute_bin_integral": 0.33677931636275726,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 7.478003024869057e-17,
+            "group_values": [
+              0.33677931636275726
+            ],
+            "refinement_absolute_change": 5.551115123125783e-17,
+            "termwise_refinement_change": 5.551115123125783e-17,
+            "group_refinement_changes": [
+              5.551115123125783e-17
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "beta": "3/2",
+            "rates": [],
+            "collapsed_bins": 1,
+            "value": 0.33677931636275726
+          }
+        ],
+        "settings": {
+          "quadrature_orders": [
+            16,
+            24,
+            32
+          ],
+          "absolute_tolerance": 1e-12,
+          "relative_tolerance": 1e-10,
+          "decimal_precision_for_nodes": 64,
+          "max_panels": 256,
+          "max_nodes": 65536,
+          "max_bin_evaluations_per_level": 20000000,
+          "radius": 6.313193047939452,
+          "panel_width_requested": 0.8164965809277261,
+          "panel_width_actual": 0.7891491309924314,
+          "panels": 8,
+          "collapsed_bin_count": 1
+        },
+        "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+        "assembly_statistics": {
+          "add_calls": 1,
+          "merge_calls": 0,
+          "pair_products_executed_here": 0,
+          "group_count": 1,
+          "collapsed_bin_count": 1,
+          "per_add_pair_product_budget": 20000000
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "single_green",
+      "expected": 0.23643337160238467,
+      "scaled_error": 0.0,
+      "integral": {
+        "value": 0.23643337160238467,
+        "converged": true,
+        "exact_angular_zero": false,
+        "accuracy_certified": false,
+        "acceptance_budget": 2.4643337160238467e-11,
+        "tail": {
+          "radius": 5.715476066494083,
+          "absolute_bound": 1.188753481416745e-21,
+          "log_absolute_bound": -48.181381689365196,
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "2/3"
+              ],
+              "absolute_bound": 1.188753481416745e-21,
+              "log_absolute_bound": -48.181381689365196
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "radius_search": [
+          {
+            "radius": 5.715476066494083,
+            "absolute_tail_bound": 1.188753481416745e-21
+          }
+        ],
+        "refinement_absolute_change": 0.0,
+        "termwise_refinement_change": 0.0,
+        "absolute_bin_integral": 0.23643337160238467,
+        "cancellation_ratio": 1.0,
+        "cancellation_ratio_overflow": false,
+        "machine_epsilon_times_bin_l1": 5.249875458854462e-17,
+        "levels": [
+          {
+            "order": 16,
+            "panels": 7,
+            "nodes": 112,
+            "value": 0.23643337160238465,
+            "absolute_bin_integral": 0.23643337160238465,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 5.2498754588544615e-17,
+            "group_values": [
+              0.23643337160238465
+            ]
+          },
+          {
+            "order": 24,
+            "panels": 7,
+            "nodes": 168,
+            "value": 0.23643337160238467,
+            "absolute_bin_integral": 0.23643337160238467,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 5.249875458854462e-17,
+            "group_values": [
+              0.23643337160238467
+            ],
+            "refinement_absolute_change": 2.7755575615628914e-17,
+            "termwise_refinement_change": 2.7755575615628914e-17,
+            "group_refinement_changes": [
+              2.7755575615628914e-17
+            ]
+          },
+          {
+            "order": 32,
+            "panels": 7,
+            "nodes": 224,
+            "value": 0.23643337160238467,
+            "absolute_bin_integral": 0.23643337160238467,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 5.249875458854462e-17,
+            "group_values": [
+              0.23643337160238467
+            ],
+            "refinement_absolute_change": 0.0,
+            "termwise_refinement_change": 0.0,
+            "group_refinement_changes": [
+              0.0
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "beta": "3/2",
+            "rates": [
+              "2/3"
+            ],
+            "collapsed_bins": 1,
+            "value": 0.23643337160238467
+          }
+        ],
+        "settings": {
+          "quadrature_orders": [
+            16,
+            24,
+            32
+          ],
+          "absolute_tolerance": 1e-12,
+          "relative_tolerance": 1e-10,
+          "decimal_precision_for_nodes": 64,
+          "max_panels": 256,
+          "max_nodes": 65536,
+          "max_bin_evaluations_per_level": 20000000,
+          "radius": 5.715476066494083,
+          "panel_width_requested": 0.8164965809277261,
+          "panel_width_actual": 0.8164965809277261,
+          "panels": 7,
+          "collapsed_bin_count": 1
+        },
+        "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+        "assembly_statistics": {
+          "add_calls": 1,
+          "merge_calls": 0,
+          "pair_products_executed_here": 1,
+          "group_count": 1,
+          "collapsed_bin_count": 1,
+          "per_add_pair_product_budget": 20000000
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "two_green",
+      "expected": 0.008272430207417324,
+      "scaled_error": 0.0,
+      "integral": {
+        "value": 0.008272430207417324,
+        "converged": true,
+        "exact_angular_zero": false,
+        "accuracy_certified": false,
+        "acceptance_budget": 1.8272430207417323e-12,
+        "tail": {
+          "radius": 5.715476066494083,
+          "absolute_bound": 5.572281944140996e-23,
+          "log_absolute_bound": -51.24165248405676,
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "2/3",
+                "4/3"
+              ],
+              "absolute_bound": 5.572281944140996e-23,
+              "log_absolute_bound": -51.24165248405676
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "radius_search": [
+          {
+            "radius": 5.715476066494083,
+            "absolute_tail_bound": 5.572281944140996e-23
+          }
+        ],
+        "refinement_absolute_change": 0.0,
+        "termwise_refinement_change": 0.0,
+        "absolute_bin_integral": 0.008272430207417324,
+        "cancellation_ratio": 1.0,
+        "cancellation_ratio_overflow": false,
+        "machine_epsilon_times_bin_l1": 1.8368484971758744e-18,
+        "levels": [
+          {
+            "order": 16,
+            "panels": 7,
+            "nodes": 112,
+            "value": 0.008272430207417324,
+            "absolute_bin_integral": 0.008272430207417324,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 1.8368484971758744e-18,
+            "group_values": [
+              0.008272430207417324
+            ]
+          },
+          {
+            "order": 24,
+            "panels": 7,
+            "nodes": 168,
+            "value": 0.008272430207417324,
+            "absolute_bin_integral": 0.008272430207417324,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 1.8368484971758744e-18,
+            "group_values": [
+              0.008272430207417324
+            ],
+            "refinement_absolute_change": 0.0,
+            "termwise_refinement_change": 0.0,
+            "group_refinement_changes": [
+              0.0
+            ]
+          },
+          {
+            "order": 32,
+            "panels": 7,
+            "nodes": 224,
+            "value": 0.008272430207417324,
+            "absolute_bin_integral": 0.008272430207417324,
+            "cancellation_ratio": 1.0,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 1.8368484971758744e-18,
+            "group_values": [
+              0.008272430207417324
+            ],
+            "refinement_absolute_change": 0.0,
+            "termwise_refinement_change": 0.0,
+            "group_refinement_changes": [
+              0.0
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "beta": "3/2",
+            "rates": [
+              "2/3",
+              "4/3"
+            ],
+            "collapsed_bins": 1,
+            "value": 0.008272430207417324
+          }
+        ],
+        "settings": {
+          "quadrature_orders": [
+            16,
+            24,
+            32
+          ],
+          "absolute_tolerance": 1e-12,
+          "relative_tolerance": 1e-10,
+          "decimal_precision_for_nodes": 64,
+          "max_panels": 256,
+          "max_nodes": 65536,
+          "max_bin_evaluations_per_level": 20000000,
+          "radius": 5.715476066494083,
+          "panel_width_requested": 0.8164965809277261,
+          "panel_width_actual": 0.8164965809277261,
+          "panels": 7,
+          "collapsed_bin_count": 1
+        },
+        "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+        "assembly_statistics": {
+          "add_calls": 1,
+          "merge_calls": 0,
+          "pair_products_executed_here": 2,
+          "group_count": 1,
+          "collapsed_bin_count": 1,
+          "per_add_pair_product_budget": 20000000
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "odd_zero",
+      "expected": 0.0,
+      "scaled_error": 0.0,
+      "integral": {
+        "value": 0.0,
+        "converged": true,
+        "exact_angular_zero": true,
+        "accuracy_certified": false,
+        "tail": {
+          "radius": 0.0,
+          "absolute_bound": 0.0,
+          "log_absolute_bound": null,
+          "groups": [],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "refinement_absolute_change": 0.0,
+        "termwise_refinement_change": 0.0,
+        "absolute_bin_integral": 0.0,
+        "cancellation_ratio": null,
+        "cancellation_ratio_overflow": false,
+        "machine_epsilon_times_bin_l1": 0.0,
+        "levels": [],
+        "groups": [],
+        "settings": {
+          "quadrature_orders": [
+            16,
+            24,
+            32
+          ],
+          "absolute_tolerance": 1e-12,
+          "relative_tolerance": 1e-10,
+          "decimal_precision_for_nodes": 64,
+          "max_panels": 256,
+          "max_nodes": 65536,
+          "max_bin_evaluations_per_level": 20000000
+        },
+        "assembly_statistics": {
+          "add_calls": 1,
+          "merge_calls": 0,
+          "pair_products_executed_here": 0,
+          "group_count": 0,
+          "collapsed_bin_count": 0,
+          "per_add_pair_product_budget": 20000000
+        }
+      },
+      "passed": true
+    }
+  ],
+  "calibration": [
+    {
+      "direction": "electric_axis",
+      "families": {
+        "H3_curvature": {
+          "integral": {
+            "value": 337.958043970027,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 3.3805804397002703e-06,
+            "tail": {
+              "radius": 6.8989794855663575,
+              "absolute_bound": 1.163596456409417e-21,
+              "log_absolute_bound": -48.20277135060901,
+              "groups": [
+                {
+                  "beta": "3/2",
+                  "rates": [],
+                  "absolute_bound": 1.163596456409417e-21,
+                  "log_absolute_bound": -48.20277135060901
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 6.8989794855663575,
+                "absolute_tail_bound": 1.163596456409417e-21
+              }
+            ],
+            "refinement_absolute_change": 0.0,
+            "termwise_refinement_change": 0.0,
+            "absolute_bin_integral": 6012.015966049761,
+            "cancellation_ratio": 17.78923766816143,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 1.3349357099844996e-12,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 9,
+                "nodes": 144,
+                "value": 337.958043970027,
+                "absolute_bin_integral": 6012.015966049761,
+                "cancellation_ratio": 17.78923766816143,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.3349357099844996e-12,
+                "group_values": [
+                  337.958043970027
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 9,
+                "nodes": 216,
+                "value": 337.958043970027,
+                "absolute_bin_integral": 6012.015966049761,
+                "cancellation_ratio": 17.78923766816143,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.3349357099844996e-12,
+                "group_values": [
+                  337.958043970027
+                ],
+                "refinement_absolute_change": 0.0,
+                "termwise_refinement_change": 2.842170943040401e-14,
+                "group_refinement_changes": [
+                  0.0
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 9,
+                "nodes": 288,
+                "value": 337.958043970027,
+                "absolute_bin_integral": 6012.015966049761,
+                "cancellation_ratio": 17.78923766816143,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.3349357099844996e-12,
+                "group_values": [
+                  337.958043970027
+                ],
+                "refinement_absolute_change": 0.0,
+                "termwise_refinement_change": 0.0,
+                "group_refinement_changes": [
+                  0.0
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "3/2",
+                "rates": [],
+                "collapsed_bins": 5,
+                "value": 337.958043970027
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 6.8989794855663575,
+              "panel_width_requested": 0.8164965809277261,
+              "panel_width_actual": 0.7665532761740397,
+              "panels": 9,
+              "collapsed_bin_count": 5
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 1,
+              "merge_calls": 0,
+              "pair_products_executed_here": 0,
+              "group_count": 1,
+              "collapsed_bin_count": 5,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": 337.9580439700269,
+          "scaled_error": 3.354009139009223e-16,
+          "passed": true
+        },
+        "H4_local": {
+          "integral": {
+            "value": 292.37565593512096,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 2.92475655935121e-06,
+            "tail": {
+              "radius": 6.363961030678928,
+              "absolute_bound": 9.845378978702749e-23,
+              "log_absolute_bound": -50.67245493297728,
+              "groups": [
+                {
+                  "beta": "2",
+                  "rates": [],
+                  "absolute_bound": 9.845378978702749e-23,
+                  "log_absolute_bound": -50.67245493297728
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 6.363961030678928,
+                "absolute_tail_bound": 9.845378978702749e-23
+              }
+            ],
+            "refinement_absolute_change": 5.684341886080802e-14,
+            "termwise_refinement_change": 5.684341886080802e-14,
+            "absolute_bin_integral": 15115.382698717623,
+            "cancellation_ratio": 51.69849948817822,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 3.3562891796274082e-12,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 9,
+                "nodes": 144,
+                "value": 292.375655935121,
+                "absolute_bin_integral": 15115.382698717623,
+                "cancellation_ratio": 51.698499488178214,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 3.3562891796274082e-12,
+                "group_values": [
+                  292.375655935121
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 9,
+                "nodes": 216,
+                "value": 292.375655935121,
+                "absolute_bin_integral": 15115.382698717623,
+                "cancellation_ratio": 51.698499488178214,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 3.3562891796274082e-12,
+                "group_values": [
+                  292.375655935121
+                ],
+                "refinement_absolute_change": 0.0,
+                "termwise_refinement_change": 0.0,
+                "group_refinement_changes": [
+                  0.0
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 9,
+                "nodes": 288,
+                "value": 292.37565593512096,
+                "absolute_bin_integral": 15115.382698717623,
+                "cancellation_ratio": 51.69849948817822,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 3.3562891796274082e-12,
+                "group_values": [
+                  292.37565593512096
+                ],
+                "refinement_absolute_change": 5.684341886080802e-14,
+                "termwise_refinement_change": 5.684341886080802e-14,
+                "group_refinement_changes": [
+                  5.684341886080802e-14
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "2",
+                "rates": [],
+                "collapsed_bins": 8,
+                "value": 292.37565593512096
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 6.363961030678928,
+              "panel_width_requested": 0.7071067811865475,
+              "panel_width_actual": 0.7071067811865475,
+              "panels": 9,
+              "collapsed_bin_count": 8
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 1,
+              "merge_calls": 0,
+              "pair_products_executed_here": 0,
+              "group_count": 1,
+              "collapsed_bin_count": 8,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": 292.3756559351213,
+          "scaled_error": 1.1625385619598652e-15,
+          "passed": true
+        },
+        "H4_york": {
+          "integral": {
+            "value": 217.3067116562588,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 2.174067116562588e-06,
+            "tail": {
+              "radius": 9.3166247903554,
+              "absolute_bound": 1.4090976276055027e-19,
+              "log_absolute_bound": -43.406167247793306,
+              "groups": [
+                {
+                  "beta": "1",
+                  "rates": [
+                    "1"
+                  ],
+                  "absolute_bound": 1.4090976276055027e-19,
+                  "log_absolute_bound": -43.406167247793306
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 9.3166247903554,
+                "absolute_tail_bound": 1.4090976276055027e-19
+              }
+            ],
+            "refinement_absolute_change": 6.536993168992922e-13,
+            "termwise_refinement_change": 4.458655666894629e-12,
+            "absolute_bin_integral": 84627.45699315306,
+            "cancellation_ratio": 389.43784270694266,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 1.879107025385475e-11,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 10,
+                "nodes": 160,
+                "value": 217.30671165625995,
+                "absolute_bin_integral": 84627.45699315306,
+                "cancellation_ratio": 389.4378427069406,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.879107025385475e-11,
+                "group_values": [
+                  217.30671165625995
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 10,
+                "nodes": 240,
+                "value": 217.30671165625947,
+                "absolute_bin_integral": 84627.45699315306,
+                "cancellation_ratio": 389.43784270694147,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.879107025385475e-11,
+                "group_values": [
+                  217.30671165625947
+                ],
+                "refinement_absolute_change": 4.831690603168681e-13,
+                "termwise_refinement_change": 6.973976951485383e-12,
+                "group_refinement_changes": [
+                  4.831690603168681e-13
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 10,
+                "nodes": 320,
+                "value": 217.3067116562588,
+                "absolute_bin_integral": 84627.45699315306,
+                "cancellation_ratio": 389.43784270694266,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.879107025385475e-11,
+                "group_values": [
+                  217.3067116562588
+                ],
+                "refinement_absolute_change": 6.536993168992922e-13,
+                "termwise_refinement_change": 4.458655666894629e-12,
+                "group_refinement_changes": [
+                  6.536993168992922e-13
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "1",
+                "rates": [
+                  "1"
+                ],
+                "collapsed_bins": 70,
+                "value": 217.3067116562588
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 9.3166247903554,
+              "panel_width_requested": 1.0,
+              "panel_width_actual": 0.93166247903554,
+              "panels": 10,
+              "collapsed_bin_count": 70
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 3,
+              "merge_calls": 0,
+              "pair_products_executed_here": 14964,
+              "group_count": 1,
+              "collapsed_bin_count": 70,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": 217.3067116562583,
+          "scaled_error": 2.3434495708625464e-15,
+          "passed": true
+        },
+        "H4_scalar": {
+          "integral": {
+            "value": -3664.65383642854,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 3.6647538364285406e-05,
+            "tail": {
+              "radius": 9.3166247903554,
+              "absolute_bound": 7.527627181048547e-21,
+              "log_absolute_bound": -46.33570707612105,
+              "groups": [
+                {
+                  "beta": "1",
+                  "rates": [
+                    "1"
+                  ],
+                  "absolute_bound": 7.527627181048547e-21,
+                  "log_absolute_bound": -46.33570707612105
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 9.3166247903554,
+                "absolute_tail_bound": 7.527627181048547e-21
+              }
+            ],
+            "refinement_absolute_change": 1.8189894035458565e-12,
+            "termwise_refinement_change": 3.1246116805050406e-12,
+            "absolute_bin_integral": 111059.68399303597,
+            "cancellation_ratio": 30.30564111923634,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 2.4660203655332496e-11,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 10,
+                "nodes": 160,
+                "value": -3664.653836428538,
+                "absolute_bin_integral": 111059.68399303597,
+                "cancellation_ratio": 30.30564111923636,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 2.4660203655332496e-11,
+                "group_values": [
+                  -3664.653836428538
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 10,
+                "nodes": 240,
+                "value": -3664.6538364285384,
+                "absolute_bin_integral": 111059.68399303597,
+                "cancellation_ratio": 30.305641119236356,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 2.4660203655332496e-11,
+                "group_values": [
+                  -3664.6538364285384
+                ],
+                "refinement_absolute_change": 4.547473508864641e-13,
+                "termwise_refinement_change": 2.1440627051561023e-12,
+                "group_refinement_changes": [
+                  4.547473508864641e-13
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 10,
+                "nodes": 320,
+                "value": -3664.65383642854,
+                "absolute_bin_integral": 111059.68399303597,
+                "cancellation_ratio": 30.30564111923634,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 2.4660203655332496e-11,
+                "group_values": [
+                  -3664.65383642854
+                ],
+                "refinement_absolute_change": 1.8189894035458565e-12,
+                "termwise_refinement_change": 3.1246116805050406e-12,
+                "group_refinement_changes": [
+                  1.8189894035458565e-12
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "1",
+                "rates": [
+                  "1"
+                ],
+                "collapsed_bins": 76,
+                "value": -3664.65383642854
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 9.3166247903554,
+              "panel_width_requested": 1.0,
+              "panel_width_actual": 0.93166247903554,
+              "panels": 10,
+              "collapsed_bin_count": 76
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 1,
+              "merge_calls": 0,
+              "pair_products_executed_here": 5808,
+              "group_count": 1,
+              "collapsed_bin_count": 76,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": -3664.6538364285398,
+          "scaled_error": 1.240562724082878e-16,
+          "passed": true
+        }
+      },
+      "york_operator": {
+        "point": [
+          "0.2",
+          "-0.35",
+          "0.5"
+        ],
+        "precision": 90,
+        "finite_amplitudes": 9,
+        "A1": [
+          "2.88512057706433995730381014963638898987401733460779809381427185619643656613798637047189632",
+          "6.58039539126368638536373788105878475609918050239405708997796271395069348332421863712203871",
+          "9.68645016944031599990325063683967450360579994466872166939255064335072152214487655633588641"
+        ],
+        "A2": [
+          "12.5648204723015771223412726834714183221907154937618041256882856719708785897047017316670669",
+          "-22.3635726462792745555588244301843017994873064661128902489955607365577710776384914158154355",
+          "16.7608015331606089861826991221214116713307508994674843780397490731085151441658916596134974"
+        ],
+        "richardson": {
+          "1": [
+            "2.885120577064339957303809786388299574453825474067232281946105892436397229914179966254088",
+            "6.5803953912636863853637389954161448543839812823700494749812154917799066377319652339918031",
+            "9.68645016944031599990324827339013022896648742836474462627200249868982483033604158414504533"
+          ],
+          "2": [
+            "12.5648204723015771223412728775136555677126271760353787357290903509695192729855716513066667",
+            "-22.3635726462792745555588251814006382606014864355326313341444710453162402861229206488761627",
+            "16.7608015331606089861826964885653584537927329500085802270701319326532911247473686744026667"
+          ]
+        },
+        "maximum_scaled_error": "2.21163202635175981777058827593586508894374553655994569780379283133836113437463370791830495E-25",
+        "refinement_scaled_error": "1.39332822934769674242075104170001669824528253898487279779955898408437456734558319182231124E-23",
+        "flat_operator_error": "0E-89",
+        "linear_tracelessness_error": "0E-89",
+        "determinant_error": "3.6E-89",
+        "connection_trace_error": "1.69061E-88",
+        "maximum_last_jet_term": "1.70822811578652201912377308273841448851770709773195921177143119051441684243931519141944985E-82",
+        "passed": true
+      }
+    },
+    {
+      "direction": "noncommuting_labels",
+      "families": {
+        "H3_curvature": {
+          "integral": {
+            "value": 4548.373057137218,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 4.5484730571372184e-05,
+            "tail": {
+              "radius": 7.059226385035643,
+              "absolute_bound": 2.074312535935416e-21,
+              "log_absolute_bound": -47.624657162069845,
+              "groups": [
+                {
+                  "beta": "3/2",
+                  "rates": [],
+                  "absolute_bound": 2.074312535935416e-21,
+                  "log_absolute_bound": -47.624657162069845
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 7.059226385035643,
+                "absolute_tail_bound": 2.074312535935416e-21
+              }
+            ],
+            "refinement_absolute_change": 0.0,
+            "termwise_refinement_change": 0.0,
+            "absolute_bin_integral": 49422.53306589281,
+            "cancellation_ratio": 10.865980526452185,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 1.0974006829010465e-11,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 9,
+                "nodes": 144,
+                "value": 4548.373057137221,
+                "absolute_bin_integral": 49422.53306589281,
+                "cancellation_ratio": 10.86598052645218,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.0974006829010465e-11,
+                "group_values": [
+                  4548.373057137221
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 9,
+                "nodes": 216,
+                "value": 4548.373057137218,
+                "absolute_bin_integral": 49422.53306589281,
+                "cancellation_ratio": 10.865980526452185,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.0974006829010465e-11,
+                "group_values": [
+                  4548.373057137218
+                ],
+                "refinement_absolute_change": 2.7284841053187847e-12,
+                "termwise_refinement_change": 2.7853275241795927e-12,
+                "group_refinement_changes": [
+                  2.7284841053187847e-12
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 9,
+                "nodes": 288,
+                "value": 4548.373057137218,
+                "absolute_bin_integral": 49422.53306589281,
+                "cancellation_ratio": 10.865980526452185,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.0974006829010465e-11,
+                "group_values": [
+                  4548.373057137218
+                ],
+                "refinement_absolute_change": 0.0,
+                "termwise_refinement_change": 0.0,
+                "group_refinement_changes": [
+                  0.0
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "3/2",
+                "rates": [],
+                "collapsed_bins": 7,
+                "value": 4548.373057137218
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 7.059226385035643,
+              "panel_width_requested": 0.8164965809277261,
+              "panel_width_actual": 0.7843584872261826,
+              "panels": 9,
+              "collapsed_bin_count": 7
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 1,
+              "merge_calls": 0,
+              "pair_products_executed_here": 0,
+              "group_count": 1,
+              "collapsed_bin_count": 7,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": 4548.373057137217,
+          "scaled_error": 1.999164918660783e-16,
+          "passed": true
+        },
+        "H4_local": {
+          "integral": {
+            "value": 14913.582742406048,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 0.00014913682742406046,
+            "tail": {
+              "radius": 6.587848567030999,
+              "absolute_bound": 5.397153811883785e-21,
+              "log_absolute_bound": -46.66841521012931,
+              "groups": [
+                {
+                  "beta": "2",
+                  "rates": [],
+                  "absolute_bound": 5.397153811883785e-21,
+                  "log_absolute_bound": -46.66841521012931
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 6.587848567030999,
+                "absolute_tail_bound": 5.397153811883785e-21
+              }
+            ],
+            "refinement_absolute_change": 1.4551915228366852e-10,
+            "termwise_refinement_change": 1.4642864698544145e-10,
+            "absolute_bin_integral": 5685193.434096814,
+            "cancellation_ratio": 381.2090985978334,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 1.2623665299964091e-09,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 10,
+                "nodes": 160,
+                "value": 14913.582742406266,
+                "absolute_bin_integral": 5685193.434096814,
+                "cancellation_ratio": 381.20909859782785,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.2623665299964091e-09,
+                "group_values": [
+                  14913.582742406266
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 10,
+                "nodes": 240,
+                "value": 14913.582742406194,
+                "absolute_bin_integral": 5685193.434096814,
+                "cancellation_ratio": 381.2090985978297,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.2623665299964091e-09,
+                "group_values": [
+                  14913.582742406194
+                ],
+                "refinement_absolute_change": 7.275957614183426e-11,
+                "termwise_refinement_change": 1.9190338207408786e-10,
+                "group_refinement_changes": [
+                  7.275957614183426e-11
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 10,
+                "nodes": 320,
+                "value": 14913.582742406048,
+                "absolute_bin_integral": 5685193.434096814,
+                "cancellation_ratio": 381.2090985978334,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.2623665299964091e-09,
+                "group_values": [
+                  14913.582742406048
+                ],
+                "refinement_absolute_change": 1.4551915228366852e-10,
+                "termwise_refinement_change": 1.4642864698544145e-10,
+                "group_refinement_changes": [
+                  1.4551915228366852e-10
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "2",
+                "rates": [],
+                "collapsed_bins": 11,
+                "value": 14913.582742406048
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 6.587848567030999,
+              "panel_width_requested": 0.7071067811865475,
+              "panel_width_actual": 0.6587848567030999,
+              "panels": 10,
+              "collapsed_bin_count": 11
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 2,
+              "merge_calls": 0,
+              "pair_products_executed_here": 0,
+              "group_count": 1,
+              "collapsed_bin_count": 11,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": 14913.582742406363,
+          "scaled_error": 2.109915994623802e-14,
+          "passed": true
+        },
+        "H4_york": {
+          "integral": {
+            "value": 26379.864370930067,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 0.0002637996437093007,
+            "tail": {
+              "radius": 9.60555127546399,
+              "absolute_bound": 1.021139186959827e-18,
+              "log_absolute_bound": -41.425612819848965,
+              "groups": [
+                {
+                  "beta": "1",
+                  "rates": [
+                    "1"
+                  ],
+                  "absolute_bound": 1.021139186959827e-18,
+                  "log_absolute_bound": -41.425612819848965
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 9.60555127546399,
+                "absolute_tail_bound": 1.021139186959827e-18
+              }
+            ],
+            "refinement_absolute_change": 7.275957614183426e-12,
+            "termwise_refinement_change": 8.481393365400436e-11,
+            "absolute_bin_integral": 882640.2707768682,
+            "cancellation_ratio": 33.45886310732951,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 1.9598551021557236e-10,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 10,
+                "nodes": 160,
+                "value": 26379.864370930067,
+                "absolute_bin_integral": 882640.2707768683,
+                "cancellation_ratio": 33.45886310732951,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.9598551021557239e-10,
+                "group_values": [
+                  26379.864370930067
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 10,
+                "nodes": 240,
+                "value": 26379.864370930074,
+                "absolute_bin_integral": 882640.2707768683,
+                "cancellation_ratio": 33.458863107329506,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.9598551021557239e-10,
+                "group_values": [
+                  26379.864370930074
+                ],
+                "refinement_absolute_change": 7.275957614183426e-12,
+                "termwise_refinement_change": 4.047606694257411e-11,
+                "group_refinement_changes": [
+                  7.275957614183426e-12
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 10,
+                "nodes": 320,
+                "value": 26379.864370930067,
+                "absolute_bin_integral": 882640.2707768682,
+                "cancellation_ratio": 33.45886310732951,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 1.9598551021557236e-10,
+                "group_values": [
+                  26379.864370930067
+                ],
+                "refinement_absolute_change": 7.275957614183426e-12,
+                "termwise_refinement_change": 8.481393365400436e-11,
+                "group_refinement_changes": [
+                  7.275957614183426e-12
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "1",
+                "rates": [
+                  "1"
+                ],
+                "collapsed_bins": 97,
+                "value": 26379.864370930067
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 9.60555127546399,
+              "panel_width_requested": 1.0,
+              "panel_width_actual": 0.9605551275463989,
+              "panels": 10,
+              "collapsed_bin_count": 97
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 3,
+              "merge_calls": 0,
+              "pair_products_executed_here": 29805,
+              "group_count": 1,
+              "collapsed_bin_count": 97,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": 26379.86437093008,
+          "scaled_error": 5.516087351710156e-16,
+          "passed": true
+        },
+        "H4_scalar": {
+          "integral": {
+            "value": -198329.7661026914,
+            "converged": true,
+            "exact_angular_zero": false,
+            "accuracy_certified": false,
+            "acceptance_budget": 0.0019832986610269143,
+            "tail": {
+              "radius": 9.60555127546399,
+              "absolute_bound": 8.2663119998376705e-19,
+              "log_absolute_bound": -41.636928306549855,
+              "groups": [
+                {
+                  "beta": "1",
+                  "rates": [
+                    "1"
+                  ],
+                  "absolute_bound": 8.2663119998376705e-19,
+                  "log_absolute_bound": -41.636928306549855
+                }
+              ],
+              "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+              "interval_certified": false
+            },
+            "radius_search": [
+              {
+                "radius": 9.60555127546399,
+                "absolute_tail_bound": 8.2663119998376705e-19
+              }
+            ],
+            "refinement_absolute_change": 1.1641532182693481e-10,
+            "termwise_refinement_change": 9.281966306673439e-10,
+            "absolute_bin_integral": 10783522.338439267,
+            "cancellation_ratio": 54.37167879709878,
+            "cancellation_ratio_overflow": false,
+            "machine_epsilon_times_bin_l1": 2.394422957338997e-09,
+            "levels": [
+              {
+                "order": 16,
+                "panels": 10,
+                "nodes": 160,
+                "value": -198329.7661026915,
+                "absolute_bin_integral": 10783522.338439267,
+                "cancellation_ratio": 54.37167879709876,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 2.394422957338997e-09,
+                "group_values": [
+                  -198329.7661026915
+                ]
+              },
+              {
+                "order": 24,
+                "panels": 10,
+                "nodes": 240,
+                "value": -198329.76610269153,
+                "absolute_bin_integral": 10783522.338439267,
+                "cancellation_ratio": 54.371678797098745,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 2.394422957338997e-09,
+                "group_values": [
+                  -198329.76610269153
+                ],
+                "refinement_absolute_change": 2.9103830456733704e-11,
+                "termwise_refinement_change": 1.9980461729574017e-10,
+                "group_refinement_changes": [
+                  2.9103830456733704e-11
+                ]
+              },
+              {
+                "order": 32,
+                "panels": 10,
+                "nodes": 320,
+                "value": -198329.7661026914,
+                "absolute_bin_integral": 10783522.338439267,
+                "cancellation_ratio": 54.37167879709878,
+                "cancellation_ratio_overflow": false,
+                "zero_sum_with_nonzero_bins": false,
+                "machine_epsilon_times_bin_l1": 2.394422957338997e-09,
+                "group_values": [
+                  -198329.7661026914
+                ],
+                "refinement_absolute_change": 1.1641532182693481e-10,
+                "termwise_refinement_change": 9.281966306673439e-10,
+                "group_refinement_changes": [
+                  1.1641532182693481e-10
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "beta": "1",
+                "rates": [
+                  "1"
+                ],
+                "collapsed_bins": 106,
+                "value": -198329.7661026914
+              }
+            ],
+            "settings": {
+              "quadrature_orders": [
+                16,
+                24,
+                32
+              ],
+              "absolute_tolerance": 1e-09,
+              "relative_tolerance": 1e-08,
+              "decimal_precision_for_nodes": 64,
+              "max_panels": 256,
+              "max_nodes": 65536,
+              "max_bin_evaluations_per_level": 20000000,
+              "radius": 9.60555127546399,
+              "panel_width_requested": 1.0,
+              "panel_width_actual": 0.9605551275463989,
+              "panels": 10,
+              "collapsed_bin_count": 106
+            },
+            "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+            "assembly_statistics": {
+              "add_calls": 1,
+              "merge_calls": 0,
+              "pair_products_executed_here": 23436,
+              "group_count": 1,
+              "collapsed_bin_count": 106,
+              "per_add_pair_product_budget": 20000000
+            }
+          },
+          "expected": -198329.7661026914,
+          "scaled_error": 0.0,
+          "passed": true
+        }
+      },
+      "york_operator": {
+        "point": [
+          "0.2",
+          "-0.35",
+          "0.5"
+        ],
+        "precision": 90,
+        "finite_amplitudes": 9,
+        "A1": [
+          "-27.7792370660939844163682082240944075388504933300160451436594886237352423373411315237024338",
+          "11.8596184418055105000961133172215563914056321339867476677996212428942728840513530320350651",
+          "20.9671061969512832546724856426697490969372654452240979778458815131676812784274881869218180"
+        ],
+        "A2": [
+          "34.4215411309656627712273310419013255952261476437123362486328634437001662358458247013093166",
+          "-602.952255301554743672487625780031348228767619153687574755037088855796335940958427223646154",
+          "-74.5970754525572848925525039336620518498948780733678492085664706455576834542976628271372324"
+        ],
+        "richardson": {
+          "1": [
+            "-27.7792370660939844163687117931745120874963212742264567501195760091977283701114405765825093",
+            "11.8596184418055105000961636435866874879601895522471424377375358507178655195781499789183513",
+            "20.9671061969512832546735187735900250262984309632531737610980237455193223394145856404832867"
+          ],
+          "2": [
+            "34.4215411309656627712268306341495974895881571711269752342434468427683230103933719193333333",
+            "-602.952255301554743672489419858542065215672758582577916605014954700276093039332807887477403",
+            "-74.597075452557284892552932966572770119666450935338126621819339719864686437945969838896"
+          ]
+        },
+        "maximum_scaled_error": "4.70308155754859052011553523200043066494896161061031840600339386333900209881239819220138715E-23",
+        "refinement_scaled_error": "2.96294166589564537283424740386283899859909384719490279255571659891954416335285772226916874E-21",
+        "flat_operator_error": "0E-89",
+        "linear_tracelessness_error": "2E-88",
+        "determinant_error": "9.9E-88",
+        "connection_trace_error": "8.57857E-87",
+        "maximum_last_jet_term": "3.01357226838658203813230617355031779988162624722503707592956089592521822876715281745208896E-81",
+        "passed": true
+      }
+    }
+  ],
+  "fifth_order_integrals": [
+    {
+      "direction": "electric_axis",
+      "integral": {
+        "value": -1641.1412606219328,
+        "converged": true,
+        "exact_angular_zero": false,
+        "accuracy_certified": false,
+        "acceptance_budget": 1.6412412606219327e-05,
+        "tail": {
+          "radius": 13.584300887831354,
+          "absolute_bound": 8.830217155152138e-15,
+          "log_absolute_bound": -32.360596787714755,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 8.830217155152138e-15,
+              "log_absolute_bound": -32.360596787714755
+            },
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "absolute_bound": 8.178475193793338e-100,
+              "log_absolute_bound": -228.15700357279252
+            },
+            {
+              "beta": "5/2",
+              "rates": [],
+              "absolute_bound": 8.004102335383612e-181,
+              "log_absolute_bound": -414.68794762975233
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "radius_search": [
+          {
+            "radius": 13.584300887831354,
+            "absolute_tail_bound": 8.830217155152138e-15
+          }
+        ],
+        "refinement_absolute_change": 1.8189894035458565e-12,
+        "termwise_refinement_change": 9.317824289922783e-12,
+        "absolute_bin_integral": 647185.557479622,
+        "cancellation_ratio": 394.35091482275095,
+        "cancellation_ratio_overflow": false,
+        "machine_epsilon_times_bin_l1": 1.437040614237488e-10,
+        "levels": [
+          {
+            "order": 16,
+            "panels": 22,
+            "nodes": 352,
+            "value": -1641.1412606219428,
+            "absolute_bin_integral": 647185.557479622,
+            "cancellation_ratio": 394.35091482274856,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 1.437040614237488e-10,
+            "group_values": [
+              -14.03414855514442,
+              -1828.4197080934828,
+              201.31259602668445
+            ]
+          },
+          {
+            "order": 24,
+            "panels": 22,
+            "nodes": 528,
+            "value": -1641.1412606219346,
+            "absolute_bin_integral": 647185.557479622,
+            "cancellation_ratio": 394.3509148227505,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 1.437040614237488e-10,
+            "group_values": [
+              -14.034148555136365,
+              -1828.4197080934825,
+              201.31259602668445
+            ],
+            "refinement_absolute_change": 8.185452315956354e-12,
+            "termwise_refinement_change": 3.489419864166621e-11,
+            "group_refinement_changes": [
+              8.054001909840736e-12,
+              2.2737367544323206e-13,
+              0.0
+            ]
+          },
+          {
+            "order": 32,
+            "panels": 22,
+            "nodes": 704,
+            "value": -1641.1412606219328,
+            "absolute_bin_integral": 647185.557479622,
+            "cancellation_ratio": 394.35091482275095,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 1.437040614237488e-10,
+            "group_values": [
+              -14.03414855513477,
+              -1828.4197080934825,
+              201.3125960266845
+            ],
+            "refinement_absolute_change": 1.8189894035458565e-12,
+            "termwise_refinement_change": 9.317824289922783e-12,
+            "group_refinement_changes": [
+              1.595168441781425e-12,
+              0.0,
+              5.684341886080802e-14
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "beta": "1/2",
+            "rates": [
+              "1",
+              "1"
+            ],
+            "collapsed_bins": 461,
+            "value": -14.03414855513477
+          },
+          {
+            "beta": "3/2",
+            "rates": [
+              "1"
+            ],
+            "collapsed_bins": 76,
+            "value": -1828.4197080934825
+          },
+          {
+            "beta": "5/2",
+            "rates": [],
+            "collapsed_bins": 9,
+            "value": 201.3125960266845
+          }
+        ],
+        "settings": {
+          "quadrature_orders": [
+            16,
+            24,
+            32
+          ],
+          "absolute_tolerance": 1e-09,
+          "relative_tolerance": 1e-08,
+          "decimal_precision_for_nodes": 64,
+          "max_panels": 256,
+          "max_nodes": 65536,
+          "max_bin_evaluations_per_level": 20000000,
+          "radius": 13.584300887831354,
+          "panel_width_requested": 0.6324555320336759,
+          "panel_width_actual": 0.6174682221741524,
+          "panels": 22,
+          "collapsed_bin_count": 546
+        },
+        "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+        "assembly_statistics": {
+          "add_calls": 0,
+          "merge_calls": 6,
+          "pair_products_executed_here": 0,
+          "group_count": 3,
+          "collapsed_bin_count": 546,
+          "per_add_pair_product_budget": 20000000
+        }
+      },
+      "families": {
+        "curvature": {
+          "value": 201.31259602668456,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 2.0141259602668455e-06,
+          "tail": {
+            "radius": 5.794733192202055,
+            "absolute_bound": 1.3321173706950788e-23,
+            "log_absolute_bound": -52.672687454489406,
+            "groups": [
+              {
+                "beta": "5/2",
+                "rates": [],
+                "absolute_bound": 1.3321173706950788e-23,
+                "log_absolute_bound": -52.672687454489406
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 5.794733192202055,
+              "absolute_tail_bound": 1.3321173706950788e-23
+            }
+          ],
+          "refinement_absolute_change": 0.0,
+          "termwise_refinement_change": 0.0,
+          "absolute_bin_integral": 4355.608245761255,
+          "cancellation_ratio": 21.636044299900174,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 9.671393121382665e-13,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 10,
+              "nodes": 160,
+              "value": 201.3125960266845,
+              "absolute_bin_integral": 4355.608245761255,
+              "cancellation_ratio": 21.636044299900178,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.671393121382665e-13,
+              "group_values": [
+                201.3125960266845
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 10,
+              "nodes": 240,
+              "value": 201.31259602668456,
+              "absolute_bin_integral": 4355.608245761255,
+              "cancellation_ratio": 21.636044299900174,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.671393121382665e-13,
+              "group_values": [
+                201.31259602668456
+              ],
+              "refinement_absolute_change": 5.684341886080802e-14,
+              "termwise_refinement_change": 2.8421709430404007e-13,
+              "group_refinement_changes": [
+                5.684341886080802e-14
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 10,
+              "nodes": 320,
+              "value": 201.31259602668456,
+              "absolute_bin_integral": 4355.608245761255,
+              "cancellation_ratio": 21.636044299900174,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.671393121382665e-13,
+              "group_values": [
+                201.31259602668456
+              ],
+              "refinement_absolute_change": 0.0,
+              "termwise_refinement_change": 0.0,
+              "group_refinement_changes": [
+                0.0
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "5/2",
+              "rates": [],
+              "collapsed_bins": 9,
+              "value": 201.31259602668456
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 5.794733192202055,
+            "panel_width_requested": 0.6324555320336759,
+            "panel_width_actual": 0.5794733192202055,
+            "panels": 10,
+            "collapsed_bin_count": 9
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 1,
+            "merge_calls": 0,
+            "pair_products_executed_here": 0,
+            "group_count": 1,
+            "collapsed_bin_count": 9,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "york_source": {
+          "value": 0.0,
+          "converged": true,
+          "exact_angular_zero": true,
+          "accuracy_certified": false,
+          "tail": {
+            "radius": 0.0,
+            "absolute_bound": 0.0,
+            "log_absolute_bound": null,
+            "groups": [],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "refinement_absolute_change": 0.0,
+          "termwise_refinement_change": 0.0,
+          "absolute_bin_integral": 0.0,
+          "cancellation_ratio": null,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 0.0,
+          "levels": [],
+          "groups": [],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000
+          },
+          "assembly_statistics": {
+            "add_calls": 0,
+            "merge_calls": 0,
+            "pair_products_executed_here": 0,
+            "group_count": 0,
+            "collapsed_bin_count": 0,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "york_weak": {
+          "value": -19.325359540133796,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 1.9425359540133795e-07,
+          "tail": {
+            "radius": 13.584300887831354,
+            "absolute_bound": 8.85169300817462e-15,
+            "log_absolute_bound": -32.358167653827714,
+            "groups": [
+              {
+                "beta": "1/2",
+                "rates": [
+                  "1",
+                  "1"
+                ],
+                "absolute_bound": 8.85169300817462e-15,
+                "log_absolute_bound": -32.358167653827714
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 13.584300887831354,
+              "absolute_tail_bound": 8.85169300817462e-15
+            }
+          ],
+          "refinement_absolute_change": 2.2737367544323206e-13,
+          "termwise_refinement_change": 3.361469436136133e-11,
+          "absolute_bin_integral": 442280.7406445082,
+          "cancellation_ratio": 22886.029091774722,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 9.820605232236006e-11,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 14,
+              "nodes": 224,
+              "value": -19.325359540134684,
+              "absolute_bin_integral": 442280.7406445082,
+              "cancellation_ratio": 22886.02909177367,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.820605232236006e-11,
+              "group_values": [
+                -19.325359540134684
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 14,
+              "nodes": 336,
+              "value": -19.325359540134023,
+              "absolute_bin_integral": 442280.74064450816,
+              "cancellation_ratio": 22886.02909177445,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.820605232236005e-11,
+              "group_values": [
+                -19.325359540134023
+              ],
+              "refinement_absolute_change": 6.608047442568932e-13,
+              "termwise_refinement_change": 3.037249618476068e-11,
+              "group_refinement_changes": [
+                6.608047442568932e-13
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 14,
+              "nodes": 448,
+              "value": -19.325359540133796,
+              "absolute_bin_integral": 442280.7406445082,
+              "cancellation_ratio": 22886.029091774722,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.820605232236006e-11,
+              "group_values": [
+                -19.325359540133796
+              ],
+              "refinement_absolute_change": 2.2737367544323206e-13,
+              "termwise_refinement_change": 3.361469436136133e-11,
+              "group_refinement_changes": [
+                2.2737367544323206e-13
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "collapsed_bins": 373,
+              "value": -19.325359540133796
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 13.584300887831354,
+            "panel_width_requested": 1.0,
+            "panel_width_actual": 0.9703072062736682,
+            "panels": 14,
+            "collapsed_bin_count": 373
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 117,
+            "merge_calls": 0,
+            "pair_products_executed_here": 10971032,
+            "group_count": 1,
+            "collapsed_bin_count": 373,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "scalar_curvature": {
+          "value": -1828.419708093482,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 1.828519708093482e-05,
+          "tail": {
+            "radius": 7.606992287111677,
+            "absolute_bound": 2.9861658248199567e-22,
+            "log_absolute_bound": -49.56288181419485,
+            "groups": [
+              {
+                "beta": "3/2",
+                "rates": [
+                  "1"
+                ],
+                "absolute_bound": 2.9861658248199567e-22,
+                "log_absolute_bound": -49.56288181419485
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 7.606992287111677,
+              "absolute_tail_bound": 2.9861658248199567e-22
+            }
+          ],
+          "refinement_absolute_change": 4.547473508864641e-13,
+          "termwise_refinement_change": 1.241229341530925e-12,
+          "absolute_bin_integral": 22552.42364823306,
+          "cancellation_ratio": 12.334380092494614,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 5.007643999073843e-12,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 10,
+              "nodes": 160,
+              "value": -1828.4197080934825,
+              "absolute_bin_integral": 22552.42364823306,
+              "cancellation_ratio": 12.334380092494612,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 5.007643999073843e-12,
+              "group_values": [
+                -1828.4197080934825
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 10,
+              "nodes": 240,
+              "value": -1828.4197080934825,
+              "absolute_bin_integral": 22552.423648233056,
+              "cancellation_ratio": 12.334380092494609,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 5.007643999073842e-12,
+              "group_values": [
+                -1828.4197080934825
+              ],
+              "refinement_absolute_change": 0.0,
+              "termwise_refinement_change": 1.3606893389805919e-12,
+              "group_refinement_changes": [
+                0.0
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 10,
+              "nodes": 320,
+              "value": -1828.419708093482,
+              "absolute_bin_integral": 22552.42364823306,
+              "cancellation_ratio": 12.334380092494614,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 5.007643999073843e-12,
+              "group_values": [
+                -1828.419708093482
+              ],
+              "refinement_absolute_change": 4.547473508864641e-13,
+              "termwise_refinement_change": 1.241229341530925e-12,
+              "group_refinement_changes": [
+                4.547473508864641e-13
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "collapsed_bins": 76,
+              "value": -1828.419708093482
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 7.606992287111677,
+            "panel_width_requested": 0.8164965809277261,
+            "panel_width_actual": 0.7606992287111677,
+            "panels": 10,
+            "collapsed_bin_count": 76
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 1,
+            "merge_calls": 0,
+            "pair_products_executed_here": 5445,
+            "group_count": 1,
+            "collapsed_bin_count": 76,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "scalar_momentum": {
+          "value": 14.399934890884735,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 1.4499934890884735e-07,
+          "tail": {
+            "radius": 13.384260859804924,
+            "absolute_bound": 4.830761683556954e-16,
+            "log_absolute_bound": -35.26635733421435,
+            "groups": [
+              {
+                "beta": "1/2",
+                "rates": [
+                  "1",
+                  "1"
+                ],
+                "absolute_bound": 4.830761683556954e-16,
+                "log_absolute_bound": -35.26635733421435
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 13.384260859804924,
+              "absolute_tail_bound": 4.830761683556954e-16
+            }
+          ],
+          "refinement_absolute_change": 6.288303211476887e-13,
+          "termwise_refinement_change": 1.4550499694010455e-11,
+          "absolute_bin_integral": 490042.70226473105,
+          "cancellation_ratio": 34030.89708238415,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 1.0881133822076695e-10,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 14,
+              "nodes": 224,
+              "value": 14.399934890876155,
+              "absolute_bin_integral": 490042.70226473105,
+              "cancellation_ratio": 34030.89708240443,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.0881133822076695e-10,
+              "group_values": [
+                14.399934890876155
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 14,
+              "nodes": 336,
+              "value": 14.399934890885364,
+              "absolute_bin_integral": 490042.70226473105,
+              "cancellation_ratio": 34030.89708238267,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.0881133822076695e-10,
+              "group_values": [
+                14.399934890885364
+              ],
+              "refinement_absolute_change": 9.208633855450898e-12,
+              "termwise_refinement_change": 2.615234417913115e-11,
+              "group_refinement_changes": [
+                9.208633855450898e-12
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 14,
+              "nodes": 448,
+              "value": 14.399934890884735,
+              "absolute_bin_integral": 490042.70226473105,
+              "cancellation_ratio": 34030.89708238415,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.0881133822076695e-10,
+              "group_values": [
+                14.399934890884735
+              ],
+              "refinement_absolute_change": 6.288303211476887e-13,
+              "termwise_refinement_change": 1.4550499694010455e-11,
+              "group_refinement_changes": [
+                6.288303211476887e-13
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "collapsed_bins": 380,
+              "value": 14.399934890884735
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 13.384260859804924,
+            "panel_width_requested": 1.0,
+            "panel_width_actual": 0.9560186328432089,
+            "panels": 14,
+            "collapsed_bin_count": 380
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 9,
+            "merge_calls": 0,
+            "pair_products_executed_here": 576809,
+            "group_count": 1,
+            "collapsed_bin_count": 380,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "scalar_gradient": {
+          "value": -9.108723905890411,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 9.20872390589041e-08,
+          "tail": {
+            "radius": 13.384260859804924,
+            "absolute_bound": 6.524519717659703e-17,
+            "log_absolute_bound": -37.268379236888045,
+            "groups": [
+              {
+                "beta": "1/2",
+                "rates": [
+                  "1",
+                  "1"
+                ],
+                "absolute_bound": 6.524519717659703e-17,
+                "log_absolute_bound": -37.268379236888045
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 13.384260859804924,
+              "absolute_tail_bound": 6.524519717659703e-17
+            }
+          ],
+          "refinement_absolute_change": 1.0444978215673473e-12,
+          "termwise_refinement_change": 2.4405338860944426e-12,
+          "absolute_bin_integral": 60982.2352353404,
+          "cancellation_ratio": 6694.926299819509,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 1.3540776330276482e-11,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 14,
+              "nodes": 224,
+              "value": -9.108723905889706,
+              "absolute_bin_integral": 60982.2352353404,
+              "cancellation_ratio": 6694.926299820027,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.3540776330276482e-11,
+              "group_values": [
+                -9.108723905889706
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 14,
+              "nodes": 336,
+              "value": -9.108723905889367,
+              "absolute_bin_integral": 60982.235235340406,
+              "cancellation_ratio": 6694.926299820278,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.3540776330276484e-11,
+              "group_values": [
+                -9.108723905889367
+              ],
+              "refinement_absolute_change": 3.3928415632544784e-13,
+              "termwise_refinement_change": 2.1298587893348042e-12,
+              "group_refinement_changes": [
+                3.3928415632544784e-13
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 14,
+              "nodes": 448,
+              "value": -9.108723905890411,
+              "absolute_bin_integral": 60982.2352353404,
+              "cancellation_ratio": 6694.926299819509,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.3540776330276482e-11,
+              "group_values": [
+                -9.108723905890411
+              ],
+              "refinement_absolute_change": 1.0444978215673473e-12,
+              "termwise_refinement_change": 2.4405338860944426e-12,
+              "group_refinement_changes": [
+                1.0444978215673473e-12
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "collapsed_bins": 245,
+              "value": -9.108723905890411
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 13.384260859804924,
+            "panel_width_requested": 1.0,
+            "panel_width_actual": 0.9560186328432089,
+            "panels": 14,
+            "collapsed_bin_count": 245
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 9,
+            "merge_calls": 0,
+            "pair_products_executed_here": 322707,
+            "group_count": 1,
+            "collapsed_bin_count": 245,
+            "per_add_pair_product_budget": 20000000
+          }
+        }
+      }
+    },
+    {
+      "direction": "noncommuting_labels",
+      "integral": {
+        "value": -76826.87759611206,
+        "converged": true,
+        "exact_angular_zero": false,
+        "accuracy_certified": false,
+        "acceptance_budget": 0.0007682697759611206,
+        "tail": {
+          "radius": 13.96250694929023,
+          "absolute_bound": 2.060776887325348e-13,
+          "log_absolute_bound": -29.210523167447075,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 2.060776887325348e-13,
+              "log_absolute_bound": -29.210523167447075
+            },
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "absolute_bound": 1.0686499634342305e-100,
+              "log_absolute_bound": -230.19211316398167
+            },
+            {
+              "beta": "5/2",
+              "rates": [],
+              "absolute_bound": 3.1989468069483016e-187,
+              "log_absolute_bound": -429.4205907570823
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "radius_search": [
+          {
+            "radius": 13.96250694929023,
+            "absolute_tail_bound": 2.060776887325348e-13
+          }
+        ],
+        "refinement_absolute_change": 4.94765117764473e-10,
+        "termwise_refinement_change": 3.271611440092137e-09,
+        "absolute_bin_integral": 34400580.21956232,
+        "cancellation_ratio": 447.76751699333954,
+        "cancellation_ratio_overflow": false,
+        "machine_epsilon_times_bin_l1": 7.638463244044563e-09,
+        "levels": [
+          {
+            "order": 16,
+            "panels": 23,
+            "nodes": 368,
+            "value": -76826.87759611162,
+            "absolute_bin_integral": 34400580.21956233,
+            "cancellation_ratio": 447.7675169933422,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 7.638463244044564e-09,
+            "group_values": [
+              12204.86621464979,
+              -113372.10358106667,
+              24340.359770305262
+            ]
+          },
+          {
+            "order": 24,
+            "panels": 23,
+            "nodes": 552,
+            "value": -76826.87759611156,
+            "absolute_bin_integral": 34400580.21956233,
+            "cancellation_ratio": 447.7675169933425,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 7.638463244044564e-09,
+            "group_values": [
+              12204.866214649872,
+              -113372.10358106668,
+              24340.35977030526
+            ],
+            "refinement_absolute_change": 5.820766091346741e-11,
+            "termwise_refinement_change": 1.9288490943347725e-09,
+            "group_refinement_changes": [
+              8.185452315956354e-11,
+              1.4551915228366852e-11,
+              3.637978807091713e-12
+            ]
+          },
+          {
+            "order": 32,
+            "panels": 23,
+            "nodes": 736,
+            "value": -76826.87759611206,
+            "absolute_bin_integral": 34400580.21956232,
+            "cancellation_ratio": 447.76751699333954,
+            "cancellation_ratio_overflow": false,
+            "zero_sum_with_nonzero_bins": false,
+            "machine_epsilon_times_bin_l1": 7.638463244044563e-09,
+            "group_values": [
+              12204.866214649373,
+              -113372.1035810667,
+              24340.359770305266
+            ],
+            "refinement_absolute_change": 4.94765117764473e-10,
+            "termwise_refinement_change": 3.271611440092137e-09,
+            "group_refinement_changes": [
+              4.984030965715647e-10,
+              1.4551915228366852e-11,
+              7.275957614183426e-12
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "beta": "1/2",
+            "rates": [
+              "1",
+              "1"
+            ],
+            "collapsed_bins": 712,
+            "value": 12204.866214649373
+          },
+          {
+            "beta": "3/2",
+            "rates": [
+              "1"
+            ],
+            "collapsed_bins": 121,
+            "value": -113372.1035810667
+          },
+          {
+            "beta": "5/2",
+            "rates": [],
+            "collapsed_bins": 12,
+            "value": 24340.359770305266
+          }
+        ],
+        "settings": {
+          "quadrature_orders": [
+            16,
+            24,
+            32
+          ],
+          "absolute_tolerance": 1e-09,
+          "relative_tolerance": 1e-08,
+          "decimal_precision_for_nodes": 64,
+          "max_panels": 256,
+          "max_nodes": 65536,
+          "max_bin_evaluations_per_level": 20000000,
+          "radius": 13.96250694929023,
+          "panel_width_requested": 0.6324555320336759,
+          "panel_width_actual": 0.6070655195343578,
+          "panels": 23,
+          "collapsed_bin_count": 845
+        },
+        "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+        "assembly_statistics": {
+          "add_calls": 0,
+          "merge_calls": 6,
+          "pair_products_executed_here": 0,
+          "group_count": 3,
+          "collapsed_bin_count": 845,
+          "per_add_pair_product_budget": 20000000
+        }
+      },
+      "families": {
+        "curvature": {
+          "value": 24340.359770305255,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 0.00024340459770305254,
+          "tail": {
+            "radius": 5.9856234222227185,
+            "absolute_bound": 1.9494204247844008e-22,
+            "log_absolute_bound": -49.98933993553067,
+            "groups": [
+              {
+                "beta": "5/2",
+                "rates": [],
+                "absolute_bound": 1.9494204247844008e-22,
+                "log_absolute_bound": -49.98933993553067
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 5.9856234222227185,
+              "absolute_tail_bound": 1.9494204247844008e-22
+            }
+          ],
+          "refinement_absolute_change": 1.8189894035458565e-11,
+          "termwise_refinement_change": 5.3233861763146706e-11,
+          "absolute_bin_integral": 398354.290653465,
+          "cancellation_ratio": 16.36599846562043,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 8.845242108833973e-11,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 10,
+              "nodes": 160,
+              "value": 24340.359770305262,
+              "absolute_bin_integral": 398354.29065346514,
+              "cancellation_ratio": 16.36599846562043,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 8.845242108833976e-11,
+              "group_values": [
+                24340.359770305262
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 10,
+              "nodes": 240,
+              "value": 24340.359770305273,
+              "absolute_bin_integral": 398354.2906534651,
+              "cancellation_ratio": 16.365998465620418,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 8.845242108833975e-11,
+              "group_values": [
+                24340.359770305273
+              ],
+              "refinement_absolute_change": 1.0913936421275139e-11,
+              "termwise_refinement_change": 4.934008757118136e-11,
+              "group_refinement_changes": [
+                1.0913936421275139e-11
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 10,
+              "nodes": 320,
+              "value": 24340.359770305255,
+              "absolute_bin_integral": 398354.290653465,
+              "cancellation_ratio": 16.36599846562043,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 8.845242108833973e-11,
+              "group_values": [
+                24340.359770305255
+              ],
+              "refinement_absolute_change": 1.8189894035458565e-11,
+              "termwise_refinement_change": 5.3233861763146706e-11,
+              "group_refinement_changes": [
+                1.8189894035458565e-11
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "5/2",
+              "rates": [],
+              "collapsed_bins": 12,
+              "value": 24340.359770305255
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 5.9856234222227185,
+            "panel_width_requested": 0.6324555320336759,
+            "panel_width_actual": 0.5985623422222719,
+            "panels": 10,
+            "collapsed_bin_count": 12
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 1,
+            "merge_calls": 0,
+            "pair_products_executed_here": 0,
+            "group_count": 1,
+            "collapsed_bin_count": 12,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "york_source": {
+          "value": 2286.753773157933,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 2.2868537731579332e-05,
+          "tail": {
+            "radius": 7.842899774342306,
+            "absolute_bound": 9.963407405454376e-20,
+            "log_absolute_bound": -43.75278273780898,
+            "groups": [
+              {
+                "beta": "3/2",
+                "rates": [
+                  "1"
+                ],
+                "absolute_bound": 9.963407405454376e-20,
+                "log_absolute_bound": -43.75278273780898
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 7.842899774342306,
+              "absolute_tail_bound": 9.963407405454376e-20
+            }
+          ],
+          "refinement_absolute_change": 3.183231456205249e-11,
+          "termwise_refinement_change": 6.142819586330006e-11,
+          "absolute_bin_integral": 2606880.319656245,
+          "cancellation_ratio": 1139.9916992620624,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 5.788437106649102e-10,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 10,
+              "nodes": 160,
+              "value": 2286.753773157969,
+              "absolute_bin_integral": 2606880.319656245,
+              "cancellation_ratio": 1139.9916992620444,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 5.788437106649102e-10,
+              "group_values": [
+                2286.753773157969
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 10,
+              "nodes": 240,
+              "value": 2286.753773157965,
+              "absolute_bin_integral": 2606880.319656245,
+              "cancellation_ratio": 1139.9916992620465,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 5.788437106649102e-10,
+              "group_values": [
+                2286.753773157965
+              ],
+              "refinement_absolute_change": 4.092726157978177e-12,
+              "termwise_refinement_change": 1.1231904295527784e-10,
+              "group_refinement_changes": [
+                4.092726157978177e-12
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 10,
+              "nodes": 320,
+              "value": 2286.753773157933,
+              "absolute_bin_integral": 2606880.319656245,
+              "cancellation_ratio": 1139.9916992620624,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 5.788437106649102e-10,
+              "group_values": [
+                2286.753773157933
+              ],
+              "refinement_absolute_change": 3.183231456205249e-11,
+              "termwise_refinement_change": 6.142819586330006e-11,
+              "group_refinement_changes": [
+                3.183231456205249e-11
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "collapsed_bins": 108,
+              "value": 2286.753773157933
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 7.842899774342306,
+            "panel_width_requested": 0.8164965809277261,
+            "panel_width_actual": 0.7842899774342306,
+            "panels": 10,
+            "collapsed_bin_count": 108
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 3,
+            "merge_calls": 0,
+            "pair_products_executed_here": 60063,
+            "group_count": 1,
+            "collapsed_bin_count": 108,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "york_weak": {
+          "value": 21050.93547652058,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 0.00021051035476520578,
+          "tail": {
+            "radius": 13.96250694929023,
+            "absolute_bound": 2.0596057727556914e-13,
+            "log_absolute_bound": -29.21109161688384,
+            "groups": [
+              {
+                "beta": "1/2",
+                "rates": [
+                  "1",
+                  "1"
+                ],
+                "absolute_bound": 2.0596057727556914e-13,
+                "log_absolute_bound": -29.21109161688384
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 13.96250694929023,
+              "absolute_tail_bound": 2.0596057727556914e-13
+            }
+          ],
+          "refinement_absolute_change": 5.4569682106375694e-11,
+          "termwise_refinement_change": 2.1774537728447285e-10,
+          "absolute_bin_integral": 5934263.681055561,
+          "cancellation_ratio": 281.9002361046812,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 1.317671234580944e-09,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 14,
+              "nodes": 224,
+              "value": 21050.93547652054,
+              "absolute_bin_integral": 5934263.681055562,
+              "cancellation_ratio": 281.90023610468177,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.3176712345809442e-09,
+              "group_values": [
+                21050.93547652054
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 14,
+              "nodes": 336,
+              "value": 21050.935476520524,
+              "absolute_bin_integral": 5934263.681055562,
+              "cancellation_ratio": 281.900236104682,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.3176712345809442e-09,
+              "group_values": [
+                21050.935476520524
+              ],
+              "refinement_absolute_change": 1.4551915228366852e-11,
+              "termwise_refinement_change": 2.4193272385453213e-10,
+              "group_refinement_changes": [
+                1.4551915228366852e-11
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 14,
+              "nodes": 448,
+              "value": 21050.93547652058,
+              "absolute_bin_integral": 5934263.681055561,
+              "cancellation_ratio": 281.9002361046812,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 1.317671234580944e-09,
+              "group_values": [
+                21050.93547652058
+              ],
+              "refinement_absolute_change": 5.4569682106375694e-11,
+              "termwise_refinement_change": 2.1774537728447285e-10,
+              "group_refinement_changes": [
+                5.4569682106375694e-11
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "collapsed_bins": 637,
+              "value": 21050.93547652058
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 13.96250694929023,
+            "panel_width_requested": 1.0,
+            "panel_width_actual": 0.9973219249493022,
+            "panels": 14,
+            "collapsed_bin_count": 637
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 117,
+            "merge_calls": 0,
+            "pair_products_executed_here": 25220305,
+            "group_count": 1,
+            "collapsed_bin_count": 637,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "scalar_curvature": {
+          "value": -115658.85735422472,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 0.001156589573542247,
+          "tail": {
+            "radius": 7.842899774342306,
+            "absolute_bound": 1.1983600385983527e-20,
+            "log_absolute_bound": -45.87074787228495,
+            "groups": [
+              {
+                "beta": "3/2",
+                "rates": [
+                  "1"
+                ],
+                "absolute_bound": 1.1983600385983527e-20,
+                "log_absolute_bound": -45.87074787228495
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 7.842899774342306,
+              "absolute_tail_bound": 1.1983600385983527e-20
+            }
+          ],
+          "refinement_absolute_change": 5.820766091346741e-11,
+          "termwise_refinement_change": 9.387690624862444e-11,
+          "absolute_bin_integral": 1694387.5422472782,
+          "cancellation_ratio": 14.649872746519803,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 3.7622961240819167e-10,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 10,
+              "nodes": 160,
+              "value": -115658.85735422476,
+              "absolute_bin_integral": 1694387.5422472784,
+              "cancellation_ratio": 14.649872746519799,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 3.762296124081917e-10,
+              "group_values": [
+                -115658.85735422476
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 10,
+              "nodes": 240,
+              "value": -115658.85735422478,
+              "absolute_bin_integral": 1694387.5422472782,
+              "cancellation_ratio": 14.649872746519796,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 3.7622961240819167e-10,
+              "group_values": [
+                -115658.85735422478
+              ],
+              "refinement_absolute_change": 1.4551915228366852e-11,
+              "termwise_refinement_change": 8.468514778314784e-11,
+              "group_refinement_changes": [
+                1.4551915228366852e-11
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 10,
+              "nodes": 320,
+              "value": -115658.85735422472,
+              "absolute_bin_integral": 1694387.5422472782,
+              "cancellation_ratio": 14.649872746519803,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 3.7622961240819167e-10,
+              "group_values": [
+                -115658.85735422472
+              ],
+              "refinement_absolute_change": 5.820766091346741e-11,
+              "termwise_refinement_change": 9.387690624862444e-11,
+              "group_refinement_changes": [
+                5.820766091346741e-11
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "collapsed_bins": 111,
+              "value": -115658.85735422472
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 7.842899774342306,
+            "panel_width_requested": 0.8164965809277261,
+            "panel_width_actual": 0.7842899774342306,
+            "panels": 10,
+            "collapsed_bin_count": 111
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 1,
+            "merge_calls": 0,
+            "pair_products_executed_here": 26848,
+            "group_count": 1,
+            "collapsed_bin_count": 111,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "scalar_momentum": {
+          "value": -9339.285386292247,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 9.339385386292248e-05,
+          "tail": {
+            "radius": 13.77678399636775,
+            "absolute_bound": 8.444348885187183e-14,
+            "log_absolute_bound": -30.10269385525839,
+            "groups": [
+              {
+                "beta": "1/2",
+                "rates": [
+                  "1",
+                  "1"
+                ],
+                "absolute_bound": 8.444348885187183e-14,
+                "log_absolute_bound": -30.10269385525839
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 13.77678399636775,
+              "absolute_tail_bound": 8.444348885187183e-14
+            }
+          ],
+          "refinement_absolute_change": 9.640643838793039e-11,
+          "termwise_refinement_change": 2.128164616754802e-09,
+          "absolute_bin_integral": 27629852.472831447,
+          "cancellation_ratio": 2958.45467078083,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 6.135059676466758e-09,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 14,
+              "nodes": 224,
+              "value": -9339.285386292337,
+              "absolute_bin_integral": 27629852.47283145,
+              "cancellation_ratio": 2958.454670780802,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 6.135059676466759e-09,
+              "group_values": [
+                -9339.285386292337
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 14,
+              "nodes": 336,
+              "value": -9339.285386292344,
+              "absolute_bin_integral": 27629852.472831447,
+              "cancellation_ratio": 2958.4546707807995,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 6.135059676466758e-09,
+              "group_values": [
+                -9339.285386292344
+              ],
+              "refinement_absolute_change": 7.275957614183426e-12,
+              "termwise_refinement_change": 3.7482641435104824e-09,
+              "group_refinement_changes": [
+                7.275957614183426e-12
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 14,
+              "nodes": 448,
+              "value": -9339.285386292247,
+              "absolute_bin_integral": 27629852.472831447,
+              "cancellation_ratio": 2958.45467078083,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 6.135059676466758e-09,
+              "group_values": [
+                -9339.285386292247
+              ],
+              "refinement_absolute_change": 9.640643838793039e-11,
+              "termwise_refinement_change": 2.128164616754802e-09,
+              "group_refinement_changes": [
+                9.640643838793039e-11
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "collapsed_bins": 626,
+              "value": -9339.285386292247
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 13.77678399636775,
+            "panel_width_requested": 1.0,
+            "panel_width_actual": 0.9840559997405535,
+            "panels": 14,
+            "collapsed_bin_count": 626
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 9,
+            "merge_calls": 0,
+            "pair_products_executed_here": 1923615,
+            "group_count": 1,
+            "collapsed_bin_count": 626,
+            "per_add_pair_product_budget": 20000000
+          }
+        },
+        "scalar_gradient": {
+          "value": 493.2161244212346,
+          "converged": true,
+          "exact_angular_zero": false,
+          "accuracy_certified": false,
+          "acceptance_budget": 4.933161244212346e-06,
+          "tail": {
+            "radius": 13.77678399636775,
+            "absolute_bound": 2.925114376382422e-14,
+            "log_absolute_bound": -31.1628577189606,
+            "groups": [
+              {
+                "beta": "1/2",
+                "rates": [
+                  "1",
+                  "1"
+                ],
+                "absolute_bound": 2.925114376382422e-14,
+                "log_absolute_bound": -31.1628577189606
+              }
+            ],
+            "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+            "interval_certified": false
+          },
+          "radius_search": [
+            {
+              "radius": 13.77678399636775,
+              "absolute_tail_bound": 2.925114376382422e-14
+            }
+          ],
+          "refinement_absolute_change": 9.72022462519817e-12,
+          "termwise_refinement_change": 2.657256081839421e-10,
+          "absolute_bin_integral": 4372709.944929064,
+          "cancellation_ratio": 8865.70760447102,
+          "cancellation_ratio_overflow": false,
+          "machine_epsilon_times_bin_l1": 9.709366521735295e-10,
+          "levels": [
+            {
+              "order": 16,
+              "panels": 14,
+              "nodes": 224,
+              "value": 493.2161244212113,
+              "absolute_bin_integral": 4372709.944929064,
+              "cancellation_ratio": 8865.707604471438,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.709366521735295e-10,
+              "group_values": [
+                493.2161244212113
+              ]
+            },
+            {
+              "order": 24,
+              "panels": 14,
+              "nodes": 336,
+              "value": 493.21612442124433,
+              "absolute_bin_integral": 4372709.944929063,
+              "cancellation_ratio": 8865.707604470843,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.709366521735293e-10,
+              "group_values": [
+                493.21612442124433
+              ],
+              "refinement_absolute_change": 3.3026026358129457e-11,
+              "termwise_refinement_change": 3.8498654264529364e-10,
+              "group_refinement_changes": [
+                3.3026026358129457e-11
+              ]
+            },
+            {
+              "order": 32,
+              "panels": 14,
+              "nodes": 448,
+              "value": 493.2161244212346,
+              "absolute_bin_integral": 4372709.944929064,
+              "cancellation_ratio": 8865.70760447102,
+              "cancellation_ratio_overflow": false,
+              "zero_sum_with_nonzero_bins": false,
+              "machine_epsilon_times_bin_l1": 9.709366521735295e-10,
+              "group_values": [
+                493.2161244212346
+              ],
+              "refinement_absolute_change": 9.72022462519817e-12,
+              "termwise_refinement_change": 2.657256081839421e-10,
+              "group_refinement_changes": [
+                9.72022462519817e-12
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "collapsed_bins": 467,
+              "value": 493.2161244212346
+            }
+          ],
+          "settings": {
+            "quadrature_orders": [
+              16,
+              24,
+              32
+            ],
+            "absolute_tolerance": 1e-09,
+            "relative_tolerance": 1e-08,
+            "decimal_precision_for_nodes": 64,
+            "max_panels": 256,
+            "max_nodes": 65536,
+            "max_bin_evaluations_per_level": 20000000,
+            "radius": 13.77678399636775,
+            "panel_width_requested": 1.0,
+            "panel_width_actual": 0.9840559997405535,
+            "panels": 14,
+            "collapsed_bin_count": 467
+          },
+          "qualification": "Refinement and cancellation diagnostics plus an analytic tail inequality; not a rigorous quadrature error certificate",
+          "assembly_statistics": {
+            "add_calls": 9,
+            "merge_calls": 0,
+            "pair_products_executed_here": 1922525,
+            "group_count": 1,
+            "collapsed_bin_count": 467,
+            "per_add_pair_product_budget": 20000000
+          }
+        }
+      }
+    }
+  ],
+  "independent_spatial_references": [
+    {
+      "direction": "electric_axis",
+      "reference": {
+        "scope": "Numerical finite-radius full H5 spatial reference; not a loop amplitude.",
+        "config": {
+          "radial_orders": [
+            16,
+            20,
+            24
+          ],
+          "angular_orders": [
+            [
+              10,
+              24
+            ],
+            [
+              12,
+              32
+            ],
+            [
+              14,
+              40
+            ]
+          ],
+          "radius": 24.0,
+          "panel_width": 3.0
+        },
+        "compilation": {
+          "polynomial_fields": 83,
+          "heat_fields": 33,
+          "shared_cartesian_monomials": 638,
+          "heat_moment_orders": {
+            "1": 13
+          }
+        },
+        "levels": [
+          {
+            "level": 1,
+            "radial_order": 16,
+            "angular_orders": [
+              10,
+              24
+            ],
+            "radius": 24.0,
+            "panel_width": 3.0,
+            "panels": 8,
+            "points": 30720,
+            "families": {
+              "curvature": 201.31260749831452,
+              "york_source": 0.0,
+              "york_strong": -19.32535933940972,
+              "york_weak": -19.325375314735993,
+              "scalar_curvature": -1828.4197235736867,
+              "scalar_momentum": 14.399935929648013,
+              "scalar_gradient": -9.108734025977329,
+              "scalar_gradient_strong": -9.108710533671793
+            },
+            "total_strong": -1641.1412735111112,
+            "total_weak": -1641.1412894864375,
+            "total": -1641.1412735111112,
+            "york_forms": {
+              "strong": -19.32535933940972,
+              "weak": -19.325375314735993,
+              "difference": 1.5975326274286772e-05,
+              "absolute_difference": 1.5975326274286772e-05
+            },
+            "scalar_gradient_forms": {
+              "strong": -9.108710533671793,
+              "weak": -9.108734025977329,
+              "difference": 2.3492305535555147e-05,
+              "absolute_difference": 2.3492305535555147e-05
+            },
+            "absolute_density_integrals": {
+              "curvature": 201.31344901300724,
+              "york_source": 0.0,
+              "york_strong": 131.87669772901745,
+              "york_weak": 184.5290925234058,
+              "scalar_curvature": 1910.2690481421787,
+              "scalar_momentum": 4815.324268817155,
+              "scalar_gradient": 1158.8993007618749,
+              "scalar_gradient_strong": 2455.3986487741204
+            },
+            "cancellation_ratios": {
+              "curvature": 1.0000041801390542,
+              "york_source": null,
+              "york_strong": 6.8240230576248395,
+              "york_weak": 9.548538619205942,
+              "scalar_curvature": 1.0447650632473575,
+              "scalar_momentum": 334.39900651938933,
+              "scalar_gradient": 127.2294588311387,
+              "scalar_gradient_strong": 269.56599835919144
+            },
+            "refinement_from_previous": null
+          },
+          {
+            "level": 2,
+            "radial_order": 20,
+            "angular_orders": [
+              12,
+              32
+            ],
+            "radius": 24.0,
+            "panel_width": 3.0,
+            "panels": 8,
+            "points": 61440,
+            "families": {
+              "curvature": 201.3125960237603,
+              "york_source": 0.0,
+              "york_strong": -19.32535954024925,
+              "york_weak": -19.325359538933483,
+              "scalar_curvature": -1828.4197080923338,
+              "scalar_momentum": 14.399934889997624,
+              "scalar_gradient": -9.108723904573958,
+              "scalar_gradient_strong": -9.10872390755319
+            },
+            "total_strong": -1641.1412606233991,
+            "total_weak": -1641.1412606220833,
+            "total": -1641.1412606233991,
+            "york_forms": {
+              "strong": -19.32535954024925,
+              "weak": -19.325359538933483,
+              "difference": -1.3157652745121595e-09,
+              "absolute_difference": 1.3157652745121595e-09
+            },
+            "scalar_gradient_forms": {
+              "strong": -9.10872390755319,
+              "weak": -9.108723904573958,
+              "difference": -2.9792310840548453e-09,
+              "absolute_difference": 2.9792310840548453e-09
+            },
+            "absolute_density_integrals": {
+              "curvature": 201.3139834398672,
+              "york_source": 0.0,
+              "york_strong": 132.64487425077155,
+              "york_weak": 182.3019829722159,
+              "scalar_curvature": 1912.1490756079781,
+              "scalar_momentum": 4890.162833680915,
+              "scalar_gradient": 1135.6523548246391,
+              "scalar_gradient_strong": 2367.5938227247225
+            },
+            "cancellation_ratios": {
+              "curvature": 1.0000068918494636,
+              "york_source": null,
+              "york_strong": 6.863772649326904,
+              "york_weak": 9.433303561827378,
+              "scalar_curvature": 1.045793297427866,
+              "scalar_momentum": 339.59617672144367,
+              "scalar_gradient": 124.67743744591597,
+              "scalar_gradient_strong": 259.92596183110265
+            },
+            "refinement_from_previous": {
+              "families": {
+                "curvature": {
+                  "signed_delta": -1.1474554213464216e-05,
+                  "absolute_delta": 1.1474554213464216e-05,
+                  "relative_delta": 5.699868979937008e-08,
+                  "scaled_delta": 5.699868979937008e-08
+                },
+                "york_source": {
+                  "signed_delta": 0.0,
+                  "absolute_delta": 0.0,
+                  "relative_delta": null,
+                  "scaled_delta": 0.0
+                },
+                "york_strong": {
+                  "signed_delta": -2.0083952989580212e-07,
+                  "absolute_delta": 2.0083952989580212e-07,
+                  "relative_delta": 1.0392537819413412e-08,
+                  "scaled_delta": 1.0392537819413412e-08
+                },
+                "york_weak": {
+                  "signed_delta": 1.5775802509665482e-05,
+                  "absolute_delta": 1.5775802509665482e-05,
+                  "relative_delta": 8.163264687460561e-07,
+                  "scaled_delta": 8.163264687460561e-07
+                },
+                "scalar_curvature": {
+                  "signed_delta": 1.5481352875212906e-05,
+                  "absolute_delta": 1.5481352875212906e-05,
+                  "relative_delta": 8.467067384307099e-09,
+                  "scaled_delta": 8.467067384307099e-09
+                },
+                "scalar_momentum": {
+                  "signed_delta": -1.0396503888898678e-06,
+                  "absolute_delta": 1.0396503888898678e-06,
+                  "relative_delta": 7.219827011940325e-08,
+                  "scaled_delta": 7.219827011940325e-08
+                },
+                "scalar_gradient": {
+                  "signed_delta": 1.0121403370533244e-05,
+                  "absolute_delta": 1.0121403370533244e-05,
+                  "relative_delta": 1.1111768757696966e-06,
+                  "scaled_delta": 1.1111768757696966e-06
+                },
+                "scalar_gradient_strong": {
+                  "signed_delta": -1.3373881396105958e-05,
+                  "absolute_delta": 1.3373881396105958e-05,
+                  "relative_delta": 1.4682497276062995e-06,
+                  "scaled_delta": 1.4682497276062995e-06
+                }
+              },
+              "total_strong": {
+                "signed_delta": 1.2887712045994704e-05,
+                "absolute_delta": 1.2887712045994704e-05,
+                "relative_delta": 7.852896246785737e-09,
+                "scaled_delta": 7.852896246785737e-09
+              },
+              "total_weak": {
+                "signed_delta": 2.886435413529398e-05,
+                "absolute_delta": 2.886435413529398e-05,
+                "relative_delta": 1.7587976628137906e-08,
+                "scaled_delta": 1.7587976628137906e-08
+              }
+            }
+          },
+          {
+            "level": 3,
+            "radial_order": 24,
+            "angular_orders": [
+              14,
+              40
+            ],
+            "radius": 24.0,
+            "panel_width": 3.0,
+            "panels": 8,
+            "points": 107520,
+            "families": {
+              "curvature": 201.3125960266843,
+              "york_source": 0.0,
+              "york_strong": -19.325359540140823,
+              "york_weak": -19.3253595401406,
+              "scalar_curvature": -1828.4197080934825,
+              "scalar_momentum": 14.39993489087977,
+              "scalar_gradient": -9.108723905889795,
+              "scalar_gradient_strong": -9.108723905890072
+            },
+            "total_strong": -1641.1412606219492,
+            "total_weak": -1641.141260621949,
+            "total": -1641.1412606219492,
+            "york_forms": {
+              "strong": -19.325359540140823,
+              "weak": -19.3253595401406,
+              "difference": -2.2382096176443156e-13,
+              "absolute_difference": 2.2382096176443156e-13
+            },
+            "scalar_gradient_forms": {
+              "strong": -9.108723905890072,
+              "weak": -9.108723905889795,
+              "difference": -2.7711166694643907e-13,
+              "absolute_difference": 2.7711166694643907e-13
+            },
+            "absolute_density_integrals": {
+              "curvature": 201.314148374243,
+              "york_source": 0.0,
+              "york_strong": 132.06366141478443,
+              "york_weak": 182.49543885435688,
+              "scalar_curvature": 1913.0380914963132,
+              "scalar_momentum": 4841.107267910421,
+              "scalar_gradient": 1154.0246953701403,
+              "scalar_gradient_strong": 2440.1464264434626
+            },
+            "cancellation_ratios": {
+              "curvature": 1.0000077111298018,
+              "york_source": null,
+              "york_strong": 6.833697512352833,
+              "york_weak": 9.443314028662524,
+              "scalar_curvature": 1.0462795183339297,
+              "scalar_momentum": 336.1895247857368,
+              "scalar_gradient": 126.69444230535257,
+              "scalar_gradient_strong": 267.8911394894256
+            },
+            "refinement_from_previous": {
+              "families": {
+                "curvature": {
+                  "signed_delta": 2.923997044490534e-09,
+                  "absolute_delta": 2.923997044490534e-09,
+                  "relative_delta": 1.4524660166336305e-11,
+                  "scaled_delta": 1.4524660166336305e-11
+                },
+                "york_source": {
+                  "signed_delta": 0.0,
+                  "absolute_delta": 0.0,
+                  "relative_delta": null,
+                  "scaled_delta": 0.0
+                },
+                "york_strong": {
+                  "signed_delta": 1.0842526876331249e-10,
+                  "absolute_delta": 1.0842526876331249e-10,
+                  "relative_delta": 5.610517544995823e-12,
+                  "scaled_delta": 5.610517544995823e-12
+                },
+                "york_weak": {
+                  "signed_delta": -1.2071161847870826e-09,
+                  "absolute_delta": 1.2071161847870826e-09,
+                  "relative_delta": 6.246280604921156e-11,
+                  "scaled_delta": 6.246280604921156e-11
+                },
+                "scalar_curvature": {
+                  "signed_delta": -1.1486918083392084e-09,
+                  "absolute_delta": 1.1486918083392084e-09,
+                  "relative_delta": 6.282429593460051e-13,
+                  "scaled_delta": 6.282429593460051e-13
+                },
+                "scalar_momentum": {
+                  "signed_delta": 8.82145911873522e-10,
+                  "absolute_delta": 8.82145911873522e-10,
+                  "relative_delta": 6.126040975589626e-11,
+                  "scaled_delta": 6.126040975589626e-11
+                },
+                "scalar_gradient": {
+                  "signed_delta": -1.3158363287857355e-09,
+                  "absolute_delta": 1.3158363287857355e-09,
+                  "relative_delta": 1.4445891020309687e-10,
+                  "scaled_delta": 1.4445891020309687e-10
+                },
+                "scalar_gradient_strong": {
+                  "signed_delta": 1.6631176436021633e-09,
+                  "absolute_delta": 1.6631176436021633e-09,
+                  "relative_delta": 1.8258514153960948e-10,
+                  "scaled_delta": 1.8258514153960948e-10
+                }
+              },
+              "total_strong": {
+                "signed_delta": 1.4499619283014908e-09,
+                "absolute_delta": 1.4499619283014908e-09,
+                "relative_delta": 8.835083018703665e-13,
+                "scaled_delta": 8.835083018703665e-13
+              },
+              "total_weak": {
+                "signed_delta": 1.3437784218695015e-10,
+                "absolute_delta": 1.3437784218695015e-10,
+                "relative_delta": 8.188072861931734e-14,
+                "scaled_delta": 8.188072861931734e-14
+              }
+            }
+          }
+        ],
+        "latest": {
+          "level": 3,
+          "radial_order": 24,
+          "angular_orders": [
+            14,
+            40
+          ],
+          "radius": 24.0,
+          "panel_width": 3.0,
+          "panels": 8,
+          "points": 107520,
+          "families": {
+            "curvature": 201.3125960266843,
+            "york_source": 0.0,
+            "york_strong": -19.325359540140823,
+            "york_weak": -19.3253595401406,
+            "scalar_curvature": -1828.4197080934825,
+            "scalar_momentum": 14.39993489087977,
+            "scalar_gradient": -9.108723905889795,
+            "scalar_gradient_strong": -9.108723905890072
+          },
+          "total_strong": -1641.1412606219492,
+          "total_weak": -1641.141260621949,
+          "total": -1641.1412606219492,
+          "york_forms": {
+            "strong": -19.325359540140823,
+            "weak": -19.3253595401406,
+            "difference": -2.2382096176443156e-13,
+            "absolute_difference": 2.2382096176443156e-13
+          },
+          "scalar_gradient_forms": {
+            "strong": -9.108723905890072,
+            "weak": -9.108723905889795,
+            "difference": -2.7711166694643907e-13,
+            "absolute_difference": 2.7711166694643907e-13
+          },
+          "absolute_density_integrals": {
+            "curvature": 201.314148374243,
+            "york_source": 0.0,
+            "york_strong": 132.06366141478443,
+            "york_weak": 182.49543885435688,
+            "scalar_curvature": 1913.0380914963132,
+            "scalar_momentum": 4841.107267910421,
+            "scalar_gradient": 1154.0246953701403,
+            "scalar_gradient_strong": 2440.1464264434626
+          },
+          "cancellation_ratios": {
+            "curvature": 1.0000077111298018,
+            "york_source": null,
+            "york_strong": 6.833697512352833,
+            "york_weak": 9.443314028662524,
+            "scalar_curvature": 1.0462795183339297,
+            "scalar_momentum": 336.1895247857368,
+            "scalar_gradient": 126.69444230535257,
+            "scalar_gradient_strong": 267.8911394894256
+          },
+          "refinement_from_previous": {
+            "families": {
+              "curvature": {
+                "signed_delta": 2.923997044490534e-09,
+                "absolute_delta": 2.923997044490534e-09,
+                "relative_delta": 1.4524660166336305e-11,
+                "scaled_delta": 1.4524660166336305e-11
+              },
+              "york_source": {
+                "signed_delta": 0.0,
+                "absolute_delta": 0.0,
+                "relative_delta": null,
+                "scaled_delta": 0.0
+              },
+              "york_strong": {
+                "signed_delta": 1.0842526876331249e-10,
+                "absolute_delta": 1.0842526876331249e-10,
+                "relative_delta": 5.610517544995823e-12,
+                "scaled_delta": 5.610517544995823e-12
+              },
+              "york_weak": {
+                "signed_delta": -1.2071161847870826e-09,
+                "absolute_delta": 1.2071161847870826e-09,
+                "relative_delta": 6.246280604921156e-11,
+                "scaled_delta": 6.246280604921156e-11
+              },
+              "scalar_curvature": {
+                "signed_delta": -1.1486918083392084e-09,
+                "absolute_delta": 1.1486918083392084e-09,
+                "relative_delta": 6.282429593460051e-13,
+                "scaled_delta": 6.282429593460051e-13
+              },
+              "scalar_momentum": {
+                "signed_delta": 8.82145911873522e-10,
+                "absolute_delta": 8.82145911873522e-10,
+                "relative_delta": 6.126040975589626e-11,
+                "scaled_delta": 6.126040975589626e-11
+              },
+              "scalar_gradient": {
+                "signed_delta": -1.3158363287857355e-09,
+                "absolute_delta": 1.3158363287857355e-09,
+                "relative_delta": 1.4445891020309687e-10,
+                "scaled_delta": 1.4445891020309687e-10
+              },
+              "scalar_gradient_strong": {
+                "signed_delta": 1.6631176436021633e-09,
+                "absolute_delta": 1.6631176436021633e-09,
+                "relative_delta": 1.8258514153960948e-10,
+                "scaled_delta": 1.8258514153960948e-10
+              }
+            },
+            "total_strong": {
+              "signed_delta": 1.4499619283014908e-09,
+              "absolute_delta": 1.4499619283014908e-09,
+              "relative_delta": 8.835083018703665e-13,
+              "scaled_delta": 8.835083018703665e-13
+            },
+            "total_weak": {
+              "signed_delta": 1.3437784218695015e-10,
+              "absolute_delta": 1.3437784218695015e-10,
+              "relative_delta": 8.188072861931734e-14,
+              "scaled_delta": 8.188072861931734e-14
+            }
+          }
+        },
+        "tail_bound": null,
+        "tail_bound_source": "caller supplies independent exterior bound",
+        "convergence_decision": "caller supplied criteria; refinement differences are not certified errors",
+        "arithmetic": "binary64; compensated summation, with once-per-radius shared heat moments"
+      },
+      "scaled_total_error": 9.969242612972595e-15,
+      "york_integration_by_parts_scaled_error": 1.1011906644131289e-14,
+      "family_scaled_errors": {
+        "curvature": 1.2643571873295386e-15,
+        "york_source": 0.0,
+        "york_weak": 3.3472700354791236e-13,
+        "scalar_curvature": 2.4857464302731064e-16,
+        "scalar_momentum": 3.2239859462408824e-13,
+        "scalar_gradient": 6.097662069024454e-14
+      },
+      "scalar_integration_by_parts_scaled_error": 2.741312054086089e-14,
+      "reference_radius_tail_bounds": {
+        "total": {
+          "radius": 24.0,
+          "absolute_bound": 9.48351737515629e-94,
+          "log_absolute_bound": -214.19344346285376,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 9.48351737515629e-94,
+              "log_absolute_bound": -214.19344346285376
+            },
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -803.6654417911722
+            },
+            {
+              "beta": "5/2",
+              "rates": [],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -1382.6749758214198
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "curvature": {
+          "radius": 24.0,
+          "absolute_bound": 5e-324,
+          "log_absolute_bound": -1382.6749758214198,
+          "groups": [
+            {
+              "beta": "5/2",
+              "rates": [],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -1382.6749758214198
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "york_source": {
+          "radius": 24.0,
+          "absolute_bound": 0.0,
+          "log_absolute_bound": null,
+          "groups": [],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "york_weak": {
+          "radius": 24.0,
+          "absolute_bound": 9.48994874287324e-94,
+          "log_absolute_bound": -214.19276553000552,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 9.48994874287324e-94,
+              "log_absolute_bound": -214.19276553000552
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "scalar_curvature": {
+          "radius": 24.0,
+          "absolute_bound": 5e-324,
+          "log_absolute_bound": -803.6654417911722,
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -803.6654417911722
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "scalar_momentum": {
+          "radius": 24.0,
+          "absolute_bound": 1.5099812649617367e-96,
+          "log_absolute_bound": -220.63607168398863,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 1.5099812649617367e-96,
+              "log_absolute_bound": -220.63607168398863
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "scalar_gradient": {
+          "radius": 24.0,
+          "absolute_bound": 1.9786405979749568e-97,
+          "log_absolute_bound": -222.66834397819014,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 1.9786405979749568e-97,
+              "log_absolute_bound": -222.66834397819014
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        }
+      },
+      "scaled_roundoff_indicators_with_safety_factor": {
+        "total": 8.751017033048872e-12,
+        "curvature": 4.780420651666706e-13,
+        "york_source": 0.0,
+        "york_weak": 4.831700621504164e-10,
+        "scalar_curvature": 2.737285477421978e-13,
+        "scalar_momentum": 7.065701185864929e-10,
+        "scalar_gradient": 1.339513914549214e-10
+      },
+      "roundoff_margin_passed": true,
+      "angular_exactness_premise": "Five total-j=2 inputs and rotation-equivariant operations imply scalar j<=10; nphi>10 and 2*nmu-1>=10",
+      "maximum_scaled_error": 1.8258514153960948e-10,
+      "passed": true
+    },
+    {
+      "direction": "noncommuting_labels",
+      "reference": {
+        "scope": "Numerical finite-radius full H5 spatial reference; not a loop amplitude.",
+        "config": {
+          "radial_orders": [
+            16,
+            20,
+            24
+          ],
+          "angular_orders": [
+            [
+              10,
+              24
+            ],
+            [
+              12,
+              32
+            ],
+            [
+              14,
+              40
+            ]
+          ],
+          "radius": 24.0,
+          "panel_width": 3.0
+        },
+        "compilation": {
+          "polynomial_fields": 97,
+          "heat_fields": 44,
+          "shared_cartesian_monomials": 1263,
+          "heat_moment_orders": {
+            "1": 15
+          }
+        },
+        "levels": [
+          {
+            "level": 1,
+            "radial_order": 16,
+            "angular_orders": [
+              10,
+              24
+            ],
+            "radius": 24.0,
+            "panel_width": 3.0,
+            "panels": 8,
+            "points": 30720,
+            "families": {
+              "curvature": 24340.359924329867,
+              "york_source": 2286.7519544108122,
+              "york_strong": 21050.93573319426,
+              "york_weak": 21050.93509601522,
+              "scalar_curvature": -115658.85877809656,
+              "scalar_momentum": -9339.287037707032,
+              "scalar_gradient": 493.2153626249608,
+              "scalar_gradient_strong": 493.21750656624806
+            },
+            "total_strong": -76826.8828412437,
+            "total_weak": -76826.88347842274,
+            "total": -76826.8828412437,
+            "york_forms": {
+              "strong": 21050.93573319426,
+              "weak": 21050.93509601522,
+              "difference": 0.0006371790404955391,
+              "absolute_difference": 0.0006371790404955391
+            },
+            "scalar_gradient_forms": {
+              "strong": 493.21750656624806,
+              "weak": 493.2153626249608,
+              "difference": 0.002143941287272355,
+              "absolute_difference": 0.002143941287272355
+            },
+            "absolute_density_integrals": {
+              "curvature": 31945.32676311454,
+              "york_source": 135508.97210993464,
+              "york_strong": 77400.94395692066,
+              "york_weak": 65781.27267914898,
+              "scalar_curvature": 119965.86270836936,
+              "scalar_momentum": 787883.447121087,
+              "scalar_gradient": 56576.46272896262,
+              "scalar_gradient_strong": 224236.38604165788
+            },
+            "cancellation_ratios": {
+              "curvature": 1.312442661588705,
+              "york_source": 59.25827322397495,
+              "york_strong": 3.6768410173268755,
+              "york_weak": 3.124862262845553,
+              "scalar_curvature": 1.037238858966577,
+              "scalar_momentum": 84.36226919036069,
+              "scalar_gradient": 114.709449494547,
+              "scalar_gradient_strong": 454.6399571312436
+            },
+            "refinement_from_previous": null
+          },
+          {
+            "level": 2,
+            "radial_order": 20,
+            "angular_orders": [
+              12,
+              32
+            ],
+            "radius": 24.0,
+            "panel_width": 3.0,
+            "panels": 8,
+            "points": 61440,
+            "families": {
+              "curvature": 24340.359769822007,
+              "york_source": 2286.7537737561274,
+              "york_strong": 21050.935476214287,
+              "york_weak": 21050.935476789044,
+              "scalar_curvature": -115658.8573538214,
+              "scalar_momentum": -9339.285386060315,
+              "scalar_gradient": 493.21612473060935,
+              "scalar_gradient_strong": 493.2161240476793
+            },
+            "total_strong": -76826.87759535869,
+            "total_weak": -76826.87759478393,
+            "total": -76826.87759535869,
+            "york_forms": {
+              "strong": 21050.935476214287,
+              "weak": 21050.935476789044,
+              "difference": -5.747569957748055e-07,
+              "absolute_difference": 5.747569957748055e-07
+            },
+            "scalar_gradient_forms": {
+              "strong": 493.2161240476793,
+              "weak": 493.21612473060935,
+              "difference": -6.829300787103421e-07,
+              "absolute_difference": 6.829300787103421e-07
+            },
+            "absolute_density_integrals": {
+              "curvature": 32035.013605442942,
+              "york_source": 135106.20395141194,
+              "york_strong": 77824.87627645407,
+              "york_weak": 65751.91171598987,
+              "scalar_curvature": 119858.94533056032,
+              "scalar_momentum": 787963.9054751942,
+              "scalar_gradient": 56215.909297526065,
+              "scalar_gradient_strong": 225349.9623080395
+            },
+            "cancellation_ratios": {
+              "curvature": 1.3161273665790685,
+              "york_source": 59.082095108775995,
+              "york_strong": 3.6969794698382583,
+              "york_weak": 3.123467448203836,
+              "scalar_curvature": 1.0363144515935352,
+              "scalar_momentum": 84.37089915372947,
+              "scalar_gradient": 113.97824701743224,
+              "scalar_gradient_strong": 456.899017125918
+            },
+            "refinement_from_previous": {
+              "families": {
+                "curvature": {
+                  "signed_delta": -0.0001545078594062943,
+                  "absolute_delta": 0.0001545078594062943,
+                  "relative_delta": 6.347805080426885e-09,
+                  "scaled_delta": 6.347805080426885e-09
+                },
+                "york_source": {
+                  "signed_delta": 0.0018193453151980066,
+                  "absolute_delta": 0.0018193453151980066,
+                  "relative_delta": 7.956017548009224e-07,
+                  "scaled_delta": 7.956017548009224e-07
+                },
+                "york_strong": {
+                  "signed_delta": -0.00025697997261886485,
+                  "absolute_delta": 0.00025697997261886485,
+                  "relative_delta": 1.2207532197760508e-08,
+                  "scaled_delta": 1.2207532197760508e-08
+                },
+                "york_weak": {
+                  "signed_delta": 0.00038077382487244904,
+                  "absolute_delta": 0.00038077382487244904,
+                  "relative_delta": 1.8088213955731032e-08,
+                  "scaled_delta": 1.8088213955731032e-08
+                },
+                "scalar_curvature": {
+                  "signed_delta": 0.001424275164026767,
+                  "absolute_delta": 0.001424275164026767,
+                  "relative_delta": 1.2314449551145497e-08,
+                  "scaled_delta": 1.2314449551145497e-08
+                },
+                "scalar_momentum": {
+                  "signed_delta": 0.0016516467167093651,
+                  "absolute_delta": 0.0016516467167093651,
+                  "relative_delta": 1.7684936785148353e-07,
+                  "scaled_delta": 1.7684936785148353e-07
+                },
+                "scalar_gradient": {
+                  "signed_delta": 0.0007621056485618283,
+                  "absolute_delta": 0.0007621056485618283,
+                  "relative_delta": 1.5451758576994703e-06,
+                  "scaled_delta": 1.5451758576994703e-06
+                },
+                "scalar_gradient_strong": {
+                  "signed_delta": -0.0013825185687892372,
+                  "absolute_delta": 0.0013825185687892372,
+                  "relative_delta": 2.803068475222008e-06,
+                  "scaled_delta": 2.803068475222008e-06
+                }
+              },
+              "total_strong": {
+                "signed_delta": 0.005245885011390783,
+                "absolute_delta": 0.005245885011390783,
+                "relative_delta": 6.828189789282417e-08,
+                "scaled_delta": 6.828189789282417e-08
+              },
+              "total_weak": {
+                "signed_delta": 0.005883638805244118,
+                "absolute_delta": 0.005883638805244118,
+                "relative_delta": 7.658307859752953e-08,
+                "scaled_delta": 7.658307859752953e-08
+              }
+            }
+          },
+          {
+            "level": 3,
+            "radial_order": 24,
+            "angular_orders": [
+              14,
+              40
+            ],
+            "radius": 24.0,
+            "panel_width": 3.0,
+            "panels": 8,
+            "points": 107520,
+            "families": {
+              "curvature": 24340.359770305295,
+              "york_source": 2286.7537731579805,
+              "york_strong": 21050.935476520583,
+              "york_weak": 21050.93547652057,
+              "scalar_curvature": -115658.85735422473,
+              "scalar_momentum": -9339.285386292237,
+              "scalar_gradient": 493.21612442133204,
+              "scalar_gradient_strong": 493.2161244213695
+            },
+            "total_strong": -76826.87759611178,
+            "total_weak": -76826.8775961118,
+            "total": -76826.87759611178,
+            "york_forms": {
+              "strong": 21050.935476520583,
+              "weak": 21050.93547652057,
+              "difference": 1.0913936421275139e-11,
+              "absolute_difference": 1.0913936421275139e-11
+            },
+            "scalar_gradient_forms": {
+              "strong": 493.2161244213695,
+              "weak": 493.21612442133204,
+              "difference": 3.745981302927248e-11,
+              "absolute_difference": 3.745981302927248e-11
+            },
+            "absolute_density_integrals": {
+              "curvature": 32102.987983505278,
+              "york_source": 135576.8841256884,
+              "york_strong": 77915.20336490887,
+              "york_weak": 65757.37641371827,
+              "scalar_curvature": 119965.91105935174,
+              "scalar_momentum": 787248.4393365374,
+              "scalar_gradient": 56095.890837625804,
+              "scalar_gradient_strong": 224913.00384587297
+            },
+            "cancellation_ratios": {
+              "curvature": 1.3189200277421627,
+              "york_source": 59.2879240944504,
+              "york_strong": 3.701270352180431,
+              "york_weak": 3.12372704229993,
+              "scalar_curvature": 1.0372392897842309,
+              "scalar_momentum": 84.29429091994807,
+              "scalar_gradient": 113.7349086132181,
+              "scalar_gradient_strong": 456.0130796813183
+            },
+            "refinement_from_previous": {
+              "families": {
+                "curvature": {
+                  "signed_delta": 4.832872946280986e-07,
+                  "absolute_delta": 4.832872946280986e-07,
+                  "relative_delta": 1.9855388301108784e-11,
+                  "scaled_delta": 1.9855388301108784e-11
+                },
+                "york_source": {
+                  "signed_delta": -5.981469257676508e-07,
+                  "absolute_delta": 5.981469257676508e-07,
+                  "relative_delta": 2.615703241812593e-10,
+                  "scaled_delta": 2.615703241812593e-10
+                },
+                "york_strong": {
+                  "signed_delta": 3.062959876842797e-07,
+                  "absolute_delta": 3.062959876842797e-07,
+                  "relative_delta": 1.4550231652456047e-11,
+                  "scaled_delta": 1.4550231652456047e-11
+                },
+                "york_weak": {
+                  "signed_delta": -2.6847192202694714e-07,
+                  "absolute_delta": 2.6847192202694714e-07,
+                  "relative_delta": 1.2753443775759548e-11,
+                  "scaled_delta": 1.2753443775759548e-11
+                },
+                "scalar_curvature": {
+                  "signed_delta": -4.0333543438464403e-07,
+                  "absolute_delta": 4.0333543438464403e-07,
+                  "relative_delta": 3.4872853113995524e-12,
+                  "scaled_delta": 3.4872853113995524e-12
+                },
+                "scalar_momentum": {
+                  "signed_delta": -2.319211489520967e-07,
+                  "absolute_delta": 2.319211489520967e-07,
+                  "relative_delta": 2.4832858121296907e-11,
+                  "scaled_delta": 2.4832858121296907e-11
+                },
+                "scalar_gradient": {
+                  "signed_delta": -3.0927731131669134e-07,
+                  "absolute_delta": 3.0927731131669134e-07,
+                  "relative_delta": 6.270624499139243e-10,
+                  "scaled_delta": 6.270624499139243e-10
+                },
+                "scalar_gradient_strong": {
+                  "signed_delta": 3.7369022720668e-07,
+                  "absolute_delta": 3.7369022720668e-07,
+                  "relative_delta": 7.576601994614132e-10,
+                  "scaled_delta": 7.576601994614132e-10
+                }
+              },
+              "total_strong": {
+                "signed_delta": -7.530907168984413e-07,
+                "absolute_delta": 7.530907168984413e-07,
+                "relative_delta": 9.802438163080512e-12,
+                "scaled_delta": 9.802438163080512e-12
+              },
+              "total_weak": {
+                "signed_delta": -1.3278622645884752e-06,
+                "absolute_delta": 1.3278622645884752e-06,
+                "relative_delta": 1.7283824439269913e-11,
+                "scaled_delta": 1.7283824439269913e-11
+              }
+            }
+          }
+        ],
+        "latest": {
+          "level": 3,
+          "radial_order": 24,
+          "angular_orders": [
+            14,
+            40
+          ],
+          "radius": 24.0,
+          "panel_width": 3.0,
+          "panels": 8,
+          "points": 107520,
+          "families": {
+            "curvature": 24340.359770305295,
+            "york_source": 2286.7537731579805,
+            "york_strong": 21050.935476520583,
+            "york_weak": 21050.93547652057,
+            "scalar_curvature": -115658.85735422473,
+            "scalar_momentum": -9339.285386292237,
+            "scalar_gradient": 493.21612442133204,
+            "scalar_gradient_strong": 493.2161244213695
+          },
+          "total_strong": -76826.87759611178,
+          "total_weak": -76826.8775961118,
+          "total": -76826.87759611178,
+          "york_forms": {
+            "strong": 21050.935476520583,
+            "weak": 21050.93547652057,
+            "difference": 1.0913936421275139e-11,
+            "absolute_difference": 1.0913936421275139e-11
+          },
+          "scalar_gradient_forms": {
+            "strong": 493.2161244213695,
+            "weak": 493.21612442133204,
+            "difference": 3.745981302927248e-11,
+            "absolute_difference": 3.745981302927248e-11
+          },
+          "absolute_density_integrals": {
+            "curvature": 32102.987983505278,
+            "york_source": 135576.8841256884,
+            "york_strong": 77915.20336490887,
+            "york_weak": 65757.37641371827,
+            "scalar_curvature": 119965.91105935174,
+            "scalar_momentum": 787248.4393365374,
+            "scalar_gradient": 56095.890837625804,
+            "scalar_gradient_strong": 224913.00384587297
+          },
+          "cancellation_ratios": {
+            "curvature": 1.3189200277421627,
+            "york_source": 59.2879240944504,
+            "york_strong": 3.701270352180431,
+            "york_weak": 3.12372704229993,
+            "scalar_curvature": 1.0372392897842309,
+            "scalar_momentum": 84.29429091994807,
+            "scalar_gradient": 113.7349086132181,
+            "scalar_gradient_strong": 456.0130796813183
+          },
+          "refinement_from_previous": {
+            "families": {
+              "curvature": {
+                "signed_delta": 4.832872946280986e-07,
+                "absolute_delta": 4.832872946280986e-07,
+                "relative_delta": 1.9855388301108784e-11,
+                "scaled_delta": 1.9855388301108784e-11
+              },
+              "york_source": {
+                "signed_delta": -5.981469257676508e-07,
+                "absolute_delta": 5.981469257676508e-07,
+                "relative_delta": 2.615703241812593e-10,
+                "scaled_delta": 2.615703241812593e-10
+              },
+              "york_strong": {
+                "signed_delta": 3.062959876842797e-07,
+                "absolute_delta": 3.062959876842797e-07,
+                "relative_delta": 1.4550231652456047e-11,
+                "scaled_delta": 1.4550231652456047e-11
+              },
+              "york_weak": {
+                "signed_delta": -2.6847192202694714e-07,
+                "absolute_delta": 2.6847192202694714e-07,
+                "relative_delta": 1.2753443775759548e-11,
+                "scaled_delta": 1.2753443775759548e-11
+              },
+              "scalar_curvature": {
+                "signed_delta": -4.0333543438464403e-07,
+                "absolute_delta": 4.0333543438464403e-07,
+                "relative_delta": 3.4872853113995524e-12,
+                "scaled_delta": 3.4872853113995524e-12
+              },
+              "scalar_momentum": {
+                "signed_delta": -2.319211489520967e-07,
+                "absolute_delta": 2.319211489520967e-07,
+                "relative_delta": 2.4832858121296907e-11,
+                "scaled_delta": 2.4832858121296907e-11
+              },
+              "scalar_gradient": {
+                "signed_delta": -3.0927731131669134e-07,
+                "absolute_delta": 3.0927731131669134e-07,
+                "relative_delta": 6.270624499139243e-10,
+                "scaled_delta": 6.270624499139243e-10
+              },
+              "scalar_gradient_strong": {
+                "signed_delta": 3.7369022720668e-07,
+                "absolute_delta": 3.7369022720668e-07,
+                "relative_delta": 7.576601994614132e-10,
+                "scaled_delta": 7.576601994614132e-10
+              }
+            },
+            "total_strong": {
+              "signed_delta": -7.530907168984413e-07,
+              "absolute_delta": 7.530907168984413e-07,
+              "relative_delta": 9.802438163080512e-12,
+              "scaled_delta": 9.802438163080512e-12
+            },
+            "total_weak": {
+              "signed_delta": -1.3278622645884752e-06,
+              "absolute_delta": 1.3278622645884752e-06,
+              "relative_delta": 1.7283824439269913e-11,
+              "scaled_delta": 1.7283824439269913e-11
+            }
+          }
+        },
+        "tail_bound": null,
+        "tail_bound_source": "caller supplies independent exterior bound",
+        "convergence_decision": "caller supplied criteria; refinement differences are not certified errors",
+        "arithmetic": "binary64; compensated summation, with once-per-radius shared heat moments"
+      },
+      "scaled_total_error": 3.598776876181232e-15,
+      "york_integration_by_parts_scaled_error": 5.184291217996349e-16,
+      "family_scaled_errors": {
+        "curvature": 1.6440234750906439e-15,
+        "york_source": 2.0672558842252376e-14,
+        "york_weak": 3.4561941453308984e-16,
+        "scalar_curvature": 1.25816472207808e-16,
+        "scalar_momentum": 1.1684799735661581e-15,
+        "scalar_gradient": 1.971397028810474e-13
+      },
+      "scalar_integration_by_parts_scaled_error": 7.5796420185872e-14,
+      "reference_radius_tail_bounds": {
+        "total": {
+          "radius": 24.0,
+          "absolute_bound": 1.7108602292107257e-89,
+          "log_absolute_bound": -204.3930769744288,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 1.7108602292107257e-89,
+              "log_absolute_bound": -204.3930769744288
+            },
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -788.4280475742041
+            },
+            {
+              "beta": "5/2",
+              "rates": [],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -1369.7630161390546
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "curvature": {
+          "radius": 24.0,
+          "absolute_bound": 5e-324,
+          "log_absolute_bound": -1369.7630161390546,
+          "groups": [
+            {
+              "beta": "5/2",
+              "rates": [],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -1369.7630161390546
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "york_source": {
+          "radius": 24.0,
+          "absolute_bound": 5e-324,
+          "log_absolute_bound": -788.3608422228741,
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -788.3608422228741
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "york_weak": {
+          "radius": 24.0,
+          "absolute_bound": 1.7118025645724635e-89,
+          "log_absolute_bound": -204.39252632983286,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 1.7118025645724635e-89,
+              "log_absolute_bound": -204.39252632983286
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "scalar_curvature": {
+          "radius": 24.0,
+          "absolute_bound": 5e-324,
+          "log_absolute_bound": -790.7044846760139,
+          "groups": [
+            {
+              "beta": "3/2",
+              "rates": [
+                "1"
+              ],
+              "absolute_bound": 5e-324,
+              "log_absolute_bound": -790.7044846760139
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "scalar_momentum": {
+          "radius": 24.0,
+          "absolute_bound": 2.476444641127212e-91,
+          "log_absolute_bound": -208.6284195433355,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 2.476444641127212e-91,
+              "log_absolute_bound": -208.6284195433355
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        },
+        "scalar_gradient": {
+          "radius": 24.0,
+          "absolute_bound": 8.533590861592073e-92,
+          "log_absolute_bound": -209.69381831399735,
+          "groups": [
+            {
+              "beta": "1/2",
+              "rates": [
+                "1",
+                "1"
+              ],
+              "absolute_bound": 8.533590861592073e-92,
+              "log_absolute_bound": -209.69381831399735
+            }
+          ],
+          "bound_type": "Im<=1/(2m+1), Mills upper bound for M0, positive Gaussian moment recurrence",
+          "interval_certified": false
+        }
+      },
+      "scaled_roundoff_indicators_with_safety_factor": {
+        "total": 9.942306729076053e-12,
+        "curvature": 3.633832371034812e-13,
+        "york_source": 2.530183612661668e-11,
+        "york_weak": 6.259145322056278e-12,
+        "scalar_curvature": 3.2528970812745786e-13,
+        "scalar_momentum": 6.568385678525988e-11,
+        "scalar_gradient": 1.9645993001757512e-10
+      },
+      "roundoff_margin_passed": true,
+      "angular_exactness_premise": "Five total-j=2 inputs and rotation-equivariant operations imply scalar j<=10; nphi>10 and 2*nmu-1>=10",
+      "maximum_scaled_error": 7.576601994614132e-10,
+      "passed": true
+    }
+  ],
+  "status": "all specified full-H5 directional and independent spatial checks passed",
+  "scope": "Two directional evaluations of the full classical H5 functional; H6 and four-point loop remain pending",
+  "units": "raw TT field directions, width1 and16*pi*G=1; S=G0^-1 p, not normalized canonical p",
+  "wall_seconds": 400.88755108299665
+}

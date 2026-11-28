@@ -1,0 +1,56 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "checks"
+    },
+    {
+      "phase": "pairing_controls",
+      "of": 4,
+      "unit": "cases"
+    },
+    {
+      "phase": "field_preparation",
+      "of": 30,
+      "unit": "checks"
+    },
+    {
+      "phase": "quartic_calibration",
+      "of": 2,
+      "unit": "directions"
+    },
+    {
+      "phase": "h5_assembly",
+      "of": 12,
+      "unit": "families"
+    },
+    {
+      "phase": "h5_radial",
+      "of": 2,
+      "unit": "directions"
+    },
+    {
+      "phase": "spatial_reference",
+      "of": 6,
+      "unit": "quadratures"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "reports"
+    }
+  ],
+  "brief": {
+    "question": "Does finer independent spatial quadrature validate both full-H5 directions under the unchanged acceptance thresholds?",
+    "from_parent": "Parent source bf88c08 completed both collapsed H5 assemblies and all lower-order/operator controls, but failed electric-axis 16-to-20-point scalar-gradient strong refinement: 1.46825e-6 > 1e-6. Keep that negative result. Shift the spatial sequence from 12/16/20 to 16/20/24, with corresponding angular grids; change no acceptance tolerance.",
+    "healthy": "Exact anisotropic and merge controls pass; analytic Gaussian pairings and separate H3/H4 Fourier families match. York operator coefficients agree with finite 90-digit metrics. Both H5 directions pass radial and family refinement, two integration-by-parts comparisons, tail and roundoff checks under the declared 1e-6 scaled spatial tolerance.",
+    "noise": "The accuracy_certified=false field correctly disclaims rigorous quadrature certification and is not a failed acceptance check. The raw H5 values are unnormalized directional coefficients, not amplitudes. Each complete spatial level logs its families; the parent stopped before the second direction reference. Exact angular contractions can take minutes within one family.",
+    "worth_a_flag": "Any exact, calibration or spatial gate fails; work budget exceeds; traceback; or 1800-second cap. Never infer a full four-graviton result from two directional H5 evaluations. Cancellation or loose tail bounds must fail rather than be silently ignored.",
+    "decided": "One local standard-library process, 1800-second cap. Same fields, radius 24, panel width 3, pairing grids and tolerances. Parent took 2m38s before failing; the complete finer reference workload is not yet timed. All failed records are preserved. No GPU, remote compute or public release."
+  },
+  "watch": {
+    "minGapS": 120,
+    "maxGapS": 600
+  }
+}
