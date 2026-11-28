@@ -1,0 +1,28 @@
+{
+  "run_id": "b092637e-9aa2-406e-86a8-963593e30f47",
+  "source_commit": "ffc5fcd0855932596e4d51fc6232aa754af2c2b4",
+  "status": "incomplete_diagnostic_wall_timeout",
+  "elapsed_seconds": 300.39899766701274,
+  "stop_reason": "wall_budget",
+  "child_return_code": 143,
+  "completed_control_batches": 3,
+  "completed_snapshots": 0,
+  "final_result_present": false,
+  "peak_sampled_group_rss_bytes": 1051885568,
+  "sample_count": 1028,
+  "last_substage": "direct_profile_oracle start m=0 r=3/2",
+  "completed_substage_seconds": {
+    "symbolic_slots": 0.6020381657872349,
+    "density": 117.31369525007904,
+    "flux": 12.950344083132222
+  },
+  "source_hashes_verified": true,
+  "process_group": 42881,
+  "independent_process_check": {
+    "utc": "2026-11-28T09:14:32.706908+00:00",
+    "members": []
+  },
+  "no_failure_assertion_seen": true,
+  "interpretation": "No angular snapshot completed. The initial zero refinement metric is not a measured accepted snapshot. Inner oracle operation is not localized by available timers.",
+  "next_step_proposed_only": "Retain the independent dense-profile oracle, add inner jet-build/contraction/normalization timings, and prepare a first-case diagnostic before another full six-case attempt."
+}
