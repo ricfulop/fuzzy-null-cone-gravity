@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "status": "preparation only; no admissible non-gauge seed supplied",
+  "scientific_source_commit": "157ec0f04866ea36509b325ec65f0a68890f9b17",
+  "action": {
+    "path": "sections/nonlinear_action.tex",
+    "sha256": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470",
+    "normalization": "(16piG)/(4pi) times EH action; coordinate angular average dx dphi/(4pi)",
+    "Lambda": 0,
+    "products": "ordinary pointwise reconstructed functions; no projected nonlinear product"
+  },
+  "harmonic_conventions": {
+    "path": "verification/oblate_constraint_rank_20261127/all_modes.py",
+    "sha256": "55ba3d4ba6c44104668362258aa96465bd485fef8f407f65283e12aa0c643ebe",
+    "basis": "unnormalized associated Legendre; real m=0 polar and axial conventions",
+    "N": 3,
+    "L": 2,
+    "m": 0
+  },
+  "coordinate_order": [
+    "t",
+    "r",
+    "x",
+    "phi"
+  ],
+  "x_definition": "cos(theta)",
+  "background": {
+    "rho": "r^2+epsilon",
+    "Sigma": "r^2+epsilon*x^2",
+    "g_diagonal": [
+      "-1",
+      "Sigma/rho",
+      "Sigma/(1-x^2)",
+      "rho*(1-x^2)"
+    ],
+    "domain": "fixed radial shell away from zero, rho>0, Sigma>0, sufficiently small nonzero epsilon for inherited rank splitting"
+  },
+  "q_labels": [
+    [
+      "lambda",
+      0
+    ],
+    [
+      "X",
+      0
+    ],
+    [
+      "lambda",
+      1
+    ],
+    [
+      "X",
+      1
+    ],
+    [
+      "V_polar",
+      1
+    ],
+    [
+      "V_axial",
+      1
+    ],
+    [
+      "lambda",
+      2
+    ],
+    [
+      "X",
+      2
+    ],
+    [
+      "V_polar",
+      2
+    ],
+    [
+      "V_axial",
+      2
+    ],
+    [
+      "C_polar",
+      2
+    ],
+    [
+      "C_axial",
+      2
+    ]
+  ],
+  "z_labels": [
+    [
+      "a",
+      0
+    ],
+    [
+      "a",
+      1
+    ],
+    [
+      "a",
+      2
+    ],
+    [
+      "b",
+      0
+    ],
+    [
+      "b",
+      1
+    ],
+    [
+      "W_polar",
+      1
+    ],
+    [
+      "W_axial",
+      1
+    ],
+    [
+      "b",
+      2
+    ],
+    [
+      "W_polar",
+      2
+    ],
+    [
+      "W_axial",
+      2
+    ]
+  ],
+  "p_labels": [
+    [
+      "lambda",
+      0
+    ],
+    [
+      "X",
+      0
+    ],
+    [
+      "lambda",
+      1
+    ],
+    [
+      "X",
+      1
+    ],
+    [
+      "V_polar",
+      1
+    ],
+    [
+      "V_axial",
+      1
+    ],
+    [
+      "lambda",
+      2
+    ],
+    [
+      "X",
+      2
+    ],
+    [
+      "V_polar",
+      2
+    ],
+    [
+      "V_axial",
+      2
+    ],
+    [
+      "C_polar",
+      2
+    ],
+    [
+      "C_axial",
+      2
+    ]
+  ],
+  "ordering_policy": "named mapping, not a change to the exporting canonical order",
+  "preferred_seed_representation": "smooth coefficient functions of (t,r), plus p1 and verified canonical/constraint residuals; consistent derivative jets may substitute",
+  "independent_derivative_orders": {
+    "q1": [
+      "tt",
+      "t spatial",
+      "spatial spatial"
+    ],
+    "a1": [
+      "spatial spatial; no time derivative"
+    ],
+    "b1_W1": [
+      "t spatial",
+      "spatial spatial; no second time derivative"
+    ]
+  },
+  "radial_dependence": "preserve all radial derivatives; descriptor w(r) smooth compact support; seed must satisfy its declared common canonical boundary domain",
+  "momentum_map": "p1=1/2 T0^* G_sigma0 (T0 dq1/dt - Lie_beta1 sigma0), beta1=(b1/lambda0,W1)",
+  "required_admissibility_evidence": [
+    "primary momenta",
+    "all retained linearized secondaries",
+    "nondegenerate shift solve",
+    "remaining shift and lapse constraints",
+    "complementary lapse tertiary and lapse-determining equations",
+    "linearized Hamilton evolution",
+    "consistent time/radial derivatives",
+    "canonical momentum-map residual",
+    "shared boundary/domain identifier"
+  ],
+  "required_preprojection_data": [
+    "reconstructed full metric perturbation h_mu_nu",
+    "unrestricted delta G_mu_nu or reproducible evaluator inputs",
+    "retained coefficient Euler residuals",
+    "discarded temporal Euler residuals, without setting them to zero"
+  ],
+  "selected_descriptor": "xi=w(r)*x*partial_phi = -w/3 A20",
+  "discarded_test_labels": [
+    [
+      "X",
+      4
+    ],
+    [
+      "C_polar",
+      4
+    ],
+    [
+      "C_axial",
+      3
+    ],
+    [
+      "C_axial",
+      4
+    ],
+    [
+      "V_axial",
+      3
+    ],
+    [
+      "V_axial",
+      4
+    ],
+    [
+      "W_axial",
+      3
+    ],
+    [
+      "W_axial",
+      4
+    ]
+  ],
+  "pairing": "B=-integral dr dx/2 Sigma deltaG^{mu nu} Dg[test]_{mu nu} in axisymmetry; full symmetric index contraction",
+  "parity_requirement_for_nontrivial_probe": "admissible mixed even/odd seed; single parity gives symmetry-enforced zero",
+  "pure_continuum_gauge_seed_role": "zero control, not an obstruction probe",
+  "on_shell_seed_supplied": false,
+  "B_evaluated_on_on_shell_non_gauge_seed": false,
+  "full_nonlinear_Dirac_classification_established": false
+}
