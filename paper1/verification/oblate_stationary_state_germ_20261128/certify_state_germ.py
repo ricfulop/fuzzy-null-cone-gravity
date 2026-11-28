@@ -25,6 +25,7 @@ import time
 
 import sympy as s
 from sympy.polys.matrices import DomainMatrix
+from exact_decimal import rational_decimal_string
 
 
 EPSILON0 = s.Rational(1, 100)
@@ -788,11 +789,8 @@ def atan_controls(argument, bracket):
         "atan bracket did not prove atan(x) < x",
     )
     return {
-        "T_positive": [str(control_t[0]), str(control_t[1])],
-        "T_minus_argument_negative": [
-            str(control_t_minus_argument[0]),
-            str(control_t_minus_argument[1]),
-        ],
+        "T_positive": rational_interval_text(control_t),
+        "T_minus_argument_negative": rational_interval_text(control_t_minus_argument),
     }
 
 
@@ -826,7 +824,7 @@ def certify_denominators_at_r0(denominators, r0, bracket):
             **item,
             "r0": str(r0),
             "poly_at_r0": str(poly_at_r0(poly, r0).as_expr()),
-            "interval": [str(value_interval[0]), str(value_interval[1])],
+            "interval": rational_interval_text(value_interval),
             "sign": sign,
         })
     return certificates
@@ -841,12 +839,20 @@ def interval_gaussian_det(matrix, r0, bracket):
     return serialize_minor(eliminate_interval_minor(entries))
 
 
+def rational_interval_text(interval):
+    result = []
+    for value in interval:
+        require(value.is_Rational is True, "Expected an exact rational interval endpoint")
+        result.append(rational_decimal_string(int(value.p), int(value.q)))
+    return result
+
+
 def serialize_minor(minor):
     return {
         **minor,
-        "determinant_interval": list(map(str, minor["determinant_interval"])),
+        "determinant_interval": rational_interval_text(minor["determinant_interval"]),
         "pivot_intervals": [
-            {**pivot, "interval": list(map(str, pivot["interval"]))}
+            {**pivot, "interval": rational_interval_text(pivot["interval"])}
             for pivot in minor["pivot_intervals"]
         ],
     }
@@ -927,12 +933,12 @@ def reference_certify_at_r0(denominators, minor, r0, term_count):
         "r0": str(r0),
         "terms": term_count,
         "atan_argument": str(argument),
-        "atan_interval": [str(bracket[0]), str(bracket[1])],
+        "atan_interval": rational_interval_text(bracket),
         "controls": controls,
         "regularity_certificate": {
             "r0": str(r0),
             "terms": term_count,
-            "atan_interval": [str(bracket[0]), str(bracket[1])],
+            "atan_interval": rational_interval_text(bracket),
             "denominator_count": len(denominator_certificates),
             "certified_denominators": denominator_certificates,
         },
@@ -1022,16 +1028,16 @@ def serialize_regularity(r0, terms, bracket, result):
     certificates = [
         {"poly_r_T": str(item["poly"].as_expr()), "locations": item["locations"],
          "r0": str(r0), "poly_at_r0": specialized_text(coefficients),
-         "interval": list(map(str, interval)), "sign": interval_sign(interval)}
+         "interval": rational_interval_text(interval), "sign": interval_sign(interval)}
         for item, coefficients, interval in evidence
     ]
     return {
         "r0": str(r0), "terms": terms, "atan_argument": str(s.Rational(1, 10) / r0),
-        "atan_interval": list(map(str, bracket)),
-        "controls": {"T_positive": list(map(str, positive)),
-                     "T_minus_argument_negative": list(map(str, negative))},
+        "atan_interval": rational_interval_text(bracket),
+        "controls": {"T_positive": rational_interval_text(positive),
+                     "T_minus_argument_negative": rational_interval_text(negative)},
         "regularity_certificate": {
-            "r0": str(r0), "terms": terms, "atan_interval": list(map(str, bracket)),
+            "r0": str(r0), "terms": terms, "atan_interval": rational_interval_text(bracket),
             "denominator_count": len(certificates), "certified_denominators": certificates,
         },
         "minor_certificate": serialize_minor(minor), "bracket": bracket,
@@ -1119,7 +1125,7 @@ def certify_regularity_and_response(
                     "r0": regular["r0"],
                     "poly_r_T": str(poly.as_expr()),
                     "poly_at_r0": specialized_text(coefficients),
-                    "interval": [str(interval[0]), str(interval[1])],
+                    "interval": rational_interval_text(interval),
                     "sign": sign,
                 }
                 return regular, {
@@ -1238,6 +1244,21 @@ def require_rejects(callback, name):
     except ValueError as error:
         return {"name": name, "rejected": True, "error": str(error)}
     raise AssertionError(f"{name} did not reject")
+
+
+def verify_large_rational_output_control():
+    value = s.Rational(10**5000 + 7, 3)
+    expected = "1" + "0" * 4999 + "7/3"
+    minor = serialize_minor({
+        "determinant_interval": (value, value),
+        "pivot_intervals": [{"column": 0, "interval": (-value, -value)}],
+    })
+    require(minor["determinant_interval"] == [expected, expected],
+            "large determinant interval serialization changed its value")
+    require(minor["pivot_intervals"][0]["interval"] == ["-" + expected, "-" + expected],
+            "large pivot interval serialization changed its sign or value")
+    require(json.loads(json.dumps(minor)) == minor, "large interval JSON did not round-trip")
+    return {"name": "large_rational_interval_serialization", "numerator_digits": 5001}
 
 
 def verify_cached_search_control():
@@ -1442,6 +1463,7 @@ def verify_manufactured_controls():
     )
 
     cases = [
+        verify_large_rational_output_control(),
         {
             "name": "canonical_positive_response",
             "r0": regular["r0"],

@@ -90,8 +90,8 @@
     "question": "Does the pinned direct-state system yield a regular stationary solution germ, and can a nonzero discarded response be certified on it?",
     "healthy": "Hashed inputs and manufactured controls precede exact identities, physical rank and same-radius interval checks. Only the final export provides the certificate.",
     "worth_a_flag": "Pin mismatch, failed identity, unresolved rank or denominator, malformed certificate, resource stop, or unclean child group.",
-    "decided": "One 900-second local CPU child with the original two input pins. Exact interval arithmetic and radius/refinement order are unchanged; cached polynomials remove repeated preparation. A silent response concerns only the forward family; an unresolved response is unknown.",
-    "from_parent": "The first direct-state run passed exact kernel, invariance, physical lift, all 22 Euler rows and a formal nonzero response, then timed out during the combined physical-radius interval search without a certificate.",
+    "decided": "One 900-second local CPU child with the original two input pins and 20 mathematical controls. Exact field and interval arithmetic and search order are unchanged; rational endpoint serialization now uses exact bounded decimal chunks. An accepted result still requires the final certificate and authenticated terminal evidence.",
+    "from_parent": "The cache retry passed 19 controls and all field identities, then selected a responding candidate at r0=1 with 25 arctangent terms. It failed while serializing a determinant interval endpoint beyond Python 4,300 digits, without exporting a certificate.",
     "noise": "Nested interval_detail events report actual polynomial preparation, refinement, denominator batches and pivots inside the combined interval phase. Partial algebra identities and a formal nonzero response do not certify a physical germ."
   },
   "watch": {
