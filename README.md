@@ -1,86 +1,31 @@
-# A Finite-State Model of Quantum Gravity in a Causal Diamond
+# Quantum Gravity
 
 **Author:** Ric Fulop, Center for Bits and Atoms, Massachusetts Institute of Technology
 
-This is a research manuscript and reproducibility archive for a finite-resolution model motivated by Venkatesa Chandrasekaran's null-cone construction. It contains analytic examples, symbolic and numerical checks, selected Lean lemmas, and Euclidean matrix simulations. It does **not** establish a continuum quantum theory of general relativity.
+This repository contains two companion research manuscripts. Each paper has its own source, PDFs, figures, reports, and verification scripts.
 
-## Read the current draft
+| Paper | Working folder | Read the draft | Build and verification instructions |
+|---|---|---|---|
+| I — A Finite-State Model of Quantum Gravity in a Causal Diamond | [`paper1/`](paper1/) | [Reading PDF](paper1/paper_reading.pdf) · [Technical PDF](paper1/paper.pdf) | [Paper I README](paper1/README.md) |
+| II — Toward Interacting Einstein Gravity from Finite Causal-Diamond States | [`paper2/`](paper2/) | [Working draft v0.2 PDF](paper2/paper2_einstein_gravity.pdf) | [Paper II README](paper2/README.md) |
 
-- [Single-column reading copy](paper_reading.pdf), built from [paper_reading.tex](paper_reading.tex).
-- [Two-column technical copy](paper.pdf), built from [paper.tex](paper.tex).
-- Both layouts use the same scientific source, including the files under `sections/`. The reading copy uses REVTeX in one-column mode; it is not an official Science submission template.
-- [Targeted B200 follow-up report](reports/modal-b200-followup-report.md) and [archived follow-up analysis](verification/modal_hmc_followup_analysis.json).
+These are research proposals with stated limits. Consult each manuscript and its verification reports for the claims established by its calculations.
 
-The review incorporates the Open Research follow-up at `d288b95712c735c2ef1c3df293d1c87abef76849` and preserves its simulation driver, analysis, and raw result files. It retains the corrections to pair-state counting, benchmark precision, and numerical scope, and replaces the figure presentation with a self-contained narrative and regenerated vector artwork.
+## Working on either paper
 
-## Implemented action and clock repairs
-
-The current draft includes citation PR #5 and replaces the failed Appendix A action with an explicit Einstein--Hilbert angular Galerkin **bulk** construction. All metric components are varied before null gauge fixing; exact spherical and quadratic checks and a finite-amplitude nonspherical check are supplied. This reconstruction uses pointwise products of harmonic symbols and is distinct from the archived fuzzy-product simulation model. Finite-rank constraint closure, null-boundary quantization, and equivalence of the models remain open.
-
-The clock now has a proved uniform oscillator lower bound and uses the actual total-occupation compression before exponentiation. With the stated area, rank, and classical-clock assumptions, a new proposition bounds the number of area sectors. Old unrestricted-occupation exponential estimates and the unsupported scalar-QEI attribution are retired. The recomputed vacuum second-moment bound at s=5000 is at least 0.9999989079 for a clock threshold twice its classical value.
-
-- [Repair calculations and provenance](reports/repair-audit-2026-11-27/README.md)
-- [Calculation supplement PDF](reports/repair-audit-2026-11-27/repair-calculations.pdf)
-- Reproduce all seven checks: `python verification/repair_audit_20261127/run_all.py`
-
-## What the current evidence supports
-
-The next research objective is tracked in [GOAL.md](GOAL.md). The [first nonlinear-consistency checkpoint](reports/nonlinear-consistency-2026-11-27/README.md) supplies exact obstruction tests, an angular deformation candidate, and a reduced boundary-gluing example. The full completion tests remain open.
-
-The total occupation budget makes the specified radiative sector finite; the corner spectrum and budget remain model assumptions. Symbolic identities and known black-hole benchmarks test particular parts of the construction. They do not prove that the finite-state Hamiltonian, full constrained gravitational action, and sampled Euclidean model are equivalent.
-
-With matched measured zero-coupling controls at fixed scalar self-interaction, the strongest tested coupling reduces the matrix model's traceless-field variance Q2 by **47.68–48.02%** across four ranks. A larger lattice at rank 24 gives **47.621%**, a change of **−0.060 ± 0.047 percentage points**. This supports persistence over the tested volume change, not an exact universal percentage or a continuum extrapolation.
-
-Extended local collective moves improve local-area diagnostics at ranks 32 and 48: rank-normalized split-R-hat is **1.0098** and **1.0021**, respectively. The larger-lattice rank-24 run has well-sampled roughness but poorly mixed local area (**R-hat 1.3268; bulk ESS 20**). The main four-rank comparison still uses archived summaries for the coupled ensembles. The matrix exponential is positive by construction; positivity alone does not demonstrate the absence of spacetime caustics.
-
-The six Lean files certify their encoded algebraic identities and conditional implications. Their physical hypotheses and the identification of abstract variables with gravitational operators require separate arguments. In particular, the conditional Appendix E.2 lemma assumes the relevant implication rather than formalizing the Hilbert-algebra reconstruction.
-
-## Build the manuscript
-
-Use a TeX distribution with `revtex4-2`, AMS packages, `graphicx`, `bm`, `mathrsfs`, `microtype`, and `hyperref`:
+Run each paper's build and verification commands from its own folder. For example:
 
 ```bash
+cd paper1
 pdflatex paper.tex
 pdflatex paper.tex
 pdflatex paper_reading.tex
 pdflatex paper_reading.tex
 ```
 
-In Overleaf, select `paper_reading.tex` or `paper.tex` as the main document. A separate concise Science submission can be prepared once its scientific claims and main/supplement split are settled.
+Use `cd paper2` for the companion manuscript's commands. Open the appropriate folder in your IDE or select that folder's main TeX file in Overleaf.
 
-## Reproduce the manuscript figures
-
-After reproducing the repair calculations above, the canonical builder produces all 11 figures as vector PDF, editable SVG, and PNG previews. It reads archived results and evaluates the displayed deterministic formulas in memory; it does not launch GPU jobs or overwrite numerical result files.
-
-```bash
-python verification/plot_manuscript_figures.py
-```
-
-Install `numpy scipy sympy matplotlib`. The pair-amplitude panel explicitly enforces the two-particle cost `2*omega <= B`; the old archived single-particle-cutoff JSON is preserved for provenance. The Schwarzschild spectrum is recomputed on the documented grid. Legacy benchmark plotting files supply some panel data to the canonical builder; run the canonical builder to reproduce the manuscript layout.
-
-- [Figure captions and source mapping](figs/README.md).
-- [Captioned figure review](figures_review.pdf), built from `figures_review.tex`.
-- The main text now explains the original proposal, the continuum gaps, and the added model assumptions without requiring the source paper beside it. Detailed source-section and equation locations are in an appendix.
-- Six main figures emphasize the construction and evidence; five additional benchmark figures appear in the appendix. Sampling diagnostics distinguish roughness from local area, and captions separate model tests from continuum claims.
-
-## Simulation and formal sources
-
-- `verification/modal_fsg_hmc.py`: Modal simulation driver, including the follow-up local collective moves.
-- `verification/analyze_followup_hmc.py`: follow-up statistics and diagnostic calculation.
-- `verification/modal_hmc_followup_batch1_results.json` and `verification/modal_hmc_followup_b2_both_results.json`: raw follow-up results.
-- `lean4/`: six Lean modules, with 50 selected statements cataloged in the manuscript.
-- `figs/`: vector PDFs and editable SVGs.
-- `reports/`: historical reviews and the targeted follow-up report. The manuscript and this README reflect the newer numerical results.
-
-To check the Lean files using the archived toolchain version (4.36.0):
-
-```bash
-for f in lean4/*.lean; do
-  lean "$f"
-done
-```
-
-GPU runs incur compute charges and are separate from figure generation. Consult the driver and follow-up report for the specific run configurations.
+Before continuing an existing IDE branch, fetch and merge `origin/main` so it includes the folder organization. Paper I paths formerly at the repository root now start with `paper1/`; Paper II remains in `paper2/`. Keep changes and generated artifacts within the paper being edited. Use `paper1/…` and `paper2/…` branch names and identify the paper in pull-request titles; both target `main`.
 
 ## License
 
