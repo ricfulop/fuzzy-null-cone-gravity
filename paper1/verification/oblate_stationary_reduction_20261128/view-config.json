@@ -38,10 +38,10 @@
   ],
   "brief": {
     "question": "Does exact differential constraint preservation close, and is the discarded response formally nonzero on the resulting stationary subfamily?",
-    "healthy": "Exact manufactured controls, reversible rational-field conversion, all23-row gauge identity, then an exact8x7 principal rank. One local child,900 seconds,2GiB sampled group RSS.",
+    "healthy": "Seven algebra/DAE manufactured control groups precede actual extraction. Fraction-free exact row operations, retained state-only rows, detailed solve/apply/selection/prolongation stages. One local child900s,2GiB sampled RSS.",
     "worth_a_flag": "A traceback, changed source/input digest, false control, or timeout. Principal rank is not a Dirac rank or existence certificate.",
-    "decided": "Same pinned operator export, coefficient field and controls as parent. The all22-row identities certify formal algebra only until final coefficient denominators are regular on an actual interval.",
-    "from_parent": "The exact principal block has rank4 and all23-row radial gauge identity passed in5.37s supervised; the closure stage has not been timed."
+    "decided": "Pinned original operators and all22 terminal rows unchanged. Partial elimination steps are progress only; no actual germ until independent regularity certificate.",
+    "from_parent": "Principal block rank4 and all23-row gauge identity passed. First closure attempt incomplete near900s with cleanup EPERM; no closure result."
   },
   "watch": {
     "minGapS": 120,

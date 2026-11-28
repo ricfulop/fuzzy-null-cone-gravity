@@ -3,7 +3,10 @@
 <signal name="formal_free_control_count" label="Free radial controls" digits="0" />
 <signal name="formal_response_nonzero" label="Formal response" labels='{"1":"nonzero","0":"zero"}' />
 <signal name="dae_closure_passed" label="Exact closure" labels='{"1":"passed","0":"not passed"}' />
-<view headline="formal_response_nonzero formal_free_state_count">
+<signal name="principal_rank" label="Verified principal rank (interim)" digits="0" />
+<signal name="elimination_steps_completed" label="Partial elimination steps" digits="0" />
+<view headline="formal_response_nonzero formal_free_state_count principal_rank">
   <stats of="formal_response_nonzero formal_free_state_count formal_constraint_count formal_free_control_count dae_closure_passed" />
   <text>Formal differential identities at fixed deformation; no interval-germ or nonlinear conclusion.</text>
+  <stats of="principal_rank elimination_steps_completed" />
 </view>

@@ -16,6 +16,7 @@ import sys
 import sympy as s
 
 import reduction_progress as progress
+from exact_linear_algebra import rref_with_side, independent_extension
 
 
 EPSILON0 = s.Rational(1, 100)
@@ -291,50 +292,6 @@ def zero_row(row):
     return all(exact_zero(row[0, column]) for column in range(row.cols))
 
 
-def rref_with_side(left, right):
-    left = exact_matrix(s.Matrix(left))
-    right = exact_matrix(s.Matrix(right))
-    pivot_row = 0
-    pivots = []
-    for column in range(left.cols):
-        found = None
-        for row in range(pivot_row, left.rows):
-            if not exact_zero(left[row, column]):
-                found = row
-                break
-        if found is None:
-            continue
-        if found != pivot_row:
-            left.row_swap(found, pivot_row)
-            right.row_swap(found, pivot_row)
-
-        pivot = left[pivot_row, column]
-        left.row_op(pivot_row, lambda value, _: s.cancel(s.together(value / pivot)))
-        right.row_op(pivot_row, lambda value, _: s.cancel(s.together(value / pivot)))
-
-        for row in range(left.rows):
-            if row == pivot_row:
-                continue
-            factor = left[row, column]
-            if exact_zero(factor):
-                continue
-            left.row_op(
-                row,
-                lambda value, j, factor=factor, pivot_row=pivot_row:
-                    s.cancel(s.together(value - factor * left[pivot_row, j])),
-            )
-            right.row_op(
-                row,
-                lambda value, j, factor=factor, pivot_row=pivot_row:
-                    s.cancel(s.together(value - factor * right[pivot_row, j])),
-            )
-        pivots.append(column)
-        pivot_row += 1
-        if pivot_row == left.rows:
-            break
-    return exact_matrix(left), exact_matrix(right), pivots
-
-
 def row_basis(matrix):
     matrix = s.Matrix(matrix)
     if matrix.rows == 0:
@@ -346,23 +303,6 @@ def row_basis(matrix):
 
 def matrix_rank(matrix):
     return row_basis(matrix)[0].rows
-
-
-def independent_extension(existing, candidates):
-    existing_basis, _ = row_basis(existing)
-    accepted = []
-    rank = existing_basis.rows
-    for row_index in range(candidates.rows):
-        row = candidates.row(row_index)
-        if zero_row(row):
-            continue
-        trial = existing_basis.col_join(matrix_from_rows(accepted)).col_join(row)
-        trial_rank = matrix_rank(trial)
-        if trial_rank > rank + len(accepted):
-            accepted.append(row)
-    if accepted:
-        return matrix_from_rows(accepted, existing.cols)
-    return s.zeros(0, existing.cols)
 
 
 def kernel_embedding(constraints):
@@ -486,11 +426,14 @@ def reduce_dae(gauge_matrices, recorder, max_steps):
 
     for step in range(max_steps):
         with recorder.stage("dae_step", step=step, control_count=state.B.cols):
-            solution = solve_controls(state, pending_acceleration, pending_state)
-            state = apply_control_solution(state, solution)
-            new_constraints = independent_extension(
-                state.constraints, solution["residual_constraints"]
-            )
+            with recorder.stage("solve_controls", step=step):
+                solution = solve_controls(state, pending_acceleration, pending_state)
+            with recorder.stage("apply_control_solution", step=step):
+                state = apply_control_solution(state, solution)
+            with recorder.stage("independent_constraints", step=step):
+                new_constraints = independent_extension(
+                    state.constraints, solution["residual_constraints"]
+                )
             if new_constraints.rows:
                 state = ReductionState(
                     K=state.K,
@@ -506,33 +449,39 @@ def reduce_dae(gauge_matrices, recorder, max_steps):
                 "total_constraint_count": state.constraints.rows,
                 "remaining_control_count": state.B.cols,
             })
-            recorder.write_json(
-                f"dae-step-{step:02d}.json",
-                {
-                    "state": "intermediate DAE elimination stage; not a seed certificate",
-                    **steps[-1],
-                    "substitution_state": as_strings(solution["substitution_state"]),
-                    "substitution_controls": as_strings(
-                        solution["substitution_controls"]
-                    ),
-                    "constraints": as_strings(state.constraints),
-                },
-            )
+            with recorder.stage("dae_checkpoint", step=step):
+                recorder.write_json(
+                    f"dae-step-{step:02d}.json",
+                    {
+                        "state": "intermediate DAE elimination stage; not a seed certificate",
+                        **steps[-1],
+                        "substitution_state": as_strings(solution["substitution_state"]),
+                        "substitution_controls": as_strings(
+                            solution["substitution_controls"]
+                        ),
+                        "constraints": as_strings(state.constraints),
+                    },
+                )
+            if isinstance(recorder, progress.ReductionRecorder):
+                progress.report(m={"elimination_steps_completed": step + 1})
 
             if new_constraints.rows == 0:
                 break
-            pending_acceleration, pending_state = preservation_equations(
-                new_constraints, state
-            )
+            with recorder.stage("differentiate_constraints", step=step):
+                pending_acceleration, pending_state = preservation_equations(
+                    new_constraints, state
+                )
     else:
         raise RuntimeError("DAE prolongation did not close within the step bound")
 
-    embedding, free_rows, constraints_rref, constraint_pivots = kernel_embedding(
-        state.constraints
-    )
-    preservation_acc, preservation_state = preservation_equations(
-        state.constraints, state
-    )
+    with recorder.stage("terminal_embedding"):
+        embedding, free_rows, constraints_rref, constraint_pivots = kernel_embedding(
+            state.constraints
+        )
+    with recorder.stage("terminal_constraint_preservation"):
+        preservation_acc, preservation_state = preservation_equations(
+            state.constraints, state
+        )
     require(
         all(exact_zero(value) for value in preservation_acc),
         "remaining controls violate constraint preservation",
@@ -611,9 +560,13 @@ def run(input_dir, output_dir, stage, max_steps):
         "source_sha256": source_hashes,
         "stage": stage,
         "max_steps": max_steps,
+        "linear_algebra_backend": "QQ(r,T) DomainMatrix rref_den CD; full augmented rows retained",
     }
     with progress.ReductionRecorder(output_dir, identity) as recorder:
         with recorder.stage("manufactured_controls"):
+            from test_exact_linear_algebra import verify_controls as verify_row_controls
+            row_controls = verify_row_controls()
+            recorder.write_json("row-operation-controls.json", row_controls)
             from test_reduction_controls import verify_controls
             controls = verify_controls(sys.modules[__name__])
             recorder.write_json("manufactured-controls.json", controls)

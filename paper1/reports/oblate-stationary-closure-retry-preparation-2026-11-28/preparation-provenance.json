@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "paper1/verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py": "060705054befb8168fc9e0eef3319692cd492a7ef33967d173cf8088314fcf57",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "2732413f58a975ca0e81f13344fdc9150df81aec699087ece6cd928a1dec010c",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "paper1/verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py": "8d2defd9d297aea5d9b031f43abaa300f0ee7c60e59a1153e135fe1e2045a76b",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+    "paper1/verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "paper1/verification/oblate_stationary_reduction_20261128/run-config.json": "f0ae9aa7fed14f48f468e4b9b5767a70692b6d76496991e1de666bdc22bcd8b4",
+    "paper1/verification/oblate_stationary_reduction_20261128/view.xml": "f6834486952b10518b793110053b7e43faaaf6509e63fba91070692d41f2c938",
+    "paper1/verification/oblate_stationary_reduction_20261128/view-config.json": "6d9e390c56aa56daca298e35ceae7ee5691aa070cb0a0478d872500a9583dfe4"
+  },
+  "input_completion_sha256": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+  "static_ast_passed": true,
+  "scientific_executions_in_preparation": 0,
+  "standing_approval": "msg_4c4bcc8d plus subsequent all-other-approvals instruction",
+  "cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "wall_seconds": 900,
+  "sampled_rss_budget_bytes": 2147483648
+}

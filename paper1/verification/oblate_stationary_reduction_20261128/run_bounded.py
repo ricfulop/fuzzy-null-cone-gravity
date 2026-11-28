@@ -27,25 +27,59 @@ def report(**fields):
     print("::orx:: " + json.dumps(fields), flush=True)
 
 
-def group_exists(pgid):
+def group_members(pgid):
+    raw = subprocess.check_output(["ps", "-axo", "pid=,pgid=,rss="], text=True, timeout=1)
+    if not raw.strip():
+        raise ValueError("Empty process table")
+    members = []
+    for line in raw.splitlines():
+        pid, group, rss = map(int, line.split())
+        if group == pgid:
+            members.append({"pid": pid, "rss_bytes": rss * 1024})
+    return members
+
+
+def group_state(pgid):
     try:
         os.killpg(pgid, 0)
     except ProcessLookupError:
-        return False
-    return True
+        return {"status": "empty", "probe": "ESRCH"}
+    except PermissionError as exc:
+        try:
+            members = group_members(pgid)
+        except Exception as error:
+            return {"status": "unknown", "probe": "EPERM", "error": repr(exc),
+                    "ps_error": repr(error)}
+        return {"status": "live" if members else "empty", "probe": "EPERM",
+                "members": members, "error": repr(exc)}
+    except OSError as error:
+        return {"status": "unknown", "probe": "killpg", "error": repr(error)}
+    return {"status": "live", "probe": "killpg"}
 
 
-def stop_group(process):
+def stop_group(process, events):
     for sig, grace in [(signal.SIGTERM, 2.0), (signal.SIGKILL, 1.0)]:
         try:
             os.killpg(process.pid, sig)
-        except ProcessLookupError:
-            break
+            events.append({"signal": int(sig), "result": "sent"})
+        except OSError as error:
+            events.append({"signal": int(sig), "error": repr(error)})
         until = time.monotonic() + grace
-        while group_exists(process.pid) and time.monotonic() < until:
+        while True:
             process.poll()
+            state = group_state(process.pid)
+            if state["status"] == "empty" or time.monotonic() >= until:
+                events.append({"after_signal": int(sig), **state})
+                break
             time.sleep(0.05)
-    process.wait()
+        if state["status"] == "empty":
+            break
+
+
+def save_json(path, data):
+    temporary = path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(data, indent=2, allow_nan=False) + "\n")
+    temporary.replace(path)
 
 
 def main():
@@ -101,91 +135,159 @@ def main():
               "start_utc": datetime.now(timezone.utc).isoformat()}
     (out / "launch.json").write_text(json.dumps(record, indent=2) + "\n")
     report(phase="setup", step=0, of=1, unit="environment")
+    return supervise(out, record, env, sources, cutoff)
+
+
+def supervise(out, record, env, sources, cutoff):
     start = time.monotonic()
+    config = record["configuration"]
     samples = []
     process = None
     thread = None
+    relay_started = False
+    relay_active = False
+    log = None
     stop_reason = None
     relay_errors = []
     received_signals = []
+    cleanup_events = []
+    cleanup_errors = []
+    supervisor_error = None
+    disposition = {"status": "not_spawned"}
+    old_handlers = {}
 
     def interrupted(signum, frame):
-        received_signals.append(signum)
+        received_signals.append(int(signum))
 
-    signal.signal(signal.SIGTERM, interrupted)
-    signal.signal(signal.SIGINT, interrupted)
-    with (out / "verification.log").open("xb") as log:
+    def relay():
         try:
-            if datetime.now(timezone.utc) + timedelta(seconds=config["wall_seconds"] + 10) >= cutoff:
-                raise RuntimeError("Setup consumed the approved invocation window")
-            if received_signals:
-                raise InterruptedError("Supervisor signalled before spawning")
-            process = subprocess.Popen(command, cwd=ROOT, env=env, stdout=subprocess.PIPE,
-                                       stderr=subprocess.STDOUT, start_new_session=True)
-            record["scientific_invocations"] = 1
-            record["pid"] = process.pid
-            if received_signals:
+            with log, process.stdout:
+                for line in iter(process.stdout.readline, b""):
+                    log.write(line)
+                    log.flush()
+                    # A blocked console must not hold Python's shared stdout lock
+                    # while the supervising thread saves evidence or exits.
+                    remaining = memoryview(line)
+                    while remaining:
+                        count = os.write(sys.stdout.fileno(), remaining)
+                        if count <= 0:
+                            raise OSError("Console relay made no progress")
+                        remaining = remaining[count:]
+        except Exception as error:
+            relay_errors.append(repr(error))
+
+    try:
+        for sig in (signal.SIGTERM, signal.SIGINT):
+            old_handlers[sig] = signal.signal(sig, interrupted)
+        log = (out / "verification.log").open("xb")
+        if datetime.now(timezone.utc) + timedelta(seconds=config["wall_seconds"] + 10) >= cutoff:
+            raise RuntimeError("Setup consumed the approved invocation window")
+        if received_signals:
+            raise InterruptedError("Supervisor signalled before spawning")
+        process = subprocess.Popen(record["command"], cwd=ROOT, env=env, stdout=subprocess.PIPE,
+                                   stderr=subprocess.STDOUT, start_new_session=True)
+        record.update(scientific_invocations=1, pid=process.pid)
+        if received_signals:
+            stop_reason = "supervisor received signal"
+        thread = threading.Thread(target=relay, daemon=True)
+        thread.start()
+        relay_started = True
+        while not stop_reason and process.poll() is None:
+            elapsed = time.monotonic() - start
+            rss = sum(member["rss_bytes"] for member in group_members(process.pid))
+            samples.append({"seconds": round(elapsed, 3), "rss_bytes": rss})
+            if time.monotonic() - start >= config["wall_seconds"]:
+                stop_reason = "wall budget reached"
+            elif rss > config["memory_bytes"]:
+                stop_reason = "sampled process-group RSS exceeded threshold"
+            elif relay_errors:
+                stop_reason = "log relay failed"
+            elif received_signals:
                 stop_reason = "supervisor received signal"
-                stop_group(process)
-
-            def relay():
-                try:
-                    for line in iter(process.stdout.readline, b""):
-                        log.write(line)
-                        log.flush()
-                        sys.stdout.buffer.write(line)
-                        sys.stdout.buffer.flush()
-                except BaseException as error:
-                    relay_errors.append(repr(error))
-
-            thread = threading.Thread(target=relay, daemon=True)
-            thread.start()
-            while process.poll() is None:
-                elapsed = time.monotonic() - start
-                raw = subprocess.check_output(["ps", "-axo", "pgid=,rss="], text=True)
-                rss = sum(int(parts[1]) * 1024 for line in raw.splitlines()
-                          if len(parts := line.split()) == 2 and int(parts[0]) == process.pid)
-                samples.append({"seconds": round(elapsed, 3), "rss_bytes": rss})
-                if elapsed >= config["wall_seconds"]:
-                    stop_reason = "wall budget reached"
-                elif rss > config["memory_bytes"]:
-                    stop_reason = "sampled process-group RSS exceeded threshold"
-                elif relay_errors:
-                    stop_reason = "log relay failed"
-                if received_signals:
-                    stop_reason = "supervisor received signal"
-                if stop_reason:
-                    stop_group(process)
-                    break
+            else:
                 time.sleep(0.25)
-            process.wait()
-            thread.join(timeout=3)
-            if thread.is_alive():
-                stop_reason = stop_reason or "log relay did not finish"
-        finally:
-            if received_signals:
-                stop_reason = stop_reason or "supervisor received signal"
-            if process is not None and group_exists(process.pid):
-                stop_reason = stop_reason or "surviving child group required cleanup"
-                stop_group(process)
-            if thread is not None:
-                thread.join(timeout=3)
-                if thread.is_alive():
+    except Exception as error:
+        supervisor_error = repr(error)
+        stop_reason = stop_reason or "supervisor exception"
+    finally:
+        if process is not None:
+            disposition = {"status": "unknown"}
+            try:
+                initial = group_state(process.pid)
+            except Exception as error:
+                initial = {"status": "unknown"}
+                cleanup_errors.append({"action": "initial_probe", "error": repr(error)})
+            cleanup_events.append({"action": "initial_probe", **initial})
+            if initial["status"] != "empty":
+                stop_reason = stop_reason or "child group required cleanup"
+                try:
+                    stop_group(process, cleanup_events)
+                except Exception as error:
+                    cleanup_errors.append({"action": "terminate_group", "error": repr(error)})
+            try:
+                process.wait(timeout=0.5)
+            except Exception as error:
+                cleanup_errors.append({"action": "wait_child", "error": repr(error)})
+            try:
+                disposition = group_state(process.pid)
+            except Exception as error:
+                cleanup_errors.append({"action": "final_probe", "error": repr(error)})
+            if disposition["status"] != "empty":
+                stop_reason = stop_reason or "child group " + disposition["status"]
+
+        try:
+            if relay_started:
+                thread.join(timeout=2)
+                relay_active = thread.is_alive()
+                if relay_active:
                     stop_reason = stop_reason or "log relay remained active after group cleanup"
+            else:
+                if log is not None:
+                    log.close()
+                if process is not None:
+                    process.stdout.close()
+        except Exception as error:
+            cleanup_errors.append({"action": "finish_relay", "error": repr(error)})
+
+        after = {}
+        try:
             after = {str(p.relative_to(ROOT)): sha(p) for p in sources}
-            if after != source_hashes:
+            if after != record["source_sha256_before"]:
                 stop_reason = stop_reason or "source files changed during invocation"
-            record.update({"exit_code": None if process is None else process.returncode,
-                           "elapsed_seconds": time.monotonic() - start,
-                           "end_utc": datetime.now(timezone.utc).isoformat(),
-                           "stop_reason": stop_reason, "relay_errors": relay_errors,
-                           "received_signals": received_signals,
-                           "source_sha256_after": after,
-                           "sampled_max_rss_bytes": max((p["rss_bytes"] for p in samples), default=0)})
-            (out / "execution.json").write_text(json.dumps(record, indent=2) + "\n")
-            (out / "resource-samples.json").write_text(json.dumps(samples, indent=2) + "\n")
-    print("Saved execution evidence: " + str(out), flush=True)
-    return 0 if record["exit_code"] == 0 and not stop_reason and not relay_errors else 1
+        except Exception as error:
+            cleanup_errors.append({"action": "source_hashes", "error": repr(error)})
+        if cleanup_errors:
+            stop_reason = stop_reason or "supervisor cleanup failed"
+        if relay_errors:
+            stop_reason = stop_reason or "log relay failed"
+        try:
+            save_json(out / "resource-samples.json", samples)
+        except Exception as error:
+            cleanup_errors.append({"action": "save_samples", "error": repr(error)})
+            stop_reason = stop_reason or "resource evidence write failed"
+        finally:
+            try:
+                if received_signals:
+                    stop_reason = stop_reason or "supervisor received signal"
+                exit_code = None if process is None else process.returncode
+                success = (exit_code == 0 and stop_reason is None and disposition["status"] == "empty")
+                record.update({"status": "passed" if success else "failed", "exit_code": exit_code,
+                               "elapsed_seconds": time.monotonic() - start,
+                               "end_utc": datetime.now(timezone.utc).isoformat(),
+                               "stop_reason": stop_reason, "supervisor_error": supervisor_error,
+                               "group_disposition": disposition, "cleanup_events": cleanup_events,
+                               "cleanup_errors": cleanup_errors, "relay_errors": relay_errors,
+                               "relay_active_after_join": relay_active,
+                               "received_signals": received_signals, "source_sha256_after": after,
+                               "rss_sample_count": len(samples),
+                               "sampled_max_rss_bytes": max((p["rss_bytes"] for p in samples), default=0)})
+                save_json(out / "execution.json", record)
+            finally:
+                for sig, handler in old_handlers.items():
+                    signal.signal(sig, handler)
+    if not relay_active:
+        print("Saved execution evidence: " + str(out), flush=True)
+    return 0 if success else 1
 
 
 if __name__ == "__main__":

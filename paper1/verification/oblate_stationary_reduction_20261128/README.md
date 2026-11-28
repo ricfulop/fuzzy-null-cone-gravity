@@ -59,7 +59,7 @@ Dirac classification follows from preparing this reducer.
 
 ## First tracked invocation
 
-`run-config.json` selects only the principal probe. The fixed command is
+The first invocation's `run-config.json` selected only the principal probe. The fixed command is
 `bash paper1/verification/oblate_stationary_reduction_20261128/run.sh`.
 Run it through the project experiment engine, not directly: the supervisor
 requires a run ID and full commit, verifies the materialized source bytes
@@ -98,3 +98,33 @@ formal elimination path differentiates constraints and checks the original
 22 rows plus all remaining controls. Final JSON and telemetry report only
 formal dimensions and response; an actual regular interval is still required.
 The fixed command and resource envelope are unchanged.
+
+## Repair after the incomplete closure attempt
+
+Run `ef17ca1d-2663-4c0d-acc8-2f8607ae7881` did not complete closure. Its
+original evidence is preserved separately in
+`reports/oblate-stationary-closure-attempt-2026-11-28/`. The scientific log
+finished step 0 and began step 1; process-group cleanup then failed with
+`PermissionError`, including inside the final evidence-writing path.
+
+The prepared retry replaces expression-by-expression row reduction by exact
+`DomainMatrix` operations over `QQ(r,T)`. It clears row denominators and uses
+fraction-free elimination on the whole augmented `[A | C]` matrix. Only pivots
+in `A` solve controls. All remaining state-only rows are retained. Reducing the
+upper state block can change the displayed control formulas by multiples of
+the residual state constraints; the solution set is unchanged on that
+constraint surface. The differential derivation and all 22 original-row
+terminal checks are unchanged.
+
+Independent-constraint selection uses one transpose pivot calculation and
+returns the original selected candidate rows in their original order. Five
+additional manufactured row-operation tests cover control/state pivots, a free
+control, empty dimensions, dependent candidate rows, and inexact-input
+rejection. The two prior differential-reduction controls remain. These tests
+run before the actual closure within the bounded scientific invocation.
+
+New timings separate solving controls, applying substitutions, selecting
+constraints, checkpoint serialization, and differentiation. An interim
+principal-rank headline is available before the final closure signals. Partial
+step counts never certify a solution. The prepared arithmetic change has not
+yet been timed or scientifically executed.
