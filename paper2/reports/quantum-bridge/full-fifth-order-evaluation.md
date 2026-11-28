@@ -1,10 +1,38 @@
-# Full fifth-order Hamiltonian: assembly and validation protocol
+# Full fifth-order Hamiltonian: evaluated directions and validation
 
 This is a calculation protocol for the full classical $H_5$ functional
 of the declared reduction-first candidate. It builds on the verified higher
 geometry and first Green responses, source `2a59f1b`, reviewed at `ef48f21`.
-The first tracked attempt failed its spatial refinement gate. Its partial
-measurements are preserved below; no overall fifth-order validation is claimed.
+After a preserved spatial-refinement failure, the finer child passed all
+specified checks for two directions of the full functional. These are
+directional coefficients, not a reconstructed vertex tensor or loop amplitude.
+
+## Reviewed result
+
+Run `116088d3-0ed7-4fb7-95c0-fdeafcdc9072`, source
+`502f75d96fe8c838469570eb7ae7f41eebf3e742`, completed in 400.89 seconds.
+Its [complete output](data/fifth-order-results.json) was copied byte for byte
+from the isolated run. The effective configuration and final result are
+also present in the retained raw log.
+
+| Raw field direction | Full $H_5$ value | Maximum scaled spatial/refinement diagnostic |
+|---|---:|---:|
+| `electric_axis` | $-1641.1412606219328$ | $1.82585\times10^{-10}$ |
+| `noncommuting_labels` | $-76826.87759611206$ | $7.57660\times10^{-10}$ |
+
+These use width one, $16\pi G=1$, and the declared raw TT directions;
+$S=\mathsf G_0^{-1}p$ is not the normalized canonical momentum coordinate.
+The last column is a checked diagnostic, not a rigorous numerical error bar.
+Both directions satisfy the unchanged $10^{-6}$ spatial acceptance gate,
+including every family refinement, independent spatial comparison, York
+and scalar integration-by-parts comparison, reference-radius tail bound,
+and cancellation margin. All 42 recorded `passed`/`converged` flags are true.
+
+The shared 20-point electric-axis family integrals reproduce the failed
+parent exactly, as do both collapsed total values. The improvement is in
+the required 20-to-24-point refinement. No tolerance was relaxed. The two
+integration methods still share the first HEAT fields and moment evaluator;
+their independent operations and limitations are specified below.
 
 ## Functional and integration method
 
@@ -113,13 +141,13 @@ original source and failed node remain unchanged. The integrator's
 diagnostics are not rigorous error certificates; it is distinct from
 the actual failed assertion. All H3/H4 calibration acceptance checks passed.
 
-A child retains the same fields, Gaussian pairing options, radius 24,
-panel width 3, wall cap and acceptance tolerances. It changes only the
+The successful child retained the same fields, Gaussian pairing options,
+radius 24, panel width 3, wall cap and acceptance tolerances. It changed only the
 spatial grids to radial 16/20/24 and angular 10x24, 12x32, 14x40, and
 reports the failure metric before asserting acceptance. Both directions
-must be rerun. The shared 20-point result provides a reproducibility
-cross-check, and the new 20-to-24-point refinement must pass the original
-threshold. No revised acceptance threshold is selected from the failed data.
+were rerun. The shared 20-point result supplied a reproducibility
+cross-check, and the new 20-to-24-point refinement passed the original
+threshold. No revised acceptance threshold was selected from the failed data.
 
 Two directional evaluations do not reconstruct the rank-five vertex tensor
 or complete its contracted loop contribution. Complete mixed $H_6$, the

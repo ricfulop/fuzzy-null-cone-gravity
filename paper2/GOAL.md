@@ -204,5 +204,18 @@ evaluations and 27 inverse/evaluator checks. Its largest independent
 coefficient error was $1.33\times10^{-15}$; the same Green implementation
 reproduced the known pure-momentum sixth-order integral through a separate
 radial comparison. Full fifth-order assembly and mixed sixth-order nested
-inverse contractions remain pending, as do the gravitational four-point
+inverse contractions remained pending at that checkpoint, as did the gravitational four-point
 observable, microscopic corner dynamics and physical large-rank limits.
+
+The [full fifth-order functional](reports/quantum-bridge/full-fifth-order-evaluation.md)
+has now been evaluated on two raw TT directions, retaining all momentum
+sectors. The first spatial-refinement attempt failed and was preserved;
+the 16/20/24-point child passed every declared family, integration-by-parts,
+tail and cancellation gate with no tolerance relaxation. Its maximum scaled
+spatial/refinement diagnostic is $7.58\times10^{-10}$. These two values do
+not reconstruct the fifth-order vertex tensor or its loop contraction.
+The complete mixed sixth-order energy, assembled four-point observable,
+microscopic corners and physical cutoff limits remain open. An independently
+audited [sixth-order bilinear/tail reduction](reports/quantum-bridge/sixth-order-bilinear-and-tail-reduction.md)
+now guides the next implementation without deleting the nested inverses
+or their algebraic exterior contributions.
