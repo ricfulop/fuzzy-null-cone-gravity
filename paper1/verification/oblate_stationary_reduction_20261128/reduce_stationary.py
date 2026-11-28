@@ -18,6 +18,7 @@ import sympy as s
 import reduction_progress as progress
 from exact_linear_algebra import rref_with_side, independent_extension
 from terminal_kernel import kernel_embedding
+from terminal_preservation import require_exact_finite, verify_terminal_preservation
 
 
 EPSILON0 = s.Rational(1, 100)
@@ -401,6 +402,41 @@ def retained_parts(gauge_matrices, state):
     )
 
 
+def snapshot_matrix(matrix):
+    entries = []
+    for row in matrix.tolist():
+        for value in row:
+            require_exact_finite(value)
+        entries.append([str(value) for value in row])
+    return {"shape": list(matrix.shape), "entries": entries}
+
+
+def write_terminal_snapshot(recorder, state, embedding, free_rows):
+    matrices = {"C": state.constraints, "K": state.K, "B": state.B, "M": embedding}
+    recorder.write_json("terminal-state-before-preservation.json", {
+        "state": "write-only intermediate terminal state before preservation",
+        "attempt_id": recorder.attempt_id,
+        "run_id": os.environ.get("ORX_RUN_ID"),
+        "identity_sha256": recorder.identity_sha256,
+        "identity": recorder.identity,
+        "state_coordinate_labels": [
+            {"derivative_order": order, "coefficient_label": label}
+            for order in (0, 1) for label in EXPECTED_COLUMNS if label != ["X", 0]
+        ],
+        "matrices": {key: snapshot_matrix(matrix) for key, matrix in matrices.items()},
+        "free_rows": free_rows,
+        "remaining_control_labels": state.control_labels,
+        "original_constraint_product_zero": True,
+        "terminal_preservation_checked": False,
+        "original_22_retained_rows_checked": False,
+        "reduced_dynamics_reconstructed": False,
+        "discarded_response_checked": False,
+        "dae_closure_passed": False,
+        "smooth_solution_germ_certified": False,
+        "nonlinear_consistency_established": False,
+    })
+
+
 def reduce_dae(gauge_matrices, recorder, max_steps):
     acceleration, state_matrix = split_selected_system(gauge_matrices)
     state = initial_state()
@@ -462,19 +498,12 @@ def reduce_dae(gauge_matrices, recorder, max_steps):
         embedding, free_rows, constraints_rref, constraint_pivots = kernel_embedding(
             state.constraints, stage=recorder.stage
         )
+    if isinstance(recorder, progress.ReductionRecorder):
+        with recorder.stage("terminal_state_snapshot"):
+            write_terminal_snapshot(recorder, state, embedding, free_rows)
     with recorder.stage("terminal_constraint_preservation"):
-        preservation_acc, preservation_state = preservation_equations(
-            state.constraints, state
-        )
-    with recorder.stage("terminal_verify_preservation"):
-        require(
-            all(exact_zero(value) for value in preservation_acc),
-            "remaining controls violate constraint preservation",
-        )
-        require(
-            all(exact_zero(value) for value in exact_matrix(preservation_state * embedding)),
-            "constraint subspace is not invariant",
-        )
+        verify_terminal_preservation(state.constraints, state.K, state.B, embedding,
+                                     stage=recorder.stage)
 
     with recorder.stage("terminal_original_22_rows"):
         retained_state, retained_control = retained_parts(gauge_matrices, state)
@@ -551,6 +580,7 @@ def run(input_dir, output_dir, stage, max_steps):
         "source_sha256": source_hashes,
         "stage": stage,
         "max_steps": max_steps,
+        "terminal_preservation_backend": "QQ(r,T) FracElement derivative; sparse CB and (DC+CK)M",
         "terminal_kernel_backend": "C-only fraction-free CD RREF; original C*M checked over QQ(r,T)",
         "linear_algebra_backend": "QQ(r,T) FracElement control-only historical pivot loop; batched transpose independence",
     }
@@ -561,6 +591,8 @@ def run(input_dir, output_dir, stage, max_steps):
             recorder.write_json("row-operation-controls.json", row_controls)
             from test_terminal_kernel import verify_controls as verify_kernel_controls
             recorder.write_json("terminal-kernel-controls.json", verify_kernel_controls(kernel_embedding))
+            from test_terminal_preservation import verify_controls as verify_preservation_controls
+            recorder.write_json("terminal-preservation-controls.json", verify_preservation_controls(snapshot_matrix))
             from test_reduction_controls import verify_controls
             controls = verify_controls(sys.modules[__name__])
             recorder.write_json("manufactured-controls.json", controls)

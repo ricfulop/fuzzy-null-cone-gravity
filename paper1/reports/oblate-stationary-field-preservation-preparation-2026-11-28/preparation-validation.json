@@ -1,0 +1,40 @@
+{
+  "method": "stdlib AST, JSON, XML, shell syntax and source byte comparisons only",
+  "python_file_count": 11,
+  "shell_syntax_exit": 0,
+  "scientific_imports": 0,
+  "scientific_invocations": 0,
+  "new_controls_executed": false,
+  "new_control_group_count": 8,
+  "discovery_and_downstream_preservation": "unchanged; direct terminal verification representation only",
+  "author_review": "msg_6786b018",
+  "independent_review": {
+    "message": "msg_a8352e9f",
+    "verdict": "go; no material blocker after source freeze",
+    "method": "static reads and diff only; no scientific import or execution",
+    "followup": "msg_40ee982c confirms explicit coordinate-label addition"
+  },
+  "unchanged_against_e48324b": [
+    "exact_linear_algebra.py",
+    "terminal_kernel.py",
+    "reduction_progress.py",
+    "run_bounded.py",
+    "test_run_bounded.py",
+    "test_reduction_controls.py",
+    "test_exact_linear_algebra.py",
+    "test_terminal_kernel.py",
+    "run.sh"
+  ],
+  "author_followup": "msg_32d0db9e",
+  "unchanged_function_ast_against_e48324b": [
+    "initial_state",
+    "split_selected_system",
+    "solve_controls",
+    "apply_control_solution",
+    "preservation_equations",
+    "response_parts",
+    "retained_parts",
+    "field_diff",
+    "field_diff_matrix"
+  ]
+}

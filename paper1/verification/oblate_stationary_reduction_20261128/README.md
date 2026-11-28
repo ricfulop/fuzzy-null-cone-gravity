@@ -166,3 +166,26 @@ subsequent terminal operation is timed separately. No earlier checkpoint is
 loaded as a substitute for reconstructing the dynamics. A successful full
 closure still requires a separate interval-regularity and responding-germ
 certificate before any nonlinear conclusion.
+
+
+## Terminal preservation repair
+
+The full run `157032da-1468-473e-8cd7-37763ff86822` completed the terminal
+kernel in 114.775 seconds, then stopped at the 900-second wall budget during
+construction of DC+CK. The log does not distinguish the derivative, product,
+and simplification costs. The subsequent multiplication by M was unreached.
+The failure is archived in `reports/oblate-stationary-preservation-timeout-2026-11-28/`.
+
+The next source changes only terminal preservation to sparse exact-field
+arithmetic, with D=partial_r-10/(100r^2+1) partial_T. It requires both CB=0 and
+(DC+CK)M=0 and omits zero derivative entries from sparse storage. Discovery
+uses its original function and basis. All 22 original-row, reduced-dynamics,
+reconstruction and response checks remain. New positive and negative controls
+exercise a nonzero DC+CK whose projection vanishes, independent CB/SM defects,
+empty shapes and exact serialization.
+
+After the successful kernel, a fresh no-overwrite terminal-state JSON records
+C,K,B,M and their labels/identity before preservation. It is explicitly
+uncertified and write-only: there is no loader, resume path, closure or germ
+claim from its presence. The new controls and actual field-preservation
+runtime remain unexecuted in preparation.

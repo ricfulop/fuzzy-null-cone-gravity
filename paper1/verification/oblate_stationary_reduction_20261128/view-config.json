@@ -38,10 +38,11 @@
   ],
   "brief": {
     "question": "Does exact differential constraint preservation close, and is the discarded response formally nonzero on the resulting stationary subfamily?",
-    "healthy": "Manufactured row, kernel and DAE controls precede the fresh original-operator reduction. Historical control-only discovery pivots are unchanged. Terminal C-only fraction-free kernel and each subsequent preservation, original-row, dynamics and response check have separate raw progress stages. One local CPU child, 900 seconds, 2 GiB sampled group RSS.",
-    "worth_a_flag": "A traceback, changed source/input digest, failed control, resource stop, or missing final closure export. Principal rank and partial elimination counters are not a solution certificate.",
-    "decided": "The 117.565-second kernel diagnostic passed only original C*M=0 and free-row identity. It is not a closure or seed. This fresh run reconstructs all dynamics from the completed operator export; no partial checkpoint reuse. Long exact terminal products may emit no intermediate counters.",
-    "from_parent": "Previous full run reached terminal embedding after 360.67 seconds but hit its 900-second wall budget. The separately passed diagnostic used 23.31 seconds for C-only RREF and 90.06 seconds for the original kernel product; downstream terminal verification costs remain unmeasured."
+    "healthy": "Manufactured exact-row, kernel, preservation and DAE controls precede the original-operator reduction. Historical discovery is unchanged. After the verified kernel, a write-only terminal-state checkpoint precedes separately timed field differentiation and products CB and (DC+CK)M. All 22 rows, reconstruction and response checks remain.",
+    "worth_a_flag": "A traceback, input/source mismatch, failed exact control, resource stop, or incomplete final closure export. Intermediate matrices and principal rank are not a solution certificate.",
+    "noise": "This is exact symbolic algebra, not model training or a 5000-step schedule. Long polynomial products may emit no intermediate metrics. Final closure signals are deliberately absent until every terminal check passes.",
+    "decided": "One local CPU child, 900s and 2 GiB sampled group RSS. No partial-state loader or resume. Preserve the fresh terminal-state snapshot as uncertified diagnostic evidence if later checks stop. Formal closure still requires independent regularity/germ certification.",
+    "from_parent": "Run 157032da completed all three discovery steps and the 114.775s terminal kernel, then hit 900s in combined DC+CK expression construction. The failed timer does not isolate differentiation versus multiplication/simplification. The next implementation changes that terminal stage only."
   },
   "watch": {
     "minGapS": 120,
