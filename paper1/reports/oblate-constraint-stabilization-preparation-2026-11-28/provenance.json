@@ -1,0 +1,36 @@
+{
+  "status": "preparation_only",
+  "created_utc": "2026-11-28",
+  "scientific_execution": false,
+  "experiment_launches": 0,
+  "gpu_or_external_compute": false,
+  "edited_paths": [
+    "paper1/reports/oblate-constraint-stabilization-preparation-2026-11-28/README.md",
+    "paper1/reports/oblate-constraint-stabilization-preparation-2026-11-28/provenance.json"
+  ],
+  "scope": {
+    "paper": "paper1",
+    "fresh_report_only": true,
+    "manuscript_edited": false,
+    "goal_edited": false,
+    "archived_reports_edited": false,
+    "rank_upgrade_claimed": false,
+    "final_dirac_classification_claimed": false,
+    "physical_dof_count_claimed": false
+  },
+  "source_inputs": {
+    "paper1/GOAL.md": "7803b01b2fd39e9b0a207c27a8868db11087160e6e85e5fd3c2c8e800a3bb695",
+    "paper1/README.md": "d35ee463cc2eb47a060671749d06d05b1c6461bc12ff79a34703394cfcdad4f2",
+    "paper1/sections/nonlinear_action.tex": "0d3b1c9d4ab83ab98de8b05d76334cef30545ccbf82ed6ae03dbec3861024673",
+    "paper1/sections/canonical_oblate.tex": "f7a5ac43ec4748c65d36d666e88925839f267659c18dd169064c3e437f3676ae",
+    "paper1/sections/oblate_local_obstruction.tex": "650ccdd0a118b28e074fe4206fe8e1d64ded1ff9b3c4075b966262bfb1136015",
+    "paper1/reports/oblate-constraint-rank-2026-11-27/README.md": "c4ca97eb70a6e9f78d2eb174b28621e165f8fd2c158bf4011efb8bf6fd4e69f5",
+    "paper1/reports/oblate-lapse-consistency-2026-11-27/README.md": "63026f0684f5dca32e8e349a15a2e98289d7126fdc9998e25bb1391f85330129",
+    "paper1/reports/oblate-nonlinear-null-preparation-2026-11-27/README.md": "87c13eec80ab207e464c6ad1f1e8784280bd214c4304b454aa30a92186cf2373",
+    "paper1/reports/oblate-stationary-nonlinear-linkage-preparation-2026-11-28/README.md": "a5162e0446f5ee5d16c221a640e409eaac9565f3bb12b4834165ec3a87c9f20e",
+    "paper1/reports/oblate-stationary-state-germ-pass-2026-11-28/README.md": "c83b8ab6bea0dec631b1a7f8050d4919a521fb833e79acc8eb9ee53ecf5779a3",
+    "paper1/verification/oblate_constraint_rank_20261127/all_modes.py": "b85292607bc615bfceddd703b74f941166645120d90814c93298940b12478117",
+    "paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py": "675c8eefdf768d023d8750d968622b431f2b6dd22dfedcb750b0410e075541a2",
+    "paper1/verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5"
+  }
+}
