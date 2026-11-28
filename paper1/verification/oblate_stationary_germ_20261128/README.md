@@ -89,6 +89,30 @@ python certify_germ.py --config CONFIG --operators ORIGINAL_OPERATORS \
   --closure TERMINAL_CLOSURE --output NEW_CERTIFICATE
 ```
 
-No input hashes or completed result are invented while the closure input is
-absent. Static preparation does not execute the manufactured scientific
-controls; those belong to the eventual bounded invocation.
+The prepared `run_bounded.py` checks materialized source against the recorded
+commit, snapshots both independently pinned inputs, and passes those copies to
+the checker. It records stdout/stderr, process outcome, sampled process-group
+RSS, cleanup disposition, and original/snapshot hashes after cleanup. A zero
+child exit also requires a valid certificate matching the expected input
+hashes. The certificate records the actual checker Python and SymPy versions.
+
+The pending committed `run-config.json` must supply `path` and `sha256` under
+`inputs.stationary_operators` and `inputs.dae_closure`. No input hashes or
+completed result are invented while the closure input is absent. The child
+experiment must retain the inherited command and route its existing shell
+entry point to this runner. The present preparation does not change the live
+reduction entry point.
+
+The runner has a 900-second wall budget, a 2-GiB sampled process-group RSS
+threshold, and the standing approval cutoff of 2026-11-28 16:29 UTC. The RSS
+threshold is not a hard operating-system limit. Nineteen mocked stdlib tests
+cover dispatch, identity, cleanup, interruption, and response-state handling;
+they launch no scientific child. The scientific manufactured controls remain
+unexecuted and belong to the eventual bounded invocation.
+
+The view and stage plan track input verification, manufactured controls,
+operator conversion, terminal identities, denominator checks, response
+separation, and export. A formally nonzero response can remain unresolved;
+the numeric certification bit is then zero while the response itself remains
+`null` in the certificate. The detailed preparation evidence is in
+`../../reports/oblate-stationary-germ-runner-preparation-2026-11-28/`.

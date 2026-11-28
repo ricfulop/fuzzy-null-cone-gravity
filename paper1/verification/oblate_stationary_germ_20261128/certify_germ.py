@@ -11,12 +11,15 @@ terminal reduced system back into the 23 original rows and then proves local
 regularity at r=1 by rational interval arithmetic for T=atan(1/10).
 """
 
-from pathlib import Path
 import argparse
+from contextlib import contextmanager
 import hashlib
 import json
 import os
+from pathlib import Path
+import sys
 import tempfile
+import time
 
 import sympy as s
 
@@ -90,6 +93,75 @@ DEFAULT_RESPONSE_R0S = [
     s.Rational(5, 4),
     s.Rational(4, 5),
 ]
+
+
+class NullProgress:
+    @contextmanager
+    def stage(self, _name, **_details):
+        yield
+
+    def metric(self, **_metrics):
+        pass
+
+
+class StageProgress:
+    def __init__(self):
+        self.started = time.monotonic()
+        self.sequence = 0
+
+    def report(self, **fields):
+        print("::orx:: " + json.dumps(fields, sort_keys=True, allow_nan=False), flush=True)
+
+    def event(self, event, **fields):
+        self.sequence += 1
+        record = {
+            "sequence": self.sequence,
+            "event": event,
+            "seconds": round(time.monotonic() - self.started, 6),
+            **fields,
+        }
+        print(
+            "PROGRESS " + json.dumps(record, sort_keys=True, allow_nan=False),
+            file=sys.stderr,
+            flush=True,
+        )
+
+    @contextmanager
+    def stage(self, name, unit="check", **details):
+        self.report(phase=name, step=0, of=1, unit=unit)
+        started = time.monotonic()
+        self.event("begin", stage=name, **details)
+        try:
+            yield
+        except BaseException as error:
+            self.event(
+                "error",
+                stage=name,
+                duration_seconds=round(time.monotonic() - started, 6),
+                error_type=type(error).__name__,
+                error=str(error),
+                **details,
+            )
+            raise
+        else:
+            self.event(
+                "end",
+                stage=name,
+                duration_seconds=round(time.monotonic() - started, 6),
+                **details,
+            )
+            self.report(phase=name, step=1, of=1, unit=unit)
+
+    def metric(self, **metrics):
+        self.event("metric", **metrics)
+        numeric = {}
+        for key, value in metrics.items():
+            if isinstance(value, bool):
+                numeric[key] = int(value)
+            elif isinstance(value, (int, float)):
+                numeric[key] = value
+        if numeric:
+            self.report(m=numeric)
 
 
 def require(condition, message):
@@ -882,31 +954,83 @@ def verify_manufactured_controls():
     }
 
 
-def certify(operators, closure, max_atan_terms):
-    matrices = parse_operator_export(operators)
-    parsed_closure = parse_closure(closure)
-    terminal = assert_terminal_residuals(matrices, parsed_closure)
+def certify(operators, closure, max_atan_terms, progress=None):
+    progress = progress or NullProgress()
+    with progress.stage(
+        "original_operator_conversion",
+        operator_orders=3,
+        row_count=RESPONSE_ROW + 1,
+        column_count=ORIGINAL_COLUMN_COUNT,
+    ):
+        matrices = parse_operator_export(operators)
+        progress.metric(
+            matrix_count=len(matrices),
+            symbolic_entry_count=sum(matrix.rows * matrix.cols for matrix in matrices),
+        )
+    with progress.stage("closure_parsing"):
+        parsed_closure = parse_closure(closure)
+        progress.metric(
+            free_state_count=parsed_closure["free_count"],
+            constant_control_count=parsed_closure["control_count"],
+            embedding_rows=parsed_closure["embedding"].rows,
+            embedding_cols=parsed_closure["embedding"].cols,
+        )
+    with progress.stage("terminal_identities"):
+        terminal = assert_terminal_residuals(matrices, parsed_closure)
+        progress.metric(
+            response_columns=terminal["response"].cols,
+            augmented_columns=terminal["U"].cols,
+        )
 
-    denominators = collect_denominators([
-        ("operators_M0", matrices[0]),
-        ("operators_M1", matrices[1]),
-        ("operators_M2", matrices[2]),
-        ("P", terminal["P"]),
-        ("S", terminal["S"]),
-        ("profile_acceleration_state", terminal["acceleration_state"]),
-        ("profile_acceleration_control", terminal["acceleration_control"]),
-        ("U", terminal["U"]),
-        ("U1", terminal["U1"]),
-        ("U2", terminal["U2"]),
-        ("Kaug", terminal["Kaug"]),
-        ("response", parsed_closure["response"]),
-    ])
-    denominator_certificate = certify_polys_at_r0(
-        denominators, s.Rational(1), max_atan_terms
-    )
-    response_certificate = certify_response(
-        parsed_closure, denominators, max_atan_terms
-    )
+    with progress.stage("denominator_collection"):
+        denominators = collect_denominators([
+            ("operators_M0", matrices[0]),
+            ("operators_M1", matrices[1]),
+            ("operators_M2", matrices[2]),
+            ("P", terminal["P"]),
+            ("S", terminal["S"]),
+            ("profile_acceleration_state", terminal["acceleration_state"]),
+            ("profile_acceleration_control", terminal["acceleration_control"]),
+            ("U", terminal["U"]),
+            ("U1", terminal["U1"]),
+            ("U2", terminal["U2"]),
+            ("Kaug", terminal["Kaug"]),
+            ("response", parsed_closure["response"]),
+        ])
+        progress.metric(denominator_count=len(denominators))
+    with progress.stage(
+        "r1_denominator_regularity",
+        denominator_count=len(denominators),
+        max_atan_terms=max_atan_terms,
+    ):
+        denominator_certificate = certify_polys_at_r0(
+            denominators, s.Rational(1), max_atan_terms
+        )
+        progress.metric(
+            r0=denominator_certificate["r0"],
+            terms=denominator_certificate["terms"],
+            coefficient_polynomial_count=len(
+                denominator_certificate["certificates"]
+            ),
+        )
+    with progress.stage(
+        "response_witness_separation",
+        denominator_count=len(denominators),
+        max_atan_terms=max_atan_terms,
+        sampled_r0_count=len(DEFAULT_RESPONSE_R0S),
+    ):
+        response_certificate = certify_response(
+            parsed_closure, denominators, max_atan_terms
+        )
+        progress.metric(
+            status=response_certificate["status"],
+            formal_response_nonzero=response_certificate[
+                "formal_response_nonzero"
+            ],
+            certified_response_nonzero=response_certificate[
+                "certified_response_nonzero"
+            ],
+        )
 
     return {
         "state": "terminal germ certificate passed",
@@ -955,29 +1079,66 @@ def run(config_path, operators_path, closure_path, output_path, max_atan_terms):
     operators_path = Path(operators_path)
     closure_path = Path(closure_path)
 
-    config, _, config_sha256 = load_json_bytes(config_path)
-    operators, _, operators_sha256 = load_pinned_json(
-        operators_path,
-        expected_sha256(config, "stationary_operators"),
-        "stationary operators",
+    progress = StageProgress()
+    progress.event(
+        "invocation_begin",
+        python=sys.version,
+        executable=sys.executable,
+        sympy=s.__version__,
+        max_atan_terms=max_atan_terms,
+        config_path=str(config_path),
+        operators_path=str(operators_path),
+        closure_path=str(closure_path),
     )
-    closure, _, closure_sha256 = load_pinned_json(
-        closure_path,
-        expected_sha256(config, "dae_closure"),
-        "DAE closure",
-    )
+    with progress.stage("input_pin_verification", unit="input"):
+        config, config_bytes, config_sha256 = load_json_bytes(config_path)
+        operators, operator_bytes, operators_sha256 = load_pinned_json(
+            operators_path,
+            expected_sha256(config, "stationary_operators"),
+            "stationary operators",
+        )
+        closure, closure_bytes, closure_sha256 = load_pinned_json(
+            closure_path,
+            expected_sha256(config, "dae_closure"),
+            "DAE closure",
+        )
+        progress.metric(
+            config_bytes=len(config_bytes),
+            operator_bytes=len(operator_bytes),
+            closure_bytes=len(closure_bytes),
+            config_sha256=config_sha256,
+            stationary_operators_sha256=operators_sha256,
+            dae_closure_sha256=closure_sha256,
+        )
     actual_hashes = {
         "config": config_sha256,
         "stationary_operators": operators_sha256,
         "dae_closure": closure_sha256,
     }
-    manufactured_controls = verify_manufactured_controls()
-    result = certify(operators, closure, max_atan_terms)
-    atomic_json_new(output_path, {
-        **result,
-        "input_sha256": actual_hashes,
-        "manufactured_controls": manufactured_controls,
-    })
+    with progress.stage("manufactured_controls"):
+        manufactured_controls = verify_manufactured_controls()
+        progress.metric(manufactured_case_count=len(manufactured_controls["cases"]))
+    result = certify(operators, closure, max_atan_terms, progress=progress)
+    with progress.stage("final_export", unit="bundle"):
+        atomic_json_new(output_path, {
+            **result,
+            "runtime_environment": {
+                "python": sys.version,
+                "executable": sys.executable,
+                "sympy": s.__version__,
+            },
+            "input_sha256": actual_hashes,
+            "manufactured_controls": manufactured_controls,
+        })
+        progress.metric(output_path=str(output_path))
+    progress.report(
+        phase="complete",
+        step=1,
+        of=1,
+        unit="certificate",
+        m={"terminal_germ_certificate_passed": 1},
+    )
+    progress.event("invocation_return")
     print("PASS: terminal retained rows and local germ interval certified.", flush=True)
 
 

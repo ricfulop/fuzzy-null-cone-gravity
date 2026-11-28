@@ -1,0 +1,13 @@
+<signal name="terminal_germ_certificate_passed" label="Germ certificate published" digits="0" better="higher" labels='{"0":"pending","1":"passed"}' />
+<signal name="manufactured_case_count" label="Manufactured controls completed" digits="0" />
+<signal name="free_state_count" label="ODE initial coordinates" digits="0" />
+<signal name="constant_control_count" label="Constant control coordinates" digits="0" />
+<signal name="formal_response_nonzero" label="Formally nonzero response" digits="0" labels='{"0":"zero on subfamily","1":"nonzero over formal field"}' />
+<signal name="certified_response_nonzero" label="Responding witness certified" digits="0" labels='{"0":"not certified","1":"certified"}' />
+<signal name="denominator_count" label="Distinct coefficient denominators" digits="0" />
+<signal name="terms" label="Atan enclosure terms at r=1" digits="0" />
+<view headline="terminal_germ_certificate_passed free_state_count manufactured_case_count">
+  <stats of="terminal_germ_certificate_passed certified_response_nonzero free_state_count" />
+  <text>The certificate checks all retained equations and local regularity. A responding witness additionally needs a nonzero numerator at the same regular radius. An uncertified response may be unresolved; its exact status is preserved in the result. ODE coordinates are not a physical degree-of-freedom count.</text>
+  <stats of="manufactured_case_count constant_control_count formal_response_nonzero denominator_count terms" />
+</view>

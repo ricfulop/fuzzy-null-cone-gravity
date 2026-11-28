@@ -1,0 +1,23 @@
+{
+  "plan": [
+    {"phase": "setup", "of": 1, "unit": "environment"},
+    {"phase": "input_pin_verification", "of": 1, "unit": "input"},
+    {"phase": "manufactured_controls", "of": 1, "unit": "check"},
+    {"phase": "original_operator_conversion", "of": 1, "unit": "check"},
+    {"phase": "closure_parsing", "of": 1, "unit": "check"},
+    {"phase": "terminal_identities", "of": 1, "unit": "check"},
+    {"phase": "denominator_collection", "of": 1, "unit": "check"},
+    {"phase": "r1_denominator_regularity", "of": 1, "unit": "check"},
+    {"phase": "response_witness_separation", "of": 1, "unit": "check"},
+    {"phase": "final_export", "of": 1, "unit": "bundle"},
+    {"phase": "complete", "of": 1, "unit": "certificate"}
+  ],
+  "brief": {
+    "question": "Does the supplied formal stationary family solve every original retained equation on a regular radial interval, and does it contain a certified nonzero discarded response?",
+    "healthy": "Pinned inputs and manufactured controls precede exact terminal identities. Rational interval checks must establish regularity and a responding coefficient at the same radius. Numeric shape and count metrics are interim progress only.",
+    "worth_a_flag": "A traceback, input or source digest mismatch, failed exact identity, nonfinite expression, resource stop, or unclean process group. Completion of elimination alone does not certify a germ.",
+    "decided": "One bounded local CPU child. No frozen-radius jet substitution. All 22 original retained equations, including the X0 equation, remain. Exact response zero is scoped to this forward subfamily; an unresolved formal nonzero is not a proved zero.",
+    "from_parent": "Requires a completed, independently pinned terminal closure and the original exact stationary operator export. Preparation does not assume either a responding germ or a universal zero."
+  },
+  "watch": {"minGapS": 120, "maxGapS": 300}
+}
