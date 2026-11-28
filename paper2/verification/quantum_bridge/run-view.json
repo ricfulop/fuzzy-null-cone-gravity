@@ -1,17 +1,17 @@
 {
   "plan": [
     {"phase": "setup", "of": 1, "unit": "checks"},
-    {"phase": "constraint_data", "of": 1, "unit": "cases"},
-    {"phase": "exact_brackets", "of": 88, "unit": "cases"},
-    {"phase": "independent_flow", "of": 10, "unit": "cases"},
+    {"phase": "exact_loop", "of": 1, "unit": "derivations"},
+    {"phase": "simplex_quadrature", "of": 6, "unit": "cases"},
+    {"phase": "kinematic_checks", "of": 12, "unit": "cases"},
     {"phase": "export", "of": 1, "unit": "reports"}
   ],
   "brief": {
-    "question": "Does a Hamiltonian-first canonical Gaunt restriction preserve the mixed spatial/lapse constraint bracket on vacuum data?",
-    "from_parent": "The parent verified cancellation of a second lapse derivative and exact angular kinetic determinant factorization. Higher-order terms survive at finite auxiliary cutoff. Neither result establishes the mixed constraint algebra.",
-    "healthy": "All initial constraints vanish. Exact projection is predicted to give nonzero mixed brackets for ell=L-1,L and zero for ell<=L-2. The independent full Hamiltonian flow, including the curvature-potential term, should reproduce those brackets. A larger canonical space removes this witness. Nonzero bracket values are the scientific test, not numerical verification failures.",
-    "noise": "The candidate changes the original Lagrangian regulator. The cutoff-shell smearings change with N; this is not fixed-physical-momentum convergence. Case counts are coverage, not a measure that is better than the parent's case count.",
-    "worth_a_flag": "An exact identity fails; full-flow quadratures disagree with the projection calculation; the unprojected continuum bracket or integrated potential does not vanish within tolerance; or a claim equates this test with a physical one-loop amplitude or final Dirac no-go.",
-    "decided": "Local CPU, Python standard library only. Check 88 exact cases and 10 independent flow cases with 60-digit arithmetic and two angular/radial quadratures. Keep the source experiment frozen after a meaningful result."
+    "question": "Does an explicit dimensionally regulated loop evaluation reproduce the continuum Einstein all-plus four-graviton amplitude, including its rational term?",
+    "from_parent": "The parent verified an angular kinetic determinant component. It did not integrate a complete loop observable. This child supplies a separate continuum reference; the finite-rank constraint problem remains open.",
+    "healthy": "Three box classes with multiplicity two are reconstructed from all cuts. Exact moments and independent 60-digit cube-to-simplex quadrature agree. Twelve kinematic configurations reproduce the published amplitude in magnitude and phase and pass permutation, helicity-weight and energy-scaling checks.",
+    "noise": "The deliberately incomplete strictly four-dimensional cut calculation has relative error one; omitting one real scalar state has relative error one-half. These are expected negative controls. This continuum calculation contains no angular N and cannot demonstrate a large-N limit.",
+    "worth_a_flag": "An exact formula or cut multiplicity fails; a simplex error exceeds 1e-45; a kinematic comparison exceeds 1e-10; a negative control unexpectedly agrees; or any statement calls this a finite-N Gaunt amplitude.",
+    "decided": "Local CPU and Python standard library only. Six independent integral cases and twelve scattering configurations with all 24 external permutations. Published scalar trees and the continuum state-count identity are declared inputs. Keep the source branch frozen after a meaningful run."
   }
 }

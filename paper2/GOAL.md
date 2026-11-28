@@ -94,3 +94,10 @@ derivation of the postulated microscopic multiplicities.
 
 All three principal deliverables remain pending. No claimed percentage of
 completion or guarantee of success is assigned to an unresolved theory.
+
+The [continuum all-plus one-loop reference](reports/quantum-bridge/continuum-one-loop-reference.md)
+provides an explicit quantum comparison target, including the rational term
+lost by a strictly four-dimensional cut calculation. Its scalar tree and
+state-count inputs belong to continuum Einstein gravity. The reference has
+no finite angular rank and is not evidence that those inputs survive the
+Gaunt constraint obstruction.
