@@ -306,6 +306,10 @@ def numerical_case(L, ell, config):
 def main():
     start = time.monotonic()
     config = json.loads((ROOT / "config.json").read_text())
+    if config["calculation"] == "sixth_energy_pilot":
+        from sixth_energy_check import main as sixth_energy_main
+        sixth_energy_main(config)
+        return
     if config["calculation"] == "sixth_backend_validation":
         from sixth_backend_check import main as sixth_backend_main
         sixth_backend_main(config)

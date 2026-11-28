@@ -229,3 +229,11 @@ per-call reuse of exact moment triples completed the suite under the same cap
 and tolerances. This establishes tested ingredients, not the full mixed H6
 energy or the four-point observable. Canonical finite-vector terms, production
 nested pairings and complete energy integration remain the next calculation.
+
+The [prospective H6 pilot](reports/quantum-bridge/full-sixth-order-pilot.md)
+now specifies that calculation as twenty separately recorded energy entries,
+with exact canonical checks, an independent archived pure-momentum radial
+reference, Decimal triple-integral controls and a summed physical-unit error
+gate. No numerical production result is claimed by its implementation.
+Independent full mixed-functional validation remains required even if the
+pilot passes; this is still a classical prerequisite to the four-point loop.
