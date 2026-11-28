@@ -12,14 +12,14 @@ class ExactRowControls(unittest.TestCase):
         self.assertEqual(actual.shape, expected.shape)
         self.assertTrue(all(cancel(value) == 0 for value in actual - expected))
 
-    def test_control_pivot_state_pivot_and_free_control(self):
+    def test_control_pivot_residual_state_rows_and_free_control(self):
         a, b = (R + 1)/(T + 2), (T + 1)/(R + 2)
         left = Matrix([[a, 2*a], [0, 0], [2*a, 4*a]])
         side = Matrix([[b, 1], [0, 2], [2*b, 4]])
         controls, states, pivots = rref_with_side(left, side)
         self.assertEqual(pivots, [0])
         self.assert_matrix_equal(controls, Matrix([[1, 2], [0, 0], [0, 0]]))
-        self.assert_matrix_equal(states, Matrix([[b/a, 0], [0, 1], [0, 0]]))
+        self.assert_matrix_equal(states, Matrix([[b/a, 1/a], [0, 2], [0, 2]]))
         # On the remaining constraint z_2=0 the original and reduced systems
         # admit the same two arbitrary data (u_2,z_1).
         lift = Matrix([[-2, -b/a], [1, 0], [0, 1], [0, 0]])
@@ -27,9 +27,18 @@ class ExactRowControls(unittest.TestCase):
         self.assert_matrix_equal(controls.row_join(states)*lift, zeros(3, 2))
 
     def test_no_controls_keeps_all_state_constraints(self):
-        a, b, pivots = rref_with_side(zeros(2, 0), Matrix([[0, T], [0, 2*T]]))
+        side = Matrix([[0, T], [0, 2*T]])
+        a, b, pivots = rref_with_side(zeros(2, 0), side)
         self.assertEqual((a.shape, pivots), ((2, 0), []))
-        self.assert_matrix_equal(b, Matrix([[0, 1], [0, 0]]))
+        self.assert_matrix_equal(b, side)
+
+    def test_first_nonzero_row_swap_carries_distinct_state_rows(self):
+        left = Matrix([[0, 2], [2, 2], [4, 6]])
+        side = Matrix([[4, 10], [6, 16], [11, 22]])
+        controls, states, pivots = rref_with_side(left, side)
+        self.assertEqual(pivots, [0, 1])
+        self.assert_matrix_equal(controls, Matrix([[1, 0], [0, 1], [0, 0]]))
+        self.assert_matrix_equal(states, Matrix([[1, 3], [2, 5], [-5, -20]]))
 
     def test_zero_state_width_and_empty_shapes(self):
         a, b, pivots = rref_with_side(Matrix([[R], [0]]), zeros(2, 0))
@@ -52,6 +61,8 @@ class ExactRowControls(unittest.TestCase):
     def test_inexact_input_rejected(self):
         with self.assertRaises(ValueError):
             rref_with_side(Matrix([[Float("0.5")]]), zeros(1, 0))
+        with self.assertRaises(ValueError):
+            rref_with_side(zeros(1, 0), Matrix([[Float("0.5")]]))
 
 
 def verify_controls():

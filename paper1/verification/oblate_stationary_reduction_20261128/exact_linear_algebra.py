@@ -11,13 +11,17 @@ R, T = symbols("r T", positive=True)
 FIELD = QQ.frac_field(R, T)
 
 
+def _field_value(value):
+    if value.has(Float):
+        raise ValueError("Inexact entry in a QQ(r,T) matrix")
+    return FIELD.from_sympy(value)
+
+
 def _rref_den(matrix):
     """Use the associated polynomial ring; keep the denominator for the caller."""
     entries = {}
     for (row, col), value in matrix.todok().items():
-        if value.has(Float):
-            raise ValueError("Inexact entry in a QQ(r,T) matrix")
-        element = FIELD.from_sympy(value)
+        element = _field_value(value)
         if element:
             entries.setdefault(row, {})[col] = element
     exact = DomainMatrix.from_dod(entries, matrix.shape, FIELD)
@@ -25,21 +29,33 @@ def _rref_den(matrix):
 
 
 def rref_with_side(left, right):
-    """Solve left pivots; rows below those pivots retain all state constraints.
-
-    The right block is also row-reduced. Upper rows can differ from control-only
-    elimination by multiples of the residual state equations.
-    """
+    """Apply the historical first-nonzero control pivots to both blocks over QQ(r,T)."""
     left, right = Matrix(left), Matrix(right)
     if left.rows != right.rows:
         raise ValueError("Control and state blocks must have the same row count")
-    if left.rows == 0 or left.cols + right.cols == 0:
-        return left, right, []
-    numerator, denominator, pivots = _rref_den(left.row_join(right))
-    scale = FIELD.convert(denominator, numerator.domain)
-    reduced = (numerator.convert_to(FIELD) / scale).to_Matrix()
-    return (reduced[:, :left.cols], reduced[:, left.cols:],
-            [pivot for pivot in pivots if pivot < left.cols])
+    rows = [[_field_value(value) for value in control_row + state_row]
+            for control_row, state_row in zip(left.tolist(), right.tolist())]
+    pivots = []
+    for column in range(left.cols):
+        pivot_row = len(pivots)
+        found = next((i for i in range(pivot_row, left.rows) if rows[i][column]), None)
+        if found is None:
+            continue
+        rows[pivot_row], rows[found] = rows[found], rows[pivot_row]
+        pivot = rows[pivot_row][column]
+        normalized = [value / pivot for value in rows[pivot_row]]
+        rows[pivot_row] = normalized
+        for i, row in enumerate(rows):
+            factor = row[column]
+            if i != pivot_row and factor:
+                rows[i] = [value - factor * basis for value, basis in zip(row, normalized)]
+        pivots.append(column)
+        if len(pivots) == left.rows:
+            break
+
+    controls = [FIELD.to_sympy(value) for row in rows for value in row[:left.cols]]
+    states = [FIELD.to_sympy(value) for row in rows for value in row[left.cols:]]
+    return Matrix(left.rows, left.cols, controls), Matrix(right.rows, right.cols, states), pivots
 
 
 def independent_extension(existing, candidates):

@@ -560,7 +560,7 @@ def run(input_dir, output_dir, stage, max_steps):
         "source_sha256": source_hashes,
         "stage": stage,
         "max_steps": max_steps,
-        "linear_algebra_backend": "QQ(r,T) DomainMatrix rref_den CD; full augmented rows retained",
+        "linear_algebra_backend": "QQ(r,T) FracElement control-only historical pivot loop; batched transpose independence",
     }
     with progress.ReductionRecorder(output_dir, identity) as recorder:
         with recorder.stage("manufactured_controls"):

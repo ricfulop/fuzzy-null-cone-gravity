@@ -38,10 +38,10 @@
   ],
   "brief": {
     "question": "Does exact differential constraint preservation close, and is the discarded response formally nonzero on the resulting stationary subfamily?",
-    "healthy": "Seven algebra/DAE manufactured control groups precede actual extraction. Fraction-free exact row operations, retained state-only rows, detailed solve/apply/selection/prolongation stages. One local child900s,2GiB sampled RSS.",
+    "healthy": "Six exact-row tests and two DAE controls precede actual reduction. Control-only rational-field row operations preserve the historical compact basis; each solve/apply/selection/prolongation stage is timed. One local child900s,2GiB sampled RSS.",
     "worth_a_flag": "A traceback, changed source/input digest, false control, or timeout. Principal rank is not a Dirac rank or existence certificate.",
     "decided": "Pinned original operators and all22 terminal rows unchanged. Partial elimination steps are progress only; no actual germ until independent regularity certificate.",
-    "from_parent": "Principal block rank4 and all23-row gauge identity passed. First closure attempt incomplete near900s with cleanup EPERM; no closure result."
+    "from_parent": "Principal rank4 and all23-row gauge check passed. First closure incomplete near900s with cleanup EPERM. Fullaugmented retry stopped after formula growth and >5min first differentiation; no closure result."
   },
   "watch": {
     "minGapS": 120,

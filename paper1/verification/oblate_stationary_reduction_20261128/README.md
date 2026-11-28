@@ -107,7 +107,7 @@ original evidence is preserved separately in
 finished step 0 and began step 1; process-group cleanup then failed with
 `PermissionError`, including inside the final evidence-writing path.
 
-The prepared retry replaces expression-by-expression row reduction by exact
+The first retry replaced expression-by-expression row reduction by exact
 `DomainMatrix` operations over `QQ(r,T)`. It clears row denominators and uses
 fraction-free elimination on the whole augmented `[A | C]` matrix. Only pivots
 in `A` solve controls. All remaining state-only rows are retained. Reducing the
@@ -126,5 +126,24 @@ run before the actual closure within the bounded scientific invocation.
 New timings separate solving controls, applying substitutions, selecting
 constraints, checkpoint serialization, and differentiation. An interim
 principal-rank headline is available before the final closure signals. Partial
-step counts never certify a solution. The prepared arithmetic change has not
-yet been timed or scientifically executed.
+step counts never certify a solution. That invocation passed its controls but
+was stopped after its first constraint rows grew substantially and their
+differentiation exceeded five minutes. Its complete evidence is preserved in
+`reports/oblate-stationary-closure-basis-growth-2026-11-28/`.
+
+## Control-only rational-field arithmetic
+
+The next variant restores the original first-nonzero control pivot order,
+paired row swaps, normalization, and elimination order. It converts both input
+blocks once to `QQ(r,T)` field elements and performs exact field arithmetic
+inside that historical loop. It never pivots the state block. By induction
+over the row operations, the resulting entries are the same rational functions
+as in the original expression-based implementation. Batched independent-row
+selection still returns the original candidate rows in order.
+
+Six row-operation controls now check the historical residual rows entrywise,
+including a row swap with distinct state entries, a free control, preservation
+of the state rows when there are no control columns, empty dimensions,
+dependent candidate rows, and inexact-input rejection. The two original DAE
+controls and every final retained-row identity remain. The next invocation
+will measure this variant; no speedup is assumed.
