@@ -1,0 +1,3643 @@
+{
+  "source_commit": "087ab31c06d22046ef2dbf7d6da43e61dd098f47",
+  "run": "196cf70e-cad9-4208-9819-2aaaf78359de",
+  "experiment": "0f758de2-3e35-4b9d-9e66-7916c13fc06e",
+  "run_status": "failed",
+  "scope": "Completed exact classical quartic reconstruction; failed quadrature convergence control; gravitational two-point stage not reached.",
+  "exact_directions": [
+    {
+      "kind": "paired",
+      "species": "00",
+      "direction": "aligned",
+      "coefficient": "-73854206649/146800640"
+    },
+    {
+      "kind": "paired",
+      "species": "00",
+      "direction": "orthogonal",
+      "coefficient": "-55271666907/73400320"
+    },
+    {
+      "kind": "paired",
+      "species": "00",
+      "direction": "noncommuting",
+      "coefficient": "-5058451737/9175040"
+    },
+    {
+      "kind": "paired",
+      "species": "01",
+      "direction": "aligned",
+      "coefficient": "-1941390807129/587202560"
+    },
+    {
+      "kind": "paired",
+      "species": "01",
+      "direction": "orthogonal",
+      "coefficient": "-1244629518141/293601280"
+    },
+    {
+      "kind": "paired",
+      "species": "01",
+      "direction": "noncommuting",
+      "coefficient": "66643780611/73400320"
+    },
+    {
+      "kind": "paired",
+      "species": "10",
+      "direction": "aligned",
+      "coefficient": "-2287625893569/587202560"
+    },
+    {
+      "kind": "paired",
+      "species": "10",
+      "direction": "orthogonal",
+      "coefficient": "-1477204036941/293601280"
+    },
+    {
+      "kind": "paired",
+      "species": "10",
+      "direction": "noncommuting",
+      "coefficient": "3683756931/14680064"
+    },
+    {
+      "kind": "paired",
+      "species": "11",
+      "direction": "aligned",
+      "coefficient": "-44871667733223/2348810240"
+    },
+    {
+      "kind": "paired",
+      "species": "11",
+      "direction": "orthogonal",
+      "coefficient": "-4700079613251/167772160"
+    },
+    {
+      "kind": "paired",
+      "species": "11",
+      "direction": "noncommuting",
+      "coefficient": "-3076754655699/146800640"
+    },
+    {
+      "kind": "cross",
+      "direction": 0,
+      "coefficient": "-94843420593377/1409286144",
+      "labels": [
+        [
+          [
+            "1/2",
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "-1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ],
+          [
+            "1/2",
+            "-1",
+            "0"
+          ]
+        ],
+        [
+          [
+            "-1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "-1/2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "-1"
+          ],
+          [
+            "0",
+            "-1",
+            "0"
+          ]
+        ]
+      ]
+    },
+    {
+      "kind": "cross",
+      "direction": 1,
+      "coefficient": "-10017681502463/880803840",
+      "labels": [
+        [
+          [
+            "3/4",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1/4",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1/2"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "0"
+          ]
+        ],
+        [
+          [
+            "-1/2",
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "0"
+          ]
+        ]
+      ]
+    },
+    {
+      "kind": "cross",
+      "direction": 2,
+      "coefficient": "-346069341625151/14092861440",
+      "labels": [
+        [
+          [
+            "1/4",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/4",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "-1/2"
+          ]
+        ],
+        [
+          [
+            "-1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "-1",
+            "0"
+          ],
+          [
+            "-1",
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      ]
+    },
+    {
+      "kind": "cross",
+      "direction": 3,
+      "coefficient": "-54172302150753/587202560",
+      "labels": [
+        [
+          [
+            "1",
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ],
+          [
+            "1/2",
+            "-1",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "-1"
+          ]
+        ]
+      ]
+    },
+    {
+      "kind": "cross",
+      "direction": 4,
+      "coefficient": "-16055821185441/117440512",
+      "labels": [
+        [
+          [
+            "-1/4",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1/4",
+            "-1"
+          ],
+          [
+            "0",
+            "-1",
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "-1/2",
+            "-1",
+            "0"
+          ],
+          [
+            "-1",
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ]
+        ]
+      ]
+    },
+    {
+      "kind": "momentum",
+      "direction": 0,
+      "coefficient": "-1305190881/2621440"
+    },
+    {
+      "kind": "momentum",
+      "direction": 1,
+      "coefficient": "-658420104843/41943040"
+    },
+    {
+      "kind": "momentum",
+      "direction": 2,
+      "coefficient": "-908960636547/41943040"
+    },
+    {
+      "kind": "momentum",
+      "direction": 3,
+      "coefficient": "-46952405331/1310720"
+    },
+    {
+      "kind": "momentum",
+      "direction": 4,
+      "coefficient": "-47061430839/1310720"
+    },
+    {
+      "kind": "held_out_cross",
+      "direction": 0,
+      "coefficient": "-22606581439103/220200960",
+      "reconstructed_coefficient": "-22606581439103/220200960",
+      "residual": "0",
+      "labels": [
+        [
+          [
+            "0",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-1",
+            "-1"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "-1",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-1",
+            "1/2"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "0"
+          ]
+        ]
+      ]
+    },
+    {
+      "kind": "held_out_cross",
+      "direction": 1,
+      "coefficient": "-600659397549413/18790481920",
+      "reconstructed_coefficient": "-600659397549413/18790481920",
+      "residual": "0",
+      "labels": [
+        [
+          [
+            "1/2",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-1/2",
+            "-1"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "-1/2",
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1/4",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "1/4",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "-1/2"
+          ]
+        ]
+      ]
+    }
+  ],
+  "execution": {
+    "configuration": {
+      "calculation": "complete_quartic_loops",
+      "loop_quadrature_orders": [
+        32,
+        64
+      ],
+      "loop_relative_tolerance": 1e-09,
+      "external_frequencies": [
+        0.0,
+        0.7,
+        2.0
+      ]
+    },
+    "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "commit": "087ab31c06d22046ef2dbf7d6da43e61dd098f47",
+    "run": "196cf70e-cad9-4208-9819-2aaaf78359de",
+    "experiment": "paper-ii-complete-quartic-tensor-and-finite-mode"
+  },
+  "invariant_coefficients": {
+    "cubic": [
+      "446/3",
+      "25004/9"
+    ],
+    "potential": [
+      "2978145633/33554432",
+      "69776871602481/18790481920",
+      "3047052105933/2348810240",
+      "1364019815211/1174405120",
+      "-40507834761/146800640"
+    ],
+    "momentum": [
+      "-145021209/655360",
+      "-73157789427/10485760",
+      "-1929646301/786432",
+      "148610477/1966080",
+      "-9085459/81920"
+    ],
+    "mixed": {
+      "paired": {
+        "00": [
+          "-21713678527/73400320",
+          "-4567736069/73400320",
+          "4934684337/18350080"
+        ],
+        "01": [
+          "-2252099278531/880803840",
+          "-58987729735/25165824",
+          "100746976039/14680064"
+        ],
+        "10": [
+          "-502224697463/176160768",
+          "-2115718792853/880803840",
+          "516959725187/73400320"
+        ],
+        "11": [
+          "-12808301330289/1174405120",
+          "-537505417263/234881024",
+          "552434669811/58720256"
+        ]
+      },
+      "cross": [
+        "135763338983/220200960",
+        "374069484361/440401920",
+        "219297111139/440401920",
+        "64407178121/18350080",
+        "-250732022607/36700160"
+      ]
+    }
+  },
+  "canonical_polynomial": {
+    "cubic_monomials": 24,
+    "quartic_monomials": 515,
+    "historical_checks": [
+      {
+        "direction": "electric_axis",
+        "full_polynomial_residual": "0"
+      },
+      {
+        "direction": "magnetic_axis",
+        "full_polynomial_residual": "0"
+      },
+      {
+        "direction": "parallel_parities",
+        "full_polynomial_residual": "0"
+      },
+      {
+        "direction": "orthogonal_labels",
+        "full_polynomial_residual": "0"
+      },
+      {
+        "direction": "noncommuting_labels",
+        "full_polynomial_residual": "0"
+      },
+      {
+        "direction": "held_out_mixed",
+        "full_polynomial_residual": "0"
+      },
+      {
+        "direction": "held_out_rotated",
+        "full_polynomial_residual": "0"
+      }
+    ],
+    "maximum_one_point_coefficient": 0.0
+  },
+  "loop_kernel_controls": {
+    "scope": "Finite-mode oscillator bookkeeping controls only; NOT a finite-N graviton amplitude.",
+    "hbar": 1,
+    "canonical_order": "Q0,P0,Q1,P1,...",
+    "quadrature_orders": [
+      32,
+      64
+    ],
+    "relative_tolerance": 1e-09,
+    "absolute_tolerance": 1e-12,
+    "ordered_partition_counts": {
+      "2": [
+        1,
+        2
+      ],
+      "3": [
+        1,
+        6,
+        6
+      ],
+      "4": [
+        1,
+        14,
+        36,
+        24
+      ]
+    },
+    "ordered_partition_counts_passed": true,
+    "quadrature_results": [
+      {
+        "quadrature_order": 32,
+        "scalar_static": [
+          {
+            "case": "all_H3_through_H6",
+            "n": 2,
+            "exact_derivative": "811/6250",
+            "value": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "all_H3_through_H6",
+            "n": 3,
+            "exact_derivative": "-85803/781250",
+            "value": {
+              "real": -0.10982784000000001,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.10982784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.3877787807814457e-17,
+            "relative_error": 1.2635947140373932e-16,
+            "passed": true
+          },
+          {
+            "case": "all_H3_through_H6",
+            "n": 4,
+            "exact_derivative": "3035373/19531250",
+            "value": {
+              "real": 0.15541109760000002,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.1554110976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 1.7859455369826123e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_only_box",
+            "n": 2,
+            "exact_derivative": "-32/3125",
+            "value": {
+              "real": -0.010240000000000003,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.01024,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.734723475976807e-18,
+            "relative_error": 1.6940658945086004e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_only_box",
+            "n": 3,
+            "exact_derivative": "1536/390625",
+            "value": {
+              "real": 0.003932160000000001,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.00393216,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.734723475976807e-18,
+            "relative_error": 4.411629933616148e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_only_box",
+            "n": 4,
+            "exact_derivative": "-24576/9765625",
+            "value": {
+              "real": -0.002516582400000001,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.0025165824,
+              "imaginary": 0.0
+            },
+            "absolute_error": 8.673617379884035e-19,
+            "relative_error": 3.4465858856376155e-16,
+            "passed": true
+          },
+          {
+            "case": "quartic_only_bubble",
+            "n": 2,
+            "exact_derivative": "7/50",
+            "value": {
+              "real": 0.14,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.14,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "quartic_only_bubble",
+            "n": 3,
+            "exact_derivative": "0",
+            "value": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": null,
+            "passed": true
+          },
+          {
+            "case": "quartic_only_bubble",
+            "n": 4,
+            "exact_derivative": "-294/3125",
+            "value": {
+              "real": -0.09408000000000001,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.09408,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.3877787807814457e-17,
+            "relative_error": 1.4751049965789177e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_quartic_triangle_plus_box_and_bubble",
+            "n": 2,
+            "exact_derivative": "811/6250",
+            "value": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "cubic_quartic_triangle_plus_box_and_bubble",
+            "n": 3,
+            "exact_derivative": "-19464/390625",
+            "value": {
+              "real": -0.049827840000000005,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.04982784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 6.938893903907228e-18,
+            "relative_error": 1.3925736905126189e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_quartic_triangle_plus_box_and_bubble",
+            "n": 4,
+            "exact_derivative": "-540126/9765625",
+            "value": {
+              "real": -0.055308902400000005,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.0553089024,
+              "imaginary": 0.0
+            },
+            "absolute_error": 6.938893903907228e-18,
+            "relative_error": 1.2545708923537106e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_quintic_pair_plus_box",
+            "n": 2,
+            "exact_derivative": "-32/3125",
+            "value": {
+              "real": -0.010240000000000003,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.01024,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.734723475976807e-18,
+            "relative_error": 1.6940658945086004e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_quintic_pair_plus_box",
+            "n": 3,
+            "exact_derivative": "-43803/781250",
+            "value": {
+              "real": -0.05606784,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.05606784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "cubic_quintic_pair_plus_box",
+            "n": 4,
+            "exact_derivative": "275424/9765625",
+            "value": {
+              "real": 0.028203417600000006,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0282034176,
+              "imaginary": 0.0
+            },
+            "absolute_error": 6.938893903907228e-18,
+            "relative_error": 2.460302507419253e-16,
+            "passed": true
+          },
+          {
+            "case": "sextic_only_tadpole",
+            "n": 2,
+            "exact_derivative": "0",
+            "value": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": null,
+            "passed": true
+          },
+          {
+            "case": "sextic_only_tadpole",
+            "n": 3,
+            "exact_derivative": "0",
+            "value": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": null,
+            "passed": true
+          },
+          {
+            "case": "sextic_only_tadpole",
+            "n": 4,
+            "exact_derivative": "9/50",
+            "value": {
+              "real": 0.18000000000000002,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.18,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 1.5419764230904951e-16,
+            "passed": true
+          }
+        ],
+        "quartic_bubbles": [
+          {
+            "frequencies": [
+              1.25
+            ],
+            "direction": [
+              1.0
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.08884114737911777,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.08884114737957473,
+              "imaginary": 0.0
+            },
+            "absolute_error": 4.569539191479066e-13,
+            "relative_error": 5.143494119853791e-12,
+            "passed": true
+          },
+          {
+            "frequencies": [
+              1.25
+            ],
+            "direction": [
+              1.0
+            ],
+            "external_frequencies": [
+              0.35,
+              0.65,
+              -0.25,
+              -0.75
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.08892161000044191,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.08892161000089886,
+              "imaginary": 0.0
+            },
+            "absolute_error": 4.569539191479066e-13,
+            "relative_error": 5.138839919152245e-12,
+            "passed": true
+          },
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "direction": [
+              0.6,
+              0.8
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.13120744114727564,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.13120744218442829,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.0371526415475785e-09,
+            "relative_error": 7.904678456346495e-09,
+            "passed": false
+          },
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "direction": [
+              0.6,
+              0.8
+            ],
+            "external_frequencies": [
+              0.35,
+              0.65,
+              -0.25,
+              -0.75
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.1314083314147156,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.131408332451854,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.037138375181712e-09,
+            "relative_error": 7.892485627284736e-09,
+            "passed": false
+          }
+        ],
+        "two_point_multimode": [
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "external_frequencies": [
+              0.0,
+              -0.0
+            ],
+            "analytic_tadpole": {
+              "real": -0.025807319999999995,
+              "imaginary": 0.0
+            },
+            "analytic_bubble": {
+              "real": -0.0047763574874105505,
+              "imaginary": 0.0
+            },
+            "value": {
+              "real": -0.03058367748741054,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.030583677487410546,
+              "imaginary": 0.0
+            },
+            "absolute_error": 6.938893903907228e-18,
+            "relative_error": 2.2688226119189077e-16,
+            "passed": true
+          },
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "external_frequencies": [
+              0.6,
+              -0.6
+            ],
+            "analytic_tadpole": {
+              "real": -0.025807319999999995,
+              "imaginary": 0.0
+            },
+            "analytic_bubble": {
+              "real": -0.004235113432000678,
+              "imaginary": 0.0
+            },
+            "value": {
+              "real": -0.030042433432220173,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.03004243343200067,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.195015003092493e-13,
+            "relative_error": 7.306382181259663e-12,
+            "passed": true
+          }
+        ],
+        "four_leg_permutations": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              3,
+              1
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              3,
+              1,
+              2
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              3,
+              2,
+              1
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              3,
+              0,
+              2
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              0,
+              1,
+              3
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              0,
+              3,
+              1
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              1,
+              0,
+              3
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              1,
+              3,
+              0
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              3,
+              0,
+              1
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              0,
+              2,
+              1
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              1,
+              0,
+              2
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              1,
+              2,
+              0
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              2,
+              0,
+              1
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          }
+        ],
+        "canonical_rotations": [
+          {
+            "n": 2,
+            "angles": [
+              0.37,
+              -0.61
+            ],
+            "external_frequencies": [
+              0.3,
+              -0.3
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.032742472789161245,
+              "imaginary": 0.0024434652843961582
+            },
+            "reference": {
+              "real": -0.03274247278916124,
+              "imaginary": 0.002443465284396158
+            },
+            "absolute_error": 6.952433221959954e-18,
+            "relative_error": 2.117480302247885e-16,
+            "passed": true
+          },
+          {
+            "n": 3,
+            "angles": [
+              0.37,
+              -0.61
+            ],
+            "external_frequencies": [
+              0.2,
+              0.35,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": 0.006043942131827455,
+              "imaginary": -0.0018043350268429187
+            },
+            "reference": {
+              "real": 0.006043942131827455,
+              "imaginary": -0.0018043350268429185
+            },
+            "absolute_error": 2.168404344971009e-19,
+            "relative_error": 3.4378058337100756e-17,
+            "passed": true
+          },
+          {
+            "n": 4,
+            "angles": [
+              0.37,
+              -0.61
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.011157456399949701,
+              "imaginary": -0.0064855296810265774
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 1.734723475976807e-18,
+            "relative_error": 1.3441778253889107e-16,
+            "passed": true
+          },
+          {
+            "n": 2,
+            "angles": [
+              1.5707963267948966,
+              0.29
+            ],
+            "external_frequencies": [
+              0.3,
+              -0.3
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.03274247278916124,
+              "imaginary": 0.002443465284396158
+            },
+            "reference": {
+              "real": -0.03274247278916124,
+              "imaginary": 0.002443465284396158
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "n": 3,
+            "angles": [
+              1.5707963267948966,
+              0.29
+            ],
+            "external_frequencies": [
+              0.2,
+              0.35,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": 0.006043942131827457,
+              "imaginary": -0.0018043350268429187
+            },
+            "reference": {
+              "real": 0.006043942131827455,
+              "imaginary": -0.0018043350268429185
+            },
+            "absolute_error": 1.7482234731686756e-18,
+            "relative_error": 2.771647671997501e-16,
+            "passed": true
+          },
+          {
+            "n": 4,
+            "angles": [
+              1.5707963267948966,
+              0.29
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.006485529681026576
+            },
+            "reference": {
+              "real": -0.0111574563999497,
+              "imaginary": -0.0064855296810265774
+            },
+            "absolute_error": 1.734723475976807e-18,
+            "relative_error": 1.3441778253889107e-16,
+            "passed": true
+          }
+        ],
+        "rotated_scalar_static": [
+          {
+            "n": 2,
+            "value": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "n": 3,
+            "value": {
+              "real": -0.10982784,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.10982784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "n": 4,
+            "value": {
+              "real": 0.15541109760000002,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.1554110976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 1.7859455369826123e-16,
+            "passed": true
+          }
+        ],
+        "exact_zero_block_omission": {
+          "value": {
+            "real": -0.09408000000000001,
+            "imaginary": 0.0
+          },
+          "reference": {
+            "real": -0.09408000000000001,
+            "imaginary": 0.0
+          },
+          "absolute_error": 0.0,
+          "relative_error": 0.0,
+          "passed": true
+        },
+        "passed": false,
+        "max_absolute_error": 1.0371526415475785e-09,
+        "max_relative_error_nonzero_references": 7.904678456346495e-09,
+        "mixed_four_point": {
+          "real": -0.0111574563999497,
+          "imaginary": -0.0064855296810265774
+        }
+      },
+      {
+        "quadrature_order": 64,
+        "scalar_static": [
+          {
+            "case": "all_H3_through_H6",
+            "n": 2,
+            "exact_derivative": "811/6250",
+            "value": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "all_H3_through_H6",
+            "n": 3,
+            "exact_derivative": "-85803/781250",
+            "value": {
+              "real": -0.10982784,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.10982784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "all_H3_through_H6",
+            "n": 4,
+            "exact_derivative": "3035373/19531250",
+            "value": {
+              "real": 0.15541109760000002,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.1554110976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 1.7859455369826123e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_only_box",
+            "n": 2,
+            "exact_derivative": "-32/3125",
+            "value": {
+              "real": -0.01024,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.01024,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "cubic_only_box",
+            "n": 3,
+            "exact_derivative": "1536/390625",
+            "value": {
+              "real": 0.0039321600000000005,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.00393216,
+              "imaginary": 0.0
+            },
+            "absolute_error": 8.673617379884035e-19,
+            "relative_error": 2.205814966808074e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_only_box",
+            "n": 4,
+            "exact_derivative": "-24576/9765625",
+            "value": {
+              "real": -0.0025165824000000004,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.0025165824,
+              "imaginary": 0.0
+            },
+            "absolute_error": 4.336808689942018e-19,
+            "relative_error": 1.7232929428188077e-16,
+            "passed": true
+          },
+          {
+            "case": "quartic_only_bubble",
+            "n": 2,
+            "exact_derivative": "7/50",
+            "value": {
+              "real": 0.13999999999999999,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.14,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 1.982541115402065e-16,
+            "passed": true
+          },
+          {
+            "case": "quartic_only_bubble",
+            "n": 3,
+            "exact_derivative": "0",
+            "value": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": null,
+            "passed": true
+          },
+          {
+            "case": "quartic_only_bubble",
+            "n": 4,
+            "exact_derivative": "-294/3125",
+            "value": {
+              "real": -0.09408,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.09408,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "cubic_quartic_triangle_plus_box_and_bubble",
+            "n": 2,
+            "exact_derivative": "811/6250",
+            "value": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "cubic_quartic_triangle_plus_box_and_bubble",
+            "n": 3,
+            "exact_derivative": "-19464/390625",
+            "value": {
+              "real": -0.049827840000000005,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.04982784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 6.938893903907228e-18,
+            "relative_error": 1.3925736905126189e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_quartic_triangle_plus_box_and_bubble",
+            "n": 4,
+            "exact_derivative": "-540126/9765625",
+            "value": {
+              "real": -0.05530890239999999,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.0553089024,
+              "imaginary": 0.0
+            },
+            "absolute_error": 6.938893903907228e-18,
+            "relative_error": 1.2545708923537106e-16,
+            "passed": true
+          },
+          {
+            "case": "cubic_quintic_pair_plus_box",
+            "n": 2,
+            "exact_derivative": "-32/3125",
+            "value": {
+              "real": -0.01024,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.01024,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "cubic_quintic_pair_plus_box",
+            "n": 3,
+            "exact_derivative": "-43803/781250",
+            "value": {
+              "real": -0.05606784,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.05606784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "case": "cubic_quintic_pair_plus_box",
+            "n": 4,
+            "exact_derivative": "275424/9765625",
+            "value": {
+              "real": 0.028203417600000003,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0282034176,
+              "imaginary": 0.0
+            },
+            "absolute_error": 3.469446951953614e-18,
+            "relative_error": 1.2301512537096264e-16,
+            "passed": true
+          },
+          {
+            "case": "sextic_only_tadpole",
+            "n": 2,
+            "exact_derivative": "0",
+            "value": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": null,
+            "passed": true
+          },
+          {
+            "case": "sextic_only_tadpole",
+            "n": 3,
+            "exact_derivative": "0",
+            "value": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.0,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": null,
+            "passed": true
+          },
+          {
+            "case": "sextic_only_tadpole",
+            "n": 4,
+            "exact_derivative": "9/50",
+            "value": {
+              "real": 0.18000000000000002,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.18,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 1.5419764230904951e-16,
+            "passed": true
+          }
+        ],
+        "quartic_bubbles": [
+          {
+            "frequencies": [
+              1.25
+            ],
+            "direction": [
+              1.0
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.08884114737957473,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.08884114737957473,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "frequencies": [
+              1.25
+            ],
+            "direction": [
+              1.0
+            ],
+            "external_frequencies": [
+              0.35,
+              0.65,
+              -0.25,
+              -0.75
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.08892161000089888,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.08892161000089886,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.3877787807814457e-17,
+            "relative_error": 1.5606766237896696e-16,
+            "passed": true
+          },
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "direction": [
+              0.6,
+              0.8
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.13120744218442823,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.13120744218442829,
+              "imaginary": 0.0
+            },
+            "absolute_error": 5.551115123125783e-17,
+            "relative_error": 4.230792880881714e-16,
+            "passed": true
+          },
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "direction": [
+              0.6,
+              0.8
+            ],
+            "external_frequencies": [
+              0.35,
+              0.65,
+              -0.25,
+              -0.75
+            ],
+            "frequency_sum": 0.0,
+            "value": {
+              "real": -0.13140833245185396,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.131408332451854,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 2.1121625316871085e-16,
+            "passed": true
+          }
+        ],
+        "two_point_multimode": [
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "external_frequencies": [
+              0.0,
+              -0.0
+            ],
+            "analytic_tadpole": {
+              "real": -0.025807319999999995,
+              "imaginary": 0.0
+            },
+            "analytic_bubble": {
+              "real": -0.0047763574874105505,
+              "imaginary": 0.0
+            },
+            "value": {
+              "real": -0.03058367748741055,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.030583677487410546,
+              "imaginary": 0.0
+            },
+            "absolute_error": 3.469446951953614e-18,
+            "relative_error": 1.1344113059594538e-16,
+            "passed": true
+          },
+          {
+            "frequencies": [
+              0.8,
+              1.4
+            ],
+            "external_frequencies": [
+              0.6,
+              -0.6
+            ],
+            "analytic_tadpole": {
+              "real": -0.025807319999999995,
+              "imaginary": 0.0
+            },
+            "analytic_bubble": {
+              "real": -0.004235113432000678,
+              "imaginary": 0.0
+            },
+            "value": {
+              "real": -0.030042433432000675,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.03004243343200067,
+              "imaginary": 0.0
+            },
+            "absolute_error": 3.469446951953614e-18,
+            "relative_error": 1.154848843988124e-16,
+            "passed": true
+          }
+        ],
+        "four_leg_permutations": [
+          {
+            "permutation": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              1,
+              3,
+              2
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              2,
+              3,
+              1
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              3,
+              1,
+              2
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              0,
+              3,
+              2,
+              1
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              0,
+              3,
+              2
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              3,
+              0,
+              2
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              0,
+              1,
+              3
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              0,
+              3,
+              1
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              1,
+              0,
+              3
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              1,
+              3,
+              0
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              3,
+              0,
+              1
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              0,
+              2,
+              1
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              1,
+              0,
+              2
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              1,
+              2,
+              0
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              2,
+              0,
+              1
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "permutation": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          }
+        ],
+        "canonical_rotations": [
+          {
+            "n": 2,
+            "angles": [
+              0.37,
+              -0.61
+            ],
+            "external_frequencies": [
+              0.3,
+              -0.3
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.032742472789161266,
+              "imaginary": 0.0024434652843961487
+            },
+            "reference": {
+              "real": -0.03274247278916126,
+              "imaginary": 0.0024434652843961483
+            },
+            "absolute_error": 6.952433221959954e-18,
+            "relative_error": 2.1174803022478835e-16,
+            "passed": true
+          },
+          {
+            "n": 3,
+            "angles": [
+              0.37,
+              -0.61
+            ],
+            "external_frequencies": [
+              0.2,
+              0.35,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": 0.006043942131832362,
+              "imaginary": -0.0018043350268397936
+            },
+            "reference": {
+              "real": 0.006043942131832362,
+              "imaginary": -0.0018043350268397936
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "n": 4,
+            "angles": [
+              0.37,
+              -0.61
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.011157456445715511,
+              "imaginary": -0.006485529670438431
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 1.734723475976807e-18,
+            "relative_error": 1.3441778218219942e-16,
+            "passed": true
+          },
+          {
+            "n": 2,
+            "angles": [
+              1.5707963267948966,
+              0.29
+            ],
+            "external_frequencies": [
+              0.3,
+              -0.3
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.03274247278916126,
+              "imaginary": 0.0024434652843961483
+            },
+            "reference": {
+              "real": -0.03274247278916126,
+              "imaginary": 0.0024434652843961483
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "n": 3,
+            "angles": [
+              1.5707963267948966,
+              0.29
+            ],
+            "external_frequencies": [
+              0.2,
+              0.35,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": 0.006043942131832363,
+              "imaginary": -0.0018043350268397936
+            },
+            "reference": {
+              "real": 0.006043942131832362,
+              "imaginary": -0.0018043350268397936
+            },
+            "absolute_error": 8.673617379884035e-19,
+            "relative_error": 1.3751223334832e-16,
+            "passed": true
+          },
+          {
+            "n": 4,
+            "angles": [
+              1.5707963267948966,
+              0.29
+            ],
+            "external_frequencies": [
+              0.2,
+              -0.45,
+              0.8,
+              -0.55
+            ],
+            "symplectic_residual": 0.0,
+            "free_hamiltonian_residual": 2.220446049250313e-16,
+            "value": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.00648552967043843
+            },
+            "reference": {
+              "real": -0.01115745644571551,
+              "imaginary": -0.006485529670438431
+            },
+            "absolute_error": 8.673617379884035e-19,
+            "relative_error": 6.720889109109971e-17,
+            "passed": true
+          }
+        ],
+        "rotated_scalar_static": [
+          {
+            "n": 2,
+            "value": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.12976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 0.0,
+            "relative_error": 0.0,
+            "passed": true
+          },
+          {
+            "n": 3,
+            "value": {
+              "real": -0.10982783999999998,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": -0.10982784,
+              "imaginary": 0.0
+            },
+            "absolute_error": 1.3877787807814457e-17,
+            "relative_error": 1.2635947140373932e-16,
+            "passed": true
+          },
+          {
+            "n": 4,
+            "value": {
+              "real": 0.15541109760000002,
+              "imaginary": 0.0
+            },
+            "reference": {
+              "real": 0.1554110976,
+              "imaginary": 0.0
+            },
+            "absolute_error": 2.7755575615628914e-17,
+            "relative_error": 1.7859455369826123e-16,
+            "passed": true
+          }
+        ],
+        "exact_zero_block_omission": {
+          "value": {
+            "real": -0.09408,
+            "imaginary": 0.0
+          },
+          "reference": {
+            "real": -0.09408,
+            "imaginary": 0.0
+          },
+          "absolute_error": 0.0,
+          "relative_error": 0.0,
+          "passed": true
+        },
+        "passed": true,
+        "max_absolute_error": 5.551115123125783e-17,
+        "max_relative_error_nonzero_references": 4.230792880881714e-16,
+        "mixed_four_point": {
+          "real": -0.01115745644571551,
+          "imaginary": -0.006485529670438431
+        }
+      }
+    ],
+    "convergence": [
+      {
+        "group": "scalar_static",
+        "index": 0,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.12976,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.12976,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 1,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.10982784000000001,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.10982784,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.3877787807814457e-17,
+        "relative_error": 1.2635947140373932e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 2,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.15541109760000002,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.15541109760000002,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 3,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.010240000000000003,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.01024,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.734723475976807e-18,
+        "relative_error": 1.6940658945086004e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 4,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.003932160000000001,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.0039321600000000005,
+          "imaginary": 0.0
+        },
+        "absolute_error": 8.673617379884035e-19,
+        "relative_error": 2.2058149668080735e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 5,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.002516582400000001,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.0025165824000000004,
+          "imaginary": 0.0
+        },
+        "absolute_error": 4.336808689942018e-19,
+        "relative_error": 1.7232929428188075e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 6,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.14,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.13999999999999999,
+          "imaginary": 0.0
+        },
+        "absolute_error": 2.7755575615628914e-17,
+        "relative_error": 1.9825411154020654e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 7,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.0,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.0,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": null,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 8,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.09408000000000001,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.09408,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.3877787807814457e-17,
+        "relative_error": 1.4751049965789177e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 9,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.12976,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.12976,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 10,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.049827840000000005,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.049827840000000005,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 11,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.055308902400000005,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.05530890239999999,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.3877787807814457e-17,
+        "relative_error": 2.5091417847074216e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 12,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.010240000000000003,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.01024,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.734723475976807e-18,
+        "relative_error": 1.6940658945086004e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 13,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.05606784,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.05606784,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 14,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.028203417600000006,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.028203417600000003,
+          "imaginary": 0.0
+        },
+        "absolute_error": 3.469446951953614e-18,
+        "relative_error": 1.2301512537096262e-16,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 15,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.0,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.0,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": null,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 16,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.0,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.0,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": null,
+        "passed": true
+      },
+      {
+        "group": "scalar_static",
+        "index": 17,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.18000000000000002,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.18000000000000002,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "quartic_bubbles",
+        "index": 0,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.08884114737911777,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.08884114737957473,
+          "imaginary": 0.0
+        },
+        "absolute_error": 4.569539191479066e-13,
+        "relative_error": 5.143494119853791e-12,
+        "passed": true
+      },
+      {
+        "group": "quartic_bubbles",
+        "index": 1,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.08892161000044191,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.08892161000089888,
+          "imaginary": 0.0
+        },
+        "absolute_error": 4.569677969357144e-13,
+        "relative_error": 5.138995986814624e-12,
+        "passed": true
+      },
+      {
+        "group": "quartic_bubbles",
+        "index": 2,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.13120744114727564,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.13120744218442823,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.0371525860364272e-09,
+        "relative_error": 7.90467803326721e-09,
+        "passed": false
+      },
+      {
+        "group": "quartic_bubbles",
+        "index": 3,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.1314083314147156,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.13140833245185396,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.0371383474261364e-09,
+        "relative_error": 7.892485416068484e-09,
+        "passed": false
+      },
+      {
+        "group": "two_point_multimode",
+        "index": 0,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.03058367748741054,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.03058367748741055,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.0408340855860843e-17,
+        "relative_error": 3.403233917878361e-16,
+        "passed": true
+      },
+      {
+        "group": "two_point_multimode",
+        "index": 1,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.030042433432220173,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.030042433432000675,
+          "imaginary": 0.0
+        },
+        "absolute_error": 2.1949803086229736e-13,
+        "relative_error": 7.306266696375264e-12,
+        "passed": true
+      },
+      {
+        "group": "canonical_rotations",
+        "index": 0,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.032742472789161245,
+          "imaginary": 0.0024434652843961582
+        },
+        "reference": {
+          "real": -0.032742472789161266,
+          "imaginary": 0.0024434652843961487
+        },
+        "absolute_error": 2.2899006965691896e-17,
+        "relative_error": 6.974277154900942e-16,
+        "passed": true
+      },
+      {
+        "group": "canonical_rotations",
+        "index": 1,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.006043942131827455,
+          "imaginary": -0.0018043350268429187
+        },
+        "reference": {
+          "real": 0.006043942131832362,
+          "imaginary": -0.0018043350268397936
+        },
+        "absolute_error": 5.817356961952063e-15,
+        "relative_error": 9.222884904719204e-13,
+        "passed": true
+      },
+      {
+        "group": "canonical_rotations",
+        "index": 2,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.011157456399949701,
+          "imaginary": -0.0064855296810265774
+        },
+        "reference": {
+          "real": -0.011157456445715511,
+          "imaginary": -0.006485529670438431
+        },
+        "absolute_error": 4.697465458509328e-11,
+        "relative_error": 3.639905135051936e-09,
+        "passed": false
+      },
+      {
+        "group": "canonical_rotations",
+        "index": 3,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.03274247278916124,
+          "imaginary": 0.002443465284396158
+        },
+        "reference": {
+          "real": -0.03274247278916126,
+          "imaginary": 0.0024434652843961483
+        },
+        "absolute_error": 2.2899006965691896e-17,
+        "relative_error": 6.974277154900943e-16,
+        "passed": true
+      },
+      {
+        "group": "canonical_rotations",
+        "index": 4,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.006043942131827457,
+          "imaginary": -0.0018043350268429187
+        },
+        "reference": {
+          "real": 0.006043942131832363,
+          "imaginary": -0.0018043350268397936
+        },
+        "absolute_error": 5.816625402027708e-15,
+        "relative_error": 9.221725083682372e-13,
+        "passed": true
+      },
+      {
+        "group": "canonical_rotations",
+        "index": 5,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.0111574563999497,
+          "imaginary": -0.006485529681026576
+        },
+        "reference": {
+          "real": -0.01115745644571551,
+          "imaginary": -0.00648552967043843
+        },
+        "absolute_error": 4.697465438958885e-11,
+        "relative_error": 3.639905119902968e-09,
+        "passed": false
+      },
+      {
+        "group": "rotated_scalar_static",
+        "index": 0,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.12976,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.12976,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "rotated_scalar_static",
+        "index": 1,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.10982784,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": -0.10982783999999998,
+          "imaginary": 0.0
+        },
+        "absolute_error": 1.3877787807814457e-17,
+        "relative_error": 1.2635947140373934e-16,
+        "passed": true
+      },
+      {
+        "group": "rotated_scalar_static",
+        "index": 2,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": 0.15541109760000002,
+          "imaginary": 0.0
+        },
+        "reference": {
+          "real": 0.15541109760000002,
+          "imaginary": 0.0
+        },
+        "absolute_error": 0.0,
+        "relative_error": 0.0,
+        "passed": true
+      },
+      {
+        "group": "mixed_four_point",
+        "index": 0,
+        "lower_order": 32,
+        "higher_order": 64,
+        "value": {
+          "real": -0.0111574563999497,
+          "imaginary": -0.0064855296810265774
+        },
+        "reference": {
+          "real": -0.01115745644571551,
+          "imaginary": -0.006485529670438431
+        },
+        "absolute_error": 4.697465458509328e-11,
+        "relative_error": 3.6399051350519362e-09,
+        "passed": false
+      }
+    ],
+    "convergence_checked": true,
+    "passed": false,
+    "status": "bookkeeping control failure",
+    "assumptions": [
+      "Midpoint/Weyl phase-space perturbation theory, positive free frequencies, and no added counterterms.",
+      "H_m=g_m*q^m/m!; B_S are derivatives, so sqrt(V'') Taylor coefficients are multiplied by n!.",
+      "Static references are exact rational local Taylor expansions, not claims of global polynomial stability.",
+      "Bubble references use the analytic whole-line two-propagator integral, including unequal internal frequencies.",
+      "Canonical rotations preserve the free Hamiltonian and symplectic form; B transforms as T^transpose B T with external directions transformed consistently.",
+      "Permutation checks relabel both external frequencies and every Hessian derivative block.",
+      "Two quadrature orders provide a convergence diagnostic, not a certified integration error bound."
+    ],
+    "limitations": [
+      "No gravitational H3-H6 coefficients are generated or validated by these oscillator controls.",
+      "No exchange graphs, external-leg normalization, Lorentzian continuation or physical scattering limit are supplied.",
+      "No claim of full gravitational consistency or interacting reflection positivity follows."
+    ]
+  }
+}

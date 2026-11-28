@@ -2,7 +2,7 @@
 
 ## Status and scope
 
-This preregistered calculation uses the same
+This calculation, preregistered before its first run, uses the same
 [reduced canonical Gaunt candidate](reduced-canonical-gaunt.md) and its
 [verified cubic/quartic functionals](reduced-vertices.md).
 It reconstructs the full quartic polynomial in the twenty phase-space
@@ -24,6 +24,11 @@ The physical free rank is $N=3$: five electric and five magnetic total-$j=2$
 profiles, with one selected radial profile per parity. The packet width
 is one and $16\pi G=1$. Neither the angular rank nor the radial basis is
 extrapolated in this run.
+
+The first run completed the exact classical reconstruction but failed its
+frequency-quadrature convergence control before reaching the gravitational
+two-point stage. Section 5 records this partial result and the resolution
+change for a separate child; no gravitational loop result is available yet.
 
 ## 1. Complete finite-mode interaction polynomial
 
@@ -225,3 +230,52 @@ It does not exponentiate the unbounded quartic Taylor polynomial as a
 global interacting Hamiltonian. Complete corner quantization,
 microscopic state counting and interacting Euclidean--Lorentzian
 reconstruction remain open.
+
+## 5. First run: classical tensor verified, loop convergence failed
+
+Experiment 0f758de2-3e35-4b9d-9e66-7916c13fc06e used source commit
+087ab31c06d22046ef2dbf7d6da43e61dd098f47.
+Run 196cf70e-cad9-4208-9819-2aaaf78359de terminated with an explicit
+control failure. Its effective quadrature orders were 32 and 64,
+with unchanged relative tolerance $10^{-9}$ and control absolute
+tolerance $10^{-12}$. The complete raw log was read before this review.
+
+The earlier stages completed:
+
+- All 22 new fit contractions and both additional held-out contractions
+  were evaluated with rational arithmetic. Combined held-out
+  cross-invariant coverage has rank five.
+- The assembled polynomial contains 24 cubic and 515 quartic monomials.
+  It reproduces all seven historical full-polynomial values exactly.
+- The normalized one-point tadpole contractions vanish in all twenty
+  phase-space directions.
+
+The two new held-out mixed coefficients were, in the declared common
+quartic unit,
+
+$$
+-\frac{22606581439103}{220200960},\qquad
+-\frac{600659397549413}{18790481920}.
+$$
+
+Their direct spatial and reconstructed invariant values coincide exactly.
+The complete rational invariant coefficients and the effective execution
+configuration are preserved in
+[the partial-result record](data/complete-quartic-partial-results.json).
+This record is extracted from the failed run's log; it is not a fabricated
+successful final export.
+
+At order 32, the unequal-frequency quartic-bubble controls have absolute
+errors up to $1.0372\times10^{-9}$, approximately
+$7.90\times10^{-9}$ relative. Mixed four-point controls also fail the
+32-versus-64 convergence criterion. At order 64, every specified
+reference/control comparison passes; the maximum absolute comparison
+error is $5.55\times10^{-17}$. Nevertheless, the required agreement
+between resolutions fails, so the control suite correctly returns false
+and the runner stops.
+
+The gravitational two-point stage and final export were not reached.
+There is therefore no gravitational loop number from this run. The next
+child uses 64 and 128 quadrature points while retaining the tolerance,
+Hamiltonian, cases, and fixed run recipe. The failed source node and log
+remain immutable evidence of the resolution requirement.

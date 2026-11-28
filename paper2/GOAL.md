@@ -157,3 +157,32 @@ constraints but changes the matching law away from that section. Neither
 choice derives a genuine gravitational edge algebra, microscopic state
 multiplicities, or the global interacting operator needed for reconstruction.
 All three principal deliverables remain open.
+
+The first complete-quartic run now supplies 27 rational invariant
+coefficients, a 24-term cubic polynomial and a 515-term quartic polynomial,
+with exact historical checks and rank-five held-out mixed-sector coverage.
+It then failed the required 32-versus-64 quadrature convergence control;
+its gravitational two-point stage was not reached. The [reviewed partial
+result](reports/quantum-bridge/complete-quartic-and-two-point.md) records
+both the completed classical work and that failure. The child increases
+quadrature resolution, with no tolerance relaxation.
+
+The [local existence proof](reports/quantum-bridge/local-existence-and-adm-smoothness.md)
+establishes the smooth constrained Hamiltonian chart near Minkowski data
+for every fixed finite Schwartz TT basis, invoking specified standard
+weighted elliptic isomorphisms. It supplies neither a uniform-in-rank
+neighborhood nor a global Hamiltonian; those distinctions matter for the
+quantum extension and the physical cutoff limit.
+
+The [constructive quantum completion](reports/quantum-bridge/positive-local-quantum-completion.md)
+then extends that local Hamiltonian to a quadratic confining symbol outside
+a chosen neighborhood. Its direct Weyl quantization is an oscillator plus
+a bounded self-adjoint smoothing perturbation: its domain, lower bound,
+compact resolvent, ground state, and reflection-positive Euclidean time
+correlators follow explicitly. The same operator supplies unitary Lorentzian
+evolution and preserves every local formal bare-Weyl vertex. This establishes
+an interacting finite-mode existence completion, beyond a conditional
+spectral-theorem statement. The extension is an additional physical choice,
+exact finite-hbar correlators may depend on it, and no uniform-rank bound,
+archived Monte Carlo identification, microscopic edge theory, or full
+relativistic reconstruction has been derived.
