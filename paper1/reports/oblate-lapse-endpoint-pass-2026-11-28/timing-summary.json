@@ -1,0 +1,15 @@
+{
+  "source": "raw STAGE_END records and execution.json",
+  "stage_seconds": {
+    "atomic_final_export": 0.000902458094060421,
+    "christoffel_and_linearized_ricci": 1.872543292120099,
+    "endpoint_flux_reduction": 0.5648383749648929,
+    "endpoint_sign_controls": 0.005816625198349357,
+    "hessian_flux_identity": 3.835728749865666,
+    "input_config": 0.001563291996717453,
+    "metric_and_variation": 0.03460583300329745,
+    "result_assembly": 0.0013439171016216278,
+    "scalar_curvature_green_identity": 0.6393089580815285
+  },
+  "supervisor_elapsed_seconds": 7.896592166973278
+}

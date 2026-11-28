@@ -1,0 +1,110 @@
+[
+  {
+    "seconds": 0.003,
+    "rss_bytes": 1179648
+  },
+  {
+    "seconds": 0.296,
+    "rss_bytes": 54542336
+  },
+  {
+    "seconds": 0.588,
+    "rss_bytes": 87080960
+  },
+  {
+    "seconds": 0.881,
+    "rss_bytes": 94027776
+  },
+  {
+    "seconds": 1.17,
+    "rss_bytes": 96141312
+  },
+  {
+    "seconds": 1.462,
+    "rss_bytes": 97550336
+  },
+  {
+    "seconds": 1.756,
+    "rss_bytes": 98123776
+  },
+  {
+    "seconds": 2.045,
+    "rss_bytes": 98779136
+  },
+  {
+    "seconds": 2.337,
+    "rss_bytes": 98877440
+  },
+  {
+    "seconds": 2.626,
+    "rss_bytes": 98942976
+  },
+  {
+    "seconds": 2.917,
+    "rss_bytes": 98959360
+  },
+  {
+    "seconds": 3.207,
+    "rss_bytes": 99352576
+  },
+  {
+    "seconds": 3.503,
+    "rss_bytes": 100679680
+  },
+  {
+    "seconds": 3.794,
+    "rss_bytes": 102416384
+  },
+  {
+    "seconds": 4.082,
+    "rss_bytes": 103333888
+  },
+  {
+    "seconds": 4.37,
+    "rss_bytes": 104251392
+  },
+  {
+    "seconds": 4.666,
+    "rss_bytes": 104366080
+  },
+  {
+    "seconds": 4.959,
+    "rss_bytes": 104398848
+  },
+  {
+    "seconds": 5.25,
+    "rss_bytes": 104857600
+  },
+  {
+    "seconds": 5.542,
+    "rss_bytes": 104988672
+  },
+  {
+    "seconds": 5.831,
+    "rss_bytes": 105185280
+  },
+  {
+    "seconds": 6.125,
+    "rss_bytes": 105660416
+  },
+  {
+    "seconds": 6.417,
+    "rss_bytes": 106102784
+  },
+  {
+    "seconds": 6.711,
+    "rss_bytes": 106692608
+  },
+  {
+    "seconds": 7.002,
+    "rss_bytes": 106856448
+  },
+  {
+    "seconds": 7.293,
+    "rss_bytes": 106905600
+  },
+  {
+    "seconds": 7.587,
+    "rss_bytes": 106921984
+  }
+]

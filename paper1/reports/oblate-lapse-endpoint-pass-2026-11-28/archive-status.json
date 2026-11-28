@@ -1,0 +1,40 @@
+{
+  "all_cases_and_controls_passed": true,
+  "archival_scientific_invocations": 0,
+  "case_count": 11,
+  "certificate_sha256": "5f8201fd2362b6fd4e360599f57bda4e1017b99efb3bacab3cc61fa530fdd269",
+  "child_and_engine_events_equal": true,
+  "child_report_count": 27,
+  "cleanup_errors": [],
+  "completed_checker_stage_count": 9,
+  "control_count": 8,
+  "elapsed_seconds": 7.896592166973278,
+  "engine_report_count": 29,
+  "experiment_id": "7d19e70e-624e-42ac-a6c7-1bb413b4ccb6",
+  "group_disposition": {
+    "probe": "ESRCH",
+    "status": "empty"
+  },
+  "independent_reviews": {
+    "provenance": "msg_cfb5c2a7",
+    "scientific": "msg_63bc0c47"
+  },
+  "raw_event_count": 28,
+  "relay_errors": [],
+  "rss_sample_count": 27,
+  "run_id": "95e69683-94dd-433d-b081-aba5b9e32fec",
+  "sampled_max_rss_bytes": 106921984,
+  "scientific_invocations": 1,
+  "scope": {
+    "evolution_invariance_established": false,
+    "final_Dirac_classification_established": false,
+    "full_operator_domain_established": false,
+    "physical_DOF_count_established": false,
+    "physical_null_boundary_selected": false
+  },
+  "source_before_after_snapshot_and_git_match": true,
+  "source_commit": "cae4d6104c1d7e3b65693331787a2c3d75eae674",
+  "source_count": 9,
+  "state": "accepted selected endpoint identities; independent scientific and provenance reviews passed",
+  "terminal_marker_verified": true
+}
