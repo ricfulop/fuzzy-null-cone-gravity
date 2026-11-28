@@ -1,0 +1,70 @@
+{
+  "state": "manufactured DAE controls passed",
+  "case_count": 2,
+  "cases": [
+    {
+      "name": "hidden_constraints_keep_free_response_control",
+      "constraint_count": 4,
+      "free_state_count": 10,
+      "remaining_control_count": 5,
+      "response_state": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "response_control": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "recorded_stage_count": 60,
+      "recorded_output_count": 5
+    },
+    {
+      "name": "variable_constraint_preservation_kills_response",
+      "constraint_count": 2,
+      "free_state_count": 12,
+      "remaining_control_count": 5,
+      "response_state": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "response_control": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "recorded_stage_count": 48,
+      "recorded_output_count": 3
+    }
+  ]
+}

@@ -1,0 +1,649 @@
+{
+  "normalization": "16*pi*G=1, angular average dOmega/(4*pi), local r=1, kappa=1",
+  "action": "actual unprojected metric-coefficient EH Galerkin pullback, compact bulk variations",
+  "adm_map": {
+    "lapse_squared": "-a + b**2/lambda",
+    "shift_r": "b/lambda",
+    "shift_angular": [
+      "-b*v1/lambda + w1",
+      "-b*v2/lambda + w2"
+    ],
+    "spatial_determinant": "lambda * det(gamma)",
+    "metric_reconstruction_residuals": "all exactly zero"
+  },
+  "spatial_Legendre_map": {
+    "scalar_DeWitt_block": [
+      [
+        "0",
+        "-2"
+      ],
+      [
+        "-2",
+        "-2"
+      ]
+    ],
+    "scalar_eigenvalues": [
+      "-1+sqrt(5)",
+      "-1-sqrt(5)"
+    ],
+    "counts": [
+      {
+        "N": 3,
+        "spatial_coefficients": 44,
+        "temporal_primary_constraints": 34,
+        "positive_spatial_eigenvalues": 35,
+        "negative_spatial_eigenvalues": 9,
+        "zero_spatial_eigenvalues": 0,
+        "physical_DOF": "not yet classified"
+      },
+      {
+        "N": 4,
+        "spatial_coefficients": 86,
+        "temporal_primary_constraints": 62,
+        "positive_spatial_eigenvalues": 70,
+        "negative_spatial_eigenvalues": 16,
+        "zero_spatial_eigenvalues": 0,
+        "physical_DOF": "not yet classified"
+      }
+    ],
+    "domain": "round positive spatial metric and an open regular neighborhood"
+  },
+  "vacuum_constraint_point": {
+    "spatial_Ricci": "zero",
+    "Lambda": 0,
+    "K_cartesian": "kappa * diag(0,0,1), constant kappa != 0",
+    "trace_K": "kappa",
+    "hamiltonian_constraint": "0",
+    "momentum_constraints": [
+      "0",
+      "0",
+      "0"
+    ],
+    "retained_tensor_degrees": [
+      0,
+      2
+    ],
+    "surface": "all temporal primaries and all secondary constraints",
+    "tertiary_stabilization": "not established"
+  },
+  "axisymmetric_exact": [
+    {
+      "N": 3,
+      "L": 2,
+      "u": "P_1",
+      "ell": 1,
+      "discarded_DeWitt_norm": "2/15",
+      "fixed_momentum_H_second_derivative": "-1/15",
+      "discarded_polynomial_components": [
+        "x*(5*x**2 - 3)/5",
+        "-x*(5*x**2 - 3)/10",
+        "-(5*x**2 - 1)/5",
+        "x/2"
+      ]
+    },
+    {
+      "N": 3,
+      "L": 2,
+      "u": "P_2",
+      "ell": 2,
+      "discarded_DeWitt_norm": "12/175",
+      "fixed_momentum_H_second_derivative": "-6/175",
+      "discarded_polynomial_components": [
+        "3*(35*x**4 - 30*x**2 + 3)/70",
+        "-3*(35*x**4 - 30*x**2 + 3)/140",
+        "-3*x*(7*x**2 - 3)/14",
+        "3*(7*x**2 - 1)/28"
+      ]
+    },
+    {
+      "N": 4,
+      "L": 3,
+      "u": "P_1",
+      "ell": 1,
+      "discarded_DeWitt_norm": "0",
+      "fixed_momentum_H_second_derivative": "0",
+      "discarded_polynomial_components": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "N": 4,
+      "L": 3,
+      "u": "P_2",
+      "ell": 2,
+      "discarded_DeWitt_norm": "12/175",
+      "fixed_momentum_H_second_derivative": "-6/175",
+      "discarded_polynomial_components": [
+        "3*(35*x**4 - 30*x**2 + 3)/70",
+        "-3*(35*x**4 - 30*x**2 + 3)/140",
+        "-3*x*(7*x**2 - 3)/14",
+        "3*(7*x**2 - 1)/28"
+      ]
+    },
+    {
+      "N": 4,
+      "L": 3,
+      "u": "P_3",
+      "ell": 3,
+      "discarded_DeWitt_norm": "20/441",
+      "fixed_momentum_H_second_derivative": "-10/441",
+      "discarded_polynomial_components": [
+        "5*x*(63*x**4 - 70*x**2 + 15)/126",
+        "-5*x*(63*x**4 - 70*x**2 + 15)/252",
+        "-5*(21*x**4 - 14*x**2 + 1)/42",
+        "5*x*(3*x**2 - 1)/12"
+      ]
+    }
+  ],
+  "all_m_lapse_Hessian": [
+    {
+      "N": 3,
+      "L": 2,
+      "scalar_dimension": 9,
+      "lapse_Hessian_rank": 8,
+      "kernel_dimension": 1,
+      "full_primary_secondary_Poisson_rank_lower_bound": 16,
+      "labels": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "discarded_norm_diagonal": [
+        "0",
+        "4/15",
+        "2/5",
+        "4/15",
+        "10/21",
+        "44/105",
+        "12/35",
+        "44/105",
+        "10/21"
+      ],
+      "Hessian_diagonal": [
+        "0",
+        "-2/15",
+        "-1/5",
+        "-2/15",
+        "-5/21",
+        "-22/105",
+        "-6/35",
+        "-22/105",
+        "-5/21"
+      ],
+      "off_diagonal_entries": "all exactly zero",
+      "scope": "all scalar magnetic modes at this witness, not generic Dirac rank"
+    },
+    {
+      "N": 4,
+      "L": 3,
+      "scalar_dimension": 16,
+      "lapse_Hessian_rank": 12,
+      "kernel_dimension": 4,
+      "full_primary_secondary_Poisson_rank_lower_bound": 24,
+      "labels": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          3,
+          -2
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "discarded_norm_diagonal": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/7",
+        "2/7",
+        "12/35",
+        "2/7",
+        "1/7",
+        "7/18",
+        "3/7",
+        "5/14",
+        "20/63",
+        "5/14",
+        "3/7",
+        "7/18"
+      ],
+      "Hessian_diagonal": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/14",
+        "-1/7",
+        "-6/35",
+        "-1/7",
+        "-1/14",
+        "-7/36",
+        "-3/14",
+        "-5/28",
+        "-10/63",
+        "-5/28",
+        "-3/14",
+        "-7/36"
+      ],
+      "off_diagonal_entries": "all exactly zero",
+      "scope": "all scalar magnetic modes at this witness, not generic Dirac rank"
+    }
+  ],
+  "independent_inverse_Gram_checks": [
+    {
+      "N": 3,
+      "u": "P_1",
+      "quadrature_nodes": 64,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -2.133378878665937e-06,
+        "-1": -5.333361798309788e-07,
+        "0": 0.0,
+        "1": -5.333361798309788e-07,
+        "2": -2.1333788784438923e-06
+      },
+      "H_second_derivative": -0.06666666665354944,
+      "exact_target": -0.06666666666666667,
+      "absolute_error": 1.3117229524794993e-11
+    },
+    {
+      "N": 3,
+      "u": "P_1",
+      "quadrature_nodes": 64,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -5.333361798309788e-07,
+        "-1": -1.3333351117639225e-07,
+        "0": 0.0,
+        "1": -1.3333351150945916e-07,
+        "2": -5.333361798309788e-07
+      },
+      "H_second_derivative": -0.06666666673565969,
+      "exact_target": -0.06666666666666667,
+      "absolute_error": 6.899301963070315e-11
+    },
+    {
+      "N": 3,
+      "u": "P_1",
+      "quadrature_nodes": 96,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -2.133378878776959e-06,
+        "-1": -5.333361799975123e-07,
+        "0": -1.6653345369377348e-16,
+        "1": -5.333361804416015e-07,
+        "2": -2.133378879054515e-06
+      },
+      "H_second_derivative": -0.06666666668853304,
+      "exact_target": -0.06666666666666667,
+      "absolute_error": 2.1866369825929155e-11
+    },
+    {
+      "N": 3,
+      "u": "P_1",
+      "quadrature_nodes": 96,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -5.333361799975123e-07,
+        "-1": -1.3333351184252606e-07,
+        "0": -1.6653345369377348e-16,
+        "1": -1.3333351184252606e-07,
+        "2": -5.333361804416015e-07
+      },
+      "H_second_derivative": -0.06666666694845243,
+      "exact_target": -0.06666666666666667,
+      "absolute_error": 2.817857613912622e-10
+    },
+    {
+      "N": 3,
+      "u": "P_2",
+      "quadrature_nodes": 64,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -1.099309155205841e-06,
+        "-1": -2.7455544970855783e-07,
+        "0": 0.0,
+        "1": -2.740180687910154e-07,
+        "2": -1.0950100003404017e-06
+      },
+      "H_second_derivative": -0.03428571427316109,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 1.255319459492199e-11
+    },
+    {
+      "N": 3,
+      "u": "P_2",
+      "quadrature_nodes": 64,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -2.7455544970855783e-07,
+        "-1": -6.86050799503235e-08,
+        "0": 0.0,
+        "1": -6.853790773808655e-08,
+        "2": -2.740180687910154e-07
+      },
+      "H_second_derivative": -0.034285714260728906,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 2.4985381819053742e-11
+    },
+    {
+      "N": 3,
+      "u": "P_2",
+      "quadrature_nodes": 96,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -1.0993091555389078e-06,
+        "-1": -2.7455545026366934e-07,
+        "0": -1.6653345369377348e-16,
+        "1": -2.74018069734705e-07,
+        "2": -1.0950100003404017e-06
+      },
+      "H_second_derivative": -0.03428571437030561,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 8.459132005977921e-11
+    },
+    {
+      "N": 3,
+      "u": "P_2",
+      "quadrature_nodes": 96,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -2.7455545026366934e-07,
+        "-1": -6.860508056094616e-08,
+        "0": -1.6653345369377348e-16,
+        "1": -6.85379080156423e-08,
+        "2": -2.74018069734705e-07
+      },
+      "H_second_derivative": -0.03428571442147995,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 1.3576566260109502e-10
+    },
+    {
+      "N": 4,
+      "u": "P_1",
+      "quadrature_nodes": 64,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -1.950439809661475e-12,
+        "-1": -1.2151391004522338e-13,
+        "0": 2.220446049250313e-16,
+        "1": -1.2151391004522338e-13,
+        "2": -1.9502732762077812e-12
+      },
+      "H_second_derivative": 2.920117851227625e-11,
+      "exact_target": 0.0,
+      "absolute_error": 2.920117851227625e-11
+    },
+    {
+      "N": 4,
+      "u": "P_1",
+      "quadrature_nodes": 64,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -1.2151391004522338e-13,
+        "-1": -7.16093850883226e-15,
+        "0": 2.220446049250313e-16,
+        "1": -7.494005416219807e-15,
+        "2": -1.2151391004522338e-13
+      },
+      "H_second_derivative": 3.932039878880763e-11,
+      "exact_target": 0.0,
+      "absolute_error": 3.932039878880763e-11
+    },
+    {
+      "N": 4,
+      "u": "P_1",
+      "quadrature_nodes": 96,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -1.9503287873590125e-12,
+        "-1": -1.216249323476859e-13,
+        "0": 3.3306690738754696e-16,
+        "1": -1.216249323476859e-13,
+        "2": -1.9504953208127063e-12
+      },
+      "H_second_derivative": -6.071532165918825e-12,
+      "exact_target": 0.0,
+      "absolute_error": 6.071532165918825e-12
+    },
+    {
+      "N": 4,
+      "u": "P_1",
+      "quadrature_nodes": 96,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -1.216249323476859e-13,
+        "-1": -7.216449660063518e-15,
+        "0": 3.3306690738754696e-16,
+        "1": -7.216449660063518e-15,
+        "2": -1.216249323476859e-13
+      },
+      "H_second_derivative": 4.85722573273506e-11,
+      "exact_target": 0.0,
+      "absolute_error": 4.85722573273506e-11
+    },
+    {
+      "N": 4,
+      "u": "P_2",
+      "quadrature_nodes": 64,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -1.0993091550393075e-06,
+        "-1": -2.745554494310021e-07,
+        "0": 2.220446049250313e-16,
+        "1": -2.740180688465266e-07,
+        "2": -1.0950100001183571e-06
+      },
+      "H_second_derivative": -0.03428571429137569,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 5.661401902834484e-12
+    },
+    {
+      "N": 4,
+      "u": "P_2",
+      "quadrature_nodes": 64,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -2.745554494310021e-07,
+        "-1": -6.86050797282789e-08,
+        "0": 2.220446049250313e-16,
+        "1": -6.853790762706424e-08,
+        "2": -2.740180688465266e-07
+      },
+      "H_second_derivative": -0.03428571429311041,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 7.396125378811291e-12
+    },
+    {
+      "N": 4,
+      "u": "P_2",
+      "quadrature_nodes": 96,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -1.0993091549282852e-06,
+        "-1": -2.7455544909793517e-07,
+        "0": 3.3306690738754696e-16,
+        "1": -2.740180685689708e-07,
+        "2": -1.0950099993967122e-06
+      },
+      "H_second_derivative": -0.034285714262174506,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 2.3539781235371038e-11
+    },
+    {
+      "N": 4,
+      "u": "P_2",
+      "quadrature_nodes": 96,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -2.7455544909793517e-07,
+        "-1": -6.860507961725659e-08,
+        "0": 3.3306690738754696e-16,
+        "1": -6.853790718297503e-08,
+        "2": -2.740180685689708e-07
+      },
+      "H_second_derivative": -0.03428571419018348,
+      "exact_target": -0.03428571428571429,
+      "absolute_error": 9.553080548840853e-11
+    },
+    {
+      "N": 4,
+      "u": "P_3",
+      "quadrature_nodes": 64,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -7.256325274540565e-07,
+        "-1": -1.8140645463571303e-07,
+        "0": 2.220446049250313e-16,
+        "1": -1.8140645463571303e-07,
+        "2": -7.256325273985453e-07
+      },
+      "H_second_derivative": -0.022675736979956007,
+      "exact_target": -0.022675736961451247,
+      "absolute_error": 1.8504760224136163e-11
+    },
+    {
+      "N": 4,
+      "u": "P_3",
+      "quadrature_nodes": 64,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -1.8140645463571303e-07,
+        "-1": -4.535150860407455e-08,
+        "0": 2.220446049250313e-16,
+        "1": -4.5351508715096855e-08,
+        "2": -1.8140645463571303e-07
+      },
+      "H_second_derivative": -0.022675736968680305,
+      "exact_target": -0.022675736961451247,
+      "absolute_error": 7.229057630286917e-12
+    },
+    {
+      "N": 4,
+      "u": "P_3",
+      "quadrature_nodes": 96,
+      "step": 0.004,
+      "H_samples": {
+        "-2": -7.25632527287523e-07,
+        "-1": -1.8140645452469073e-07,
+        "0": 3.3306690738754696e-16,
+        "1": -1.8140645446917958e-07,
+        "2": -7.256325271209896e-07
+      },
+      "H_second_derivative": -0.02267573697648656,
+      "exact_target": -0.022675736961451247,
+      "absolute_error": 1.503531327218255e-11
+    },
+    {
+      "N": 4,
+      "u": "P_3",
+      "quadrature_nodes": 96,
+      "step": 0.002,
+      "H_samples": {
+        "-2": -1.8140645452469073e-07,
+        "-1": -4.53515083265188e-08,
+        "0": 3.3306690738754696e-16,
+        "1": -4.53515083265188e-08,
+        "2": -1.8140645446917958e-07
+      },
+      "H_second_derivative": -0.02267573682180705,
+      "exact_target": -0.022675736961451247,
+      "absolute_error": 1.3964419551260043e-10
+    }
+  ],
+  "complete_Dirac_classification": false,
+  "full_nonlinear_goal_complete": false
+}

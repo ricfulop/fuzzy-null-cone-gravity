@@ -1,0 +1,28 @@
+{
+  "working_directory": "paper1",
+  "capture": "The execution tool merged stdout and stderr. Individual stream boundaries are unavailable.",
+  "checks": [
+    {
+      "command": "python3 -B -W error::ResourceWarning -m unittest discover -s verification/oblate_stationary_state_germ_20261128 -p test_run_bounded.py -q",
+      "exit_code": 0,
+      "exec_tool_reported_wall_seconds": 0.143641333,
+      "unittest_reported_seconds": 0.231,
+      "test_count": 20,
+      "combined_stdout_stderr": "----------------------------------------------------------------------\nRan 20 tests in 0.231s\n\nOK\n"
+    },
+    {
+      "command": "sh -n verification/oblate_stationary_state_germ_20261128/run.sh",
+      "exit_code": 0,
+      "exec_tool_reported_wall_seconds": 0.00000975,
+      "combined_stdout_stderr": ""
+    }
+  ],
+  "tested_file_sha256": {
+    "run_bounded.py": "819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5",
+    "test_run_bounded.py": "8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231",
+    "run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893"
+  },
+  "scientific_checker_invocations": 0,
+  "scientific_modules_imported": false,
+  "dispatch_and_process_group_calls_mocked": true
+}

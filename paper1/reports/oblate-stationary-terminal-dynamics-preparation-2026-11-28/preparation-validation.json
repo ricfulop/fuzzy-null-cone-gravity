@@ -1,0 +1,30 @@
+{
+  "method": "stdlib AST, JSON/XML parsing, shell syntax, Git byte and AST comparisons only",
+  "scientific_imports": 0,
+  "scientific_invocations": 0,
+  "python_file_count": 13,
+  "shell_syntax_exit": 0,
+  "new_controls_executed": false,
+  "new_control_group_count": 8,
+  "author_review": "msg_b79f47d0",
+  "independent_review": {
+    "message": "msg_40088be0",
+    "verdict": "go; no source-level blocker after freezing new files",
+    "method": "source/diff/config inspection only; no controls executed"
+  },
+  "discovery_through_preservation_ast_unchanged": true,
+  "discarded_response_through_return_ast_unchanged": true,
+  "unchanged_against_8c693bc": [
+    "exact_linear_algebra.py",
+    "terminal_kernel.py",
+    "terminal_preservation.py",
+    "test_terminal_preservation.py",
+    "reduction_progress.py",
+    "run_bounded.py",
+    "test_run_bounded.py",
+    "test_reduction_controls.py",
+    "test_exact_linear_algebra.py",
+    "test_terminal_kernel.py",
+    "run.sh"
+  ]
+}

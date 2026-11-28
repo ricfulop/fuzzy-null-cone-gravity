@@ -1,0 +1,14 @@
+{
+  "command": "cd paper1 && python3 -B -W error::ResourceWarning -m unittest discover -s verification/oblate_stationary_reduction_20261128 -p test_run_bounded.py -v",
+  "initial_working_directory": "repository root",
+  "exit_code": 0,
+  "tests_run": 9,
+  "unittest_reported_runtime_seconds": 0.031,
+  "evidence_origin": "Verbatim combined terminal output from completed command (chunk 7ce78f). Archived from conversation history without repeating the command. The duration is the suite time reported by unittest.",
+  "source_sha256_at_invocation": {
+    "run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5"
+  },
+  "scope": "Mocked stdlib supervisor tests. The child launch, process table and signal operations were replaced. No scientific invocation.",
+  "combined_output": "test_normal_exit_eperm_empty_and_exact_raw_log (test_run_bounded.EvidenceTests.test_normal_exit_eperm_empty_and_exact_raw_log) ... ok\ntest_signal_before_spawn (test_run_bounded.EvidenceTests.test_signal_before_spawn) ... ok\ntest_signal_during_spawn_still_cleans_child_and_drains_log (test_run_bounded.EvidenceTests.test_signal_during_spawn_still_cleans_child_and_drains_log) ... ok\ntest_stalled_relay_join_is_bounded_and_fails_closed (test_run_bounded.EvidenceTests.test_stalled_relay_join_is_bounded_and_fails_closed) ... ok\ntest_timeout_preserves_measured_sample_when_cleanup_raises (test_run_bounded.EvidenceTests.test_timeout_preserves_measured_sample_when_cleanup_raises) ... ok\ntest_timeout_with_eperm_after_term_keeps_both_records (test_run_bounded.EvidenceTests.test_timeout_with_eperm_after_term_keeps_both_records) ... ok\ntest_zero_child_exit_with_unknown_group_is_failure (test_run_bounded.EvidenceTests.test_zero_child_exit_with_unknown_group_is_failure) ... ok\ntest_permission_denied_requires_a_readable_process_table (test_run_bounded.GroupProbeTests.test_permission_denied_requires_a_readable_process_table) ... ok\ntest_stubborn_descendant_escalated_after_launcher_exit (test_run_bounded.GroupProbeTests.test_stubborn_descendant_escalated_after_launcher_exit) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.031s\n\nOK\n"
+}

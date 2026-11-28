@@ -1,0 +1,33 @@
+{
+  "state": "started; no reduction completion asserted",
+  "identity": {
+    "T": "atan(1/(10*r))",
+    "T_prime": "-10/(100*r**2 + 1)",
+    "epsilon0": "1/100",
+    "input_dir": "/Users/ricfulop/.local/share/openresearch/local-runs/ef17ca1d-2663-4c0d-acc8-2f8607ae7881/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "input_sha256": {
+      "completion.json": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+      "stationary-operators.json": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+      "stationary-reproducibility.json": "c6d199d542555d997aeb49186ca03ea514151ce364d16b0c952160ac24631a31"
+    },
+    "max_steps": 21,
+    "python": "3.12.11",
+    "python_implementation": "3.12.11 (main, Oct  7 2025, 15:53:48) [Clang 20.1.4 ]",
+    "scope": "JSON-only fixed-epsilon stationary DAE reduction",
+    "source_commit": "868dfb9f98875a39de26210fef3dbbc5919fd5b4",
+    "source_sha256": {
+      "reduce_stationary.py": "8202040362b13406c7c2ae7da8fdb7262fae490e0d7dfc405bde208ab6e7731b",
+      "reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+      "run_bounded.py": "1221ddccf6df4e7930a07382ad45b5d691a971d18aabd2a4acc25d728bcde123",
+      "test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce"
+    },
+    "stage": "closure",
+    "sympy": "1.14.0",
+    "upstream_identity_sha256": "96749679ba2bed1bf3e070cd43dde7697e4aaeeb26d2ae02fd130fb564282c21",
+    "upstream_source_commit": "1cd1a69c258810d38c12adc334733aff1fac6b7a"
+  },
+  "identity_sha256": "714175e276a94fc6836056e3a7e1446e73f447f12c1e1a8d0d3ac038fb5d15a4",
+  "attempt_id": "19189441092e4f26bcb6da4f529ce7cc",
+  "start_utc": "2026-11-28T04:59:06.841570+00:00",
+  "checkpoint_policy": "write only; no automatic reuse or resume"
+}

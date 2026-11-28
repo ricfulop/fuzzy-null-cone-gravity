@@ -1,0 +1,18 @@
+{
+  "base_commit_at_execution": "dfdc3717ed98df97cc97e51ed509b87ad058d5f8",
+  "python": "3.12.11",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0"
+  },
+  "seconds": 1.639,
+  "GPU_jobs": 0,
+  "experiment_launches": 0,
+  "sha256": {
+    "verification/higher_order_consistency_20261127/second_preservation.py": "01f2b87f848178fa20146f54ff03087c0cafa9e7b1932eff466025e062a93020",
+    "verification/dirac_stabilization_20261127/stabilize_witness.py": "ede69a03f8c7c9e08cdb3d76b21cbcc3209719df7de6a48c148195db4e85ecc0",
+    "verification/canonical_analysis_20261127/actual_adm.py": "4cd3844c13ec36d97fbd3fd5d30a852283303b1f1f552c8a25b6f601fb75827c",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  }
+}

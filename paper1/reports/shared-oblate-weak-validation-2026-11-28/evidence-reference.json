@@ -1,0 +1,23 @@
+{
+  "kind": "cross-owner evidence reference; no new scientific invocation",
+  "run_id": "32b93879-a4f2-426f-82ac-2fa455844477",
+  "executed_source": "b59be9535b38e25d59a8437efe9873094b2bc4bd",
+  "archive_commit": "7479d44056215ea91dfed27cd01d8560ffc7997f",
+  "archive_repository_path": "paper2/reports/oblate-weak-curvature-validation/full-recheck-pass/",
+  "durable_archive": "artifacts/paper2-oblate-full-weak-validation-2026-11-28/README.md",
+  "external_manifest_sha256": "37a2a2667638e87332a3b3ed7dc21a688584ca10e2d8040ba7fcf87f3ec1df43",
+  "checked_manifest_entries": 15,
+  "raw_log_byte_match": true,
+  "evidence_sha256": {
+    "README.md": "52272df43b0dad780423a3293deeb9c1c8156667ba57bc1b9bda03d3cb34840f",
+    "execution.json": "7f9f78168dbef8a0e1471734da1c05272bdd9d40ed55ff8abcdf419c59d9f00f",
+    "weak-form-checks.json": "2dcfeb8c5137c0e8c243f808bf55ab2b720ae957fc3f17ef940431a8fe05bf1a",
+    "archive-status.json": "50bf18901fda7f206f46082657b271bf3e93b63ebb3918b26871cd4642dda9d0",
+    "verification.log": "635a311bae273225a52cc48970f5069ca7ab9a12ac70bb1793ae89b2febf72cc"
+  },
+  "review_messages": [
+    "msg_05c31715",
+    "msg_6aa9451a"
+  ],
+  "paper1_intake": "raw log, structured result and metadata read; manifest digests and archived log checked; no scientific imports or rerun"
+}

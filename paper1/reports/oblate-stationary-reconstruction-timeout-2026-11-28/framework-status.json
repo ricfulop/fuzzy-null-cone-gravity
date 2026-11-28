@@ -1,0 +1,20 @@
+{
+  "experimentId": "9032485c-47b6-4b0b-8c59-b6aebe68afd5",
+  "runId": "874b4e9c-d962-4595-8e76-ece483c13e07",
+  "status": "failed",
+  "stage": "dae_closure",
+  "progress": {
+    "done": 0.0,
+    "of": 1.0,
+    "unit": "check",
+    "whole": null
+  },
+  "latest": {
+    "elimination_steps_completed": 3,
+    "gauge_verified": 1,
+    "manufactured_controls_passed": 1,
+    "principal_rank": 4
+  },
+  "estimate": null,
+  "flags": []
+}

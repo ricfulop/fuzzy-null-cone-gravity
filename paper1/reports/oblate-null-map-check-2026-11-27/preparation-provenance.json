@@ -1,0 +1,43 @@
+{
+  "status": "prepared and statically reviewed; scientifically unexecuted",
+  "preparation_approval": "msg_7c4562eb, relayed by coordinating chat",
+  "scientific_source_commit": "157ec0f04866ea36509b325ec65f0a68890f9b17",
+  "scientific_checks_executed": 0,
+  "experiment_launches": 0,
+  "GPU_jobs": 0,
+  "remote_jobs": 0,
+  "static_checks": [
+    "Python AST parse without importing either module",
+    "Markdown links",
+    "control characters",
+    "JSON parsing",
+    "pinned action/basis hashes",
+    "no scientific result files present",
+    "prior archived calculations unchanged"
+  ],
+  "analytic_reviews": [
+    "msg_fd026369",
+    "msg_46804445",
+    "msg_3e33d5c5",
+    "msg_abc5003c",
+    "msg_37780e6b",
+    "msg_f8c80494",
+    "msg_7974d4f9"
+  ],
+  "review_corrections": [
+    "C2 amplitude regularity uses o(eta^2)",
+    "added nonzero conformal b=1 Euler-density control -4rho psi_tr"
+  ],
+  "derived_condition": "B_xi[c1]=E_full^(1)[c1][Q_c DF_xi(c0)c1]=0 on an admissible retained linearized solution tangent to a C2 exact-solution family",
+  "nonlinear_obstruction_evaluated": false,
+  "admissible_non_gauge_seed_supplied": false,
+  "common_physical_radial_domain_established": false,
+  "full_nonlinear_goal_complete": false,
+  "sha256": {
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "verification/oblate_nonlinear_null_20261127/check_prepared_maps.py": "42dcab52527ea00fe0e2adf5c06b139747a13eec527580f7a8298d748b912569",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470",
+    "verification/oblate_constraint_rank_20261127/all_modes.py": "55ba3d4ba6c44104668362258aa96465bd485fef8f407f65283e12aa0c643ebe"
+  },
+  "final_read_only_review": "No remaining blocker; no scientific imports or executions by reviewers."
+}

@@ -1,0 +1,17 @@
+{
+  "command": "python3 -B -W error::ResourceWarning -m unittest discover -s verification/oblate_terminal_embedding_probe_20261128 -p test_run_bounded.py -v",
+  "cwd": "paper1",
+  "exit_code": 0,
+  "test_count": 4,
+  "unittest_runtime_seconds": 0.076,
+  "combined_stdout_stderr": "test_bad_checkpoint_pin_never_dispatches (test_run_bounded.DispatchTests.test_bad_checkpoint_pin_never_dispatches) ... ok\ntest_dispatches_verified_copy_and_tracks_both_input_paths (test_run_bounded.DispatchTests.test_dispatches_verified_copy_and_tracks_both_input_paths) ... ok\ntest_expired_window_never_dispatches (test_run_bounded.DispatchTests.test_expired_window_never_dispatches) ... ok\ntest_wrong_committed_source_never_dispatches (test_run_bounded.DispatchTests.test_wrong_committed_source_never_dispatches) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.076s\n\nOK\n",
+  "terminal_chunk": "c12afc",
+  "source_sha256": {
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/run_bounded.py": "5a55bb44632e9bcc22d754c1bf7243c32ba84251bae895dfc683704e4035e861",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/test_run_bounded.py": "f37f8952b765c4468e33f4842b37797fa17a3000a5aa522c5d7ee5c2be42055a"
+  },
+  "shared_supervisor_sha256": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+  "shared_supervisor_validation": "../oblate-stationary-closure-retry-preparation-2026-11-28/runner-validation.json",
+  "scientific_child_launches": 0,
+  "real_signals": 0
+}

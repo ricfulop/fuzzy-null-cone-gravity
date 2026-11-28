@@ -1,0 +1,10 @@
+{
+  "stage": "closure",
+  "max_steps": 21,
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "approval_message": "msg_4c4bcc8d",
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+  "purpose": "Same exact closure question: historical control-only pivot basis with direct QQ(r,T) field arithmetic, batched independence and all original22 terminal rows. No interval germ claim."
+}

@@ -1,0 +1,133 @@
+{
+  "run_id": "874b4e9c-d962-4595-8e76-ece483c13e07",
+  "source_commit": "c763d3a4624526b5d9b3ef995993cc1fe000554a",
+  "state": "wall stop during full state reconstruction",
+  "scientific_invocations": 1,
+  "wall_budget_seconds": 1800,
+  "supervisor_elapsed_seconds": 1800.2224154998548,
+  "child_exit": 143,
+  "framework_exit": 1,
+  "stop_reason": "wall budget reached",
+  "sampled_group_rss_bytes_max": 470630400,
+  "rss_sample_count": 6140,
+  "source_count": 15,
+  "archived_sources_match_git_before_after_materialized": true,
+  "all_scientific_python_byte_identical_to_c2a": true,
+  "upstream_inputs_verified": {
+    "completion.json": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+    "stationary-operators.json": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "stationary-reproducibility.json": "c6d199d542555d997aeb49186ca03ea514151ce364d16b0c952160ac24631a31"
+  },
+  "process_check": {
+    "utc": "2026-11-28T07:59:22.132080+00:00",
+    "process_group": 26630,
+    "members": []
+  },
+  "progress_records_matching_child_and_engine_logs": 100,
+  "completed_checks": {
+    "terminal_embedding": true,
+    "terminal_constraint_preservation": true,
+    "all_22_original_rows": true,
+    "KM": true,
+    "DM": true,
+    "difference_and_free_rows": true,
+    "reduced_dynamics_construction": true,
+    "full_reconstruction": false,
+    "discarded_response": false
+  },
+  "last_event": {
+    "event": "begin",
+    "seconds": 1363.891817,
+    "sequence": 100,
+    "stage": "reconstruct_state_product",
+    "stage_id": 51,
+    "utc": "2026-11-28T07:47:47.160992+00:00"
+  },
+  "closure_export_present": false,
+  "summary_json_present": false,
+  "failure_json_present": false,
+  "discarded_response_value": null,
+  "smooth_solution_germ_certified": false,
+  "nonlinear_consistency_established": false,
+  "checkpoints": {
+    "dae-step-00.json": {
+      "sha256": "0f59715ac72f8c0484e1a0d814e0b8ec3bf3da0c10b2c9bbb617ab31d9f54d86",
+      "byte_identical_to_c2a": true,
+      "new_constraint_count": 4,
+      "remaining_control_count": 3,
+      "total_constraint_count": 4
+    },
+    "dae-step-01.json": {
+      "sha256": "467ac1bfab145499217b08f9cda2d990bb839dff2ae3c42061f2530d097e824c",
+      "byte_identical_to_c2a": true,
+      "new_constraint_count": 2,
+      "remaining_control_count": 2,
+      "total_constraint_count": 6
+    },
+    "dae-step-02.json": {
+      "sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+      "byte_identical_to_c2a": true,
+      "new_constraint_count": 0,
+      "remaining_control_count": 0,
+      "total_constraint_count": 6
+    }
+  },
+  "terminal_snapshot": {
+    "sha256": "7036a5b6bb2f4c3680a5b5877512f0ea845d19775d95ede06bcbf6f000411b5e",
+    "bytes": 1004745,
+    "compared_to_c2a_snapshot_sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08",
+    "identity_sha256": "6fcb671c869406745dda017f31e8c27afce5427353d1ae87b7b95f22129ac292",
+    "identity_verified": true,
+    "matrix_shapes": {
+      "C": [
+        6,
+        14
+      ],
+      "K": [
+        14,
+        14
+      ],
+      "B": [
+        14,
+        0
+      ],
+      "M": [
+        14,
+        8
+      ]
+    },
+    "free_rows": [
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "json_fields_differing_from_c2a": [
+      "attempt_id",
+      "identity",
+      "identity_sha256",
+      "run_id"
+    ],
+    "matrices_labels_free_rows_equal_to_c2a": true,
+    "publication_flags": {
+      "original_constraint_product_zero": true,
+      "terminal_preservation_checked": false,
+      "original_22_retained_rows_checked": false,
+      "reduced_dynamics_reconstructed": false,
+      "discarded_response_checked": false,
+      "dae_closure_passed": false,
+      "smooth_solution_germ_certified": false,
+      "nonlinear_consistency_established": false
+    }
+  },
+  "independent_review": {
+    "message": "msg_fefbe5ce",
+    "method": "read-only raw JSON, logs, hashes and source metadata",
+    "finding": "No material issue. Stop, stage boundaries, source and input provenance, and resources reconciled."
+  },
+  "scientific_execution_during_archive": false
+}

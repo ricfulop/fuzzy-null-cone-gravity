@@ -1,0 +1,100 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "input_pin_verification",
+      "of": 1,
+      "unit": "input"
+    },
+    {
+      "phase": "identity_linkage",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "manufactured_controls",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "original_operator_conversion",
+      "of": 1,
+      "unit": "convert"
+    },
+    {
+      "phase": "terminal_state_parsing",
+      "of": 1,
+      "unit": "parse"
+    },
+    {
+      "phase": "field_conversion",
+      "of": 1,
+      "unit": "convert"
+    },
+    {
+      "phase": "kernel_identities",
+      "of": 1,
+      "unit": "algebra"
+    },
+    {
+      "phase": "preservation_identity",
+      "of": 1,
+      "unit": "algebra"
+    },
+    {
+      "phase": "physical_lift_identity",
+      "of": 1,
+      "unit": "algebra"
+    },
+    {
+      "phase": "retained_euler_identity",
+      "of": 1,
+      "unit": "algebra"
+    },
+    {
+      "phase": "discarded_response_lift",
+      "of": 1,
+      "unit": "algebra"
+    },
+    {
+      "phase": "denominator_collection",
+      "of": 1,
+      "unit": "interval"
+    },
+    {
+      "phase": "regularity_rank_and_response_search",
+      "of": 1,
+      "unit": "interval"
+    },
+    {
+      "phase": "response_outcome_reporting",
+      "of": 1,
+      "unit": "interval"
+    },
+    {
+      "phase": "final_export",
+      "of": 1,
+      "unit": "bundle"
+    },
+    {
+      "phase": "complete",
+      "of": 1,
+      "unit": "certificate"
+    }
+  ],
+  "brief": {
+    "question": "Does the pinned direct-state system yield a regular stationary solution germ, and can a nonzero discarded response be certified on it?",
+    "healthy": "Hashed inputs and manufactured controls precede exact identities, physical rank and same-radius interval checks. Only the final export provides the certificate.",
+    "worth_a_flag": "Pin mismatch, failed identity, unresolved rank or denominator, malformed certificate, resource stop, or unclean child group.",
+    "decided": "One 900-second local CPU child. A silent response is scoped to the forward family. An unresolved response is reported as unknown.",
+    "from_parent": "Uses the original stationary operators and the terminal state before preservation. The full-state ODE avoids reduced dynamics."
+  },
+  "watch": {
+    "minGapS": 120,
+    "maxGapS": 300
+  }
+}

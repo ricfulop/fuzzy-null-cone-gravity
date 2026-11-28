@@ -1,0 +1,43 @@
+{
+  "run_id": "7fbed460-e7b2-4f37-b328-1b4932d91867",
+  "source_commit": "8335010cf170654c7e53b2371b94761d997c7efa",
+  "framework_status": "cancelled",
+  "child_launcher_exit_code": 143,
+  "scientific_invocations": 1,
+  "supervised_elapsed_seconds": 363.362133000046,
+  "last_started_stage": "differentiate_constraints step0",
+  "terminal_closure_present": false,
+  "smooth_solution_germ_certified": false,
+  "source_hash_checks_passed": true,
+  "sampled_max_rss_bytes": 802406400,
+  "rss_sample_count": 1220,
+  "post_archive_process_group": {
+    "pgid": 79032,
+    "members": [],
+    "utc": "2026-11-28T05:28:43.238589+00:00"
+  },
+  "comparison": {
+    "original": {
+      "file_bytes": 21882,
+      "constraint_row_expression_characters": [
+        748,
+        971,
+        670,
+        8451
+      ],
+      "substitution_state_expression_characters": 8621
+    },
+    "full_augmented_retry": {
+      "file_bytes": 354139,
+      "constraint_row_expression_characters": [
+        48891,
+        46031,
+        42022,
+        42574
+      ],
+      "substitution_state_expression_characters": 172200
+    }
+  },
+  "cancel_reason": "Formula growth and prolonged first constraint differentiation; restore historical control-only basis with direct rational-field arithmetic",
+  "partial_checkpoint_is_not_certified_closure": true
+}

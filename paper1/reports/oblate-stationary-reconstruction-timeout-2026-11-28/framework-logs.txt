@@ -1,0 +1,7 @@
+Original log: 19045 bytes.
+Kept bytes 0..19045: /Users/ricfulop/.local/share/openresearch/run-logs/874b4e9c-d962-4595-8e76-ece483c13e07.log
+Last 500 characters of the kept tail:
+event": "begin", "seconds": 1363.891799, "sequence": 99, "stage": "terminal_reconstruct_dynamics", "stage_id": 50, "utc": "2026-11-28T07:47:47.160975+00:00"}
+PROGRESS {"event": "begin", "seconds": 1363.891817, "sequence": 100, "stage": "reconstruct_state_product", "stage_id": 51, "utc": "2026-11-28T07:47:47.160992+00:00"}
+Saved execution evidence: /Users/ricfulop/.local/share/openresearch/local-runs/874b4e9c-d962-4595-8e76-ece483c13e07/repo/paper1/run-output/874b4e9c-d962-4595-8e76-ece483c13e07
+

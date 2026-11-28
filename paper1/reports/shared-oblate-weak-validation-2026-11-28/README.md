@@ -1,0 +1,13 @@
+# Shared local weak-form validation for Paper I
+
+The shared weak-operator effort completed run `32b93879-a4f2-426f-82ac-2fa455844477` at executed source `b59be9535b38e25d59a8437efe9873094b2bc4bd`. The authoritative archive is at commit `7479d44056215ea91dfed27cd01d8560ffc7997f`, path `paper2/reports/oblate-weak-curvature-validation/full-recheck-pass/`, and durable artifact `artifacts/paper2-oblate-full-weak-validation-2026-11-28/README.md`.
+
+This reference records evidence for the **original Paper I coefficient-Galerkin action**, despite the shared implementation being maintained under Paper II. It does not identify that action with the distinct reduction-before-cutoff Gaunt construction. No Paper II file or frozen calculation was changed during this intake.
+
+All eight planned batches passed. At the recorded rational chart points, six representative spatial tensor species in each L=2 magnetic sector m=0,1,2 supplied 108 potential-pair and 36 lapse-pair checks. They compare weak densities, strong residuals and the complete local Green divergence, with separate radial-flux comparisons and nonconstant profiles. These are exact sampled identities, not an all-label or all-point theorem.
+
+Three fixed continuum gauge vectors separately passed all nine Einstein entries and scalar-curvature zero checks symbolically. The Cartesian transverse-traceless sign/normalization control and a nonzero omitted-term ablation also passed. The supervisor recorded exit 0 in 129.526 seconds, no stop reason, and an empty final process group. The largest of 439 RSS samples was 169,082,880 bytes (161.25 MiB), not a measured instantaneous peak.
+
+[Copied structured result](weak-form-checks.json), [execution record](execution.json), [owner archive status](archive-status.json), and [exact source/archive references and hashes](evidence-reference.json) preserve the handoff. The full raw log and source snapshots remain in the authoritative archive. Independent result/archive reviews `msg_05c31715` and `msg_6aa9451a` found no discrepancy. Paper I intake read the raw log and structured output, checked all manifest-listed digests, and confirmed the archived log matches the original run log byte for byte. It did not repeat scientific calculations.
+
+This closes the bounded local weak-form validation checkpoint. Angular integration, finite radial assembly, a common physical endpoint domain, finite-basis kernel preservation, a spectrum, and nonlinear classification remain open. It does not verify the stationary DAE reduction or supply an admissible non-gauge seed. The independently checked stationary strong-form operators and the full 22-row/interval-germ route retain their own proof obligations.

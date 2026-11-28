@@ -1,0 +1,52 @@
+{
+  "status": "proposed; requires separate user approval before execution",
+  "preparation_approval_message": "msg_7c4562eb",
+  "scientific_checks_executed_in_preparation": 0,
+  "working_directory": "paper1",
+  "command": "uv run --isolated --no-project --with numpy==2.3.5 --with sympy==1.14.0 python verification/oblate_nonlinear_null_20261127/check_prepared_maps.py",
+  "purpose": "Verify coefficient geometry, eight-channel projection, and full linear-Einstein maps against independent controls; not an on-shell nonlinear source calculation",
+  "resources": {
+    "backend": "local",
+    "processes": 1,
+    "GPU": 0,
+    "remote_jobs": 0,
+    "proposed_wall_budget_seconds": 300,
+    "estimated_memory_budget_GiB": 2,
+    "estimates_measured": false,
+    "script_enforces_budgets": false,
+    "supervision_required": true
+  },
+  "stop_conditions": [
+    "first assertion failure: preserve output and request user decision",
+    "wall time or memory exceeds proposed budget: stop and report",
+    "unexpected request for remote/GPU resources: do not allocate"
+  ],
+  "controls": [
+    "coordinate Jacobian vs nonlinear coefficient reconstruction",
+    "first/second Lie derivative vs pullback",
+    "rotation exactly retained",
+    "round harmonic projection and complete reconstruction",
+    "24/48-node independent scalar quadrature",
+    "pure continuum-gauge deltaG exactly zero with temporal/radial terms",
+    "nonzero off-shell conformal deltaG identity",
+    "nonzero conformal b=1 Euler-density control: -4 rho psi_tr, checking sign, volume and off-diagonal factors"
+  ],
+  "expected_outputs": [
+    "reports/oblate-nonlinear-null-preparation-2026-11-27/map-checks.json",
+    "reports/oblate-nonlinear-null-preparation-2026-11-27/map-reproducibility.json",
+    "saved stdout/stderr log"
+  ],
+  "outputs_present_now": false,
+  "does_not_establish": [
+    "an admissible non-gauge linearized seed",
+    "nonzero B on such a seed",
+    "final nonlinear constraint rank",
+    "physical degree-of-freedom count"
+  ],
+  "later_dynamical_evaluation_dependencies": [
+    "shared quadratic operator and canonical domain",
+    "admissible mixed-parity first-order solution with required jets",
+    "full preprojection continuum Euler residual"
+  ],
+  "later_dynamical_evaluation_authorized": false
+}

@@ -1,0 +1,6 @@
+PASS: exact ADM map; full spatial Hessian; spherical-coordinate vacuum constraints.
+N=3: spatial rank 44, scalar multiplier Hessian rank 8; full constraint bracket rank >= 16 at the witness.
+N=4: spatial rank 86, scalar multiplier Hessian rank 12; full constraint bracket rank >= 24 at the witness.
+PASS: 5 exact axisymmetric cases, checked against all-m Gaunt matrices and 20 inverse-Gram finite differences.
+Maximum finite-difference error: 2.817857613912622e-10
+Scope: primary-secondary surface. Tertiary stabilization and physical DOF remain unresolved.

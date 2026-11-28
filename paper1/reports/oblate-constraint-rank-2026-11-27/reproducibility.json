@@ -1,0 +1,16 @@
+{
+  "base_commit_at_execution": "71a29e402e0941e2d85f9894c323d5440e0e98cb",
+  "python": "3.12.11",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0"
+  },
+  "seconds": 4.262,
+  "GPU_jobs": 0,
+  "experiment_launches": 0,
+  "sha256": {
+    "verification/oblate_constraint_rank_20261127/all_modes.py": "55ba3d4ba6c44104668362258aa96465bd485fef8f407f65283e12aa0c643ebe",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  }
+}

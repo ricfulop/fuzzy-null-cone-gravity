@@ -1,0 +1,72 @@
+{
+  "run_id": "c2a1482f-4dc7-40f5-8f6d-b8f4700df6de",
+  "source_commit": "96916c7fe47b5542c4a5cf1c5a199ac11c1f488b",
+  "state": "wall stop during embedding derivative; preservation, original rows and KM complete; no closure",
+  "source_count": 15,
+  "source_before_after_and_git_match": true,
+  "scientific_invocations": 1,
+  "terminal_preservation_complete": true,
+  "all22_terminal_rows_checked": true,
+  "reduced_KM_complete": true,
+  "embedding_derivative_complete": false,
+  "reduced_dynamics_complete": false,
+  "full_reconstruction_checked": false,
+  "discarded_response_checked": false,
+  "closure_export_present": false,
+  "smooth_germ_certified": false,
+  "nonlinear_consistency_established": false,
+  "checkpoints": {
+    "dae-step-00.json": {
+      "sha256": "0f59715ac72f8c0484e1a0d814e0b8ec3bf3da0c10b2c9bbb617ab31d9f54d86",
+      "byte_identical_to_prior_5d9b96ad": true
+    },
+    "dae-step-01.json": {
+      "sha256": "467ac1bfab145499217b08f9cda2d990bb839dff2ae3c42061f2530d097e824c",
+      "byte_identical_to_prior_5d9b96ad": true
+    },
+    "dae-step-02.json": {
+      "sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+      "byte_identical_to_prior_5d9b96ad": true
+    }
+  },
+  "terminal_snapshot": {
+    "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08",
+    "bytes": 1004745,
+    "identity_and_digest_verified": true,
+    "matrices_and_coordinate_metadata_equal_prior_snapshot": true,
+    "matrix_shapes": {
+      "C": [
+        6,
+        14
+      ],
+      "K": [
+        14,
+        14
+      ],
+      "B": [
+        14,
+        0
+      ],
+      "M": [
+        14,
+        8
+      ]
+    },
+    "publication_status": "intermediate state before preservation; flags left unchanged"
+  },
+  "process_check": {
+    "utc": "2026-11-28T07:20:36.186459+00:00",
+    "process_group": 130,
+    "members": []
+  },
+  "independent_review": {
+    "message": "msg_e2060606",
+    "verdict": "no material issue; raw archive, sources, intermediate state, timings and resources reconciled",
+    "method": "file/JSON/log/hash/Git inspection only"
+  },
+  "watcher_flag_resolution": {
+    "flag": "f890b1175",
+    "disposition": "keep confirmed failed record"
+  },
+  "scientific_execution_during_archive": false
+}

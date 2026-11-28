@@ -1,0 +1,18 @@
+LAPSE_BLOCK 2 0 map_rank 2 Gram_rank 2 entries [([1, 'f/r^2'], [1, 'f/r^2'], '-16/525'), ([1, 'f/r^2'], [1, 'f_prime/r'], '16/525'), ([1, 'f_prime/r'], [1, 'f_prime/r'], '-16/525'), ([2, 'f_prime/r'], [2, 'f_prime/r'], '-4/245')]
+LAPSE_BLOCK 2 1 map_rank 2 Gram_rank 2 entries [([1, 'f/r^2'], [1, 'f/r^2'], '-64/1575'), ([1, 'f/r^2'], [1, 'f_prime/r'], '64/1575'), ([1, 'f_prime/r'], [1, 'f_prime/r'], '-64/1575'), ([2, 'f_prime/r'], [2, 'f_prime/r'], '256/40425')]
+LAPSE_BLOCK 2 2 map_rank 1 Gram_rank 1 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '64/1323')]
+LAPSE_BLOCK 3 0 map_rank 2 Gram_rank 2 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '-4/245'), ([3, 'f/r^2'], [3, 'f/r^2'], '-20/1617'), ([3, 'f/r^2'], [3, 'f_prime/r'], '-20/1617'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '-20/1617')]
+LAPSE_BLOCK 3 1 map_rank 2 Gram_rank 2 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '-4/49'), ([3, 'f/r^2'], [3, 'f/r^2'], '43200/2523367'), ([3, 'f/r^2'], [3, 'f_prime/r'], '43200/2523367'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '43200/2523367')]
+LAPSE_BLOCK 3 2 map_rank 2 Gram_rank 2 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '-8/49'), ([3, 'f/r^2'], [3, 'f/r^2'], '81600/220759'), ([3, 'f/r^2'], [3, 'f_prime/r'], '81600/220759'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '81600/220759')]
+LAPSE_BLOCK 3 3 map_rank 1 Gram_rank 1 entries [([3, 'f/r^2'], [3, 'f/r^2'], '332275200/280832783'), ([3, 'f/r^2'], [3, 'f_prime/r'], '332275200/280832783'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '332275200/280832783')]
+Traceback (most recent call last):
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py", line 150, in <module>
+    if __name__=='__main__':calculate()
+                            ^^^^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py", line 109, in calculate
+    kernels=gradient_kernel()
+            ^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/verification/oblate_constraint_rank_20261127/lapse_prolongation.py", line 140, in gradient_kernel
+    assert all(s.factor(z)==0 for z in W1-c1*P1-c2*A2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

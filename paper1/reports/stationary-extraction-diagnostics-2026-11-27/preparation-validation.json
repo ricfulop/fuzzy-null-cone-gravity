@@ -1,0 +1,60 @@
+{
+  "scope": "AST/source checks, stdlib manufactured filesystem tests, and mocked supervisor guards; no scientific imports/functions or real supervisor/checker launches",
+  "stdlib_test_command": "python3 -m unittest discover -s verification/oblate_stationary_seed_20261127 -p test_progress_io.py -v",
+  "working_directory": "paper1",
+  "stdlib_test_exit_code": 0,
+  "tests_passed": 6,
+  "test_elapsed_seconds": 0.016,
+  "test_cases": [
+    "existing evidence cannot be overwritten",
+    "interrupted publication creates no checkpoint",
+    "failure preserves partial evidence without completion",
+    "invalid JSON/path cannot create result",
+    "optimized-Python launch refused before child creation",
+    "descendant cleanup does not trust launcher exit"
+  ],
+  "test_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "scientific_invocations": 0,
+  "GPU_jobs": 0,
+  "remote_jobs": 0,
+  "syntax_AST_passed": true,
+  "unchanged_analytic_definitions": [
+    "AngularMoments",
+    "radial_coefficients",
+    "static_split_residual",
+    "apply_operator",
+    "first_order_family_residual",
+    "radial_gauge_profiles",
+    "oblate_parameter_profiles",
+    "odd_coordinate_leg",
+    "response_prefactor"
+  ],
+  "full_continuum_evaluator_and_action_match": "de24fa2bb5c21c2b027498581872e64cb65da445",
+  "limitations": [
+    "does not execute scientific instrumentation path",
+    "does not benchmark symbolic performance",
+    "does not certify equations, a solution germ, or a nonlinear result"
+  ],
+  "infrastructure_test_source_sha256": {
+    "test_progress_io.py": "4c87813715a684a382046f25c164e7213ad9c10fa4c9cd474e41054a78bbd25f",
+    "extraction_progress.py": "3534ec72a9cb0132fe0d07e31ce7a04adb7132f2559a447259b8f9f720c57a5d",
+    "supervise_stationary_check.py": "1a68d3feb13511db1058d5eaf03bcda4a5f965bf5767e3bc695edb1431dd6285"
+  },
+  "infrastructure_test_runs": [
+    {
+      "tests": 4,
+      "seconds": 0.017,
+      "exit_code": 0,
+      "reason": "initial file-publication coverage"
+    },
+    {
+      "tests": 6,
+      "seconds": 0.016,
+      "exit_code": 0,
+      "reason": "added mocked supervisor launch/cleanup coverage"
+    }
+  ],
+  "real_supervisor_invocations": 0,
+  "real_child_processes_launched_by_tests": 0,
+  "real_OS_signals_sent_by_tests": 0
+}

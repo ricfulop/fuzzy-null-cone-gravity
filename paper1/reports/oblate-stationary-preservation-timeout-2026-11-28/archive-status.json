@@ -1,0 +1,46 @@
+{
+  "run_id": "157032da-1468-473e-8cd7-37763ff86822",
+  "source_commit": "e48324b06a7edc16bd2bff2d7dd16125762fd96c",
+  "state": "wall-budget stop during terminal preservation; incomplete closure",
+  "scientific_invocations": 1,
+  "source_count": 11,
+  "source_before_after_and_git_match": true,
+  "completed_kernel_seconds": 114.774936,
+  "kernel_complete_at_child_seconds": 474.315756,
+  "last_begun_stage": "terminal_constraint_preservation",
+  "terminal_preservation_complete": false,
+  "all22_terminal_rows_checked": false,
+  "closure_export_present": false,
+  "smooth_germ_certified": false,
+  "response_evaluated": false,
+  "checkpoints": {
+    "dae-step-00.json": {
+      "sha256": "0f59715ac72f8c0484e1a0d814e0b8ec3bf3da0c10b2c9bbb617ab31d9f54d86",
+      "byte_identical_to_8fa": true
+    },
+    "dae-step-01.json": {
+      "sha256": "467ac1bfab145499217b08f9cda2d990bb839dff2ae3c42061f2530d097e824c",
+      "byte_identical_to_8fa": true
+    },
+    "dae-step-02.json": {
+      "sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+      "byte_identical_to_8fa": true
+    }
+  },
+  "process_check": {
+    "utc": "2026-11-28T06:28:16.724140+00:00",
+    "process_group": 43825,
+    "members": []
+  },
+  "independent_review": {
+    "message": "msg_6c38802b",
+    "verdict": "no material issues; archive, provenance, resource samples and scope reconciled",
+    "method": "file/JSON/log inspection, byte comparison and hashing; no scientific execution"
+  },
+  "scientific_code_executed_during_archive": false,
+  "watcher_flag_resolution": {
+    "flag": "f590a9e37",
+    "disposition": "keep confirmed failed record",
+    "reason": "900.093-second wall stop during terminal preservation, no closure export; clean shutdown"
+  }
+}

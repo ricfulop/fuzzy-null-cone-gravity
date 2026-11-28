@@ -1,0 +1,26 @@
+{
+  "kind": "300-second exact terminal-kernel repair diagnostic preparation",
+  "created_utc": "2026-11-28T05:58:46.637486+00:00",
+  "source_sha256": {
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/README.md": "a072f6161bb0135d15375a47d1a93d465e81ee2738b051ae9e5c3d11d71103ab",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/probe_terminal_embedding.py": "b37c01960cc4c8dbec042cac540376795d9011da9335e6a0875752ad13e82127",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/run-config.json": "52e320aa5562e343d89d16c0bde0c7b7c6c6c754de001bc08b0c3f6052097d8a",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/run_bounded.py": "5a55bb44632e9bcc22d754c1bf7243c32ba84251bae895dfc683704e4035e861",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/test_run_bounded.py": "f37f8952b765c4468e33f4842b37797fa17a3000a5aa522c5d7ee5c2be42055a",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/view-config.json": "2605ebcb9c13e985302a92215621231810187d33608b9313c59cd2d07669d7b1",
+    "paper1/verification/oblate_terminal_embedding_probe_20261128/view.xml": "da851b4cac02ee30c68d4aa032dea79a8f38ef75c9c92e7c2c25d314c8336041",
+    "paper1/verification/oblate_stationary_reduction_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738",
+    "paper1/verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a"
+  },
+  "checkpoint_sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+  "checkpoint_result_commit": "0c20842f19b80cf0c80978b61994b011aebac74b",
+  "source_reviews": [
+    "msg_774c7ad7",
+    "msg_45a15380",
+    "msg_92587dbc"
+  ],
+  "failure_archive_review": "msg_e59465f3",
+  "scientific_invocations_in_preparation": 0,
+  "scope": "Only original-C algebraic kernel and timings; no final dynamics, all22 retained rows, response, interval germ, or nonlinear count."
+}

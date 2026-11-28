@@ -1,0 +1,17 @@
+{
+  "method": "Git byte comparisons and stdlib JSON parsing only; no scientific imports or execution",
+  "scientific_reference_commit": "96916c7fe47b5542c4a5cf1c5a199ac11c1f488b",
+  "all_python_and_shell_entrypoint_unchanged": true,
+  "unchanged_file_count": 14,
+  "old_wall_seconds": 900,
+  "new_wall_seconds": 1800,
+  "memory_bytes": 2147483648,
+  "other_runtime_keys_unchanged": true,
+  "scientific_invocations": 0,
+  "independent_review": {
+    "message": "msg_e2060606",
+    "verdict": "no blocker; exact config-only difference independently checked",
+    "method": "file/Git/hash/JSON inspection only"
+  },
+  "mathematical_assessment": "msg_554d527e: same-code longer bounded run has no mathematical blocker; completion is not guaranteed"
+}

@@ -1,0 +1,38 @@
+{
+  "run_id": "6128c4ef-4b35-4ddf-9763-1b40369bd6f6",
+  "source_commit": "bdb5d4cb4a5d719b36bb0e0c9a154bedcf48b071",
+  "status": "passed_kernel_diagnostic_only",
+  "scientific_invocations": 1,
+  "source_hashes_checked_against_git": [
+    "verification/oblate_terminal_embedding_probe_20261128/probe_terminal_embedding.py",
+    "verification/oblate_terminal_embedding_probe_20261128/run_bounded.py",
+    "verification/oblate_terminal_embedding_probe_20261128/test_run_bounded.py",
+    "verification/oblate_terminal_embedding_probe_20261128/run-config.json",
+    "verification/oblate_terminal_embedding_probe_20261128/view-config.json",
+    "verification/oblate_terminal_embedding_probe_20261128/view.xml",
+    "verification/oblate_terminal_embedding_probe_20261128/run.sh",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py",
+    "verification/oblate_stationary_reduction_20261128/run.sh"
+  ],
+  "source_before_after_equal": true,
+  "input_sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+  "result_sha256": "7b46a99d6ee04ba79826aca5bcb5676d5a0b5f00e20a6e584970f9133fbdfc99",
+  "elapsed_seconds": 117.56545887491666,
+  "sampled_max_rss_bytes": 132972544,
+  "rss_sample_count": 397,
+  "final_group": {
+    "status": "empty",
+    "probe": "ESRCH"
+  },
+  "raw_log_read": true,
+  "scientific_rerun_during_archival": false,
+  "retained_dynamics_checked": false,
+  "dae_closure_certified": false,
+  "smooth_germ_certified": false,
+  "nonlinear_response_evaluated": false,
+  "independent_review": {
+    "message": "msg_b3a096e1",
+    "outcome": "no material scope or provenance issue",
+    "method": "file and JSON comparison, raw log reads, SHA-256 hashing only"
+  }
+}
