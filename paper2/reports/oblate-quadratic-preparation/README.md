@@ -9,7 +9,9 @@ Prepared under user approval `msg_7c4562eb`. Physics is pinned to the original P
 - [Boundary/domain analysis](boundary-domain.md): compatible-domain requirements, endpoint obstructions, canonical dual bases, and clearly labelled shell-diagnostic options.
 - [Machine-readable interface](interface.json): field/normalization metadata, formal blocks, unresolved choices, and the seed handoff to Paper I's nonlinear analysis.
 - [First check proposal](next-check.md): the original preparation-stage command, fixed coverage, source provenance, and local resource estimate.
-- [First kinematic check](first-kinematic-check/README.md): the separately authorized invocation failed at an exact-zero reference comparison; the log and source provenance are preserved, with no correction or retry.
+- [First kinematic check](first-kinematic-check/README.md): the initial invocation failed at an exact-zero reference comparison; its original log and source provenance are preserved unchanged.
+- [Exact-zero correction](zero-comparison-correction.md): the later approved predicate repair and zero/nonzero controls, without changing the physics implementation.
+- [Corrected kinematic check](kinematic-recheck/README.md): the single approved rerun passed all prescribed sectors and controls; curvature/Green and radial-domain verification remain open.
 
 Implementation preparation is in `paper2/verification/oblate_quadratic_preparation/`:
 
@@ -21,7 +23,7 @@ Implementation preparation is in `paper2/verification/oblate_quadratic_preparati
 
 ## Result status
 
-The derivations define how to assemble the missing stationary operator. The preparation at `ee7d0a3` was unrun. The first separately authorized local check subsequently passed the `m=0` geometry/reference sector and failed at the `m=1` reference equality predicate; later controls were not reached. See the linked execution report for the preserved expression and the bounded diagnosis. No finite radial `K,E,D` matrices, physical spectrum, on-shell seed, nonlinear compatibility value, or degree-of-freedom count have been produced. Syntax/metadata inspection is not a scientific verification.
+The derivations define how to assemble the missing stationary operator. The preparation at `ee7d0a3` was unrun. The first separately authorized local check passed `m=0` and failed at the `m=1` reference equality predicate; its original log remains intact. The later predicate correction at `2986a52` passed one approved rerun of all `m=0,1,2` sectors, selected density/integration checks, and the normalization/realification controls. This is a bounded kinematic verification. No finite radial `K,E,D` matrices, physical spectrum, on-shell seed, nonlinear compatibility value, or degree-of-freedom count have been produced.
 
 Two preparation reviews reconciled the potential normalization, realification convention, and adjoint/boundary distinction. The review also exposed and corrected a missing one-half in the draft potential cross terms and errors in a draft finite momentum-conversion description before scientific execution. Review is not a substitute for the proposed independent calculations.
 
@@ -33,4 +35,4 @@ The two operator preparation tasks can proceed analytically in parallel, but fin
 
 ## Decision after preparation
 
-The first invocation is preserved in `first-kinematic-check/`. The proposed next action is a separately approved exact-zero diagnostic/correction and one rerun with the original kinematic coverage. A pass would justify proposing the next independent curvature/Green-identity validation. It would not authorize a spectrum run. Physical boundary choices, finite radial assembly, numerical rank policy, and a genuinely on-shell seed remain subsequent decisions. Local exact work is sufficient; no SSH or B200 allocation is requested.
+The first failed invocation and the successful approved rerun are preserved in separate directories. The proposed next scientific action is independent curvature/Green-identity validation of the potential and lapse forms, subject to a separate user decision. Physical boundary choices, finite radial assembly, numerical rank policy, and a genuinely on-shell seed remain subsequent decisions. No spectrum run, SSH work, or B200 allocation is authorized by the completed kinematic check.
