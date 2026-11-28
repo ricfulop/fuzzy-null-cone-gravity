@@ -1,8 +1,9 @@
-<signal name="principal_rank" label="Principal radial rank" digits="0" />
-<signal name="gauge_verified" label="Exact radial gauge" labels='{"1":"verified","0":"not verified"}' />
-<signal name="manufactured_controls_passed" label="Manufactured DAE controls" labels='{"1":"passed","0":"failed"}' />
-<signal name="principal_probe_passed" label="Principal probe" labels='{"1":"passed","0":"failed"}' />
-<view headline="principal_rank">
-  <stats of="principal_rank gauge_verified manufactured_controls_passed principal_probe_passed" />
-  <text>Exact fixed-deformation principal probe. No solution germ or nonlinear conclusion.</text>
+<signal name="formal_free_state_count" label="Formal free states" digits="0" />
+<signal name="formal_constraint_count" label="Formal state constraints" digits="0" />
+<signal name="formal_free_control_count" label="Free radial controls" digits="0" />
+<signal name="formal_response_nonzero" label="Formal response" labels='{"1":"nonzero","0":"zero"}' />
+<signal name="dae_closure_passed" label="Exact closure" labels='{"1":"passed","0":"not passed"}' />
+<view headline="formal_response_nonzero formal_free_state_count">
+  <stats of="formal_response_nonzero formal_free_state_count formal_constraint_count formal_free_control_count dae_closure_passed" />
+  <text>Formal differential identities at fixed deformation; no interval-germ or nonlinear conclusion.</text>
 </view>

@@ -1,10 +1,10 @@
 {
-  "stage": "principal",
+  "stage": "closure",
   "max_steps": 21,
   "wall_seconds": 900,
   "memory_bytes": 2147483648,
   "approval_message": "msg_4c4bcc8d",
   "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
   "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
-  "purpose": "Exact principal block and radial gauge probe; no DAE closure or seed claim."
+  "purpose": "Close the exact stationary radial DAE after the passed principal rank4 probe; retain original22 rows and remaining controls, no interval germ claim."
 }

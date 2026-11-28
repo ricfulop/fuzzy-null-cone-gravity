@@ -89,3 +89,12 @@ its rational-field and input-pinning requests were incorporated. Runner review
 `msg_879491a2` requested commit binding, a second cutoff guard, and post-cleanup
 log draining; those changes are incorporated. No scientific function was
 executed during this preparation.
+
+## Closure child
+
+The child configuration now selects `closure`, building on the passed rank-4
+principal probe (run e04ffc4a-d9c3-4c8a-ad61-3bf8da079ff3). The unchanged
+formal elimination path differentiates constraints and checks the original
+22 rows plus all remaining controls. Final JSON and telemetry report only
+formal dimensions and response; an actual regular interval is still required.
+The fixed command and resource envelope are unchanged.

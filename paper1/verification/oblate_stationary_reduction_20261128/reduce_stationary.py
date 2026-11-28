@@ -673,6 +673,10 @@ def run(input_dir, output_dir, stage, max_steps):
 
         with recorder.stage("dae_closure"):
             closure = reduce_dae(gauge_matrices, recorder, max_steps)
+        progress.report(phase="export", step=0, of=1, unit="bundle")
+        require(source_hashes == {p.name: progress.sha256_file(p) for p in source_paths},
+                "reducer sources changed during the invocation")
+        with recorder.stage("closure_export"):
             recorder.write_json(
                 "dae-closure.json",
                 {
@@ -696,6 +700,22 @@ def run(input_dir, output_dir, stage, max_steps):
                     "nonlinear_consistency_established": False,
                 },
             )
+            result = {
+                "formal_constraint_count": closure["state"].constraints.rows,
+                "formal_free_state_count": closure["embedding"].cols,
+                "formal_free_control_count": closure["state"].B.cols,
+                "formal_response_nonzero": int(any(not exact_zero(v) for v in
+                    list(closure["response_state"]) + list(closure["response_control"]))),
+                "dae_closure_passed": 1,
+            }
+            recorder.write_json("summary.json", {
+                "state": "formal DAE closure; actual regular interval not certified",
+                **result,
+                "smooth_solution_germ_certified": False,
+                "nonlinear_consistency_established": False,
+            })
+        progress.report(phase="export", step=1, of=1, unit="bundle", m=result)
+        print("PASS: formal DAE closure and all 22 original rows; no actual solution germ yet.", flush=True)
 
 
 def main():

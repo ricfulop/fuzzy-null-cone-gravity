@@ -26,16 +26,22 @@
       "unit": "check"
     },
     {
+      "phase": "dae_closure",
+      "of": 1,
+      "unit": "check"
+    },
+    {
       "phase": "export",
       "of": 1,
       "unit": "bundle"
     }
   ],
   "brief": {
-    "question": "What is the exact principal rank of the N3 stationary radial equations at epsilon=1/100 after verifying the radial gauge identity?",
+    "question": "Does exact differential constraint preservation close, and is the discarded response formally nonzero on the resulting stationary subfamily?",
     "healthy": "Exact manufactured controls, reversible rational-field conversion, all23-row gauge identity, then an exact8x7 principal rank. One local child,900 seconds,2GiB sampled group RSS.",
     "worth_a_flag": "A traceback, changed source/input digest, false control, or timeout. Principal rank is not a Dirac rank or existence certificate.",
-    "decided": "Input is the independently reviewed completed export. No curvature recomputation, physical boundary domain, solution germ, or nonlinear obstruction is claimed."
+    "decided": "Same pinned operator export, coefficient field and controls as parent. The all22-row identities certify formal algebra only until final coefficient denominators are regular on an actual interval.",
+    "from_parent": "The exact principal block has rank4 and all23-row radial gauge identity passed in5.37s supervised; the closure stage has not been timed."
   },
   "watch": {
     "minGapS": 120,
