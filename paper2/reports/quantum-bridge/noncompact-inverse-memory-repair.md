@@ -34,13 +34,15 @@ not establish complete first-response acceptance.
 ## Memory-only repeat
 
 The user requested a larger memory cap; the local machine reports 128 GiB of
-physical memory. The same provisional experiment will repeat with an 8-GiB
+physical memory. The same provisional experiment was repeated with an 8-GiB
 (8,589,934,592-byte) sampled ceiling. Scientific source, fields, grids,
 tolerances, all work counters and the 1800-second wall limit remain unchanged.
 No lower-resolution shortcut or omitted angular test is introduced.
 
 The repeated calculation remains the [declared first-response protocol](noncompact-first-response-protocol.md).
-It must complete the final angular slice and every required comparison before
-acceptance. Provider moment enclosures do not certify the combined finite-grid
+The [completed repeat](noncompact-first-response-results.md) passed the final
+angular slice and every required comparison, with 2,178,908,160 bytes peak RSS.
+Its scientific source and all shared completed measurements reproduce the
+initial attempt. Provider moment enclosures do not certify the combined finite-grid
 field error. Neither this attempt nor its memory repair evaluates W2, u3, u4,
 the independent mixed H6 functional, or the four-point loop.

@@ -1,10 +1,12 @@
 # Noncompact inverse and actual first-response protocol
 
-**Acceptance pending.** This protocol follows the passing
+**Specified first-response gates passed.** The
+[measured result](noncompact-first-response-results.md) completes this protocol,
+which follows the passing
 [independent inverse-primitive result](independent-inverse-results.md).
 The [initial attempt](noncompact-inverse-memory-repair.md) stopped at its
 declared memory ceiling during the final angular slice. Its completed
-subchecks are preserved; the repeat changes only the memory ceiling.
+subchecks are preserved; the successful repeat changed only the memory ceiling.
 Neither this protocol nor a passing first-response check
 establishes the independent mixed sixth-order functional or four-point loop.
 
@@ -94,8 +96,9 @@ separate, finite, and recorded; these counters are not hardware FLOPs.
 The local invocation has an unchanged 1800-second wall limit. The initial
 2-GiB sampled memory ceiling is raised to 8 GiB for the repeat, following a
 recorded 2.027-GiB guard interruption. No grid, tolerance, work counter or
-scientific expression changes. Full-run timing remains unmeasured; the
-interrupted attempt is not a runtime promise for the completed workload.
+scientific expression changes. The successful repeat measured 343.114 seconds
+and 2,178,908,160 bytes peak RSS; this is an observation for the specified
+workload, not a timing promise for later calculations.
 
 ## Evidence and remaining scope
 
