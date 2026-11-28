@@ -1,0 +1,13 @@
+# Direct-state germ check failed while serializing the selected determinant interval
+
+Run `9afcd73b-3499-4f08-8185-0f162c716cfb` ended with child exit 1 after 261.250886 supervised seconds. At child event 126 (259.747619 seconds), the interval search selected a responding candidate at $r_0=1$, using 25 arctangent terms and zero-based free-state column 1. Event 127 reports a Python integer-to-decimal conversion error. In `serialize_minor`, converting the determinant interval endpoints to strings exceeded the 4,300-digit limit. The traceback ends before the checker exported its certificate. [Child log and traceback](verification.log) · [Engine log](engine.log)
+
+## Evidence before the exception
+
+At $\epsilon=1/100$, the child reported 19 manufactured cases and completed the checks for $CM=0$, $JM=I_8$, $(DC+CK)M=0$, the seven-profile lift and all 22 retained Euler rows. It reported a formally nonzero discarded response over $\mathbb Q(r,T)$ and collected 57 distinct denominator polynomials. At 24 terms the response remained unresolved. At 25 terms the search logged the candidate selection. The archived output contains no determinant interval, same-radius response certificate or physical germ certificate. The supervisor recorded certificate acceptance as zero and the physical response as `null`. [Stage timings and child metrics](timing-summary.json) · [Final supervisor metrics](metrics.json)
+
+## Resources and provenance
+
+The supervisor recorded one scientific invocation, a 900-second wall budget and a 2 GiB sampled process-group RSS threshold. The largest of 894 samples was 240,435,200 bytes. The stop reason is null. The process-group probe returned ESRCH, and the cleanup and relay error lists are empty. The terminal marker binds the failed execution record and fallback metrics to their exact SHA-256 hashes. [Execution](execution.json) · [Resource samples](resource-samples.json) · [Terminal evidence marker](terminal-evidence.json)
+
+All eight frozen sources match commit `3ff249cbb95f604cc3dbef60edb4e0624dcb10df`, the materialized sources and the supervisor’s preflight and postflight hashes. The input snapshots match their configured pins, Git objects, materialized originals and child-reported digests. The child recorded Python 3.12.11 and SymPy 1.14.0. All 127 progress records and the complete traceback agree between the child and engine logs. The framework kept flag `f2f42071d` for the oversized integer conversion. Archival work read files, Git objects and process metadata. [Frozen configuration](sources/verification/oblate_stationary_state_germ_20261128/run-config.json) · [Framework status](framework-status.json) · [Archive status](archive-status.json) · [Payload hashes](archive-manifest.json)

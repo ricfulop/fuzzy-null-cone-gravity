@@ -121,3 +121,5 @@ GPU runs incur compute charges and are separate from figure generation. Consult 
 ## License
 
 MIT License — see [LICENSE](../LICENSE).
+
+The [cached direct-state attempt](reports/oblate-stationary-state-germ-serialization-failure-2026-11-28/README.md) passed 19 controls and all exact identities, then selected a responding interval candidate at radius 1 with 25 arctangent terms. It failed while converting a determinant interval endpoint beyond Python's 4,300-digit limit and exported no physical certificate. The narrow serialization repair preserves the exact equations, interval arithmetic, search order and resource limits.

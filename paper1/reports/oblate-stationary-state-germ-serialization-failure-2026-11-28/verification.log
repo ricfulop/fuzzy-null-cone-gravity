@@ -1,0 +1,203 @@
+PROGRESS {"config_path": "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/run-config.json", "event": "invocation_begin", "executable": "/Users/ricfulop/Library/Caches/uv/builds-v0/.tmpAYMln8/bin/python", "max_atan_terms": 256, "operators_path": "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/inputs/stationary-operators.json", "python": "3.12.11 (main, Oct  7 2025, 15:53:48) [Clang 20.1.4 ]", "seconds": 3.2e-05, "sequence": 1, "state_path": "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/inputs/terminal-state.json", "sympy": "1.14.0"}
+::orx:: {"of": 1, "phase": "input_pin_verification", "step": 0, "unit": "input"}
+PROGRESS {"event": "begin", "seconds": 9.2e-05, "sequence": 2, "stage": "input_pin_verification"}
+PROGRESS {"config_bytes": 1717, "config_sha256": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14", "event": "metric", "operator_bytes": 128431, "seconds": 0.004356, "sequence": 3, "stationary_operators_sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60", "terminal_state_bytes": 1004745, "terminal_state_sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"}
+::orx:: {"m": {"config_bytes": 1717, "operator_bytes": 128431, "terminal_state_bytes": 1004745}}
+PROGRESS {"duration_seconds": 0.004304, "event": "end", "seconds": 0.004396, "sequence": 4, "stage": "input_pin_verification"}
+::orx:: {"of": 1, "phase": "input_pin_verification", "step": 1, "unit": "input"}
+::orx:: {"of": 1, "phase": "identity_linkage", "step": 0, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 0.004417, "sequence": 5, "stage": "identity_linkage"}
+PROGRESS {"event": "metric", "identity_link_verified": true, "seconds": 0.00492, "sequence": 6}
+::orx:: {"m": {"identity_link_verified": 1}}
+PROGRESS {"duration_seconds": 0.000523, "event": "end", "seconds": 0.004941, "sequence": 7, "stage": "identity_linkage"}
+::orx:: {"of": 1, "phase": "identity_linkage", "step": 1, "unit": "check"}
+::orx:: {"of": 1, "phase": "manufactured_controls", "step": 0, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 0.004958, "sequence": 8, "stage": "manufactured_controls"}
+PROGRESS {"event": "metric", "manufactured_case_count": 19, "seconds": 0.277447, "sequence": 9}
+::orx:: {"m": {"manufactured_case_count": 19}}
+PROGRESS {"duration_seconds": 0.272537, "event": "end", "seconds": 0.277496, "sequence": 10, "stage": "manufactured_controls"}
+::orx:: {"of": 1, "phase": "manufactured_controls", "step": 1, "unit": "check"}
+::orx:: {"of": 1, "phase": "original_operator_conversion", "step": 0, "unit": "convert"}
+PROGRESS {"column_count": 8, "event": "begin", "operator_orders": 3, "row_count": 23, "seconds": 0.277522, "sequence": 11, "stage": "original_operator_conversion"}
+PROGRESS {"event": "metric", "operator_order_count": 3, "original_column_count": 8, "retained_row_count": 22, "seconds": 3.303423, "sequence": 12}
+::orx:: {"m": {"operator_order_count": 3, "original_column_count": 8, "retained_row_count": 22}}
+PROGRESS {"column_count": 8, "duration_seconds": 3.025969, "event": "end", "operator_orders": 3, "row_count": 23, "seconds": 3.303494, "sequence": 13, "stage": "original_operator_conversion"}
+::orx:: {"of": 1, "phase": "original_operator_conversion", "step": 1, "unit": "convert"}
+::orx:: {"of": 1, "phase": "terminal_state_parsing", "step": 0, "unit": "parse"}
+PROGRESS {"event": "begin", "seconds": 3.303528, "sequence": 14, "stage": "terminal_state_parsing"}
+PROGRESS {"constraint_rows": 6, "event": "metric", "free_state_count": 8, "remaining_control_count": 0, "seconds": 39.015789, "sequence": 15, "state_count": 14}
+::orx:: {"m": {"constraint_rows": 6, "free_state_count": 8, "remaining_control_count": 0, "state_count": 14}}
+PROGRESS {"duration_seconds": 35.712333, "event": "end", "seconds": 39.015864, "sequence": 16, "stage": "terminal_state_parsing"}
+::orx:: {"of": 1, "phase": "terminal_state_parsing", "step": 1, "unit": "parse"}
+::orx:: {"of": 1, "phase": "field_conversion", "step": 0, "unit": "convert"}
+PROGRESS {"event": "begin", "seconds": 39.0159, "sequence": 17, "stage": "field_conversion"}
+PROGRESS {"event": "metric", "field_free_state_count": 8, "field_operator_count": 3, "field_state_count": 14, "seconds": 46.156191, "sequence": 18}
+::orx:: {"m": {"field_free_state_count": 8, "field_operator_count": 3, "field_state_count": 14}}
+PROGRESS {"duration_seconds": 7.140356, "event": "end", "seconds": 46.156259, "sequence": 19, "stage": "field_conversion"}
+::orx:: {"of": 1, "phase": "field_conversion", "step": 1, "unit": "convert"}
+::orx:: {"of": 1, "phase": "kernel_identities", "step": 0, "unit": "algebra"}
+PROGRESS {"event": "begin", "seconds": 46.156296, "sequence": 20, "stage": "kernel_identities"}
+PROGRESS {"cm_zero": true, "event": "metric", "free_state_count": 8, "jm_identity": true, "seconds": 135.166203, "sequence": 21}
+::orx:: {"m": {"cm_zero": 1, "free_state_count": 8, "jm_identity": 1}}
+PROGRESS {"duration_seconds": 89.009958, "event": "end", "seconds": 135.166255, "sequence": 22, "stage": "kernel_identities"}
+::orx:: {"of": 1, "phase": "kernel_identities", "step": 1, "unit": "algebra"}
+::orx:: {"of": 1, "phase": "preservation_identity", "step": 0, "unit": "algebra"}
+PROGRESS {"event": "begin", "seconds": 135.166284, "sequence": 23, "stage": "preservation_identity"}
+PROGRESS {"event": "metric", "preservation_rows": 6, "seconds": 204.242415, "sequence": 24, "sm_zero": true}
+::orx:: {"m": {"preservation_rows": 6, "sm_zero": 1}}
+PROGRESS {"duration_seconds": 69.076189, "event": "end", "seconds": 204.242474, "sequence": 25, "stage": "preservation_identity"}
+::orx:: {"of": 1, "phase": "preservation_identity", "step": 1, "unit": "algebra"}
+::orx:: {"of": 1, "phase": "physical_lift_identity", "step": 0, "unit": "algebra"}
+PROGRESS {"event": "begin", "seconds": 204.242502, "sequence": 26, "stage": "physical_lift_identity"}
+PROGRESS {"event": "metric", "profile_count": 7, "profile_lift_zero": true, "seconds": 204.242593, "sequence": 27}
+::orx:: {"m": {"profile_count": 7, "profile_lift_zero": 1}}
+PROGRESS {"duration_seconds": 0.000103, "event": "end", "seconds": 204.242605, "sequence": 28, "stage": "physical_lift_identity"}
+::orx:: {"of": 1, "phase": "physical_lift_identity", "step": 1, "unit": "algebra"}
+::orx:: {"of": 1, "phase": "retained_euler_identity", "step": 0, "unit": "algebra"}
+PROGRESS {"event": "begin", "seconds": 204.24262, "sequence": 29, "stage": "retained_euler_identity"}
+PROGRESS {"all_22_retained_rows_zero": true, "event": "metric", "retained_row_count": 22, "seconds": 247.628142, "sequence": 30}
+::orx:: {"m": {"all_22_retained_rows_zero": 1, "retained_row_count": 22}}
+PROGRESS {"duration_seconds": 43.385605, "event": "end", "seconds": 247.628228, "sequence": 31, "stage": "retained_euler_identity"}
+::orx:: {"of": 1, "phase": "retained_euler_identity", "step": 1, "unit": "algebra"}
+::orx:: {"of": 1, "phase": "discarded_response_lift", "step": 0, "unit": "algebra"}
+PROGRESS {"event": "begin", "seconds": 247.628259, "sequence": 32, "stage": "discarded_response_lift"}
+PROGRESS {"event": "metric", "formal_discarded_response_nonzero": true, "response_columns": 8, "seconds": 256.221648, "sequence": 33}
+::orx:: {"m": {"formal_discarded_response_nonzero": 1, "response_columns": 8}}
+PROGRESS {"duration_seconds": 8.593438, "event": "end", "seconds": 256.221698, "sequence": 34, "stage": "discarded_response_lift"}
+::orx:: {"of": 1, "phase": "discarded_response_lift", "step": 1, "unit": "algebra"}
+::orx:: {"of": 1, "phase": "denominator_collection", "step": 0, "unit": "interval"}
+PROGRESS {"event": "begin", "seconds": 256.221723, "sequence": 35, "stage": "denominator_collection"}
+PROGRESS {"denominator_count": 57, "event": "metric", "seconds": 257.989012, "sequence": 36}
+::orx:: {"m": {"denominator_count": 57}}
+PROGRESS {"duration_seconds": 1.767341, "event": "end", "seconds": 257.989065, "sequence": 37, "stage": "denominator_collection"}
+::orx:: {"of": 1, "phase": "denominator_collection", "step": 1, "unit": "interval"}
+::orx:: {"of": 1, "phase": "regularity_rank_and_response_search", "step": 0, "unit": "interval"}
+PROGRESS {"denominator_count": 57, "event": "begin", "max_atan_terms": 256, "seconds": 257.989089, "sequence": 38, "stage": "regularity_rank_and_response_search"}
+PROGRESS {"event": "interval_detail", "operation": "prepare_minor_begin", "seconds": 257.989099, "sequence": 39}
+PROGRESS {"event": "interval_detail", "operation": "prepare_minor_end", "seconds": 258.410793, "sequence": 40}
+PROGRESS {"column": 1, "event": "interval_detail", "operation": "response_polynomial_begin", "seconds": 258.410831, "sequence": 41}
+PROGRESS {"column": 1, "event": "interval_detail", "operation": "response_polynomial_end", "seconds": 258.584441, "sequence": 42}
+PROGRESS {"column": 2, "event": "interval_detail", "operation": "response_polynomial_begin", "seconds": 258.584473, "sequence": 43}
+PROGRESS {"column": 2, "event": "interval_detail", "operation": "response_polynomial_end", "seconds": 258.741628, "sequence": 44}
+PROGRESS {"column": 3, "event": "interval_detail", "operation": "response_polynomial_begin", "seconds": 258.741665, "sequence": 45}
+PROGRESS {"column": 3, "event": "interval_detail", "operation": "response_polynomial_end", "seconds": 258.900189, "sequence": 46}
+PROGRESS {"column": 4, "event": "interval_detail", "operation": "response_polynomial_begin", "seconds": 258.900222, "sequence": 47}
+PROGRESS {"column": 4, "event": "interval_detail", "operation": "response_polynomial_end", "seconds": 259.099719, "sequence": 48}
+PROGRESS {"column": 5, "event": "interval_detail", "operation": "response_polynomial_begin", "seconds": 259.099753, "sequence": 49}
+PROGRESS {"column": 5, "event": "interval_detail", "operation": "response_polynomial_end", "seconds": 259.272404, "sequence": 50}
+PROGRESS {"column": 6, "event": "interval_detail", "operation": "response_polynomial_begin", "seconds": 259.272441, "sequence": 51}
+PROGRESS {"column": 6, "event": "interval_detail", "operation": "response_polynomial_end", "seconds": 259.437116, "sequence": 52}
+PROGRESS {"column": 7, "event": "interval_detail", "operation": "response_polynomial_begin", "seconds": 259.437149, "sequence": 53}
+PROGRESS {"column": 7, "event": "interval_detail", "operation": "response_polynomial_end", "seconds": 259.632773, "sequence": 54}
+PROGRESS {"event": "interval_detail", "operation": "radius_specialization_begin", "r0": "1", "seconds": 259.632844, "sequence": 55}
+PROGRESS {"event": "interval_detail", "operation": "radius_specialization_end", "r0": "1", "seconds": 259.643609, "sequence": 56}
+PROGRESS {"denominator_bits": 12, "endpoint_max_bits": 12, "event": "interval_detail", "numerator_bits": 9, "operation": "refinement_begin", "r0": "1", "seconds": 259.643795, "sequence": 57, "terms": 1}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "atan bracket did not prove atan(x) < x", "seconds": 259.643871, "sequence": 58, "terms": 1}
+PROGRESS {"denominator_bits": 21, "endpoint_max_bits": 21, "event": "interval_detail", "numerator_bits": 18, "operation": "refinement_begin", "r0": "1", "seconds": 259.643906, "sequence": 59, "terms": 2}
+PROGRESS {"event": "interval_detail", "first_index": 0, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.643957, "sequence": 60, "terms": 2}
+PROGRESS {"denominator_bits": 59, "endpoint_max_bits": 59, "event": "interval_detail", "index": 5, "numerator_bits": 37, "operation": "denominator_unresolved", "r0": "1", "seconds": 259.644076, "sequence": 61, "terms": 2}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 5 not separated", "seconds": 259.644093, "sequence": 62, "terms": 2}
+PROGRESS {"denominator_bits": 28, "endpoint_max_bits": 28, "event": "interval_detail", "numerator_bits": 25, "operation": "refinement_begin", "r0": "1", "seconds": 259.644117, "sequence": 63, "terms": 3}
+PROGRESS {"event": "interval_detail", "first_index": 0, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.644167, "sequence": 64, "terms": 3}
+PROGRESS {"denominator_bits": 75, "endpoint_max_bits": 75, "event": "interval_detail", "index": 5, "numerator_bits": 46, "operation": "denominator_unresolved", "r0": "1", "seconds": 259.644276, "sequence": 65, "terms": 3}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 5 not separated", "seconds": 259.644289, "sequence": 66, "terms": 3}
+PROGRESS {"denominator_bits": 36, "endpoint_max_bits": 36, "event": "interval_detail", "numerator_bits": 33, "operation": "refinement_begin", "r0": "1", "seconds": 259.644311, "sequence": 67, "terms": 4}
+PROGRESS {"event": "interval_detail", "first_index": 0, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.644362, "sequence": 68, "terms": 4}
+PROGRESS {"denominator_bits": 87, "endpoint_max_bits": 87, "event": "interval_detail", "index": 5, "numerator_bits": 51, "operation": "denominator_unresolved", "r0": "1", "seconds": 259.644473, "sequence": 69, "terms": 4}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 5 not separated", "seconds": 259.644485, "sequence": 70, "terms": 4}
+PROGRESS {"denominator_bits": 46, "endpoint_max_bits": 46, "event": "interval_detail", "numerator_bits": 43, "operation": "refinement_begin", "r0": "1", "seconds": 259.644506, "sequence": 71, "terms": 5}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.645188, "sequence": 72, "terms": 5}
+PROGRESS {"denominator_bits": 57, "endpoint_max_bits": 57, "event": "interval_detail", "numerator_bits": 53, "operation": "refinement_begin", "r0": "1", "seconds": 259.645233, "sequence": 73, "terms": 6}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.645886, "sequence": 74, "terms": 6}
+PROGRESS {"denominator_bits": 66, "endpoint_max_bits": 66, "event": "interval_detail", "numerator_bits": 62, "operation": "refinement_begin", "r0": "1", "seconds": 259.645917, "sequence": 75, "terms": 7}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.646549, "sequence": 76, "terms": 7}
+PROGRESS {"denominator_bits": 74, "endpoint_max_bits": 74, "event": "interval_detail", "numerator_bits": 71, "operation": "refinement_begin", "r0": "1", "seconds": 259.646576, "sequence": 77, "terms": 8}
+PROGRESS {"event": "interval_detail", "first_index": 0, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.64663, "sequence": 78, "terms": 8}
+PROGRESS {"event": "interval_detail", "group_endpoint_max_bits": 169, "last_index": 7, "operation": "denominator_group_end", "r0": "1", "seconds": 259.646822, "sequence": 79, "terms": 8}
+PROGRESS {"event": "interval_detail", "first_index": 8, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.646831, "sequence": 80, "terms": 8}
+PROGRESS {"event": "interval_detail", "group_endpoint_max_bits": 162, "last_index": 15, "operation": "denominator_group_end", "r0": "1", "seconds": 259.647076, "sequence": 81, "terms": 8}
+PROGRESS {"event": "interval_detail", "first_index": 16, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.647086, "sequence": 82, "terms": 8}
+PROGRESS {"denominator_bits": 509, "endpoint_max_bits": 509, "event": "interval_detail", "index": 16, "numerator_bits": 436, "operation": "denominator_unresolved", "r0": "1", "seconds": 259.647298, "sequence": 83, "terms": 8}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.647316, "sequence": 84, "terms": 8}
+PROGRESS {"denominator_bits": 85, "endpoint_max_bits": 85, "event": "interval_detail", "numerator_bits": 82, "operation": "refinement_begin", "r0": "1", "seconds": 259.64734, "sequence": 85, "terms": 9}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.648036, "sequence": 86, "terms": 9}
+PROGRESS {"denominator_bits": 92, "endpoint_max_bits": 92, "event": "interval_detail", "numerator_bits": 88, "operation": "refinement_begin", "r0": "1", "seconds": 259.648107, "sequence": 87, "terms": 10}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.648752, "sequence": 88, "terms": 10}
+PROGRESS {"denominator_bits": 103, "endpoint_max_bits": 103, "event": "interval_detail", "numerator_bits": 100, "operation": "refinement_begin", "r0": "1", "seconds": 259.648781, "sequence": 89, "terms": 11}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.649437, "sequence": 90, "terms": 11}
+PROGRESS {"denominator_bits": 114, "endpoint_max_bits": 114, "event": "interval_detail", "numerator_bits": 111, "operation": "refinement_begin", "r0": "1", "seconds": 259.649465, "sequence": 91, "terms": 12}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.650131, "sequence": 92, "terms": 12}
+PROGRESS {"denominator_bits": 118, "endpoint_max_bits": 118, "event": "interval_detail", "numerator_bits": 114, "operation": "refinement_begin", "r0": "1", "seconds": 259.650157, "sequence": 93, "terms": 13}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.6508, "sequence": 94, "terms": 13}
+PROGRESS {"denominator_bits": 129, "endpoint_max_bits": 129, "event": "interval_detail", "numerator_bits": 126, "operation": "refinement_begin", "r0": "1", "seconds": 259.650826, "sequence": 95, "terms": 14}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.651926, "sequence": 96, "terms": 14}
+PROGRESS {"denominator_bits": 141, "endpoint_max_bits": 141, "event": "interval_detail", "numerator_bits": 138, "operation": "refinement_begin", "r0": "1", "seconds": 259.651953, "sequence": 97, "terms": 15}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.652645, "sequence": 98, "terms": 15}
+PROGRESS {"denominator_bits": 148, "endpoint_max_bits": 148, "event": "interval_detail", "numerator_bits": 144, "operation": "refinement_begin", "r0": "1", "seconds": 259.652671, "sequence": 99, "terms": 16}
+PROGRESS {"event": "interval_detail", "first_index": 0, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.652723, "sequence": 100, "terms": 16}
+PROGRESS {"event": "interval_detail", "group_endpoint_max_bits": 320, "last_index": 7, "operation": "denominator_group_end", "r0": "1", "seconds": 259.652924, "sequence": 101, "terms": 16}
+PROGRESS {"event": "interval_detail", "first_index": 8, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.652934, "sequence": 102, "terms": 16}
+PROGRESS {"event": "interval_detail", "group_endpoint_max_bits": 313, "last_index": 15, "operation": "denominator_group_end", "r0": "1", "seconds": 259.653189, "sequence": 103, "terms": 16}
+PROGRESS {"event": "interval_detail", "first_index": 16, "operation": "denominator_group_begin", "r0": "1", "seconds": 259.653199, "sequence": 104, "terms": 16}
+PROGRESS {"denominator_bits": 957, "endpoint_max_bits": 957, "event": "interval_detail", "index": 16, "numerator_bits": 830, "operation": "denominator_unresolved", "r0": "1", "seconds": 259.653452, "sequence": 105, "terms": 16}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.653466, "sequence": 106, "terms": 16}
+PROGRESS {"denominator_bits": 156, "endpoint_max_bits": 156, "event": "interval_detail", "numerator_bits": 153, "operation": "refinement_begin", "r0": "1", "seconds": 259.65349, "sequence": 107, "terms": 17}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.654203, "sequence": 108, "terms": 17}
+PROGRESS {"denominator_bits": 166, "endpoint_max_bits": 166, "event": "interval_detail", "numerator_bits": 163, "operation": "refinement_begin", "r0": "1", "seconds": 259.654229, "sequence": 109, "terms": 18}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.654941, "sequence": 110, "terms": 18}
+PROGRESS {"denominator_bits": 169, "endpoint_max_bits": 169, "event": "interval_detail", "numerator_bits": 166, "operation": "refinement_begin", "r0": "1", "seconds": 259.654966, "sequence": 111, "terms": 19}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 16 not separated", "seconds": 259.655695, "sequence": 112, "terms": 19}
+PROGRESS {"denominator_bits": 181, "endpoint_max_bits": 181, "event": "interval_detail", "numerator_bits": 178, "operation": "refinement_begin", "r0": "1", "seconds": 259.655721, "sequence": 113, "terms": 20}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 37 not separated", "seconds": 259.658885, "sequence": 114, "terms": 20}
+PROGRESS {"denominator_bits": 193, "endpoint_max_bits": 193, "event": "interval_detail", "numerator_bits": 190, "operation": "refinement_begin", "r0": "1", "seconds": 259.658957, "sequence": 115, "terms": 21}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 37 not separated", "seconds": 259.66215, "sequence": 116, "terms": 21}
+PROGRESS {"denominator_bits": 202, "endpoint_max_bits": 202, "event": "interval_detail", "numerator_bits": 199, "operation": "refinement_begin", "r0": "1", "seconds": 259.662193, "sequence": 117, "terms": 22}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 37 not separated", "seconds": 259.665423, "sequence": 118, "terms": 22}
+PROGRESS {"denominator_bits": 212, "endpoint_max_bits": 212, "event": "interval_detail", "numerator_bits": 209, "operation": "refinement_begin", "r0": "1", "seconds": 259.665464, "sequence": 119, "terms": 23}
+PROGRESS {"event": "interval_detail", "operation": "regularity_unresolved", "r0": "1", "reason": "denominator 37 not separated", "seconds": 259.668866, "sequence": 120, "terms": 23}
+PROGRESS {"denominator_bits": 221, "endpoint_max_bits": 221, "event": "interval_detail", "numerator_bits": 218, "operation": "refinement_begin", "r0": "1", "seconds": 259.66892, "sequence": 121, "terms": 24}
+PROGRESS {"column_count": 7, "event": "interval_detail", "operation": "response_evaluation_begin", "r0": "1", "seconds": 259.707647, "sequence": 122, "terms": 24}
+PROGRESS {"event": "interval_detail", "operation": "response_unresolved", "r0": "1", "seconds": 259.710246, "sequence": 123, "terms": 24}
+PROGRESS {"denominator_bits": 228, "endpoint_max_bits": 228, "event": "interval_detail", "numerator_bits": 225, "operation": "refinement_begin", "r0": "1", "seconds": 259.710299, "sequence": 124, "terms": 25}
+PROGRESS {"column_count": 7, "event": "interval_detail", "operation": "response_evaluation_begin", "r0": "1", "seconds": 259.747178, "sequence": 125, "terms": 25}
+PROGRESS {"column": 1, "event": "interval_detail", "operation": "serialize_selected", "outcome": "responding", "r0": "1", "seconds": 259.747619, "sequence": 126, "terms": 25}
+PROGRESS {"denominator_count": 57, "duration_seconds": 2.028769, "error": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit", "error_type": "ValueError", "event": "error", "max_atan_terms": 256, "seconds": 260.017863, "sequence": 127, "stage": "regularity_rank_and_response_search"}
+Traceback (most recent call last):
+  File "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py", line 1825, in <module>
+    main()
+  File "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py", line 1815, in main
+    run(
+  File "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py", line 1768, in run
+    result = certify(
+             ^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py", line 1631, in certify
+    regularity, response_certificate = certify_regularity_and_response(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py", line 1114, in certify_regularity_and_response
+    regular = serialize_regularity(*selected)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py", line 1037, in serialize_regularity
+    "minor_certificate": serialize_minor(minor), "bracket": bracket,
+                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/local-runs/9afcd73b-3499-4f08-8185-0f162c716cfb/repo/paper1/run-output/9afcd73b-3499-4f08-8185-0f162c716cfb/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py", line 847, in serialize_minor
+    "determinant_interval": list(map(str, minor["determinant_interval"])),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/Library/Caches/uv/archive-v0/a-DpmMEZH1sgrxVx/lib/python3.12/site-packages/sympy/core/_print_helpers.py", line 29, in __str__
+    return sstr(self, order=None)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/Library/Caches/uv/archive-v0/a-DpmMEZH1sgrxVx/lib/python3.12/site-packages/sympy/printing/printer.py", line 408, in __call__
+    return self.__wrapped__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/Library/Caches/uv/archive-v0/a-DpmMEZH1sgrxVx/lib/python3.12/site-packages/sympy/printing/str.py", line 993, in sstr
+    s = p.doprint(expr)
+        ^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/Library/Caches/uv/archive-v0/a-DpmMEZH1sgrxVx/lib/python3.12/site-packages/sympy/printing/printer.py", line 293, in doprint
+    return self._str(self._print(expr))
+                     ^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/Library/Caches/uv/archive-v0/a-DpmMEZH1sgrxVx/lib/python3.12/site-packages/sympy/printing/printer.py", line 332, in _print
+    return printmethod(expr, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ricfulop/Library/Caches/uv/archive-v0/a-DpmMEZH1sgrxVx/lib/python3.12/site-packages/sympy/printing/str.py", line 718, in _print_Rational
+    return "%s/%s" % (expr.p, expr.q)
+                      ^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit

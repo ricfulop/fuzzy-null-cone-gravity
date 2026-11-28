@@ -1,0 +1,210 @@
+{
+  "clock": "child monotonic elapsed seconds",
+  "stages": [
+    {
+      "stage": "input_pin_verification",
+      "begin_seconds": 9.2e-05,
+      "finish_seconds": 0.004396,
+      "duration_seconds": 0.004304,
+      "outcome": "end"
+    },
+    {
+      "stage": "identity_linkage",
+      "begin_seconds": 0.004417,
+      "finish_seconds": 0.004941,
+      "duration_seconds": 0.000523,
+      "outcome": "end"
+    },
+    {
+      "stage": "manufactured_controls",
+      "begin_seconds": 0.004958,
+      "finish_seconds": 0.277496,
+      "duration_seconds": 0.272537,
+      "outcome": "end"
+    },
+    {
+      "stage": "original_operator_conversion",
+      "begin_seconds": 0.277522,
+      "finish_seconds": 3.303494,
+      "duration_seconds": 3.025969,
+      "outcome": "end"
+    },
+    {
+      "stage": "terminal_state_parsing",
+      "begin_seconds": 3.303528,
+      "finish_seconds": 39.015864,
+      "duration_seconds": 35.712333,
+      "outcome": "end"
+    },
+    {
+      "stage": "field_conversion",
+      "begin_seconds": 39.0159,
+      "finish_seconds": 46.156259,
+      "duration_seconds": 7.140356,
+      "outcome": "end"
+    },
+    {
+      "stage": "kernel_identities",
+      "begin_seconds": 46.156296,
+      "finish_seconds": 135.166255,
+      "duration_seconds": 89.009958,
+      "outcome": "end"
+    },
+    {
+      "stage": "preservation_identity",
+      "begin_seconds": 135.166284,
+      "finish_seconds": 204.242474,
+      "duration_seconds": 69.076189,
+      "outcome": "end"
+    },
+    {
+      "stage": "physical_lift_identity",
+      "begin_seconds": 204.242502,
+      "finish_seconds": 204.242605,
+      "duration_seconds": 0.000103,
+      "outcome": "end"
+    },
+    {
+      "stage": "retained_euler_identity",
+      "begin_seconds": 204.24262,
+      "finish_seconds": 247.628228,
+      "duration_seconds": 43.385605,
+      "outcome": "end"
+    },
+    {
+      "stage": "discarded_response_lift",
+      "begin_seconds": 247.628259,
+      "finish_seconds": 256.221698,
+      "duration_seconds": 8.593438,
+      "outcome": "end"
+    },
+    {
+      "stage": "denominator_collection",
+      "begin_seconds": 256.221723,
+      "finish_seconds": 257.989065,
+      "duration_seconds": 1.767341,
+      "outcome": "end"
+    },
+    {
+      "stage": "regularity_rank_and_response_search",
+      "begin_seconds": 257.989089,
+      "finish_seconds": 260.017863,
+      "duration_seconds": 2.028769,
+      "outcome": "error"
+    }
+  ],
+  "child_progress_events": 127,
+  "reported_metrics": [
+    {
+      "config_bytes": 1717,
+      "config_sha256": "88cc272b7e27f4a99ed9f968e370cd3e62ca6cbcd40abdddb0f7dc533e8f4a14",
+      "event": "metric",
+      "operator_bytes": 128431,
+      "seconds": 0.004356,
+      "sequence": 3,
+      "stationary_operators_sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+      "terminal_state_bytes": 1004745,
+      "terminal_state_sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+    },
+    {
+      "event": "metric",
+      "identity_link_verified": true,
+      "seconds": 0.00492,
+      "sequence": 6
+    },
+    {
+      "event": "metric",
+      "manufactured_case_count": 19,
+      "seconds": 0.277447,
+      "sequence": 9
+    },
+    {
+      "event": "metric",
+      "operator_order_count": 3,
+      "original_column_count": 8,
+      "retained_row_count": 22,
+      "seconds": 3.303423,
+      "sequence": 12
+    },
+    {
+      "constraint_rows": 6,
+      "event": "metric",
+      "free_state_count": 8,
+      "remaining_control_count": 0,
+      "seconds": 39.015789,
+      "sequence": 15,
+      "state_count": 14
+    },
+    {
+      "event": "metric",
+      "field_free_state_count": 8,
+      "field_operator_count": 3,
+      "field_state_count": 14,
+      "seconds": 46.156191,
+      "sequence": 18
+    },
+    {
+      "cm_zero": true,
+      "event": "metric",
+      "free_state_count": 8,
+      "jm_identity": true,
+      "seconds": 135.166203,
+      "sequence": 21
+    },
+    {
+      "event": "metric",
+      "preservation_rows": 6,
+      "seconds": 204.242415,
+      "sequence": 24,
+      "sm_zero": true
+    },
+    {
+      "event": "metric",
+      "profile_count": 7,
+      "profile_lift_zero": true,
+      "seconds": 204.242593,
+      "sequence": 27
+    },
+    {
+      "all_22_retained_rows_zero": true,
+      "event": "metric",
+      "retained_row_count": 22,
+      "seconds": 247.628142,
+      "sequence": 30
+    },
+    {
+      "event": "metric",
+      "formal_discarded_response_nonzero": true,
+      "response_columns": 8,
+      "seconds": 256.221648,
+      "sequence": 33
+    },
+    {
+      "denominator_count": 57,
+      "event": "metric",
+      "seconds": 257.989012,
+      "sequence": 36
+    }
+  ],
+  "interval_selection": {
+    "column": 1,
+    "event": "interval_detail",
+    "operation": "serialize_selected",
+    "outcome": "responding",
+    "r0": "1",
+    "seconds": 259.747619,
+    "sequence": 126,
+    "terms": 25
+  },
+  "child_error": {
+    "denominator_count": 57,
+    "duration_seconds": 2.028769,
+    "error": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit",
+    "error_type": "ValueError",
+    "event": "error",
+    "max_atan_terms": 256,
+    "seconds": 260.017863,
+    "sequence": 127,
+    "stage": "regularity_rank_and_response_search"
+  }
+}
