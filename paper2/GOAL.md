@@ -219,3 +219,13 @@ microscopic corners and physical cutoff limits remain open. An independently
 audited [sixth-order bilinear/tail reduction](reports/quantum-bridge/sixth-order-bilinear-and-tail-reduction.md)
 now guides the next implementation without deleting the nested inverses
 or their algebraic exterior contributions.
+
+The [sixth-order source/backend suite](reports/quantum-bridge/sixth-order-backend-validation.md)
+subsequently passed nine Fourier integral controls, 72 synthetic tail checks,
+680 source-component comparisons, momentum parity and both gravitational-tail
+directions. The nonzero-monopole coefficient agrees exactly with its independent
+analytic target. An initial exterior-operation cap interruption is preserved;
+per-call reuse of exact moment triples completed the suite under the same cap
+and tolerances. This establishes tested ingredients, not the full mixed H6
+energy or the four-point observable. Canonical finite-vector terms, production
+nested pairings and complete energy integration remain the next calculation.

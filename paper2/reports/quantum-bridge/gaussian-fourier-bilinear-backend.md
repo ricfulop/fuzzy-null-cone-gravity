@@ -2,9 +2,12 @@
 
 This report gives a new analytic derivation and the implementation contract for
 [gaussian_fourier_bilinears.py](../../verification/quantum_bridge/gaussian_fourier_bilinears.py).
-The implementation is pending numerical validation: only AST parsing and import
-preflight are authorized here. No source construction, compiler invocation,
-quadrature, numerical check, or experiment supplies evidence for this report.
+At creation the implementation had only AST parsing and import preflight.
+The subsequent [tracked ingredient suite](sixth-order-backend-validation.md)
+passed nine normalization, adjoint, derivative and spectral-bound controls,
+including two-dimensional heat-parameter integrals. Production mixed
+gravitational bilinears and the full sixth-order Hamiltonian remain
+unevaluated; the derivation below is distinct from that bounded validation.
 
 The conventions and the need for these pairings come from the
 [sixth-order reduction](sixth-order-bilinear-and-tail-reduction.md),

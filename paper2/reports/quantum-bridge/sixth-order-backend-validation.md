@@ -7,6 +7,31 @@ sixth-order Hamiltonian of the declared reduction-first candidate. It does
 not evaluate that full Hamiltonian, its directional jet contractions, a
 four-point loop, or a physical large-rank limit.
 
+## Reviewed completed suite
+
+Run `0fe39553-1539-459e-8fa4-411496c79808`, source
+`7ad6a54c6e58f97c49cfdb7ea26fb089be4455e8`, completed in 94.96 seconds.
+The [complete result](data/sixth-backend-results.json) is copied byte for
+byte from the isolated run. Its effective configuration, intermediate
+measurements and final summary were checked against the retained raw log.
+
+All nine Fourier cases, 72 synthetic tail checks, 680 source-component
+checks, exact momentum parity and both gravitational-tail directions passed.
+The maximum scaled source discrepancy was $8.08\times10^{-14}$; the maximum
+sphere/collapsed tail discrepancy was $1.48\times10^{-12}$. These are
+numerical validation diagnostics, not certified error bars.
+
+The nonzero-monopole direction reproduced the entire preserved raw exterior
+coefficient dictionary exactly, including its leading coefficient. It used
+235,291 counted expansion/scatter operations. The second direction completed
+with 348,341 operations, below the unchanged one-million cap. No original
+numerical tolerance, field direction or quadrature was changed.
+
+This validates the specified source and integration ingredients. Production
+nested gravitational pairings, the integral of the complete mixed H6
+Hamiltonian, higher-vertex contractions and the four-point loop remain
+unevaluated at this checkpoint.
+
 ## Calculation and fixed conventions
 
 The [bilinear reduction](sixth-order-bilinear-and-tail-reduction.md) leaves
