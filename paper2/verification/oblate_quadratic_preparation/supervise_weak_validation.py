@@ -18,7 +18,7 @@ import time
 
 MAX_SECONDS = 300
 MAX_RSS_BYTES = 2 * 1024**3
-CHECK_MODE = "curvature-probe"
+CHECK_MODE = "ricci-entry-probe"
 APPROVAL_END = dt.datetime(2026, 11, 28, 16, 29, tzinfo=dt.timezone.utc)
 SOURCE_NAMES = (
     "verify_weak_forms.py", "weak_forms.py", "potential_hessian.py",

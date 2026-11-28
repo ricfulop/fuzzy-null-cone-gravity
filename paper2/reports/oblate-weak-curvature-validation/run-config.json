@@ -17,12 +17,12 @@
     }
   ],
   "brief": {
-    "question": "Can the exact contracted Ricci evaluator preserve the original varied-metric result and all three symbolic gauge zeros without the previous expression-growth and normalization costs?",
-    "healthy": "Five diagnostic batches: half-root field controls, nonzero off-shell agreement with the raw metric-variation path, and exact symbolic gauge m=1,0,2. Fine start/done timings locate each expensive construction.",
-    "noise": "This is a targeted evaluator diagnostic. A pass is not the complete eight-batch weak-form validation. Setup and export each count one unit; substage timings do not advance batch counts.",
-    "worth_a_flag": "Any assertion, unsupported radical or denominator, missing output, budget stop, or unresolved cleanup. Do not infer a gravitational obstruction from an unfinished evaluator check.",
-    "from_parent": "First attempt passed all sampled sectors then exceeded memory in gauge m0; second attempt globally normalized intermediates and timed out in sampled m1. Raw sampled path is restored and only the symbolic gauge path uses contracted Ricci and explicit half-root rational arithmetic. Both failures remain archived.",
-    "decided": "One local CPU process; 300-second cap and 2-GiB sampled group RSS budget; no physical modules changed. Standing authorization through 2026-11-28 16:29 UTC. No full-validation success metric in this diagnostic."
+    "question": "Does delaying chart normalization until after the Ricci subtraction resolve the previously stalled exact m=1 gauge R12 component while preserving nonzero offshell Ricci values?",
+    "healthy": "The current ricci-entry-probe declares its own three-batch runtime plan: strict chart controls, all9 nonzero offshell oracle comparisons, then global symbolic gauge R12 only. Internal raw-divergence, raw-trace-derivative and final-normalization timers show where time is spent.",
+    "noise": "Historical curvature-probe had5batches; full validation has8. This run declares3 and reports diagnostic_passed only after its distinct JSON export. Its pass is not all-gauge or weak-form validation. Raw SUBSTAGE lines are timing evidence, not batch completion.",
+    "worth_a_flag": "Any assertion, unsupported expression, missing result, wall/RSS stop or unresolved cleanup. A stalled evaluator is not a gravitational obstruction.",
+    "from_parent": "Two full attempts remain incomplete; the last five-batch probe passed arithmetic and nonzero Ricci controls in25.13s then timed out in m1 gauge entry(1,2). The new patch leaves physics and exact_zero untouched and normalizes A-B rather than normalizing A and B separately.",
+    "decided": "One local CPU process, unchanged300s cap and2GiB sampled RSS. No scientific code execution in preparation. Standing user approval ends2026-11-28T16:29Z. Narrowed third batch is explicitly diagnostic-only; later full checks remain required."
   },
   "watch": {
     "minGapS": 60,

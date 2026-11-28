@@ -39,6 +39,7 @@ STAGE_SCOPE = (
 
 VALIDATION_BATCHES = 8
 CURVATURE_PROBE_BATCHES = 5
+RICCI_ENTRY_PROBE_BATCHES = 3
 
 
 class UnsupportedChartRadical(ValueError):
@@ -53,6 +54,34 @@ def emit_orx(payload):
     print(f"::orx:: {json.dumps(payload, sort_keys=True)}", flush=True)
 
 
+def runtime_plan(mode):
+    if mode == "full":
+        middle = {
+            "phase": "validation",
+            "of": VALIDATION_BATCHES,
+            "unit": "batches",
+        }
+    elif mode == "curvature-probe":
+        middle = {
+            "phase": "diagnostic",
+            "of": CURVATURE_PROBE_BATCHES,
+            "unit": "batches",
+        }
+    elif mode == "ricci-entry-probe":
+        middle = {
+            "phase": "diagnostic",
+            "of": RICCI_ENTRY_PROBE_BATCHES,
+            "unit": "batches",
+        }
+    else:
+        raise ValueError(f"unknown mode {mode}")
+    return (
+        {"phase": "setup", "of": 1, "unit": "environment"},
+        middle,
+        {"phase": "export", "of": 1, "unit": "checker result"},
+    )
+
+
 def emit_substage(batch, m, name, t0):
     now = time.monotonic()
     emit("SUBSTAGE", batch=batch, m=m, name=name, seconds=now - t0)
@@ -61,6 +90,17 @@ def emit_substage(batch, m, name, t0):
 
 def emit_substage_start(batch, m, name):
     emit("SUBSTAGE", batch=batch, m=m, name=f"{name}_start")
+
+
+def emit_timed_start(callback, name, i, j):
+    if callback is not None:
+        callback(name, i, j, "start", None)
+    return time.monotonic()
+
+
+def emit_timed_done(callback, name, i, j, started):
+    if callback is not None:
+        callback(name, i, j, "done", time.monotonic() - started)
 
 
 def maybe_normalize(value, data_or_x):
@@ -334,29 +374,37 @@ def varied_ricci_lower_dense(jet, data, gamma, normalize=False):
     ))
 
 
-def varied_ricci_lower(jet, data, gamma, normalize=False, substage=None):
+def varied_ricci_entry(delta_gamma, trace, i, j, data, gamma,
+                       normalize=False, substage=None):
     normalizer = data if normalize else None
-    if substage is not None:
-        substage("delta_gamma_trace", None, None, "start")
+    tick = emit_timed_start(substage, "raw_divergence", i, j)
+    divergence = delta_gamma_divergence_component(
+        delta_gamma, i, j, data, gamma, normalize=False
+    )
+    emit_timed_done(substage, "raw_divergence", i, j, tick)
+
+    tick = emit_timed_start(substage, "raw_trace_derivative", i, j)
+    trace_derivative = covector_derivative(
+        trace, j, i, data, gamma, normalize=False
+    )
+    emit_timed_done(substage, "raw_trace_derivative", i, j, tick)
+
+    tick = emit_timed_start(substage, "final_chart_normalize", i, j)
+    ricci = maybe_normalize(divergence - trace_derivative, normalizer)
+    emit_timed_done(substage, "final_chart_normalize", i, j, tick)
+    return ricci
+
+
+def varied_ricci_lower(jet, data, gamma, normalize=False, substage=None):
+    tick = emit_timed_start(substage, "delta_gamma_trace", None, None)
     delta_gamma, trace = delta_gamma_trace(jet, data, gamma, normalize)
-    if substage is not None:
-        substage("delta_gamma_trace", None, None, "done")
+    emit_timed_done(substage, "delta_gamma_trace", None, None, tick)
     ricci = sp.zeros(3)
     for i in range(3):
         for j in range(3):
-            if substage is not None:
-                substage("ricci_entry", i, j, "start")
-            divergence = delta_gamma_divergence_component(
-                delta_gamma, i, j, data, gamma, normalize
+            ricci[i, j] = varied_ricci_entry(
+                delta_gamma, trace, i, j, data, gamma, normalize, substage
             )
-            trace_derivative = covector_derivative(
-                trace, j, i, data, gamma, normalize
-            )
-            ricci[i, j] = maybe_normalize(
-                divergence - trace_derivative, normalizer
-            )
-            if substage is not None:
-                substage("ricci_entry", i, j, "done")
     return ricci
 
 
@@ -607,9 +655,21 @@ def emit_curvature_probe_progress(completed_batches):
     })
 
 
+def emit_ricci_entry_probe_progress(completed_batches):
+    emit_orx({
+        "phase": "diagnostic",
+        "step": completed_batches,
+        "of": RICCI_ENTRY_PROBE_BATCHES,
+        "unit": "batches",
+        "m": {"completed_diagnostic_batches": completed_batches},
+    })
+
+
 def emit_progress(mode, completed_batches):
     if mode == "curvature-probe":
         emit_curvature_probe_progress(completed_batches)
+    elif mode == "ricci-entry-probe":
+        emit_ricci_entry_probe_progress(completed_batches)
     else:
         emit_validation_progress(completed_batches)
 
@@ -757,7 +817,7 @@ def verify_single_gauge_control(m, output_dir=None, started=None, normalize=True
         "pure_gauge_control", m, "tensor_jet", batch_started
     )
 
-    def ricci_substage(name, i, j, event):
+    def ricci_substage(name, i, j, event, seconds):
         emit(
             "SUBSTAGE",
             batch="pure_gauge_control",
@@ -765,6 +825,7 @@ def verify_single_gauge_control(m, output_dir=None, started=None, normalize=True
             name=f"{name}_{event}",
             i=i,
             j=j,
+            seconds=seconds,
         )
 
     emit_substage_start("pure_gauge_control", m, "varied_ricci")
@@ -819,7 +880,8 @@ def verify_gauge_controls(output_dir=None, started=None, completed_batches=0,
     return results, completed_batches
 
 
-def verify_half_root_controls(output_dir=None, started=None, completed_batches=0):
+def verify_half_root_controls(output_dir=None, started=None, completed_batches=0,
+                              progress_mode="curvature-probe"):
     emit("STAGE", name="half_root_controls")
     x = sp.Symbol("x", real=True)
     d = 1 - x**2
@@ -867,11 +929,12 @@ def verify_half_root_controls(output_dir=None, started=None, completed_batches=0
     }
     write_checkpoint(output_dir, "half_root_controls", result, started)
     completed_batches += 1
-    emit_curvature_probe_progress(completed_batches)
+    emit_progress(progress_mode, completed_batches)
     return result, completed_batches
 
 
-def verify_contracted_raw_probe(output_dir=None, started=None, completed_batches=0):
+def verify_contracted_raw_probe(output_dir=None, started=None, completed_batches=0,
+                                progress_mode="curvature-probe"):
     emit("STAGE", name="contracted_raw_ricci_probe", m=1)
     data = kinematics.sector(2, 1)
     gamma = independent_connection(data)
@@ -890,9 +953,9 @@ def verify_contracted_raw_probe(output_dir=None, started=None, completed_batches
     dense = varied_ricci_lower_dense(jet, data, gamma, normalize=False)
     tick = emit_substage("contracted_raw_ricci_probe", 1, "raw_dense", tick)
 
-    def normalized_substage(name, i, j, event):
+    def normalized_substage(name, i, j, event, seconds):
         emit("SUBSTAGE", batch="contracted_raw_ricci_probe", m=1,
-             name=f"{name}_{event}", i=i, j=j)
+             name=f"{name}_{event}", i=i, j=j, seconds=seconds)
 
     emit_substage_start("contracted_raw_ricci_probe", 1, "normalized_contracted")
     normalized_contracted = varied_ricci_lower(
@@ -927,7 +990,7 @@ def verify_contracted_raw_probe(output_dir=None, started=None, completed_batches
     }
     write_checkpoint(output_dir, "contracted_raw_m1", result, started)
     completed_batches += 1
-    emit_curvature_probe_progress(completed_batches)
+    emit_progress(progress_mode, completed_batches)
     return result, completed_batches
 
 
@@ -939,10 +1002,10 @@ def verify_curvature_probe(output_dir=None):
     completed_batches = 0
     emit_curvature_probe_progress(completed_batches)
     half_root, completed_batches = verify_half_root_controls(
-        output_dir, started, completed_batches
+        output_dir, started, completed_batches, progress_mode="curvature-probe"
     )
     contracted_raw, completed_batches = verify_contracted_raw_probe(
-        output_dir, started, completed_batches
+        output_dir, started, completed_batches, progress_mode="curvature-probe"
     )
     gauge_controls, completed_batches = verify_gauge_controls(
         output_dir,
@@ -983,6 +1046,102 @@ def verify_curvature_probe(output_dir=None):
         "seconds": time.monotonic() - started,
     }
     print("PASS curvature diagnostic probe", flush=True)
+    return result
+
+
+def verify_ricci_entry_probe(output_dir=None):
+    started = time.monotonic()
+    if output_dir is not None:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir / "weak-form-progress.jsonl").write_text("")
+    completed_batches = 0
+    emit_ricci_entry_probe_progress(completed_batches)
+    half_root, completed_batches = verify_half_root_controls(
+        output_dir, started, completed_batches, progress_mode="ricci-entry-probe"
+    )
+    contracted_raw, completed_batches = verify_contracted_raw_probe(
+        output_dir, started, completed_batches, progress_mode="ricci-entry-probe"
+    )
+
+    m, i, j = 1, 1, 2
+    emit("STAGE", name="ricci_entry_pure_gauge_probe", m=m, i=i, j=j)
+    data = kinematics.sector(2, m)
+    gamma = independent_connection(data)
+    r, x = data["r"], data["x"]
+    y = kinematics.harmonic_amplitudes(max(m, 1), m, x)[0]
+    vector = sp.Matrix([r * (2 - r) * y, x * y, sp.I * y])
+    gauge = direct_lie(data["metric"], vector, data)
+    jet = tensor_jet(gauge, data, 1, 0, gamma)
+
+    def entry_substage(name, entry_i, entry_j, event, seconds):
+        emit(
+            "SUBSTAGE",
+            batch="ricci_entry_pure_gauge_probe",
+            m=m,
+            name=f"{name}_{event}",
+            i=entry_i,
+            j=entry_j,
+            seconds=seconds,
+        )
+
+    tick = emit_timed_start(entry_substage, "delta_gamma_trace", None, None)
+    delta_gamma, trace = delta_gamma_trace(jet, data, gamma, normalize=True)
+    emit_timed_done(entry_substage, "delta_gamma_trace", None, None, tick)
+    entry = varied_ricci_entry(
+        delta_gamma, trace, i, j, data, gamma, normalize=True,
+        substage=entry_substage,
+    )
+    tick = emit_timed_start(entry_substage, "exact_zero", i, j)
+    assert_zero(entry, x, "pure gauge Ricci entry m=1 (1, 2)")
+    emit_timed_done(entry_substage, "exact_zero", i, j, tick)
+
+    entry_result = {
+        "m": m,
+        "component": [i, j],
+        "vector": [str(component) for component in vector],
+        "global_chart_scope": "exact in symbolic r,x,epsilon on the oblate chart",
+        "gauge_path": "direct_lie -> tensor_jet -> normalized deltaGamma/trace -> single Ricci entry",
+    }
+    write_checkpoint(
+        output_dir, "ricci_entry_pure_gauge_m1_1_2", entry_result, started
+    )
+    completed_batches += 1
+    emit_ricci_entry_probe_progress(completed_batches)
+
+    here = Path(__file__).resolve().parent
+    result = {
+        "status": "passed",
+        "scope": (
+            "half-root chart positive and negative controls",
+            "raw and chart-normalized contracted Ricci against dense raw Ricci at one nonzero m=1 point",
+            "one continuum pure-gauge Ricci entry R[1,2] in the global m=1 chart",
+        ),
+        "diagnostic_only": True,
+        "full_validation_performed": False,
+        "curvature_probe_performed": False,
+        "all_gauge_entries_performed": False,
+        "finite_assembly_performed": False,
+        "operator_spectrum_performed": False,
+        "nonlinear_theorem_claimed": False,
+        "half_root_controls": half_root,
+        "contracted_raw": contracted_raw,
+        "ricci_entry": entry_result,
+        "python": platform.python_version(),
+        "dependencies": {
+            name: importlib.metadata.version(name) for name in ("sympy", "numpy")
+        },
+        "source_sha256": {
+            str(path.relative_to(here)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in (
+                Path(__file__).resolve(),
+                here / "weak_forms.py",
+                here / "potential_hessian.py",
+                here / "kinematic_blocks.py",
+            )
+        },
+        "seconds": time.monotonic() - started,
+    }
+    print("PASS Ricci-entry diagnostic probe", flush=True)
     return result
 
 
@@ -1107,16 +1266,28 @@ if __name__ == "__main__":
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument(
         "--mode",
-        choices=("full", "curvature-probe"),
+        choices=("full", "curvature-probe", "ricci-entry-probe"),
         default="full",
-        help="run the full eight-batch validation or the five-batch curvature diagnostic",
+        help=(
+            "run the full eight-batch validation, five-batch curvature "
+            "diagnostic, or fixed three-batch Ricci-entry diagnostic"
+        ),
     )
     args = parser.parse_args()
-    emit_orx({"phase": "setup", "step": 1, "of": 1, "unit": "environment"})
+    emit_orx({
+        "phase": "setup",
+        "step": 1,
+        "of": 1,
+        "unit": "environment",
+        "plan": runtime_plan(args.mode),
+    })
     checks = (
-        verify_curvature_probe(args.output_dir)
-        if args.mode == "curvature-probe"
-        else verify(args.output_dir)
+        verify(args.output_dir) if args.mode == "full"
+        else (
+            verify_curvature_probe(args.output_dir)
+            if args.mode == "curvature-probe"
+            else verify_ricci_entry_probe(args.output_dir)
+        )
     )
     emit_orx({
         "phase": "export",
@@ -1126,16 +1297,18 @@ if __name__ == "__main__":
         "m": {"elapsed_seconds": checks["seconds"]},
     })
     output_name = (
-        "curvature-probe-checks.json"
-        if args.mode == "curvature-probe"
-        else "weak-form-checks.json"
+        "weak-form-checks.json" if args.mode == "full"
+        else (
+            "curvature-probe-checks.json"
+            if args.mode == "curvature-probe"
+            else "ricci-entry-probe-checks.json"
+        )
     )
     (args.output_dir / output_name).write_text(
         json.dumps(checks, indent=2) + "\n"
     )
     success_key = (
-        "diagnostic_passed" if args.mode == "curvature-probe"
-        else "validation_passed"
+        "validation_passed" if args.mode == "full" else "diagnostic_passed"
     )
     emit_orx({
         "phase": "export",
