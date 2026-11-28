@@ -1,0 +1,16 @@
+{
+  "scope": "Repository copy of the first incomplete attempt; the original artifact manifest applies to the separate durable archive.",
+  "original_artifact_directory": "artifacts/paper2-oblate-weak-first-attempt-2026-11-28/",
+  "original_artifact_manifest": "artifact-manifest.json",
+  "readme_difference": "The repository README identifies the durable location of the omitted source/RSS payloads and explains the two manifest scopes; no scientific result or raw run payload was changed.",
+  "original_readme_sha256": "7459e48521d8864141157d7985c2fab0ea27690d994a10c6e9b38df3a19899ea",
+  "repository_readme_before_clarification_sha256": "f1340c189d0626ae8bfc68b2e04cbdaecd1b54de2acb85772214e412722b8bee",
+  "repository_files_sha256": {
+    "README.md": "a418f99a10d713ff20409411833a96f90a9aaf01644ca896313be3bb7feeec3c",
+    "artifact-manifest.json": "2231549ce3ba1c2aff9fd102824833b6d5bf58c43aed4c003b8654f4ab1cf6e5",
+    "execution.json": "1e655634316e0ef69c655be05cf267f5ab99ace7a584f3111a0c1686a6afcb72",
+    "failure-summary.json": "e0f06b6f3f489886253c59ecdb4b439a4e3799685c97504e0d6b581663829d46",
+    "verification.log": "94e0c3e45cee47412e2e9f6ae2cad6c05ee4d44593c68baec099bd3e453267aa",
+    "weak-form-progress.jsonl": "86322d23cadb25d4d0eac6a67804fb197b3cbb39f57e624d7d2208265263adf7"
+  }
+}

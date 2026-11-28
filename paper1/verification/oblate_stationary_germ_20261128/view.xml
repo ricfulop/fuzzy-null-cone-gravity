@@ -1,4 +1,4 @@
-<signal name="terminal_germ_certificate_passed" label="Germ certificate published" digits="0" better="higher" labels='{"0":"pending","1":"passed"}' />
+<signal name="terminal_germ_certificate_passed" label="Germ certificate published" digits="0" better="higher" labels='{"0":"not passed","1":"passed"}' />
 <signal name="manufactured_case_count" label="Manufactured controls completed" digits="0" />
 <signal name="free_state_count" label="ODE initial coordinates" digits="0" />
 <signal name="constant_control_count" label="Constant control coordinates" digits="0" />

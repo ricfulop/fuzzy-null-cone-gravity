@@ -6,10 +6,24 @@ Numerical ranks are diagnostics; exact leading matrices are computed separately.
 """
 from pathlib import Path
 from functools import lru_cache
+import importlib.util
 import sys
 import json
 import numpy as np
 import sympy as s
+
+
+def _load_leading_certificate():
+    path=Path(__file__).resolve().with_name('leading_certificate.py')
+    spec=importlib.util.spec_from_file_location('oblate_leading_certificate',path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f'Cannot load sibling certificate helper: {path}')
+    module=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+certificate=_load_leading_certificate()
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'reports/oblate-constraint-rank-2026-11-27'
@@ -187,6 +201,7 @@ def round_pair(A,B):
 
 
 def exact_leading():
+    source_hashes=certificate.source_fingerprints(Path(__file__).resolve().parent)
     OUT.mkdir(parents=True,exist_ok=True)
     rows=[]
     for L in [2,3]:
@@ -207,7 +222,8 @@ def exact_leading():
                 normal_coefficients.extend(coefficients.tolist())
             D=D.applyfunc(s.factor)
             rank=D.rank();normal_rank=s.Matrix(normal_coefficients).rank()
-            assert rank==normal_rank
+            expected=3 if m==L else 4
+            assert rank==normal_rank==expected,(L,m,rank,normal_rank,expected)
             total+=(1 if m==0 else 2)*rank
             # Principal minor: independent columns plus their corresponding rows.
             independent=list(D.rref()[1])
@@ -216,6 +232,7 @@ def exact_leading():
             sylvester=[s.factor(minor[:k,:k].det()) for k in range(1,len(independent)+1)]
             assert all(z>0 for z in sylvester)
             rows.append({'L':L,'N':L+1,'m':m,'labels':labels,
+                         'normal_row_labels':certificate.normal_labels(L),
                          'leading_DeWitt_Gram':[[str(z) for z in row] for row in D.tolist()],
                          'exact_leading_rank':rank,'exact_leading_normal_map_rank':normal_rank,
                          'nonzero_principal_minor_indices':independent,
@@ -223,8 +240,11 @@ def exact_leading():
                          'positive_Sylvester_minors':[str(z) for z in sylvester],
                          'normal_coefficients':[[str(z) for z in row] for row in normal_coefficients]})
             print('EXACT_LEADING_BLOCK',L,m,rank,'minor',s.factor(minor.det()),flush=True)
+        assert total==8*L+2,(L,total)
         print('EXACT_LEADING_TOTAL',L,total,flush=True)
-    (OUT/'exact-leading.json').write_text(json.dumps(rows,indent=2)+'\n')
+    if certificate.source_fingerprints(Path(__file__).resolve().parent)!=source_hashes:
+        raise RuntimeError('producer sources changed during exact-leading calculation')
+    certificate.write_certificate(OUT/'exact-leading.json',rows,source_hashes)
 
 
 def exact_kernel():
@@ -311,7 +331,8 @@ def verify_all():
             'regular_surrounding_constraint_stratum_proved':False,
             'physical_DOF_count_established':False,'full_nonlinear_goal_complete':False}
     (OUT/'checks.json').write_text(json.dumps(result,indent=2)+'\n')
-    sources=[Path(__file__),ROOT/'sections/nonlinear_action.tex']
+    sources=[Path(__file__),Path(__file__).with_name('leading_certificate.py'),
+             ROOT/'sections/nonlinear_action.tex']
     manifest={'base_commit_at_execution':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
               'python':platform.python_version(),'platform':platform.platform(),
               'dependencies':{k:importlib.metadata.version(k) for k in ['numpy','sympy']},

@@ -201,3 +201,22 @@ For the original 22-row blocks E0,E1,E2, seven acceleration rows Ka,Ba, and term
 The helper computes W=KM-DM once, selects ordered free rows J to obtain Kred=JW and Bred=JB, then checks MKred-W=0 and MBred-B=0 on every row. Products, derivatives, extraction and conversion to expressions have separate timers. Controls test retained X0 and outside-discovery row defects, nonzero remaining controls, non-free-row reconstruction defects, empty widths and inexact/nonfinite entries. These controls passed in `c2a1482f`. The original-row stage took 50.614 seconds and KM took 240.467 seconds; the run then reached its wall limit during DM. Reconstruction, response, and formal closure did not complete. See `reports/oblate-stationary-field-dynamics-timeout-2026-11-28/` for the unchanged raw evidence.
 
 That invocation used a 900-second wall limit. The current configuration, frozen at `c763d3a`, raises the limit to 1800 seconds with the same scientific Python files and shell entry point, a sampled 2-GiB limit, and the existing approval cutoff. See `reports/oblate-stationary-extended-budget-preparation-2026-11-28/`. It remains a fresh original-export calculation without partial-state loading. Formal closure and any independent analytic-germ certificate remain separate milestones.
+
+## Maintained supervisor and input validation
+
+The maintained wrapper now executes the verified source copies under its fresh
+output directory and rechecks both the originals and executed copies afterward.
+The reducer hashes each input byte buffer before decoding it,
+and its recorded digests describe those same buffers; input paths are not reread
+between authentication and parsing. The standalone manufactured-control entry
+point rejects optimized Python, which would disable its assertions.
+
+Child output is archived before best-effort nonblocking console forwarding.
+A closed stderr mirror cannot suppress the reducer's original failure record;
+errors writing the authoritative journal still fail the attempt. The supervisor
+checks the deadline after observing child exit, caps process-table sampling by
+the remaining budget, and records an absent RSS sample set as unknown. It stops
+accepting cancellation immediately before publishing terminal evidence, so
+signals received earlier determine one consistent status and exit decision.
+The accompanying mocked and synthetic-process tests exercise infrastructure
+only; these changes add no scientific result and do not alter archived sources.

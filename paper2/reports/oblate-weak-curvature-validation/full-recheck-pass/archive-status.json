@@ -1,0 +1,26 @@
+{
+  "run_id": "32b93879-a4f2-426f-82ac-2fa455844477",
+  "source_commit": "b59be9535b38e25d59a8437efe9873094b2bc4bd",
+  "source_files_verified_against_commit_snapshot_and_worktree": true,
+  "result_hashes_match_execution": true,
+  "completed_validation_batches": 8,
+  "totals": {
+    "sampled_spatial_tensors": 18,
+    "potential_pairs": 108,
+    "lapse_pairs": 36
+  },
+  "Einstein_exact_zero_components": 27,
+  "scalar_exact_zero_controls": 3,
+  "negative_controls_passed": true,
+  "sample_count": 439,
+  "peak_sampled_group_rss_bytes": 169082880,
+  "peak_sampled_mib": 161.25,
+  "checker_seconds": 128.45857416605577,
+  "supervisor_seconds": 129.5262595829554,
+  "independent_process_check": {
+    "utc": "2026-11-28T06:13:03.714354+00:00",
+    "process_group": 39206,
+    "members": []
+  },
+  "scope": "bounded local weak-form validation; sampled Green residuals and three fixed symbolic gauge controls, not an all-label or global physical-domain theorem"
+}

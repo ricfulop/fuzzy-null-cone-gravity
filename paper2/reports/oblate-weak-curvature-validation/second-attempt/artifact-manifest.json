@@ -1,0 +1,17 @@
+{
+  "run_id": "2e50a13f-2883-482d-b582-2313f9d1b1ad",
+  "files_sha256": {
+    "failure-summary.json": "437e17a5231604b8148c7eeae05935ca6589ce73567ec7063b293b32e3cd38e9",
+    "resource-samples.json": "71842a89a4c4e03d51d456ee732ff242c8ab8901a87dd8f21aa4a5871cc87c09",
+    "weak-form-progress.jsonl": "7b55e16e34de0d3603588e0507b9f77585bcca6d5ee32ec6c5c6bd1eb1cd5e17",
+    "README.md": "12ec64004b6b544d1b57aa2ce55af97e7e80ca30a65d25f3cf8ad6ac24494dac",
+    "verification.log": "1fc1cc2a7b54a0003c12fee4cdc647e19559cd7a2d80e4a8b3a945633ab767e4",
+    "execution.json": "8afc5f3bc66c356ab391326e678ee60d53fabcae721e2d671bd3fbfea4c14479",
+    "sources/potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "sources/run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "sources/weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "sources/kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "sources/verify_weak_forms.py": "b7e499e28f1d19611b9c7639faa69d76063a73c35c4746265c255ce844f2a34a",
+    "sources/supervise_weak_validation.py": "7763c4429fce1de1ebc65c7964647b54f29fc68e0a55cb3bc5b01082df8aa1b8"
+  }
+}

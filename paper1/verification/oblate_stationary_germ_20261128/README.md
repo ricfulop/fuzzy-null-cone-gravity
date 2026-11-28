@@ -47,6 +47,11 @@ nonempty open radial interval around that radius. Constant remaining controls
 can be adjoined as coordinates with zero derivative, giving a linear analytic
 ODE and an analytic local solution for each initial vector.
 
+This checker first requires every collected denominator to be separated from
+zero at `r=1`. Failure at that initial radius stops the invocation, even if a
+different radius could be regular. Only after the `r=1` check passes does it
+search the configured candidate radii for a responding witness.
+
 A responding witness requires both denominator regularity and separation of a
 response numerator at the **same radius**. A coordinate unit vector supplies
 the corresponding initial state or constant control. Failure to separate a
@@ -96,6 +101,14 @@ RSS, cleanup disposition, and original/snapshot hashes after cleanup. A zero
 child exit also requires a valid certificate matching the expected input
 hashes. The certificate records the actual checker Python and SymPy versions.
 
+`terminal-evidence.json` is the terminal commit marker: its SHA-256 fields must
+match both `execution.json` and `metrics.json` before a reader accepts a pass.
+Standalone metrics are provisional. Cancellation is accepted through
+certificate validation and then frozen before terminal evidence publication;
+signals after that boundary do not alter the committed decision. Live console
+forwarding is nonblocking and best effort; the archived child log remains
+authoritative. An absent RSS sample set is recorded as `null`, not measured zero.
+
 The pending committed `run-config.json` must supply `path` and `sha256` under
 `inputs.stationary_operators` and `inputs.dae_closure`. No input hashes or
 completed result are invented while the closure input is absent. The child
@@ -105,9 +118,10 @@ reduction entry point.
 
 The runner has a 900-second wall budget, a 2-GiB sampled process-group RSS
 threshold, and the standing approval cutoff of 2026-11-28 16:29 UTC. The RSS
-threshold is not a hard operating-system limit. Nineteen mocked stdlib tests
-cover dispatch, identity, cleanup, interruption, and response-state handling;
-they launch no scientific child. The scientific manufactured controls remain
+threshold is not a hard operating-system limit. The initial preparation recorded
+nineteen mocked stdlib tests. The maintained suite additionally covers console
+backpressure, deadline observation, terminal commits and cancellation boundaries;
+it launches no scientific child. The scientific manufactured controls remain
 unexecuted and belong to the eventual bounded invocation.
 
 The view and stage plan track input verification, manufactured controls,

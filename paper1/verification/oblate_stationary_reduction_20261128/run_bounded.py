@@ -23,12 +23,43 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+_CONSOLE_LOCK = threading.Lock()
+
+
+def write_console(data):
+    """Best-effort, nonblocking forwarding; the archived child log is authoritative."""
+    if isinstance(data, str):
+        data = data.encode("utf-8", errors="replace")
+    if not _CONSOLE_LOCK.acquire(blocking=False):
+        return False
+    try:
+        fd = sys.stdout.fileno()
+        blocking = os.get_blocking(fd)
+        try:
+            os.set_blocking(fd, False)
+            pending = memoryview(data)
+            for _ in range(64):
+                if not pending:
+                    return True
+                count = os.write(fd, pending[:65536])
+                if count <= 0:
+                    return False
+                pending = pending[count:]
+            return not pending
+        finally:
+            os.set_blocking(fd, blocking)
+    except (OSError, ValueError, TypeError, AttributeError):
+        return False
+    finally:
+        _CONSOLE_LOCK.release()
+
+
 def report(**fields):
-    print("::orx:: " + json.dumps(fields), flush=True)
+    write_console("::orx:: " + json.dumps(fields) + "\n")
 
 
-def group_members(pgid):
-    raw = subprocess.check_output(["ps", "-axo", "pid=,pgid=,rss="], text=True, timeout=1)
+def group_members(pgid, timeout=1):
+    raw = subprocess.check_output(["ps", "-axo", "pid=,pgid=,rss="], text=True, timeout=timeout)
     if not raw.strip():
         raise ValueError("Empty process table")
     members = []
@@ -121,11 +152,12 @@ def main():
     env = os.environ.copy()
     env.update(overrides)
     command = ["uv", "run", "--isolated", "--no-project", "--with", "sympy==1.14.0",
-               "python", str(HERE / "reduce_stationary.py"), "--input-dir",
+               "python", str(out / "sources" / HERE.relative_to(ROOT) / "reduce_stationary.py"), "--input-dir",
                str(ROOT / config["input_directory"]), "--output-dir", str(out / "outputs"),
                "--stage", config["stage"], "--max-steps", str(config["max_steps"])]
     record = {"run_id": run_id, "source_commit": commit, "command": command,
               "configuration": config, "source_sha256_before": source_hashes,
+              "source_snapshot_sha256_before": dict(source_hashes),
               "source_repository": str(SOURCE_REPOSITORY),
               "input_completion_sha256": UPSTREAM_COMPLETION_SHA256,
               "supervisor_python": sys.version, "platform": platform.platform(),
@@ -155,9 +187,11 @@ def supervise(out, record, env, sources, cutoff):
     supervisor_error = None
     disposition = {"status": "not_spawned"}
     old_handlers = {}
+    accepting_cancellation = True
 
     def interrupted(signum, frame):
-        received_signals.append(int(signum))
+        if accepting_cancellation:
+            received_signals.append(int(signum))
 
     def relay():
         try:
@@ -165,14 +199,7 @@ def supervise(out, record, env, sources, cutoff):
                 for line in iter(process.stdout.readline, b""):
                     log.write(line)
                     log.flush()
-                    # A blocked console must not hold Python's shared stdout lock
-                    # while the supervising thread saves evidence or exits.
-                    remaining = memoryview(line)
-                    while remaining:
-                        count = os.write(sys.stdout.fileno(), remaining)
-                        if count <= 0:
-                            raise OSError("Console relay made no progress")
-                        remaining = remaining[count:]
+                    write_console(line)  # A stalled live console cannot stop archival drain.
         except Exception as error:
             relay_errors.append(repr(error))
 
@@ -194,7 +221,12 @@ def supervise(out, record, env, sources, cutoff):
         relay_started = True
         while not stop_reason and process.poll() is None:
             elapsed = time.monotonic() - start
-            rss = sum(member["rss_bytes"] for member in group_members(process.pid))
+            remaining = config["wall_seconds"] - elapsed
+            if remaining <= 0:
+                stop_reason = "wall budget reached"
+                break
+            rss = sum(member["rss_bytes"] for member in
+                      group_members(process.pid, timeout=min(1, remaining)))
             samples.append({"seconds": round(elapsed, 3), "rss_bytes": rss})
             if time.monotonic() - start >= config["wall_seconds"]:
                 stop_reason = "wall budget reached"
@@ -206,6 +238,8 @@ def supervise(out, record, env, sources, cutoff):
                 stop_reason = "supervisor received signal"
             else:
                 time.sleep(0.25)
+        if stop_reason is None and time.monotonic() - start >= config["wall_seconds"]:
+            stop_reason = "wall budget reached"
     except Exception as error:
         supervisor_error = repr(error)
         stop_reason = stop_reason or "supervisor exception"
@@ -250,10 +284,20 @@ def supervise(out, record, env, sources, cutoff):
             cleanup_errors.append({"action": "finish_relay", "error": repr(error)})
 
         after = {}
+        snapshot_after = {}
         try:
             after = {str(p.relative_to(ROOT)): sha(p) for p in sources}
             if after != record["source_sha256_before"]:
                 stop_reason = stop_reason or "source files changed during invocation"
+            # The shared diagnostic wrapper labels committed sources separately
+            # from its original/copied input files in the broader after-check set.
+            snapshot_expected = record.get("source_snapshot_sha256_before",
+                                           record.get("committed_source_sha256",
+                                                      record["source_sha256_before"]))
+            snapshot_after = {relative: sha(out / "sources" / relative)
+                              for relative in snapshot_expected}
+            if snapshot_after != snapshot_expected:
+                stop_reason = stop_reason or "executed source snapshot changed during invocation"
         except Exception as error:
             cleanup_errors.append({"action": "source_hashes", "error": repr(error)})
         if cleanup_errors:
@@ -267,7 +311,11 @@ def supervise(out, record, env, sources, cutoff):
             stop_reason = stop_reason or "resource evidence write failed"
         finally:
             try:
-                if received_signals:
+                # The terminal decision stops accepting cancellation here. Later
+                # signals cannot produce contradictory status/metrics/exit evidence.
+                accepting_cancellation = False
+                terminal_signals = list(received_signals)
+                if terminal_signals:
                     stop_reason = stop_reason or "supervisor received signal"
                 exit_code = None if process is None else process.returncode
                 success = (exit_code == 0 and stop_reason is None and disposition["status"] == "empty")
@@ -278,15 +326,17 @@ def supervise(out, record, env, sources, cutoff):
                                "group_disposition": disposition, "cleanup_events": cleanup_events,
                                "cleanup_errors": cleanup_errors, "relay_errors": relay_errors,
                                "relay_active_after_join": relay_active,
-                               "received_signals": received_signals, "source_sha256_after": after,
+                               "received_signals": terminal_signals, "source_sha256_after": after,
+                               "source_snapshot_sha256_after": snapshot_after,
+                               "cancellation_boundary": "before terminal evidence publication",
                                "rss_sample_count": len(samples),
-                               "sampled_max_rss_bytes": max((p["rss_bytes"] for p in samples), default=0)})
+                               "sampled_max_rss_bytes": max((p["rss_bytes"] for p in samples), default=None)})
                 save_json(out / "execution.json", record)
             finally:
                 for sig, handler in old_handlers.items():
                     signal.signal(sig, handler)
     if not relay_active:
-        print("Saved execution evidence: " + str(out), flush=True)
+        write_console("Saved execution evidence: " + str(out) + "\n")
     return 0 if success else 1
 
 

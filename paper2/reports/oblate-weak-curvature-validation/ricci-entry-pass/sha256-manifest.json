@@ -1,0 +1,16 @@
+{
+  "README.md": "8530fdadd073192201cb653a278095c2be4e19f7e8614485572c28ae61987ef8",
+  "archive-status.json": "4897cd30ad96d083f3b1a879f9260238a46e1feeeb4a8113388acf6a21697798",
+  "execution.json": "aa40ba270b74fcbf543424e557c71c0b3e14d822f4ff762e11edaf13d582a061",
+  "resource-samples.json": "42cebb0b2d77739a0f0843330a66126c6599065d9e443c3fb7c6c1a90465cfe7",
+  "ricci-entry-probe-checks.json": "47fdb668c50b379f8c082f20a04e8c1ae7c4a659ecd3ef5308eaeb3dd87cc9c1",
+  "sources/kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+  "sources/potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+  "sources/run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+  "sources/supervise_weak_validation.py": "0677d0fe8cd2ab56896c486d87d241b4d1e9a74f1f2390822f464df8e31dfe8d",
+  "sources/verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+  "sources/weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+  "timing-events.json": "2a034dd2d83c59a675203d79da80813935329b7a0c26f6f645a37b1152d55f7e",
+  "verification.log": "ddd6ffb06f4f47a49f3f4c7d2e942d7b827240d91ebd791fa84b7aa186c589b0",
+  "weak-form-progress.jsonl": "1927b15efa191d18dd6d6616826f5f0bbead43be4db6568fce7d1813f7b4e9de"
+}

@@ -16,6 +16,7 @@ import sys
 import sympy as s
 
 import reduction_progress as progress
+from authenticated_export import read_completed_buffers
 from exact_linear_algebra import rref_with_side, independent_extension
 from terminal_kernel import kernel_embedding
 from terminal_preservation import field_matrix, require_exact_finite, verify_terminal_preservation
@@ -122,24 +123,13 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def load_json(path):
-    with Path(path).open() as stream:
-        return json.load(stream)
-
-
 def load_completed_export(input_dir):
     input_dir = Path(input_dir)
-    completion_path = input_dir / "completion.json"
-    operators_path = input_dir / "stationary-operators.json"
-    reproducibility_path = input_dir / "stationary-reproducibility.json"
-    for path in (completion_path, operators_path, reproducibility_path):
-        require(path.exists(), f"missing required completed-export file: {path}")
-    require(progress.sha256_file(completion_path) == EXPECTED_COMPLETION_SHA256,
-            "completion marker differs from the independently reviewed upstream export")
-
-    completion = load_json(completion_path)
-    operators = load_json(operators_path)
-    reproducibility = load_json(reproducibility_path)
+    completion, payloads, input_digests = read_completed_buffers(
+        input_dir, EXPECTED_COMPLETION_SHA256
+    )
+    operators = payloads["stationary-operators.json"]
+    reproducibility = payloads["stationary-reproducibility.json"]
 
     require(
         completion.get("all_checker_controls_passed") is True,
@@ -150,17 +140,6 @@ def load_completed_export(input_dir):
     require(
         completion.get("source_sha256_before") == completion.get("source_sha256_after"),
         "source hashes changed during upstream export",
-    )
-    exports = completion.get("export_sha256", {})
-    require(
-        exports.get("stationary-operators.json")
-        == progress.sha256_file(operators_path),
-        "stationary-operators.json hash does not match completion marker",
-    )
-    require(
-        exports.get("stationary-reproducibility.json")
-        == progress.sha256_file(reproducibility_path),
-        "stationary-reproducibility.json hash does not match completion marker",
     )
     require(
         operators.get("radial_DAE_reduced") is False,
@@ -202,13 +181,7 @@ def load_completed_export(input_dir):
         "completion": completion,
         "operators": operators,
         "reproducibility": reproducibility,
-        "input_sha256": {
-            "completion.json": progress.sha256_file(completion_path),
-            "stationary-operators.json": progress.sha256_file(operators_path),
-            "stationary-reproducibility.json": progress.sha256_file(
-                reproducibility_path
-            ),
-        },
+        "input_sha256": input_digests,
     }
 
 

@@ -1,0 +1,28 @@
+PASS geometry and pinned-reference sector L=2 m=0
+Traceback (most recent call last):
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f/paper2/verification/oblate_quadratic_preparation/verify_kinematics.py", line 222, in <module>
+    result = verify()
+             ^^^^^^^^
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f/paper2/verification/oblate_quadratic_preparation/verify_kinematics.py", line 131, in verify
+    assert_zero_matrix(tensor.subs(r, 1) - original.subs(substitute), x, f"r=1, m={m}")
+  File "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f/paper2/verification/oblate_quadratic_preparation/verify_kinematics.py", line 40, in assert_zero_matrix
+    raise AssertionError(f"{label} entry {(i, j)}: {matrix[i, j]}")
+AssertionError: r=1, m=1 entry (2, 2): 3*I*sqrt(-(x - 1)*(x + 1))*(x - 1)*(x + 1) - 3*I*sqrt(1 - x**2)*(x**2 - 1)
+        2.02 real         1.11 user         0.16 sys
+            79265792  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5935  page reclaims
+                1473  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                  38  messages sent
+                  53  messages received
+                   1  signals received
+                 748  voluntary context switches
+                2352  involuntary context switches
+           606373247  instructions retired
+           204002545  cycles elapsed
+            14926448  peak memory footprint

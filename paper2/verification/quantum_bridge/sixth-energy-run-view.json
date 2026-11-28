@@ -1,0 +1,116 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "checks"
+    },
+    {
+      "phase": "kernel_consolidation_controls",
+      "of": 10,
+      "unit": "controls"
+    },
+    {
+      "phase": "triple_integral_controls",
+      "of": 9,
+      "unit": "controls"
+    },
+    {
+      "phase": "sixth_preparation",
+      "of": 1,
+      "unit": "directions"
+    },
+    {
+      "phase": "canonical_terms",
+      "of": 10,
+      "unit": "components"
+    },
+    {
+      "phase": "canonical_checks",
+      "of": 10,
+      "unit": "components"
+    },
+    {
+      "phase": "nested_compilation",
+      "of": 2,
+      "unit": "kernels"
+    },
+    {
+      "phase": "nested_consolidation",
+      "of": 2,
+      "unit": "kernels"
+    },
+    {
+      "phase": "sixth_local_assembly",
+      "of": 15,
+      "unit": "families"
+    },
+    {
+      "phase": "sixth_triple_assembly",
+      "of": 6,
+      "unit": "components"
+    },
+    {
+      "phase": "sixth_integration",
+      "of": 20,
+      "unit": "families"
+    },
+    {
+      "phase": "sixth_preparation",
+      "of": 1,
+      "unit": "directions"
+    },
+    {
+      "phase": "canonical_terms",
+      "of": 10,
+      "unit": "components"
+    },
+    {
+      "phase": "canonical_checks",
+      "of": 10,
+      "unit": "components"
+    },
+    {
+      "phase": "nested_compilation",
+      "of": 2,
+      "unit": "kernels"
+    },
+    {
+      "phase": "nested_consolidation",
+      "of": 2,
+      "unit": "kernels"
+    },
+    {
+      "phase": "sixth_local_assembly",
+      "of": 15,
+      "unit": "families"
+    },
+    {
+      "phase": "sixth_triple_assembly",
+      "of": 6,
+      "unit": "components"
+    },
+    {
+      "phase": "sixth_integration",
+      "of": 20,
+      "unit": "families"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "reports"
+    }
+  ],
+  "brief": {
+    "question": "Can the complete twenty-entry reduced H6 formula be numerically assembled for pure momentum and a nonzero-monopole mixed direction under fixed component and total error gates?",
+    "from_parent": "Parent validated sources, nine Fourier controls, synthetic tails and both gravitational-tail cases in 95 seconds. It did not compile the production mixed nested kernels or evaluate H6. This child adds exact ten-mode canonical terms, Decimal full triple integrals, the twenty-family ledger and independent pure-momentum reference. The first attempt at this node completed pure momentum and 17 mixed entries in 313 seconds, then stopped before nested integration at its 50m evaluator cap. This implementation repair exactly consolidates rational kernels and preserves the full target and all numerical settings.",
+    "healthy": "Completed controls and all exact canonical identities pass; source/T2 checks pass; each family converges and the sum of physical absolute diagnostics meets the declared total budget. Pure momentum has exactly two energy families with coefficients49 and28 and matches the pinned independent radial reference. Mixed H6 may be positive or negative. Ten consolidation controls pass, including unchanged raw maps, idempotence, exact cancellation/cap rejection and independent two-parameter integral identities. Full raw/compact kernel files are retained; exact sampled symmetrized representation checks pass.",
+    "noise": "Signed family values are different contributions, not a convergence curve. Strong-minus-weak pointwise A2 density need not vanish. accuracy_certified=false and independent_mixed_functional_validation=false are intentional. Exact compiler progress may remain within one kernel for minutes; raw visit counters show activity. Equal-endpoint canonicalization can change unsymmetrized integrands and individual rectangular grids. Termwise diagnostics refer to the compact basis; exact consolidation does not guarantee smaller work or convergence. This is a classical integral calculation: any generic training-step sentence is an unrelated placeholder. The family counter remains the most recent completed integration stage while the next direction is prepared; use its direction column.",
+    "worth_a_flag": "Traceback, failed exact/numerical gate, work-cap exhaustion, nonfinite data or1800-second wall cap. A failed gate must remain preserved. Successful numerical assembly is neither independent full mixed-functional validation nor a four-point loop/scattering result.",
+    "decided": "One local standard-library CPU process, no remote/GPU or publication. Same 1800-second wall cap and original numerical settings; same nested pair/evaluator 50m, term 200k, local pair 20m and exterior 1m caps. New exact rewrite cap 50m operations, degree128, coefficient bits4096; exact sampled identity visits1m. First attempt runtime313 seconds is partial work only, not a complete-pilot prediction. No hidden radius, tolerance or work-cap enlargement."
+  },
+  "watch": {
+    "minGapS": 120,
+    "maxGapS": 600
+  }
+}

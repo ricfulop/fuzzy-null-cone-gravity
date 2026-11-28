@@ -64,6 +64,7 @@ class ReductionRecorder:
         self.identity_sha256 = sha256_bytes(canonical_bytes(self.identity))
         self.started = time.monotonic()
         self.sequence = 0
+        self.stderr_mirror_available = True
         self.stage_count = 0
         self.attempt_id = uuid.uuid4().hex
         self.stream = (self.directory / "progress.jsonl").open("x", encoding="utf-8")
@@ -97,7 +98,13 @@ class ReductionRecorder:
         line = json.dumps(record, sort_keys=True, allow_nan=False)
         self.stream.write(line + "\n")
         self.stream.flush()
-        print("PROGRESS " + line, file=sys.stderr, flush=True)
+        if self.stderr_mirror_available:
+            try:
+                print("PROGRESS " + line, file=sys.stderr, flush=True)
+            except BrokenPipeError:
+                # The journal and failure record remain usable after a console
+                # reader disconnects. Journal errors above still propagate.
+                self.stderr_mirror_available = False
 
     @contextmanager
     def stage(self, name, **details):

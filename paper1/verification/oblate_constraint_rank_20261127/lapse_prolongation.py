@@ -18,6 +18,7 @@ import sympy as s
 HERE=Path(__file__).resolve().parent
 spec=importlib.util.spec_from_file_location('all_modes',HERE/'all_modes.py')
 a=importlib.util.module_from_spec(spec);spec.loader.exec_module(a)
+certificate=a.certificate
 x,d=a.x,a.d
 OUT=a.ROOT/'reports/oblate-lapse-consistency-2026-11-27'
 
@@ -57,7 +58,9 @@ def verify_hessian_derivative(L,m):
 def calculate():
     start=time.monotonic()
     OUT.mkdir(parents=True,exist_ok=True)
-    prior=json.loads((a.OUT/'exact-leading.json').read_text())
+    certificate_path=a.OUT/'exact-leading.json'
+    certificate_sources=certificate.source_fingerprints(HERE)
+    prior,certificate_provenance=certificate.load_certificate(certificate_path,certificate_sources)
     rows=[]
     for L in [2,3]:
         for m in range(L+1):
@@ -119,11 +122,16 @@ def calculate():
     (OUT/'lapse-summary.json').write_text(json.dumps({'exact_gradient_kernel':kernels,
         'counts':totals,'analytic_step_required':'weighted first-derivative forms on compact radial profiles and small-parameter operator perturbation',
         'physical_DOF_count_established':False},indent=2)+'\n')
-    sources=[Path(__file__),HERE/'all_modes.py',a.OUT/'exact-leading.json']
+    if certificate.source_fingerprints(HERE)!=certificate_sources:
+        raise RuntimeError('certificate producer sources changed during lapse calculation')
+    sources=[Path(__file__),HERE/'all_modes.py',HERE/'leading_certificate.py']
     manifest={'base_commit_at_execution':subprocess.check_output(['git','rev-parse','HEAD'],cwd=a.ROOT,text=True).strip(),
               'python':platform.python_version(),'dependencies':{k:importlib.metadata.version(k) for k in ['numpy','sympy']},
               'seconds':round(time.monotonic()-start,3),'GPU_jobs':0,'experiment_launches':0,
+              'exact_leading_certificate':certificate_provenance,
               'sha256':{str(p.relative_to(a.ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}}
+    manifest['sha256'][str(certificate_path.relative_to(a.ROOT))]=certificate_provenance['payload_sha256']
+    manifest['sha256'][str(certificate.manifest_path(certificate_path).relative_to(a.ROOT))]=certificate_provenance['manifest_sha256']
     (OUT/'lapse-reproducibility.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print('PASS: exact leading lapse forms retain the radial profile and its first derivative.',flush=True)
     print('PASS: active scalar profile counts are 8/12; exact redundant gradient families have 1/4 profile functions.',flush=True)

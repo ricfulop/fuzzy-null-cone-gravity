@@ -24,9 +24,11 @@ The independent check must establish the kernel and invariance identities, the p
 
 A certified nonzero response supplies a witness on the forward family. An exact zero establishes silence on that family. If a formally nonzero coefficient cannot be separated at a regular candidate radius, the response remains JSON `null`; numeric telemetry omits its truth value. The response and the certificate pass are separate outcomes. Global radial existence, a converse covering all stationary solutions, and nonlinear consistency remain open.
 
-## Mocked supervisor validation
+`terminal-evidence.json` is the terminal commit marker. Its SHA-256 fields must match both `execution.json` and `metrics.json` before a reader accepts a pass; standalone metrics are provisional. Cancellation is accepted through certificate validation and frozen before terminal evidence publication. Later signals cannot change that decision. Console forwarding is nonblocking and best effort, while the child log is archived independently. No RSS samples means an unknown (`null`) maximum.
 
-From `paper1/`, the following commands exited 0. The unittest command produced the full combined output shown below. The shell syntax check produced no output.
+## Initial preparation validation
+
+At preparation commit `0ae1c15`, the following commands exited 0 from `paper1/`. The unittest command produced the full combined output shown below. The shell syntax check produced no output. These recorded hashes describe that preparation, before the later supervisor review fixes.
 
 ```sh
 python3 -B -W error::ResourceWarning -m unittest discover -s verification/oblate_stationary_state_germ_20261128 -p test_run_bounded.py -q
@@ -40,7 +42,7 @@ Ran 20 tests in 0.231s
 OK
 ```
 
-The tests use manufactured certificate data and replace child dispatch and process-group operations. They cover copied-input command paths and digests, fresh output, stop and cleanup evidence, and the three response outcomes. The [validation record](../../reports/oblate-stationary-state-germ-checker-preparation-2026-11-28/runner-validation.json) preserves the merged output. These are the original preparation hashes; the runner, test file and shell entry point are unchanged by the interval repair.
+The tests use manufactured certificate data and replace child dispatch and process-group operations. They cover copied-input command paths and digests, fresh output, stop and cleanup evidence, and the three response outcomes. The [validation record](../../reports/oblate-stationary-state-germ-checker-preparation-2026-11-28/runner-validation.json) preserves the original merged output. The maintained suite adds console-backpressure, terminal-commit, cancellation and missing-measurement regressions. These infrastructure tests execute no scientific checker.
 
 | File at original supervisor validation | SHA-256 |
 |---|---|

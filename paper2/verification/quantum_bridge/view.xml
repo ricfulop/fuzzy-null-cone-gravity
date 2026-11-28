@@ -1,0 +1,14 @@
+<signal name="pairing_control_error" label="Gaussian pairing error" digits="10" better="lower" />
+<signal name="calibration_error" label="H3/H4 calibration error" digits="10" better="lower" />
+<signal name="york_operator_error" label="York coefficient error" digits="10" better="lower" />
+<signal name="H5_value" label="Raw fifth-order coefficient" digits="6" />
+<signal name="H5_refinement" label="Termwise radial refinement" digits="8" better="lower" />
+<signal name="H5_spatial_error" label="Independent spatial error" scale="1e6" unit="×10⁻⁶" digits="5" better="lower" />
+<signal name="H5_directions" label="Completed H5 directions" digits="0" />
+<signal name="H5_maximum_spatial_error" label="Maximum H5 spatial error" scale="1e6" unit="×10⁻⁶" digits="5" better="lower" />
+<view headline="H5_maximum_spatial_error H5_spatial_error H5_value calibration_error">
+  <stats of="H5_maximum_spatial_error H5_spatial_error H5_directions" />
+  <stats of="H5_value H5_refinement H5_spatial_error" />
+  <stats of="pairing_control_error calibration_error york_operator_error" />
+  <text>Two directional evaluations of the full classical H5 functional, retaining every momentum sector. H6, the complete four-point quantum observable and physical large-rank limits remain pending. These raw-profile coefficients are not canonically normalized amplitudes.</text>
+</view>
