@@ -1,0 +1,45 @@
+{
+  "mode": "static_only",
+  "base_source_commit": "0ae1c15e11b2b8c9a2f82ca86b6774b68f7e0e79",
+  "checker_sha256": "2bd72d22cefc830967e0a1b42bcc2d8220ad4d63295293f56cfbdc9176cd1fb2",
+  "unchanged_critical_functions": [
+    "load_pinned_json",
+    "input_pin",
+    "check_qq_expression",
+    "parse_raw_expression",
+    "parse_q_expression",
+    "parse_operator_export",
+    "parse_terminal_state",
+    "verify_identity_linkage",
+    "gauge_blocks",
+    "field_value",
+    "field_matrix",
+    "field_derivative_matrix",
+    "field_terminal_state",
+    "field_operator_matrices",
+    "build_kernel_identities",
+    "build_preservation_identities",
+    "build_physical_lift_identities",
+    "state_operator",
+    "build_retained_euler_identities",
+    "build_discarded_response_identities",
+    "interval_add",
+    "interval_sub",
+    "interval_mul"
+  ],
+  "config_changed_fields": [
+    "purpose"
+  ],
+  "unchanged_plan_phase_count": 17,
+  "json_xml_python_syntax_valid": true,
+  "unchanged_supervisor_files": [
+    "run.sh",
+    "run_bounded.py",
+    "test_run_bounded.py"
+  ],
+  "scientific_modules_imported": false,
+  "scientific_invocations": 0,
+  "mathematical_controls_executed": false,
+  "prepared_manufactured_case_count": 19,
+  "independent_source_review": "msg_686ca093"
+}

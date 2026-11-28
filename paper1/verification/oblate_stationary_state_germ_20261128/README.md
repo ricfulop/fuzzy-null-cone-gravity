@@ -1,6 +1,12 @@
 # Direct-state stationary germ checker and supervisor
 
-This is a prepared alternative certificate for the fixed-$\epsilon=1/100$, zero-control oblate system. It starts from the original stationary operator export and a candidate fourteen-state snapshot. The [mathematical contract](../../reports/oblate-stationary-state-germ-preparation-2026-11-28/README.md) gives the interval-local uniqueness argument for the full ODE. This preparation supplies no physical-radius certificate or responding seed.
+This is an alternative certificate for the fixed-$\epsilon=1/100$, zero-control oblate system. It starts from the original stationary operator export and a candidate fourteen-state snapshot. The [mathematical contract](../../reports/oblate-stationary-state-germ-preparation-2026-11-28/README.md) gives the interval-local uniqueness argument for the full ODE. No physical-radius certificate or responding seed has yet been exported.
+
+## First attempt and interval repair
+
+The [first direct-state attempt](../../reports/oblate-stationary-state-germ-interval-timeout-2026-11-28/README.md), at source `0ae1c15e11b2b8c9a2f82ca86b6774b68f7e0e79`, passed 18 manufactured controls and the exact kernel, preservation, physical-lift and all-22 retained-row identities. It found a formally nonzero discarded response and collected 57 denominator polynomials. The 900-second wall limit stopped it during the combined regularity, rank-minor and response search. No physical-radius or solution-germ certificate was produced.
+
+The prepared repair caches exact polynomial objects and their per-radius coefficient lists, advances the same alternating arctangent brackets incrementally, and retains the original rational Horner and elimination arithmetic. Radius, refinement and response-column order are unchanged. Detailed progress events identify preparation, denominator batches, pivots and serialization without printing large endpoints. Only a dedicated undecided-enclosure exception triggers refinement. The new cached-versus-reference control and strengthened determinant-sign control remain unexecuted until a fresh tracked invocation. Inputs, proof identities, 900-second wall limit and sampled 2 GiB memory limit are unchanged.
 
 ## Dispatch and evidence
 
@@ -34,9 +40,9 @@ Ran 20 tests in 0.231s
 OK
 ```
 
-The tests use manufactured certificate data and replace child dispatch and process-group operations. They cover copied-input command paths and digests, fresh output, stop and cleanup evidence, and the three response outcomes. The [validation record](../../reports/oblate-stationary-state-germ-checker-preparation-2026-11-28/runner-validation.json) preserves the merged output. Scientific execution remains pending.
+The tests use manufactured certificate data and replace child dispatch and process-group operations. They cover copied-input command paths and digests, fresh output, stop and cleanup evidence, and the three response outcomes. The [validation record](../../reports/oblate-stationary-state-germ-checker-preparation-2026-11-28/runner-validation.json) preserves the merged output. These are the original preparation hashes; the runner, test file and shell entry point are unchanged by the interval repair.
 
-| Validated file | SHA-256 |
+| File at original supervisor validation | SHA-256 |
 |---|---|
 | `run_bounded.py` | `819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5` |
 | `test_run_bounded.py` | `8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231` |

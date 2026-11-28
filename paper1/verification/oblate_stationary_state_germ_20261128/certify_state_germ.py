@@ -114,6 +114,9 @@ DEFAULT_R0S = [
 
 
 class NullProgress:
+    def event(self, _event, **_details):
+        pass
+
     @contextmanager
     def stage(self, _name, **_details):
         yield
@@ -704,25 +707,13 @@ def collect_field_denominators(named_matrices):
         for row, values in matrix.to_dod().items():
             for col, value in values.items():
                 poly = field_denominator_poly(value)
-                expr = s.cancel(poly.as_expr())
-                if expr == 1:
-                    continue
-                key = str(expr)
-                seen.setdefault(
-                    key,
-                    {
-                        "poly_r_T": key,
-                        "locations": [],
-                    },
-                )
-                seen[key]["locations"].append([group, row, col])
+                if not poly.is_one:
+                    item = seen.setdefault(poly, {"poly": poly, "locations": []})
+                    item["locations"].append([group, row, col])
     derivative_poly = s.Poly(100 * R**2 + 1, R, T, domain=s.QQ).monic()
     seen.setdefault(
-        str(derivative_poly.as_expr()),
-        {
-            "poly_r_T": str(derivative_poly.as_expr()),
-            "locations": [["field_derivative", 0, 0]],
-        },
+        derivative_poly,
+        {"poly": derivative_poly, "locations": [["field_derivative", 0, 0]]},
     )
     return list(seen.values())
 
@@ -740,16 +731,28 @@ def interval_mul(a, b):
     return (min(values), max(values))
 
 
+class EnclosureUndecided(ValueError):
+    """A narrower exact interval may resolve the sign."""
+
+
+def require_separation(condition, message):
+    if not condition:
+        raise EnclosureUndecided(message)
+
+
 def interval_div(a, b):
-    require(interval_sign(b) != 0, "interval denominator contains zero")
+    require_separation(interval_sign(b) != 0, "interval denominator contains zero")
     reciprocals = [s.Rational(1, 1) / b[0], s.Rational(1, 1) / b[1]]
     return interval_mul(a, (min(reciprocals), max(reciprocals)))
 
 
 def interval_horner(poly, interval):
-    poly = s.Poly(poly, T, domain=s.QQ)
+    return horner_coefficients(s.Poly(poly, T, domain=s.QQ).all_coeffs(), interval)
+
+
+def horner_coefficients(coefficients, interval):
     result = (s.Rational(0), s.Rational(0))
-    for coeff in poly.all_coeffs():
+    for coeff in coefficients:
         result = interval_add(interval_mul(result, interval), (coeff, coeff))
     return result
 
@@ -779,8 +782,8 @@ def atan_controls(argument, bracket):
     control_t_minus_argument = interval_horner(
         s.Poly(T - argument, T, domain=s.QQ), bracket
     )
-    require(control_t[0] > 0, "atan bracket did not prove T > 0")
-    require(
+    require_separation(control_t[0] > 0, "atan bracket did not prove T > 0")
+    require_separation(
         control_t_minus_argument[1] < 0,
         "atan bracket did not prove atan(x) < x",
     )
@@ -818,7 +821,7 @@ def certify_denominators_at_r0(denominators, r0, bracket):
         poly = s.sympify(item["poly_r_T"], locals=SAFE_Q_LOCALS)
         value_interval = eval_poly_interval(poly, r0, bracket)
         sign = interval_sign(value_interval)
-        require(sign != 0, f"denominator not separated: {item['poly_r_T']}")
+        require_separation(sign != 0, f"denominator not separated: {item['poly_r_T']}")
         certificates.append({
             **item,
             "r0": str(r0),
@@ -835,17 +838,35 @@ def interval_gaussian_det(matrix, r0, bracket):
         [eval_expr_interval(matrix[row, col], r0, bracket) for col in range(matrix.cols)]
         for row in range(matrix.rows)
     ]
+    return serialize_minor(eliminate_interval_minor(entries))
+
+
+def serialize_minor(minor):
+    return {
+        **minor,
+        "determinant_interval": list(map(str, minor["determinant_interval"])),
+        "pivot_intervals": [
+            {**pivot, "interval": list(map(str, pivot["interval"]))}
+            for pivot in minor["pivot_intervals"]
+        ],
+    }
+
+
+def eliminate_interval_minor(entries, detail=None):
+    size = len(entries)
     determinant = (s.Rational(1), s.Rational(1))
-    row_permutation = list(range(matrix.rows))
+    row_permutation = list(range(size))
     pivots = []
     row_swaps = 0
-    for col in range(matrix.cols):
+    for col in range(size):
+        if detail:
+            detail("minor_pivot_begin", column=col)
         pivot = None
-        for row in range(col, matrix.rows):
+        for row in range(col, size):
             if interval_sign(entries[row][col]) != 0:
                 pivot = row
                 break
-        require(pivot is not None, f"minor pivot {col} was interval-singular")
+        require_separation(pivot is not None, f"minor pivot {col} was interval-singular")
         if pivot != col:
             entries[col], entries[pivot] = entries[pivot], entries[col]
             row_permutation[col], row_permutation[pivot] = (
@@ -858,22 +879,25 @@ def interval_gaussian_det(matrix, r0, bracket):
         pivots.append({
             "column": col,
             "source_row": row_permutation[col],
-            "interval": [str(pivot_interval[0]), str(pivot_interval[1])],
+            "interval": pivot_interval,
             "sign": interval_sign(pivot_interval),
         })
         determinant = interval_mul(determinant, pivot_interval)
-        for row in range(col + 1, matrix.rows):
+        for row in range(col + 1, size):
             factor = interval_div(entries[row][col], pivot_interval)
             entries[row][col] = (s.Rational(0), s.Rational(0))
-            for target_col in range(col + 1, matrix.cols):
+            for target_col in range(col + 1, size):
                 entries[row][target_col] = interval_sub(
                     entries[row][target_col],
                     interval_mul(factor, entries[col][target_col]),
                 )
+        if detail:
+            detail("minor_pivot_end", column=col, **endpoint_bits(pivot_interval),
+                   determinant_endpoint_max_bits=endpoint_bits(determinant)["endpoint_max_bits"])
     sign = interval_sign(determinant)
-    require(sign != 0, "minor determinant interval contains zero")
+    require_separation(sign != 0, "minor determinant interval contains zero")
     return {
-        "determinant_interval": [str(determinant[0]), str(determinant[1])],
+        "determinant_interval": determinant,
         "determinant_sign": sign,
         "pivot_intervals": pivots,
         "row_permutation": row_permutation,
@@ -894,7 +918,8 @@ def make_r0_attempt(r0, term_count):
     return r0, argument, bracket, atan_controls(argument, bracket)
 
 
-def certify_at_r0(denominators, minor, r0, term_count):
+def reference_certify_at_r0(denominators, minor, r0, term_count):
+    """Uncached specialization, bracket and evidence path for small comparison controls."""
     r0, argument, bracket, controls = make_r0_attempt(r0, term_count)
     denominator_certificates = certify_denominators_at_r0(denominators, r0, bracket)
     minor_certificate = interval_gaussian_det(minor, r0, bracket)
@@ -916,15 +941,101 @@ def certify_at_r0(denominators, minor, r0, term_count):
     }
 
 
-def response_candidates(response):
-    candidates = []
-    response_entries = response.to_dod().get(0, {})
-    for col, value in sorted(response_entries.items()):
-        candidates.append({
-            "column": col,
-            "poly": numerator_poly(field_to_sympy(value)),
-        })
-    return candidates
+def endpoint_bits(interval):
+    numer = max(abs(int(value.p)).bit_length() for value in interval)
+    denom = max(int(value.q).bit_length() for value in interval)
+    return {"numerator_bits": numer, "denominator_bits": denom, "endpoint_max_bits": max(numer, denom)}
+
+
+def minor_polynomials(matrix):
+    components = []
+    for i in range(matrix.rows):
+        row = []
+        for j in range(matrix.cols):
+            num, den = s.fraction(s.cancel(s.together(matrix[i, j])))
+            row.append((s.Poly(num, R, T, domain=s.QQ), s.Poly(den, R, T, domain=s.QQ)))
+        components.append(row)
+    return components
+
+
+def specialize_search_polynomials(denominators, minor, candidates, r0):
+    cache = {}
+
+    def coefficients(poly):
+        if poly not in cache:
+            cache[poly] = tuple(s.Poly(poly.eval(R, r0), T, domain=s.QQ).all_coeffs())
+        return cache[poly]
+
+    return (
+        [(item, coefficients(item["poly"])) for item in denominators],
+        [[(coefficients(num), coefficients(den)) for num, den in row] for row in minor],
+        [(col, poly, coefficients(poly)) for col, poly in candidates],
+    )
+
+
+def incremental_atan_brackets(argument, max_terms):
+    require(0 < argument <= 1, "atan bracket expects 0 < x <= 1")
+    partial = argument
+    signed_power = argument
+    for terms in range(1, max_terms + 1):
+        signed_power *= -argument**2
+        following = partial + signed_power / (2 * terms + 1)
+        yield terms, (min(partial, following), max(partial, following))
+        partial = following
+
+
+def check_cached_regularity(denominators, minor, argument, bracket, detail=None):
+    # These are the original Horner enclosures of T and T - argument.
+    positive = horner_coefficients((1, 0), bracket)
+    negative = horner_coefficients((1, -argument), bracket)
+    require_separation(positive[0] > 0, "atan bracket did not prove T > 0")
+    require_separation(negative[1] < 0, "atan bracket did not prove atan(x) < x")
+    evidence = []
+    for i, (item, coefficients) in enumerate(denominators):
+        if detail and i % 8 == 0:
+            group_bits = 0
+            detail("denominator_group_begin", first_index=i)
+        interval = horner_coefficients(coefficients, bracket)
+        if detail:
+            group_bits = max(group_bits, endpoint_bits(interval)["endpoint_max_bits"])
+            if not interval_sign(interval):
+                detail("denominator_unresolved", index=i, **endpoint_bits(interval))
+        require_separation(interval_sign(interval), f"denominator {i} not separated")
+        evidence.append((item, coefficients, interval))
+        if detail and (i % 8 == 7 or i + 1 == len(denominators)):
+            detail("denominator_group_end", last_index=i, group_endpoint_max_bits=group_bits)
+    if detail:
+        detail("minor_entries_begin")
+    entries = [
+        [interval_div(horner_coefficients(n, bracket), horner_coefficients(d, bracket))
+         for n, d in row] for row in minor
+    ]
+    return evidence, eliminate_interval_minor(entries, detail), positive, negative
+
+
+def specialized_text(coefficients):
+    return str(s.Poly.from_list(list(coefficients), T, domain=s.QQ).as_expr())
+
+
+def serialize_regularity(r0, terms, bracket, result):
+    evidence, minor, positive, negative = result
+    certificates = [
+        {"poly_r_T": str(item["poly"].as_expr()), "locations": item["locations"],
+         "r0": str(r0), "poly_at_r0": specialized_text(coefficients),
+         "interval": list(map(str, interval)), "sign": interval_sign(interval)}
+        for item, coefficients, interval in evidence
+    ]
+    return {
+        "r0": str(r0), "terms": terms, "atan_argument": str(s.Rational(1, 10) / r0),
+        "atan_interval": list(map(str, bracket)),
+        "controls": {"T_positive": list(map(str, positive)),
+                     "T_minus_argument_negative": list(map(str, negative))},
+        "regularity_certificate": {
+            "r0": str(r0), "terms": terms, "atan_interval": list(map(str, bracket)),
+            "denominator_count": len(certificates), "certified_denominators": certificates,
+        },
+        "minor_certificate": serialize_minor(minor), "bracket": bracket,
+    }
 
 
 def certify_regularity_and_response(
@@ -934,19 +1045,40 @@ def certify_regularity_and_response(
     response,
     max_atan_terms,
     r0_candidates=DEFAULT_R0S,
+    progress=None,
 ):
+    event = (progress or NullProgress()).event
     minor_columns = complement(free_rows, STATE_COUNT)
     require(len(minor_columns) == 6, "natural pivot complement is not rank six")
-    minor = field_matrix_to_sympy(c_matrix.extract(range(6), minor_columns))
-    candidates = response_candidates(response)
+    event("interval_detail", operation="prepare_minor_begin")
+    minor = minor_polynomials(field_matrix_to_sympy(c_matrix.extract(range(6), minor_columns)))
+    event("interval_detail", operation="prepare_minor_end")
+    candidates = []
+    for col, value in sorted(response.to_dod().get(0, {}).items()):
+        event("interval_detail", operation="response_polynomial_begin", column=col)
+        candidates.append((col, numerator_poly(field_to_sympy(value))))
+        event("interval_detail", operation="response_polynomial_end", column=col)
     first_regular = None
     failures = []
     for r0 in r0_candidates:
         r0 = s.Rational(r0)
-        for term_count in range(1, max_atan_terms + 1):
+        require(r0 > 0, "r0 must be positive")
+        argument = s.Rational(1, 10) / r0
+        event("interval_detail", operation="radius_specialization_begin", r0=str(r0))
+        den_at, minor_at, response_at = specialize_search_polynomials(denominators, minor, candidates, r0)
+        event("interval_detail", operation="radius_specialization_end", r0=str(r0))
+        for term_count, bracket in incremental_atan_brackets(argument, max_atan_terms):
+            def detail(operation, **fields):
+                event("interval_detail", operation=operation, r0=str(r0), terms=term_count, **fields)
+
+            detail("refinement_begin", **endpoint_bits(bracket))
+            # Keep fine-grained diagnostics bounded across long refinement sequences.
+            verbose = (term_count <= 3 or term_count == max_atan_terms
+                       or (term_count & (term_count - 1)) == 0)
             try:
-                regular = certify_at_r0(denominators, minor, r0, term_count)
-            except ValueError as error:
+                result = check_cached_regularity(den_at, minor_at, argument, bracket, detail if verbose else None)
+            except EnclosureUndecided as error:
+                detail("regularity_unresolved", reason=str(error))
                 if term_count == max_atan_terms:
                     failures.append({
                         "r0": str(r0),
@@ -954,10 +1086,12 @@ def certify_regularity_and_response(
                         "error": str(error),
                     })
                 continue
+            selected = (r0, term_count, bracket, result)
             if first_regular is None:
-                first_regular = regular
+                first_regular = selected
             if not candidates:
-                return first_regular, {
+                detail("serialize_selected", outcome="silent")
+                return serialize_regularity(*selected), {
                     "status": "silent_on_forward_state_germ_subfamily",
                     "formal_response_nonzero": False,
                     "response_nonzero": False,
@@ -966,18 +1100,25 @@ def certify_regularity_and_response(
                     "terminal_subfamily_response_zero": True,
                     "converse_certificate_supplied": False,
                 }
-            for candidate in candidates:
-                interval = eval_poly_interval(candidate["poly"], r0, regular["bracket"])
+            detail("response_evaluation_begin", column_count=len(response_at))
+            for col, poly, coefficients in response_at:
+                if verbose:
+                    detail("response_column_begin", column=col)
+                interval = horner_coefficients(coefficients, bracket)
+                if verbose:
+                    detail("response_column_end", column=col, **endpoint_bits(interval))
                 sign = interval_sign(interval)
                 if sign == 0:
                     continue
+                detail("serialize_selected", outcome="responding", column=col)
+                regular = serialize_regularity(*selected)
                 initial = ["0"] * FREE_STATE_COUNT
-                initial[candidate["column"]] = "1"
+                initial[col] = "1"
                 numerator_certificate = {
-                    "column": candidate["column"],
+                    "column": col,
                     "r0": regular["r0"],
-                    "poly_r_T": str(candidate["poly"].as_expr()),
-                    "poly_at_r0": str(poly_at_r0(candidate["poly"], r0).as_expr()),
+                    "poly_r_T": str(poly.as_expr()),
+                    "poly_at_r0": specialized_text(coefficients),
                     "interval": [str(interval[0]), str(interval[1])],
                     "sign": sign,
                 }
@@ -991,13 +1132,14 @@ def certify_regularity_and_response(
                     "converse_certificate_supplied": False,
                     "r0": regular["r0"],
                     "atan_interval": regular["atan_interval"],
-                    "certified_column": candidate["column"],
-                    "unit_vector_index": candidate["column"],
+                    "certified_column": col,
+                    "unit_vector_index": col,
                     "unit_vector_kind": "free_state",
                     "certified_numerator": numerator_certificate,
                     "free_state_initial": initial,
                     "regularity_certificate": regular["regularity_certificate"],
                 }
+            detail("response_unresolved")
         if candidates:
             failures.append({
                 "r0": str(r0),
@@ -1006,7 +1148,8 @@ def certify_regularity_and_response(
                 "error": "no response numerator separated at this radius",
             })
     require(first_regular is not None, "no regular rank-six radius certified")
-    return first_regular, {
+    event("interval_detail", operation="serialize_selected", outcome="unresolved", r0=str(first_regular[0]), terms=first_regular[1])
+    return serialize_regularity(*first_regular), {
         "status": "formal_response_nonzero_unresolved",
         "formal_response_nonzero": True,
         "response_nonzero": None,
@@ -1097,6 +1240,43 @@ def require_rejects(callback, name):
     raise AssertionError(f"{name} did not reject")
 
 
+def verify_cached_search_control():
+    # Keep the reference polynomial path independent of the specialization cache.
+    singular_factor = s.Poly(R - 2, R, T, domain=s.QQ)
+    locations = [["control", 0, 0]]
+    items = [{"poly": singular_factor, "locations": locations}]
+    reference_items = [{"poly_r_T": "r - 2", "locations": locations}]
+    minor = s.Matrix([[0, 1 / (1 + T)], [R + T, T]])
+    response_poly = s.Poly(R * T - T**2, R, T, domain=s.QQ)
+    accepted = []
+    for r0 in (s.Rational(2), s.Rational(1)):
+        den_at, minor_at, response_at = specialize_search_polynomials(
+            items, minor_polynomials(minor), [(3, response_poly)], r0
+        )
+        argument = s.Rational(1, 10) / r0
+        for terms, bracket in incremental_atan_brackets(argument, 4):
+            require(bracket == atan_bracket(argument, terms), "incremental atan bracket changed")
+            reference = None
+            try:
+                reference = reference_certify_at_r0(reference_items, minor, r0, terms)
+            except EnclosureUndecided:
+                pass
+            try:
+                result = check_cached_regularity(den_at, minor_at, argument, bracket)
+            except EnclosureUndecided:
+                require(reference is None, "cached enclosure rejected an accepted radius/refinement")
+                continue
+            require(reference is not None, "cached enclosure accepted a rejected radius/refinement")
+            require(serialize_regularity(r0, terms, bracket, result) == reference,
+                    "cached regularity evidence differs from uncached evidence")
+            col, _, coefficients = response_at[0]
+            witness = horner_coefficients(coefficients, bracket)
+            require(col == 3 and witness == eval_poly_interval(response_poly, r0, bracket)
+                    and interval_sign(witness) == 1, "cached response interval changed")
+            accepted.append((r0, terms))
+    require(accepted == [(1, n) for n in (2, 3, 4)], "unexpected accepted radius/refinements")
+
+
 def verify_manufactured_controls():
     state = manufactured_terminal_state()
     field_state = field_terminal_state(state)
@@ -1163,7 +1343,10 @@ def verify_manufactured_controls():
     row_swap = interval_gaussian_det(
         row_swap_minor, s.Rational(1), atan_bracket(s.Rational(1, 10), 1)
     )
-    require(row_swap["row_swap_count"] == 1, "interval row swap did not occur")
+    require(row_swap["row_swap_count"] == 1 and row_swap["determinant_sign"] == -1
+            and row_swap["determinant_interval"] == ["-1", "-1"],
+            "row swap count or signed determinant is incorrect")
+    verify_cached_search_control()
 
     invalid_b_snapshot = {
         "state": "write-only intermediate terminal state before preservation",
@@ -1240,7 +1423,7 @@ def verify_manufactured_controls():
     )
 
     singular_denominators = [{
-        "poly_r_T": "r - 2",
+        "poly": s.Poly(R - 2, R, T, domain=s.QQ),
         "locations": [["manufactured_denominator", 0, 0]],
     }]
     singular_then_regular, singular_then_response = certify_regularity_and_response(
@@ -1309,6 +1492,7 @@ def verify_manufactured_controls():
             "name": "interval_row_swap_control",
             "row_swap_count": row_swap["row_swap_count"],
         },
+        {"name": "cached_vs_uncached_radius_refinement_evidence_and_response"},
         {
             "name": "field_derivative_T_over_r",
             "output_shape": list(derivative.shape),
@@ -1450,6 +1634,7 @@ def certify(operators_json, snapshot_json, max_atan_terms, progress=None):
             field_terminal["free_rows"],
             response,
             max_atan_terms,
+            progress=progress,
         )
         progress.metric(
             r0=regularity["r0"],

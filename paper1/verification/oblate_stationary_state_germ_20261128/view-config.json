@@ -90,8 +90,9 @@
     "question": "Does the pinned direct-state system yield a regular stationary solution germ, and can a nonzero discarded response be certified on it?",
     "healthy": "Hashed inputs and manufactured controls precede exact identities, physical rank and same-radius interval checks. Only the final export provides the certificate.",
     "worth_a_flag": "Pin mismatch, failed identity, unresolved rank or denominator, malformed certificate, resource stop, or unclean child group.",
-    "decided": "One 900-second local CPU child. A silent response is scoped to the forward family. An unresolved response is reported as unknown.",
-    "from_parent": "Uses the original stationary operators and the terminal state before preservation. The full-state ODE avoids reduced dynamics."
+    "decided": "One 900-second local CPU child with the original two input pins. Exact interval arithmetic and radius/refinement order are unchanged; cached polynomials remove repeated preparation. A silent response concerns only the forward family; an unresolved response is unknown.",
+    "from_parent": "The first direct-state run passed exact kernel, invariance, physical lift, all 22 Euler rows and a formal nonzero response, then timed out during the combined physical-radius interval search without a certificate.",
+    "noise": "Nested interval_detail events report actual polynomial preparation, refinement, denominator batches and pivots inside the combined interval phase. Partial algebra identities and a formal nonzero response do not certify a physical germ."
   },
   "watch": {
     "minGapS": 120,
