@@ -1,0 +1,17 @@
+{
+  "plan": [
+    {"phase":"setup","of":1,"unit":"checks"},
+    {"phase":"angular_controls","of":26,"unit":"controls"},
+    {"phase":"scalar_controls","of":9,"unit":"controls"},
+    {"phase":"york_controls","of":12,"unit":"cases"},
+    {"phase":"export","of":1,"unit":"reports"}
+  ],
+  "brief": {
+    "question":"Do the independent angular, scalar and two-stage York inverse primitives pass the preregistered analytic, origin, tail, norm, flux and refinement controls?",
+    "healthy":"One standard-library CPU process. 26 angular controls, 9 scalar controls, 12 York case-levels, then export. Full source/level/comparison records are checkpointed. Coarse physical comparison failures marked acceptance_required=false are diagnostics, not failed mandatory gates.",
+    "noise":"No mixed gravitational H6 or one-loop amplitude is computed. The parent H6 number is not a comparison metric. Source/volume progress can take time between complete York cases; the driver enforces 1800 s and sampled 2 GiB RSS.",
+    "worth_a_flag":"A mandatory comparison fails, an exception or work cap is reported, or a stage stops producing source/volume progress for several minutes. Preserve measured failures; do not relax tolerances."
+  },
+  "rules": [],
+  "watch":{"minGapS":120,"maxGapS":900}
+}

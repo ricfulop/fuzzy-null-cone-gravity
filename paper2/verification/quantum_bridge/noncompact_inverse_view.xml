@@ -1,0 +1,12 @@
+<signal name="noncompact_required_completed" label="Required comparisons" digits="0" />
+<signal name="noncompact_required_failed" label="Required failures" digits="0" better="lower" />
+<signal name="noncompact_diagnostic_failed" label="Coarse diagnostic failures" digits="0" />
+<signal name="noncompact_all_required_passed" label="All declared gates" labels='{"0":"failed","1":"passed"}' />
+<signal name="suite" label="Suite" />
+<signal name="control" label="Comparison" />
+<signal name="outcome" label="Outcome" />
+<signal name="required" label="Acceptance role" />
+<view headline="noncompact_all_required_passed noncompact_required_completed noncompact_required_failed">
+  <stats of="noncompact_required_completed noncompact_required_failed noncompact_diagnostic_failed" />
+  <table name="noncompact_controls" columns="suite control outcome required" />
+</view>
