@@ -2,7 +2,7 @@
 
 **Requested by Ric Fulop, 27 November 2026.**
 
-**Status:** active research plan; the primary–secondary calculation and its first preservation test at the vacuum witness are complete. A continued retained solution, final Dirac classification, and the full objective remain open.
+**Status:** active research plan; the primary–secondary calculation and two preservation stages at the vacuum witness are complete. Higher preservation excludes this witness from smooth retained evolution at $N=3,4$. A dynamically admissible branch, final Dirac classification, and the full objective remain open.
 
 ## Objective and completion standard
 
@@ -41,11 +41,15 @@ python verification/closure_audit_20261127/run_all.py
 
 The [actual-action canonical note](reports/canonical-analysis-2026-11-27/README.md) derives the exact ADM variable map, a regular spatial Legendre domain, and the temporal primary and secondary equations. At explicit vacuum data satisfying all primaries and secondaries, the scalar lapse Hessian has rank $4(N-1)$: 8 at $N=3$ and 12 at $N=4$. A general harmonic proof and independent local checks support this result. It does not determine the final Dirac surface or physical degree-of-freedom count.
 
-The [first stabilization calculation](reports/dirac-stabilization-2026-11-27/README.md) preserves every retained secondary instantaneously with $\dot h_{tt}=(32\kappa/9)P_2$, plus the stated free rates. It retains radial derivatives and leaves 26/50 free rate functions at $N=3/4$ at this step, not 26/50 gauge freedoms. A separate exact trace argument rules out a full continuum vacuum Einstein trajectory through this fixed witness inside the current $N=3,4$ ansatz. This does not rule out a continued projected evolution or controlled approximation. The next proposed work is to extend the preservation conditions off the special point or to higher time order, establish any tertiary constraints, and test existence of a continued retained solution. That next stage awaits the user's copilot decision.
+The [first stabilization calculation](reports/dirac-stabilization-2026-11-27/README.md) preserves every retained secondary instantaneously with $\dot h_{tt}=(32\kappa/9)P_2$, plus the stated free rates. It retains radial derivatives and leaves 26/50 free rate functions at $N=3/4$ at this step, not 26/50 gauge freedoms. A separate exact trace argument rules out a full continuum vacuum Einstein trajectory through this fixed witness inside the current $N=3,4$ ansatz. That first calculation alone did not determine whether projected evolution could continue.
+
+The approved [second preservation calculation](reports/higher-order-consistency-2026-11-27/README.md) now excludes a sufficiently smooth projected continuation through the same witness. For a retained polar quadrupole angular-shift test $\xi=w(r)D^AP_2\partial_A$, every first-preserving rate choice gives $\ddot{\mathcal C}_W[\xi]=-(512/1575)\kappa^3\int r^2w(r)\,dr$, nonzero for a positive radial bump. Arbitrary radial profiles are retained, and the differentiated Noether identity removes dependence on the next temporal rates. Thus the previous bracket ranks at these data do not establish ranks on a final dynamically admissible surface. Other initial data, the final constraint classification, and physical degrees of freedom remain open. The next proposed step is to characterize a dynamically admissible branch and test its canonical brackets; that new stage awaits the user's copilot decision.
 
 Reproduce this calculation from `paper1/` with `python verification/canonical_analysis_20261127/actual_adm.py` (NumPy and SymPy; no GPU jobs).
 
 Reproduce the first preservation step with `python verification/dirac_stabilization_20261127/stabilize_witness.py` using the same dependencies.
+
+Reproduce the second preservation obstruction with `python verification/higher_order_consistency_20261127/second_preservation.py` using the same dependencies.
 
 1. **Derive the canonical constraints first.** Start from the first-order ADM formulation with a stated angular coefficient ansatz. Compare it with the Legendre transform of the current Lagrangian Galerkin restriction; truncation and the Legendre transform need not commute. Use N=3 and N=4 as explicit tests, then formulate the general-rank statement. Do not identify an SU(N) commutator with the hypersurface-deformation algebra without deriving the mixed and Hamiltonian brackets.
 2. **Test reduction before the state cutoff.** Preserve the gravitational constraint structure on the kinematical space, reduce it, and only then test whether the clock/occupation restriction defines the claimed finite physical sector. Prove preservation, or quantify leakage, under dynamics and the physical observables. This is a working route, not an established solution.
