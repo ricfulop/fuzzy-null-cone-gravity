@@ -1,0 +1,12 @@
+{
+  "stage": "terminal_embedding_diagnostic",
+  "wall_seconds": 300,
+  "memory_bytes": 2147483648,
+  "approval_message": "msg_4c4bcc8d",
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "checkpoint_path": "reports/oblate-stationary-closure-terminal-timeout-2026-11-28/outputs/dae-step-02.json",
+  "checkpoint_sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+  "checkpoint_run": "8fa984ea-3c9b-4e85-b984-c23956fc95d8",
+  "checkpoint_source": "e928d6c89324465018a6b5b209152dffde1a454b",
+  "purpose": "Diagnostic algebraic kernel of the partial final constraint matrix; no DAE closure, response, or solution-germ certification."
+}
