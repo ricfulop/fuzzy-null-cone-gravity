@@ -1,5 +1,7 @@
 # Stationary mixed-parity seed: derivation and extraction preparation
 
+**Subsequent execution:** the separately approved single [stationary extraction attempt](../oblate-stationary-system-check-2026-11-27/README.md) reached its 300-second wall limit after five column-completion messages. It did not produce the operator export or complete the final controls. The preparation-stage statements below are preserved as historical; no scientific correction or rerun followed the stop.
+
 **Preparation only.** User message `msg_55d5e65b` and the subsequent confirmation authorize advancing the seed preparation. No new scientific code was imported or executed in this stage. The original coefficient action, harmonic conventions, and normalization are unchanged. The [map/control pass](../oblate-null-map-check-2026-11-27/README.md) is inherited from source `53b06316547d0a5a47754f0de71f8c91c7a42a40` and result `d9add22b3509700107601b94c2da9f629050dfb3`.
 
 The result of this preparation is a smaller exact problem: construct one stationary polar solution of the full retained linearized equations, then test one discarded residual combination. No such responding solution has yet been constructed. The companion kinematic/reference check has passed at source `2986a52960840cc846f88a0665acbc44e4c6bf6e`, result `510e7d87d0e8cd1581ffc7233122a7bedafea969`; its curvature, weak-form, and Green-flux checks remain separate obligations.
