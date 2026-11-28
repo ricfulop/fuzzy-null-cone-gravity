@@ -1,0 +1,62 @@
+{
+  "run_id": "157032da-1468-473e-8cd7-37763ff86822",
+  "source_commit": "e48324b06a7edc16bd2bff2d7dd16125762fd96c",
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/157032da-1468-473e-8cd7-37763ff86822/repo/paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py",
+    "--input-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/157032da-1468-473e-8cd7-37763ff86822/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/157032da-1468-473e-8cd7-37763ff86822/repo/paper1/run-output/157032da-1468-473e-8cd7-37763ff86822/outputs",
+    "--stage",
+    "closure",
+    "--max-steps",
+    "21"
+  ],
+  "configuration": {
+    "stage": "closure",
+    "max_steps": 21,
+    "wall_seconds": 900,
+    "memory_bytes": 2147483648,
+    "approval_message": "msg_4c4bcc8d",
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
+    "purpose": "Fresh complete reduction from the pinned original operators: historical control-only discovery basis; C-only fraction-free terminal kernel with exact original C*M check; all original 22 terminal rows and dynamics identities retained. No checkpoint resume or interval germ claim."
+  },
+  "source_sha256_before": {
+    "verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177",
+    "verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "7cf97696705fccf97b930ad273a51b5e90dfd540c3880f3031db5fe1d59f487f",
+    "verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "verification/oblate_stationary_reduction_20261128/terminal_kernel.py": "4ae051c5a17b9ab7bac1766ea86d74a2f72d6e4fd6cec6d5eeb124c1cecf4e03",
+    "verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py": "4616fe18e1f655fb615b8c26b784c9e78ad30f011d3266e63fa3aae3186feecc",
+    "verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+    "verification/oblate_stationary_reduction_20261128/test_terminal_kernel.py": "78c4e377a8e99b3316f251a69c598d534f3df362487dc71092dcce9c691f4616",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "verification/oblate_stationary_reduction_20261128/run-config.json": "c6809bdb90941a305ef0d5f5c97bc593615628fcb74f48782e3ca8407593d4ec"
+  },
+  "source_repository": "/Users/ricfulop/OpenResearch/fuzzy-null-cone-gravity",
+  "input_completion_sha256": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "scientific_invocations": 0,
+  "remote_jobs": 0,
+  "GPU_jobs": 0,
+  "rss_measurement": "sampled sum for child process group; not a hard OS cap",
+  "start_utc": "2026-11-28T06:11:30.452241+00:00"
+}
