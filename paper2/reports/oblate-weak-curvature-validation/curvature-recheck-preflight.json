@@ -1,0 +1,23 @@
+{
+  "preparation_only": true,
+  "utc": "2026-11-28T05:59:55.855257+00:00",
+  "parent_run": "9b6ab336-ed3c-460b-9308-b2dc21c470e4",
+  "parent_source": "3445f140ac8352e7e83a07edefb9ecdcaad83e73",
+  "parent_result_commit": "59bbeffc71c03131453226a5ef955f6a3619f047",
+  "review_message": "msg_817235ff",
+  "checker_unchanged": true,
+  "only_scientific_runner_change": "supervisor CHECK_MODE ricci-entry-probe -> curvature-probe",
+  "next_mode": "curvature-probe",
+  "diagnostic_batches": 5,
+  "wall_budget_seconds": 300,
+  "sampled_rss_budget_bytes": 2147483648,
+  "scientific_execution_in_preparation": false,
+  "source_sha256": {
+    "verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "dfdfbf12f64c9b4279784058f77d23a1ec1e5bedec29906e5e249bc24f8f6f6e",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  }
+}
