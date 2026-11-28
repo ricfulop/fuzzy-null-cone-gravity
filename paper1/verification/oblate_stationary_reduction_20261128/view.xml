@@ -1,0 +1,8 @@
+<signal name="principal_rank" label="Principal radial rank" digits="0" />
+<signal name="gauge_verified" label="Exact radial gauge" labels='{"1":"verified","0":"not verified"}' />
+<signal name="manufactured_controls_passed" label="Manufactured DAE controls" labels='{"1":"passed","0":"failed"}' />
+<signal name="principal_probe_passed" label="Principal probe" labels='{"1":"passed","0":"failed"}' />
+<view headline="principal_rank">
+  <stats of="principal_rank gauge_verified manufactured_controls_passed principal_probe_passed" />
+  <text>Exact fixed-deformation principal probe. No solution germ or nonlinear conclusion.</text>
+</view>

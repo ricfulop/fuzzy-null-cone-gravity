@@ -1,0 +1,44 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "manufactured_controls",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "fixed_epsilon_field_conversion",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "radial_x0_gauge_right_kernel",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "principal_block_probe",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "bundle"
+    }
+  ],
+  "brief": {
+    "question": "What is the exact principal rank of the N3 stationary radial equations at epsilon=1/100 after verifying the radial gauge identity?",
+    "healthy": "Exact manufactured controls, reversible rational-field conversion, all23-row gauge identity, then an exact8x7 principal rank. One local child,900 seconds,2GiB sampled group RSS.",
+    "worth_a_flag": "A traceback, changed source/input digest, false control, or timeout. Principal rank is not a Dirac rank or existence certificate.",
+    "decided": "Input is the independently reviewed completed export. No curvature recomputation, physical boundary domain, solution germ, or nonlinear obstruction is claimed."
+  },
+  "watch": {
+    "minGapS": 120,
+    "maxGapS": 300
+  }
+}
