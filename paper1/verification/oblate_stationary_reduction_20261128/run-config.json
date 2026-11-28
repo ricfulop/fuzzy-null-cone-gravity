@@ -1,10 +1,10 @@
 {
   "stage": "closure",
   "max_steps": 21,
-  "wall_seconds": 900,
+  "wall_seconds": 1800,
   "memory_bytes": 2147483648,
   "approval_message": "msg_4c4bcc8d",
   "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
   "input_directory": "reports/oblate-stationary-system-recheck-2026-11-27/outputs",
-  "purpose": "Fresh original-operator reduction retaining historical discovery, verified kernel/preservation and write-only snapshot; exact QQ(r,T) arithmetic for all22 state/control residuals and reduced dynamics with both full-row reconstruction identities. Discarded response unchanged; no checkpoint resume or germ claim."
+  "purpose": "Fresh full reduction with identical scientific Python code to 96916c7 and all terminal checks retained. Measured work reached 855 seconds before embedding differentiation, so the wall cap is extended to 1800 seconds; the sampled 2-GiB memory limit, approval cutoff, original inputs and no-resume policy are unchanged. No germ is claimed."
 }
