@@ -306,6 +306,10 @@ def numerical_case(L, ell, config):
 def main():
     start = time.monotonic()
     config = json.loads((ROOT / "config.json").read_text())
+    if config["calculation"] == "reduced_weak_field_vertices":
+        from reduced_vertices_check import main as vertices_main
+        vertices_main(config)
+        return
     if config["calculation"] == "reduced_gaunt_completion":
         from reduced_gaunt_completion import main as reduced_main
         reduced_main(config)

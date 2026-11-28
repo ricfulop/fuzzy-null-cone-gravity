@@ -6,29 +6,19 @@
       "unit": "checks"
     },
     {
-      "phase": "exact_tt_basis",
-      "of": 10,
-      "unit": "modes"
+      "phase": "exact_vertices",
+      "of": 7,
+      "unit": "directions"
     },
     {
-      "phase": "hamiltonian_coefficients",
-      "of": 2,
-      "unit": "quadratures"
+      "phase": "invariant_reconstruction",
+      "of": 1,
+      "unit": "checks"
     },
     {
-      "phase": "free_corner_sectors",
-      "of": 6,
-      "unit": "budgets"
-    },
-    {
-      "phase": "linear_green_refinement",
-      "of": 3,
-      "unit": "grids"
-    },
-    {
-      "phase": "nonlinear_constraints",
-      "of": 13,
-      "unit": "cases"
+      "phase": "independent_finite_metric",
+      "of": 4,
+      "unit": "points"
     },
     {
       "phase": "export",
@@ -37,11 +27,11 @@
     }
   ],
   "brief": {
-    "question": "Does the declared reduction-first candidate provide canonical TT variables and convergent vacuum constraint reconstruction while retaining the required dependent harmonics?",
-    "from_parent": "The parent found a nonzero mixed constraint bracket after restricting the canonical fields before reduction. This child changes the regulator: only free TT coefficients are restricted; dependent geometry is reconstructed by the constraints.",
-    "healthy": "Ten selected smooth l=2 modes pass exact TT, Gram, stiffness and dual-pairing checks. Independent Green-function and Fourier evaluations agree. Linear radial errors fall by about four per grid doubling. The nonlinear scalar residual falls with radial refinement, and the missing angular source is strongly reduced as auxiliary J grows. These are finite-mode classical and quadratic-quantum ingredients, not a complete interacting theory.",
-    "noise": "Physical free-data rank N stays 3. Auxiliary J and the radial grid are numerical resolution controls, not a physical large-N limit. J=2 deliberately omits the dependent j=4 response and should have a nonzero constraint residual. Area-sector dimensions apply only to the quadratic far-sphere uniform matching construction with a chosen area window and vacuum subtraction; their growth is not an entropy fit.",
-    "worth_a_flag": "Any exact TT, canonical-pairing, frequency or source identity fails; independent quartic integrals disagree by more than 1e-8; the fixed-point iteration leaves positive psi or fails to converge; refinement does not improve the constraint check; or a claim upgrades this into a finite-N one-loop amplitude or complete corner Hilbert space.",
-    "decided": "Local CPU, standard library only. Ten modes, two energy quadratures, six leading area budgets, three linear radial grids and thirteen nonlinear cases. The analytic contraction bound concerns the untruncated conformal integral map; numerical projected solves are checked independently. Keep the source branch frozen after a meaningful result."
+    "question": "Do the complete reduced cubic and quartic Hamiltonian functionals agree with exact Gaussian/Gaunt identities, rotational invariants and independently evaluated finite-metric curvature?",
+    "from_parent": "The parent validated the ten-mode TT basis, the reduced canonical map and a single momentum-direction energy expansion. This child derives full H3/H4, including scalar conformal and longitudinal York responses, on that same declared reduction-first candidate.",
+    "healthy": "Seven exact directions pass TT, integrated-curvature, Gram, York inverse and Fourier normalization checks. Two cubic and five quartic potential invariants reproduce held-out directions. A rational SO(3) rotation leaves all energy terms unchanged. Four independent finite-metric cases extrapolate the curvature and projection ingredients with scaled error below 1e-10.",
+    "noise": "The actual finite-metric error is the raw signal; its view label displays units of 1e-12. Cubic and quartic coefficients are in different declared Gaussian units. The physical rank stays N=3 with one radial profile per parity. Exact zero is expected for identity residuals. No claim of an amplitude, controlled interacting limit or full interacting reconstruction follows.",
+    "worth_a_flag": "A rational identity or held-out invariant check fails, the independent finite-metric error exceeds 1e-10, the metric determinant or connection trace exceeds 1e-50, or progress stops during exact algebra. Negative quartic coefficients are not by themselves a failure: the weak-field polynomial is not a globally bounded Hamiltonian.",
+    "decided": "Local CPU, Python standard library, inherited fixed recipe. Seven exact directions and four 70-digit finite-metric checks, using 32 finite amplitudes. No separate trial changes the source before launch. Preserve a meaningful source snapshot permanently; review actual logs on the next turn."
   }
 }

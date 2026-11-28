@@ -1,25 +1,22 @@
-<signal name="case" label="Case" />
-<signal name="rho" label="Amplitude ε²K*" digits="3" />
-<signal name="auxiliary_J" label="Dependent-geometry cutoff J" digits="0" />
-<signal name="radial_intervals" label="Radial intervals" digits="0" />
-<signal name="exact_TT_residual" label="Exact TT residual" digits="0" better="lower" />
-<signal name="quartic_energy_verification_error" label="Quartic energy relative error" digits="12" better="lower" />
-<signal name="linear_green_error" label="Linear Green-function error" digits="9" better="lower" />
-<signal name="angular_constraint_defect" label="Angular scalar-constraint defect" digits="12" better="lower" />
-<signal name="full_constraint_residual" label="Scalar constraint residual" digits="9" better="lower" />
-<signal name="ADM_mass" label="ADM energy (16πG=1)" digits="9" />
-<signal name="mass_flux_difference" label="Boundary/volume difference" digits="9" better="lower" />
-<signal name="area_budget_B" label="Leading area budget B" digits="1" />
-<signal name="sector_dimension" label="Leading sector dimension" digits="0" />
-<signal name="count_residual" label="Independent count residual" digits="0" better="lower" />
-<signal name="validated_modes" label="Validated TT profiles" digits="0" />
-<signal name="validated_nonlinear_cases" label="Nonlinear cases" digits="0" />
-<view headline="full_constraint_residual exact_TT_residual">
-  <text>Declared reduction-first candidate. Physical free rank N=3 stays fixed. The dependent geometry carries higher harmonics. These checks concern constrained geometry, Hamiltonian coefficients and a quadratic uniform-area sector; the interacting quantum goals remain open.</text>
-  <chart from="linear_green" x="radial_intervals" y="linear_green_error" x-scale="log" y-scale="log" ghost="false" title="Independent radial solver check" />
-  <chart from="angular_refinement" x="auxiliary_J" y="angular_constraint_defect" y-scale="log" ghost="false" title="Restoring the dependent angular harmonics" />
-  <table name="nonlinear" columns="case angular_constraint_defect full_constraint_residual ADM_mass mass_flux_difference" />
-  <text>The area counts below use the leading far-sphere area/energy relation and ten selected free modes. They are not the full corner state count or black-hole entropy.</text>
-  <table name="area_sectors" columns="area_budget_B sector_dimension count_residual" />
-  <stats of="exact_TT_residual validated_modes validated_nonlinear_cases" />
+<signal name="case" label="Direction" />
+<signal name="exact_vertex_residual" label="Exact vertex identity residual" better="lower" digits="0" />
+<signal name="vertex_directions" label="Evaluated directions" digits="0" />
+<signal name="invariant_residual" label="Potential invariant residual" better="lower" digits="0" />
+<signal name="rotational_residual" label="Rotation residual" better="lower" digits="0" />
+<signal name="nonzero_cubic_invariants" label="Nonzero cubic invariants" digits="0" />
+<signal name="cubic_potential" label="H3 configuration coefficient" digits="5" />
+<signal name="quartic_potential" label="H4 configuration coefficient" digits="5" />
+<signal name="quartic_mixed" label="H4 mixed coefficient" digits="5" />
+<signal name="quartic_momentum" label="H4 momentum coefficient" digits="5" />
+<signal name="finite_metric_error" label="Finite-metric coefficient error" unit="×10⁻¹²" scale="1000000000000" digits="6" better="lower" />
+<signal name="maximum_finite_metric_error" label="Maximum coefficient error" unit="×10⁻¹²" scale="1000000000000" digits="6" better="lower" />
+<signal name="metric_determinant_error" label="Determinant error" unit="×10⁻⁵⁰" scale="1e50" digits="6" better="lower" />
+<signal name="exponential_terms" label="Matrix-exponential terms" digits="0" />
+<signal name="verified_hamiltonian_order" label="Verified Hamiltonian order" digits="0" />
+<view headline="maximum_finite_metric_error finite_metric_error vertex_directions">
+  <stats of="vertex_directions maximum_finite_metric_error verified_hamiltonian_order" />
+  <text>Classical interaction ingredients of the declared reduced theory. These results do not evaluate a finite-N one-loop scattering amplitude. The error labels display units of 10⁻¹²; the raw values are recorded in the log.</text>
+  <table name="vertices" columns="case cubic_potential quartic_potential quartic_mixed quartic_momentum exact_vertex_residual" last="7" title="Exact directional couplings" />
+  <text>Cubic coefficients multiply (2π/3)^(3/2); all quartic coefficients multiply π^(3/2)/√2. S uses dual-Gram momentum coefficients. Directions have different normalizations and are not an optimization comparison.</text>
+  <table name="finite_metric" columns="case finite_metric_error metric_determinant_error exponential_terms" last="4" title="Independent finite-metric checks" />
 </view>

@@ -1,13 +1,13 @@
 {
-  "calculation": "reduced_gaunt_completion",
-  "outer_radius": 10.0,
-  "radial_intervals": [256, 512, 1024],
-  "amplitude_rhos": [0.005, 0.02, 0.08],
-  "energy_quadratures": [[80, 8], [128, 12]],
-  "energy_relative_tolerance": 1e-8,
-  "iteration_tolerance": 2e-13,
-  "maximum_iterations": 60,
-  "validation_angular_nodes": 64,
-  "angular_quadrature_mass_tolerance": 1e-10,
-  "area_budgets": [0, 3, 5, 8, 12, 20]
+  "calculation": "reduced_weak_field_vertices",
+  "decimal_precision": 70,
+  "finite_difference_steps": ["0.0002", "0.0001", "0.00005"],
+  "coefficient_error_tolerance": "1e-10",
+  "determinant_tolerance": "1e-50",
+  "finite_metric_checks": [
+    {"case": "electric_axis", "point": ["0.2", "-0.3", "0.4"]},
+    {"case": "magnetic_axis", "point": ["0.7", "0.1", "-0.2"]},
+    {"case": "noncommuting_labels", "point": ["0.35", "-0.25", "0.45"]},
+    {"case": "held_out_mixed", "point": ["0.2", "0.3", "0.55"]}
+  ]
 }
