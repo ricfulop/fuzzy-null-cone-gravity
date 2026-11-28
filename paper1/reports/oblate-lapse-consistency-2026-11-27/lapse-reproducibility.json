@@ -1,0 +1,16 @@
+{
+  "base_commit_at_execution": "6e31a5e3fa1e0f0b9f7b54fb261df34de9b7742d",
+  "python": "3.12.11",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0"
+  },
+  "seconds": 1.717,
+  "GPU_jobs": 0,
+  "experiment_launches": 0,
+  "sha256": {
+    "verification/oblate_constraint_rank_20261127/lapse_prolongation.py": "0bc3cae3b95c86e890b9c33b509ea776de57b65a8b207cd565d4a863956614a9",
+    "verification/oblate_constraint_rank_20261127/all_modes.py": "55ba3d4ba6c44104668362258aa96465bd485fef8f407f65283e12aa0c643ebe",
+    "reports/oblate-constraint-rank-2026-11-27/exact-leading.json": "16887b6865371e7f14e223ac474f3cc68f87fb7c48881524857ee2fb6a6981f3"
+  }
+}

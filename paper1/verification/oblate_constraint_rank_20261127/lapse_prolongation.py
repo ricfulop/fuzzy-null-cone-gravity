@@ -19,6 +19,7 @@ HERE=Path(__file__).resolve().parent
 spec=importlib.util.spec_from_file_location('all_modes',HERE/'all_modes.py')
 a=importlib.util.module_from_spec(spec);spec.loader.exec_module(a)
 x,d=a.x,a.d
+OUT=a.ROOT/'reports/oblate-lapse-consistency-2026-11-27'
 
 
 def leading_hessians(L,m):
@@ -55,6 +56,7 @@ def verify_hessian_derivative(L,m):
 
 def calculate():
     start=time.monotonic()
+    OUT.mkdir(parents=True,exist_ok=True)
     prior=json.loads((a.OUT/'exact-leading.json').read_text())
     rows=[]
     for L in [2,3]:
@@ -105,7 +107,7 @@ def calculate():
                          'nondegenerate_radial_forms':radial_forms})
             nonzero=[(labels[i],labels[j],str(Zgram[i,j])) for i in range(len(labels)) for j in range(i,len(labels)) if Zgram[i,j]!=0]
             print('LAPSE_BLOCK',L,m,'map_rank',Z.rank(),'Gram_rank',Zgram.rank(),'entries',nonzero,flush=True)
-    (a.OUT/'lapse-leading.json').write_text(json.dumps(rows,indent=2)+'\n')
+    (OUT/'lapse-leading.json').write_text(json.dumps(rows,indent=2)+'\n')
     kernels=gradient_kernel()
     totals=[]
     for L in [2,3]:
@@ -114,7 +116,7 @@ def calculate():
         totals.append({'N':L+1,'L':L,'leading_active_scalar_multiplets_real':active,
                        'exact_redundant_lapse_profile_functions':(L-1)**2,
                        'nonlinear_final_Dirac_classification':False})
-    (a.OUT/'lapse-summary.json').write_text(json.dumps({'exact_gradient_kernel':kernels,
+    (OUT/'lapse-summary.json').write_text(json.dumps({'exact_gradient_kernel':kernels,
         'counts':totals,'analytic_step_required':'weighted first-derivative forms on compact radial profiles and small-parameter operator perturbation',
         'physical_DOF_count_established':False},indent=2)+'\n')
     sources=[Path(__file__),HERE/'all_modes.py',a.OUT/'exact-leading.json']
@@ -122,7 +124,7 @@ def calculate():
               'python':platform.python_version(),'dependencies':{k:importlib.metadata.version(k) for k in ['numpy','sympy']},
               'seconds':round(time.monotonic()-start,3),'GPU_jobs':0,'experiment_launches':0,
               'sha256':{str(p.relative_to(a.ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}}
-    (a.OUT/'lapse-reproducibility.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    (OUT/'lapse-reproducibility.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print('PASS: exact leading lapse forms retain the radial profile and its first derivative.',flush=True)
     print('PASS: active scalar profile counts are 8/12; exact redundant gradient families have 1/4 profile functions.',flush=True)
     print('These are linearized prolongation results, not a nonlinear physical degree-of-freedom count.',flush=True)
@@ -137,12 +139,20 @@ def gradient_kernel():
     W1=s.Matrix([d*s.diff(f1,x)/Sigma,s.I*f1/(rho*d)])
     P1=a.harmonic(1,1)[1];A2=a.harmonic(2,1)[2]
     c1=-(r*r+5*e/6)/rho;c2=-s.I*e/(18*rho)
-    assert all(s.factor(z)==0 for z in W1-c1*P1-c2*A2)
+    # In this m=1 chart the components carry sqrt(d) and 1/sqrt(d).
+    # Remove those nonzero factors for -1<x<1, then cancel rationally.
+    # factor() alone can return unevaluated 0*I, whose structural ==0 is false.
+    residual=W1-c1*P1-c2*A2
+    rational_residual=[s.cancel(residual[0]/s.sqrt(d)),
+                       s.cancel(residual[1]*s.sqrt(d))]
+    assert rational_residual==[s.S.Zero,s.S.Zero]
     return {'N3':'arbitrary angle-independent F0(r)',
             'N4_additional_templates':[str(f0),str(f1)],
             'N4_templates_meaning':'axisymmetric template plus real and imaginary parts of m=1 template times exp(i phi); each multiplied by an arbitrary smooth radial function',
             'N4_gradient_m0':'polar degree 1',
             'N4_gradient_m1_coefficients':[str(c1),str(c2)],
+            'N4_gradient_m1_rationalized_residual':[str(z) for z in rational_residual],
+            'gradient_identity_domain':'-1<x<1; equality of smooth retained fields extends across the coordinate poles',
             'N4_gradient_m1_basis':['polar (ell,m)=(1,1)','axial (ell,m)=(2,1)'],
             'radial_actual_shift_coefficient':'b=partial_r f, retained through L'}
 

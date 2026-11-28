@@ -1,0 +1,10 @@
+LAPSE_BLOCK 2 0 map_rank 2 Gram_rank 2 entries [([1, 'f/r^2'], [1, 'f/r^2'], '-16/525'), ([1, 'f/r^2'], [1, 'f_prime/r'], '16/525'), ([1, 'f_prime/r'], [1, 'f_prime/r'], '-16/525'), ([2, 'f_prime/r'], [2, 'f_prime/r'], '-4/245')]
+LAPSE_BLOCK 2 1 map_rank 2 Gram_rank 2 entries [([1, 'f/r^2'], [1, 'f/r^2'], '-64/1575'), ([1, 'f/r^2'], [1, 'f_prime/r'], '64/1575'), ([1, 'f_prime/r'], [1, 'f_prime/r'], '-64/1575'), ([2, 'f_prime/r'], [2, 'f_prime/r'], '256/40425')]
+LAPSE_BLOCK 2 2 map_rank 1 Gram_rank 1 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '64/1323')]
+LAPSE_BLOCK 3 0 map_rank 2 Gram_rank 2 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '-4/245'), ([3, 'f/r^2'], [3, 'f/r^2'], '-20/1617'), ([3, 'f/r^2'], [3, 'f_prime/r'], '-20/1617'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '-20/1617')]
+LAPSE_BLOCK 3 1 map_rank 2 Gram_rank 2 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '-4/49'), ([3, 'f/r^2'], [3, 'f/r^2'], '43200/2523367'), ([3, 'f/r^2'], [3, 'f_prime/r'], '43200/2523367'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '43200/2523367')]
+LAPSE_BLOCK 3 2 map_rank 2 Gram_rank 2 entries [([2, 'f_prime/r'], [2, 'f_prime/r'], '-8/49'), ([3, 'f/r^2'], [3, 'f/r^2'], '81600/220759'), ([3, 'f/r^2'], [3, 'f_prime/r'], '81600/220759'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '81600/220759')]
+LAPSE_BLOCK 3 3 map_rank 1 Gram_rank 1 entries [([3, 'f/r^2'], [3, 'f/r^2'], '332275200/280832783'), ([3, 'f/r^2'], [3, 'f_prime/r'], '332275200/280832783'), ([3, 'f_prime/r'], [3, 'f_prime/r'], '332275200/280832783')]
+PASS: exact leading lapse forms retain the radial profile and its first derivative.
+PASS: active scalar profile counts are 8/12; exact redundant gradient families have 1/4 profile functions.
+These are linearized prolongation results, not a nonlinear physical degree-of-freedom count.

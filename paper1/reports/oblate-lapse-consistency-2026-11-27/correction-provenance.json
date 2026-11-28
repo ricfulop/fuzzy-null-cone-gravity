@@ -1,0 +1,47 @@
+{
+  "approval_message": "msg_040d0d1b",
+  "parent_source_commit": "6e31a5e3fa1e0f0b9f7b54fb261df34de9b7742d",
+  "failure_preserved": true,
+  "failed_source_sha256": "cc160d303f09b11814140c5695ec8352705575e0830469799cafc2f22eb88c94",
+  "failed_log_sha256": "341edb5aacb91d4ed5b6ec821cc6379835b22c51a542a821e3f8f1921b6327b5",
+  "correction": "Exact rational cancellation of chart-weighted vector residual; no descriptor, basis, or coefficient change. New outputs in a separate report directory.",
+  "corrected_source_sha256": "0bc3cae3b95c86e890b9c33b509ea776de57b65a8b207cd565d4a863956614a9",
+  "local_rerun": {
+    "exit_code": 0,
+    "command": "uv run --isolated --no-project --with numpy==2.3.5 --with sympy==1.14.0 python verification/oblate_constraint_rank_20261127/lapse_prolongation.py",
+    "working_directory": "paper1",
+    "output_log": "verification.log",
+    "log_sha256": "7d3aedcc8681ada09ade61364ffc549a690e55f76b2e564608ead3d00e0c6c12",
+    "observed_command_seconds": 2.306405333,
+    "checker_seconds": 1.717,
+    "reruns_after_correction": 1
+  },
+  "GPU_jobs": 0,
+  "remote_jobs": 0,
+  "tracked_experiment_launches": 0,
+  "counts": {
+    "N3": {
+      "exact_redundant_profile_families": 1,
+      "complementary_real_angular_channels": 8
+    },
+    "N4": {
+      "exact_redundant_profile_families": 4,
+      "complementary_real_angular_channels": 12
+    }
+  },
+  "analytic_scope": "Linearized reduced bracket; exact small-deformation nondegeneracy on continuous H1_0 radial form extension is supplied by the report proof, not by symbolic output alone.",
+  "full_nonlinear_Dirac_classification_established": false,
+  "physical_DOF_count_established": false,
+  "no_scientific_reruns_during_this_metadata_check": true,
+  "analytic_review": "msg_9aa66359; domain wording clarified to include H1_0 limits of compact profiles",
+  "independent_reviews": [
+    {
+      "message": "msg_9aa66359",
+      "scope": "Analytic radial-domain and small-deformation theorem; H1_0 template-limit clarification incorporated."
+    },
+    {
+      "message": "msg_44b5a494",
+      "scope": "Read-only exact descriptor, corrected assertion, basis conventions, coefficient table and counts; no material issue reported."
+    }
+  ]
+}
