@@ -25,7 +25,8 @@ from numbers import Rational
 from sys import float_info
 from types import MappingProxyType
 
-from gaussian_green_fields import heat_integrals
+from gaussian_green_fields import HeatField, heat_integrals
+from gaussian_heat_pairings import angular_average
 
 
 def _exact(value):
@@ -75,6 +76,10 @@ def _positive_radius(radius):
     radius = float(radius)
     if not isfinite(radius) or radius <= 0:
         raise ValueError("Exterior radius must be finite and strictly positive")
+    if not isfinite(3*radius*radius):
+        raise ValueError("Radius squared exceeds the supported binary64 range")
+    if radius*radius == 0:
+        raise ValueError("Radius squared underflows the supported binary64 range")
     return radius
 
 
@@ -90,7 +95,17 @@ def _log_sum(values):
     if not values:
         return None
     largest = max(values)
+    if largest == -inf:
+        return -inf
     return largest+log(fsum(exp(value-largest) for value in values))
+
+
+def _signed_term(log_absolute, coefficient):
+    """Combine all factors before exponentiating; never underflow a power first."""
+    if log_absolute > log(float_info.max):
+        raise OverflowError("A complete exterior term overflows binary64")
+    value = exp(log_absolute)
+    return value if coefficient > 0 else -value
 
 
 def _from_log_bound(value):
@@ -163,21 +178,29 @@ class TripleHeatTail:
         radius = float(radius)
         if not isfinite(radius) or radius < 0:
             raise ValueError("Radius must be finite and nonnegative")
-        if not self.coefficients:
+        if not self.coefficients or radius == 0:
             return 0.0
+        radius = _positive_radius(radius)
         moments = heat_integrals(radius*radius,
                                  max(max(key[1:]) for key in self.coefficients))
-        return 4*pi*fsum(_float_coefficient(c)*radius**(degree+2)*moments[m]*moments[n]*moments[p]
-                         for (degree, m, n, p), c in self.coefficients.items())
+        if any(value <= 0 or not isfinite(value) for value in moments):
+            raise OverflowError("Heat moments outside representable positive range")
+        logr = log(radius)
+        logs = tuple(log(value) for value in moments)
+        return fsum(_signed_term(log(4*pi)+_log_abs_exact(c)+(degree+2)*logr
+                                 +logs[m]+logs[n]+logs[p], c)
+                    for (degree, m, n, p), c in self.coefficients.items())
 
     def evaluate_exterior(self, radius, max_products=1_000_000):
         """Exact exterior identity evaluated in binary64, for radius>0 only."""
         radius = _positive_radius(radius)
         expansion = self.exterior_coefficients(max_products)
         er = erf(radius)
-        return 4*pi*fsum(_float_coefficient(c)*pi**(k/2)*er**k
-                         *exp(-(3-k)*radius*radius)*radius**nu
-                         for (k, nu), c in expansion.items())
+        if er <= 0:
+            raise OverflowError("erf(radius) is outside representable positive range")
+        return fsum(_signed_term(_log_abs_exact(c)+log(4)+(1+k/2)*log(pi)
+                                 +k*log(er)-(3-k)*radius*radius+nu*log(radius), c)
+                    for (k, nu), c in expansion.items())
 
     def exterior_integral(self, radius, required_decay_power=-3,
                           max_products=1_000_000):
@@ -197,11 +220,17 @@ class TripleHeatTail:
         bad = {nu: str(c) for nu, c in algebraic.items() if nu > required_decay_power}
         if bad:
             raise ValueError("Exact algebraic falloff gate failed: "+repr(bad))
-        terms = [4*pi**2.5*_float_coefficient(c)*radius**(nu+1)/(-nu-1)
-                 for nu, c in algebraic.items()]
-        if not all(isfinite(value) for value in terms):
+        # Integer powers of the exact binary64 radius are rational. Combine
+        # them with coefficients BEFORE conversion to floating point, so a
+        # tiny power and a large coefficient cannot spuriously yield zero.
+        exact_radius = F.from_float(radius)
+        terms = [c*exact_radius**(nu+1)/(-nu-1) for nu, c in algebraic.items()]
+        normalized = sum(terms, F(0))
+        absolute_normalized = sum((abs(term) for term in terms), F(0))
+        value = 4*pi**2.5*_float_coefficient(normalized)
+        absolute = 4*pi**2.5*_float_coefficient(absolute_normalized)
+        if not isfinite(value) or not isfinite(absolute):
             raise OverflowError("Algebraic tail contribution overflows binary64")
-        value, absolute = fsum(terms), fsum(abs(term) for term in terms)
         bounds = []
         for (k, nu), coefficient in expansion.items():
             if k == 3:
@@ -212,11 +241,15 @@ class TripleHeatTail:
                               +_log_gaussian_tail_bound(nu, 3-k, radius))
         log_bound = _log_sum(bounds)
         bound, underflow = _from_log_bound(log_bound)
+        ratio = absolute/abs(value) if value else None
+        ratio_overflow = ratio is not None and not isfinite(ratio)
         return {
             "radius": radius,
             "algebraic_integral": value,
             "absolute_algebraic_term_sum": absolute,
-            "algebraic_cancellation_ratio": absolute/abs(value) if value else None,
+            "algebraic_sum_method": "Exact rational radius powers and signed sum before multiplying the floating common pi factor",
+            "algebraic_cancellation_ratio": None if ratio_overflow else ratio,
+            "algebraic_cancellation_ratio_overflow": ratio_overflow,
             "machine_epsilon_times_absolute_sum": float_info.epsilon*absolute,
             "absolute_remainder_bound": bound,
             "log_absolute_remainder_bound": log_bound,
@@ -229,3 +262,70 @@ class TripleHeatTail:
             "exterior_bins": len(expansion),
             "interpretation": "Algebraic tail plus a Gaussian remainder inequality; binary64 evaluation is not interval certified",
         }
+
+
+def collapse_triple_heat(fields, factor=F(1), max_pair_products=20_000_000):
+    """Exactly angular-average three rate-one fields, with no Gaussian factor.
+
+    Return (TripleHeatTail, structural_statistics). The pair with the fewest
+    products is multiplied first; an identical pair uses its symmetric half.
+    The third angular contraction uses only matching Cartesian parities.
+    Its rational angular averages include no 4*pi: TripleHeatTail supplies
+    that common factor together with the radial measure during evaluation.
+    The work cap counts both stages, and cannot silently discard products.
+    """
+    fields = tuple(fields)
+    factor = _exact(factor)
+    if len(fields) != 3 or any(not isinstance(field, HeatField) for field in fields):
+        raise TypeError("Exactly three HeatField objects are required")
+    if any(field.a != 1 for field in fields):
+        raise ValueError("The algebraic-tail backend currently requires all three rates equal to one")
+    if type(max_pair_products) is not int or max_pair_products < 1:
+        raise ValueError("max_pair_products must be a positive integer")
+    sizes = [len(field.terms) for field in fields]
+    if not factor or not all(sizes):
+        return TripleHeatTail({}), {"field_terms": sizes, "products": 0, "angular_bins": 0}
+    choices = []
+    for i, j, k in ((0, 1, 2), (0, 2, 1), (1, 2, 0)):
+        same = fields[i].terms == fields[j].terms
+        cost = sizes[i]*(sizes[i]+1)//2 if same else sizes[i]*sizes[j]
+        choices.append((cost, i, j, k, same))
+    cost, i, j, k, same = min(choices)
+    if cost > max_pair_products:
+        raise RuntimeError("Exact triple-HEAT first-product budget exceeded")
+    left = tuple(fields[i].terms.items())
+    right = left if same else tuple(fields[j].terms.items())
+    pair = {}
+    for index, ((powers, m), coefficient) in enumerate(left):
+        for other_index in range(index if same else 0, len(right)):
+            (other_powers, n), other_coefficient = right[other_index]
+            combined = tuple(a+b for a, b in zip(powers, other_powers))
+            multiplicity = 2 if same and other_index != index else 1
+            _add(pair, (combined, *sorted((m, n))), coefficient*other_coefficient*multiplicity)
+    pair_groups = {}
+    for (powers, m, n), coefficient in pair.items():
+        parity = tuple(power % 2 for power in powers)
+        pair_groups.setdefault(parity, []).append((powers, m, n, coefficient))
+    third_groups = {}
+    for (powers, m), coefficient in fields[k].terms.items():
+        parity = tuple(power % 2 for power in powers)
+        third_groups.setdefault(parity, []).append((powers, m, coefficient))
+    angular_cost = sum(len(rows)*len(third_groups.get(parity, ()))
+                       for parity, rows in pair_groups.items())
+    if cost+angular_cost > max_pair_products:
+        raise RuntimeError("Exact triple-HEAT angular-contraction budget exceeded")
+    collapsed = {}
+    for parity, rows in pair_groups.items():
+        for powers, m, n, coefficient in rows:
+            for other_powers, p, other_coefficient in third_groups.get(parity, ()):
+                combined = tuple(a+b for a, b in zip(powers, other_powers))
+                angular = angular_average(combined)
+                _add(collapsed, (sum(combined), *sorted((m, n, p))),
+                     factor*coefficient*other_coefficient*angular)
+    result = TripleHeatTail(collapsed)
+    return result, {
+        "field_terms": sizes, "first_pair": [i, j], "identical_pair": same,
+        "first_pair_products": cost, "first_pair_terms": len(pair),
+        "angular_products": angular_cost, "products": cost+angular_cost,
+        "angular_bins": len(result.coefficients),
+    }

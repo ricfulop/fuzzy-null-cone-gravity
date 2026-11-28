@@ -1,48 +1,111 @@
 {
-  "calculation": "full_fifth_order",
-  "h5_directions": [
-    "electric_axis",
+  "calculation": "sixth_backend_validation",
+  "source_directions": [
+    "monopole_mixed",
+    "noncommuting_labels",
+    "pure_configuration",
+    "pure_momentum"
+  ],
+  "tail_directions": [
+    "monopole_mixed",
     "noncommuting_labels"
   ],
-  "york_test_point": [
-    "0.2",
-    "-0.35",
-    "0.5"
+  "source_points": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0.2,
+      -0.35,
+      0.5
+    ],
+    [
+      -0.6,
+      0.45,
+      0.3
+    ],
+    [
+      1.1,
+      -0.8,
+      0.65
+    ],
+    [
+      4,
+      -3,
+      2
+    ]
   ],
-  "max_pair_products": 20000000,
-  "pairing_options": {
+  "source_scaled_tolerance": 1e-08,
+  "fourier_options": {
+    "orders": [
+      8,
+      16,
+      24
+    ],
+    "precision": 64,
+    "check_precision": 96,
+    "absolute_tolerance": "1e-12",
+    "relative_tolerance": "1e-10",
+    "max_term_evaluations": 20000000
+  },
+  "fourier_compile_caps": {
+    "max_pair_products": 20000000,
+    "max_fourier_terms": 200000,
+    "max_terms": 200000,
+    "max_degree": 64
+  },
+  "fourier_exact_control_tolerance": "1e-40",
+  "fourier_spatial_control_tolerance": 1e-09,
+  "fourier_spatial_options": {
     "quadrature_orders": [
       16,
       24,
       32
     ],
-    "absolute_tolerance": 1e-09,
-    "relative_tolerance": 1e-08,
+    "absolute_tolerance": 1e-12,
+    "relative_tolerance": 1e-10,
     "decimal_precision": 64,
     "max_bin_evaluations": 20000000
   },
-  "spatial_radial_orders": [
-    16,
-    20,
-    24
+  "tail_control_tolerance": 1e-11,
+  "tail_high_m_relative_tolerance": 1e-12,
+  "tail_decimal_precision": 80,
+  "tail_identity_radii": [
+    0.5,
+    1,
+    2,
+    4
   ],
-  "spatial_angular_orders": [
+  "tail_spatial_tolerance": 1e-08,
+  "tail_angular_tolerance": 1e-08,
+  "tail_radii": [
+    0.5,
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "tail_angular_orders": [
     [
-      10,
-      24
+      8,
+      16
     ],
     [
       12,
       32
-    ],
-    [
-      14,
-      40
     ]
   ],
-  "spatial_radius": 24,
-  "spatial_panel_width": 3,
-  "h5_scaled_tolerance": 1e-06,
-  "roundoff_safety_factor": 100,
-  "wall_limit_seconds": 1800
+  "tail_exterior_radii": [
+    8,
+    12,
+    16
+  ],
+  "tail_max_pair_products": 20000000,
+  "tail_max_exterior_products": 1000000,
+  "tail_max_angular_points": 100000,
+  "wall_limit_seconds": 1800,
+  "authorization_deadline_utc": "2026-11-28T16:29:00Z"
 }
