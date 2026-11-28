@@ -1,0 +1,29 @@
+{
+  "experimentId": "7d19e70e-624e-42ac-a6c7-1bb413b4ccb6",
+  "runId": "95e69683-94dd-433d-b081-aba5b9e32fec",
+  "status": "done",
+  "stage": "complete",
+  "progress": {
+    "done": 1.0,
+    "of": 1.0,
+    "unit": "certificate",
+    "whole": 1.0
+  },
+  "latest": {
+    "config_bytes_read": 1,
+    "control_count": 8,
+    "elapsed_seconds": 0.000902458094060421,
+    "endpoint_case_count": 11,
+    "endpoint_checks_passed": 1,
+    "endpoint_count": 2,
+    "epsilon_denominator": 100,
+    "epsilon_numerator": 1,
+    "matrix_dimension": 3,
+    "python_major": 3,
+    "python_minor": 12,
+    "scalar_flux_components": 3,
+    "scientific_invocations": 1
+  },
+  "estimate": null,
+  "flags": []
+}

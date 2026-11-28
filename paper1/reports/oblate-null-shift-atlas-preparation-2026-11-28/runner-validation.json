@@ -1,0 +1,54 @@
+{
+  "cwd": "paper1",
+  "command": [
+    "python3",
+    "-B",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "verification/oblate_null_shift_atlas_20261128",
+    "-p",
+    "test_run_bounded.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 4.04254520800896,
+  "stdout": "",
+  "stderr": "test_expired_window_cannot_dispatch (test_run_bounded.DispatchTests.test_expired_window_cannot_dispatch) ... ok\ntest_missing_identity_cannot_dispatch (test_run_bounded.DispatchTests.test_missing_identity_cannot_dispatch) ... ok\ntest_modified_source_cannot_dispatch (test_run_bounded.DispatchTests.test_modified_source_cannot_dispatch) ... ok\ntest_only_snapshot_bytes_dispatched_and_fresh_directory_required (test_run_bounded.DispatchTests.test_only_snapshot_bytes_dispatched_and_fresh_directory_required) ... ok\ntest_report_mismatch_cannot_dispatch (test_run_bounded.DispatchTests.test_report_mismatch_cannot_dispatch) ... ok\ntest_console_backpressure_preserves_archived_log (test_run_bounded.EvidenceTests.test_console_backpressure_preserves_archived_log) ... ok\ntest_duplicate_json_keys_are_rejected (test_run_bounded.EvidenceTests.test_duplicate_json_keys_are_rejected) ... ok\ntest_empty_rss_sample_set_is_unknown (test_run_bounded.EvidenceTests.test_empty_rss_sample_set_is_unknown) ... ok\ntest_existing_terminal_json_is_preserved (test_run_bounded.EvidenceTests.test_existing_terminal_json_is_preserved) ... ok\ntest_failed_execution_write_cannot_commit_pass_metrics (test_run_bounded.EvidenceTests.test_failed_execution_write_cannot_commit_pass_metrics) ... ok\ntest_final_schema_rejections (test_run_bounded.EvidenceTests.test_final_schema_rejections) ... ok\ntest_hash_consistent_malformed_member_rejected (test_run_bounded.EvidenceTests.test_hash_consistent_malformed_member_rejected) ... ok\ntest_normal_exit_eperm_empty_and_exact_raw_log (test_run_bounded.EvidenceTests.test_normal_exit_eperm_empty_and_exact_raw_log) ... ok\ntest_pass_metrics_follow_authenticated_terminal_records (test_run_bounded.EvidenceTests.test_pass_metrics_follow_authenticated_terminal_records) ... ok\ntest_resource_stop_keeps_sample_and_fails (test_run_bounded.EvidenceTests.test_resource_stop_keeps_sample_and_fails) ... ok\ntest_sampling_timeout_is_capped_by_remaining_budget (test_run_bounded.EvidenceTests.test_sampling_timeout_is_capped_by_remaining_budget) ... ok\ntest_signal_after_terminal_boundary_is_outside_the_decision (test_run_bounded.EvidenceTests.test_signal_after_terminal_boundary_is_outside_the_decision) ... ok\ntest_signal_before_spawn (test_run_bounded.EvidenceTests.test_signal_before_spawn) ... ok\ntest_signal_during_certificate_validation_still_fails (test_run_bounded.EvidenceTests.test_signal_during_certificate_validation_still_fails) ... ok\ntest_signal_during_spawn_still_cleans_child_and_drains_log (test_run_bounded.EvidenceTests.test_signal_during_spawn_still_cleans_child_and_drains_log) ... ok\ntest_stalled_relay_join_is_bounded_and_fails_closed (test_run_bounded.EvidenceTests.test_stalled_relay_join_is_bounded_and_fails_closed) ... ok\ntest_terminal_marker_authenticates_both_records (test_run_bounded.EvidenceTests.test_terminal_marker_authenticates_both_records) ... ok\ntest_terminal_marker_write_failure_never_emits_pass (test_run_bounded.EvidenceTests.test_terminal_marker_write_failure_never_emits_pass) ... ok\ntest_timeout_preserves_measured_sample_when_cleanup_raises (test_run_bounded.EvidenceTests.test_timeout_preserves_measured_sample_when_cleanup_raises) ... ok\ntest_timeout_with_eperm_after_term_keeps_both_records (test_run_bounded.EvidenceTests.test_timeout_with_eperm_after_term_keeps_both_records) ... ok\ntest_unlisted_missing_or_symlink_column_rejected (test_run_bounded.EvidenceTests.test_unlisted_missing_or_symlink_column_rejected) ... ok\ntest_zero_child_exit_with_unknown_group_is_failure (test_run_bounded.EvidenceTests.test_zero_child_exit_with_unknown_group_is_failure) ... ok\ntest_zero_exit_observed_after_deadline_fails (test_run_bounded.EvidenceTests.test_zero_exit_observed_after_deadline_fails) ... ok\ntest_zero_exit_without_certificate_fails (test_run_bounded.EvidenceTests.test_zero_exit_without_certificate_fails) ... ok\ntest_permission_denied_requires_a_readable_process_table (test_run_bounded.GroupProbeTests.test_permission_denied_requires_a_readable_process_table) ... ok\ntest_stubborn_descendant_escalated_after_launcher_exit (test_run_bounded.GroupProbeTests.test_stubborn_descendant_escalated_after_launcher_exit) ... ok\n\n----------------------------------------------------------------------\nRan 31 tests in 3.879s\n\nOK\n",
+  "host_test_runtime": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "static_checks": {
+    "ast_parse": [
+      "atlas_core.py",
+      "check_atlas.py",
+      "independent_controls.py",
+      "run_bounded.py",
+      "test_run_bounded.py"
+    ],
+    "json_and_view_parsed": true,
+    "shell_command": [
+      "sh",
+      "-n",
+      "verification/oblate_null_shift_atlas_20261128/run.sh"
+    ],
+    "shell_exit": 0,
+    "shell_stdout": "",
+    "shell_stderr": ""
+  },
+  "test_time_sha256": {
+    "README.md": "0c27a93f801f33c8252820ec130003d2041375d0cdb9a7b1f3b17b94ecf27482",
+    "atlas_core.py": "704341379b6262811a11caf2ba079dc15aa07529484925093e4860c0e51901a9",
+    "check_atlas.py": "d9bf59066aaffcf1e81b8710d2685f18a4a345e9dfa02f28e827f17f4918c935",
+    "independent_controls.py": "d07d83cebc1f7b5581ac2db25d19559b84a4ac87d89a4dce284150cf8306c850",
+    "run-config.json": "519d392e20881df63f79a64f473bbc6ca5dff39ac9af46ba2e627cdd3a378544",
+    "run.sh": "de46e63f8be8ec92429c540bad5035ad0ad527ec7818f345dcdf8df05801b914",
+    "run_bounded.py": "22bc0b444081658751b4bdb3188e6b22b88afac34bc386b18f9f9658b3304a7c",
+    "test_run_bounded.py": "e2b42ecff6318a9df49e2c4718343203adaa56dc411575c4ea8baf2339505f88",
+    "view-config.json": "54cacda4d4e1621e2ee25e20afbbea904851482956e6eee67438349bdb491116",
+    "view.xml": "5322e43bbbaeb656bfe87501ccae2d85183c9f6303e93e2e9b27b2d87f87c6a4"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "run_id": "95e69683-94dd-433d-b081-aba5b9e32fec",
+  "source_commit": "cae4d6104c1d7e3b65693331787a2c3d75eae674",
+  "source_repository": "/Users/ricfulop/OpenResearch/fuzzy-null-cone-gravity",
+  "wall_seconds": 300,
+  "memory_bytes": 2147483648,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "scientific_invocations": 0,
+  "remote_jobs": 0,
+  "GPU_jobs": 0,
+  "rss_measurement": "sampled child process-group RSS; not a hard OS cap",
+  "start_utc": "2026-11-28T09:40:51.302495+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "source_sha256_before": {
+    "verification/oblate_lapse_endpoint_20261128/run_bounded.py": "7c0243b58443120180a40d7ca5c7f14fd6ad6334d765c712bd6fb33b7e4d2050",
+    "verification/oblate_lapse_endpoint_20261128/test_run_bounded.py": "f86ec87e4a575c951c19461b64f7a7ccd1af5e837fcf91f21e07d206ad08772b",
+    "verification/oblate_lapse_endpoint_20261128/run.sh": "cf45a4a97508fd6a184954b7c96ed223cc7b261f69bfc48ecbd305c616ef35e7",
+    "verification/oblate_lapse_endpoint_20261128/check_lapse_endpoints.py": "24f46a839f99a6c511fd539999a8a5ff618c49c6da2dcb1de7f9d1e1e44ad168",
+    "verification/oblate_lapse_endpoint_20261128/run-config.json": "41c2f8e898685cdfd34d3968d4b053874b5a4f605174292d23f4f8533056f58e",
+    "verification/oblate_lapse_endpoint_20261128/view-config.json": "275662f49f5a5bff8900ba14d6df06906eea17fbba33ed75bacc1527174888ab",
+    "verification/oblate_lapse_endpoint_20261128/view.xml": "9ab4f972638e7af74b6eea7dd6f39520418a738d68d5a5b35b03530d66635257",
+    "verification/oblate_lapse_endpoint_20261128/README.md": "417d2e8604e3d46dc8a481c5d28ca4689f8b9e03ff1a4177d1745dfc0d4b720e",
+    "reports/oblate-common-domain-preparation-2026-11-28/README.md": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d"
+  },
+  "configuration": {
+    "purpose": "Selected oblate bulk Green identities and endpoint flux controls on the shell [1,2].",
+    "wall_seconds": 300,
+    "memory_bytes": 2147483648,
+    "threads": 1,
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "report": {
+      "path": "paper1/reports/oblate-common-domain-preparation-2026-11-28/README.md",
+      "sha256": "fa659f17f3ba9a8dce1ff0d2201cb5418fa2a10faeb64251ebcc20f690d3bc7d",
+      "commit": "ae32314d27e20ac682c5ed1b71b4d7f11bee7133"
+    },
+    "derivation_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76",
+    "python_version": "3.12",
+    "sympy_version": "1.14.0"
+  },
+  "checker_input_sha256": {
+    "config": "41c2f8e898685cdfd34d3968d4b053874b5a4f605174292d23f4f8533056f58e",
+    "checker": "24f46a839f99a6c511fd539999a8a5ff618c49c6da2dcb1de7f9d1e1e44ad168"
+  },
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/95e69683-94dd-433d-b081-aba5b9e32fec/repo/paper1/run-output/95e69683-94dd-433d-b081-aba5b9e32fec/sources/verification/oblate_lapse_endpoint_20261128/check_lapse_endpoints.py",
+    "--config",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/95e69683-94dd-433d-b081-aba5b9e32fec/repo/paper1/run-output/95e69683-94dd-433d-b081-aba5b9e32fec/sources/verification/oblate_lapse_endpoint_20261128/run-config.json",
+    "--output",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/95e69683-94dd-433d-b081-aba5b9e32fec/repo/paper1/run-output/95e69683-94dd-433d-b081-aba5b9e32fec/outputs/lapse-endpoint-checks.json"
+  ]
+}

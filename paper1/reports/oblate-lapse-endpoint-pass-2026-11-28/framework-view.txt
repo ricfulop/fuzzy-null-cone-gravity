@@ -1,0 +1,19 @@
+Run 95e69683-94dd-433d-b081-aba5b9e32fec · done · experiment 7d19e70e-624e-42ac-a6c7-1bb413b4ccb6
+Data: live; as of 2026-11-28T09:41:24.669Z.
+Above the chat
+Line parts: lifecycle=done; stage/count, whole-run time, watcher sentence and open flag follow.
+Line stage: complete; position=12; stages=12.
+Stage: complete; done=1; of=1; unit=certificate.
+Time left: unknown (summary has no estimate).
+Watcher: Endpoint checks pass; export completed.
+Open flag: none.
+Card chart: none (run ended).
+On the run page
+Declared plan (* current): 1 setup (of=1); 2 input_config (of=1); 3 metric_and_variation (of=1); 4 christoffel_and_linearized_ricci (of=1); 5 scalar_curvature_green_identity (of=1); 6 hessian_flux_identity (of=1); 7 endpoint_flux_reduction (of=1); 8 endpoint_sign_controls (of=1); 9 result_assembly (of=1); 10 atomic_final_export (of=1); * 11 complete (of=1)
+The UI folds stages before its first real point into Setup and numbers stages from there.
+Headline: Selected endpoint checks accepted (endpoint_checks_passed) = passed; Controls completed (control_count) = 8; Spatial metric dimension (matrix_dimension) = 3 (selected: endpoint_checks_passed).
+Stats: Validated endpoint cases (endpoint_case_count) = 11
+Text: Two Green identities and their endpoint controls for the retained axisymmetric quadrupole on the fixed oblate shell.
+Charts: none configured.
+Headlined / charted names not observed in collected data: none.
+Patterns: none configured.

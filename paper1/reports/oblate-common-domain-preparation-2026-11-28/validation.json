@@ -1,0 +1,23 @@
+{
+  "state": "reviewed analytical preparation only",
+  "source_commit": "773ccc4e3e8a1a89e06086163042fbf45e171c76",
+  "publication_parent_commit": "24a0e7c401e2401c60e09306d81d805158c806ac",
+  "independent_review": "msg_cedbd066",
+  "author_reviewed_hashes_before_link_only_packaging": {
+    "README.md": "e350388fcdd0ac9268143129baaaa31ff824be568e64077b56def281c75ae8bd",
+    "provenance.json": "cbb019ab70d6dc01d68e1df99b7a28d8ca7708138097d6d456436d4818bcc78d"
+  },
+  "pinned_source_file_count": 7,
+  "pinned_source_hashes_verified_against_git": true,
+  "source_link_paths_verified_against_git": [
+    "paper1/reports/oblate-lapse-consistency-2026-11-27/lapse-summary.json",
+    "paper1/reports/shared-oblate-weak-validation-2026-11-28/evidence-reference.json"
+  ],
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "checker_prepared": false,
+  "manuscript_claim_changed": false,
+  "final_constraint_classification_established": false,
+  "physical_boundary_domain_established": false,
+  "packaging_changes": "Converted external relative source links to immutable GitHub blob links; appended this validation pointer; mathematical content unchanged."
+}

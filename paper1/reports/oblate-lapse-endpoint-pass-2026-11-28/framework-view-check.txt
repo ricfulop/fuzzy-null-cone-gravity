@@ -1,0 +1,3 @@
+Stages read from the log: setup 1 of 1, input_config 1 of 1, metric_and_variation 1 of 1, christoffel_and_linearized_ricci 1 of 1, scalar_curvature_green_identity 1 of 1, hessian_flux_identity 1 of 1, endpoint_flux_reduction 1 of 1, endpoint_sign_controls 1 of 1, result_assembly 1 of 1, atomic_final_export 1 of 1, complete 1 of 1.
+Run 95e69683-94dd-433d-b081-aba5b9e32fec (done) reported: python_major, python_minor, config_bytes_read, elapsed_seconds, matrix_dimension, epsilon_numerator, epsilon_denominator, scalar_flux_components, endpoint_count, control_count, endpoint_checks_passed, scientific_invocations, endpoint_case_count.
+The view draws only what the run reported.

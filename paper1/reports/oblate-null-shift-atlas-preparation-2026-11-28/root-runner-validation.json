@@ -1,0 +1,47 @@
+{
+  "mode": "stdlib mocked infrastructure only",
+  "command": [
+    "python3",
+    "-B",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "verification/oblate_null_shift_atlas_20261128",
+    "-p",
+    "test_run_bounded.py",
+    "-q"
+  ],
+  "cwd": "paper1",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "----------------------------------------------------------------------\nRan 31 tests in 3.507s\n\nOK\n",
+  "process_wall_seconds": 3.74349204194732,
+  "source_sha256": {
+    "atlas_core.py": "704341379b6262811a11caf2ba079dc15aa07529484925093e4860c0e51901a9",
+    "check_atlas.py": "d9bf59066aaffcf1e81b8710d2685f18a4a345e9dfa02f28e827f17f4918c935",
+    "independent_controls.py": "d07d83cebc1f7b5581ac2db25d19559b84a4ac87d89a4dce284150cf8306c850",
+    "run_bounded.py": "22bc0b444081658751b4bdb3188e6b22b88afac34bc386b18f9f9658b3304a7c",
+    "test_run_bounded.py": "e2b42ecff6318a9df49e2c4718343203adaa56dc411575c4ea8baf2339505f88",
+    "run.sh": "de46e63f8be8ec92429c540bad5035ad0ad527ec7818f345dcdf8df05801b914",
+    "run-config.json": "519d392e20881df63f79a64f473bbc6ca5dff39ac9af46ba2e627cdd3a378544",
+    "view-config.json": "54cacda4d4e1621e2ee25e20afbbea904851482956e6eee67438349bdb491116",
+    "view.xml": "5322e43bbbaeb656bfe87501ccae2d85183c9f6303e93e2e9b27b2d87f87c6a4",
+    "README.md": "0c27a93f801f33c8252820ec130003d2041375d0cdb9a7b1f3b17b94ecf27482"
+  },
+  "shell_syntax": {
+    "command": [
+      "sh",
+      "-n",
+      "verification/oblate_null_shift_atlas_20261128/run.sh"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "dispatch_and_process_group_calls_mocked": true
+}

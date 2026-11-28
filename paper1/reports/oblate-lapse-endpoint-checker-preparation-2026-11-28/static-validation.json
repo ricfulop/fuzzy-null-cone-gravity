@@ -1,0 +1,39 @@
+{
+  "checker_phase_count": 9,
+  "json_parse": true,
+  "mathematical_controls_executed": false,
+  "phase_names_units_and_totals_match": true,
+  "planned_phase_count": 11,
+  "python_ast_parse": true,
+  "report_matches_published_git_blob": true,
+  "root_repeat": {
+    "command": [
+      "python3",
+      "-B",
+      "-W",
+      "error::ResourceWarning",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "verification/oblate_lapse_endpoint_20261128",
+      "-p",
+      "test_run_bounded.py",
+      "-q"
+    ],
+    "cwd": "paper1",
+    "exit_code": 0,
+    "shell_command": [
+      "sh",
+      "-n",
+      "verification/oblate_lapse_endpoint_20261128/run.sh"
+    ],
+    "shell_exit_code": 0,
+    "stderr": "----------------------------------------------------------------------\nRan 27 tests in 0.410s\n\nOK\n",
+    "stdout": ""
+  },
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "source_hashes_match_author_test_record": true,
+  "view_xml_fragment_parse": true
+}

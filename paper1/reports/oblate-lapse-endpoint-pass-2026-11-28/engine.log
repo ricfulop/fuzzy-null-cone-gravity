@@ -1,0 +1,58 @@
+::orx:: {"phase": "setup", "step": 1, "of": 1, "unit": "environment"}
+::orx:: {"of": 1, "phase": "input_config", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "input_config"}
+::orx:: {"m": {"python_major": 3}, "of": 1, "phase": "input_config", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "python_major", "value": 3}
+::orx:: {"m": {"python_minor": 12}, "of": 1, "phase": "input_config", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "python_minor", "value": 12}
+::orx:: {"m": {"config_bytes_read": 1}, "of": 1, "phase": "input_config", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "config_bytes_read", "value": 1}
+::orx:: {"m": {"elapsed_seconds": 0.001563291996717453}, "of": 1, "phase": "input_config", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 0.001563291996717453, "stage": "input_config"}
+::orx:: {"of": 1, "phase": "metric_and_variation", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "metric_and_variation"}
+::orx:: {"m": {"matrix_dimension": 3}, "of": 1, "phase": "metric_and_variation", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "matrix_dimension", "value": 3}
+::orx:: {"m": {"epsilon_numerator": 1}, "of": 1, "phase": "metric_and_variation", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "epsilon_numerator", "value": 1}
+::orx:: {"m": {"epsilon_denominator": 100}, "of": 1, "phase": "metric_and_variation", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "epsilon_denominator", "value": 100}
+::orx:: {"m": {"elapsed_seconds": 0.03460583300329745}, "of": 1, "phase": "metric_and_variation", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 0.03460583300329745, "stage": "metric_and_variation"}
+::orx:: {"of": 1, "phase": "christoffel_and_linearized_ricci", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "christoffel_and_linearized_ricci"}
+::orx:: {"m": {"elapsed_seconds": 1.872543292120099}, "of": 1, "phase": "christoffel_and_linearized_ricci", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 1.872543292120099, "stage": "christoffel_and_linearized_ricci"}
+::orx:: {"of": 1, "phase": "scalar_curvature_green_identity", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "scalar_curvature_green_identity"}
+::orx:: {"m": {"scalar_flux_components": 3}, "of": 1, "phase": "scalar_curvature_green_identity", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "scalar_flux_components", "value": 3}
+::orx:: {"m": {"elapsed_seconds": 0.6393089580815285}, "of": 1, "phase": "scalar_curvature_green_identity", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 0.6393089580815285, "stage": "scalar_curvature_green_identity"}
+::orx:: {"of": 1, "phase": "hessian_flux_identity", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "hessian_flux_identity"}
+::orx:: {"m": {"elapsed_seconds": 3.835728749865666}, "of": 1, "phase": "hessian_flux_identity", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 3.835728749865666, "stage": "hessian_flux_identity"}
+::orx:: {"of": 1, "phase": "endpoint_flux_reduction", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "endpoint_flux_reduction"}
+::orx:: {"m": {"endpoint_count": 2}, "of": 1, "phase": "endpoint_flux_reduction", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "endpoint_count", "value": 2}
+::orx:: {"m": {"elapsed_seconds": 0.5648383749648929}, "of": 1, "phase": "endpoint_flux_reduction", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 0.5648383749648929, "stage": "endpoint_flux_reduction"}
+::orx:: {"of": 1, "phase": "endpoint_sign_controls", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "endpoint_sign_controls"}
+::orx:: {"m": {"elapsed_seconds": 0.005816625198349357}, "of": 1, "phase": "endpoint_sign_controls", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 0.005816625198349357, "stage": "endpoint_sign_controls"}
+::orx:: {"of": 1, "phase": "result_assembly", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "result_assembly"}
+::orx:: {"m": {"control_count": 8}, "of": 1, "phase": "result_assembly", "step": 0, "unit": "check"}
+{"event": "PROGRESS", "metric": "control_count", "value": 8}
+::orx:: {"m": {"elapsed_seconds": 0.0013439171016216278}, "of": 1, "phase": "result_assembly", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 0.0013439171016216278, "stage": "result_assembly"}
+::orx:: {"of": 1, "phase": "atomic_final_export", "step": 0, "unit": "check"}
+{"event": "STAGE_BEGIN", "stage": "atomic_final_export"}
+::orx:: {"m": {"elapsed_seconds": 0.000902458094060421}, "of": 1, "phase": "atomic_final_export", "step": 1, "unit": "check"}
+{"event": "STAGE_END", "seconds": 0.000902458094060421, "stage": "atomic_final_export"}
+{"event": "POST_EXPORT", "output": "/Users/ricfulop/.local/share/openresearch/local-runs/95e69683-94dd-433d-b081-aba5b9e32fec/repo/paper1/run-output/95e69683-94dd-433d-b081-aba5b9e32fec/outputs/lapse-endpoint-checks.json", "state": "atomic export written"}
+::orx:: {"phase": "complete", "step": 1, "of": 1, "unit": "certificate", "m": {"endpoint_checks_passed": 1, "scientific_invocations": 1, "endpoint_case_count": 11, "control_count": 8}}
+Saved execution evidence: /Users/ricfulop/.local/share/openresearch/local-runs/95e69683-94dd-433d-b081-aba5b9e32fec/repo/paper1/run-output/95e69683-94dd-433d-b081-aba5b9e32fec

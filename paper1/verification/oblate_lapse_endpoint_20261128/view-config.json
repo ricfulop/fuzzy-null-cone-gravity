@@ -1,0 +1,70 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "input_config",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "metric_and_variation",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "christoffel_and_linearized_ricci",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "scalar_curvature_green_identity",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "hessian_flux_identity",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "endpoint_flux_reduction",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "endpoint_sign_controls",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "result_assembly",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "atomic_final_export",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "complete",
+      "of": 1,
+      "unit": "certificate"
+    }
+  ],
+  "brief": {
+    "question": "Do the selected lapse Green identities and oriented endpoint fluxes agree at N=3 for the retained quadrupole on [1,2]?",
+    "healthy": "Metric variation and both density identities precede endpoint flux, sign, and clamped controls.",
+    "worth_a_flag": "A residual, wrong orientation, failed source binding, cleanup error or resource stop.",
+    "decided": "One 300-second local CPU invocation with a 2 GiB sampled process-group RSS threshold. Runtime is unmeasured.",
+    "noise": "Matrix dimension is setup progress. Only the supervisor publishes acceptance after validating the export and writing terminal evidence."
+  },
+  "watch": {
+    "minGapS": 60,
+    "maxGapS": 180
+  }
+}

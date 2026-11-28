@@ -1,0 +1,21 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "d351de6eb8a4c6a8a8e29165de38390b6626b3821601ba99742d71f1968e4bd7",
+    "preparation-provenance.json": "900018771bb34e6b4ddc0f3253a9a8700b79504c5da8949462a2d9eda911b292",
+    "root-runner-validation.json": "9163bb8f18ad1f2410a2c87b4bf3ef2b12838b656ff0b9adbb0926d49a1cfa08",
+    "runner-validation.json": "d2b21626d478014aab45e715d2f5895a22bb6a6fc80f6f1056928a1391d4efa8",
+    "sources/reports/oblate-null-map-check-2026-11-27/map-checks.json": "75fc5c1036777716ef80bd1911adc9a90d2ef0582110f0ffe3ccc9ed973305cc",
+    "sources/reports/oblate-null-map-check-2026-11-27/sources/verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "sources/verification/oblate_null_shift_atlas_20261128/README.md": "0c27a93f801f33c8252820ec130003d2041375d0cdb9a7b1f3b17b94ecf27482",
+    "sources/verification/oblate_null_shift_atlas_20261128/atlas_core.py": "704341379b6262811a11caf2ba079dc15aa07529484925093e4860c0e51901a9",
+    "sources/verification/oblate_null_shift_atlas_20261128/check_atlas.py": "d9bf59066aaffcf1e81b8710d2685f18a4a345e9dfa02f28e827f17f4918c935",
+    "sources/verification/oblate_null_shift_atlas_20261128/independent_controls.py": "d07d83cebc1f7b5581ac2db25d19559b84a4ac87d89a4dce284150cf8306c850",
+    "sources/verification/oblate_null_shift_atlas_20261128/run-config.json": "519d392e20881df63f79a64f473bbc6ca5dff39ac9af46ba2e627cdd3a378544",
+    "sources/verification/oblate_null_shift_atlas_20261128/run.sh": "de46e63f8be8ec92429c540bad5035ad0ad527ec7818f345dcdf8df05801b914",
+    "sources/verification/oblate_null_shift_atlas_20261128/run_bounded.py": "22bc0b444081658751b4bdb3188e6b22b88afac34bc386b18f9f9658b3304a7c",
+    "sources/verification/oblate_null_shift_atlas_20261128/test_run_bounded.py": "e2b42ecff6318a9df49e2c4718343203adaa56dc411575c4ea8baf2339505f88",
+    "sources/verification/oblate_null_shift_atlas_20261128/view-config.json": "54cacda4d4e1621e2ee25e20afbbea904851482956e6eee67438349bdb491116",
+    "sources/verification/oblate_null_shift_atlas_20261128/view.xml": "5322e43bbbaeb656bfe87501ccae2d85183c9f6303e93e2e9b27b2d87f87c6a4"
+  }
+}

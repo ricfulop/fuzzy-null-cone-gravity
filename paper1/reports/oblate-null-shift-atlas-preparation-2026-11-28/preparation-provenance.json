@@ -1,0 +1,84 @@
+{
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "atlas_executed": false,
+  "base_commit": "d51a5899f326422be7c206798cf4ed93f12bf5cb",
+  "historical_source_count": 2,
+  "local_source_count": 10,
+  "memory_bytes": 2147483648,
+  "mocked_runner_tests": {
+    "author_suite_seconds": 3.879,
+    "count": 31,
+    "exit_codes": [
+      0,
+      0
+    ],
+    "records": [
+      "runner-validation.json",
+      "root-runner-validation.json"
+    ],
+    "root_suite_seconds": 3.507
+  },
+  "prepared_defect_case_count": 3,
+  "prepared_scientific_independent_case_count": 7,
+  "python_version": "3.12",
+  "regression_archive": {
+    "commit": "d9add22b3509700107601b94c2da9f629050dfb3",
+    "paper1_paths": {
+      "reports/oblate-null-map-check-2026-11-27/map-checks.json": "75fc5c1036777716ef80bd1911adc9a90d2ef0582110f0ffe3ccc9ed973305cc",
+      "reports/oblate-null-map-check-2026-11-27/sources/verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5"
+    }
+  },
+  "scientific_controls_executed": false,
+  "scientific_invocations": 0,
+  "scientific_modules_imported": false,
+  "scope": {
+    "admissible_seed_supplied": false,
+    "common_boundary_domain_established": false,
+    "dirac_classification_established": false,
+    "euler_residual_evaluated": false,
+    "manuscript_claim_changed": false,
+    "nonlinear_compatibility_evaluated": false,
+    "physical_degree_count_established": false
+  },
+  "source_count": 12,
+  "source_reviews": {
+    "science": {
+      "chat": "chat_2f3d47b3-1e7e-ace4-7757-6f7fc7900d9d",
+      "mode": "static source only",
+      "reference": "msg_4a4f8358",
+      "verdict": "No Blockers"
+    },
+    "supervisor": {
+      "chat": "chat_2f3d47b3-1e7e-ace4-7757-6f7fc7900d9d",
+      "mode": "static source/schema only",
+      "reference": "msg_bcb1f5df",
+      "verdict": "No Blockers"
+    }
+  },
+  "source_sha256": {
+    "reports/oblate-null-map-check-2026-11-27/map-checks.json": "75fc5c1036777716ef80bd1911adc9a90d2ef0582110f0ffe3ccc9ed973305cc",
+    "reports/oblate-null-map-check-2026-11-27/sources/verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "verification/oblate_null_shift_atlas_20261128/README.md": "0c27a93f801f33c8252820ec130003d2041375d0cdb9a7b1f3b17b94ecf27482",
+    "verification/oblate_null_shift_atlas_20261128/atlas_core.py": "704341379b6262811a11caf2ba079dc15aa07529484925093e4860c0e51901a9",
+    "verification/oblate_null_shift_atlas_20261128/check_atlas.py": "d9bf59066aaffcf1e81b8710d2685f18a4a345e9dfa02f28e827f17f4918c935",
+    "verification/oblate_null_shift_atlas_20261128/independent_controls.py": "d07d83cebc1f7b5581ac2db25d19559b84a4ac87d89a4dce284150cf8306c850",
+    "verification/oblate_null_shift_atlas_20261128/run-config.json": "519d392e20881df63f79a64f473bbc6ca5dff39ac9af46ba2e627cdd3a378544",
+    "verification/oblate_null_shift_atlas_20261128/run.sh": "de46e63f8be8ec92429c540bad5035ad0ad527ec7818f345dcdf8df05801b914",
+    "verification/oblate_null_shift_atlas_20261128/run_bounded.py": "22bc0b444081658751b4bdb3188e6b22b88afac34bc386b18f9f9658b3304a7c",
+    "verification/oblate_null_shift_atlas_20261128/test_run_bounded.py": "e2b42ecff6318a9df49e2c4718343203adaa56dc411575c4ea8baf2339505f88",
+    "verification/oblate_null_shift_atlas_20261128/view-config.json": "54cacda4d4e1621e2ee25e20afbbea904851482956e6eee67438349bdb491116",
+    "verification/oblate_null_shift_atlas_20261128/view.xml": "5322e43bbbaeb656bfe87501ccae2d85183c9f6303e93e2e9b27b2d87f87c6a4"
+  },
+  "state": "reviewed preparation only; scientific execution pending",
+  "static_checks": {
+    "JSON_and_view_XML_parsed": true,
+    "all_python_AST_parsed": true,
+    "author_and_root_test_time_hashes_match": true,
+    "historical_pins_match_git_and_worktree": true,
+    "plan_units_totals_match": true,
+    "source_trailing_whitespace_absent": true
+  },
+  "sympy_version": "1.14.0",
+  "threads": 1,
+  "wall_seconds": 900
+}
