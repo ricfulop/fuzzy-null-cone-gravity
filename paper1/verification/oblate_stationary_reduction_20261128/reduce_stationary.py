@@ -17,6 +17,7 @@ import sympy as s
 
 import reduction_progress as progress
 from exact_linear_algebra import rref_with_side, independent_extension
+from terminal_kernel import kernel_embedding
 
 
 EPSILON0 = s.Rational(1, 100)
@@ -305,23 +306,6 @@ def matrix_rank(matrix):
     return row_basis(matrix)[0].rows
 
 
-def kernel_embedding(constraints):
-    state_count = constraints.cols
-    basis, pivots = row_basis(constraints)
-    free_rows = [index for index in range(state_count) if index not in pivots]
-    embedding = s.zeros(state_count, len(free_rows))
-    for free_index, state_index in enumerate(free_rows):
-        embedding[state_index, free_index] = 1
-    for row, pivot in enumerate(pivots):
-        for free_index, state_index in enumerate(free_rows):
-            embedding[pivot, free_index] = -basis[row, state_index]
-    require(
-        all(exact_zero(value) for value in exact_matrix(constraints * embedding)),
-        "constraint kernel embedding failed",
-    )
-    return exact_matrix(embedding), free_rows, basis, pivots
-
-
 def initial_state():
     K = s.zeros(STATE_COUNT, STATE_COUNT)
     for index in range(CONTROL_COUNT):
@@ -476,53 +460,60 @@ def reduce_dae(gauge_matrices, recorder, max_steps):
 
     with recorder.stage("terminal_embedding"):
         embedding, free_rows, constraints_rref, constraint_pivots = kernel_embedding(
-            state.constraints
+            state.constraints, stage=recorder.stage
         )
     with recorder.stage("terminal_constraint_preservation"):
         preservation_acc, preservation_state = preservation_equations(
             state.constraints, state
         )
-    require(
-        all(exact_zero(value) for value in preservation_acc),
-        "remaining controls violate constraint preservation",
-    )
-    require(
-        all(exact_zero(value) for value in exact_matrix(preservation_state * embedding)),
-        "constraint subspace is not invariant",
-    )
+    with recorder.stage("terminal_verify_preservation"):
+        require(
+            all(exact_zero(value) for value in preservation_acc),
+            "remaining controls violate constraint preservation",
+        )
+        require(
+            all(exact_zero(value) for value in exact_matrix(preservation_state * embedding)),
+            "constraint subspace is not invariant",
+        )
 
-    retained_state, retained_control = retained_parts(gauge_matrices, state)
-    require(
-        all(exact_zero(value) for value in exact_matrix(retained_state * embedding)),
-        "original retained rows do not vanish on the reduced state embedding",
-    )
-    require(
-        all(exact_zero(value) for value in retained_control),
-        "original retained rows depend on remaining controls",
-    )
+    with recorder.stage("terminal_original_22_rows"):
+        retained_state, retained_control = retained_parts(gauge_matrices, state)
+        require(
+            all(exact_zero(value) for value in exact_matrix(retained_state * embedding)),
+            "original retained rows do not vanish on the reduced state embedding",
+        )
+        require(
+            all(exact_zero(value) for value in retained_control),
+            "original retained rows depend on remaining controls",
+        )
 
-    km_minus_mprime = exact_matrix(state.K * embedding - field_diff_matrix(embedding))
-    reduced_K = exact_matrix(km_minus_mprime.extract(free_rows, range(embedding.cols)))
-    reduced_B = exact_matrix(state.B.extract(free_rows, range(state.B.cols)))
-    require(
-        all(
-            exact_zero(value)
-            for value in exact_matrix(
-                field_diff_matrix(embedding) + embedding * reduced_K
-                - state.K * embedding
-            )
-        ),
-        "free-coordinate K does not reconstruct the embedded dynamics",
-    )
-    require(
-        all(
-            exact_zero(value)
-            for value in exact_matrix(embedding * reduced_B - state.B)
-        ),
-        "free-coordinate controls do not reconstruct embedded controls",
-    )
+    with recorder.stage("terminal_reduced_dynamics"):
+        km_minus_mprime = exact_matrix(state.K * embedding - field_diff_matrix(embedding))
+        reduced_K = exact_matrix(km_minus_mprime.extract(free_rows, range(embedding.cols)))
+        reduced_B = exact_matrix(state.B.extract(free_rows, range(state.B.cols)))
 
-    response_state, response_control = response_parts(gauge_matrices, state)
+    with recorder.stage("terminal_reconstruct_dynamics"):
+        require(
+            all(
+                exact_zero(value)
+                for value in exact_matrix(
+                    field_diff_matrix(embedding) + embedding * reduced_K
+                    - state.K * embedding
+                )
+            ),
+            "free-coordinate K does not reconstruct the embedded dynamics",
+        )
+        require(
+            all(
+                exact_zero(value)
+                for value in exact_matrix(embedding * reduced_B - state.B)
+            ),
+            "free-coordinate controls do not reconstruct embedded controls",
+        )
+
+    with recorder.stage("terminal_discarded_response"):
+        response_state, response_control = response_parts(gauge_matrices, state)
+        embedded_response = exact_matrix(response_state * embedding)
     return {
         "state": state,
         "steps": steps,
@@ -532,7 +523,7 @@ def reduce_dae(gauge_matrices, recorder, max_steps):
         "free_rows": free_rows,
         "reduced_K": reduced_K,
         "reduced_B": reduced_B,
-        "response_state": exact_matrix(response_state * embedding),
+        "response_state": embedded_response,
         "response_control": response_control,
     }
 
@@ -560,6 +551,7 @@ def run(input_dir, output_dir, stage, max_steps):
         "source_sha256": source_hashes,
         "stage": stage,
         "max_steps": max_steps,
+        "terminal_kernel_backend": "C-only fraction-free CD RREF; original C*M checked over QQ(r,T)",
         "linear_algebra_backend": "QQ(r,T) FracElement control-only historical pivot loop; batched transpose independence",
     }
     with progress.ReductionRecorder(output_dir, identity) as recorder:
@@ -567,6 +559,8 @@ def run(input_dir, output_dir, stage, max_steps):
             from test_exact_linear_algebra import verify_controls as verify_row_controls
             row_controls = verify_row_controls()
             recorder.write_json("row-operation-controls.json", row_controls)
+            from test_terminal_kernel import verify_controls as verify_kernel_controls
+            recorder.write_json("terminal-kernel-controls.json", verify_kernel_controls(kernel_embedding))
             from test_reduction_controls import verify_controls
             controls = verify_controls(sys.modules[__name__])
             recorder.write_json("manufactured-controls.json", controls)

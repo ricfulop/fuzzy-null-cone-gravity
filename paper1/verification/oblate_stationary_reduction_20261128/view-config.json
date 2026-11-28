@@ -38,10 +38,10 @@
   ],
   "brief": {
     "question": "Does exact differential constraint preservation close, and is the discarded response formally nonzero on the resulting stationary subfamily?",
-    "healthy": "Six exact-row tests and two DAE controls precede actual reduction. Control-only rational-field row operations preserve the historical compact basis; each solve/apply/selection/prolongation stage is timed. One local child900s,2GiB sampled RSS.",
-    "worth_a_flag": "A traceback, changed source/input digest, false control, or timeout. Principal rank is not a Dirac rank or existence certificate.",
-    "decided": "Pinned original operators and all22 terminal rows unchanged. Partial elimination steps are progress only; no actual germ until independent regularity certificate.",
-    "from_parent": "Principal rank4 and all23-row gauge check passed. First closure incomplete near900s with cleanup EPERM. Fullaugmented retry stopped after formula growth and >5min first differentiation; no closure result."
+    "healthy": "Manufactured row, kernel and DAE controls precede the fresh original-operator reduction. Historical control-only discovery pivots are unchanged. Terminal C-only fraction-free kernel and each subsequent preservation, original-row, dynamics and response check have separate raw progress stages. One local CPU child, 900 seconds, 2 GiB sampled group RSS.",
+    "worth_a_flag": "A traceback, changed source/input digest, failed control, resource stop, or missing final closure export. Principal rank and partial elimination counters are not a solution certificate.",
+    "decided": "The 117.565-second kernel diagnostic passed only original C*M=0 and free-row identity. It is not a closure or seed. This fresh run reconstructs all dynamics from the completed operator export; no partial checkpoint reuse. Long exact terminal products may emit no intermediate counters.",
+    "from_parent": "Previous full run reached terminal embedding after 360.67 seconds but hit its 900-second wall budget. The separately passed diagnostic used 23.31 seconds for C-only RREF and 90.06 seconds for the original kernel product; downstream terminal verification costs remain unmeasured."
   },
   "watch": {
     "minGapS": 120,

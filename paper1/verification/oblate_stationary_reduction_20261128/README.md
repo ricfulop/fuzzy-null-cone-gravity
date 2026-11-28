@@ -145,5 +145,24 @@ Six row-operation controls now check the historical residual rows entrywise,
 including a row swap with distinct state entries, a free control, preservation
 of the state rows when there are no control columns, empty dimensions,
 dependent candidate rows, and inexact-input rejection. The two original DAE
-controls and every final retained-row identity remain. The next invocation
-will measure this variant; no speedup is assumed.
+controls and every final retained-row identity remain. Run `8fa984ea-3c9b-4e85-b984-c23956fc95d8` completed three elimination
+steps, then reached the 900-second wall budget during the combined terminal
+embedding stage. Its clean shutdown, partial checkpoints and full evidence
+are preserved in `reports/oblate-stationary-closure-terminal-timeout-2026-11-28/`.
+
+
+## Terminal kernel repair
+
+The isolated diagnostic `6128c4ef-4b35-4ddf-9763-1b40369bd6f6` verified the
+saved 6-by-14 constraint matrix's rank-six kernel in 117.565 seconds. It used
+C-only fraction-free RREF and an exact-field product with the original C.
+The diagnostic checked neither dynamics nor the original retained equations.
+Its report is `reports/oblate-terminal-embedding-probe-2026-11-28/`.
+
+The prepared full reducer uses that terminal kernel method while preserving
+the historical control-only discovery basis and every terminal equation check.
+It starts again from the original completed operator export. Each kernel and
+subsequent terminal operation is timed separately. No earlier checkpoint is
+loaded as a substitute for reconstructing the dynamics. A successful full
+closure still requires a separate interval-regularity and responding-germ
+certificate before any nonlinear conclusion.
