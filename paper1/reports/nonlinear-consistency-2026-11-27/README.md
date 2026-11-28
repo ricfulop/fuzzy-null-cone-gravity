@@ -96,13 +96,13 @@ Positivity forces J=K_2=0, and then K_1=0. This does not exclude finite represen
 
 ### Quantified compression instead of an exact canonical claim
 
-For a projection P and Q=1-P,
+For an orthogonal projection $P=P^\dagger=P^2$ and Q=1-P,
 
 $$
 [PAP,PBP]=P[A,B]P-PAQBP+PBQAP.
 $$
 
-For a normalized state psi in ran(P), the magnitude of the expectation of the defect is at most
+For Hermitian operators A and B and a normalized state psi in ran(P), the magnitude of the expectation of the defect is at most
 
 $$
 2\|QA\psi\|\,\|QB\psi\|.

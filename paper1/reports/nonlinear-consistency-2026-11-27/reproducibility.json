@@ -42,7 +42,7 @@
   "sha256": {
     "verification/closure_audit_20261127/reduced_boundary_gluing.py": "ae4f0442f7d226d13142a68d7c2356343fc6db6048b5bd80b527a66f7d99fccb",
     "verification/closure_audit_20261127/projected_sphere_algebra.py": "67ac9d38c632dac629ab8cf57e09bdb7deea51bd1cebc57e1fd11d8f20d85999",
-    "verification/closure_audit_20261127/boundary_compression.py": "25d0bd250e4e7121e6d8b9e0f816f7fd55c73be6f7228513bb230adecef62b4c",
+    "verification/closure_audit_20261127/boundary_compression.py": "eb0fc951849651034b1a9c91b1739c2f431a217d4957bf1703d519264f78ffe4",
     "verification/closure_audit_20261127/euclidean_signature.py": "d534672fc9b709642ba5c3c00f49fcac7c41b5387c6bf239f1151916d1111c83",
     "verification/closure_audit_20261127/deformed_angular_candidate.py": "f70d22a81f64f7769a63ea54f1fb3af9f74f1bc853d28c8c192f3402467219dd",
     "verification/closure_audit_20261127/legendre_truncation.py": "a796c07c97932d69172c9698366e032a9e43b6b491a6a9dee3398e01af66e966",

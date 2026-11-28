@@ -55,7 +55,7 @@ def main():
     result={'finite_CCR':'Impossible for d>0 and nonzero hbar: Tr[A,B]=0, Tr(i*hbar*I)=i*hbar*d.',
             'finite_unitary_sl2R':'For Hermitian J,K1,K2 with [J,K1]=iK2, [J,K2]=-iK1, [K1,K2]=-iJ, trace cyclicity forces Tr(K2^2)=-Tr(J^2); all generators vanish.',
             'projected_commutator':'[PAP,PBP]=P[A,B]P-PAQBP+PBQAP; Q=I-P.',
-            'expectation_defect_bound':'2 ||QA psi|| ||QB psi|| for normalized psi in ran(P).',
+            'expectation_defect_bound':'2 ||QA psi|| ||QB psi|| for Hermitian A and B, orthogonal P, and normalized psi in ran(P).',
             'oscillator_checks':oscillator,'general_compression_checks':checks,
             'scope':'A finite admissible subspace can carry compressed observables with quantified defects; it cannot preserve the exact canonical pair or a nontrivial unitary sl(2,R) algebra. The physical corner reduction, inner product, and gluing remain to be derived.'}
     OUT.mkdir(parents=True,exist_ok=True)
