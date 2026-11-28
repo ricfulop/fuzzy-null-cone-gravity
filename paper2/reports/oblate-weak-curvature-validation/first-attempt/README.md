@@ -14,3 +14,7 @@ The complete log contains no scientific assertion failure. It does show `Permiss
 All six source hashes match the frozen run snapshot. The durable archive `artifacts/paper2-oblate-weak-first-attempt-2026-11-28/` preserves the exact sources and the 2,271 RSS samples. The proposed next step is an algebra-preserving reduction of symbolic expression growth plus a supervisor repair that distinguishes an empty process group from unresolved cleanup, under the existing overnight approval. No mathematical test is to be weakened to obtain a pass.
 
 This archive records one attempt. Read the raw [verification log](verification.log), [execution record](execution.json), [partial checkpoints](weak-form-progress.jsonl) and [failure summary](failure-summary.json). The code's sampled Green checks are not a global identity theorem, radial operator export, admissible-seed certificate, or nonlinear consistency proof.
+
+## Manifest scope
+
+`artifact-manifest.json` authenticates the original durable archive, including its original README, source copies and RSS samples. This repository README changes only the paragraph identifying where those larger payloads are stored. Its bytes therefore differ from the original README hash in that manifest. The original artifact and manifest are preserved unchanged. [Repository manifest](repository-manifest.json) authenticates the files included here and records both README versions; it does not replace the original run's provenance.
