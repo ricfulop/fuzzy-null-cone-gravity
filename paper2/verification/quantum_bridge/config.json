@@ -21,9 +21,9 @@
   "angular_max_total_work": 50000000,
   "scalar_radius": 4,
   "scalar_intervals": [
-    256,
-    512,
-    1024
+    1024,
+    2048,
+    4096
   ],
   "scalar_origin_radius": 0.5,
   "scalar_exterior_radii": [

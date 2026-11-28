@@ -151,8 +151,8 @@ def main(config):
             raise ValueError("No positive authorized wall/memory budget")
         scalar = config["scalar_intervals"]
         york = config["york_intervals"]
-        if scalar != [256, 512, 1024] or york != [128, 256, 512]:
-            raise ValueError("This initial protocol pins the preregistered radial levels")
+        if scalar != [1024, 2048, 4096] or york != [128, 256, 512]:
+            raise ValueError("This refinement pins the declared scalar levels and unchanged York schedule")
         if config["angular_ell_max"] != 10:
             raise ValueError("This initial protocol declares 26 angular controls through ell=10")
         point_cap = config["york_global_point_cap"]
