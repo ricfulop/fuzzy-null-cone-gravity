@@ -1,0 +1,31 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "diagnostic",
+      "of": 5,
+      "unit": "batches"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "checker result"
+    }
+  ],
+  "brief": {
+    "question": "Do the prepared original-regulator weak potential/lapse densities and radial fluxes pass the complete bounded independent curvature/Green validation?",
+    "healthy": "This full mode declares its own plan: setup one environment, validation eight batches, export one result. Batches are three representative sampled weak/Green sectors, three prepared symbolic gauge controls, Cartesian TT normalization, and nonzero ablation. validation_passed follows successful weak-form-checks.json export.",
+    "noise": "The preceding five-batch evaluator diagnostic passed in 142.57 supervisor seconds. It did not perform this complete weak-form check. Substage timings do not advance batch counts. Scope exclusions for finite assembly, physical boundaries and nonlinear consistency are intentional.",
+    "worth_a_flag": "Any exact residual failure, wrong-sign or omitted-term negative control unexpectedly accepted, missing final JSON, budget stop or unresolved cleanup. Do not interpret a computational stop as a gravitational no-go.",
+    "from_parent": "Checker and physics bytes match the passing curvature diagnostic. Only the supervisor selects existing full mode. Raw sampled sectors remain free of intermediate chart normalization; symbolic gauge sectors retain combined-Ricci normalization.",
+    "decided": "One local CPU invocation with unchanged 300-second wall and sampled 2-GiB RSS budgets. Standing approval ends 2026-11-28 16:29 UTC. This is bounded local validation, not a finite radial spectrum, endpoint-domain choice or consistency theorem."
+  },
+  "watch": {
+    "minGapS": 60,
+    "maxGapS": 180
+  }
+}

@@ -1,0 +1,327 @@
+[
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "m": 1,
+    "name": "raw_contracted",
+    "seconds": 0.10320508317090571,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "m": 1,
+    "name": "raw_dense",
+    "seconds": 0.07937316689640284,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": null,
+    "j": null,
+    "m": 1,
+    "name": "delta_gamma_trace_done",
+    "seconds": 0.5199268329888582,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 0,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.029001542134210467,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 0,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0029908749274909496,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 0,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 5.478506416082382,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 1,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.024471375159919262,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 1,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0053642080165445805,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 1,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 5.140550791053101,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 2,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.018359124893322587,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 2,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0008761670906096697,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 0,
+    "j": 2,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 1.3579705830197781,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 0,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.0015242910012602806,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 0,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.006163917016237974,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 0,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 3.5878691249527037,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 1,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.025145832914859056,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 1,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.011932708090171218,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 1,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 3.590793125098571,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.007930417079478502,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00019141589291393757,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 7.05226341704838,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 0,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.0014658751897513866,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 0,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0033210827969014645,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 0,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.6619235419202596,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 1,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.0012059998698532581,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 1,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.002723333891481161,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 1,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 2.488316125003621,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 2,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.04838883318006992,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 2,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00047595915384590626,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "i": 2,
+    "j": 2,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 1.8210221668705344,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "m": 1,
+    "name": "normalized_contracted",
+    "seconds": 31.893430291907862,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "contracted_raw_ricci_probe",
+    "m": 1,
+    "name": "exact_comparisons",
+    "seconds": 0.08040370815433562,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "ricci_entry_pure_gauge_probe",
+    "i": null,
+    "j": null,
+    "m": 1,
+    "name": "delta_gamma_trace_done",
+    "seconds": 1.0625146250240505,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "ricci_entry_pure_gauge_probe",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.025211249943822622,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "ricci_entry_pure_gauge_probe",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0034031670074909925,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "ricci_entry_pure_gauge_probe",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 2.029145041014999,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "ricci_entry_pure_gauge_probe",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "exact_zero_done",
+    "seconds": 5.620904266834259e-05,
+    "stage": "SUBSTAGE"
+  }
+]

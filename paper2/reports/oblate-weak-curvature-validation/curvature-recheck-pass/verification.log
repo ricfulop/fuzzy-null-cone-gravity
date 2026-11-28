@@ -1,0 +1,390 @@
+::orx:: {"phase": "setup", "step": 0, "of": 1, "unit": "environment"}
+EXECUTION {"started_utc": "2026-11-28T06:00:07.347066+00:00", "approval_message": "msg_ad636446", "approval_end_utc": "2026-11-28T16:29:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/025b8511-9538-4bc7-a189-5c053156fb27/repo/paper2/verification/oblate_quadratic_preparation/verify_weak_forms.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/025b8511-9538-4bc7-a189-5c053156fb27/repo/paper2/reports/oblate-weak-curvature-validation/runtime", "--mode", "curvature-probe"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/025b8511-9538-4bc7-a189-5c053156fb27/repo/paper2", "source_sha256": {"verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "dfdfbf12f64c9b4279784058f77d23a1ec1e5bedec29906e5e249bc24f8f6f6e", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "1d3c606a8d066c2c850565616734ce9ea5c5132a", "run_id": "025b8511-9538-4bc7-a189-5c053156fb27", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "prepared_to_launch", "checker_mode": "curvature-probe"}
+::orx:: {"of": 1, "phase": "setup", "plan": [{"of": 1, "phase": "setup", "unit": "environment"}, {"of": 5, "phase": "diagnostic", "unit": "batches"}, {"of": 1, "phase": "export", "unit": "checker result"}], "step": 1, "unit": "environment"}
+::orx:: {"m": {"completed_diagnostic_batches": 0}, "of": 5, "phase": "diagnostic", "step": 0, "unit": "batches"}
+{"name": "half_root_controls", "stage": "STAGE"}
+PASS half-root exact predicate controls
+::orx:: {"m": {"completed_diagnostic_batches": 1}, "of": 5, "phase": "diagnostic", "step": 1, "unit": "batches"}
+{"m": 1, "name": "contracted_raw_ricci_probe", "stage": "STAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "raw_contracted_start", "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "raw_contracted", "seconds": 0.1747030420228839, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "raw_dense_start", "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "raw_dense", "seconds": 0.14013420790433884, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "normalized_contracted_start", "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": null, "j": null, "m": 1, "name": "delta_gamma_trace_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": null, "j": null, "m": 1, "name": "delta_gamma_trace_done", "seconds": 0.7926520828623325, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 0, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 0, "m": 1, "name": "raw_divergence_done", "seconds": 0.04435733309946954, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 0, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 0, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.003993333084508777, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 0, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 0, "m": 1, "name": "final_chart_normalize_done", "seconds": 5.599446832900867, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 1, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 1, "m": 1, "name": "raw_divergence_done", "seconds": 0.02437554206699133, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 1, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 1, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.00517187500372529, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 1, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 1, "m": 1, "name": "final_chart_normalize_done", "seconds": 5.150652083102614, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 2, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 2, "m": 1, "name": "raw_divergence_done", "seconds": 0.018435250036418438, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 2, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 2, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.0005242081824690104, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 2, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 0, "j": 2, "m": 1, "name": "final_chart_normalize_done", "seconds": 1.375853291945532, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 0, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 0, "m": 1, "name": "raw_divergence_done", "seconds": 0.001421542139723897, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 0, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 0, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.006905582966282964, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 0, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 0, "m": 1, "name": "final_chart_normalize_done", "seconds": 3.5586480000056326, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 1, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 1, "m": 1, "name": "raw_divergence_done", "seconds": 0.023860417073592544, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 1, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 1, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.011275375029072165, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 1, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 1, "m": 1, "name": "final_chart_normalize_done", "seconds": 3.6437125001102686, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 2, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 2, "m": 1, "name": "raw_divergence_done", "seconds": 0.007715041050687432, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 2, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 2, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.00019479193724691868, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 2, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 1, "j": 2, "m": 1, "name": "final_chart_normalize_done", "seconds": 7.070051332935691, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 0, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 0, "m": 1, "name": "raw_divergence_done", "seconds": 0.0014349168632179499, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 0, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 0, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.0035423750523477793, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 0, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 0, "m": 1, "name": "final_chart_normalize_done", "seconds": 0.6819366670679301, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 1, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 1, "m": 1, "name": "raw_divergence_done", "seconds": 0.0014174580574035645, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 1, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 1, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.002893707947805524, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 1, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 1, "m": 1, "name": "final_chart_normalize_done", "seconds": 2.854697666829452, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 2, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 2, "m": 1, "name": "raw_divergence_done", "seconds": 0.025917791994288564, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 2, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 2, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.00017875013872981071, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 2, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "i": 2, "j": 2, "m": 1, "name": "final_chart_normalize_done", "seconds": 1.9723207908682525, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "normalized_contracted", "seconds": 32.88620829209685, "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "exact_comparisons_start", "stage": "SUBSTAGE"}
+{"batch": "contracted_raw_ricci_probe", "m": 1, "name": "exact_comparisons", "seconds": 0.08563441690057516, "stage": "SUBSTAGE"}
+PASS contracted raw Ricci agrees with dense Ricci at m=1 point
+::orx:: {"m": {"completed_diagnostic_batches": 2}, "of": 5, "phase": "diagnostic", "step": 2, "unit": "batches"}
+{"m": 1, "name": "pure_gauge_control", "stage": "STAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "connection", "seconds": 0.09842483280226588, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "coordinate_lie", "seconds": 0.006942833075299859, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "tensor_jet", "seconds": 0.045739084016531706, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "varied_ricci_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": null, "j": null, "m": 1, "name": "delta_gamma_trace_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": null, "j": null, "m": 1, "name": "delta_gamma_trace_done", "seconds": 1.0606703329831362, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "raw_divergence_done", "seconds": 0.026734333019703627, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.006524082971736789, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "final_chart_normalize_done", "seconds": 10.87776158284396, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "raw_divergence_done", "seconds": 0.026609834050759673, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.004567667143419385, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "final_chart_normalize_done", "seconds": 23.372897582827136, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "raw_divergence_done", "seconds": 0.020089250057935715, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.0033610002137720585, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "final_chart_normalize_done", "seconds": 0.6068019999656826, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "raw_divergence_done", "seconds": 0.0016573341563344002, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.013886499917134643, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "final_chart_normalize_done", "seconds": 25.06112629105337, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "raw_divergence_done", "seconds": 0.02160841692239046, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.014050417114049196, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "final_chart_normalize_done", "seconds": 14.265578874852508, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "raw_divergence_done", "seconds": 0.013597166165709496, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.00018291687592864037, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "final_chart_normalize_done", "seconds": 2.0486347500700504, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "raw_divergence_done", "seconds": 0.0016620829701423645, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.005596207920461893, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "final_chart_normalize_done", "seconds": 0.652802542084828, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "raw_divergence_done", "seconds": 0.0014216669369488955, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.00696408306248486, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "final_chart_normalize_done", "seconds": 1.2349288340192288, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "raw_divergence_done", "seconds": 0.015539416810497642, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "raw_trace_derivative_done", "seconds": 0.00018312502652406693, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "final_chart_normalize_done", "seconds": 2.5972006251104176, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "varied_ricci", "seconds": 81.9669158749748, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "scalar_einstein_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "scalar_einstein", "seconds": 0.0014583750162273645, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 1, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "exact_zero_scalar_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 1, "name": "exact_zero_scalar", "seconds": 0.00048287492245435715, "stage": "SUBSTAGE"}
+PASS continuum pure-gauge zero m=1
+::orx:: {"m": {"completed_diagnostic_batches": 3}, "of": 5, "phase": "diagnostic", "step": 3, "unit": "batches"}
+{"m": 0, "name": "pure_gauge_control", "stage": "STAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "connection", "seconds": 0.13967791688628495, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "coordinate_lie", "seconds": 0.006035167025402188, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "tensor_jet", "seconds": 0.023420333163812757, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "varied_ricci_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": null, "j": null, "m": 0, "name": "delta_gamma_trace_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": null, "j": null, "m": 0, "name": "delta_gamma_trace_done", "seconds": 0.5188950840383768, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "raw_divergence_done", "seconds": 0.022945000091567636, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "raw_trace_derivative_done", "seconds": 0.004812292056158185, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "final_chart_normalize_done", "seconds": 1.883719707839191, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "raw_divergence_done", "seconds": 0.017670333152636886, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "raw_trace_derivative_done", "seconds": 0.0030854169744998217, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "final_chart_normalize_done", "seconds": 4.007805458037183, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "raw_divergence_done", "seconds": 0.0018377499654889107, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "raw_trace_derivative_done", "seconds": 0.00027666613459587097, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "final_chart_normalize_done", "seconds": 0.0214223749935627, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "raw_divergence_done", "seconds": 0.0010926250834017992, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "raw_trace_derivative_done", "seconds": 0.00440970784984529, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "final_chart_normalize_done", "seconds": 3.873830958036706, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "raw_divergence_done", "seconds": 0.02540954202413559, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "raw_trace_derivative_done", "seconds": 0.003160709049552679, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "final_chart_normalize_done", "seconds": 2.595449708169326, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "raw_divergence_done", "seconds": 0.01234654220752418, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "raw_trace_derivative_done", "seconds": 9.02500469237566e-05, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "final_chart_normalize_done", "seconds": 0.05812141695059836, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "raw_divergence_done", "seconds": 0.0007592078763991594, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "raw_trace_derivative_done", "seconds": 7.641687989234924e-05, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "final_chart_normalize_done", "seconds": 0.010963207809254527, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "raw_divergence_done", "seconds": 0.0008408331777900457, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "raw_trace_derivative_done", "seconds": 1.833401620388031e-05, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "final_chart_normalize_done", "seconds": 0.015161291928961873, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "raw_divergence_done", "seconds": 0.015506499912589788, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "raw_trace_derivative_done", "seconds": 9.783310815691948e-05, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "final_chart_normalize_done", "seconds": 0.4556999169290066, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "varied_ricci", "seconds": 13.557450416963547, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "scalar_einstein_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "scalar_einstein", "seconds": 0.0012059998698532581, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 0, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "exact_zero_scalar_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 0, "name": "exact_zero_scalar", "seconds": 0.0004402080085128546, "stage": "SUBSTAGE"}
+PASS continuum pure-gauge zero m=0
+::orx:: {"m": {"completed_diagnostic_batches": 4}, "of": 5, "phase": "diagnostic", "step": 4, "unit": "batches"}
+{"m": 2, "name": "pure_gauge_control", "stage": "STAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "connection", "seconds": 0.09904908295720816, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "coordinate_lie", "seconds": 0.005620833020657301, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "tensor_jet", "seconds": 0.03912366693839431, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "varied_ricci_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": null, "j": null, "m": 2, "name": "delta_gamma_trace_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": null, "j": null, "m": 2, "name": "delta_gamma_trace_done", "seconds": 0.8134176670573652, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "raw_divergence_done", "seconds": 0.029008457902818918, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.0056158751249313354, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "final_chart_normalize_done", "seconds": 3.4169424581341445, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "raw_divergence_done", "seconds": 0.07281470810994506, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.005760249914601445, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "final_chart_normalize_done", "seconds": 2.527448416920379, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "raw_divergence_done", "seconds": 0.02619587490335107, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.0004897499457001686, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "final_chart_normalize_done", "seconds": 0.3286618748679757, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "raw_divergence_done", "seconds": 0.001410875003784895, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.006568666081875563, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "final_chart_normalize_done", "seconds": 2.3873820840381086, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "raw_divergence_done", "seconds": 0.018654542043805122, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.004547333111986518, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "final_chart_normalize_done", "seconds": 1.1807672909926623, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "raw_divergence_done", "seconds": 0.01876070792786777, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.00017229095101356506, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "final_chart_normalize_done", "seconds": 0.18778291600756347, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "raw_divergence_done", "seconds": 0.0016771249938756227, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.008130667032673955, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "final_chart_normalize_done", "seconds": 0.2524201669730246, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "raw_divergence_done", "seconds": 0.0013742921873927116, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.00635462487116456, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "final_chart_normalize_done", "seconds": 0.11309741600416601, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "raw_divergence_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "raw_divergence_done", "seconds": 0.024499959079548717, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "raw_trace_derivative_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "raw_trace_derivative_done", "seconds": 0.00016962504014372826, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "final_chart_normalize_start", "seconds": null, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "final_chart_normalize_done", "seconds": 0.5587344169616699, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "varied_ricci", "seconds": 12.001130999997258, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "scalar_einstein_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "scalar_einstein", "seconds": 0.001176999881863594, "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 0, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 1, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 0, "j": 2, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 0, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 1, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 1, "j": 2, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 0, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 1, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "exact_zero_einstein_entry_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "i": 2, "j": 2, "m": 2, "name": "exact_zero_einstein_entry_done", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "exact_zero_scalar_start", "stage": "SUBSTAGE"}
+{"batch": "pure_gauge_control", "m": 2, "name": "exact_zero_scalar", "seconds": 0.00041125016286969185, "stage": "SUBSTAGE"}
+PASS continuum pure-gauge zero m=2
+::orx:: {"m": {"completed_diagnostic_batches": 5}, "of": 5, "phase": "diagnostic", "step": 5, "unit": "batches"}
+PASS curvature diagnostic probe
+::orx:: {"m": {"elapsed_seconds": 141.58138250000775}, "of": 1, "phase": "export", "step": 0, "unit": "checker result"}
+::orx:: {"m": {"diagnostic_passed": 1, "elapsed_seconds": 141.58138250000775}, "of": 1, "phase": "export", "step": 1, "unit": "checker result"}
+{
+  "status": "passed",
+  "scope": [
+    "half-root chart positive and negative controls",
+    "raw and chart-normalized contracted Ricci against dense raw Ricci at one nonzero m=1 point",
+    "continuum pure-gauge zero controls for m=1,0,2"
+  ],
+  "diagnostic_only": true,
+  "full_validation_performed": false,
+  "nonlinear_theorem_claimed": false,
+  "finite_assembly_performed": false,
+  "operator_spectrum_performed": false,
+  "half_root_controls": {
+    "positive_controls": 4,
+    "negative_controls": 2,
+    "unsupported_controls": 6
+  },
+  "contracted_raw": {
+    "m": 1,
+    "point": {
+      "r": "23/14",
+      "x": "1/5",
+      "epsilon": "1/4"
+    },
+    "labels": [
+      "('lambda', 1, 1)",
+      "('V_polar', 1, 1)"
+    ],
+    "profile": "r**3 - r + 3/2",
+    "nonzero_witness": {
+      "i": 0,
+      "j": 0,
+      "value": "104182865513061*sqrt(6)/6237887788090"
+    },
+    "scope": "genuine nonzero offshell m=1 tensor at one rational point"
+  },
+  "gauge_controls": [
+    "m=1",
+    "m=0",
+    "m=2"
+  ],
+  "python": "3.12.11",
+  "dependencies": {
+    "sympy": "1.14.0",
+    "numpy": "2.3.5"
+  },
+  "source_sha256": {
+    "verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501"
+  },
+  "seconds": 141.58138250000775
+}
+EXECUTION_FINAL {"started_utc": "2026-11-28T06:00:07.347066+00:00", "approval_message": "msg_ad636446", "approval_end_utc": "2026-11-28T16:29:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/025b8511-9538-4bc7-a189-5c053156fb27/repo/paper2/verification/oblate_quadratic_preparation/verify_weak_forms.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/025b8511-9538-4bc7-a189-5c053156fb27/repo/paper2/reports/oblate-weak-curvature-validation/runtime", "--mode", "curvature-probe"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/025b8511-9538-4bc7-a189-5c053156fb27/repo/paper2", "source_sha256": {"verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "dfdfbf12f64c9b4279784058f77d23a1ec1e5bedec29906e5e249bc24f8f6f6e", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "1d3c606a8d066c2c850565616734ce9ea5c5132a", "run_id": "025b8511-9538-4bc7-a189-5c053156fb27", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "child_exit_zero", "checker_mode": "curvature-probe", "process_group": 28858, "ended_utc": "2026-11-28T06:02:29.936794+00:00", "elapsed_seconds": 142.57024100003764, "child_return_code": 0, "stop_reason": null, "peak_sampled_group_rss_bytes": 173555712, "sample_count": 482, "cleanup_events": [{"action": "final_disposition", "status": "empty", "members": []}]}

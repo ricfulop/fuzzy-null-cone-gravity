@@ -1,0 +1,56 @@
+{
+  "started_utc": "2026-11-28T06:08:20.308839+00:00",
+  "approval_message": "msg_ad636446",
+  "approval_end_utc": "2026-11-28T16:29:00+00:00",
+  "wall_budget_seconds": 300,
+  "sampled_group_rss_budget_bytes": 2147483648,
+  "memory_budget_is_hard_limit": false,
+  "command": [
+    "/Users/ricfulop/.local/bin/uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "-u",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/32b93879-a4f2-426f-82ac-2fa455844477/repo/paper2/verification/oblate_quadratic_preparation/verify_weak_forms.py",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/32b93879-a4f2-426f-82ac-2fa455844477/repo/paper2/reports/oblate-weak-curvature-validation/runtime",
+    "--mode",
+    "full"
+  ],
+  "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/32b93879-a4f2-426f-82ac-2fa455844477/repo/paper2",
+  "source_sha256": {
+    "verify_weak_forms.py": "3bb2a49863cda8b6f5f3b7a1a718ec580cc6916ed6f5cde13d682d2571ac7113",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "cdce51691088fcda4eb0e65397feaefda04762b87d8b0baace360c05df1f8242",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  },
+  "source_commit": "b59be9535b38e25d59a8437efe9873094b2bc4bd",
+  "run_id": "32b93879-a4f2-426f-82ac-2fa455844477",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "source_equations_changed_by_supervisor": false,
+  "status": "child_exit_zero",
+  "checker_mode": "full",
+  "process_group": 39206,
+  "ended_utc": "2026-11-28T06:10:29.844760+00:00",
+  "elapsed_seconds": 129.5262595829554,
+  "child_return_code": 0,
+  "stop_reason": null,
+  "peak_sampled_group_rss_bytes": 169082880,
+  "sample_count": 439,
+  "cleanup_events": [
+    {
+      "action": "final_disposition",
+      "status": "empty",
+      "members": []
+    }
+  ]
+}

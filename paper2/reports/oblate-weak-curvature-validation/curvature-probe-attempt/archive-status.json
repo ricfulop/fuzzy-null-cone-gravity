@@ -1,0 +1,31 @@
+{
+  "run_id": "a5ae3400-3da6-481a-90b4-2bb234cbab19",
+  "source_commit": "0031aca219129d89026422278b521f1e87a3160e",
+  "source_hashes_match_frozen_and_worktree": true,
+  "completed_diagnostic_batches": 2,
+  "diagnostic_completed": false,
+  "full_validation_completed": false,
+  "final_result_present": false,
+  "last_started_ricci_entry": {
+    "m": 1,
+    "i": 1,
+    "j": 2
+  },
+  "last_completed_ricci_entry": {
+    "m": 1,
+    "i": 1,
+    "j": 1
+  },
+  "primary_stop_reason": "wall_budget",
+  "sampled_peak_mib": 182.390625,
+  "independent_process_table_check": {
+    "utc": "2026-11-28T05:50:08.598467+00:00",
+    "process_group": 3002,
+    "members": []
+  },
+  "interpretation": "Incomplete diagnostic; no assertion failure observed. Exact operation inside R12 is not isolated by current timers.",
+  "proposal_review_messages": [
+    "msg_3b2120f0",
+    "msg_ccd3db87"
+  ]
+}

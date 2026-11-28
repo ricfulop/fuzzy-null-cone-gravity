@@ -1,0 +1,18 @@
+{
+  "run_id": "9b6ab336-ed3c-460b-9308-b2dc21c470e4",
+  "source_commit": "3445f140ac8352e7e83a07edefb9ecdcaad83e73",
+  "frozen_source_hashes_and_commit_verified": true,
+  "result_hashes_match_execution": true,
+  "completed_diagnostic_batches": 3,
+  "full_validation_complete": false,
+  "all_gauge_entries_complete": false,
+  "resource_samples_verified": 125,
+  "independent_process_table_check": {
+    "utc": "2026-11-28T05:58:18.368759+00:00",
+    "process_group": 23193,
+    "members": []
+  },
+  "checker_seconds": 35.677620332920924,
+  "supervisor_seconds": 36.74804387497716,
+  "peak_sampled_mib": 156.1875
+}

@@ -1,0 +1,884 @@
+[
+  {
+    "batch": "pure_gauge_control",
+    "m": 0,
+    "name": "connection",
+    "seconds": 0.10471729096025229,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 0,
+    "name": "coordinate_lie",
+    "seconds": 0.004930624971166253,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 0,
+    "name": "tensor_jet",
+    "seconds": 0.030215749982744455,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": null,
+    "j": null,
+    "m": 0,
+    "name": "delta_gamma_trace_done",
+    "seconds": 0.6038756670895964,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.03021358302794397,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00596954207867384,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 1.9867595420219004,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.02062166598625481,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.004702917067334056,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 4.021778375143185,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.004610499832779169,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00044245808385312557,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.02267704112455249,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.0012843748554587364,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.005227041896432638,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 4.130207750014961,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.031212541973218322,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0037377499975264072,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 2.5342859588563442,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.011407833080738783,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 8.67089256644249e-05,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.05784370796754956,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.0008167079649865627,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 7.899990305304527e-05,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.010782500030472875,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.0008159999269992113,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 1.7916085198521614e-05,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.015103959012776613,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 0,
+    "name": "raw_divergence_done",
+    "seconds": 0.015878374921157956,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 0,
+    "name": "raw_trace_derivative_done",
+    "seconds": 9.333295747637749e-05,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 0,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.4714010830502957,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 0,
+    "name": "varied_ricci",
+    "seconds": 13.995046084048226,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 0,
+    "name": "scalar_einstein",
+    "seconds": 0.0012091249227523804,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 0,
+    "name": "exact_zero_scalar",
+    "seconds": 0.0004449160769581795,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 1,
+    "name": "connection",
+    "seconds": 0.1081237499602139,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 1,
+    "name": "coordinate_lie",
+    "seconds": 0.006382333114743233,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 1,
+    "name": "tensor_jet",
+    "seconds": 0.041833541821688414,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": null,
+    "j": null,
+    "m": 1,
+    "name": "delta_gamma_trace_done",
+    "seconds": 1.1255104169249535,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.017562874825671315,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0032962500117719173,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 10.304308499908075,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.031619958113878965,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.003247207961976528,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 23.12569020804949,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.016913166968151927,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.000592667143791914,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.6131647499278188,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.0015305830165743828,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.009044833946973085,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 25.694325417047366,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.018928708042949438,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00989341689273715,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 14.651439332868904,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.019578708102926612,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00019575003534555435,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 2.0926876249723136,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.0016891248524188995,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00559754204005003,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.6831527499016374,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.0014347909018397331,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.007119582965970039,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 1.2080395829398185,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 1,
+    "name": "raw_divergence_done",
+    "seconds": 0.015904916217550635,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 1,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00017841695807874203,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 1,
+    "name": "final_chart_normalize_done",
+    "seconds": 2.6258677090518177,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 1,
+    "name": "varied_ricci",
+    "seconds": 82.2910142079927,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 1,
+    "name": "scalar_einstein",
+    "seconds": 0.0014975829981267452,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 1,
+    "name": "exact_zero_scalar",
+    "seconds": 0.0004943341482430696,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 2,
+    "name": "connection",
+    "seconds": 0.09616525005549192,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 2,
+    "name": "coordinate_lie",
+    "seconds": 0.006044249981641769,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 2,
+    "name": "tensor_jet",
+    "seconds": 0.04046229179948568,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": null,
+    "j": null,
+    "m": 2,
+    "name": "delta_gamma_trace_done",
+    "seconds": 0.7598678329959512,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.03104562498629093,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.006081125000491738,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 0,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 3.447499291971326,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.023379583144560456,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.005395208019763231,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 1,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 2.583457708125934,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.02446420886553824,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0002854578197002411,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 0,
+    "j": 2,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.338426582980901,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.0014723329804837704,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.006675082957372069,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 0,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 2.444767708191648,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.019201166927814484,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.004589416086673737,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 1,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 1.1572625001426786,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.019083583960309625,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.00018004095181822777,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 1,
+    "j": 2,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.19070799998007715,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.0018105418421328068,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.008924084017053246,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 0,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.2954925000667572,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.0013653337955474854,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.006341666914522648,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 1,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.11896520806476474,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 2,
+    "name": "raw_divergence_done",
+    "seconds": 0.025917832972481847,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 2,
+    "name": "raw_trace_derivative_done",
+    "seconds": 0.0001710830256342888,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "i": 2,
+    "j": 2,
+    "m": 2,
+    "name": "final_chart_normalize_done",
+    "seconds": 0.5683728749863803,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 2,
+    "name": "varied_ricci",
+    "seconds": 12.093559000175446,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 2,
+    "name": "scalar_einstein",
+    "seconds": 0.001191499875858426,
+    "stage": "SUBSTAGE"
+  },
+  {
+    "batch": "pure_gauge_control",
+    "m": 2,
+    "name": "exact_zero_scalar",
+    "seconds": 0.0004338750150054693,
+    "stage": "SUBSTAGE"
+  }
+]

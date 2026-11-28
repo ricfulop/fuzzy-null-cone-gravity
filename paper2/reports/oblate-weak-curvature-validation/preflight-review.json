@@ -1,0 +1,26 @@
+{
+  "status": "source reviewed; scientific execution pending",
+  "authorization": "msg_ad636446 plus subsequent all-other-approvals message",
+  "approval_end_utc": "2026-11-28T16:29:00Z",
+  "source_parent_commit": "510e7d87d0e8cd1581ffc7233122a7bedafea969",
+  "source_review_messages": [
+    "msg_4f1d742f",
+    "msg_76da0381",
+    "msg_b43b12d4"
+  ],
+  "source_sha256": {
+    "verify_weak_forms.py": "0539a2b0fa73c332db5bac77897db1e8a146907f6d858c8f1bb9010c85f2f995",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "f63b4fe4620ab7927fb06fc6b23fbe441137e2cf64802287d13ffaf08f407557",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"
+  },
+  "static_checks": [
+    "Python AST and syntax compilation without imports",
+    "bash -n runner",
+    "git diff --check"
+  ],
+  "scientific_invocations_so_far": 0,
+  "scope": "L2 representative m0,1,2 weak curvature, lapse and Green controls; no radial physical operator or nonlinear theorem."
+}

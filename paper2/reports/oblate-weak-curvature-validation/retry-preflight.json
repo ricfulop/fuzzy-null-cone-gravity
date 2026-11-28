@@ -1,0 +1,53 @@
+{
+  "status": "source reviewed; one scientific retry proposed, not yet launched",
+  "created_utc": "2026-11-28T05:09:56.339737+00:00",
+  "first_run": "85aa6197-97a5-4a4a-9239-4119a350d7ef",
+  "first_source": "42200f8c135e9ae5837a25515ba33b3c4055e1fe",
+  "failure_archive_commit": "b189395",
+  "authorization": "msg_ad636446 plus all-other-approvals follow-up",
+  "authorization_end_utc": "2026-11-28T16:29:00Z",
+  "source_review_messages": [
+    "msg_1473fae0",
+    "msg_d5715050"
+  ],
+  "root_review": "Root read full changes, retained independent curvature path and all scientific assertions; examined cleanup, primary stop preservation and unresolved membership handling.",
+  "source_sha256": {
+    "verify_weak_forms.py": "b7e499e28f1d19611b9c7639faa69d76063a73c35c4746265c255ce844f2a34a",
+    "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148",
+    "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08",
+    "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501",
+    "supervise_weak_validation.py": "7763c4429fce1de1ebc65c7964647b54f29fc68e0a55cb3bc5b01082df8aa1b8",
+    "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b",
+    "test_weak_supervisor.py": "98eeeb7a01beb466c4aab5e0055b2b62516d0476e5abe55a8627d8490fc36190"
+  },
+  "physics_modules_match_first_source": [
+    "weak_forms.py",
+    "potential_hessian.py",
+    "kinematic_blocks.py"
+  ],
+  "static_validation": {
+    "stdlib_mocked_tests": 8,
+    "result": "passed",
+    "observed_test_seconds": 0.002,
+    "python_compilation": "passed",
+    "bash_syntax": "passed",
+    "git_diff_check": "passed",
+    "real_processes_or_signals_in_tests": false,
+    "scientific_imports_or_checks_in_preparation": false
+  },
+  "run_proposal": {
+    "invocations": 1,
+    "backend": "local",
+    "wall_seconds": 900,
+    "sampled_group_rss_bytes": 2147483648,
+    "memory_hard_limit": false,
+    "runtime_estimate": "unknown; prior incomplete run stopped at 667.526 s; 900 s is a cap",
+    "scientific_control_batches": 8
+  },
+  "limitations": [
+    "representative sampled Green checks, not all-label/global theorem",
+    "no finite radial K,E,D",
+    "no physical boundary domain",
+    "no spectrum or nonlinear consistency conclusion"
+  ]
+}
