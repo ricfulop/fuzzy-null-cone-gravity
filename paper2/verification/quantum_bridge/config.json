@@ -1,8 +1,8 @@
 {
   "calculation": "complete_quartic_loops",
   "loop_quadrature_orders": [
-    32,
-    64
+    64,
+    128
   ],
   "loop_relative_tolerance": 1e-09,
   "external_frequencies": [
