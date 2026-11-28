@@ -1,0 +1,7 @@
+<signal name="validation_passed" label="Bounded validation" labels='{"0":"incomplete","1":"passed"}' better="higher" />
+<signal name="completed_batches" label="Completed batches" better="higher" />
+<signal name="elapsed_seconds" label="Checker runtime" unit="s" as="duration" />
+<view headline="validation_passed completed_batches">
+  <stats of="validation_passed completed_batches elapsed_seconds" />
+  <text>Checks representative weak curvature and Green identities. This is not a physical spectrum or nonlinear consistency test.</text>
+</view>

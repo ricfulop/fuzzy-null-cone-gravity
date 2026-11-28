@@ -1,0 +1,16 @@
+{
+  "plan": [
+    {"phase": "setup"},
+    {"phase": "validation", "of": 8, "unit": "batches"},
+    {"phase": "export"}
+  ],
+  "brief": {
+    "question": "Do the prepared oblate potential and lapse weak densities and Green fluxes agree with independent curvature variations in the bounded representative sectors?",
+    "healthy": "Three angular-sector batches, three gauge controls, a Cartesian TT normalization control and an ablation control pass, then weak-form-checks.json is written. SymPy batches may be silent between per-stage messages.",
+    "noise": "Exact symbolic simplification has uneven batch runtimes. The 900-second envelope is a cap, not a requested workload duration.",
+    "worth_a_flag": "An AssertionError, nonzero child exit, supervisor timeout or memory stop, or a missing final result means the validation is incomplete. A pass does not establish a finite radial operator, physical boundary domain, admissible seed or nonlinear constraint theorem.",
+    "from_parent": "The prior bounded kinematic checkpoint passed. This new baseline tests the independently unvalidated potential/lapse/Green layer and does not inherit a finite-mode quantum-gravity theory from another experiment.",
+    "decided": "One local CPU child, pinned SymPy and NumPy, 900-second cap and 2-GiB sampled process-group RSS budget. Source equations are unchanged; only their checker is new. All runs must fit within the user's authorization ending 2026-11-28 16:29 UTC."
+  },
+  "watch": {"minGapS": 120, "maxGapS": 600}
+}
