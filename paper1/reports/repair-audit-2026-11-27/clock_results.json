@@ -1,0 +1,319 @@
+{
+  "independent_lower_bounds": {
+    "FE_Q1_maximum": 1.1996786402577189,
+    "FE_Q1_maximum_x": 1.8101702752936184,
+    "int_g_prime_squared": 6.052923538597463,
+    "FE_massless_T00_standard_normalization": -0.48167635066253656,
+    "FE_mass_uniform_T00_envelope": -0.5780116207950439,
+    "normalization_warning": "Standard timelike T00 theorem is not identified with the current spatial/canonical clock matrix.",
+    "C4_numerical": 3.873871589870207,
+    "uniform_mass_and_radial_bound": {
+      "formula": "H_NO >= -K_g, K_g=1/2 sum_{n>=1}(2n^2-n)|c_n|",
+      "partial_weighted_sum_through_80": 1.135330730122731,
+      "analytic_tail_expression_evaluated_numerically": 0.09594513250061033,
+      "conservative_K_g_numerical": 0.6156379313116707,
+      "infinite_series_K_g_estimate": 0.5676653650613654,
+      "rank_rule": "J <= floor(sqrt(s/log(3))); D(J)=2*((J+1)^2-4)",
+      "Xi_lower_bound_for_all_areas_rank_rule_numerical": -1.494340785278083,
+      "area_bound_multiplier_all_areas_upper_estimate": 19.85948189786948,
+      "scope": "Analytic bound for the specified oscillator matrices, all mu>=0 and radial truncations. Not a scalar-field QEI attribution."
+    },
+    "analytic_radial_bound": "-C4/2 * [mu^2 zeta(3) zeta(2) + zeta(2)-zeta(3) + 2 mu (zeta(3)-zeta(4))]",
+    "radial_scans": [
+      {
+        "j": 2,
+        "mu": 0.22507907903927654,
+        "radial_modes": 20,
+        "numerical_Williamson_minimum": -0.008710685789466766,
+        "finite_cutoff_trace_norm_lower_bound": -0.05540472789266018,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -1.156249291100859,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.005900980750632683
+      },
+      {
+        "j": 2,
+        "mu": 0.22507907903927654,
+        "radial_modes": 60,
+        "numerical_Williamson_minimum": -0.00878445009357165,
+        "finite_cutoff_trace_norm_lower_bound": -0.05541152100226843,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -1.156249291100859,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.005900986579824216
+      },
+      {
+        "j": 2,
+        "mu": 0.22507907903927654,
+        "radial_modes": 120,
+        "numerical_Williamson_minimum": -0.008783930989920918,
+        "finite_cutoff_trace_norm_lower_bound": -0.055412028168368585,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -1.156249291100859,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.005900986579863923
+      },
+      {
+        "j": 2,
+        "mu": 0.22507907903927654,
+        "radial_modes": 240,
+        "numerical_Williamson_minimum": -0.008779360694461502,
+        "finite_cutoff_trace_norm_lower_bound": -0.055412155531221634,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -1.156249291100859,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.00590098657986505
+      },
+      {
+        "j": 5,
+        "mu": 0.5955032684613765,
+        "radial_modes": 20,
+        "numerical_Williamson_minimum": -0.00498534450140653,
+        "finite_cutoff_trace_norm_lower_bound": -0.04986966638138636,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -2.4922177240912986,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.004178184763431705
+      },
+      {
+        "j": 5,
+        "mu": 0.5955032684613765,
+        "radial_modes": 60,
+        "numerical_Williamson_minimum": -0.00503334006782552,
+        "finite_cutoff_trace_norm_lower_bound": -0.04990851987406063,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -2.4922177240912986,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.00417819182270927
+      },
+      {
+        "j": 5,
+        "mu": 0.5955032684613765,
+        "radial_modes": 120,
+        "numerical_Williamson_minimum": -0.005032803395806695,
+        "finite_cutoff_trace_norm_lower_bound": -0.04991207074352281,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -2.4922177240912986,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.004178191824528693
+      },
+      {
+        "j": 5,
+        "mu": 0.5955032684613765,
+        "radial_modes": 240,
+        "numerical_Williamson_minimum": -0.005025568823839421,
+        "finite_cutoff_trace_norm_lower_bound": -0.049912961776555104,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -2.4922177240912986,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.004178191824583953
+      },
+      {
+        "j": 10,
+        "mu": 1.1695452018505141,
+        "radial_modes": 20,
+        "numerical_Williamson_minimum": -0.0019120351225012655,
+        "finite_cutoff_trace_norm_lower_bound": -0.049497243092585824,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -6.638988974858154,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.0027499359366155228
+      },
+      {
+        "j": 10,
+        "mu": 1.1695452018505141,
+        "radial_modes": 60,
+        "numerical_Williamson_minimum": -0.001956940250806838,
+        "finite_cutoff_trace_norm_lower_bound": -0.04964472127516721,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -6.638988974858154,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.0027499523801395314
+      },
+      {
+        "j": 10,
+        "mu": 1.1695452018505141,
+        "radial_modes": 120,
+        "numerical_Williamson_minimum": -0.0019564944855119393,
+        "finite_cutoff_trace_norm_lower_bound": -0.04965844373269783,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -6.638988974858154,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.002749952407154683
+      },
+      {
+        "j": 10,
+        "mu": 1.1695452018505141,
+        "radial_modes": 240,
+        "numerical_Williamson_minimum": -0.0019505146938172402,
+        "finite_cutoff_trace_norm_lower_bound": -0.049661879850574187,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -6.638988974858154,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.0027499524079766776
+      },
+      {
+        "j": 20,
+        "mu": 2.3008763211681216,
+        "radial_modes": 20,
+        "numerical_Williamson_minimum": -0.0008674081165480629,
+        "finite_cutoff_trace_norm_lower_bound": -0.05709226828478611,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -22.200720511862972,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.002937448176724522
+      },
+      {
+        "j": 20,
+        "mu": 2.3008763211681216,
+        "radial_modes": 60,
+        "numerical_Williamson_minimum": -0.0009149255687361801,
+        "finite_cutoff_trace_norm_lower_bound": -0.05764692709263473,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -22.200720511862972,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.0029375772262345483
+      },
+      {
+        "j": 20,
+        "mu": 2.3008763211681216,
+        "radial_modes": 120,
+        "numerical_Williamson_minimum": -0.0009152222246484598,
+        "finite_cutoff_trace_norm_lower_bound": -0.05769994425172925,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -22.200720511862972,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.002937577629890544
+      },
+      {
+        "j": 20,
+        "mu": 2.3008763211681216,
+        "radial_modes": 240,
+        "numerical_Williamson_minimum": -0.0009064028163265903,
+        "finite_cutoff_trace_norm_lower_bound": -0.05771324034516937,
+        "analytic_radial_uniform_lower_bound_numerically_evaluated": -22.200720511862972,
+        "mass_and_radial_uniform_lower_bound_numerically_evaluated": -0.6156379313116707,
+        "pair_Hilbert_Schmidt_squared": 0.002937577642196395
+      }
+    ]
+  },
+  "occupation_projected_clock": [
+    {
+      "B": 4,
+      "s": 8,
+      "J_max": 2,
+      "single_particle_modes": 30,
+      "vacuum_block_dimension_before_channel_symmetry": 1,
+      "exact_bright_block_dimension": 1,
+      "vacuum_spectral_min": 0.0,
+      "vacuum_spectral_max": 0.0,
+      "mean_exp_Xi": 1.0,
+      "variance_exp_Xi": 0,
+      "Xi_second_moment": 0.0,
+      "Xi_fourth_moment": 0.0,
+      "exact_vacuum_failure_at_log2": 0.0,
+      "second_moment_failure_bound": 0.0,
+      "fourth_moment_failure_bound": 0.0,
+      "Hermitian_residual": 0.0
+    },
+    {
+      "B": 6,
+      "s": 12,
+      "J_max": 3,
+      "single_particle_modes": 120,
+      "vacuum_block_dimension_before_channel_symmetry": 31,
+      "exact_bright_block_dimension": 4,
+      "vacuum_spectral_min": -0.0006539955899207392,
+      "vacuum_spectral_max": 0.39940482107400627,
+      "mean_exp_Xi": 1.0000629275125892,
+      "variance_exp_Xi": 0.00014563867182060264,
+      "Xi_second_moment": 0.00011709140992017495,
+      "Xi_fourth_moment": 5.8195720236035245e-06,
+      "exact_vacuum_failure_at_log2": 0.0,
+      "second_moment_failure_bound": 0.00024371042855006448,
+      "fourth_moment_failure_bound": 2.521094954504465e-05,
+      "Hermitian_residual": 0.0
+    },
+    {
+      "B": 8,
+      "s": 16,
+      "J_max": 3,
+      "single_particle_modes": 168,
+      "vacuum_block_dimension_before_channel_symmetry": 81,
+      "exact_bright_block_dimension": 9,
+      "vacuum_spectral_min": -0.0023360310713036094,
+      "vacuum_spectral_max": 0.5396870267582483,
+      "mean_exp_Xi": 1.0000575041980224,
+      "variance_exp_Xi": 0.00012064790000221315,
+      "Xi_second_moment": 0.00011235758267902513,
+      "Xi_fourth_moment": 9.242405084286769e-07,
+      "exact_vacuum_failure_at_log2": 0.0,
+      "second_moment_failure_bound": 0.00023385758736889587,
+      "fourth_moment_failure_bound": 4.00389938142799e-06,
+      "Hermitian_residual": 0.0
+    },
+    {
+      "B": 9,
+      "s": 18,
+      "J_max": 4,
+      "single_particle_modes": 300,
+      "vacuum_block_dimension_before_channel_symmetry": 135,
+      "exact_bright_block_dimension": 14,
+      "vacuum_spectral_min": -0.0027777946186033037,
+      "vacuum_spectral_max": 0.6227592671866301,
+      "mean_exp_Xi": 1.0000566513785438,
+      "variance_exp_Xi": 0.00012062663679057728,
+      "Xi_second_moment": 0.00010994239567469898,
+      "Xi_fourth_moment": 1.6119230329239523e-06,
+      "exact_vacuum_failure_at_log2": 0.0,
+      "second_moment_failure_bound": 0.00022883069205476358,
+      "fourth_moment_failure_bound": 6.983006669342271e-06,
+      "Hermitian_residual": 0.0
+    },
+    {
+      "B": 10,
+      "s": 20,
+      "J_max": 4,
+      "single_particle_modes": 378,
+      "vacuum_block_dimension_before_channel_symmetry": 241,
+      "exact_bright_block_dimension": 23,
+      "vacuum_spectral_min": -0.0030379993896669133,
+      "vacuum_spectral_max": 0.6963342147848178,
+      "mean_exp_Xi": 1.000050566338902,
+      "variance_exp_Xi": 0.00010583927797847004,
+      "Xi_second_moment": 9.89178181721422e-05,
+      "Xi_fourth_moment": 7.600595196040651e-07,
+      "exact_vacuum_failure_at_log2": 1.762286714011403e-08,
+      "second_moment_failure_bound": 0.0002058844784122496,
+      "fourth_moment_failure_bound": 3.2926514393585613e-06,
+      "Hermitian_residual": 0.0
+    },
+    {
+      "B": 11,
+      "s": 22,
+      "J_max": 4,
+      "single_particle_modes": 420,
+      "vacuum_block_dimension_before_channel_symmetry": 361,
+      "exact_bright_block_dimension": 33,
+      "vacuum_spectral_min": -0.00381215537635898,
+      "vacuum_spectral_max": 0.7177129296096368,
+      "mean_exp_Xi": 1.000065724315415,
+      "variance_exp_Xi": 0.00013626487697093737,
+      "Xi_second_moment": 0.0001291449428623575,
+      "Xi_fourth_moment": 5.908690758485142e-07,
+      "exact_vacuum_failure_at_log2": 4.008398854466944e-09,
+      "second_moment_failure_bound": 0.0002687982781274525,
+      "fourth_moment_failure_bound": 2.5597020534372735e-06,
+      "Hermitian_residual": 0.0
+    }
+  ],
+  "full_fock_cross_checks": [
+    {
+      "B": 4,
+      "channels": 2,
+      "full_dimension": 7,
+      "bright_dimension": 1,
+      "mgf_difference": 0.0
+    },
+    {
+      "B": 6,
+      "channels": 2,
+      "full_dimension": 21,
+      "bright_dimension": 4,
+      "mgf_difference": 0.0
+    },
+    {
+      "B": 8,
+      "channels": 2,
+      "full_dimension": 44,
+      "bright_dimension": 9,
+      "mgf_difference": 2.220446049250313e-16
+    }
+  ],
+  "scope": "Exact finite-budget vacuum statistics for B<12 with sufficient angular rank. Not large-area estimates."
+}

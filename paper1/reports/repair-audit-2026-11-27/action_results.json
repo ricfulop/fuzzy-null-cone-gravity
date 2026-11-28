@@ -1,0 +1,40 @@
+{
+  "spherical": {
+    "two_dimensional_curvature": "-(N(t, r)*Derivative(F(t, r), (r, 2)) - 2*N(t, r)*Derivative(N(t, r), r, t) - Derivative(F(t, r), r)*Derivative(N(t, r), r) + 2*Derivative(N(t, r), r)*Derivative(N(t, r), t))/N(t, r)**3",
+    "replacement_bulk_density": "-2*Lambda*N(t, r)*X(t, r) + (Derivative(F(t, r), r) - 2*Derivative(N(t, r), t))*Derivative(X(t, r), r)/N(t, r) + F(t, r)*Derivative(X(t, r), r)**2/(2*N(t, r)*X(t, r)) + 2*N(t, r) - Derivative(X(t, r), r)*Derivative(X(t, r), t)/X(t, r)",
+    "euler_lagrange": {
+      "X": "-(4*Lambda*N(t, r)**3*X(t, r)**2 + 2*F(t, r)*N(t, r)*X(t, r)*Derivative(X(t, r), (r, 2)) - F(t, r)*N(t, r)*Derivative(X(t, r), r)**2 - 2*F(t, r)*X(t, r)*Derivative(N(t, r), r)*Derivative(X(t, r), r) - 4*N(t, r)**2*X(t, r)*Derivative(X(t, r), r, t) + 2*N(t, r)**2*Derivative(X(t, r), r)*Derivative(X(t, r), t) + 2*N(t, r)*X(t, r)**2*Derivative(F(t, r), (r, 2)) - 4*N(t, r)*X(t, r)**2*Derivative(N(t, r), r, t) + 2*N(t, r)*X(t, r)*Derivative(F(t, r), r)*Derivative(X(t, r), r) - 2*X(t, r)**2*Derivative(F(t, r), r)*Derivative(N(t, r), r) + 4*X(t, r)**2*Derivative(N(t, r), r)*Derivative(N(t, r), t))/(2*N(t, r)**2*X(t, r)**2)",
+      "N": "-(4*Lambda*N(t, r)**2*X(t, r)**2 + F(t, r)*Derivative(X(t, r), r)**2 - 4*N(t, r)**2*X(t, r) - 4*N(t, r)*X(t, r)*Derivative(X(t, r), r, t) + 2*X(t, r)*Derivative(F(t, r), r)*Derivative(X(t, r), r))/(2*N(t, r)**2*X(t, r))",
+      "F": "(-2*N(t, r)*X(t, r)*Derivative(X(t, r), (r, 2)) + N(t, r)*Derivative(X(t, r), r)**2 + 2*X(t, r)*Derivative(N(t, r), r)*Derivative(X(t, r), r))/(2*N(t, r)**2*X(t, r))"
+    },
+    "schwarzschild_de_sitter_residuals": {
+      "X": "0",
+      "N": "0",
+      "F": "0"
+    },
+    "minimal_patch_residuals": {
+      "X": "2*(Lambda*r**3 - 12*M)/(3*r**3)",
+      "N": "-2*(Lambda*r**2 - 1)",
+      "F": "4"
+    },
+    "time_dependent_mass_gauge_fixed_residuals": {
+      "X": "0",
+      "N": "0",
+      "F": "0"
+    },
+    "restored_covariant_metric_equation_tt": "-2*Derivative(mass(t), t)",
+    "omitted_equation_warning": "Null gauge-fixed variation alone does not impose the missing mass-conservation equation.",
+    "original_B11_scalar_match": true
+  },
+  "axial": {
+    "quadratic_density_up_to_positive_harmonic_prefactor": "(-Derivative(h0(t, r), r) + Derivative(h1(t, r), t) + 2*h0(t, r)/r)**2/2 - (j - 1)*(j + 2)*(-2*M/r + 1)*h1(t, r)**2/(2*r**2) + (j - 1)*(j + 2)*h0(t, r)**2/(2*r**2*(-2*M/r + 1))",
+    "constraint_identity_residual": "0",
+    "regge_wheeler_residual": "0",
+    "derived_potential": "(-6*M/r**3 + j*(j + 1)/r**2)*(-2*M/r + 1)",
+    "gauge_invariant_amplitudes": [
+      "h0(t, r) - Derivative(h2(t, r), t)/2",
+      "h1(t, r) - Derivative(h2(t, r), r)/2 + h2(t, r)/r"
+    ],
+    "scope": "Correct EH quadratic axial sector. Equivalence to the full proposed nonlinear matrix action is not proved."
+  }
+}

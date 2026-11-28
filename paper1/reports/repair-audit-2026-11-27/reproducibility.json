@@ -1,0 +1,62 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "integration_base_commit": "49de5fa7956dad447414c95726f53d5a2597136a",
+  "source_head_at_execution": "b1e6ff0f1442fa31033c34fb151c81f6b16749af",
+  "runs": [
+    {
+      "script": "action_derivation.py",
+      "status": "passed",
+      "seconds": 2.061
+    },
+    {
+      "script": "polar_derivation.py",
+      "status": "passed",
+      "seconds": 2.349
+    },
+    {
+      "script": "matrix_realization.py",
+      "status": "passed",
+      "seconds": 0.668
+    },
+    {
+      "script": "nonlinear_galerkin.py",
+      "status": "passed",
+      "seconds": 2.538
+    },
+    {
+      "script": "clock_derivation.py",
+      "status": "passed",
+      "seconds": 1.085
+    },
+    {
+      "script": "verify_proof_bounds.py",
+      "status": "passed",
+      "seconds": 0.747
+    },
+    {
+      "script": "clock_large_budget.py",
+      "status": "passed",
+      "seconds": 11.394
+    }
+  ],
+  "sha256": {
+    "paper.tex": "eea4bca0b843efc867a2ac1569d6ca470610a71562776da1a6921b5d4f7f0260",
+    "sections/clock_proof.tex": "527c0e6258ea87d14bce69aec05c05feda58a321b06e19ca4e6f8ccffbe157db",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470",
+    "sections/quadratic_clock.tex": "54de4a1f50852f5b93d78a3e2684346bb09b75f1c216bf641360a1d8aa37b3a7",
+    "verification/repair_audit_20261127/action_derivation.py": "8c96fc753f8bde7f21dd17f6a41001c6cc6cade7c2cf6cf88e8bca0cc094d2dc",
+    "verification/repair_audit_20261127/clock_derivation.py": "edc873d30c2c4d179ca3fe3b0230854a6c39a99f10afbc2d4b29e95a38025f8a",
+    "verification/repair_audit_20261127/clock_large_budget.py": "087b1c98367692da215bcb5e70f4746df27586bc814c39a66c16628d76eae0ac",
+    "verification/repair_audit_20261127/matrix_realization.py": "b4ad747d34f5a92d1fbe6e35e2ffa517862c1a28a86a2b2e55e11d34349b0d94",
+    "verification/repair_audit_20261127/nonlinear_galerkin.py": "b5717e1eca05e0cbaa297eab2e528e5ac5db7bdf83e869c37e48352acae72e1d",
+    "verification/repair_audit_20261127/polar_derivation.py": "ee4f9ff51bfc054f051616124c38c317e9bf09017336565bb1385efcc0b4906f",
+    "verification/repair_audit_20261127/run_all.py": "aac7353cee4dacf4106aea30141edb8caf5d6c8c1b3ee4be4aaa15ce4a1df4b8",
+    "verification/repair_audit_20261127/verify_proof_bounds.py": "022dda19c9e30913ae7053e00007f9d18e091b87188c502c3761e044cb858b6a"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "positive_matrix_trace_bound_trials": 30,
+  "kernel_checks": [
+    {
+      "mu": 0.0,
+      "radial_modes": 5,
+      "entrywise_kernel_bound_value": 0.26647999364280345,
+      "kernel_identity_error": 7.979727989493313e-16
+    },
+    {
+      "mu": 0.0,
+      "radial_modes": 40,
+      "entrywise_kernel_bound_value": 0.33846278444047256,
+      "kernel_identity_error": 9.037157308363764e-15
+    },
+    {
+      "mu": 0.0,
+      "radial_modes": 120,
+      "entrywise_kernel_bound_value": 0.33848681672492315,
+      "kernel_identity_error": 2.6466242392109152e-14
+    },
+    {
+      "mu": 0.001,
+      "radial_modes": 5,
+      "entrywise_kernel_bound_value": 0.26647986010348124,
+      "kernel_identity_error": 7.248975725238083e-16
+    },
+    {
+      "mu": 0.001,
+      "radial_modes": 40,
+      "entrywise_kernel_bound_value": 0.3384626468387744,
+      "kernel_identity_error": 7.72828721201294e-15
+    },
+    {
+      "mu": 0.001,
+      "radial_modes": 120,
+      "entrywise_kernel_bound_value": 0.3384866791294171,
+      "kernel_identity_error": 2.871661241615401e-14
+    },
+    {
+      "mu": 0.1,
+      "radial_modes": 5,
+      "entrywise_kernel_bound_value": 0.2651538773583853,
+      "kernel_identity_error": 1.3290150230327313e-15
+    },
+    {
+      "mu": 0.1,
+      "radial_modes": 40,
+      "entrywise_kernel_bound_value": 0.3370969899142102,
+      "kernel_identity_error": 8.859991298133894e-15
+    },
+    {
+      "mu": 0.1,
+      "radial_modes": 120,
+      "entrywise_kernel_bound_value": 0.337123110744103,
+      "kernel_identity_error": 2.5857813597729922e-14
+    },
+    {
+      "mu": 1.0,
+      "radial_modes": 5,
+      "entrywise_kernel_bound_value": 0.1957751082877216,
+      "kernel_identity_error": 1.401222887720266e-15
+    },
+    {
+      "mu": 1.0,
+      "radial_modes": 40,
+      "entrywise_kernel_bound_value": 0.26633819682628257,
+      "kernel_identity_error": 9.176183044495016e-15
+    },
+    {
+      "mu": 1.0,
+      "radial_modes": 120,
+      "entrywise_kernel_bound_value": 0.2665914618629404,
+      "kernel_identity_error": 3.1046407239662457e-14
+    },
+    {
+      "mu": 10.0,
+      "radial_modes": 5,
+      "entrywise_kernel_bound_value": 0.14258859917141162,
+      "kernel_identity_error": 1.313185671314443e-15
+    },
+    {
+      "mu": 10.0,
+      "radial_modes": 40,
+      "entrywise_kernel_bound_value": 0.5718591793147805,
+      "kernel_identity_error": 9.528993779512622e-15
+    },
+    {
+      "mu": 10.0,
+      "radial_modes": 120,
+      "entrywise_kernel_bound_value": 0.5938888674689488,
+      "kernel_identity_error": 2.8549670174841956e-14
+    },
+    {
+      "mu": 100.0,
+      "radial_modes": 5,
+      "entrywise_kernel_bound_value": 0.01626313995807178,
+      "kernel_identity_error": 2.1709576410872122e-14
+    },
+    {
+      "mu": 100.0,
+      "radial_modes": 40,
+      "entrywise_kernel_bound_value": 0.25362604636226627,
+      "kernel_identity_error": 2.8249775824034133e-14
+    },
+    {
+      "mu": 100.0,
+      "radial_modes": 120,
+      "entrywise_kernel_bound_value": 0.5602541135662744,
+      "kernel_identity_error": 5.724103872936723e-14
+    },
+    {
+      "mu": 10000.0,
+      "radial_modes": 5,
+      "entrywise_kernel_bound_value": 0.00016286984763375697,
+      "kernel_identity_error": 5.986668247276816e-13
+    },
+    {
+      "mu": 10000.0,
+      "radial_modes": 40,
+      "entrywise_kernel_bound_value": 0.0027316863253478824,
+      "kernel_identity_error": 2.944540788202985e-12
+    },
+    {
+      "mu": 10000.0,
+      "radial_modes": 120,
+      "entrywise_kernel_bound_value": 0.008784029275254242,
+      "kernel_identity_error": 3.5636452111611724e-12
+    }
+  ],
+  "area_rank_bound_symbolic_residual": "0",
+  "scope": "Sanity checks supporting the written proof; finite samples are not substituted for the analytic argument."
+}

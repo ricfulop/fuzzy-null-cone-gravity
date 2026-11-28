@@ -1,0 +1,43 @@
+{
+  "integration_base_commit": "49de5fa7956dad447414c95726f53d5a2597136a",
+  "original_bibliography_entries_preserved_exactly": 32,
+  "total_bibliography_entries": 35,
+  "all_entries_cited": true,
+  "undefined_cross_references": [],
+  "duplicate_labels": [],
+  "protected_archival_verification_and_lean_files_unchanged": 84,
+  "seven_calculation_checks_passed": true,
+  "source_hashes_current": true,
+  "no_overfull_boxes_or_unresolved_tex_references": true,
+  "pdf_artifacts": {
+    "paper.pdf": {
+      "pages": 25,
+      "sha256": "88f4d958a2e4f6529f3de4dde23f1fe66e44d5f4086c9c30de8344324275d42a",
+      "text_outside_page": false
+    },
+    "paper_reading.pdf": {
+      "pages": 41,
+      "sha256": "b42b12b0030dd8d62290fbde7eab7ac8b8c3b0a481821671b67a7dee9d894dec",
+      "text_outside_page": false
+    },
+    "figures_review.pdf": {
+      "pages": 11,
+      "sha256": "bd26cb74b897f6682c0a7b47664d215a8e1eeaf0a0e62dbba440dc3dd335dcfc",
+      "text_outside_page": false
+    },
+    "reports/repair-audit-2026-11-27/repair-calculations.pdf": {
+      "pages": 9,
+      "sha256": "068df1bd31d513da94a2cb828ba89912126a2a82acd2eef3b0856900f6bacc92",
+      "text_outside_page": false
+    }
+  },
+  "visual_review": "Original repair figures and supplement reviewed previously; rebuilt manuscript acknowledgments, model-use appendix, and final reference pages visually checked after PR #4 integration.",
+  "accounting_integration": {
+    "base_commit": "b1e6ff0f1442fa31033c34fb151c81f6b16749af",
+    "pull_request": 4,
+    "scientific_sections_and_bibliography_unchanged": true,
+    "model_use_appendix": "F",
+    "seven_repair_and_six_closure_checks_passed": true,
+    "PDF_builds": "Two passes per layout; no overfull boxes or unresolved references."
+  }
+}

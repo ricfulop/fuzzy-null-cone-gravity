@@ -1,0 +1,12 @@
+{
+  "input": "Continuum EH quadratic alpha-gauge action, Solomon 2023 Eq 150",
+  "q_definition": "j*(j+1), j>=2",
+  "auxiliary_a_solution": "r*(q*r*Derivative(alpha(t, r), t) - Derivative(h(t, r), t))/q",
+  "constraint_h_solution": "4*q*(-12*M**2*r*Derivative(psi(t, r), r) - 6*M**2*psi(t, r) - 2*M*q*r**2*Derivative(psi(t, r), r) - 3*M*q*r*psi(t, r) + 10*M*r**2*Derivative(psi(t, r), r) + 6*M*r*psi(t, r) + q*r**3*Derivative(psi(t, r), r) + q*r**2*psi(t, r) - 2*r**3*Derivative(psi(t, r), r) - 2*r**2*psi(t, r))/(r*(-2*M + r)*(6*M + q*r - 2*r))",
+  "derived_Zerilli_potential": "(-2*M + r)*(72*M**3 + 36*M**2*q*r - 72*M**2*r + 6*M*q**2*r**2 - 24*M*q*r**2 + 24*M*r**2 + q**3*r**3 - 4*q**2*r**3 + 4*q*r**3)/(r**4*(6*M + q*r - 2*r)**2)",
+  "reduced_time_kinetic_coefficient": "4*q*r*(q - 2)/(-2*M + r)",
+  "reduced_radial_kinetic_coefficient": "-4*q*(-2*M + r)*(q - 2)/r",
+  "master_equation_residual": "0",
+  "standard_potential_difference": "0",
+  "scope": "Independent symbolic elimination from known EH quadratic density. Does not prove nonlinear fuzzy-action equivalence."
+}

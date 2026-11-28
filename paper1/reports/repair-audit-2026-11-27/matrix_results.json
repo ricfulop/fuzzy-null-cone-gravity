@@ -1,0 +1,97 @@
+{
+  "rectangular_maps": [
+    {
+      "N": 4,
+      "spin": 1,
+      "rectangular_shape": [
+        5,
+        3
+      ],
+      "scalar_action_self_adjoint_error": 4.872776317270323e-13,
+      "quadratic_contraction_hermiticity_error": 1.7476819764230534e-12,
+      "scalar_identity_action_error": 4.341225128814435e-15
+    },
+    {
+      "N": 4,
+      "spin": 2,
+      "rectangular_shape": [
+        6,
+        2
+      ],
+      "scalar_action_self_adjoint_error": 1.8232837316031888e-13,
+      "quadratic_contraction_hermiticity_error": 1.0778831409460391e-12,
+      "scalar_identity_action_error": 2.281414639669069e-15
+    },
+    {
+      "N": 6,
+      "spin": 1,
+      "rectangular_shape": [
+        7,
+        5
+      ],
+      "scalar_action_self_adjoint_error": 1.732912294955558e-12,
+      "quadratic_contraction_hermiticity_error": 1.4157726169503612e-11,
+      "scalar_identity_action_error": 1.5617870038143077e-14
+    },
+    {
+      "N": 6,
+      "spin": 2,
+      "rectangular_shape": [
+        8,
+        4
+      ],
+      "scalar_action_self_adjoint_error": 8.215804887811117e-12,
+      "quadratic_contraction_hermiticity_error": 2.16660141298375e-11,
+      "scalar_identity_action_error": 2.970654333554765e-14
+    },
+    {
+      "N": 8,
+      "spin": 1,
+      "rectangular_shape": [
+        9,
+        7
+      ],
+      "scalar_action_self_adjoint_error": 4.5483377093522606e-12,
+      "quadratic_contraction_hermiticity_error": 4.075517977455132e-11,
+      "scalar_identity_action_error": 4.427657311933595e-14
+    },
+    {
+      "N": 8,
+      "spin": 2,
+      "rectangular_shape": [
+        10,
+        6
+      ],
+      "scalar_action_self_adjoint_error": 4.356930789059062e-12,
+      "quadratic_contraction_hermiticity_error": 6.976986311429703e-11,
+      "scalar_identity_action_error": 2.4981367487509746e-14
+    }
+  ],
+  "quadratic_EH_harmonic_realization": [
+    {
+      "N": 4,
+      "harmonics": 12,
+      "action_difference": {
+        "axial": 1.776366155594445e-15,
+        "polar": 1.7764774947705023e-15
+      }
+    },
+    {
+      "N": 6,
+      "harmonics": 32,
+      "action_difference": {
+        "axial": 5.7696070191788214e-12,
+        "polar": 5.766054354135095e-12
+      }
+    },
+    {
+      "N": 8,
+      "harmonics": 60,
+      "action_difference": {
+        "axial": 1.385805772874368e-12,
+        "polar": 1.3715462507445645e-12
+      }
+    }
+  ],
+  "scope": "Exact bilinear realization of the derived EH perturbation sectors. Nonlinear completion and boundary/constraint algebra remain unresolved."
+}
