@@ -64,8 +64,14 @@ Exact harmonic arithmetic and an independent finite-amplitude Legendre
 calculation agree. The [result and analytic cutoff-shell limit](reports/quantum-bridge/constraint-result-and-next-calculation.md)
 show why a full Dirac completion or a declared reduction-before-cutoff
 revision is required before importing continuum lapse/ghost assumptions.
-The next calculation tests the leading Schur correction and its associated
-determinant; it is a component of a repair, not a complete repair.
+The [kinetic-completion result](reports/quantum-bridge/kinetic-completion-result.md)
+verifies the leading Schur correction and its associated angular determinant.
+The second lapse derivative cancels in the five tested cases; higher-order
+Hamiltonian terms still survive at finite auxiliary cutoff. This is a
+component of a repair, not a complete repair. The next calculation tests
+the mixed spatial/lapse constraint bracket of a separately declared
+Hamiltonian-first candidate; equivalence to the original Lagrangian
+regulator is not assumed.
 
 The [corner and reconstruction derivations](reports/quantum-bridge/corners-and-reconstruction.md)
 identify the continuum area--angle charge, the missing microscopic state

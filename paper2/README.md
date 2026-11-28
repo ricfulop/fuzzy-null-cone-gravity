@@ -11,6 +11,8 @@ Companion dynamical manuscript and reproducible symbolic/numerical verification 
 - [Proposed common regulator for both papers](reports/common-regulator-bridge.md): exact product-mismatch identities and a prescription for evaluating one Galerkin action with complete Gaunt tensors. This is a follow-up proposal; the v0.2 manuscript and its archived calculations are unchanged. Check its algebra with `python3 verification/common_regulator_identities.py` (Python standard library only).
 - [Active quantum research objective](GOAL.md): completion criteria for finite-rank one-loop amplitudes, dynamical corner states, and Euclidean--Lorentzian reconstruction from one theory. The first tracked prerequisite is the [lapse-constraint test on vacuum initial data](reports/quantum-bridge/lapse-constraint-on-vacuum-data.md); its local CPU recipe is `bash verification/quantum_bridge/run.sh`, launched through the project's experiment runner.
 
+- [Verified constraint obstruction and its cutoff dependence](reports/quantum-bridge/constraint-result-and-next-calculation.md), [kinetic-completion result](reports/quantum-bridge/kinetic-completion-result.md), and [conditional corner/reconstruction derivations](reports/quantum-bridge/corners-and-reconstruction.md). These follow-up reports preserve the v0.2 manuscript and distinguish tested components from the three unfinished quantum deliverables.
+
 ## Reproduce all calculations and figures
 
 Install `numpy`, `scipy`, `sympy`, and `matplotlib`, then run from `paper2/`:
