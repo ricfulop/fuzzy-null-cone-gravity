@@ -2,7 +2,7 @@
   "calculation": "noncompact_inverse_validation",
   "authorization_deadline_utc": "2026-11-28T16:29:00Z",
   "wall_limit_seconds": 1800,
-  "memory_limit_bytes": 2147483648,
+  "memory_limit_bytes": 8589934592,
   "shared_work_caps": {
     "max_fd_unknowns": 500000,
     "max_point_evaluations": 1000000,

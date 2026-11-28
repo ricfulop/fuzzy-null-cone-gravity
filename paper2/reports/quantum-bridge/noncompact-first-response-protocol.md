@@ -1,10 +1,11 @@
 # Noncompact inverse and actual first-response protocol
 
-**Prospective calculation.** This protocol follows the passing
+**Acceptance pending.** This protocol follows the passing
 [independent inverse-primitive result](independent-inverse-results.md).
-Its new source adapters and pointwise controls have not been numerically
-executed at this checkpoint. A result will be recorded separately, including
-any failed attempt. Neither this protocol nor a passing first-response check
+The [initial attempt](noncompact-inverse-memory-repair.md) stopped at its
+declared memory ceiling during the final angular slice. Its completed
+subchecks are preserved; the repeat changes only the memory ceiling.
+Neither this protocol nor a passing first-response check
 establishes the independent mixed sixth-order functional or four-point loop.
 
 ## Question and operator conventions
@@ -90,9 +91,11 @@ caps are 500,000 FD unknowns, 1,000,000 point evaluations, 80,000,000 projection
 products, 3,000,000 Cartesian calls, 20,000,000 reserved exact products and
 5,000,000 stored values. Provider-internal moment and algebra caps are
 separate, finite, and recorded; these counters are not hardware FLOPs.
-The local invocation has an 1800-second wall limit and a 2-GiB sampled memory
-ceiling. Full-mode adapter timing is unmeasured; the primitive parent's
-runtime is not a runtime promise for this different workload.
+The local invocation has an unchanged 1800-second wall limit. The initial
+2-GiB sampled memory ceiling is raised to 8 GiB for the repeat, following a
+recorded 2.027-GiB guard interruption. No grid, tolerance, work counter or
+scientific expression changes. Full-run timing remains unmeasured; the
+interrupted attempt is not a runtime promise for the completed workload.
 
 ## Evidence and remaining scope
 

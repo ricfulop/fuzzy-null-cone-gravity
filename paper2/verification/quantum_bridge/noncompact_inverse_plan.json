@@ -13,7 +13,7 @@
     "noise": "The earlier scalar inverse refinement established synthetic primitives only. A coarse diagnostic failure is allowed; it does not waive any finest-grid or structural requirement.",
     "worth_a_flag": "Any required comparison failure, work-cap rejection, nonfinite value, or source/exterior mismatch is material. The first mixed-source levels may be underresolved; preserve a failed gate rather than relaxing tolerances.",
     "from_parent": "The inverse-primitive parent passed 903 required comparisons in about 295 seconds. Full-mode noncompact adapters have not been timed; the new bounded workload may cost more.",
-    "decided": "One local CPU run, 1800-second wall limit, 2-GiB sampled memory ceiling. No GPU or remote compute. No W2, u3, u4 or mixed-H6 acceptance is claimed by this run. All completed evidence is checkpointed."
+    "decided": "One local CPU run, 1800-second wall limit, 8-GiB sampled memory ceiling. The initial attempt stopped at its 2-GiB memory guard; only that ceiling changes. No GPU or remote compute. No W2, u3, u4 or mixed-H6 acceptance is claimed by this run. All completed evidence is checkpointed. This is numerical inverse validation, not training; use only the declared control/level stages."
   },
   "watch": {"minGapS": 120, "maxGapS": 600}
 }
