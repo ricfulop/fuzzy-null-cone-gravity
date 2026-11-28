@@ -1,0 +1,8 @@
+Original log: 8977 bytes.
+Kept bytes 0..8977: /Users/ricfulop/.local/share/openresearch/run-logs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3.log
+Last 500 characters of the kept tail:
+_and_response_search", "step": 0, "unit": "interval"}
+PROGRESS {"denominator_count": 57, "event": "begin", "max_atan_terms": 256, "seconds": 264.654623, "sequence": 38, "stage": "regularity_rank_and_response_search"}
+::orx:: {"m": {"state_germ_certificate_passed": 0, "response_determined": 0, "scientific_invocations": 1}}
+Saved execution evidence: /Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/run-output/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3
+

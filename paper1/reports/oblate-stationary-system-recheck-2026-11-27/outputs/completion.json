@@ -1,0 +1,69 @@
+{
+  "state": "all checker controls passed; radial DAE unsolved",
+  "identity_sha256": "96749679ba2bed1bf3e070cd43dde7697e4aaeeb26d2ae02fd130fb564282c21",
+  "column_count": 8,
+  "retained_row_count": 22,
+  "all_checker_controls_passed": true,
+  "source_sha256_before": {
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "1462be3deb349e95f52de1e9f07a01abe940bdf3fcb1d54d1138155970bb3303",
+    "verification/oblate_stationary_seed_20261127/stationary_system.py": "0e4d72f319ba7a811356f4229e56ca3e9fb903a4dbad3622e5bd7cc5027a06cd",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "verification/oblate_stationary_seed_20261127/extraction_progress.py": "3534ec72a9cb0132fe0d07e31ce7a04adb7132f2559a447259b8f9f720c57a5d",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  },
+  "source_sha256_after": {
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "1462be3deb349e95f52de1e9f07a01abe940bdf3fcb1d54d1138155970bb3303",
+    "verification/oblate_stationary_seed_20261127/stationary_system.py": "0e4d72f319ba7a811356f4229e56ca3e9fb903a4dbad3622e5bd7cc5027a06cd",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "verification/oblate_stationary_seed_20261127/extraction_progress.py": "3534ec72a9cb0132fe0d07e31ce7a04adb7132f2559a447259b8f9f720c57a5d",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  },
+  "checkpoints": [
+    {
+      "file": "checkpoints/column-00-lambda-0.json",
+      "column": 0,
+      "sha256": "3e2b9a555cf0ff2e3a0b7ee3dc918fd8d63349fe42a8669c7bdf52713ef82d0f"
+    },
+    {
+      "file": "checkpoints/column-01-lambda-2.json",
+      "column": 1,
+      "sha256": "a8d8a4d0b7b0e6f211156a69901b70c08a1f8310328dd6f63c0ac113f731a4d8"
+    },
+    {
+      "file": "checkpoints/column-02-X-0.json",
+      "column": 2,
+      "sha256": "0c55b2c77f6343295f3525a885022884a5554a26ac9d2ccc98354fc3ee725b6d"
+    },
+    {
+      "file": "checkpoints/column-03-X-2.json",
+      "column": 3,
+      "sha256": "9585c8cc3256f72bfa12d04055f4a3712e147e3a1560d2f5ad3a8d797a61f4ca"
+    },
+    {
+      "file": "checkpoints/column-04-V_polar-2.json",
+      "column": 4,
+      "sha256": "39c9e31f1d3757c76ea61452bf0ff1f0ac9865944f29c64b6b2cd0425416c830"
+    },
+    {
+      "file": "checkpoints/column-05-C_polar-2.json",
+      "column": 5,
+      "sha256": "35d21634adcfde00a4a1ef78c5790f107840f2fa3fa4b45009614ba92d4cacdd"
+    },
+    {
+      "file": "checkpoints/column-06-a-0.json",
+      "column": 6,
+      "sha256": "cdd2021139c242779ae80b415b13dcd39d0ca3c0ec053e9279481ff9e6e5c172"
+    },
+    {
+      "file": "checkpoints/column-07-a-2.json",
+      "column": 7,
+      "sha256": "3b23942295c773c44a7f7332f53ee5721960f3df61accc25254584cf3ede6057"
+    }
+  ],
+  "export_sha256": {
+    "stationary-operators.json": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "stationary-reproducibility.json": "c6d199d542555d997aeb49186ca03ea514151ce364d16b0c952160ac24631a31"
+  },
+  "admissible_seed_certified": false,
+  "nonlinear_consistency_established": false
+}

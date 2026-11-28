@@ -1,0 +1,5 @@
+{
+  "state": "exact row-operation controls passed",
+  "test_count": 6,
+  "control_output": "test_control_pivot_residual_state_rows_and_free_control (test_exact_linear_algebra.ExactRowControls.test_control_pivot_residual_state_rows_and_free_control) ... ok\ntest_first_nonzero_row_swap_carries_distinct_state_rows (test_exact_linear_algebra.ExactRowControls.test_first_nonzero_row_swap_carries_distinct_state_rows) ... ok\ntest_inexact_input_rejected (test_exact_linear_algebra.ExactRowControls.test_inexact_input_rejected) ... ok\ntest_no_controls_keeps_all_state_constraints (test_exact_linear_algebra.ExactRowControls.test_no_controls_keeps_all_state_constraints) ... ok\ntest_original_candidate_rows_in_order (test_exact_linear_algebra.ExactRowControls.test_original_candidate_rows_in_order) ... ok\ntest_zero_state_width_and_empty_shapes (test_exact_linear_algebra.ExactRowControls.test_zero_state_width_and_empty_shapes) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.017s\n\nOK\n"
+}

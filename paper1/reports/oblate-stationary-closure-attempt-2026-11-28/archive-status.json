@@ -1,0 +1,42 @@
+{
+  "run_id": "ef17ca1d-2663-4c0d-acc8-2f8607ae7881",
+  "experiment_id": "9032485c-47b6-4b0b-8c59-b6aebe68afd5",
+  "source_commit": "868dfb9f98875a39de26210fef3dbbc5919fd5b4",
+  "framework_exit_code": 1,
+  "scientific_child_exit_code": null,
+  "scientific_invocations_observed": 1,
+  "startup_manifest_invocation_count_is_prelaunch": true,
+  "configured_wall_seconds": 900,
+  "configured_sampled_rss_limit_bytes": 2147483648,
+  "final_supervisor_execution_record_present": false,
+  "resource_samples_present": false,
+  "observed_failure": "PermissionError in process-group probe during termination, repeated in finally before final evidence write",
+  "primary_stop_reason": "not persisted; timing is consistent with wall budget, but exact stop reason is not independently recorded",
+  "completed_dae_step_indices": [
+    0
+  ],
+  "last_started_dae_step": 1,
+  "terminal_closure_present": false,
+  "smooth_solution_germ_certified": false,
+  "nonlinear_compatibility_established": false,
+  "max_rss_bytes": null,
+  "post_run_source_hashes_verified_at_archival": {
+    "verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "8202040362b13406c7c2ae7da8fdb7262fae490e0d7dfc405bde208ab6e7731b",
+    "verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "1221ddccf6df4e7930a07382ad45b5d691a971d18aabd2a4acc25d728bcde123",
+    "verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4",
+    "verification/oblate_stationary_reduction_20261128/run-config.json": "c8dd482134b629e2fe7effa88187ecb07074fb81e20b3f78f107cfc54c4984d3"
+  },
+  "post_run_process_check": {
+    "utc": "2026-11-28T05:15:43.690762+00:00",
+    "pgid": 52076,
+    "known_pids": [
+      52076,
+      52078
+    ],
+    "members": []
+  },
+  "no_scientific_assertion_failure_observed": true,
+  "no_resume_or_partial_output_certification": true
+}

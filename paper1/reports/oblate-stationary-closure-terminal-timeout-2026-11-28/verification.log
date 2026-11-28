@@ -1,0 +1,60 @@
+::orx:: {"phase": "setup", "step": 1, "of": 1, "unit": "environment"}
+PROGRESS {"event": "invocation_begin", "seconds": 0.001434, "sequence": 1, "utc": "2026-11-28T05:32:33.795307+00:00"}
+::orx:: {"phase": "manufactured_controls", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 0.001509, "sequence": 2, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T05:32:33.795380+00:00"}
+PROGRESS {"duration_seconds": 0.060918, "event": "end", "seconds": 0.062431, "sequence": 3, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T05:32:33.856302+00:00"}
+::orx:: {"phase": "manufactured_controls", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"m": {"manufactured_controls_passed": 1}}
+::orx:: {"phase": "fixed_epsilon_field_conversion", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 0.062513, "sequence": 4, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T05:32:33.856384+00:00"}
+PROGRESS {"duration_seconds": 3.327167, "event": "end", "seconds": 3.389684, "sequence": 5, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T05:32:37.183563+00:00"}
+::orx:: {"phase": "fixed_epsilon_field_conversion", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"phase": "radial_x0_gauge_right_kernel", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 3.389845, "sequence": 6, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T05:32:37.183726+00:00"}
+PROGRESS {"duration_seconds": 1.065287, "event": "end", "seconds": 4.455137, "sequence": 7, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T05:32:38.249017+00:00"}
+::orx:: {"phase": "radial_x0_gauge_right_kernel", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"phase": "principal_block_probe", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 4.455273, "sequence": 8, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T05:32:38.249156+00:00"}
+PROGRESS {"duration_seconds": 0.428942, "event": "end", "seconds": 4.884221, "sequence": 9, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T05:32:38.678102+00:00"}
+::orx:: {"phase": "principal_block_probe", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"m": {"principal_rank": 4, "gauge_verified": 1}}
+::orx:: {"phase": "dae_closure", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 4.884327, "sequence": 10, "stage": "dae_closure", "stage_id": 5, "utc": "2026-11-28T05:32:38.678207+00:00"}
+PROGRESS {"control_count": 7, "event": "begin", "seconds": 4.884624, "sequence": 11, "stage": "dae_step", "stage_id": 6, "step": 0, "utc": "2026-11-28T05:32:38.678504+00:00"}
+PROGRESS {"event": "begin", "seconds": 4.884665, "sequence": 12, "stage": "solve_controls", "stage_id": 7, "step": 0, "utc": "2026-11-28T05:32:38.678545+00:00"}
+PROGRESS {"duration_seconds": 0.441202, "event": "end", "seconds": 5.325871, "sequence": 13, "stage": "solve_controls", "stage_id": 7, "step": 0, "utc": "2026-11-28T05:32:39.119754+00:00"}
+PROGRESS {"event": "begin", "seconds": 5.325973, "sequence": 14, "stage": "apply_control_solution", "stage_id": 8, "step": 0, "utc": "2026-11-28T05:32:39.119854+00:00"}
+PROGRESS {"duration_seconds": 0.200431, "event": "end", "seconds": 5.526408, "sequence": 15, "stage": "apply_control_solution", "stage_id": 8, "step": 0, "utc": "2026-11-28T05:32:39.320290+00:00"}
+PROGRESS {"event": "begin", "seconds": 5.526498, "sequence": 16, "stage": "independent_constraints", "stage_id": 9, "step": 0, "utc": "2026-11-28T05:32:39.320379+00:00"}
+PROGRESS {"duration_seconds": 0.45274, "event": "end", "seconds": 5.979244, "sequence": 17, "stage": "independent_constraints", "stage_id": 9, "step": 0, "utc": "2026-11-28T05:32:39.773128+00:00"}
+PROGRESS {"event": "begin", "seconds": 5.97938, "sequence": 18, "stage": "dae_checkpoint", "stage_id": 10, "step": 0, "utc": "2026-11-28T05:32:39.773263+00:00"}
+PROGRESS {"duration_seconds": 0.472435, "event": "end", "seconds": 6.451821, "sequence": 19, "stage": "dae_checkpoint", "stage_id": 10, "step": 0, "utc": "2026-11-28T05:32:40.245705+00:00"}
+::orx:: {"m": {"elimination_steps_completed": 1}}
+PROGRESS {"event": "begin", "seconds": 6.451905, "sequence": 20, "stage": "differentiate_constraints", "stage_id": 11, "step": 0, "utc": "2026-11-28T05:32:40.245788+00:00"}
+PROGRESS {"duration_seconds": 28.724886, "event": "end", "seconds": 35.176797, "sequence": 21, "stage": "differentiate_constraints", "stage_id": 11, "step": 0, "utc": "2026-11-28T05:33:08.970735+00:00"}
+PROGRESS {"control_count": 7, "duration_seconds": 30.292277, "event": "end", "seconds": 35.176902, "sequence": 22, "stage": "dae_step", "stage_id": 6, "step": 0, "utc": "2026-11-28T05:33:08.970838+00:00"}
+PROGRESS {"control_count": 3, "event": "begin", "seconds": 35.176935, "sequence": 23, "stage": "dae_step", "stage_id": 12, "step": 1, "utc": "2026-11-28T05:33:08.970871+00:00"}
+PROGRESS {"event": "begin", "seconds": 35.176957, "sequence": 24, "stage": "solve_controls", "stage_id": 13, "step": 1, "utc": "2026-11-28T05:33:08.970893+00:00"}
+PROGRESS {"duration_seconds": 1.059391, "event": "end", "seconds": 36.236354, "sequence": 25, "stage": "solve_controls", "stage_id": 13, "step": 1, "utc": "2026-11-28T05:33:10.030294+00:00"}
+PROGRESS {"event": "begin", "seconds": 36.236469, "sequence": 26, "stage": "apply_control_solution", "stage_id": 14, "step": 1, "utc": "2026-11-28T05:33:10.030409+00:00"}
+PROGRESS {"duration_seconds": 0.867865, "event": "end", "seconds": 37.104339, "sequence": 27, "stage": "apply_control_solution", "stage_id": 14, "step": 1, "utc": "2026-11-28T05:33:10.898281+00:00"}
+PROGRESS {"event": "begin", "seconds": 37.104431, "sequence": 28, "stage": "independent_constraints", "stage_id": 15, "step": 1, "utc": "2026-11-28T05:33:10.898371+00:00"}
+PROGRESS {"duration_seconds": 17.816489, "event": "end", "seconds": 54.920928, "sequence": 29, "stage": "independent_constraints", "stage_id": 15, "step": 1, "utc": "2026-11-28T05:33:28.714904+00:00"}
+PROGRESS {"event": "begin", "seconds": 54.921069, "sequence": 30, "stage": "dae_checkpoint", "stage_id": 16, "step": 1, "utc": "2026-11-28T05:33:28.715043+00:00"}
+PROGRESS {"duration_seconds": 1.378888, "event": "end", "seconds": 56.299961, "sequence": 31, "stage": "dae_checkpoint", "stage_id": 16, "step": 1, "utc": "2026-11-28T05:33:30.093939+00:00"}
+::orx:: {"m": {"elimination_steps_completed": 2}}
+PROGRESS {"event": "begin", "seconds": 56.300033, "sequence": 32, "stage": "differentiate_constraints", "stage_id": 17, "step": 1, "utc": "2026-11-28T05:33:30.094010+00:00"}
+PROGRESS {"duration_seconds": 142.292633, "event": "end", "seconds": 198.592672, "sequence": 33, "stage": "differentiate_constraints", "stage_id": 17, "step": 1, "utc": "2026-11-28T05:35:52.386918+00:00"}
+PROGRESS {"control_count": 3, "duration_seconds": 163.415853, "event": "end", "seconds": 198.59279, "sequence": 34, "stage": "dae_step", "stage_id": 12, "step": 1, "utc": "2026-11-28T05:35:52.387034+00:00"}
+PROGRESS {"control_count": 2, "event": "begin", "seconds": 198.592829, "sequence": 35, "stage": "dae_step", "stage_id": 18, "step": 2, "utc": "2026-11-28T05:35:52.387074+00:00"}
+PROGRESS {"event": "begin", "seconds": 198.592854, "sequence": 36, "stage": "solve_controls", "stage_id": 19, "step": 2, "utc": "2026-11-28T05:35:52.387098+00:00"}
+PROGRESS {"duration_seconds": 10.125634, "event": "end", "seconds": 208.718493, "sequence": 37, "stage": "solve_controls", "stage_id": 19, "step": 2, "utc": "2026-11-28T05:36:02.512759+00:00"}
+PROGRESS {"event": "begin", "seconds": 208.718599, "sequence": 38, "stage": "apply_control_solution", "stage_id": 20, "step": 2, "utc": "2026-11-28T05:36:02.512862+00:00"}
+PROGRESS {"duration_seconds": 148.358089, "event": "end", "seconds": 357.076694, "sequence": 39, "stage": "apply_control_solution", "stage_id": 20, "step": 2, "utc": "2026-11-28T05:38:30.871238+00:00"}
+PROGRESS {"event": "begin", "seconds": 357.076781, "sequence": 40, "stage": "independent_constraints", "stage_id": 21, "step": 2, "utc": "2026-11-28T05:38:30.871324+00:00"}
+PROGRESS {"duration_seconds": 0.000109, "event": "end", "seconds": 357.07689, "sequence": 41, "stage": "independent_constraints", "stage_id": 21, "step": 2, "utc": "2026-11-28T05:38:30.871433+00:00"}
+PROGRESS {"event": "begin", "seconds": 357.076919, "sequence": 42, "stage": "dae_checkpoint", "stage_id": 22, "step": 2, "utc": "2026-11-28T05:38:30.871462+00:00"}
+PROGRESS {"duration_seconds": 3.59265, "event": "end", "seconds": 360.669575, "sequence": 43, "stage": "dae_checkpoint", "stage_id": 22, "step": 2, "utc": "2026-11-28T05:38:34.464125+00:00"}
+::orx:: {"m": {"elimination_steps_completed": 3}}
+PROGRESS {"control_count": 2, "duration_seconds": 162.076829, "event": "end", "seconds": 360.669661, "sequence": 44, "stage": "dae_step", "stage_id": 18, "step": 2, "utc": "2026-11-28T05:38:34.464211+00:00"}
+PROGRESS {"event": "begin", "seconds": 360.669709, "sequence": 45, "stage": "terminal_embedding", "stage_id": 23, "utc": "2026-11-28T05:38:34.464258+00:00"}

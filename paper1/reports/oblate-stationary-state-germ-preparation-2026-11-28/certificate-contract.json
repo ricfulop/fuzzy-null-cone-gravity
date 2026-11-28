@@ -1,0 +1,12 @@
+{
+  "status": "preparation_only",
+  "scope": "Paper I stationary linearized N=3 reflection-even axisymmetric sector, epsilon=1/100, X0 fixed, zero remaining controls",
+  "inputs": ["hash-pinned original stationary operators with retained/discarded row labels", "hash-pinned terminal state snapshot with producing source identity and ordered state labels"],
+  "shapes": {"C": [6,14], "K": [14,14], "B": [14,0], "M": [14,8], "J": [8,14]},
+  "common_radius": ["positive r0 and physical T(r0)", "nonzero proof denominators", "six original C column indices and a nonzero minor determinant at r0"],
+  "field_identities": ["C M = 0", "J M = I8", "(D C + C K) M = 0", "(Pv K - Pw) M = 0", "(E0 Pv + E1 Pw + E2 Pw K) M = 0 on all 22 original retained rows, including the X0 equation"],
+  "germ_argument": "Solve z'=Kz from z(r0)=M(r0)y0; on the regular interval S=DC+CK=L C by completeness of ker C, and h=Cz obeys h'=Lh with h(r0)=0.",
+  "responding_witness_requires": ["independent lift of the original discarded row to d", "index j and exact nonvanishing of (d M)_j at the same regular r0", "initial vector y0=e_j"],
+  "universal_zero_requires": ["exact zero of d M", "converse covering all original stationary solutions in the stated sector and gauge on the interval"],
+  "certificates_produced_by_this_preparation": []
+}

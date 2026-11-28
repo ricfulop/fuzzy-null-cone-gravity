@@ -1,0 +1,16 @@
+{
+  "state": "reviewed preparation; no scientific execution",
+  "files": {
+    "README.md": "596b2a7f286d21d6acbb97881e98e33d74d760169cf97d2cbbf5687b744c1f8f",
+    "preparation-provenance.json": "176e4bb40a85a2ba86d624469b8d3413b49d84eccc86d4a545ec03a74582762e",
+    "runner-validation.json": "3156be529e80b3b810ad0d56b2e53f9c6f5becff813330608aa81090c0917cdc",
+    "sources/verification/oblate_stationary_state_germ_20261128/README.md": "e41abf5266090bb13ebb260ef1c93a27f4a63029b3ffccea9cc87aeb75d6e964",
+    "sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "94af8bfe83084b691d55920c001cb64d0d07bebb553a75d1a3384a09a70b5d50",
+    "sources/verification/oblate_stationary_state_germ_20261128/run-config.json": "a48e1ef1365cf7f0ca0fcbf7bcdc9ad68ebe907c8c0e6a1493493eff8dedb157",
+    "sources/verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "sources/verification/oblate_stationary_state_germ_20261128/run_bounded.py": "819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5",
+    "sources/verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231",
+    "sources/verification/oblate_stationary_state_germ_20261128/view-config.json": "96683101486e99547dc5b3fa6370a4ef0c90a15f9519ba083613f2f8abb1d1b0",
+    "sources/verification/oblate_stationary_state_germ_20261128/view.xml": "0b7c584a47b5bd3d61496513e22975d99adae48b818364ed4e1e93e6ea1dfbeb"
+  }
+}

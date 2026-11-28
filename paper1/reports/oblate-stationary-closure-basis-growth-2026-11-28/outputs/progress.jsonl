@@ -1,0 +1,20 @@
+{"event": "invocation_begin", "seconds": 0.001575, "sequence": 1, "utc": "2026-11-28T05:21:32.032461+00:00"}
+{"event": "begin", "seconds": 0.001709, "sequence": 2, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T05:21:32.032593+00:00"}
+{"duration_seconds": 0.057288, "event": "end", "seconds": 0.059001, "sequence": 3, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T05:21:32.089884+00:00"}
+{"event": "begin", "seconds": 0.059065, "sequence": 4, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T05:21:32.089948+00:00"}
+{"duration_seconds": 3.02595, "event": "end", "seconds": 3.08502, "sequence": 5, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T05:21:35.115909+00:00"}
+{"event": "begin", "seconds": 3.085141, "sequence": 6, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T05:21:35.116029+00:00"}
+{"duration_seconds": 0.598068, "event": "end", "seconds": 3.683213, "sequence": 7, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T05:21:35.714103+00:00"}
+{"event": "begin", "seconds": 3.683342, "sequence": 8, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T05:21:35.714232+00:00"}
+{"duration_seconds": 0.243603, "event": "end", "seconds": 3.926949, "sequence": 9, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T05:21:35.957840+00:00"}
+{"event": "begin", "seconds": 3.927032, "sequence": 10, "stage": "dae_closure", "stage_id": 5, "utc": "2026-11-28T05:21:35.957922+00:00"}
+{"control_count": 7, "event": "begin", "seconds": 3.927229, "sequence": 11, "stage": "dae_step", "stage_id": 6, "step": 0, "utc": "2026-11-28T05:21:35.958118+00:00"}
+{"event": "begin", "seconds": 3.92725, "sequence": 12, "stage": "solve_controls", "stage_id": 7, "step": 0, "utc": "2026-11-28T05:21:35.958140+00:00"}
+{"duration_seconds": 21.042805, "event": "end", "seconds": 24.970062, "sequence": 13, "stage": "solve_controls", "stage_id": 7, "step": 0, "utc": "2026-11-28T05:21:57.000993+00:00"}
+{"event": "begin", "seconds": 24.970179, "sequence": 14, "stage": "apply_control_solution", "stage_id": 8, "step": 0, "utc": "2026-11-28T05:21:57.001109+00:00"}
+{"duration_seconds": 2.415472, "event": "end", "seconds": 27.385655, "sequence": 15, "stage": "apply_control_solution", "stage_id": 8, "step": 0, "utc": "2026-11-28T05:21:59.416590+00:00"}
+{"event": "begin", "seconds": 27.385743, "sequence": 16, "stage": "independent_constraints", "stage_id": 9, "step": 0, "utc": "2026-11-28T05:21:59.416677+00:00"}
+{"duration_seconds": 3.344914, "event": "end", "seconds": 30.730663, "sequence": 17, "stage": "independent_constraints", "stage_id": 9, "step": 0, "utc": "2026-11-28T05:22:02.761605+00:00"}
+{"event": "begin", "seconds": 30.730807, "sequence": 18, "stage": "dae_checkpoint", "stage_id": 10, "step": 0, "utc": "2026-11-28T05:22:02.761748+00:00"}
+{"duration_seconds": 5.203632, "event": "end", "seconds": 35.934444, "sequence": 19, "stage": "dae_checkpoint", "stage_id": 10, "step": 0, "utc": "2026-11-28T05:22:07.965395+00:00"}
+{"event": "begin", "seconds": 35.934517, "sequence": 20, "stage": "differentiate_constraints", "stage_id": 11, "step": 0, "utc": "2026-11-28T05:22:07.965468+00:00"}

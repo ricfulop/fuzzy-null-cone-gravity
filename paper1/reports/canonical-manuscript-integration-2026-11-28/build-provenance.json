@@ -1,0 +1,90 @@
+{
+  "base_commit": "f9bb0d2a33df311fc3dbc190100638a35e7bd78e",
+  "source_state": "working tree, before manuscript commit",
+  "engine": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "cwd": "paper1",
+  "review_message": "msg_2397292f",
+  "layouts": {
+    "paper": {
+      "command": [
+        "pdflatex",
+        "-recorder",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-output-directory=/tmp/final-paper-WeNNT8",
+        "paper.tex"
+      ],
+      "passes_exit": [
+        0,
+        0
+      ],
+      "pages": 26,
+      "pdf_sha256": "9b60845474dd893de24d86c6e05a218942e5247b41f198a8eb2099e38f2700d9",
+      "project_inputs_sha256": {
+        "figs/fig1_breakthrough_1loop.pdf": "0c4260ad2f8b645588015da5fa50fdf2645348d6df06965fc5b0bb14022a7737",
+        "figs/fig2_unified_matrix_gravity.pdf": "d45a3b99069160c475870392f7be4e4c171b15968ac294a6a59ef90acefae16a",
+        "figs/fig3_uv_completion.pdf": "406f730bf091a295b3d67d03e26c73885c41371cc3b037812cbff96aa8ea550a",
+        "figs/fig4_original_resolution.pdf": "d652c0c74450863bb146e92e567b69f602895a4756a1faf2a741d995a272029d",
+        "figs/fig5_v2_unification_and_clock.pdf": "d3f55482d8068ef505fe90254b1b48b243403740dfd1faa3256f014a62cf38b1",
+        "figs/fig6_modal_b200_hmc.pdf": "6e79db63cd4caa7a10f7c85f319ae4259ddd0a94ac18046313c52d734e1eb3d9",
+        "figs/fig_followup_roughness.pdf": "a16c977c4348130dbf64b6eb83199d8127b1a9bca7789e0cc7d807b2ae166702",
+        "figs/review_01_causal_diamond.pdf": "739a884a2dab250de8dabfee67cf2c33d8aed1e6b8609dad90f2efd0d883dede",
+        "figs/review_02_state_count.pdf": "6469ee65e3125e0b4b4054b8b073d53329908dc31753f2dcc26122832d99b458",
+        "figs/review_03_two_loop_budget.pdf": "f24c52aa3af8b40bea5acef936ae8fa61f98997c47ae329fcfa5f5fc76a7aec7",
+        "figs/review_04_graviton_spectrum.pdf": "60cc19f1e70c93cc06f4142787c7e05d4e31245b2153194b9feaa0fea6271518",
+        "paper.tex": "e6098bd0a718627a0149b46b4f6c2ad6ca2a8a7351b208e964ca950e30e18ddc",
+        "sections/canonical_oblate.tex": "f7a5ac43ec4748c65d36d666e88925839f267659c18dd169064c3e437f3676ae",
+        "sections/clock_proof.tex": "527c0e6258ea87d14bce69aec05c05feda58a321b06e19ca4e6f8ccffbe157db",
+        "sections/nonlinear_action.tex": "aac57505d6cc9958f87fb4b35a5de3b42fc6aec06f9fb03fb0ad6a2e19a75d34",
+        "sections/quadratic_clock.tex": "54de4a1f50852f5b93d78a3e2684346bb09b75f1c216bf641360a1d8aa37b3a7"
+      },
+      "log_sha256": {
+        "paper-pass1.log": "95f01dbf4278ddf39e830da9b2f46a263e2b452d6baab22b921f056d59557051",
+        "paper-pass1.stdout": "3ffe56228cb4682d798f9b08bf9ef59ccb2a13084e9d5cd61fe71848b494416f",
+        "paper-pass2.log": "393352f5c983a20b1dca7093f2bb7ebaba03b78414e0198e0821fb5684b4bd55",
+        "paper-pass2.stdout": "bc991f3ddac1c6a6e84d7421a6841e85b6b84accc67328f290def104f78c055d"
+      }
+    },
+    "paper_reading": {
+      "command": [
+        "pdflatex",
+        "-recorder",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-output-directory=/tmp/final-paper_reading-u8nL4Q",
+        "paper_reading.tex"
+      ],
+      "passes_exit": [
+        0,
+        0
+      ],
+      "pages": 43,
+      "pdf_sha256": "c251976d520eb53ea9f5cea97d35852908df5a881e4944d779af549b8088233a",
+      "project_inputs_sha256": {
+        "figs/fig1_breakthrough_1loop.pdf": "0c4260ad2f8b645588015da5fa50fdf2645348d6df06965fc5b0bb14022a7737",
+        "figs/fig2_unified_matrix_gravity.pdf": "d45a3b99069160c475870392f7be4e4c171b15968ac294a6a59ef90acefae16a",
+        "figs/fig3_uv_completion.pdf": "406f730bf091a295b3d67d03e26c73885c41371cc3b037812cbff96aa8ea550a",
+        "figs/fig4_original_resolution.pdf": "d652c0c74450863bb146e92e567b69f602895a4756a1faf2a741d995a272029d",
+        "figs/fig5_v2_unification_and_clock.pdf": "d3f55482d8068ef505fe90254b1b48b243403740dfd1faa3256f014a62cf38b1",
+        "figs/fig6_modal_b200_hmc.pdf": "6e79db63cd4caa7a10f7c85f319ae4259ddd0a94ac18046313c52d734e1eb3d9",
+        "figs/fig_followup_roughness.pdf": "a16c977c4348130dbf64b6eb83199d8127b1a9bca7789e0cc7d807b2ae166702",
+        "figs/review_01_causal_diamond.pdf": "739a884a2dab250de8dabfee67cf2c33d8aed1e6b8609dad90f2efd0d883dede",
+        "figs/review_02_state_count.pdf": "6469ee65e3125e0b4b4054b8b073d53329908dc31753f2dcc26122832d99b458",
+        "figs/review_03_two_loop_budget.pdf": "f24c52aa3af8b40bea5acef936ae8fa61f98997c47ae329fcfa5f5fc76a7aec7",
+        "figs/review_04_graviton_spectrum.pdf": "60cc19f1e70c93cc06f4142787c7e05d4e31245b2153194b9feaa0fea6271518",
+        "paper.tex": "e6098bd0a718627a0149b46b4f6c2ad6ca2a8a7351b208e964ca950e30e18ddc",
+        "paper_reading.tex": "a50587a9b4605cf63f70eef3f1d342c996aa78c282432cebf466f8f9c61b7818",
+        "sections/canonical_oblate.tex": "f7a5ac43ec4748c65d36d666e88925839f267659c18dd169064c3e437f3676ae",
+        "sections/clock_proof.tex": "527c0e6258ea87d14bce69aec05c05feda58a321b06e19ca4e6f8ccffbe157db",
+        "sections/nonlinear_action.tex": "aac57505d6cc9958f87fb4b35a5de3b42fc6aec06f9fb03fb0ad6a2e19a75d34",
+        "sections/quadratic_clock.tex": "54de4a1f50852f5b93d78a3e2684346bb09b75f1c216bf641360a1d8aa37b3a7"
+      },
+      "log_sha256": {
+        "paper_reading-pass1.log": "2a0a406f6d803e7f2cb2879ce57fddba641dda0c69d86d74a01b4eb8f7f45a52",
+        "paper_reading-pass1.stdout": "92f3544556cbae7f1e246d45283d85f6ed43892ddef6c8d8b87f52364684a6d4",
+        "paper_reading-pass2.log": "ceff2aa9baadabfac4e268f82af4069e66b1f0296328e37613d4a43fcae97e5a",
+        "paper_reading-pass2.stdout": "c23ed83e5f0431de7f0f23e2e6e91e1c8fa7f1bce308ea72f8d2d4244fcee8d2"
+      }
+    }
+  }
+}

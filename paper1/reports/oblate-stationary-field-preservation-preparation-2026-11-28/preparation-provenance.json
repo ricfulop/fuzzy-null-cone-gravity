@@ -1,0 +1,26 @@
+{
+  "prepared_on_parent_commit": "0b7bc92a552ab00ba1ea51d4bcb1950d1334dd25",
+  "preceding_run": "157032da-1468-473e-8cd7-37763ff86822",
+  "preceding_source": "e48324b06a7edc16bd2bff2d7dd16125762fd96c",
+  "upstream_completion_sha256": "640ae2f7c9e1cd3702f8330b074df361ee3fdff701ee2a566ef2b84c4e3a6b4d",
+  "source_sha256": {
+    "paper1/verification/oblate_stationary_reduction_20261128/exact_linear_algebra.py": "275fd4bca806ebf4d2c4f438d67d7480c5179ee1ca25a0b72ebcf739d2a5f177",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduce_stationary.py": "56e1837b37346240ebde6e4395792f2539ceb4da6756ef2ca41234268a7a2561",
+    "paper1/verification/oblate_stationary_reduction_20261128/reduction_progress.py": "4ba4336ff2dd24390ae3023f1552a4a07df30a1fb95519d347e6d4c652af0a64",
+    "paper1/verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "paper1/verification/oblate_stationary_reduction_20261128/terminal_kernel.py": "4ae051c5a17b9ab7bac1766ea86d74a2f72d6e4fd6cec6d5eeb124c1cecf4e03",
+    "paper1/verification/oblate_stationary_reduction_20261128/terminal_preservation.py": "d54c2aa32949cca311d507272fea2af3e813203e9eddefc33068554fa1f3f441",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_exact_linear_algebra.py": "4616fe18e1f655fb615b8c26b784c9e78ad30f011d3266e63fa3aae3186feecc",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_reduction_controls.py": "5e05dd8dae8ba3f9d491effb12b6fff4f30eaf59d3640f89025adb610cef4dce",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_run_bounded.py": "169ec9765de16120499a582a7d8b1bfa23021558a47e5084bb5c4aa789fb41c5",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_terminal_kernel.py": "78c4e377a8e99b3316f251a69c598d534f3df362487dc71092dcce9c691f4616",
+    "paper1/verification/oblate_stationary_reduction_20261128/test_terminal_preservation.py": "9d9040c78026a1328eddfbed3e09c6a8f24e6dbbf5e71f692f88b5aa200cc14a",
+    "paper1/verification/oblate_stationary_reduction_20261128/README.md": "bb7e04161597c984299f7bba57a0f98abdfe389ef26008298353da6631405a22",
+    "paper1/verification/oblate_stationary_reduction_20261128/run-config.json": "1ebe00204ce1c5a55a54f402cde739e5d763723f42b5dd43330b805d18a61ab8",
+    "paper1/verification/oblate_stationary_reduction_20261128/view-config.json": "8a5b1109af366245f11bf07161342a9848ed5f74504f3faf37cf95475e841bd2",
+    "paper1/verification/oblate_stationary_reduction_20261128/view.xml": "f6834486952b10518b793110053b7e43faaaf6509e63fba91070692d41f2c938",
+    "paper1/verification/oblate_stationary_reduction_20261128/run.sh": "f34bfbf2b9a5584a983f5da43414ca2f8b60b383e5050ec7c92c942fb6dd97b4"
+  },
+  "scientific_invocations_of_this_source": 0,
+  "preceding_failure_archive_commit": "5136b622eee6388691cbe283a78a0d5cfd57b0ea"
+}

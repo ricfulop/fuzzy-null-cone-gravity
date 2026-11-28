@@ -1,0 +1,11 @@
+{
+  "scientific_approval": "msg_4c4bcc8d",
+  "additional_approval_text": "and also all other approvals while I sleep",
+  "window_start_utc": "2026-11-28T04:29:00Z",
+  "window_end_utc": "2026-11-28T16:29:00Z",
+  "anchor": "conservative minute floor of first clock reading2026-11-28T04:29:34Z",
+  "scope": "Paper I research decisions, bounded scientific runs, diagnosis/fixes, reviews, local integration and manuscript preparation",
+  "compute_plan": "local CPU only; no remote or GPU spending planned",
+  "launch_policy": "bound each run to end before window cutoff; preserve failures and provenance",
+  "first_run_source": "1cd1a69c258810d38c12adc334733aff1fac6b7a"
+}

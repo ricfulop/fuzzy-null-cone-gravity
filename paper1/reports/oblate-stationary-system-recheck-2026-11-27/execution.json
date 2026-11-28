@@ -1,0 +1,69 @@
+{
+  "source_commit": "1cd1a69c258810d38c12adc334733aff1fac6b7a",
+  "approval_messages": [
+    "msg_4c4bcc8d"
+  ],
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py",
+    "--output-dir",
+    "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs"
+  ],
+  "cwd": "/Users/ricfulop/.local/share/openresearch/worktrees/db17dab4-9ce6-4c05-8419-37d96ef81d19/chat_ebe236b2-cf90-46bf-b969-d9f5365cf973/paper1",
+  "uv_path": "/Users/ricfulop/.local/bin/uv",
+  "uv_version": "uv 0.13.10 (e3e7c1eac 2026-11-24 aarch64-apple-darwin)",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "source_sha256_before": {
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "1462be3deb349e95f52de1e9f07a01abe940bdf3fcb1d54d1138155970bb3303",
+    "verification/oblate_stationary_seed_20261127/extraction_progress.py": "3534ec72a9cb0132fe0d07e31ce7a04adb7132f2559a447259b8f9f720c57a5d",
+    "verification/oblate_stationary_seed_20261127/stationary_system.py": "0e4d72f319ba7a811356f4229e56ca3e9fb903a4dbad3622e5bd7cc5027a06cd",
+    "verification/oblate_stationary_seed_20261127/supervise_stationary_check.py": "1a68d3feb13511db1058d5eaf03bcda4a5f965bf5767e3bc695edb1431dd6285",
+    "verification/oblate_stationary_seed_20261127/test_progress_io.py": "4c87813715a684a382046f25c164e7213ad9c10fa4c9cd474e41054a78bbd25f",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  },
+  "stdout_stderr": "verification.log (merged, unmodified bytes)",
+  "wall_budget_seconds": 900,
+  "memory_budget_bytes": 2147483648,
+  "rss_measurement": "sum of ps RSS for the launched process group; sampled, not a hard OS memory cap",
+  "sampling_period_seconds": 0.25,
+  "scientific_invocations": 1,
+  "tracked_experiment_launches": 0,
+  "GPU_jobs": 0,
+  "remote_jobs": 0,
+  "start_utc": "2026-11-28T04:31:17.539805+00:00",
+  "pid": 21111,
+  "exit_code": 0,
+  "elapsed_seconds": 463.842,
+  "end_utc": "2026-11-28T04:39:01.382912+00:00",
+  "stop_reason": null,
+  "sampled_peak_process_group_rss_bytes": 288686080,
+  "source_sha256_after": {
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "1462be3deb349e95f52de1e9f07a01abe940bdf3fcb1d54d1138155970bb3303",
+    "verification/oblate_stationary_seed_20261127/extraction_progress.py": "3534ec72a9cb0132fe0d07e31ce7a04adb7132f2559a447259b8f9f720c57a5d",
+    "verification/oblate_stationary_seed_20261127/stationary_system.py": "0e4d72f319ba7a811356f4229e56ca3e9fb903a4dbad3622e5bd7cc5027a06cd",
+    "verification/oblate_stationary_seed_20261127/supervise_stationary_check.py": "1a68d3feb13511db1058d5eaf03bcda4a5f965bf5767e3bc695edb1431dd6285",
+    "verification/oblate_stationary_seed_20261127/test_progress_io.py": "4c87813715a684a382046f25c164e7213ad9c10fa4c9cd474e41054a78bbd25f",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  },
+  "supervisor_sha256": "1a68d3feb13511db1058d5eaf03bcda4a5f965bf5767e3bc695edb1431dd6285"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "derived and statically reviewed; scientifically unexecuted preparation",
+  "preparation_approval": "msg_55d5e65b and subsequent ok confirming preparation plan",
+  "parent_commit": "d9add22b3509700107601b94c2da9f629050dfb3",
+  "original_action_checkpoint": "157ec0f04866ea36509b325ec65f0a68890f9b17",
+  "passed_map_source": "53b06316547d0a5a47754f0de71f8c91c7a42a40",
+  "shared_kinematic_result": "510e7d87d0e8cd1581ffc7233122a7bedafea969",
+  "shared_kinematic_log_read": true,
+  "reviews": [
+    "msg_be08af5b",
+    "msg_521ae87b",
+    "msg_6251af19",
+    "msg_53459fb1",
+    "msg_be18ac52"
+  ],
+  "review_corrections": [
+    "off-shell negative control requires finite residual magnitudes",
+    "moment recurrence states n>=1 and k>=1"
+  ],
+  "static_checks": [
+    "Python AST parse without imports",
+    "JSON syntax",
+    "Markdown links outside math",
+    "source/action hashes",
+    "control characters",
+    "no scientific outputs present",
+    "git diff whitespace check"
+  ],
+  "scientific_checks_executed": 0,
+  "scientific_imports": 0,
+  "tracked_experiment_launches": 0,
+  "GPU_jobs": 0,
+  "remote_jobs": 0,
+  "radial_DAE_reduced": false,
+  "responding_smooth_solution_germ_certified": false,
+  "full_nonlinear_goal_complete": false,
+  "sha256": {
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "053389e9280fcb68b96f13e5e0758d2ab9a9fb4bdc69e561e2b4ea23dbdbe380",
+    "verification/oblate_stationary_seed_20261127/stationary_system.py": "5e56ef02b427e680eab4bc015d4f6c6adae9a37984055e019e05e818eedd876c",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  }
+}

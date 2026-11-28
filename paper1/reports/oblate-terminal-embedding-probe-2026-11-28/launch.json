@@ -1,0 +1,79 @@
+{
+  "run_id": "6128c4ef-4b35-4ddf-9763-1b40369bd6f6",
+  "source_commit": "bdb5d4cb4a5d719b36bb0e0c9a154bedcf48b071",
+  "configuration": {
+    "stage": "terminal_embedding_diagnostic",
+    "wall_seconds": 300,
+    "memory_bytes": 2147483648,
+    "approval_message": "msg_4c4bcc8d",
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "checkpoint_path": "reports/oblate-stationary-closure-terminal-timeout-2026-11-28/outputs/dae-step-02.json",
+    "checkpoint_sha256": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+    "checkpoint_run": "8fa984ea-3c9b-4e85-b984-c23956fc95d8",
+    "checkpoint_source": "e928d6c89324465018a6b5b209152dffde1a454b",
+    "purpose": "Diagnostic algebraic kernel of the partial final constraint matrix; no DAE closure, response, or solution-germ certification."
+  },
+  "scientific_invocations": 0,
+  "remote_jobs": 0,
+  "GPU_jobs": 0,
+  "diagnostic_only": true,
+  "dae_closure_certified": false,
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "start_utc": "2026-11-28T05:59:37.709738+00:00",
+  "source_repository": "/Users/ricfulop/OpenResearch/fuzzy-null-cone-gravity",
+  "rss_measurement": "sampled process-group RSS, not a hard OS cap",
+  "source_sha256_before": {
+    "verification/oblate_terminal_embedding_probe_20261128/probe_terminal_embedding.py": "b37c01960cc4c8dbec042cac540376795d9011da9335e6a0875752ad13e82127",
+    "verification/oblate_terminal_embedding_probe_20261128/run_bounded.py": "5a55bb44632e9bcc22d754c1bf7243c32ba84251bae895dfc683704e4035e861",
+    "verification/oblate_terminal_embedding_probe_20261128/test_run_bounded.py": "f37f8952b765c4468e33f4842b37797fa17a3000a5aa522c5d7ee5c2be42055a",
+    "verification/oblate_terminal_embedding_probe_20261128/run-config.json": "52e320aa5562e343d89d16c0bde0c7b7c6c6c754de001bc08b0c3f6052097d8a",
+    "verification/oblate_terminal_embedding_probe_20261128/view-config.json": "2605ebcb9c13e985302a92215621231810187d33608b9313c59cd2d07669d7b1",
+    "verification/oblate_terminal_embedding_probe_20261128/view.xml": "da851b4cac02ee30c68d4aa032dea79a8f38ef75c9c92e7c2c25d314c8336041",
+    "verification/oblate_terminal_embedding_probe_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738",
+    "reports/oblate-stationary-closure-terminal-timeout-2026-11-28/outputs/dae-step-02.json": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+    "run-output/6128c4ef-4b35-4ddf-9763-1b40369bd6f6/inputs/dae-step-02.json": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc"
+  },
+  "committed_source_sha256": {
+    "verification/oblate_terminal_embedding_probe_20261128/probe_terminal_embedding.py": "b37c01960cc4c8dbec042cac540376795d9011da9335e6a0875752ad13e82127",
+    "verification/oblate_terminal_embedding_probe_20261128/run_bounded.py": "5a55bb44632e9bcc22d754c1bf7243c32ba84251bae895dfc683704e4035e861",
+    "verification/oblate_terminal_embedding_probe_20261128/test_run_bounded.py": "f37f8952b765c4468e33f4842b37797fa17a3000a5aa522c5d7ee5c2be42055a",
+    "verification/oblate_terminal_embedding_probe_20261128/run-config.json": "52e320aa5562e343d89d16c0bde0c7b7c6c6c754de001bc08b0c3f6052097d8a",
+    "verification/oblate_terminal_embedding_probe_20261128/view-config.json": "2605ebcb9c13e985302a92215621231810187d33608b9313c59cd2d07669d7b1",
+    "verification/oblate_terminal_embedding_probe_20261128/view.xml": "da851b4cac02ee30c68d4aa032dea79a8f38ef75c9c92e7c2c25d314c8336041",
+    "verification/oblate_terminal_embedding_probe_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738",
+    "verification/oblate_stationary_reduction_20261128/run_bounded.py": "22d2e7e7e4309d07d7cae6fcc5c3601d4f3375567d84eec26338d7d34f57ba0a",
+    "verification/oblate_stationary_reduction_20261128/run.sh": "9c70da5ad41608a17bf407729b5a05f4bc7bea737172295451016eda72c82738"
+  },
+  "input_sha256_before": {
+    "reports/oblate-stationary-closure-terminal-timeout-2026-11-28/outputs/dae-step-02.json": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+    "run-output/6128c4ef-4b35-4ddf-9763-1b40369bd6f6/inputs/dae-step-02.json": "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc"
+  },
+  "source_hash_scope": "committed sources plus the two separately labeled input paths",
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/6128c4ef-4b35-4ddf-9763-1b40369bd6f6/repo/paper1/verification/oblate_terminal_embedding_probe_20261128/probe_terminal_embedding.py",
+    "--checkpoint",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/6128c4ef-4b35-4ddf-9763-1b40369bd6f6/repo/paper1/run-output/6128c4ef-4b35-4ddf-9763-1b40369bd6f6/inputs/dae-step-02.json",
+    "--checkpoint-sha256",
+    "ca630b313848bc4230f72f05642d0821297e50322ed2f0dc5ccbaa43eb104ccc",
+    "--output",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/6128c4ef-4b35-4ddf-9763-1b40369bd6f6/repo/paper1/run-output/6128c4ef-4b35-4ddf-9763-1b40369bd6f6/outputs/embedding-probe.json"
+  ],
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "run_id": "09c32343-1dee-4d53-a1da-c6d1bb2e1fe3",
+  "source_commit": "0ae1c15e11b2b8c9a2f82ca86b6774b68f7e0e79",
+  "source_repository": "/Users/ricfulop/OpenResearch/fuzzy-null-cone-gravity",
+  "wall_seconds": 900,
+  "memory_bytes": 2147483648,
+  "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+  "environment_overrides": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONOPTIMIZE": "0",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "scientific_invocations": 1,
+  "remote_jobs": 0,
+  "GPU_jobs": 0,
+  "rss_measurement": "sampled child process-group RSS; not a hard OS cap",
+  "start_utc": "2026-11-28T07:57:54.456705+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "source_sha256_before": {
+    "verification/oblate_stationary_state_germ_20261128/run_bounded.py": "819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5",
+    "verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231",
+    "verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "94af8bfe83084b691d55920c001cb64d0d07bebb553a75d1a3384a09a70b5d50",
+    "verification/oblate_stationary_state_germ_20261128/run-config.json": "a48e1ef1365cf7f0ca0fcbf7bcdc9ad68ebe907c8c0e6a1493493eff8dedb157",
+    "verification/oblate_stationary_state_germ_20261128/view-config.json": "96683101486e99547dc5b3fa6370a4ef0c90a15f9519ba083613f2f8abb1d1b0",
+    "verification/oblate_stationary_state_germ_20261128/view.xml": "0b7c584a47b5bd3d61496513e22975d99adae48b818364ed4e1e93e6ea1dfbeb",
+    "verification/oblate_stationary_state_germ_20261128/README.md": "e41abf5266090bb13ebb260ef1c93a27f4a63029b3ffccea9cc87aeb75d6e964"
+  },
+  "configuration": {
+    "purpose": "Independent direct fourteen-state stationary germ certificate from authenticated candidate matrices: recheck the exact kernel, invariance, physical lift and all 22 original Euler rows; certify a physical rank-six minor and coefficient regularity, and test the separate discarded response at the same radius. No reduced-coordinate dynamics, checkpoint resumption, global boundary, universal-zero, or Dirac classification claim.",
+    "wall_seconds": 900,
+    "memory_bytes": 2147483648,
+    "approval_cutoff_utc": "2026-11-28T16:29:00+00:00",
+    "max_atan_terms": 256,
+    "inputs": {
+      "stationary_operators": {
+        "path": "reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+        "sha256": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60"
+      },
+      "terminal_state": {
+        "path": "reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json",
+        "sha256": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+      }
+    },
+    "candidate_state_provenance": {
+      "run_id": "c2a1482f-4dc7-40f5-8f6d-b8f4700df6de",
+      "source_commit": "96916c7fe47b5542c4a5cf1c5a199ac11c1f488b",
+      "publication_status": "write-only intermediate terminal state before preservation; not a closure or germ certificate"
+    },
+    "scientific_input_policy": "Use original pinned operator bytes and candidate state bytes; independently recheck every listed certificate obligation without relying on snapshot success flags."
+  },
+  "input_paths": {
+    "stationary_operators": "/Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/reports/oblate-stationary-system-recheck-2026-11-27/outputs/stationary-operators.json",
+    "terminal_state": "/Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/reports/oblate-stationary-field-dynamics-timeout-2026-11-28/outputs/terminal-state-before-preservation.json"
+  },
+  "input_sha256_before": {
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "checker_input_sha256": {
+    "config": "a48e1ef1365cf7f0ca0fcbf7bcdc9ad68ebe907c8c0e6a1493493eff8dedb157",
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/run-output/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/sources/verification/oblate_stationary_state_germ_20261128/certify_state_germ.py",
+    "--config",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/run-output/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/sources/verification/oblate_stationary_state_germ_20261128/run-config.json",
+    "--operators",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/run-output/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/inputs/stationary-operators.json",
+    "--state",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/run-output/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/inputs/terminal-state.json",
+    "--output",
+    "/Users/ricfulop/.local/share/openresearch/local-runs/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/repo/paper1/run-output/09c32343-1dee-4d53-a1da-c6d1bb2e1fe3/outputs/state-germ-certificate.json",
+    "--max-atan-terms",
+    "256"
+  ],
+  "pid": 63736,
+  "source_sha256_after": {
+    "verification/oblate_stationary_state_germ_20261128/run_bounded.py": "819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5",
+    "verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231",
+    "verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "94af8bfe83084b691d55920c001cb64d0d07bebb553a75d1a3384a09a70b5d50",
+    "verification/oblate_stationary_state_germ_20261128/run-config.json": "a48e1ef1365cf7f0ca0fcbf7bcdc9ad68ebe907c8c0e6a1493493eff8dedb157",
+    "verification/oblate_stationary_state_germ_20261128/view-config.json": "96683101486e99547dc5b3fa6370a4ef0c90a15f9519ba083613f2f8abb1d1b0",
+    "verification/oblate_stationary_state_germ_20261128/view.xml": "0b7c584a47b5bd3d61496513e22975d99adae48b818364ed4e1e93e6ea1dfbeb",
+    "verification/oblate_stationary_state_germ_20261128/README.md": "e41abf5266090bb13ebb260ef1c93a27f4a63029b3ffccea9cc87aeb75d6e964"
+  },
+  "source_snapshot_sha256_after": {
+    "verification/oblate_stationary_state_germ_20261128/run_bounded.py": "819631f2cac2977ddbf3e074425e7cf14ebad4d39c0d9d6c7c8edb01a1653be5",
+    "verification/oblate_stationary_state_germ_20261128/test_run_bounded.py": "8839bba6daa272b9420d15ff177024e465e19c232d9cad1e92f5c1f7a2b83231",
+    "verification/oblate_stationary_state_germ_20261128/run.sh": "baff5b85437ecf781c8729fb83b33c5f199ecbda26545fdd430a51dd98082893",
+    "verification/oblate_stationary_state_germ_20261128/certify_state_germ.py": "94af8bfe83084b691d55920c001cb64d0d07bebb553a75d1a3384a09a70b5d50",
+    "verification/oblate_stationary_state_germ_20261128/run-config.json": "a48e1ef1365cf7f0ca0fcbf7bcdc9ad68ebe907c8c0e6a1493493eff8dedb157",
+    "verification/oblate_stationary_state_germ_20261128/view-config.json": "96683101486e99547dc5b3fa6370a4ef0c90a15f9519ba083613f2f8abb1d1b0",
+    "verification/oblate_stationary_state_germ_20261128/view.xml": "0b7c584a47b5bd3d61496513e22975d99adae48b818364ed4e1e93e6ea1dfbeb",
+    "verification/oblate_stationary_state_germ_20261128/README.md": "e41abf5266090bb13ebb260ef1c93a27f4a63029b3ffccea9cc87aeb75d6e964"
+  },
+  "input_sha256_after": {
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "input_snapshot_sha256_after": {
+    "stationary_operators": "07ebdcd4e9fe08fa21e1e72ad5729da05ea7d2fe7f0b04904bb1d489cb985c60",
+    "terminal_state": "bc7d3b8a0ffccc771538da1c24cf3bbc66daccdab278a01fcfa4d1ae70d24d08"
+  },
+  "status": "failed",
+  "exit_code": 143,
+  "elapsed_seconds": 900.2542698751204,
+  "end_utc": "2026-11-28T08:12:55.040943+00:00",
+  "stop_reason": "wall budget reached",
+  "supervisor_error": null,
+  "group_disposition": {
+    "status": "empty",
+    "probe": "ESRCH"
+  },
+  "cleanup_events": [
+    {
+      "action": "initial_probe",
+      "status": "live",
+      "probe": "killpg"
+    },
+    {
+      "signal": 15,
+      "result": "sent"
+    },
+    {
+      "after_signal": 15,
+      "status": "empty",
+      "probe": "ESRCH"
+    }
+  ],
+  "cleanup_errors": [],
+  "relay_errors": [],
+  "relay_active_after_join": false,
+  "received_signals": [],
+  "metrics": {
+    "state_germ_certificate_passed": 0,
+    "formal_response_nonzero": null,
+    "certified_response_nonzero": null,
+    "discarded_response_nonzero": null,
+    "response_determined": 0,
+    "scientific_invocations": 1
+  },
+  "rss_sample_count": 3080,
+  "sampled_max_rss_bytes": 245121024
+}

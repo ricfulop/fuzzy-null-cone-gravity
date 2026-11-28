@@ -1,0 +1,54 @@
+{
+  "original_source": "6e31a5e3fa1e0f0b9f7b54fb261df34de9b7742d",
+  "approval": "msg_040d0d1b",
+  "domain": "-1 < x < 1, rho>0, Sigma>0",
+  "polar_basis": [
+    "x*sqrt(1 - x**2)",
+    "-I/sqrt(1 - x**2)"
+  ],
+  "axial_basis": [
+    "-3*I*x*sqrt(1 - x**2)",
+    "-3*x**2/sqrt(1 - x**2) + 3*sqrt(1 - x**2)"
+  ],
+  "original_coefficients": [
+    "(-5*e/6 - r**2)/(e + r**2)",
+    "-I*e/(18*e + 18*r**2)"
+  ],
+  "raw_residual": [
+    "3*e*x*sqrt(1 - x**2)/(18*e + 18*r**2) - x*sqrt(1 - x**2)*(-5*e/6 - r**2)/(e + r**2) + (1 - x**2)*(2*e*x*sqrt(1 - x**2)/3 - x*(e*x**2/3 + 2*e/3 + r**2)/sqrt(1 - x**2))/(e*x**2 + r**2)",
+    "I*e*(-3*x**2/sqrt(1 - x**2) + 3*sqrt(1 - x**2))/(18*e + 18*r**2) + I*(-5*e/6 - r**2)/(sqrt(1 - x**2)*(e + r**2)) + I*(e*x**2/3 + 2*e/3 + r**2)/(sqrt(1 - x**2)*(e + r**2))"
+  ],
+  "factor_residual": [
+    "0",
+    "0*I"
+  ],
+  "rationalized_residual": [
+    "0",
+    "0"
+  ],
+  "solved_coefficients": [
+    "(-5*e/6 - r**2)/(e + r**2)",
+    "-I*e/(18*e + 18*r**2)"
+  ],
+  "diagnosis": {
+    "factor_structural_equality_to_zero": [
+      true,
+      false
+    ],
+    "factor_internal_representation": [
+      "Integer(0)",
+      "Mul(Integer(0), I)"
+    ],
+    "factor_is_zero": [
+      true,
+      true
+    ],
+    "exact_cancellation_after_chart_weights": [
+      "0",
+      "0"
+    ],
+    "cause": "Unevaluated zero times imaginary unit in SymPy factor output; structural comparison was false.",
+    "correction": "Compare exactly canceled rationalized residual components with zero on -1<x<1; unchanged descriptor and harmonic coefficients.",
+    "full_checker_rerun": false
+  }
+}

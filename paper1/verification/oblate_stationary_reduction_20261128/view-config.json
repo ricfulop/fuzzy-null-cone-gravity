@@ -1,0 +1,51 @@
+{
+  "plan": [
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "manufactured_controls",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "fixed_epsilon_field_conversion",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "radial_x0_gauge_right_kernel",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "principal_block_probe",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "dae_closure",
+      "of": 1,
+      "unit": "check"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "bundle"
+    }
+  ],
+  "brief": {
+    "question": "Does exact differential constraint preservation close, and is the discarded response formally nonzero on the resulting stationary subfamily?",
+    "healthy": "Exact row, kernel, preservation, terminal Euler/dynamics and DAE controls precede fresh original-operator reduction. Historical discovery is unchanged. Every original retained row and both full reconstruction identities must pass; final response stays separate. Terminal field products and derivatives have explicit timings.",
+    "worth_a_flag": "A traceback, input/source mismatch, failed exact control, resource stop, or incomplete final closure export. Intermediate matrices and principal rank are not a solution certificate.",
+    "noise": "This is exact symbolic algebra, not model training or a 5000-step schedule. Long polynomial products may emit no intermediate metrics. Final closure signals are deliberately absent until every terminal check passes.",
+    "decided": "One local CPU child, 1800 seconds and 2 GiB sampled group RSS; the 16:29 UTC cutoff is unchanged. No checkpoint loading. Every original-row, preservation, reconstruction and response check remains required; formal closure still needs independent interval/germ certification.",
+    "from_parent": "Run c2a1482f passed all 22 original-row checks in 50.614 seconds and KM in 240.467 seconds, but reached the 900-second limit during DM after reaching child time 855.092 seconds. All scientific Python code and controls are unchanged for the 1800-second retry; remaining duration is unknown."
+  },
+  "watch": {
+    "minGapS": 120,
+    "maxGapS": 300
+  }
+}

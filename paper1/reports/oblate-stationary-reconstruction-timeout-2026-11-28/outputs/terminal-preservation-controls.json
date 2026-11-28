@@ -1,0 +1,13 @@
+{
+  "state": "terminal preservation controls passed",
+  "cases": [
+    "known_total_derivative",
+    "nonzero_S_equals_C",
+    "unit_SM_defect_rejected",
+    "unit_CB_defect_rejected",
+    "empty_dimensions",
+    "float_in_each_input_rejected",
+    "exact_snapshot_strings_and_shapes",
+    "nonfinite_snapshot_rejected"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "run": "dbf69d65-7e3c-440c-a6c7-9c31c5ff8550",
+  "source_commit": "f5a64e3b1a198407507fa7209a3e26da1224ec4b",
+  "status": "passed specified pilot gates; independent mixed-functional validation pending",
+  "result_bytes": 1404582,
+  "result_sha256": "c8fcacdd578a95b8e58ea2a727fc8c088b3187fef7c27e2735659a1da7fd99e7",
+  "log_bytes": 1352071,
+  "log_sha256": "77fcbff8f98b00c0deb1051541b1b95b2744d2def2e2fc97849978ee8bcf28e4",
+  "result_matches_emitted_log": true,
+  "original_config_keys_unchanged": 29,
+  "unchanged_shared_family_values": 37,
+  "canonical_exact_factors_unchanged": true,
+  "kernels": [
+    {
+      "direction": "pure_momentum_axis",
+      "family": "scalar_nested",
+      "representation": "raw",
+      "path": "output/pure_momentum_axis-scalar_nested-raw.json",
+      "bytes": 634,
+      "sha256": "925d4f8481a338c9a776f5eac3486ab6c794a02eb9c5581097e04518e039400a",
+      "archived_path": "sixth-energy-kernels/pure_momentum_axis-scalar_nested-raw.json"
+    },
+    {
+      "direction": "pure_momentum_axis",
+      "family": "scalar_nested",
+      "representation": "compact",
+      "path": "output/pure_momentum_axis-scalar_nested-compact.json",
+      "bytes": 2035,
+      "sha256": "bf07ba26c62fbd96aa1c83dd718fb11c8742d5c2cee428e02378a48c4a2beea6",
+      "archived_path": "sixth-energy-kernels/pure_momentum_axis-scalar_nested-compact.json"
+    },
+    {
+      "direction": "pure_momentum_axis",
+      "family": "york_nested",
+      "representation": "raw",
+      "path": "output/pure_momentum_axis-york_nested-raw.json",
+      "bytes": 631,
+      "sha256": "707632f704c37e418055e7ad442758549fcaa283813b72f5e9bff5b258d3ea04",
+      "archived_path": "sixth-energy-kernels/pure_momentum_axis-york_nested-raw.json"
+    },
+    {
+      "direction": "pure_momentum_axis",
+      "family": "york_nested",
+      "representation": "compact",
+      "path": "output/pure_momentum_axis-york_nested-compact.json",
+      "bytes": 2032,
+      "sha256": "373ddcd59bb133190f17de98373d48829ebcbbbe88f3c623f8ee05afb00a121d",
+      "archived_path": "sixth-energy-kernels/pure_momentum_axis-york_nested-compact.json"
+    },
+    {
+      "direction": "monopole_mixed",
+      "family": "scalar_nested",
+      "representation": "raw",
+      "path": "output/monopole_mixed-scalar_nested-raw.json",
+      "bytes": 1110141,
+      "sha256": "d0c73941f353f299bfbcf269d8ee91d2d26fd5e3c4c4aadec6b4f57ab51e5576",
+      "archived_path": "sixth-energy-kernels/monopole_mixed-scalar_nested-raw.json"
+    },
+    {
+      "direction": "monopole_mixed",
+      "family": "scalar_nested",
+      "representation": "compact",
+      "path": "output/monopole_mixed-scalar_nested-compact.json",
+      "bytes": 18732,
+      "sha256": "7fb71a633a9f9cdd94c23eb988d7dface29c8ddd66fe41fa5c3b586b8f13f380",
+      "archived_path": "sixth-energy-kernels/monopole_mixed-scalar_nested-compact.json"
+    },
+    {
+      "direction": "monopole_mixed",
+      "family": "york_nested",
+      "representation": "raw",
+      "path": "output/monopole_mixed-york_nested-raw.json",
+      "bytes": 2772663,
+      "sha256": "26282615e49587a2286e3d79d0751899fd5ca8b317294f1f5d7c08f39473dafe",
+      "archived_path": "sixth-energy-kernels/monopole_mixed-york_nested-raw.json"
+    },
+    {
+      "direction": "monopole_mixed",
+      "family": "york_nested",
+      "representation": "compact",
+      "path": "output/monopole_mixed-york_nested-compact.json",
+      "bytes": 23810,
+      "sha256": "b23d56336238dd43db0bbdc17b4949dc0503ef2f6082342c08c59cf511862073",
+      "archived_path": "sixth-energy-kernels/monopole_mixed-york_nested-compact.json"
+    }
+  ],
+  "full_four_point_loop_evaluated": false,
+  "independent_mixed_functional_validation": false
+}

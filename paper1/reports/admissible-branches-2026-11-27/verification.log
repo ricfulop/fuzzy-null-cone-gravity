@@ -1,0 +1,10 @@
+PASS: exact Euclidean pullback and independent zero Ricci tensor; coefficient band j<=2.
+PASS: stationary vacuum trajectory at N=3,4 with a=-1,b=V=W=0 and K=p=0.
+PASS: arbitrary radial shift-profile derivatives lie exactly in the retained tangent.
+Exact leading discarded DeWitt norm: 192/1225 (trace contribution retained).
+H_WW = -96/1225 * epsilon^2 * integral w(r)^2/r^2 dr + O(epsilon^3).
+N=3: finite Gram solve H_WW/epsilon^2 at epsilon/r^2=1e-4: -0.0783196191901422
+N=4: finite Gram solve H_WW/epsilon^2 at epsilon/r^2=1e-4: -0.0783196191902189
+Maximum tangent orthogonality error: 1.0830312341392201e-14
+CONCLUSION: primary-secondary Poisson rank at least 2 at an exact admissible point, for sufficiently small nonzero epsilon.
+Full constant-rank stratum, generic physical DOF, and nonlinear completion remain open.

@@ -1,0 +1,21 @@
+EXACT_LEADING_BLOCK 2 0 4 minor 16777216/27573984375
+EXACT_LEADING_BLOCK 2 1 4 minor 2952790016/16544390625
+EXACT_LEADING_BLOCK 2 2 3 minor 4076863488/2100875
+EXACT_LEADING_TOTAL 2 18
+EXACT_LEADING_BLOCK 3 0 4 minor 1073741824/169502443803
+EXACT_LEADING_BLOCK 3 1 4 minor 64430407680/697540921
+EXACT_LEADING_BLOCK 3 2 4 minor 69264400711680/697540921
+EXACT_LEADING_BLOCK 3 3 3 minor 8403100416000/41503
+EXACT_LEADING_TOTAL 3 26
+EXACT_KERNEL_TOTAL 2 7
+EXACT_KERNEL_TOTAL 3 20
+ALL_MODES 3 0.01 shift_rank 18 spatial_signature 35 9
+ALL_MODES 3 0.05 shift_rank 18 spatial_signature 35 9
+ALL_MODES 3 0.1 shift_rank 18 spatial_signature 35 9
+ALL_MODES 4 0.01 shift_rank 26 spatial_signature 70 16
+ALL_MODES 4 0.05 shift_rank 26 spatial_signature 70 16
+ALL_MODES 4 0.1 shift_rank 26 spatial_signature 70 16
+PASS: exact leading positive minors and matching exact nullspace dimensions certify shift ranks18/26.
+PASS: independent all-m full spatial signatures and finite-deformation shift ranks agree on two quadratures.
+Primary-plus-secondary Poisson ranks36/52 use the reported analytic mixed-bracket reduction.
+Further preservation, final Dirac rank, physical DOF, and constant-rank neighborhood remain open.

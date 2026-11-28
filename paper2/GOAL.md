@@ -1,0 +1,271 @@
+# A common classical and quantum gravitational construction
+
+## User's objective
+
+Calculate finite-N one-loop four-graviton amplitudes with Gaunt interactions
+and their controlled physical large-N limit; derive the gravitational corner
+states and their dynamics; construct the Euclidean--Lorentzian relation from
+the same dynamics. These are three parts of one theory, not independent toy
+examples. **The objective is active and has not been achieved.**
+
+The [common-regulator proposal](reports/common-regulator-bridge.md) removes an
+operation-order mismatch by evaluating the complete angular contractions of
+one metric-coefficient Galerkin action. This is a proposed revision of Paper
+II's repeated binary-product prescription, not an equivalence already proved
+between the historical models. It does not, by itself, define the quantum
+measure, constraints, or gravitational boundary Hilbert space.
+
+## What completion requires
+
+1. **A defined common theory.** Fix the coefficient-to-metric map, complete
+   Gaunt tensors, canonical constraints and their classification, boundary
+   action, physical state space, quantum measure, and the meaning of any
+   occupation restriction. If a regulator changes, describe the change and
+   redo the affected calculations. Gauge fixing cannot silently substitute a
+   different theory.
+2. **The requested amplitudes.** Define the finite-volume/rank observable and
+   its relation to asymptotic scattering; derive all required vertices,
+   determinants and intermediate states from item 1; evaluate the one-loop
+   four-graviton observable, including rational contributions where relevant;
+   check unitarity cuts, factorization, the applicable symmetry identities and
+   the matching Einstein benchmark. Separate infrared subtraction,
+   ultraviolet regularization and renormalization. Demonstrate convergence at
+   fixed physical kinematics, not merely fixed harmonic number on a sphere
+   whose radius is changing. A bare trace-log formula or a scalar loop is not
+   this result.
+3. **Dynamical corner states.** Pull back the chosen gravitational boundary
+   and joint action, derive its symplectic structure and charges, impose the
+   actual reduction/gluing constraints, quantize with a specified positive
+   inner product, and derive the spectrum, multiplicities and Hamiltonian.
+   Explain the origin of any finite dimension and relation to area. Chosen
+   spin labels, entropy-matching degeneracies or a two-state gluing example
+   do not complete this task.
+4. **Euclidean--Lorentzian reconstruction.** Derive the Euclidean measure or
+   transfer operator from that physical Hamiltonian and prove the needed
+   positivity, semigroup/sewing, analytic continuation and unitary real-time
+   evolution. Establish the observable map to any claimed simulation.
+   Hermiticity of a separately chosen finite matrix is not enough.
+5. **Controlled limits.** State which cutoffs are fundamental and which are
+   regulators; control angular, radial/time, occupation, volume and infrared
+   limits separately. Recover the classical Einstein regime and the
+   appropriate quantum effective-theory predictions without assuming the
+   desired microscopic completion.
+
+## Current evidence and next decision
+
+The archived v0.2 results establish continuum weak-field/tree benchmarks and
+several regulator diagnostics. They do not establish items 1--5. Paper I's
+[nonlinear-consistency report](../paper1/reports/nonlinear-consistency-2026-11-27/README.md)
+also records unresolved canonical and Euclidean issues.
+
+The first tracked calculation has established a nonzero lapse primary--
+secondary bracket on continuum vacuum initial data in the common action.
+Exact harmonic arithmetic and an independent finite-amplitude Legendre
+calculation agree. The [result and analytic cutoff-shell limit](reports/quantum-bridge/constraint-result-and-next-calculation.md)
+show why a full Dirac completion or a declared reduction-before-cutoff
+revision is required before importing continuum lapse/ghost assumptions.
+The [kinetic-completion result](reports/quantum-bridge/kinetic-completion-result.md)
+verifies the leading Schur correction and its associated angular determinant.
+The second lapse derivative cancels in the five tested cases; higher-order
+Hamiltonian terms still survive at finite auxiliary cutoff. This is a
+component of a repair, not a complete repair. The
+[mixed spatial/lapse constraint bracket](reports/quantum-bridge/canonical-mixed-bracket.md)
+of a separately declared Hamiltonian-first candidate is also nonzero on
+the proposed constraint surface: 22 exact cases and ten independent full
+Hamiltonian-flow checks confirm the prediction. Thus lapse linearity alone
+does not restore the gravitational algebra. Equivalence to the original
+Lagrangian regulator is not assumed. A valid loop calculation still needs
+either its actual completed constraints and measure or a fully specified
+revision that derives the corresponding physical observables.
+
+The [corner and reconstruction derivations](reports/quantum-bridge/corners-and-reconstruction.md)
+identify the continuum area--angle charge, the missing microscopic state
+count, and the exact transfer/reflection-positivity construction conditional
+on a physical Hamiltonian. They do not fill the missing finite-rank
+gravitational Hilbert space or establish equivalence to the simulations.
+The [explicit uniform-corner quantization](reports/quantum-bridge/corner-quantization-and-transfer.md)
+constructs positive-area states, solves uniform boost matching, and gives
+Euclidean and Lorentzian transfer kernels for the same boundary charge.
+Its Hilbert space remains infinite inside an area interval and has no
+finite Gibbs trace. The undeformed normal-frame algebra also cannot have
+a nontrivial finite-dimensional unitary representation. These facts
+identify requirements for a finite physical reduction; they are not a
+derivation of the postulated microscopic multiplicities.
+
+All three principal deliverables remain pending. No claimed percentage of
+completion or guarantee of success is assigned to an unresolved theory.
+
+The [continuum all-plus one-loop reference](reports/quantum-bridge/continuum-one-loop-reference.md)
+provides an explicit quantum comparison target, including the rational term
+lost by a strictly four-dimensional cut calculation. Its scalar tree and
+state-count inputs belong to continuum Einstein gravity. The reference has
+no finite angular rank and is not evidence that those inputs survive the
+Gaunt constraint obstruction.
+
+The [reduction-first canonical candidate](reports/quantum-bridge/reduced-canonical-gaunt.md)
+now specifies a distinct repair route: restrict free TT data, reconstruct
+the dependent geometry through the continuum constraints, and use a dual
+Gram matrix to make the induced symplectic form canonical. Its local
+hypotheses, change of regulator and unresolved interacting limit are
+explicit. The same quadratic Hamiltonian induces a leading uniform
+far-sphere area spectrum and positive Euclidean/Lorentzian evolution.
+The first tracked nonlinear calculation passes its specified checks:
+ten exact TT modes, independently verified momentum-direction interaction
+coefficients, and separate convergence tests for dependent angular and
+radial geometry. The free rank stays $N=3$; the full sampled constraint
+residual is about $2.03\times10^{-6}$ even when the separate angular defect
+is about $2.34\times10^{-14}$. Neither that limited boundary sector nor
+this numerical result completes the microscopic corner or interacting
+reconstruction goals. The subsequent calculation derives the full cubic and
+quartic Hamiltonian, including the constraint-generated nonlocal terms.
+The [interaction derivation](reports/quantum-bridge/reduced-vertices.md)
+now gives those full classical functionals for the declared reduced chart.
+Its seven exact coefficient directions, held-out rotational invariants and
+32 independent finite-metric evaluations passed their specified checks.
+The largest scaled geometric-coefficient error is about
+$3.04\times10^{-14}$. These are verified classical ingredients. A
+finite-basis four-point loop can also require fifth/sixth-order vertices and
+quantization terms, so this step does not complete the requested amplitude.
+
+The [sixth-order reduction and loop prescription](reports/quantum-bridge/reduced-sixth-order-and-loop-kernel.md)
+now derives the full higher-order bookkeeping. Scalar responses through
+fourth order and two York vector inverses suffice for the required
+constraint contributions; pointwise sources and the finite-basis inverse
+Gram corrections remain essential. An ordered-partition formula retains
+all one-loop four-point vertex families. These are derived evaluation
+identities, not evaluated higher gravitational couplings or an amplitude.
+The next implementation must supply those couplings, evaluate the loop,
+assemble the connected observable and check its physical limits.
+
+The [independent algebraic audit](reports/quantum-bridge/sixth-order-independent-audit.md)
+checks these identities under their stated analytic hypotheses. In particular,
+the static trace-square-root check concerns only four configuration legs at
+zero external frequency and zero background momentum; it does not test every
+phase-space vertex. The [next tracked calculation](reports/quantum-bridge/complete-quartic-and-two-point.md)
+reconstructs the complete quartic polynomial and evaluates a one-loop
+two-point coefficient in the same ten-mode model. Separate control
+Hamiltonians test all four-point loop topologies. These controls do not
+supply the missing gravitational fifth/sixth-order coefficients.
+
+The [local corner derivation](reports/quantum-bridge/local-corner-matching.md)
+finds an explicit nonzero Poisson bracket between a local reconstructed area
+and total area at finite sphere radius. Consequently, independent local
+area matching is not automatically a first-class gauge system. Imposing
+matching and zero boost as second-class conditions returns the original
+bulk symplectic form; a local canonical conversion also gives first-class
+constraints but changes the matching law away from that section. Neither
+choice derives a genuine gravitational edge algebra, microscopic state
+multiplicities, or the global interacting operator needed for reconstruction.
+All three principal deliverables remain open.
+
+The first complete-quartic run now supplies 27 rational invariant
+coefficients, a 24-term cubic polynomial and a 515-term quartic polynomial,
+with exact historical checks and rank-five held-out mixed-sector coverage.
+It then failed the required 32-versus-64 quadrature convergence control;
+its gravitational two-point stage was not reached. The [reviewed partial
+result](reports/quantum-bridge/complete-quartic-and-two-point.md) records
+both the completed classical work and that failure. The child increases
+quadrature resolution, with no tolerance relaxation.
+
+The [local existence proof](reports/quantum-bridge/local-existence-and-adm-smoothness.md)
+establishes the smooth constrained Hamiltonian chart near Minkowski data
+for every fixed finite Schwartz TT basis, invoking specified standard
+weighted elliptic isomorphisms. It supplies neither a uniform-in-rank
+neighborhood nor a global Hamiltonian; those distinctions matter for the
+quantum extension and the physical cutoff limit.
+
+The [constructive quantum completion](reports/quantum-bridge/positive-local-quantum-completion.md)
+then extends that local Hamiltonian to a quadratic confining symbol outside
+a chosen neighborhood. Its direct Weyl quantization is an oscillator plus
+a bounded self-adjoint smoothing perturbation: its domain, lower bound,
+compact resolvent, ground state, and reflection-positive Euclidean time
+correlators follow explicitly. The same operator supplies unitary Lorentzian
+evolution and preserves every local formal bare-Weyl vertex. This establishes
+an interacting finite-mode existence completion, beyond a conditional
+spectral-theorem statement. The extension is an additional physical choice,
+exact finite-hbar correlators may depend on it, and no uniform-rank bound,
+archived Monte Carlo identification, microscopic edge theory, or full
+relativistic reconstruction has been derived.
+
+The 64/128-point refinement subsequently passed all specified loop controls
+and evaluated twenty diagonal plus two mixed one-loop two-point cases
+from the complete finite-mode gravitational polynomial. Its maximum
+scaled analytic-versus-quadrature error is $8.49\times10^{-17}$;
+[the reviewed result and complete data](reports/quantum-bridge/complete-quartic-and-two-point.md)
+preserve the failed parent as well. This removes the frequency-resolution
+issue and supplies actual two-point quantum coefficients under the same
+prescription. It does not evaluate the four-point observable, establish
+small quantum corrections at unit parameters, or control physical cutoff
+limits. Fifth/sixth-order spatial contractions were then the next required input.
+
+The [higher geometry and first Green-response run](reports/quantum-bridge/higher-geometry-green-validation.md)
+then passed two exact geometry directions, 68 independent finite-metric
+evaluations and 27 inverse/evaluator checks. Its largest independent
+coefficient error was $1.33\times10^{-15}$; the same Green implementation
+reproduced the known pure-momentum sixth-order integral through a separate
+radial comparison. Full fifth-order assembly and mixed sixth-order nested
+inverse contractions remained pending at that checkpoint, as did the gravitational four-point
+observable, microscopic corner dynamics and physical large-rank limits.
+
+The [full fifth-order functional](reports/quantum-bridge/full-fifth-order-evaluation.md)
+was then evaluated on two raw TT directions, retaining all momentum
+sectors. The first spatial-refinement attempt failed and was preserved;
+the 16/20/24-point child passed every declared family, integration-by-parts,
+tail and cancellation gate with no tolerance relaxation. Its maximum scaled
+spatial/refinement diagnostic is $7.58\times10^{-10}$. These two values do
+not reconstruct the fifth-order vertex tensor or its loop contraction.
+The complete mixed sixth-order energy, assembled four-point observable,
+microscopic corners and physical cutoff limits remained open at that
+checkpoint. An independently
+audited [sixth-order bilinear/tail reduction](reports/quantum-bridge/sixth-order-bilinear-and-tail-reduction.md)
+guided the next implementation without deleting the nested inverses
+or their algebraic exterior contributions.
+
+The [sixth-order source/backend suite](reports/quantum-bridge/sixth-order-backend-validation.md)
+subsequently passed nine Fourier integral controls, 72 synthetic tail checks,
+680 source-component comparisons, momentum parity and both gravitational-tail
+directions. The nonzero-monopole coefficient agrees exactly with its independent
+analytic target. An initial exterior-operation cap interruption is preserved;
+per-call reuse of exact moment triples completed the suite under the same cap
+and tolerances. This establishes tested ingredients, not the full mixed H6
+energy or the four-point observable. Canonical finite-vector terms, production
+nested pairings and complete energy integration were then the next calculation.
+
+The [prospective H6 pilot](reports/quantum-bridge/full-sixth-order-pilot.md)
+specified that calculation as twenty separately recorded energy entries,
+with exact canonical checks, an independent archived pure-momentum radial
+reference, Decimal triple-integral controls and a summed physical-unit error
+gate. No numerical production result was claimed at that implementation
+checkpoint. Independent full mixed-functional validation was required even
+if the pilot passed and remains open; this is still a classical prerequisite
+to the four-point loop.
+
+The first H6 pilot subsequently completed its pure-momentum reference
+(relative difference 7.81e-16), nine Decimal triple-integral controls,
+both directions' pointwise and canonical checks, and seventeen mixed
+energy entries. It stopped before nested integration because its redundant
+Laurent representation exceeded the declared 50-million evaluation cap.
+The [preserved partial result](reports/quantum-bridge/full-sixth-order-pilot.md)
+records this failure. Exact algebraic kernel consolidation was the proposed
+implementation repair; no full mixed value or four-point result existed at
+that failed attempt.
+
+The [exact consolidation implementation](reports/quantum-bridge/gaussian-kernel-consolidation.md)
+introduced preregistered representation and independent small-integral controls,
+with raw/compact kernel archival, before retrying the same provisional pilot.
+All original numerical settings remained unchanged. Numerical execution was
+pending at that preparation checkpoint. The
+[independent unreduced reference design](reports/quantum-bridge/unreduced-sixth-order-reference.md)
+addresses spatial W2/u3/u4 inverses and their exterior-source contributions;
+it is an algebraically reviewed design, not a measured mixed-energy validation.
+
+The [repaired H6 pilot](reports/quantum-bridge/full-sixth-order-results.md)
+has now completed all twenty mixed contributions at unchanged numerical
+settings. Its raw directional coefficient is 14796721.40459518 with summed
+physical diagnostic 5.79e-5; the independent pure-momentum reference and all
+new controls also passed. Exact consolidation brought both nested kernels
+within the original work cap. This establishes numerical assembly of the
+stated reduced formula, not independent full-functional validation. The
+next spatial reference and directional loop contractions remain necessary;
+no four-point loop, physical large-N limit or microscopic corner-state
+derivation has been completed by this milestone.

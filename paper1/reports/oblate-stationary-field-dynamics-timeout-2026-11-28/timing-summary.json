@@ -1,0 +1,295 @@
+{
+  "timings_are_nested": true,
+  "completed": [
+    {
+      "stage_id": 1,
+      "stage": "manufactured_controls",
+      "duration_seconds": 0.098664,
+      "end_child_seconds": 0.100048
+    },
+    {
+      "stage_id": 2,
+      "stage": "fixed_epsilon_field_conversion",
+      "duration_seconds": 3.001701,
+      "end_child_seconds": 3.101833
+    },
+    {
+      "stage_id": 3,
+      "stage": "radial_x0_gauge_right_kernel",
+      "duration_seconds": 0.596179,
+      "end_child_seconds": 3.698158
+    },
+    {
+      "stage_id": 4,
+      "stage": "principal_block_probe",
+      "duration_seconds": 0.246893,
+      "end_child_seconds": 3.947909
+    },
+    {
+      "stage_id": 7,
+      "stage": "solve_controls",
+      "duration_seconds": 0.417116,
+      "end_child_seconds": 4.365331
+    },
+    {
+      "stage_id": 8,
+      "stage": "apply_control_solution",
+      "duration_seconds": 0.202951,
+      "end_child_seconds": 4.568384
+    },
+    {
+      "stage_id": 9,
+      "stage": "independent_constraints",
+      "duration_seconds": 0.461888,
+      "end_child_seconds": 5.030363
+    },
+    {
+      "stage_id": 10,
+      "stage": "dae_checkpoint",
+      "duration_seconds": 0.459361,
+      "end_child_seconds": 5.489861
+    },
+    {
+      "stage_id": 11,
+      "stage": "differentiate_constraints",
+      "duration_seconds": 29.703429,
+      "end_child_seconds": 35.19336
+    },
+    {
+      "stage_id": 6,
+      "stage": "dae_step",
+      "duration_seconds": 31.245276,
+      "end_child_seconds": 35.193462
+    },
+    {
+      "stage_id": 13,
+      "stage": "solve_controls",
+      "duration_seconds": 1.146385,
+      "end_child_seconds": 36.339905
+    },
+    {
+      "stage_id": 14,
+      "stage": "apply_control_solution",
+      "duration_seconds": 0.888272,
+      "end_child_seconds": 37.228423
+    },
+    {
+      "stage_id": 15,
+      "stage": "independent_constraints",
+      "duration_seconds": 18.43919,
+      "end_child_seconds": 55.667702
+    },
+    {
+      "stage_id": 16,
+      "stage": "dae_checkpoint",
+      "duration_seconds": 1.347978,
+      "end_child_seconds": 57.015828
+    },
+    {
+      "stage_id": 17,
+      "stage": "differentiate_constraints",
+      "duration_seconds": 145.645213,
+      "end_child_seconds": 202.661137
+    },
+    {
+      "stage_id": 12,
+      "stage": "dae_step",
+      "duration_seconds": 167.467799,
+      "end_child_seconds": 202.661298
+    },
+    {
+      "stage_id": 19,
+      "stage": "solve_controls",
+      "duration_seconds": 9.361387,
+      "end_child_seconds": 212.022938
+    },
+    {
+      "stage_id": 20,
+      "stage": "apply_control_solution",
+      "duration_seconds": 153.437093,
+      "end_child_seconds": 365.460153
+    },
+    {
+      "stage_id": 21,
+      "stage": "independent_constraints",
+      "duration_seconds": 0.000106,
+      "end_child_seconds": 365.46037
+    },
+    {
+      "stage_id": 22,
+      "stage": "dae_checkpoint",
+      "duration_seconds": 3.740491,
+      "end_child_seconds": 369.20089
+    },
+    {
+      "stage_id": 18,
+      "stage": "dae_step",
+      "duration_seconds": 166.539625,
+      "end_child_seconds": 369.200972
+    },
+    {
+      "stage_id": 24,
+      "stage": "kernel_field_conversion",
+      "duration_seconds": 0.130436,
+      "end_child_seconds": 369.331463
+    },
+    {
+      "stage_id": 25,
+      "stage": "kernel_constraint_rref",
+      "duration_seconds": 24.171664,
+      "end_child_seconds": 393.503219
+    },
+    {
+      "stage_id": 26,
+      "stage": "kernel_denominator_normalization",
+      "duration_seconds": 1.152287,
+      "end_child_seconds": 394.655617
+    },
+    {
+      "stage_id": 27,
+      "stage": "kernel_build_embedding",
+      "duration_seconds": 0.002266,
+      "end_child_seconds": 394.657986
+    },
+    {
+      "stage_id": 28,
+      "stage": "kernel_original_constraint_product",
+      "duration_seconds": 88.97991,
+      "end_child_seconds": 483.637934
+    },
+    {
+      "stage_id": 29,
+      "stage": "kernel_to_expressions",
+      "duration_seconds": 1.540884,
+      "end_child_seconds": 485.178938
+    },
+    {
+      "stage_id": 23,
+      "stage": "terminal_embedding",
+      "duration_seconds": 115.980386,
+      "end_child_seconds": 485.181393
+    },
+    {
+      "stage_id": 30,
+      "stage": "terminal_state_snapshot",
+      "duration_seconds": 2.336871,
+      "end_child_seconds": 487.518323
+    },
+    {
+      "stage_id": 32,
+      "stage": "preservation_field_conversion",
+      "duration_seconds": 6.608815,
+      "end_child_seconds": 494.127232
+    },
+    {
+      "stage_id": 33,
+      "stage": "preservation_DC",
+      "duration_seconds": 0.236092,
+      "end_child_seconds": 494.363447
+    },
+    {
+      "stage_id": 34,
+      "stage": "preservation_CK",
+      "duration_seconds": 5.442093,
+      "end_child_seconds": 499.805648
+    },
+    {
+      "stage_id": 35,
+      "stage": "preservation_sum",
+      "duration_seconds": 0.010211,
+      "end_child_seconds": 499.815969
+    },
+    {
+      "stage_id": 36,
+      "stage": "preservation_CB",
+      "duration_seconds": 3e-05,
+      "end_child_seconds": 499.816061
+    },
+    {
+      "stage_id": 37,
+      "stage": "preservation_SM",
+      "duration_seconds": 64.192475,
+      "end_child_seconds": 564.008567
+    },
+    {
+      "stage_id": 38,
+      "stage": "preservation_zero_checks",
+      "duration_seconds": 2.4e-05,
+      "end_child_seconds": 564.008719
+    },
+    {
+      "stage_id": 31,
+      "stage": "terminal_constraint_preservation",
+      "duration_seconds": 76.492882,
+      "end_child_seconds": 564.011271
+    },
+    {
+      "stage_id": 40,
+      "stage": "terminal_dynamics_field_conversion",
+      "duration_seconds": 6.359915,
+      "end_child_seconds": 570.371246
+    },
+    {
+      "stage_id": 41,
+      "stage": "original_rows_field_blocks",
+      "duration_seconds": 0.050912,
+      "end_child_seconds": 570.422259
+    },
+    {
+      "stage_id": 42,
+      "stage": "original_rows_acceleration_state",
+      "duration_seconds": 0.061294,
+      "end_child_seconds": 570.483643
+    },
+    {
+      "stage_id": 43,
+      "stage": "original_rows_state_product",
+      "duration_seconds": 44.140736,
+      "end_child_seconds": 614.624481
+    },
+    {
+      "stage_id": 44,
+      "stage": "original_rows_control_product",
+      "duration_seconds": 3.9e-05,
+      "end_child_seconds": 614.624636
+    },
+    {
+      "stage_id": 39,
+      "stage": "terminal_original_22_rows",
+      "duration_seconds": 50.613547,
+      "end_child_seconds": 614.624856
+    },
+    {
+      "stage_id": 46,
+      "stage": "reduced_KM",
+      "duration_seconds": 240.46699,
+      "end_child_seconds": 855.091903
+    }
+  ],
+  "unfinished": [
+    {
+      "event": "begin",
+      "seconds": 3.947997,
+      "sequence": 10,
+      "stage": "dae_closure",
+      "stage_id": 5,
+      "utc": "2026-11-28T06:59:31.008535+00:00"
+    },
+    {
+      "event": "begin",
+      "seconds": 614.624881,
+      "sequence": 89,
+      "stage": "terminal_reduced_dynamics",
+      "stage_id": 45,
+      "utc": "2026-11-28T07:09:41.686789+00:00"
+    },
+    {
+      "event": "begin",
+      "seconds": 855.092018,
+      "sequence": 92,
+      "stage": "reduced_DM",
+      "stage_id": 47,
+      "utc": "2026-11-28T07:13:42.154476+00:00"
+    }
+  ]
+}

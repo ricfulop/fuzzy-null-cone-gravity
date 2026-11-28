@@ -1,0 +1,43 @@
+{
+  "exact_gradient_kernel": {
+    "N3": "arbitrary angle-independent F0(r)",
+    "N4_additional_templates": [
+      "e*x**3/3 + r**2*x",
+      "sqrt(1 - x**2)*(e*x**2/3 + 2*e/3 + r**2)"
+    ],
+    "N4_templates_meaning": "axisymmetric template plus real and imaginary parts of m=1 template times exp(i phi); each multiplied by an arbitrary smooth radial function",
+    "N4_gradient_m0": "polar degree 1",
+    "N4_gradient_m1_coefficients": [
+      "(-5*e/6 - r**2)/(e + r**2)",
+      "-I*e/(18*e + 18*r**2)"
+    ],
+    "N4_gradient_m1_rationalized_residual": [
+      "0",
+      "0"
+    ],
+    "gradient_identity_domain": "-1<x<1; equality of smooth retained fields extends across the coordinate poles",
+    "N4_gradient_m1_basis": [
+      "polar (ell,m)=(1,1)",
+      "axial (ell,m)=(2,1)"
+    ],
+    "radial_actual_shift_coefficient": "b=partial_r f, retained through L"
+  },
+  "counts": [
+    {
+      "N": 3,
+      "L": 2,
+      "leading_active_scalar_multiplets_real": 8,
+      "exact_redundant_lapse_profile_functions": 1,
+      "nonlinear_final_Dirac_classification": false
+    },
+    {
+      "N": 4,
+      "L": 3,
+      "leading_active_scalar_multiplets_real": 12,
+      "exact_redundant_lapse_profile_functions": 4,
+      "nonlinear_final_Dirac_classification": false
+    }
+  ],
+  "analytic_step_required": "weighted first-derivative forms on compact radial profiles and small-parameter operator perturbation",
+  "physical_DOF_count_established": false
+}

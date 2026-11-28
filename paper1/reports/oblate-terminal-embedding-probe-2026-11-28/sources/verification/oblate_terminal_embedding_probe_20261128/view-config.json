@@ -1,0 +1,22 @@
+{
+  "plan": [
+    {"phase": "setup", "of": 1, "unit": "environment"},
+    {"phase": "input_pin_verification", "of": 1, "unit": "check"},
+    {"phase": "manufactured_controls", "of": 1, "unit": "check"},
+    {"phase": "checkpoint_expression_parsing", "of": 1, "unit": "check"},
+    {"phase": "field_conversion", "of": 1, "unit": "check"},
+    {"phase": "constraint_rref", "of": 1, "unit": "check"},
+    {"phase": "denominator_normalization", "of": 1, "unit": "check"},
+    {"phase": "kernel_embedding", "of": 1, "unit": "check"},
+    {"phase": "original_constraint_product", "of": 1, "unit": "check"},
+    {"phase": "serialization", "of": 1, "unit": "check"}
+  ],
+  "brief": {
+    "question": "Can fraction-free exact arithmetic construct and verify the kernel of the saved six-by-fourteen state-constraint matrix within a bounded diagnostic?",
+    "healthy": "Six manufactured controls precede the pinned checkpoint calculation. Each algebraic operation has its own phase. Original C times M must vanish exactly in QQ(r,T), and free-coordinate rows must be the identity.",
+    "worth_a_flag": "A traceback, input or source digest mismatch, failed exact kernel product, resource stop, or unclean process group.",
+    "decided": "Repair diagnostic only, one local CPU child for at most 300s and 2GiB sampled group RSS. Partial checkpoint input is authenticated diagnostic data, not a certified closure or resume. No dynamics, all-22 Euler rows, response, interval or physical DOF claim.",
+    "from_parent": "The full closure run completed three elimination stages at360.67s, then reached900s wall limit in the combined terminal_embedding stage. This diagnostic avoids repeating elimination and leaves its historical constraint basis unchanged."
+  },
+  "watch": {"minGapS": 120, "maxGapS": 180}
+}

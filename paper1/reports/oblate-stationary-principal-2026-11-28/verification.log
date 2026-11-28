@@ -1,0 +1,24 @@
+::orx:: {"phase": "setup", "step": 1, "of": 1, "unit": "environment"}
+PROGRESS {"event": "invocation_begin", "seconds": 0.001281, "sequence": 1, "utc": "2026-11-28T04:55:56.260095+00:00"}
+::orx:: {"phase": "manufactured_controls", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 0.001339, "sequence": 2, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T04:55:56.260152+00:00"}
+PROGRESS {"duration_seconds": 0.036845, "event": "end", "seconds": 0.038189, "sequence": 3, "stage": "manufactured_controls", "stage_id": 1, "utc": "2026-11-28T04:55:56.297002+00:00"}
+::orx:: {"phase": "manufactured_controls", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"m": {"manufactured_controls_passed": 1}}
+::orx:: {"phase": "fixed_epsilon_field_conversion", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 0.038257, "sequence": 4, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T04:55:56.297069+00:00"}
+PROGRESS {"duration_seconds": 3.23014, "event": "end", "seconds": 3.268401, "sequence": 5, "stage": "fixed_epsilon_field_conversion", "stage_id": 2, "utc": "2026-11-28T04:55:59.527220+00:00"}
+::orx:: {"phase": "fixed_epsilon_field_conversion", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"phase": "radial_x0_gauge_right_kernel", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 3.268515, "sequence": 6, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T04:55:59.527332+00:00"}
+PROGRESS {"duration_seconds": 0.602055, "event": "end", "seconds": 3.870574, "sequence": 7, "stage": "radial_x0_gauge_right_kernel", "stage_id": 3, "utc": "2026-11-28T04:56:00.129393+00:00"}
+::orx:: {"phase": "radial_x0_gauge_right_kernel", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"phase": "principal_block_probe", "step": 0, "of": 1, "unit": "check"}
+PROGRESS {"event": "begin", "seconds": 3.87069, "sequence": 8, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T04:56:00.129508+00:00"}
+PROGRESS {"duration_seconds": 0.40735, "event": "end", "seconds": 4.278044, "sequence": 9, "stage": "principal_block_probe", "stage_id": 4, "utc": "2026-11-28T04:56:00.536864+00:00"}
+::orx:: {"phase": "principal_block_probe", "step": 1, "of": 1, "unit": "check"}
+::orx:: {"m": {"principal_rank": 4, "gauge_verified": 1}}
+::orx:: {"phase": "export", "step": 0, "of": 1, "unit": "bundle"}
+::orx:: {"phase": "export", "step": 1, "of": 1, "unit": "bundle", "m": {"principal_probe_passed": 1}}
+PASS: exact principal block and radial gauge; no DAE closure or solution germ.
+PROGRESS {"event": "invocation_return", "seconds": 4.281256, "sequence": 10, "utc": "2026-11-28T04:56:00.540075+00:00"}

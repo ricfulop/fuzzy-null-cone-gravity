@@ -1,0 +1,9 @@
+<signal name="state_germ_certificate_passed" label="Direct-state certificate accepted" digits="0" labels='{"0":"unconfirmed","1":"passed"}' />
+<signal name="manufactured_case_count" label="Manufactured controls passed" digits="0" />
+<signal name="certified_response_nonzero" label="Nonzero response witness" digits="0" labels='{"0":"not certified","1":"certified"}' />
+<signal name="response_determined" label="Response determined on the certified family" digits="0" />
+<signal name="formal_response_nonzero" label="Formal response on the forward family" digits="0" />
+<view headline="state_germ_certificate_passed manufactured_case_count certified_response_nonzero">
+  <stats of="response_determined formal_response_nonzero" />
+  <text>A certificate requires local regularity, a rank-six minor, preservation and all 22 retained equations. A nonzero witness also requires numerator separation at the same radius. An unresolved response is recorded as null.</text>
+</view>

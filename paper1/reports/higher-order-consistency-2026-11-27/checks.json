@@ -1,0 +1,153 @@
+{
+  "normalization": "(16piG)/(4pi) times Einstein-Hilbert action; angular average dOmega/(4pi)",
+  "geometry": {
+    "descriptor": "xi^x = 3*w(r)*x*(1-x^2); xi^r=xi^phi=0",
+    "coordinate_tangent_defect": [
+      [
+        "-12*kappa*x**2*(x - 1)*(x + 1)*w(r)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-12*kappa*r**2*(3*x**2 - 1)*w(r)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "unit_component_defect": [
+      "-12*x**2*(x - 1)*(x + 1)",
+      "6*(x - 1)*(x + 1)*(3*x**2 - 1)",
+      "0",
+      "-6*(3*x**2 - 1)"
+    ],
+    "coefficient_transform_matches_full_Lie_derivative": true,
+    "two_derivations_of_defect_agree": true,
+    "radial_profile_derivatives_cancel": true,
+    "coefficient_V_variation": "-3*x*(x - 1)*(x + 1)*Derivative(w(r), r)"
+  },
+  "ADM_chain_rule": {
+    "alpha_at_fixed_temporal_witness": "1 for every spatial coefficient",
+    "beta_at_fixed_temporal_witness": "0 for every spatial coefficient",
+    "spatial_derivatives_of_alpha_beta_vanish": true,
+    "other_chain_rule_terms": "multiply initially zero full continuum constraints"
+  },
+  "checks": [
+    {
+      "N": 3,
+      "L": 2,
+      "first_secondary_preservation_solvable": true,
+      "lapse_rate_kernel_all_m": [
+        [
+          0,
+          0
+        ]
+      ],
+      "normal_acceleration_residue": [
+        "-8*(35*x**4 - 30*x**2 + 3)/105",
+        "-8*(35*x**4 - 30*x**2 + 3)/105",
+        "8*x*(7*x**2 - 3)/21",
+        "8*(7*x**2 - 1)/21"
+      ],
+      "discarded_changing_shift_tangent": [
+        "-12*(35*x**4 - 30*x**2 + 3)/35",
+        "18*(35*x**4 - 30*x**2 + 3)/35",
+        "0",
+        "-18*(7*x**2 - 1)/7"
+      ],
+      "unit_DeWitt_integrand": "32*(x - 1)*(x + 1)*(35*x**6 - 35*x**4 + 17*x**2 - 1)/35",
+      "unit_DeWitt_contraction": "-1024/1575",
+      "second_preservation_coefficient": "-512/1575",
+      "radial_and_curvature_factor": "kappa^3 * integral r^2*w(r) dr",
+      "depends_on_free_first_temporal_rates": false,
+      "depends_on_second_temporal_rates": false,
+      "smooth_projected_solution_through_fixed_witness": false,
+      "quadrature_checks": [
+        {
+          "nodes": 24,
+          "C_W_second_derivative_coefficient": -0.32507936507936486,
+          "absolute_error": 2.220446049250313e-16
+        },
+        {
+          "nodes": 48,
+          "C_W_second_derivative_coefficient": -0.3250793650793642,
+          "absolute_error": 8.881784197001252e-16
+        },
+        {
+          "nodes": 96,
+          "C_W_second_derivative_coefficient": -0.32507936507936563,
+          "absolute_error": 5.551115123125783e-16
+        }
+      ]
+    },
+    {
+      "N": 4,
+      "L": 3,
+      "first_secondary_preservation_solvable": true,
+      "lapse_rate_kernel_all_m": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "normal_acceleration_residue": [
+        "-8*(35*x**4 - 30*x**2 + 3)/105",
+        "-8*(35*x**4 - 30*x**2 + 3)/105",
+        "8*x*(7*x**2 - 3)/21",
+        "8*(7*x**2 - 1)/21"
+      ],
+      "discarded_changing_shift_tangent": [
+        "-12*(35*x**4 - 30*x**2 + 3)/35",
+        "18*(35*x**4 - 30*x**2 + 3)/35",
+        "0",
+        "-18*(7*x**2 - 1)/7"
+      ],
+      "unit_DeWitt_integrand": "32*(x - 1)*(x + 1)*(35*x**6 - 35*x**4 + 17*x**2 - 1)/35",
+      "unit_DeWitt_contraction": "-1024/1575",
+      "second_preservation_coefficient": "-512/1575",
+      "radial_and_curvature_factor": "kappa^3 * integral r^2*w(r) dr",
+      "depends_on_free_first_temporal_rates": false,
+      "depends_on_second_temporal_rates": false,
+      "smooth_projected_solution_through_fixed_witness": false,
+      "quadrature_checks": [
+        {
+          "nodes": 24,
+          "C_W_second_derivative_coefficient": -0.32507936507936486,
+          "absolute_error": 2.220446049250313e-16
+        },
+        {
+          "nodes": 48,
+          "C_W_second_derivative_coefficient": -0.3250793650793642,
+          "absolute_error": 8.881784197001252e-16
+        },
+        {
+          "nodes": 96,
+          "C_W_second_derivative_coefficient": -0.32507936507936563,
+          "absolute_error": 5.551115123125783e-16
+        }
+      ]
+    }
+  ],
+  "meaning": "No sufficiently smooth retained Euler-Lagrange trajectory through this fixed witness at N=3,4.",
+  "regularity": "enough time and radial derivatives for the twice differentiated secondary and differentiated spatial equations",
+  "final_constraint_surface_classified": false,
+  "generic_physical_DOF_count_established": false,
+  "all_initial_data_excluded": false,
+  "full_nonlinear_goal_complete": false
+}
