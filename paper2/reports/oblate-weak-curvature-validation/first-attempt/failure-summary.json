@@ -1,0 +1,30 @@
+{
+  "run_id": "85aa6197-97a5-4a4a-9239-4119a350d7ef",
+  "source_commit": "42200f8c135e9ae5837a25515ba33b3c4055e1fe",
+  "framework_exit_code": 1,
+  "elapsed_seconds": 667.5255475000013,
+  "primary_stop_reason": "sampled_group_rss_budget",
+  "cleanup_error": "PermissionError from killpg(group,0), then killpg(SIGKILL)",
+  "scientific_child_exit_code": null,
+  "peak_sampled_group_rss_bytes": 2150842368,
+  "resource_sample_count": 2271,
+  "completed_batches": [
+    "derivative_slots_m0",
+    "derivative_slots_m1",
+    "derivative_slots_m2"
+  ],
+  "first_incomplete_batch": "pure_gauge_control m=0",
+  "final_scientific_json_present": false,
+  "assertion_failure_observed": false,
+  "source_hashes_match": true,
+  "process_observation": {
+    "utc": "2026-11-28T05:03:18.321318+00:00",
+    "checked_pids": [
+      38038,
+      38040
+    ],
+    "checked_pgid": 38038,
+    "matching_process_rows": []
+  },
+  "interpretation": "Memory-budget stop and cleanup failure; partial sampled controls only, no complete validation or physical conclusion."
+}
