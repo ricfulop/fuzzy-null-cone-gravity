@@ -1,0 +1,216 @@
+{
+  "companion_PR": 7,
+  "companion_commit": "5e0ab55afed69f24432bccffd6ac2a781f29cfbf",
+  "source_sha256": "fcf4b5bd515ee1822c8b6ec3697e8c4ff99b84f03263dace1633d00bf05fe582",
+  "full_benchmark_reproduction": "passed",
+  "nonlinear_identity_20_additional_seeds": [
+    {
+      "seed": 30,
+      "result": {
+        "sqrt_minus_g_R4": 0.9018776897450225,
+        "L0_plus_dL0_plus_divL": 0.9018776897450225,
+        "abs_diff": 0.0
+      }
+    },
+    {
+      "seed": 31,
+      "result": {
+        "sqrt_minus_g_R4": -0.18384503452275305,
+        "L0_plus_dL0_plus_divL": -0.18384503452275303,
+        "abs_diff": 2.7755575615628914e-17
+      }
+    },
+    {
+      "seed": 32,
+      "result": {
+        "sqrt_minus_g_R4": -1.3415933083898397,
+        "L0_plus_dL0_plus_divL": -1.3415933083898395,
+        "abs_diff": 2.220446049250313e-16
+      }
+    },
+    {
+      "seed": 33,
+      "result": {
+        "sqrt_minus_g_R4": 0.2637774786014983,
+        "L0_plus_dL0_plus_divL": 0.26377747860149836,
+        "abs_diff": 5.551115123125783e-17
+      }
+    },
+    {
+      "seed": 34,
+      "result": {
+        "sqrt_minus_g_R4": 0.33213150860686935,
+        "L0_plus_dL0_plus_divL": 0.33213150860686924,
+        "abs_diff": 1.1102230246251565e-16
+      }
+    },
+    {
+      "seed": 35,
+      "result": {
+        "sqrt_minus_g_R4": 1.7087004006263018,
+        "L0_plus_dL0_plus_divL": 1.7087004006263025,
+        "abs_diff": 6.661338147750939e-16
+      }
+    },
+    {
+      "seed": 36,
+      "result": {
+        "sqrt_minus_g_R4": -0.7592218814639077,
+        "L0_plus_dL0_plus_divL": -0.7592218814639078,
+        "abs_diff": 1.1102230246251565e-16
+      }
+    },
+    {
+      "seed": 37,
+      "result": {
+        "sqrt_minus_g_R4": -0.6304217351045127,
+        "L0_plus_dL0_plus_divL": -0.6304217351045126,
+        "abs_diff": 1.1102230246251565e-16
+      }
+    },
+    {
+      "seed": 38,
+      "result": {
+        "sqrt_minus_g_R4": 1.400290243203653,
+        "L0_plus_dL0_plus_divL": 1.4002902432036535,
+        "abs_diff": 4.440892098500626e-16
+      }
+    },
+    {
+      "seed": 39,
+      "result": {
+        "sqrt_minus_g_R4": 0.19620938521593503,
+        "L0_plus_dL0_plus_divL": 0.19620938521593506,
+        "abs_diff": 2.7755575615628914e-17
+      }
+    },
+    {
+      "seed": 40,
+      "result": {
+        "sqrt_minus_g_R4": -0.7203331271394893,
+        "L0_plus_dL0_plus_divL": -0.7203331271394899,
+        "abs_diff": 6.661338147750939e-16
+      }
+    },
+    {
+      "seed": 41,
+      "result": {
+        "sqrt_minus_g_R4": 1.867542023015459,
+        "L0_plus_dL0_plus_divL": 1.8675420230154596,
+        "abs_diff": 6.661338147750939e-16
+      }
+    },
+    {
+      "seed": 42,
+      "result": {
+        "sqrt_minus_g_R4": -0.6648997834387109,
+        "L0_plus_dL0_plus_divL": -0.664899783438711,
+        "abs_diff": 1.1102230246251565e-16
+      }
+    },
+    {
+      "seed": 43,
+      "result": {
+        "sqrt_minus_g_R4": 0.1550350367199827,
+        "L0_plus_dL0_plus_divL": 0.15503503671998276,
+        "abs_diff": 5.551115123125783e-17
+      }
+    },
+    {
+      "seed": 44,
+      "result": {
+        "sqrt_minus_g_R4": -0.17913353477313776,
+        "L0_plus_dL0_plus_divL": -0.17913353477313795,
+        "abs_diff": 1.942890293094024e-16
+      }
+    },
+    {
+      "seed": 45,
+      "result": {
+        "sqrt_minus_g_R4": -0.25513382457211864,
+        "L0_plus_dL0_plus_divL": -0.25513382457211875,
+        "abs_diff": 1.1102230246251565e-16
+      }
+    },
+    {
+      "seed": 46,
+      "result": {
+        "sqrt_minus_g_R4": -0.02084203808911065,
+        "L0_plus_dL0_plus_divL": -0.020842038089110615,
+        "abs_diff": 3.469446951953614e-17
+      }
+    },
+    {
+      "seed": 47,
+      "result": {
+        "sqrt_minus_g_R4": -0.3111670249763692,
+        "L0_plus_dL0_plus_divL": -0.31116702497636917,
+        "abs_diff": 5.551115123125783e-17
+      }
+    },
+    {
+      "seed": 48,
+      "result": {
+        "sqrt_minus_g_R4": 0.9019512394977568,
+        "L0_plus_dL0_plus_divL": 0.9019512394977571,
+        "abs_diff": 3.3306690738754696e-16
+      }
+    },
+    {
+      "seed": 49,
+      "result": {
+        "sqrt_minus_g_R4": -1.0866065554309794,
+        "L0_plus_dL0_plus_divL": -1.0866065554309796,
+        "abs_diff": 2.220446049250313e-16
+      }
+    }
+  ],
+  "corrected_action_F0_0": {
+    "eps4_mmpp": 6.826792447357116e-13,
+    "eps4_mpmp": 2.787184846078009e-13,
+    "eps4_mppm": 8.242610163324054e-13,
+    "eps4_pppp": 1.27561589034388e-13,
+    "eps4_mppp": 2.2687097094890002e-13,
+    "sign_convention_match": 1
+  },
+  "corrected_action_F0_1": {
+    "eps4_mmpp": 6.826792447357116e-13,
+    "eps4_pppp": 1.2676832831154056e-13,
+    "eps4_mppp": 2.553079915564077e-13
+  },
+  "ward_and_soft_limit": {
+    "foliation_rotation_spread": 9.343110639570775e-14,
+    "foliation_max_vs_klt_err": 8.590645353162487e-14,
+    "pure_gauge_ward_projection_residual": 3.61888430622384e-16,
+    "moyal_theta0p05_rotation_spread": 0.007167925037812237,
+    "weinberg_soft_limit_scan": [
+      {
+        "omega_q": 0.001,
+        "S_bs_abs": 177.6301234259678,
+        "S_weinberg_abs": 176.62870802751527,
+        "rel_err": 0.005669607220908482
+      },
+      {
+        "omega_q": 1e-05,
+        "S_bs_abs": 17663.87081690552,
+        "S_weinberg_abs": 17662.870802751524,
+        "rel_err": 5.661673943971566e-05
+      },
+      {
+        "omega_q": 1e-07,
+        "S_bs_abs": 1766288.0802752955,
+        "S_weinberg_abs": 1766287.0802751526,
+        "rel_err": 5.661594619161428e-07
+      }
+    ]
+  },
+  "ablations": {
+    "drop_prop1_constraint_mmpp": 3769.5031956066596,
+    "drop_prop1_constraint_pppp": 1.27561589034388e-13,
+    "drop_prop1_constraint_mppp": 3.025491802164674e-11,
+    "drop_sl2_quartic_mmpp": 0.24527786849926686,
+    "drop_sl2_quartic_pppp": 1.2701095917849533e-13,
+    "paper1_eq_A1_u1_symmetry_mmpp": 1.0
+  },
+  "scope": "Continuum affine Bondi-Sachs weak-field tree benchmark. It is not a finite-rank Dirac algebra, a boundary quantization, or an HMC equivalence proof."
+}

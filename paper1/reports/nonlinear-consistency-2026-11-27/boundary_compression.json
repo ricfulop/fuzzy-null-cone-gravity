@@ -1,0 +1,60 @@
+{
+  "finite_CCR": "Impossible for d>0 and nonzero hbar: Tr[A,B]=0, Tr(i*hbar*I)=i*hbar*d.",
+  "finite_unitary_sl2R": "For Hermitian J,K1,K2 with [J,K1]=iK2, [J,K2]=-iK1, [K1,K2]=-iJ, trace cyclicity forces Tr(K2^2)=-Tr(J^2); all generators vanish.",
+  "projected_commutator": "[PAP,PBP]=P[A,B]P-PAQBP+PBQAP; Q=I-P.",
+  "expectation_defect_bound": "2 ||QA psi|| ||QB psi|| for Hermitian A and B, orthogonal P, and normalized psi in ran(P).",
+  "oscillator_checks": [
+    {
+      "dimension": 2,
+      "trace_commutator": "0",
+      "CCR_defect_operator_norm": 2,
+      "CCR_defect_on_vacuum": "0",
+      "CCR_defect_on_top_state": "-2*I"
+    },
+    {
+      "dimension": 4,
+      "trace_commutator": "0",
+      "CCR_defect_operator_norm": 4,
+      "CCR_defect_on_vacuum": "0",
+      "CCR_defect_on_top_state": "-4*I"
+    },
+    {
+      "dimension": 8,
+      "trace_commutator": "0",
+      "CCR_defect_operator_norm": 8,
+      "CCR_defect_on_vacuum": "0",
+      "CCR_defect_on_top_state": "-8*I"
+    },
+    {
+      "dimension": 16,
+      "trace_commutator": "0",
+      "CCR_defect_operator_norm": 16,
+      "CCR_defect_on_vacuum": "0",
+      "CCR_defect_on_top_state": "-16*I"
+    }
+  ],
+  "general_compression_checks": [
+    {
+      "ambient_dimension": 8,
+      "retained_dimension": 3,
+      "compression_identity_residual": 7.488863730937846e-16,
+      "state_defect_magnitude": 0.15692030898487713,
+      "leakage_bound": 5.29145907857082
+    },
+    {
+      "ambient_dimension": 12,
+      "retained_dimension": 5,
+      "compression_identity_residual": 3.4124687274380967e-15,
+      "state_defect_magnitude": 2.1562597534080705,
+      "leakage_bound": 16.2700444852401
+    },
+    {
+      "ambient_dimension": 20,
+      "retained_dimension": 8,
+      "compression_identity_residual": 9.656866399157931e-15,
+      "state_defect_magnitude": 4.585843422486294,
+      "leakage_bound": 30.18226353921343
+    }
+  ],
+  "scope": "A finite admissible subspace can carry compressed observables with quantified defects; it cannot preserve the exact canonical pair or a nontrivial unitary sl(2,R) algebra. The physical corner reduction, inner product, and gluing remain to be derived."
+}

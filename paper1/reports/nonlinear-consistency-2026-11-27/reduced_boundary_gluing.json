@@ -1,0 +1,20 @@
+{
+  "boundary_dimension_per_side": 5,
+  "tensor_product_dimension": 25,
+  "reduced_gluing_dimension": 2,
+  "projection_rank": 2,
+  "Hermiticity_residual": "0",
+  "idempotence_residual": "0",
+  "area_constraint_residual": "0",
+  "rotation_constraint_residuals": [
+    "0",
+    "0",
+    "0"
+  ],
+  "constraint_kernel_dimension": 2,
+  "same_orientation_kernel_dimension": 0,
+  "unitarity_on_reduced_space_residual": "0",
+  "discrete_sewing_residual": "0",
+  "construction": "P=sum_n |Omega_n><Omega_n| with dual representation on the second boundary; boost parameter is not an operator.",
+  "scope": "Exact for the explicitly selected reduced R x SU(2) boundary model. The full gravitational corner reduction, area spectrum, and coupling to the bulk are not derived."
+}
