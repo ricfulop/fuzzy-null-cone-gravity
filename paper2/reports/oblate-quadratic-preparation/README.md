@@ -8,7 +8,8 @@ Prepared under user approval `msg_7c4562eb`. Physics is pinned to the original P
 - [Spatial-curvature Hessian](potential-hessian.md): the complete covariant flat-background operator, first-derivative weak form, connection coefficients, and Green flux.
 - [Boundary/domain analysis](boundary-domain.md): compatible-domain requirements, endpoint obstructions, canonical dual bases, and clearly labelled shell-diagnostic options.
 - [Machine-readable interface](interface.json): field/normalization metadata, formal blocks, unresolved choices, and the seed handoff to Paper I's nonlinear analysis.
-- [First check proposal](next-check.md): an exact command, fixed coverage, source provenance, and local resource estimate. **Not launched.**
+- [First check proposal](next-check.md): the original preparation-stage command, fixed coverage, source provenance, and local resource estimate.
+- [First kinematic check](first-kinematic-check/README.md): the separately authorized invocation failed at an exact-zero reference comparison; the log and source provenance are preserved, with no correction or retry.
 
 Implementation preparation is in `paper2/verification/oblate_quadratic_preparation/`:
 
@@ -20,7 +21,7 @@ Implementation preparation is in `paper2/verification/oblate_quadratic_preparati
 
 ## Result status
 
-The derivations define how to assemble the missing stationary operator. The new implementation has **not** been scientifically executed. No finite radial `K,E,D` matrices, physical spectrum, on-shell seed, nonlinear compatibility value, or degree-of-freedom count have been produced. Syntax/metadata inspection, if recorded in the artifact manifest, is not a scientific verification.
+The derivations define how to assemble the missing stationary operator. The preparation at `ee7d0a3` was unrun. The first separately authorized local check subsequently passed the `m=0` geometry/reference sector and failed at the `m=1` reference equality predicate; later controls were not reached. See the linked execution report for the preserved expression and the bounded diagnosis. No finite radial `K,E,D` matrices, physical spectrum, on-shell seed, nonlinear compatibility value, or degree-of-freedom count have been produced. Syntax/metadata inspection is not a scientific verification.
 
 Two preparation reviews reconciled the potential normalization, realification convention, and adjoint/boundary distinction. The review also exposed and corrected a missing one-half in the draft potential cross terms and errors in a draft finite momentum-conversion description before scientific execution. Review is not a substitute for the proposed independent calculations.
 
@@ -32,4 +33,4 @@ The two operator preparation tasks can proceed analytically in parallel, but fin
 
 ## Decision after preparation
 
-The smallest next action is the separately approved kinematic check in `next-check.md`. A pass would justify the next independent curvature/Green-identity validation. It would not authorize a spectrum run. Physical boundary choices, finite radial assembly, numerical rank policy, and a genuinely on-shell seed remain subsequent decisions. Local exact work is sufficient for the proposed check; no SSH or B200 allocation is requested.
+The first invocation is preserved in `first-kinematic-check/`. The proposed next action is a separately approved exact-zero diagnostic/correction and one rerun with the original kinematic coverage. A pass would justify proposing the next independent curvature/Green-identity validation. It would not authorize a spectrum run. Physical boundary choices, finite radial assembly, numerical rank policy, and a genuinely on-shell seed remain subsequent decisions. Local exact work is sufficient; no SSH or B200 allocation is requested.
