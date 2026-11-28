@@ -151,27 +151,66 @@ class TripleHeatTail:
         factor = _exact(factor)
         return TripleHeatTail({key: factor*value for key, value in self.coefficients.items()})
 
-    def exterior_coefficients(self, max_products=1_000_000):
-        """Return immutable exact A[k,nu], including all signed cancellations."""
+    def exterior_data(self, max_products=1_000_000, *, method="cached"):
+        """Return exact A[k,nu] and deterministic per-call expansion work counts.
+
+        The cached path expands each sorted moment triple once, independent
+        of its coefficient and radial degree. Each input then shifts that
+        expansion by degree+2. The raw path retains the original per-bin
+        convolution for independent exact controls. Both retain every power
+        and erf count until the complete signed merge. The budget counts
+        convolution products and final scatter entries; no warm triple cache
+        from an earlier call affects its acceptance.
+        """
         if type(max_products) is not int or max_products < 1:
             raise ValueError("max_products must be a positive integer")
-        result = {}
-        products = 0
+        if method not in ("cached", "raw"):
+            raise ValueError("Exterior expansion method must be cached or raw")
+        result, cache = {}, {}
+        convolution_products = scatters = cache_hits = 0
+        def charge(count, kind):
+            nonlocal convolution_products, scatters
+            if kind == "convolution":
+                convolution_products += count
+            else:
+                scatters += count
+            if convolution_products+scatters > max_products:
+                raise RuntimeError("Exact exterior-expansion product budget exceeded")
         for (degree, *moments), coefficient in self.coefficients.items():
-            partial = {(0, degree+2): coefficient}
-            for m in moments:
-                next_terms = {}
-                expansion = moment_exterior_coefficients(m)
-                products += len(partial)*len(expansion)
-                if products > max_products:
-                    raise RuntimeError("Exact exterior-expansion product budget exceeded")
-                for (k, nu), value in partial.items():
-                    for (other_k, other_nu), other_value in expansion.items():
-                        _add(next_terms, (k+other_k, nu+other_nu), value*other_value)
-                partial = next_terms
-            for key, value in partial.items():
-                _add(result, key, value)
-        return MappingProxyType(result)
+            triple = tuple(moments)
+            if method == "cached" and triple in cache:
+                partial = cache[triple]
+                cache_hits += 1
+            else:
+                partial = {(0, 0): F(1)} if method == "cached" else {(0, degree+2): coefficient}
+                for m in moments:
+                    next_terms = {}
+                    expansion = moment_exterior_coefficients(m)
+                    charge(len(partial)*len(expansion), "convolution")
+                    for (k, nu), value in partial.items():
+                        for (other_k, other_nu), other_value in expansion.items():
+                            _add(next_terms, (k+other_k, nu+other_nu), value*other_value)
+                    partial = next_terms
+                if method == "cached":
+                    cache[triple] = partial
+            charge(len(partial), "scatter")
+            for (k, nu), value in partial.items():
+                if method == "cached":
+                    _add(result, (k, nu+degree+2), coefficient*value)
+                else:
+                    _add(result, (k, nu), value)
+        return MappingProxyType(result), {
+            "method": method, "input_bins": len(self.coefficients), "exterior_bins": len(result),
+            "unique_moment_triples": len({key[1:] for key in self.coefficients}),
+            "cached_triples": len(cache), "cache_hits": cache_hits,
+            "convolution_products": convolution_products, "scatter_entries": scatters,
+            "product_operations": convolution_products+scatters, "max_products": max_products,
+            "budget_scope": "Per-call convolution products plus coefficient/bin scatter entries",
+        }
+
+    def exterior_coefficients(self, max_products=1_000_000, *, method="cached"):
+        """Return immutable exact A[k,nu], including all signed cancellations."""
+        return self.exterior_data(max_products, method=method)[0]
 
     def evaluate_radial(self, radius):
         """Regular moment representation; includes the radial measure and 4*pi."""

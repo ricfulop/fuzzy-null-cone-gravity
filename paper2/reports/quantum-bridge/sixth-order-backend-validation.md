@@ -92,6 +92,35 @@ authorization deadline. No GPU or remote service is used. Partial results
 are checkpointed and failed gates retained. The complete effective config,
 source commit and run id are emitted with the output.
 
+### First attempt and bounded implementation repair
+
+Run `c9bfec9d-1fb5-476f-a96a-54e2dccdddb4`, source
+`4dd4c03a2b498833581bdb9d23032fc56f450a46`, stopped after 95.91 seconds
+at the one-million-operation exterior-expansion cap in the second mixed
+direction. This was a computation-budget exception, not a failed physical
+identity. The overall suite remains incomplete. The [partial output](data/sixth-backend-first-attempt.json)
+was preserved byte for byte, along with its source and raw log.
+
+Before that exception, all nine Fourier controls, 67 synthetic tail checks,
+680 source-component comparisons across four directions, and exact momentum
+parity passed. The largest source discrepancy was $8.08\times10^{-14}$
+scaled. The nonzero-monopole direction passed all 29 tail checks, including
+the exact leading coefficient $-16309479355785/268435456$; its maximum
+sphere/collapsed discrepancy was $9.79\times10^{-13}$ scaled. These are
+ingredient results, not a complete mixed sixth-order energy.
+
+The repair expands each distinct sorted moment triple once per call and
+then shifts its powers for each radial degree. It preserves every exact
+coefficient, all cancellations, the million-operation cap, and every
+numerical tolerance. Work counts include convolution and final scatter
+entries. The prior uncached implementation remains as an exact reference
+path. New controls compare signed repeated triples, exact work boundaries
+and deterministic per-call counts. The first gravitational direction must
+also reproduce the entire preserved raw exterior coefficient dictionary.
+The same provisional experiment is retried because its requested full
+suite was interrupted by an implementation work limit. No original run
+snapshot or partial measurement is altered.
+
 Independent code review has inspected normalization, signs, phases,
 Gaussian rates, source contractions and the asserted checks. It supplies
 no measured result. Shared first-HEAT constructors and evaluators limit the

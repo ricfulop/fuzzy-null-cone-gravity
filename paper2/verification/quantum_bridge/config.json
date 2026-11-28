@@ -1,5 +1,6 @@
 {
   "calculation": "sixth_backend_validation",
+  "prior_tail_reference": "reports/quantum-bridge/data/sixth-backend-first-attempt.json",
   "source_directions": [
     "monopole_mixed",
     "noncommuting_labels",

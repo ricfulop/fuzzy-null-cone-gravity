@@ -92,6 +92,10 @@ def main(config):
             or len(set(tail_names)) != len(tail_names) or not required_tails.issubset(tail_names)
             or not set(tail_names).issubset(names)):
         raise ValueError("Required distinct source/tail directions must be retained, with tails a subset of sources")
+    reference = json.loads((ROOT.parents[1] / config["prior_tail_reference"]).read_text())
+    if reference["source_commit"] != "4dd4c03a2b498833581bdb9d23032fc56f450a46":
+        raise ValueError("Unexpected source for preserved raw exterior comparison")
+    reference_tail = next(row for row in reference["gravitational_tail_checks"] if row["name"] == "monopole_mixed")
     def timeout(signum, frame):
         raise TimeoutError("Declared local sixth-order backend wall limit reached")
     signal.signal(signal.SIGALRM, timeout)
@@ -186,6 +190,14 @@ def main(config):
             data, _ = prepared[name]
             record = check_gravitational_tail(data, name, config,
                 progress=lambda row: print("GRAVITATIONAL TAIL PROGRESS "+json.dumps(row), flush=True))
+            if name == "monopole_mixed":
+                record["historical_raw_expansion"] = {
+                    "source_commit": reference["source_commit"], "run": reference["run"],
+                    "exact_coefficients_equal": record["exterior_coefficients"] == reference_tail["exterior_coefficients"],
+                    "monopoles_equal": record["monopoles_normalized"] == reference_tail["monopoles_normalized"],
+                }
+                record["passed"] = (record["passed"] and record["historical_raw_expansion"]["exact_coefficients_equal"]
+                                    and record["historical_raw_expansion"]["monopoles_equal"])
             result["gravitational_tail_checks"].append(record)
             print("GRAVITATIONAL TAIL CHECK "+json.dumps(record), flush=True)
             report(step=index, m={"gravitational_tail_error": record["maximum_scaled_error"]})

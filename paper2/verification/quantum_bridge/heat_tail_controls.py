@@ -179,6 +179,19 @@ def run_tail_controls(config):
     tolerance = settings["tail_control_tolerance"]
     product_cap = settings["tail_max_pair_products"]
     exterior_cap = settings["tail_max_exterior_products"]
+    repeated = TripleHeatTail({(0, 0, 1, 2): F(3, 7), (2, 0, 1, 2): -F(5, 11),
+                              (4, 1, 1, 3): F(2), (0, 1, 1, 3): -F(1, 3)})
+    cached, cached_work = repeated.exterior_data(exterior_cap)
+    raw, raw_work = repeated.exterior_data(exterior_cap, method="raw")
+    checks.exact("cached_vs_raw_signed_repeated_triples", dict(cached), dict(raw))
+    checks.record("triple_cache_reuses_only_moments", cached_work["cache_hits"] == 2
+                  and cached_work["cached_triples"] == 2, cached_work=cached_work, raw_work=raw_work)
+    exact_cap = cached_work["product_operations"]
+    at_cap, at_cap_work = repeated.exterior_data(exact_cap)
+    checks.exact("cached_exact_work_boundary", dict(at_cap), dict(raw))
+    checks.record("per_call_work_is_deterministic", at_cap_work["product_operations"] == exact_cap)
+    checks.raises("cached_one_below_work_boundary", lambda: repeated.exterior_data(exact_cap-1),
+                  RuntimeError, "budget")
     known_moments = (
         {(1, -1): F(1, 2)},
         {(1, -3): F(1, 4), (0, -2): -F(1, 2)},
@@ -344,7 +357,9 @@ def check_gravitational_tail(data, name, config, progress=None):
     notify({"stage": "tail_assembly_start"})
     tail, component_statistics = triple_tail(data, max_pair_products=settings["tail_max_pair_products"],
                                              progress=notify)
-    exterior = tail.exterior_coefficients(settings["tail_max_exterior_products"])
+    notify({"stage": "tail_collapsed_structure", "input_bins": len(tail.coefficients),
+            "unique_moment_triples": len({key[1:] for key in tail.coefficients})})
+    exterior, exterior_work = tail.exterior_data(settings["tail_max_exterior_products"])
     monopoles = tuple(gaussian_inner(poly, ONE) for poly in data["york"]["b"][1])
     if len(monopoles) != 3:
         raise ValueError("The supplied b1 must have three components")
@@ -432,6 +447,7 @@ def check_gravitational_tail(data, name, config, progress=None):
                          scalar_monopole_normalized=str(scalar_monopole),
                          leading_coefficient=str(observed), predicted_leading_coefficient=str(predicted),
                          input_bins=len(tail.coefficients), exterior_coefficients=_bins(exterior),
+                         exterior_expansion_work=exterior_work,
                          component_statistics=list(component_statistics),
                          sphere_statistics=compiler.statistics(), radial_checks=radial_rows,
                          exterior_summaries=summaries, exterior_skipped_for_bad_falloff=bool(bad),
