@@ -1,0 +1,15 @@
+{
+  "parent_result_commit": "7901d07a2abe291ce4a4073f3f7cd0593a50882e",
+  "original_scientific_source_commit": "de24fa2bb5c21c2b027498581872e64cb65da445",
+  "preparation_approval": "msg_4ba97146",
+  "scientific_invocations_in_this_preparation": 0,
+  "sha256": {
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py": "1462be3deb349e95f52de1e9f07a01abe940bdf3fcb1d54d1138155970bb3303",
+    "verification/oblate_stationary_seed_20261127/extraction_progress.py": "3534ec72a9cb0132fe0d07e31ce7a04adb7132f2559a447259b8f9f720c57a5d",
+    "verification/oblate_stationary_seed_20261127/stationary_system.py": "0e4d72f319ba7a811356f4229e56ca3e9fb903a4dbad3622e5bd7cc5027a06cd",
+    "verification/oblate_stationary_seed_20261127/supervise_stationary_check.py": "1a68d3feb13511db1058d5eaf03bcda4a5f965bf5767e3bc695edb1431dd6285",
+    "verification/oblate_stationary_seed_20261127/test_progress_io.py": "4c87813715a684a382046f25c164e7213ad9c10fa4c9cd474e41054a78bbd25f",
+    "verification/oblate_nonlinear_null_20261127/null_compatibility.py": "539448e6b0fa1cee99da51ef2d5519f324e8a868961531e7de201078c8afa6e5",
+    "sections/nonlinear_action.tex": "e562b6777673798a19b675050120174a04e3e6f12b4c99478eebb17573876470"
+  }
+}

@@ -5,6 +5,7 @@ projection, endpoint condition, seed, or differential-algebraic reduction is
 chosen here. Angular moments are exact for r>0, epsilon>0.
 """
 from functools import lru_cache
+from contextlib import nullcontext
 from pathlib import Path
 import sys
 
@@ -98,11 +99,13 @@ def static_split_residual(delta_G, fields, coords, epsilon):
     return (delta_G-expected).applyfunc(s.cancel)
 
 
-def assemble(coords, epsilon):
+def assemble(coords, epsilon, recorder=None):
     """Return all 22 retained equations and one response row, before DAE solving."""
     _, r, x, _ = coords
     q, z = n.coefficient_labels()
     rows = q+z
+    selected = [rows.index(label) for label in COLUMNS]
+    automatic = [index for index in range(len(rows)) if index not in selected]
     all_tests = [n.coefficient_fields({label: s.S.One}, x) for label in rows]
     all_tests.append(n.coefficient_fields(RESPONSE_TEST, x))
     moments = AngularMoments(r, epsilon, x)
@@ -110,24 +113,55 @@ def assemble(coords, epsilon):
     operators = [s.zeros(len(rows)+1, len(COLUMNS)) for _ in range(3)]
     densities = [s.zeros(len(rows)+1, len(COLUMNS)) for _ in range(3)]
     profile = s.Function("F")(r)
+    stage = recorder.stage if recorder is not None else lambda *args, **kwargs: nullcontext()
     for column, label in enumerate(COLUMNS):
-        fields = n.coefficient_fields({label: profile}, x)
-        G = n.linearized_einstein(
-            n.background(coords, epsilon), n.linear_metric(fields, coords, epsilon), coords)
-        if any(value != 0 for value in static_split_residual(G, fields, coords, epsilon)):
-            raise AssertionError(("4D/3D static split", label))
+        with stage("coefficient_reconstruction", column=column, label=label):
+            fields = n.coefficient_fields({label: profile}, x)
+        with stage("four_dimensional_curvature", column=column, label=label):
+            G = n.linearized_einstein(
+                n.background(coords, epsilon), n.linear_metric(fields, coords, epsilon), coords)
+        with stage("static_split_control", column=column, label=label):
+            if any(value != 0 for value in static_split_residual(G, fields, coords, epsilon)):
+                raise AssertionError(("4D/3D static split", label))
         for row, test in enumerate(all_tests):
-            parts = radial_coefficients(n.euler_pair_density(G, test, coords, epsilon), profile, r)
+            with stage("euler_density", column=column, row=row):
+                density = n.euler_pair_density(G, test, coords, epsilon)
+            with stage("radial_coefficient_extraction", column=column, row=row):
+                parts = radial_coefficients(density, profile, r)
             for order, part in enumerate(parts):
                 densities[order][row, column] = part
-                operators[order][row, column] = moments.average(part)
+                with stage("angular_average", column=column, row=row, order=order):
+                    operators[order][row, column] = moments.average(part)
+        if recorder is not None:
+            with stage("column_checkpoint", column=column, label=label):
+                if any(matrix[row, column].has(s.nan, s.zoo, s.oo, -s.oo)
+                       for matrix in operators+densities for row in range(len(rows)+1)):
+                    raise ValueError("Nonfinite exact expression in column checkpoint")
+                recorder.save_column(column, label, {
+                    "retained_row_labels": rows,
+                    "selected_row_indices": selected,
+                    "automatic_row_indices": automatic,
+                    "last_row": "D=6 E_X4-E_Cpolar4; discarded response, not a retained equation",
+                    "column_labels": COLUMNS,
+                    "derivative_orders": [0, 1, 2],
+                    "operators_by_derivative_order": [
+                        [str(matrix[row, column]) for row in range(len(rows)+1)]
+                        for matrix in operators],
+                    "densities_by_derivative_order": [
+                        [str(matrix[row, column]) for row in range(len(rows)+1)]
+                        for matrix in densities],
+                    "requested_moment_indices_through_column": sorted(moments.requested),
+                    "static_split_control_passed_for_column": True,
+                    "all_global_controls_passed": False,
+                    "operator_convention": "sum_j M_j(r,epsilon) u^(j)(r); no derivative on M_j",
+                    "angular_measure": "dx/2; Sigma occurs once in the Euler density",
+                })
         print(f"ASSEMBLED stationary column {label}", flush=True)
-    selected = [rows.index(label) for label in COLUMNS]
-    automatic = [index for index in range(len(rows)) if index not in selected]
-    for order in range(3):
-        if any(operators[order][row, col] != 0
-               for row in automatic for col in range(len(COLUMNS))):
-            raise AssertionError("An omitted retained row is nonzero")
+    with stage("all_omitted_retained_rows_control"):
+        for order in range(3):
+            if any(operators[order][row, col] != 0
+                   for row in automatic for col in range(len(COLUMNS))):
+                raise AssertionError("An omitted retained row is nonzero")
     return {"rows": rows, "columns": COLUMNS, "selected_row_indices": selected,
             "automatic_row_indices": automatic, "operators": operators,
             "densities": densities, "moments": moments}

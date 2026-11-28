@@ -1,0 +1,68 @@
+{
+  "status": "prepared; scientific invocation NOT yet approved or executed",
+  "diagnostic_preparation_approval": "msg_4ba97146",
+  "standing_scope": "diagnosis/preparation of this kind no longer requires separate approval; scientific reruns still do",
+  "scientific_checks_executed_in_preparation": 0,
+  "working_directory": "paper1",
+  "supervisor_command": "python3 verification/oblate_stationary_seed_20261127/supervise_stationary_check.py --source-commit <preparation-commit> --approval-message <new-run-approval>",
+  "scientific_command": [
+    "uv",
+    "run",
+    "--isolated",
+    "--no-project",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "sympy==1.14.0",
+    "python",
+    "verification/oblate_stationary_seed_20261127/check_stationary_system.py",
+    "--output-dir",
+    "reports/oblate-stationary-system-recheck-2026-11-27/outputs"
+  ],
+  "resources": {
+    "backend": "local",
+    "scientific_processes": 1,
+    "wall_budget_seconds": 900,
+    "memory_threshold_GiB": 2,
+    "RSS_sample_period_seconds": 0.25,
+    "RSS_is_hard_OS_cap": false,
+    "GPU": 0,
+    "remote_jobs": 0,
+    "runtime_prediction_measured": false
+  },
+  "reason_for_proposed_budget": "first300-second invocation ended after5completed-column messages; proposed900s budget is not a completion guarantee",
+  "stop_conditions": [
+    "first checker exception ends invocation",
+    "wall900s or sampled process-group RSS2GiB terminates process group",
+    "no automatic retry"
+  ],
+  "output_root": "reports/oblate-stationary-system-recheck-2026-11-27",
+  "outputs_present_now": false,
+  "expected_partial_outputs": [
+    "outputs/invocation.json",
+    "outputs/progress.jsonl",
+    "outputs/sources/",
+    "outputs/checkpoints/column-XX-*.json"
+  ],
+  "expected_final_outputs": [
+    "outputs/stationary-operators.json",
+    "outputs/stationary-reproducibility.json",
+    "outputs/completion.json"
+  ],
+  "expected_supervisor_outputs": [
+    "verification.log",
+    "execution.json",
+    "resource-samples.json",
+    "sources/"
+  ],
+  "completion_policy": "require all final controls; report marker and process exit separately",
+  "resume_policy": "none; checkpoints are write-only and require future independently validated loading",
+  "science_coverage_changed": false,
+  "does_not_establish": [
+    "radial DAE solution",
+    "admissible non-gauge seed",
+    "nonlinear compatibility source on such a seed",
+    "canonical endpoint domain",
+    "nonlinear Dirac/DOF classification"
+  ]
+}
