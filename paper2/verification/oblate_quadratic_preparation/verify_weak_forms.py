@@ -48,6 +48,16 @@ def emit_orx(payload):
     print(f"::orx:: {json.dumps(payload, sort_keys=True)}", flush=True)
 
 
+def emit_substage(batch, m, name, t0):
+    now = time.monotonic()
+    emit("SUBSTAGE", batch=batch, m=m, name=name, seconds=now - t0)
+    return now
+
+
+def normalize_rational(value):
+    return sp.cancel(value)
+
+
 def chart_conjugate(value):
     return value.subs(sp.I, -sp.I)
 
@@ -149,22 +159,24 @@ def tensor_jet(tensor, data, value_slot, derivative_slot, gamma):
 def linearized_christoffel(jet, data):
     inverse = data["inverse_diagonal"]
     return sp.MutableDenseNDimArray([
-        inverse[i] * (
+        normalize_rational(inverse[i] * (
             jet["nabla"][j][i, k]
             + jet["nabla"][k][i, j]
             - jet["nabla"][i][j, k]
-        ) / 2
+        ) / 2)
         for i in range(3) for j in range(3) for k in range(3)
     ], (3, 3, 3))
 
 
 def covariant_derivative_delta_gamma(delta_gamma, first_index, data, gamma):
     return sp.MutableDenseNDimArray([
-        derivative(delta_gamma[a, b, c], first_index, data)
-        + sum(gamma[a][first_index][d] * delta_gamma[d, b, c]
-              - gamma[d][first_index][b] * delta_gamma[a, d, c]
-              - gamma[d][first_index][c] * delta_gamma[a, b, d]
-              for d in range(3))
+        normalize_rational(
+            derivative(delta_gamma[a, b, c], first_index, data)
+            + sum(gamma[a][first_index][d] * delta_gamma[d, b, c]
+                  - gamma[d][first_index][b] * delta_gamma[a, d, c]
+                  - gamma[d][first_index][c] * delta_gamma[a, b, d]
+                  for d in range(3))
+        )
         for a in range(3) for b in range(3) for c in range(3)
     ], (3, 3, 3))
 
@@ -175,23 +187,32 @@ def varied_ricci_lower(jet, data, gamma):
         covariant_derivative_delta_gamma(delta_gamma, i, data, gamma)
         for i in range(3)
     ]
-    return sp.Matrix(3, 3, lambda i, j:
-                     sum(
-                         covariant[a][a, i, j] - covariant[j][a, i, a]
-                         for a in range(3)
-                     ))
+    return sp.Matrix(3, 3, lambda i, j: normalize_rational(
+        sum(covariant[a][a, i, j] - covariant[j][a, i, a]
+            for a in range(3))
+    ))
+
+
+def scalar_and_einstein_from_ricci(ricci, data):
+    scalar = normalize_rational(
+        sum(data["inverse_diagonal"][i] * ricci[i, i] for i in range(3))
+    )
+    einstein = sp.Matrix(3, 3, lambda i, j: normalize_rational(
+        ricci[i, j] - data["metric"][i, j] * scalar / 2
+    ))
+    return scalar, einstein
 
 
 def linearized_scalar_curvature(jet, data, gamma):
     ricci = varied_ricci_lower(jet, data, gamma)
-    return sum(data["inverse_diagonal"][i] * ricci[i, i] for i in range(3))
+    scalar, _ = scalar_and_einstein_from_ricci(ricci, data)
+    return scalar
 
 
 def linearized_einstein_lower(jet, data, gamma):
     ricci = varied_ricci_lower(jet, data, gamma)
-    scalar = sum(data["inverse_diagonal"][i] * ricci[i, i] for i in range(3))
-    return sp.Matrix(3, 3, lambda i, j:
-                     ricci[i, j] - data["metric"][i, j] * scalar / 2)
+    _, einstein = scalar_and_einstein_from_ricci(ricci, data)
+    return einstein
 
 
 def lower_two_covariant_derivative(jet, data, gamma):
@@ -531,19 +552,36 @@ def verify_gauge_controls(output_dir=None, started=None, completed_batches=0):
     results = []
     for m in range(3):
         emit("STAGE", name="pure_gauge_control", m=m)
+        batch_started = time.monotonic()
         data = kinematics.sector(2, m)
         gamma = independent_connection(data)
+        batch_started = emit_substage(
+            "pure_gauge_control", m, "connection", batch_started
+        )
         r, x = data["r"], data["x"]
         y = kinematics.harmonic_amplitudes(max(m, 1), m, x)[0]
         vector = sp.Matrix([r * (2 - r) * y, x * y, sp.I * y])
         gauge = direct_lie(data["metric"], vector, data)
+        batch_started = emit_substage(
+            "pure_gauge_control", m, "coordinate_lie", batch_started
+        )
         jet = tensor_jet(gauge, data, 1, 0, gamma)
-        einstein = linearized_einstein_lower(jet, data, gamma)
-        scalar = linearized_scalar_curvature(jet, data, gamma)
+        batch_started = emit_substage(
+            "pure_gauge_control", m, "tensor_jet", batch_started
+        )
+        ricci = varied_ricci_lower(jet, data, gamma)
+        batch_started = emit_substage(
+            "pure_gauge_control", m, "varied_ricci", batch_started
+        )
+        scalar, einstein = scalar_and_einstein_from_ricci(ricci, data)
+        batch_started = emit_substage(
+            "pure_gauge_control", m, "scalar_einstein", batch_started
+        )
         for i in range(3):
             for j in range(3):
                 assert_zero(einstein[i, j], x, f"pure gauge Einstein m={m} {(i, j)}")
         assert_zero(scalar, x, f"pure gauge scalar curvature m={m}")
+        emit_substage("pure_gauge_control", m, "exact_zero", batch_started)
         results.append(f"m={m}")
         print(f"PASS continuum pure-gauge zero m={m}", flush=True)
         write_checkpoint(output_dir, f"pure_gauge_m{m}", {"m": m}, started)
@@ -672,10 +710,23 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
+    emit_orx({"phase": "setup", "step": 1, "of": 1, "unit": "environment"})
     checks = verify(args.output_dir)
-    emit_orx({"phase": "export"})
+    emit_orx({
+        "phase": "export",
+        "step": 0,
+        "of": 1,
+        "unit": "checker result",
+        "m": {"elapsed_seconds": checks["seconds"]},
+    })
     (args.output_dir / "weak-form-checks.json").write_text(
         json.dumps(checks, indent=2) + "\n"
     )
-    emit_orx({"m": {"validation_passed": 1, "elapsed_seconds": checks["seconds"]}})
+    emit_orx({
+        "phase": "export",
+        "step": 1,
+        "of": 1,
+        "unit": "checker result",
+        "m": {"validation_passed": 1, "elapsed_seconds": checks["seconds"]},
+    })
     print(json.dumps(checks, indent=2))

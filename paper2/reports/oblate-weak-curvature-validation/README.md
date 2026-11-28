@@ -1,6 +1,6 @@
 # Bounded oblate weak-curvature validation
 
-Status: prepared for its first scientific execution. No result is established by this preparation report.
+Status: the first invocation passed its three representative weak-density/Green batches, then exceeded its monitored memory budget during the first symbolic pure-gauge control. Full validation remains incomplete. The preserved attempt is in [first-attempt/README.md](first-attempt/README.md); the bounded repair proposal is in [retry-preparation.md](retry-preparation.md).
 
 This check tests the potential and lapse densities prepared at `510e7d87d0e8cd1581ffc7233122a7bedafea969`, for the original Paper I coefficient-Galerkin action and its oblate flat background. It does not test the separate reduction-before-cutoff Gaunt candidate. The source action and retained harmonic conventions remain pinned to the prior preparation; no scientific equation in `weak_forms.py`, `potential_hessian.py`, or `kinematic_blocks.py` is changed here.
 
@@ -35,4 +35,4 @@ The user's overnight authorization is `msg_ad636446`, followed by approval for o
 
 The draft verifier was corrected during source review before any scientific execution: background versus perturbation azimuthal derivatives, the raised connection index, coordinate Lie derivatives, consistent second-derivative profile data, equal-mode bilinear divergence, genuine TT transversality and trace-sensitive negative controls. These were checker implementation defects caught in preparation, not failed scientific runs or changes to the gravitational action.
 
-The weak-density formulas received a separate analytic review. Final code and execution-lifecycle review is recorded with the committed run proposal. Static syntax checks are not scientific verification. Results, including any failure, must be read from the subsequent run before changing the status above.
+The weak-density formulas received a separate analytic review. The original `preflight-review.json` records the first source snapshot and remains historical provenance. The retry has a separate preparation record. Static syntax checks are not scientific verification. Results, including any failure, must be read from the subsequent run before changing the status above.

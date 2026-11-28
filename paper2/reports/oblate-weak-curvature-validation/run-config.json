@@ -1,16 +1,31 @@
 {
   "plan": [
-    {"phase": "setup"},
-    {"phase": "validation", "of": 8, "unit": "batches"},
-    {"phase": "export"}
+    {
+      "phase": "setup",
+      "of": 1,
+      "unit": "environment"
+    },
+    {
+      "phase": "validation",
+      "of": 8,
+      "unit": "batches"
+    },
+    {
+      "phase": "export",
+      "of": 1,
+      "unit": "checker result"
+    }
   ],
   "brief": {
     "question": "Do the prepared oblate potential and lapse weak densities and Green fluxes agree with independent curvature variations in the bounded representative sectors?",
     "healthy": "Three angular-sector batches, three gauge controls, a Cartesian TT normalization control and an ablation control pass, then weak-form-checks.json is written. SymPy batches may be silent between per-stage messages.",
-    "noise": "Exact symbolic simplification has uneven batch runtimes. The 900-second envelope is a cap, not a requested workload duration.",
+    "noise": "Exact sampled sector checks and global symbolic gauge checks have different costs. Substage events identify current construction or normalization work; coarse batch count advances only after a completed control. The 900-second budget is a cap, not a target.",
     "worth_a_flag": "An AssertionError, nonzero child exit, supervisor timeout or memory stop, or a missing final result means the validation is incomplete. A pass does not establish a finite radial operator, physical boundary domain, admissible seed or nonlinear constraint theorem.",
-    "from_parent": "The prior bounded kinematic checkpoint passed. This new baseline tests the independently unvalidated potential/lapse/Green layer and does not inherit a finite-mode quantum-gravity theory from another experiment.",
-    "decided": "One local CPU child, pinned SymPy and NumPy, 900-second cap and 2-GiB sampled process-group RSS budget. Source equations are unchanged; only their checker is new. All runs must fit within the user's authorization ending 2026-11-28 16:29 UTC."
+    "from_parent": "First attempt 85aa6197 passed all three representative sector batches then exceeded its monitored memory budget during symbolic gauge m=0; cleanup had a secondary PermissionError. This provisional-node repair preserves all scientific controls, normalizes intermediate algebra and avoids repeated Ricci construction.",
+    "decided": "One local CPU child, pinned SymPy and NumPy, 900-second cap and 2-GiB sampled process-group RSS budget. Prepared physics modules and all scientific controls are unchanged; evaluation order and lifecycle reporting are repaired. Runs must fit within authorization ending 2026-11-28 16:29 UTC."
   },
-  "watch": {"minGapS": 120, "maxGapS": 600}
+  "watch": {
+    "minGapS": 120,
+    "maxGapS": 600
+  }
 }

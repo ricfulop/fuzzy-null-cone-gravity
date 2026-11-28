@@ -35,7 +35,7 @@ def save_json(path, data):
     temporary.replace(path)
 
 
-def process_group_rss(group):
+def process_group_members(group):
     raw = subprocess.check_output(
         ["ps", "-axo", "pid=,pgid=,rss="], text=True, timeout=5
     )
@@ -44,22 +44,104 @@ def process_group_rss(group):
         fields = line.split()
         if len(fields) == 3 and int(fields[1]) == group:
             selected.append({"pid": int(fields[0]), "rss_bytes": int(fields[2]) * 1024})
+    return selected
+
+
+def process_group_rss(group):
+    selected = process_group_members(group)
     return sum(row["rss_bytes"] for row in selected), selected
 
 
-def stop_group(group, sig):
+def signal_group(group, sig, cleanup_events):
     try:
         os.killpg(group, sig)
+        cleanup_events.append({"action": "signal", "signal": int(sig), "status": "sent"})
+        return True
     except ProcessLookupError:
-        pass
+        cleanup_events.append({
+            "action": "signal", "signal": int(sig), "status": "no_such_group"
+        })
+        return False
+    except PermissionError as exc:
+        members = None
+        status = "permission_error_unknown"
+        try:
+            members = process_group_members(group)
+            status = "permission_error_live" if members else "permission_error_empty"
+        except Exception as member_exc:
+            cleanup_events.append({
+                "action": "list_members", "status": "failed",
+                "type": type(member_exc).__name__, "message": str(member_exc),
+            })
+        cleanup_events.append({
+            "action": "signal", "signal": int(sig), "status": status,
+            "errno": exc.errno, "message": str(exc), "members": members,
+        })
+        return False
 
 
-def group_exists(group):
+def probe_group(group, cleanup_events):
+    try:
+        members = process_group_members(group)
+    except Exception as exc:
+        cleanup_events.append({
+            "action": "probe", "status": "unknown",
+            "type": type(exc).__name__, "message": str(exc), "members": None,
+        })
+        return True, None
     try:
         os.killpg(group, 0)
+        status = "live"
+        exists = True
     except ProcessLookupError:
-        return False
-    return True
+        status = "empty"
+        exists = False
+    except PermissionError as exc:
+        exists = bool(members)
+        status = "permission_error_live" if exists else "permission_error_empty"
+        cleanup_events.append({
+            "action": "probe", "status": status, "errno": exc.errno,
+            "message": str(exc), "members": members,
+        })
+    else:
+        cleanup_events.append({"action": "probe", "status": status, "members": members})
+    return exists, members
+
+
+def terminate_group(group, child, cleanup_events, grace_seconds=5):
+    signal_group(group, signal.SIGTERM, cleanup_events)
+    grace_end = time.monotonic() + grace_seconds
+    live = True
+    members = []
+    while time.monotonic() < grace_end:
+        live, members = probe_group(group, cleanup_events)
+        if not live:
+            return False, members
+        child.poll()
+        time.sleep(0.05)
+    if live:
+        signal_group(group, signal.SIGKILL, cleanup_events)
+        live, members = probe_group(group, cleanup_events)
+    return live, members
+
+
+def final_disposition(group, child, cleanup_events):
+    live, members = probe_group(group, cleanup_events)
+    if live:
+        signal_group(group, signal.SIGKILL, cleanup_events)
+        live, members = probe_group(group, cleanup_events)
+        for _ in range(3):
+            if not live:
+                break
+            child.poll()
+            time.sleep(0.05)
+            live, members = probe_group(group, cleanup_events)
+
+    status = "unknown" if members is None else "live" if live else "empty"
+    cleanup_events.append({
+        "action": "final_disposition", "status": status, "members": members,
+    })
+    return live, members, status
 
 
 def main():
@@ -95,9 +177,12 @@ def main():
         "status": "prepared_to_launch",
     }
     save_json(output / "execution.json", manifest)
-    print("::orx:: " + json.dumps({"phase": "setup"}), flush=True)
+    print("::orx:: " + json.dumps({
+        "phase": "setup", "step": 0, "of": 1, "unit": "environment"
+    }), flush=True)
     print("EXECUTION " + json.dumps(manifest), flush=True)
     samples = []
+    cleanup_events = []
     child = None
     group = None
     termination_requested = [None]
@@ -128,27 +213,42 @@ def main():
                 break
             time.sleep(0.25)
         if stop_reason:
-            stop_group(group, signal.SIGTERM)
-            grace_end = time.monotonic() + 5
-            while group_exists(group) and time.monotonic() < grace_end:
-                child.poll()
-                time.sleep(0.05)
-            if group_exists(group):
-                stop_group(group, signal.SIGKILL)
-        return_code = child.wait(timeout=10)
+            live, members = terminate_group(group, child, cleanup_events)
+            if live:
+                cleanup_events.append({
+                    "action": "cleanup", "status": "unresolved_live_group",
+                    "members": members,
+                })
+        try:
+            return_code = child.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            cleanup_events.append({"action": "child_wait", "status": "timeout"})
         # A child that exited must not leave a worker in its process group.
-        if group_exists(group):
-            stop_group(group, signal.SIGKILL)
+        if group is not None:
+            live, members, disposition = final_disposition(group, child, cleanup_events)
+        else:
+            live, members, disposition = False, [], "empty"
+        if live:
             stop_reason = stop_reason or "orphaned_process_group"
+            cleanup_events.append({
+                "action": "cleanup",
+                "status": "post_wait_unknown_group"
+                if disposition == "unknown" else "post_wait_live_group",
+                "members": members,
+            })
     except BaseException as exc:
+        cleanup_events.append({
+            "action": "supervisor_exception", "status": "raised",
+            "type": type(exc).__name__, "message": str(exc),
+        })
         stop_reason = stop_reason or "supervisor_exception: " + repr(exc)
         if group is not None:
-            stop_group(group, signal.SIGKILL)
+            signal_group(group, signal.SIGKILL, cleanup_events)
         if child is not None:
             try:
                 return_code = child.wait(timeout=10)
             except subprocess.TimeoutExpired:
-                pass
+                cleanup_events.append({"action": "exception_child_wait", "status": "timeout"})
     finally:
         for sig, handler in old_handlers.items():
             signal.signal(sig, handler)
@@ -157,7 +257,7 @@ def main():
             "elapsed_seconds": time.monotonic() - monotonic_start,
             "child_return_code": return_code, "stop_reason": stop_reason,
             "peak_sampled_group_rss_bytes": max((row["rss_bytes"] for row in samples), default=0),
-            "sample_count": len(samples),
+            "sample_count": len(samples), "cleanup_events": cleanup_events,
             "status": "child_exit_zero" if return_code == 0 and stop_reason is None else "failed",
         })
         save_json(output / "resource-samples.json", samples)
