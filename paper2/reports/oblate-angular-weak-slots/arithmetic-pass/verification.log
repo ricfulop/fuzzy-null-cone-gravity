@@ -1,0 +1,982 @@
+::orx:: {"phase": "setup", "step": 0, "of": 1, "unit": "environment"}
+EXECUTION {"started_utc": "2026-11-28T09:55:32.386587+00:00", "approval_message": "msg_37a2dc0f", "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f", "approval_quote": "you have launch approval", "approval_basis": "explicit_per_run", "standing_window_message": "msg_908bb84e", "standing_window_quote": "you dont need to ask me for approval till 10am", "approval_timezone": "America/New_York", "approval_end_utc": "2026-11-28T15:00:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2/reports/oblate-angular-weak-slots/profile-arithmetic-probe-runtime", "--mode", "profile-arithmetic-probe"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2", "source_sha256": {"export_angular_weak_slots.py": "d8344bd3dde1688b1cc3c5f3791ce098ffe20964ec24a7e94cf4d8caa78e11d7", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "30636481185ea01e71862c32cddfcbaa551bc89d41538c55e668ee751774aa6e", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "aeafd47aae703908dc72ba3dde534cc5afce86b9", "run_id": "b173211f-b492-4d14-9866-84342c279986", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "prepared_to_launch", "checker_mode": "profile-arithmetic-probe"}
+::orx:: {"mode": "profile-arithmetic-probe", "of": 1, "phase": "setup", "plan": [{"of": 1, "phase": "setup", "unit": "environment"}, {"of": 3, "phase": "controls", "unit": "batches"}, {"of": 12, "phase": "arithmetic", "unit": "pairs"}, {"of": 1, "phase": "export", "unit": "checker result"}], "step": 1, "unit": "environment"}
+::orx:: {"m": {"completed_control_batches": 0}, "of": 3, "phase": "controls", "step": 0, "unit": "batches"}
+SUBSTAGE legendre_norms start {"elapsed_seconds": null}
+SUBSTAGE legendre_norms done {"elapsed_seconds": 0.21675437479279935}
+::orx:: {"m": {"completed_control_batches": 1}, "of": 3, "phase": "controls", "step": 1, "unit": "batches"}
+SUBSTAGE round_weak_anchor start {"elapsed_seconds": null}
+SUBSTAGE round_weak_anchor done {"elapsed_seconds": 0.03287929203361273}
+::orx:: {"m": {"completed_control_batches": 2}, "of": 3, "phase": "controls", "step": 2, "unit": "batches"}
+SUBSTAGE manufactured_realification start {"elapsed_seconds": null}
+SUBSTAGE manufactured_realification done {"elapsed_seconds": 0.00029949983581900597}
+::orx:: {"m": {"completed_control_batches": 3}, "of": 3, "phase": "controls", "step": 3, "unit": "batches"}
+::orx:: {"m": {"completed_arithmetic_pairs": 0, "max_scaled_refinement_error": 0.0}, "of": 12, "phase": "arithmetic", "step": 0, "unit": "pairs"}
+SUBSTAGE arithmetic_build_jets start {"elapsed_seconds": null}
+SUBSTAGE arithmetic_build_jets done {"elapsed_seconds": 0.2105756658129394}
+SUBSTAGE compact_profile_jets start {"elapsed_seconds": null}
+SUBSTAGE compact_profile_jets done {"elapsed_seconds": 1.6860865419730544, "equality_checks": 559, "jets": 13}
+::orx:: {"m": {"active_right_index": 0}, "of": 12, "phase": "arithmetic", "step": 0, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 0}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.012272791005671024, "right_index": 0}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 0}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.009331833105534315, "right_index": 0}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.333397813141346e-05, "order": 24, "right_index": 0}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 0.2234084999654442, "order": 24, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 1.4374004169367254, "order": 24, "right_index": 0}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00032933405600488186, "order": 24, "right_index": 0}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0014918330125510693, "order": 24, "right_index": 0}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00022200006060302258, "order": 24, "right_index": 0}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.2874836102128029e-05, "order": 48, "right_index": 0}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.500158295035362e-06, "order": 48, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.05789870792068541, "order": 48, "right_index": 0}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0005528749898076057, "order": 48, "right_index": 0}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0002013749908655882, "order": 48, "right_index": 0}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00017516710795462132, "order": 48, "right_index": 0}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 2.0750099793076515e-05, "order": 96, "right_index": 0}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 6.082933396100998e-06, "order": 96, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.05090595898218453, "order": 96, "right_index": 0}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0010523339733481407, "order": 96, "right_index": 0}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0002657908480614424, "order": 96, "right_index": 0}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.000251667108386755, "order": 96, "right_index": 0}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 4.054210148751736e-05, "order": 24, "right_index": 0}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.033916749991476536, "order": 24, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.13744179089553654, "order": 24, "right_index": 0}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.000290874857455492, "order": 24, "right_index": 0}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00133966701105237, "order": 24, "right_index": 0}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 0}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00021129101514816284, "order": 24, "right_index": 0}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.074979081749916e-05, "order": 48, "right_index": 0}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.250098183751106e-06, "order": 48, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.007872417103499174, "order": 48, "right_index": 0}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.000516833970323205, "order": 48, "right_index": 0}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00015983381308615208, "order": 48, "right_index": 0}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 0}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0001605418510735035, "order": 48, "right_index": 0}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.1249911040067673e-05, "order": 96, "right_index": 0}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 3.875000402331352e-06, "order": 96, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.0067344168201088905, "order": 96, "right_index": 0}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0010509169660508633, "order": 96, "right_index": 0}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00023158290423452854, "order": 96, "right_index": 0}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 0}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0001784998457878828, "order": 96, "right_index": 0}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 0}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 1.1569597499910742, "right_index": 0}
+::orx:: {"m": {"completed_arithmetic_pairs": 1, "max_scaled_refinement_error": 6.245004513516506e-16}, "of": 12, "phase": "arithmetic", "step": 1, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 1}, "of": 12, "phase": "arithmetic", "step": 1, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 1}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.0025223749689757824, "right_index": 1}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 1}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.002139874966815114, "right_index": 1}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.2874836102128029e-05, "order": 24, "right_index": 1}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 1.5384055839385837, "order": 24, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 11.532732125138864, "order": 24, "right_index": 1}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00033199996687471867, "order": 24, "right_index": 1}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.001858334057033062, "order": 24, "right_index": 1}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00025941687636077404, "order": 24, "right_index": 1}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.1709053069353104e-05, "order": 48, "right_index": 1}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.832873284816742e-06, "order": 48, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.3167725407984108, "order": 48, "right_index": 1}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00053641595877707, "order": 48, "right_index": 1}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0002881670370697975, "order": 48, "right_index": 1}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00018512480892241, "order": 48, "right_index": 1}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.5832949429750443e-05, "order": 96, "right_index": 1}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 6.7909713834524155e-06, "order": 96, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.36768837505951524, "order": 96, "right_index": 1}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0011476250365376472, "order": 96, "right_index": 1}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0003234168980270624, "order": 96, "right_index": 1}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00019500008784234524, "order": 96, "right_index": 1}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.708301715552807e-05, "order": 24, "right_index": 1}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.053889250149950385, "order": 24, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.32629404217004776, "order": 24, "right_index": 1}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0003080409951508045, "order": 24, "right_index": 1}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.0017247500363737345, "order": 24, "right_index": 1}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 1}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0002687089145183563, "order": 24, "right_index": 1}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.1875061318278313e-05, "order": 48, "right_index": 1}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 6.416114047169685e-06, "order": 48, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.013518583960831165, "order": 48, "right_index": 1}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0005518340039998293, "order": 48, "right_index": 1}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00021620816551148891, "order": 48, "right_index": 1}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 1}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00020308303646743298, "order": 48, "right_index": 1}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 3.3667078241705894e-05, "order": 96, "right_index": 1}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 7.00005330145359e-06, "order": 96, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.011539916973561049, "order": 96, "right_index": 1}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0010796659626066685, "order": 96, "right_index": 1}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00022149994038045406, "order": 96, "right_index": 1}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 1}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00024325004778802395, "order": 96, "right_index": 1}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 1}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 7.05767966597341, "right_index": 1}
+::orx:: {"m": {"completed_arithmetic_pairs": 2, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 2, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 2}, "of": 12, "phase": "arithmetic", "step": 2, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 2}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.004288292024284601, "right_index": 2}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 2}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.004219041904434562, "right_index": 2}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.3666925951838493e-05, "order": 24, "right_index": 2}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 0.3850027499720454, "order": 24, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 2.4379487500991672, "order": 24, "right_index": 2}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00029870797879993916, "order": 24, "right_index": 2}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0014977080281823874, "order": 24, "right_index": 2}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00022641685791313648, "order": 24, "right_index": 2}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.1708121746778488e-05, "order": 48, "right_index": 2}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.499925464391708e-06, "order": 48, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.08307358389720321, "order": 48, "right_index": 2}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0005189999938011169, "order": 48, "right_index": 2}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0002090830821543932, "order": 48, "right_index": 2}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00019166688434779644, "order": 48, "right_index": 2}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.558312214910984e-05, "order": 96, "right_index": 2}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 6.166053935885429e-06, "order": 96, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.07953304215334356, "order": 96, "right_index": 2}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.001520249992609024, "order": 96, "right_index": 2}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00044575007632374763, "order": 96, "right_index": 2}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00032858410850167274, "order": 96, "right_index": 2}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 2.1458137780427933e-05, "order": 24, "right_index": 2}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.039985209004953504, "order": 24, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.13738850015215576, "order": 24, "right_index": 2}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.00037783291190862656, "order": 24, "right_index": 2}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00149191590026021, "order": 24, "right_index": 2}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 2}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0003070831298828125, "order": 24, "right_index": 2}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.1791009455919266e-05, "order": 48, "right_index": 2}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 4.665926098823547e-06, "order": 48, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.010621041990816593, "order": 48, "right_index": 2}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0005422080866992474, "order": 48, "right_index": 2}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.000193500192835927, "order": 48, "right_index": 2}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 2}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00018466589972376823, "order": 48, "right_index": 2}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.5208031982183456e-05, "order": 96, "right_index": 2}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 4.875008016824722e-06, "order": 96, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.009440916823223233, "order": 96, "right_index": 2}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0010388330556452274, "order": 96, "right_index": 2}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00020374986343085766, "order": 96, "right_index": 2}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 2}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0001943330280482769, "order": 96, "right_index": 2}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 2}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 1.4768537080381066, "right_index": 2}
+::orx:: {"m": {"completed_arithmetic_pairs": 3, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 3, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 3}, "of": 12, "phase": "arithmetic", "step": 3, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 3}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.0025170829612761736, "right_index": 3}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 3}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.0022102089133113623, "right_index": 3}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.254095695912838e-05, "order": 24, "right_index": 3}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 1.6666172919794917, "order": 24, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 11.150800416013226, "order": 24, "right_index": 3}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0002949591726064682, "order": 24, "right_index": 3}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0018795409705489874, "order": 24, "right_index": 3}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00025629112496972084, "order": 24, "right_index": 3}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.0750023648142815e-05, "order": 48, "right_index": 3}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.749985575675964e-06, "order": 48, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.25848029204644263, "order": 48, "right_index": 3}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0005136250983923674, "order": 48, "right_index": 3}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00028791604563593864, "order": 48, "right_index": 3}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00018704193644225597, "order": 48, "right_index": 3}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.6290927305817604e-05, "order": 96, "right_index": 3}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.95790334045887e-06, "order": 96, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.2659736250061542, "order": 96, "right_index": 3}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0010864578653126955, "order": 96, "right_index": 3}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00030779209919273853, "order": 96, "right_index": 3}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00019691581837832928, "order": 96, "right_index": 3}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.5834113582968712e-05, "order": 24, "right_index": 3}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.05845399992540479, "order": 24, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.3866704578977078, "order": 24, "right_index": 3}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.00028920802287757397, "order": 24, "right_index": 3}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.0015507908537983894, "order": 24, "right_index": 3}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 3}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0002274580765515566, "order": 24, "right_index": 3}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 9.37492586672306e-06, "order": 48, "right_index": 3}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 4.665926098823547e-06, "order": 48, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.013207291951403022, "order": 48, "right_index": 3}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0005338331684470177, "order": 48, "right_index": 3}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00019808299839496613, "order": 48, "right_index": 3}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 3}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00019329204224050045, "order": 48, "right_index": 3}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.35831069201231e-05, "order": 96, "right_index": 3}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.624955520033836e-06, "order": 96, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.01280170795507729, "order": 96, "right_index": 3}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.001025624806061387, "order": 96, "right_index": 3}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00025820801965892315, "order": 96, "right_index": 3}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 3}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00020570890046656132, "order": 96, "right_index": 3}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 3}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 7.007604375015944, "right_index": 3}
+::orx:: {"m": {"completed_arithmetic_pairs": 4, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 4, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 4}, "of": 12, "phase": "arithmetic", "step": 4, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 4}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.007752290926873684, "right_index": 4}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 4}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.006185165839269757, "right_index": 4}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.2707896530628204e-05, "order": 24, "right_index": 4}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 0.8401146249379963, "order": 24, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 4.231602916959673, "order": 24, "right_index": 4}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.000305041903629899, "order": 24, "right_index": 4}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0017619170248508453, "order": 24, "right_index": 4}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00020391587167978287, "order": 24, "right_index": 4}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.4124903827905655e-05, "order": 48, "right_index": 4}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.791895091533661e-06, "order": 48, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.35129629191942513, "order": 48, "right_index": 4}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0005314161535352468, "order": 48, "right_index": 4}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00025783292949199677, "order": 48, "right_index": 4}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00017400016076862812, "order": 48, "right_index": 4}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.53339933604002e-05, "order": 96, "right_index": 4}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.375128239393234e-06, "order": 96, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.2976425001397729, "order": 96, "right_index": 4}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0010437499731779099, "order": 96, "right_index": 4}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.000252292025834322, "order": 96, "right_index": 4}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00016845809295773506, "order": 96, "right_index": 4}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.595797948539257e-05, "order": 24, "right_index": 4}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.03569100005552173, "order": 24, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.2501248330809176, "order": 24, "right_index": 4}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0002798330970108509, "order": 24, "right_index": 4}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.0019347500056028366, "order": 24, "right_index": 4}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 4}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00030174991115927696, "order": 24, "right_index": 4}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.2499978765845299e-05, "order": 48, "right_index": 4}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.084089934825897e-06, "order": 48, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.01125029195100069, "order": 48, "right_index": 4}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0005246668588370085, "order": 48, "right_index": 4}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00018145819194614887, "order": 48, "right_index": 4}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 4}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0001805420033633709, "order": 48, "right_index": 4}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.5584053471684456e-05, "order": 96, "right_index": 4}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.250098183751106e-06, "order": 96, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.008685457985848188, "order": 96, "right_index": 4}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0010325419716536999, "order": 96, "right_index": 4}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00018279184587299824, "order": 96, "right_index": 4}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 4}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0001771249808371067, "order": 96, "right_index": 4}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 4}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 2.9455111250281334, "right_index": 4}
+::orx:: {"m": {"completed_arithmetic_pairs": 5, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 5, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 5}, "of": 12, "phase": "arithmetic", "step": 5, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 5}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.007204457884654403, "right_index": 5}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 5}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.005015625152736902, "right_index": 5}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.2791948392987251e-05, "order": 24, "right_index": 5}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.749985575675964e-06, "order": 24, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.00024312501773238182, "order": 24, "right_index": 5}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00029645790345966816, "order": 24, "right_index": 5}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00019449996761977673, "order": 24, "right_index": 5}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 3.150012344121933e-05, "order": 24, "right_index": 5}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 9.207986295223236e-06, "order": 48, "right_index": 5}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 3.250082954764366e-06, "order": 48, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 2.208305522799492e-05, "order": 48, "right_index": 5}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0004330000374466181, "order": 48, "right_index": 5}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 7.207971066236496e-06, "order": 48, "right_index": 5}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 1.7750076949596405e-05, "order": 48, "right_index": 5}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 7.041962817311287e-06, "order": 96, "right_index": 5}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 2.749962732195854e-06, "order": 96, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 1.795799471437931e-05, "order": 96, "right_index": 5}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0009066250640898943, "order": 96, "right_index": 5}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 5.749985575675964e-06, "order": 96, "right_index": 5}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 1.5083933249115944e-05, "order": 96, "right_index": 5}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 6.9588422775268555e-06, "order": 24, "right_index": 5}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.5418121367692947e-06, "order": 24, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.00013083289377391338, "order": 24, "right_index": 5}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.00019475002773106098, "order": 24, "right_index": 5}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00011879205703735352, "order": 24, "right_index": 5}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 5}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.691700890660286e-05, "order": 24, "right_index": 5}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 7.00005330145359e-06, "order": 48, "right_index": 5}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.666143700480461e-06, "order": 48, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 1.8165912479162216e-05, "order": 48, "right_index": 5}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0003966670483350754, "order": 48, "right_index": 5}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 4.875008016824722e-06, "order": 48, "right_index": 5}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 5}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.3999873772263527e-05, "order": 48, "right_index": 5}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 5.95790334045887e-06, "order": 96, "right_index": 5}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.3329630494117737e-06, "order": 96, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 1.6208970919251442e-05, "order": 96, "right_index": 5}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0008913329802453518, "order": 96, "right_index": 5}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 5.082925781607628e-06, "order": 96, "right_index": 5}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 5}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.3083918020129204e-05, "order": 96, "right_index": 5}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 5}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 8.658296428620815e-05, "right_index": 5}
+::orx:: {"m": {"completed_arithmetic_pairs": 6, "max_scaled_refinement_error": 8.881784197001252e-16}, "of": 12, "phase": "arithmetic", "step": 6, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 6}, "of": 12, "phase": "arithmetic", "step": 6, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 6}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.002170583000406623, "right_index": 6}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 6}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.0024438330437988043, "right_index": 6}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.3124896213412285e-05, "order": 24, "right_index": 6}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 0.48832275019958615, "order": 24, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 2.796591541962698, "order": 24, "right_index": 6}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00031558400951325893, "order": 24, "right_index": 6}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0016765000764280558, "order": 24, "right_index": 6}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00024120905436575413, "order": 24, "right_index": 6}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.1625001206994057e-05, "order": 48, "right_index": 6}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 4.832865670323372e-06, "order": 48, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.12733391602523625, "order": 48, "right_index": 6}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0006247081328183413, "order": 48, "right_index": 6}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00025795912370085716, "order": 48, "right_index": 6}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00019883294589817524, "order": 48, "right_index": 6}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.7415964975953102e-05, "order": 96, "right_index": 6}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 6.457790732383728e-06, "order": 96, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.10957416705787182, "order": 96, "right_index": 6}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0011024579871445894, "order": 96, "right_index": 6}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0002853330224752426, "order": 96, "right_index": 6}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00020708306692540646, "order": 96, "right_index": 6}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.6625039279460907e-05, "order": 24, "right_index": 6}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.04566458286717534, "order": 24, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.1558642501477152, "order": 24, "right_index": 6}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0003027920611202717, "order": 24, "right_index": 6}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.0015296249184757471, "order": 24, "right_index": 6}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 6}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0002382919192314148, "order": 24, "right_index": 6}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.1249911040067673e-05, "order": 48, "right_index": 6}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.082925781607628e-06, "order": 48, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.010561333037912846, "order": 48, "right_index": 6}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0004938330966979265, "order": 48, "right_index": 6}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00018212501890957355, "order": 48, "right_index": 6}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 6}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00018033315427601337, "order": 48, "right_index": 6}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.1167023330926895e-05, "order": 96, "right_index": 6}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 4.250090569257736e-06, "order": 96, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.009529500035569072, "order": 96, "right_index": 6}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.001027249963954091, "order": 96, "right_index": 6}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00023624999448657036, "order": 96, "right_index": 6}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 6}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00030925008468329906, "order": 96, "right_index": 6}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 6}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 1.7764382078312337, "right_index": 6}
+::orx:: {"m": {"completed_arithmetic_pairs": 7, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 7, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 7}, "of": 12, "phase": "arithmetic", "step": 7, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 7}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.002598624909296632, "right_index": 7}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 7}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.003100000089034438, "right_index": 7}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.3875076547265053e-05, "order": 24, "right_index": 7}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 2.1014157079625875, "order": 24, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 18.582226417027414, "order": 24, "right_index": 7}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00031158304773271084, "order": 24, "right_index": 7}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0017977498937398195, "order": 24, "right_index": 7}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00023666699416935444, "order": 24, "right_index": 7}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.0875053703784943e-05, "order": 48, "right_index": 7}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 4.708068445324898e-06, "order": 48, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.36760783405043185, "order": 48, "right_index": 7}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0005344999954104424, "order": 48, "right_index": 7}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00033058389090001583, "order": 48, "right_index": 7}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00021004211157560349, "order": 48, "right_index": 7}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.6791047528386116e-05, "order": 96, "right_index": 7}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 6.166985258460045e-06, "order": 96, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.35017754207365215, "order": 96, "right_index": 7}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0010276669636368752, "order": 96, "right_index": 7}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0003071669489145279, "order": 96, "right_index": 7}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00020433403551578522, "order": 96, "right_index": 7}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.600012183189392e-05, "order": 24, "right_index": 7}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.06020325003191829, "order": 24, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.4928691249806434, "order": 24, "right_index": 7}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.00033020786941051483, "order": 24, "right_index": 7}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.0018741658423095942, "order": 24, "right_index": 7}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 7}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0002930418122559786, "order": 24, "right_index": 7}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.1750031262636185e-05, "order": 48, "right_index": 7}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.041016265749931e-06, "order": 48, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.016314250184223056, "order": 48, "right_index": 7}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0005339579656720161, "order": 48, "right_index": 7}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00021895789541304111, "order": 48, "right_index": 7}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 7}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00022170902229845524, "order": 48, "right_index": 7}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.4499993994832039e-05, "order": 96, "right_index": 7}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 1.8040882423520088e-05, "order": 96, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.014755833894014359, "order": 96, "right_index": 7}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.001030124956741929, "order": 96, "right_index": 7}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00021170894615352154, "order": 96, "right_index": 7}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 7}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00020758295431733131, "order": 96, "right_index": 7}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 7}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 7.716422958066687, "right_index": 7}
+::orx:: {"m": {"completed_arithmetic_pairs": 8, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 8, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 8}, "of": 12, "phase": "arithmetic", "step": 8, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 8}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.003072042018175125, "right_index": 8}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 8}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.002657208126038313, "right_index": 8}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.4499993994832039e-05, "order": 24, "right_index": 8}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 0.899503042222932, "order": 24, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 3.724258542060852, "order": 24, "right_index": 8}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0002950828056782484, "order": 24, "right_index": 8}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0017657498829066753, "order": 24, "right_index": 8}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00022254092618823051, "order": 24, "right_index": 8}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.0584015399217606e-05, "order": 48, "right_index": 8}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 4.917150363326073e-06, "order": 48, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.2932460841257125, "order": 48, "right_index": 8}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0006015410181134939, "order": 48, "right_index": 8}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0003232089802622795, "order": 48, "right_index": 8}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.0001905420795083046, "order": 48, "right_index": 8}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.5750061720609665e-05, "order": 96, "right_index": 8}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.665933713316917e-06, "order": 96, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.22110574995167553, "order": 96, "right_index": 8}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.001048208912834525, "order": 96, "right_index": 8}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.000291166128590703, "order": 96, "right_index": 8}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.0001843748614192009, "order": 96, "right_index": 8}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.6832957044243813e-05, "order": 24, "right_index": 8}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.03714312496595085, "order": 24, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.27193179191090167, "order": 24, "right_index": 8}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.00029304204508662224, "order": 24, "right_index": 8}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.0015677078627049923, "order": 24, "right_index": 8}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 8}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00023975013755261898, "order": 24, "right_index": 8}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.0791001841425896e-05, "order": 48, "right_index": 8}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 4.999805241823196e-06, "order": 48, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.01021929201669991, "order": 48, "right_index": 8}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0006473748944699764, "order": 48, "right_index": 8}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00019912514835596085, "order": 48, "right_index": 8}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 8}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00018316600471735, "order": 48, "right_index": 8}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.3832934200763702e-05, "order": 96, "right_index": 8}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.749985575675964e-06, "order": 96, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.00907554104924202, "order": 96, "right_index": 8}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.001077875029295683, "order": 96, "right_index": 8}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00017562485300004482, "order": 96, "right_index": 8}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 8}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00019033299759030342, "order": 96, "right_index": 8}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 8}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 2.733454374829307, "right_index": 8}
+::orx:: {"m": {"completed_arithmetic_pairs": 9, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 9, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 9}, "of": 12, "phase": "arithmetic", "step": 9, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 9}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.003582166973501444, "right_index": 9}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 9}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.0042897919192910194, "right_index": 9}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.3875076547265053e-05, "order": 24, "right_index": 9}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 6.583984941244125e-06, "order": 24, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.00025025010108947754, "order": 24, "right_index": 9}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0003006660845130682, "order": 24, "right_index": 9}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0001998329535126686, "order": 24, "right_index": 9}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 3.5624951124191284e-05, "order": 24, "right_index": 9}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 9.584007784724236e-06, "order": 48, "right_index": 9}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 3.6249402910470963e-06, "order": 48, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 2.2416934370994568e-05, "order": 48, "right_index": 9}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0004336670972406864, "order": 48, "right_index": 9}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 7.209135219454765e-06, "order": 48, "right_index": 9}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 1.874985173344612e-05, "order": 48, "right_index": 9}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 7.041962817311287e-06, "order": 96, "right_index": 9}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 2.8330832719802856e-06, "order": 96, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 1.8958933651447296e-05, "order": 96, "right_index": 9}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0009282079990953207, "order": 96, "right_index": 9}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 6.458023563027382e-06, "order": 96, "right_index": 9}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 2.3667002096772194e-05, "order": 96, "right_index": 9}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 7.292022928595543e-06, "order": 24, "right_index": 9}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.874992787837982e-06, "order": 24, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.0001607921440154314, "order": 24, "right_index": 9}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0002077920362353325, "order": 24, "right_index": 9}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00013483408838510513, "order": 24, "right_index": 9}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 9}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.8167076632380486e-05, "order": 24, "right_index": 9}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 7.250113412737846e-06, "order": 48, "right_index": 9}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.7921050786972046e-06, "order": 48, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 1.854216679930687e-05, "order": 48, "right_index": 9}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0004036249592900276, "order": 48, "right_index": 9}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 5.875015631318092e-06, "order": 48, "right_index": 9}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 9}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.4666002243757248e-05, "order": 48, "right_index": 9}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 5.958136171102524e-06, "order": 96, "right_index": 9}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.250075340270996e-06, "order": 96, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 1.6541918739676476e-05, "order": 96, "right_index": 9}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0008977910038083792, "order": 96, "right_index": 9}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 4.62518073618412e-06, "order": 96, "right_index": 9}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 9}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.3707904145121574e-05, "order": 96, "right_index": 9}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 9}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 9.487499482929707e-05, "right_index": 9}
+::orx:: {"m": {"completed_arithmetic_pairs": 10, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 10, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 10}, "of": 12, "phase": "arithmetic", "step": 10, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 10}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.0017740840557962656, "right_index": 10}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 10}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.002324666827917099, "right_index": 10}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 9.624985978007317e-06, "order": 24, "right_index": 10}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.011863457970321, "order": 24, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 24.606725542107597, "order": 24, "right_index": 10}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00026637502014636993, "order": 24, "right_index": 10}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0017784161027520895, "order": 24, "right_index": 10}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00027425005100667477, "order": 24, "right_index": 10}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.2791948392987251e-05, "order": 48, "right_index": 10}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 4.58303838968277e-06, "order": 48, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 1.0670078750699759, "order": 48, "right_index": 10}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0005341661162674427, "order": 48, "right_index": 10}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00033508287742733955, "order": 48, "right_index": 10}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00020733405835926533, "order": 48, "right_index": 10}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.637497916817665e-05, "order": 96, "right_index": 10}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 5.499925464391708e-06, "order": 96, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 1.1521202500443906, "order": 96, "right_index": 10}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.001009166007861495, "order": 96, "right_index": 10}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.0003147921524941921, "order": 96, "right_index": 10}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 0.00020774989388883114, "order": 96, "right_index": 10}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.537497155368328e-05, "order": 24, "right_index": 10}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 0.058279542019590735, "order": 24, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.3147423330228776, "order": 24, "right_index": 10}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0003372498322278261, "order": 24, "right_index": 10}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.0016735829412937164, "order": 24, "right_index": 10}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 10}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.0002501250710338354, "order": 24, "right_index": 10}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.1083204299211502e-05, "order": 48, "right_index": 10}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.332985892891884e-06, "order": 48, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.014512417139485478, "order": 48, "right_index": 10}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0005464579444378614, "order": 48, "right_index": 10}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00021395809017121792, "order": 48, "right_index": 10}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 10}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00027279206551611423, "order": 48, "right_index": 10}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 1.391698606312275e-05, "order": 96, "right_index": 10}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 5.041947588324547e-06, "order": 96, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.014159874990582466, "order": 96, "right_index": 10}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0010156668722629547, "order": 96, "right_index": 10}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00022570788860321045, "order": 96, "right_index": 10}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 10}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 0.00021974998526275158, "order": 96, "right_index": 10}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 10}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 16.4019214999862, "right_index": 10}
+::orx:: {"m": {"completed_arithmetic_pairs": 11, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 11, "unit": "pairs"}
+::orx:: {"m": {"active_right_index": 11}, "of": 12, "phase": "arithmetic", "step": 11, "unit": "pairs"}
+SUBSTAGE arithmetic_density start {"arm": "raw", "elapsed_seconds": null, "right_index": 11}
+SUBSTAGE arithmetic_density done {"arm": "raw", "elapsed_seconds": 0.005124083021655679, "right_index": 11}
+SUBSTAGE arithmetic_density start {"arm": "compact", "elapsed_seconds": null, "right_index": 11}
+SUBSTAGE arithmetic_density done {"arm": "compact", "elapsed_seconds": 0.0037176660262048244, "right_index": 11}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 1.4124903827905655e-05, "order": 24, "right_index": 11}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 6.166985258460045e-06, "order": 24, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 0.00025445898063480854, "order": 24, "right_index": 11}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.00029758294112980366, "order": 24, "right_index": 11}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 0.00019841594621539116, "order": 24, "right_index": 11}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 3.38749960064888e-05, "order": 24, "right_index": 11}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 9.792158380150795e-06, "order": 48, "right_index": 11}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 3.416789695620537e-06, "order": 48, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 2.291705459356308e-05, "order": 48, "right_index": 11}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0004384999629110098, "order": 48, "right_index": 11}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 6.20819628238678e-06, "order": 48, "right_index": 11}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 1.750001683831215e-05, "order": 48, "right_index": 11}
+SUBSTAGE fixed_substitution start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE fixed_substitution done {"arm": "raw", "elapsed_seconds": 7.3339324444532394e-06, "order": 96, "right_index": 11}
+SUBSTAGE expand_split start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE expand_split done {"arm": "raw", "elapsed_seconds": 2.3329630494117737e-06, "order": 96, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard done {"arm": "raw", "elapsed_seconds": 1.800013706088066e-05, "order": 96, "right_index": 11}
+SUBSTAGE legendre_nodes start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE legendre_nodes done {"arm": "raw", "elapsed_seconds": 0.0009267919231206179, "order": 96, "right_index": 11}
+SUBSTAGE lambdify start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE lambdify done {"arm": "raw", "elapsed_seconds": 5.499925464391708e-06, "order": 96, "right_index": 11}
+SUBSTAGE quadrature start {"arm": "raw", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE quadrature done {"arm": "raw", "elapsed_seconds": 1.5541911125183105e-05, "order": 96, "right_index": 11}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 6.332993507385254e-06, "order": 24, "right_index": 11}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.458924427628517e-06, "order": 24, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 0.00013895798474550247, "order": 24, "right_index": 11}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0001939171925187111, "order": 24, "right_index": 11}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 0.00012374995276331902, "order": 24, "right_index": 11}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 24, "right_index": 11}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.7042038962244987e-05, "order": 24, "right_index": 11}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 7.375143468379974e-06, "order": 48, "right_index": 11}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.4170149117708206e-06, "order": 48, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 1.737498678267002e-05, "order": 48, "right_index": 11}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.00040733302012085915, "order": 48, "right_index": 11}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 5.58304600417614e-06, "order": 48, "right_index": 11}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 48, "right_index": 11}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.3999873772263527e-05, "order": 48, "right_index": 11}
+SUBSTAGE fixed_substitution start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE fixed_substitution done {"arm": "compact", "elapsed_seconds": 6.541842594742775e-06, "order": 96, "right_index": 11}
+SUBSTAGE expand_split start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE expand_split done {"arm": "compact", "elapsed_seconds": 2.334127202630043e-06, "order": 96, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE cancel_qq_root_guard done {"arm": "compact", "elapsed_seconds": 1.6582896932959557e-05, "order": 96, "right_index": 11}
+SUBSTAGE legendre_nodes start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE legendre_nodes done {"arm": "compact", "elapsed_seconds": 0.0008878749795258045, "order": 96, "right_index": 11}
+SUBSTAGE lambdify start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE lambdify done {"arm": "compact", "elapsed_seconds": 4.624947905540466e-06, "order": 96, "right_index": 11}
+SUBSTAGE quadrature start {"arm": "compact", "elapsed_seconds": null, "order": 96, "right_index": 11}
+SUBSTAGE quadrature done {"arm": "compact", "elapsed_seconds": 1.3082986697554588e-05, "order": 96, "right_index": 11}
+SUBSTAGE exact_density_difference start {"elapsed_seconds": null, "right_index": 11}
+SUBSTAGE exact_density_difference done {"elapsed_seconds": 8.595804683864117e-05, "right_index": 11}
+::orx:: {"m": {"completed_arithmetic_pairs": 12, "max_scaled_refinement_error": 5.45505447491336e-15}, "of": 12, "phase": "arithmetic", "step": 12, "unit": "pairs"}
+::orx:: {"of": 1, "phase": "export", "step": 0, "unit": "checker result"}
+::orx:: {"m": {"elapsed_seconds": 153.36316437507048, "profile_arithmetic_probe_passed": 1}, "of": 1, "phase": "export", "step": 1, "unit": "checker result"}
+PASS profile-arithmetic-probe
+EXECUTION_FINAL {"started_utc": "2026-11-28T09:55:32.386587+00:00", "approval_message": "msg_37a2dc0f", "approval_chat_id": "chat_e153f02b-3354-4b06-b0bb-9425b37b9f7f", "approval_quote": "you have launch approval", "approval_basis": "explicit_per_run", "standing_window_message": "msg_908bb84e", "standing_window_quote": "you dont need to ask me for approval till 10am", "approval_timezone": "America/New_York", "approval_end_utc": "2026-11-28T15:00:00+00:00", "wall_budget_seconds": 300, "sampled_group_rss_budget_bytes": 2147483648, "memory_budget_is_hard_limit": false, "command": ["/Users/ricfulop/.local/bin/uv", "run", "--isolated", "--no-project", "--python", "3.12", "--with", "numpy==2.3.5", "--with", "sympy==1.14.0", "python", "-u", "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2/verification/oblate_quadratic_preparation/export_angular_weak_slots.py", "--output-dir", "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2/reports/oblate-angular-weak-slots/profile-arithmetic-probe-runtime", "--mode", "profile-arithmetic-probe"], "cwd": "/Users/ricfulop/.local/share/openresearch/local-runs/b173211f-b492-4d14-9866-84342c279986/repo/paper2", "source_sha256": {"export_angular_weak_slots.py": "d8344bd3dde1688b1cc3c5f3791ce098ffe20964ec24a7e94cf4d8caa78e11d7", "weak_forms.py": "a4b3543f0ba900dfaa4bd9682e0e066efce44f06574318235a313501ceb27148", "potential_hessian.py": "b158145e29215b4c89a874f59377b4baa23bc0505dd3212fbdc1db601c197f08", "kinematic_blocks.py": "b25200736b032f337e2df5edde21b548fa6d7ea7ec0886c5065dec5da8dcd501", "supervise_weak_validation.py": "30636481185ea01e71862c32cddfcbaa551bc89d41538c55e668ee751774aa6e", "run_weak_validation.sh": "74c2cdb21543c00552b4db33c168a126578bd4a40ec0d940f265453160ff078b"}, "source_commit": "aeafd47aae703908dc72ba3dde534cc5afce86b9", "run_id": "b173211f-b492-4d14-9866-84342c279986", "supervisor_python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]", "source_equations_changed_by_supervisor": false, "status": "child_exit_zero", "checker_mode": "profile-arithmetic-probe", "process_group": 3022, "ended_utc": "2026-11-28T09:58:07.270897+00:00", "elapsed_seconds": 154.8756507090293, "child_return_code": 0, "stop_reason": null, "peak_sampled_group_rss_bytes": 245514240, "sample_count": 524, "cleanup_events": [{"action": "final_disposition", "status": "empty", "members": []}]}

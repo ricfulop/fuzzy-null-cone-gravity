@@ -1,0 +1,125 @@
+{
+  "elapsed_seconds": 153.3467452081386,
+  "payload": {
+    "angular_measure": "dx/2",
+    "compact": {
+      "max_abs_24_48": 0.0,
+      "max_abs_48_96": 0.0,
+      "max_scaled_48_96": 0.0,
+      "timings": {
+        "24": 0.0004689174238592386,
+        "24_cancel_qq_root_guard_seconds": 0.000138541916385293,
+        "24_expand_split_seconds": 2.083834260702133e-06,
+        "24_fixed_substitution_seconds": 5.916925147175789e-06,
+        "24_lambdify_seconds": 0.00011695781722664833,
+        "24_legendre_nodes_seconds": 0.00019341707229614258,
+        "24_quadrature_evaluation_seconds": 1.1999858543276787e-05,
+        "48": 0.000443166121840477,
+        "48_cancel_qq_root_guard_seconds": 1.7124926671385765e-05,
+        "48_expand_split_seconds": 2.0831357687711716e-06,
+        "48_fixed_substitution_seconds": 6.917165592312813e-06,
+        "48_lambdify_seconds": 4.1606836020946503e-07,
+        "48_legendre_nodes_seconds": 0.0004069169517606497,
+        "48_quadrature_evaluation_seconds": 9.707873687148094e-06,
+        "96": 0.0009212088771164417,
+        "96_cancel_qq_root_guard_seconds": 1.6249949112534523e-05,
+        "96_expand_split_seconds": 2.00001522898674e-06,
+        "96_fixed_substitution_seconds": 6.1248429119586945e-06,
+        "96_lambdify_seconds": 2.50060111284256e-07,
+        "96_legendre_nodes_seconds": 0.0008874170016497374,
+        "96_quadrature_evaluation_seconds": 9.167008101940155e-06
+      },
+      "values": {
+        "24": [
+          0.0,
+          0.0
+        ],
+        "48": [
+          0.0,
+          0.0
+        ],
+        "96": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "compact_density_construct_seconds": 0.003717165905982256,
+    "compact_nonzero": false,
+    "compact_nonzero_witness": null,
+    "denominator_cache_reset_before_compact": 1,
+    "denominator_cache_reset_before_raw": 2,
+    "diagnostic_only": true,
+    "diagnostic_timing_only": true,
+    "elapsed_seconds": 0.016090249875560403,
+    "epsilon": "1/4",
+    "exact_raw_minus_compact_zero": true,
+    "left_coefficient": "11/13",
+    "left_index": 10,
+    "left_label": "C_polar_2_0",
+    "left_profile": "r**2 + 11*r/7 + 3/5",
+    "lf": 0,
+    "m": 0,
+    "quadrature_orders": [
+      24,
+      48,
+      96
+    ],
+    "r": "3/2",
+    "raw": {
+      "max_abs_24_48": 0.0,
+      "max_abs_48_96": 0.0,
+      "max_scaled_48_96": 0.0,
+      "timings": {
+        "24": 0.0007852092385292053,
+        "24_cancel_qq_root_guard_seconds": 0.00025379215367138386,
+        "24_expand_split_seconds": 5.792127922177315e-06,
+        "24_fixed_substitution_seconds": 1.333281397819519e-05,
+        "24_lambdify_seconds": 0.00018766708672046661,
+        "24_legendre_nodes_seconds": 0.00029699993319809437,
+        "24_quadrature_evaluation_seconds": 2.7625123038887978e-05,
+        "48": 0.0004857480525970459,
+        "48_cancel_qq_root_guard_seconds": 2.2582942619919777e-05,
+        "48_expand_split_seconds": 3.0829105526208878e-06,
+        "48_fixed_substitution_seconds": 9.250128641724586e-06,
+        "48_lambdify_seconds": 4.5821070671081543e-07,
+        "48_legendre_nodes_seconds": 0.00043791579082608223,
+        "48_quadrature_evaluation_seconds": 1.2458069249987602e-05,
+        "96": 0.0009643759112805128,
+        "96_cancel_qq_root_guard_seconds": 1.770816743373871e-05,
+        "96_expand_split_seconds": 2.00001522898674e-06,
+        "96_fixed_substitution_seconds": 6.791902706027031e-06,
+        "96_lambdify_seconds": 1.6693957149982452e-07,
+        "96_legendre_nodes_seconds": 0.0009262918028980494,
+        "96_quadrature_evaluation_seconds": 1.1417083442211151e-05
+      },
+      "values": {
+        "24": [
+          0.0,
+          0.0
+        ],
+        "48": [
+          0.0,
+          0.0
+        ],
+        "96": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "raw_compact_rtol": 2e-10,
+    "raw_density_construct_seconds": 0.005123249953612685,
+    "raw_nonzero": false,
+    "raw_nonzero_witness": null,
+    "refinement_rtol": 2e-10,
+    "rf": 0,
+    "right_coefficient": "25/17",
+    "right_index": 11,
+    "right_label": "C_axial_2_0",
+    "right_profile": "r**3 - 12*r/11 + 4/9",
+    "snapshot": false
+  },
+  "stage": "arithmetic_right_11",
+  "status": "running"
+}

@@ -1,0 +1,120 @@
+{
+  "angular_measure": "dx/2",
+  "compact": {
+    "max_abs_24_48": 6.106226635438361e-16,
+    "max_abs_48_96": 6.245004513516506e-16,
+    "max_scaled_48_96": 6.245004513516506e-16,
+    "timings": {
+      "24": 0.17271983297541738,
+      "24_cancel_qq_root_guard_seconds": 0.13744045794010162,
+      "24_expand_split_seconds": 0.033914958126842976,
+      "24_fixed_substitution_seconds": 3.854208625853062e-05,
+      "24_lambdify_seconds": 0.0009942911565303802,
+      "24_legendre_nodes_seconds": 0.0002899589017033577,
+      "24_quadrature_evaluation_seconds": 4.162476398050785e-05,
+      "48": 0.008433375041931868,
+      "48_cancel_qq_root_guard_seconds": 0.00787062500603497,
+      "48_expand_split_seconds": 4.875008016824722e-06,
+      "48_fixed_substitution_seconds": 1.0082963854074478e-05,
+      "48_lambdify_seconds": 5.420297384262085e-07,
+      "48_legendre_nodes_seconds": 0.0005157089326530695,
+      "48_quadrature_evaluation_seconds": 3.154110163450241e-05,
+      "96": 0.007837416371330619,
+      "96_cancel_qq_root_guard_seconds": 0.0067337919026613235,
+      "96_expand_split_seconds": 3.4999102354049683e-06,
+      "96_fixed_substitution_seconds": 1.0707881301641464e-05,
+      "96_lambdify_seconds": 7.497146725654602e-07,
+      "96_legendre_nodes_seconds": 0.0010488750413060188,
+      "96_quadrature_evaluation_seconds": 3.979192115366459e-05
+    },
+    "values": {
+      "24": [
+        0.11305261804281044,
+        0.0
+      ],
+      "48": [
+        0.11305261804280983,
+        0.0
+      ],
+      "96": [
+        0.11305261804281046,
+        0.0
+      ]
+    }
+  },
+  "compact_density_construct_seconds": 0.009330833097919822,
+  "compact_nonzero": true,
+  "compact_nonzero_witness": "(4314453*x**6 + 30815841*x**4 - 74575041*x**2 + 39444747)/(247520*x**6 + 6683040*x**4 + 60147360*x**2 + 180442080)",
+  "denominator_cache_reset_before_compact": 2,
+  "denominator_cache_reset_before_raw": 2,
+  "diagnostic_only": true,
+  "diagnostic_timing_only": true,
+  "elapsed_seconds": 3.154247958911583,
+  "epsilon": "1/4",
+  "exact_raw_minus_compact_zero": true,
+  "left_coefficient": "11/13",
+  "left_index": 10,
+  "left_label": "C_polar_2_0",
+  "left_profile": "r**2 + 11*r/7 + 3/5",
+  "lf": 0,
+  "m": 0,
+  "quadrature_orders": [
+    24,
+    48,
+    96
+  ],
+  "r": "3/2",
+  "raw": {
+    "max_abs_24_48": 6.106226635438361e-16,
+    "max_abs_48_96": 6.245004513516506e-16,
+    "max_scaled_48_96": 6.245004513516506e-16,
+    "timings": {
+      "24": 1.6623652093112469,
+      "24_cancel_qq_root_guard_seconds": 1.4373985840938985,
+      "24_expand_split_seconds": 0.22340624989010394,
+      "24_fixed_substitution_seconds": 1.254212111234665e-05,
+      "24_lambdify_seconds": 0.0011651662643998861,
+      "24_legendre_nodes_seconds": 0.00032841693609952927,
+      "24_quadrature_evaluation_seconds": 5.425000563263893e-05,
+      "48": 0.05850891815498471,
+      "48_cancel_qq_root_guard_seconds": 0.057896916987374425,
+      "48_expand_split_seconds": 5.041947588324547e-06,
+      "48_fixed_substitution_seconds": 1.2249918654561043e-05,
+      "48_lambdify_seconds": 5.841720849275589e-07,
+      "48_legendre_nodes_seconds": 0.0005517499521374702,
+      "48_quadrature_evaluation_seconds": 4.237517714500427e-05,
+      "96": 0.05205062287859619,
+      "96_cancel_qq_root_guard_seconds": 0.05090379202738404,
+      "96_expand_split_seconds": 5.665933713316917e-06,
+      "96_fixed_substitution_seconds": 2.0208070054650307e-05,
+      "96_lambdify_seconds": 1.0409858077764511e-06,
+      "96_legendre_nodes_seconds": 0.0010511670261621475,
+      "96_quadrature_evaluation_seconds": 6.87488354742527e-05
+    },
+    "values": {
+      "24": [
+        0.11305261804281044,
+        0.0
+      ],
+      "48": [
+        0.11305261804280983,
+        0.0
+      ],
+      "96": [
+        0.11305261804281046,
+        0.0
+      ]
+    }
+  },
+  "raw_compact_rtol": 2e-10,
+  "raw_density_construct_seconds": 0.012271874817088246,
+  "raw_nonzero": true,
+  "raw_nonzero_witness": "(4314453*x**6 + 30815841*x**4 - 74575041*x**2 + 39444747)/(247520*x**6 + 6683040*x**4 + 60147360*x**2 + 180442080)",
+  "refinement_rtol": 2e-10,
+  "rf": 0,
+  "right_coefficient": "3/17",
+  "right_index": 0,
+  "right_label": "lambda_0_0",
+  "right_profile": "r**3 - r/11 + 4/9",
+  "snapshot": false
+}

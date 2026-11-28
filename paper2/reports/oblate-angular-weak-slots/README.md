@@ -1,12 +1,12 @@
 # Oblate angular weak-slot snapshots: preparation
 
-Status: **two bounded attempts timed out; three controls passed in each, but no angular snapshot completed**.
+Status: **two snapshot attempts remain incomplete; the subsequent twelve-pair arithmetic diagnostic passed. No angular snapshot has completed yet**.
 This child follows the completed [bounded local weak-form validation](../oblate-weak-curvature-validation/full-recheck-pass/README.md).
 It belongs to the original Paper I metric-coefficient Einstein–Hilbert Galerkin regulator. It does not test the distinct reduction-before-cutoff Gaunt candidate.
 
 The question is whether the validated local densities can be integrated into consistently labelled angular matrices at a small, declared set of radii. This is an interface diagnostic, not a finite radial operator calculation.
 
-The [first attempt](first-attempt/README.md) preserves run `b092637e-9aa2-406e-86a8-963593e30f47` unchanged. Its source hashes and cleanup were verified. The [narrow follow-up preparation](direct-profile-probe-preparation.md) targeted only `m=0,r=3/2` under the same resource and numerical limits. Its [preserved attempt](profile-pair-attempt/README.md) also hit the wall limit: profile jets built in 0.522 seconds, and at least 120 pair integrals in the first 144-term potential-density family block completed before row 10 was interrupted. No block reconstruction or snapshot passed. A smaller [arithmetic comparison](profile-arithmetic-probe-preparation.md) is independently source-reviewed for raw versus component-compacted actual-profile jets on row 10, without another full slot export. The six-snapshot target below remains incomplete.
+The [first attempt](first-attempt/README.md) preserves run `b092637e-9aa2-406e-86a8-963593e30f47` unchanged. Its source hashes and cleanup were verified. The [narrow follow-up preparation](direct-profile-probe-preparation.md) targeted only `m=0,r=3/2` under the same resource and numerical limits. Its [preserved attempt](profile-pair-attempt/README.md) also hit the wall limit: profile jets built in 0.522 seconds, and at least 120 pair integrals in the first 144-term potential-density family block completed before row 10 was interrupted. No block reconstruction or snapshot passed. The subsequent [arithmetic comparison passed](arithmetic-pass/README.md): 559 exact component equalities, twelve exact raw-versus-compact density identities and all quadrature gates on row 10. Recorded symbolic normalization/integration work was substantially smaller after component compaction, with the one-process timing caveat retained. This supports a separate first-case integration test; the six-snapshot target below remains incomplete.
 
 ## Fixed scientific scope
 
