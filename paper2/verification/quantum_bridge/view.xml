@@ -1,17 +1,19 @@
-<signal name="N" label="Matrix rank N" digits="0" />
-<signal name="L" label="Angular cutoff L" digits="0" />
-<signal name="boundary_defect" label="Absolute lapse curvature, unit L2 cutoff harmonic" digits="7" better="lower" />
-<signal name="interior_curvature" label="Curvature for fixed ell=1" digits="7" />
-<signal name="lapse_block_rank" label="Axisymmetric lapse Hessian rank" digits="0" />
-<signal name="constraint_residual" label="Vacuum constraint residual" digits="0" better="lower" />
-<signal name="fd_error" label="Finite-difference absolute error" scale="100000000000000" unit="×10⁻¹⁴" digits="5" better="lower" />
-<signal name="quadrature_difference" label="Quadrature difference" scale="10000000000000000000000000000000000000000000000000000" unit="×10⁻⁵²" digits="3" better="lower" />
-<signal name="max_fd_error" label="Maximum derivative error" scale="100000000000000" unit="×10⁻¹⁴" digits="5" better="lower" />
+<signal name="case" label="Case" />
+<signal name="naive_curvature" label="Uncorrected lapse derivative" digits="8" />
+<signal name="completed_curvature" label="Completed lapse derivative" digits="0" />
+<signal name="quartic_correction" label="Required quartic correction" digits="8" />
+<signal name="omitted_high_error" label="Error without high-block determinant" digits="8" />
+<signal name="omitted_mixed_error" label="Error without mixed Schur terms" digits="8" />
+<signal name="determinant_identity_residual" label="Exact determinant residual" digits="0" better="lower" />
+<signal name="auxiliary_J" label="Auxiliary angular cutoff" digits="0" />
+<signal name="epsilon" label="Lapse amplitude" />
+<signal name="absolute_H" label="Remaining Hamiltonian magnitude" digits="12" better="lower" />
+<signal name="quadrature_difference" label="Quadrature difference" digits="12" better="lower" />
 <signal name="checks_passed" label="Validated cases" digits="0" better="higher" />
-<signal name="case" label="Quadrature case" />
-<view headline="boundary_defect constraint_residual">
-  <table name="cutoffs" columns="N boundary_defect interior_curvature lapse_block_rank" />
-  <text>A nonzero lapse curvature is a constraint obstruction for the common finite-rank action. It is an expected scientific outcome, not a failed numerical run. The value is not a scattering amplitude.</text>
-  <stats of="constraint_residual max_fd_error checks_passed" />
-  <table name="quadrature" columns="case fd_error quadrature_difference" />
+<view headline="completed_curvature determinant_identity_residual">
+  <table name="completion" columns="case naive_curvature completed_curvature quartic_correction" />
+  <text>This checks the gravitational angular kinetic restriction. A zero completed derivative validates this correction only; it is not a full graviton-loop amplitude or proof of nonlinear constraint closure.</text>
+  <stats of="completed_curvature determinant_identity_residual checks_passed" />
+  <table name="determinants" columns="case omitted_high_error omitted_mixed_error determinant_identity_residual" />
+  <chart from="padding" x="auxiliary_J" y="absolute_H" by="epsilon" y-scale="log" ghost="false" />
 </view>

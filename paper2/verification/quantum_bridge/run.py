@@ -306,6 +306,10 @@ def numerical_case(L, ell, config):
 def main():
     start = time.monotonic()
     config = json.loads((ROOT / "config.json").read_text())
+    if config["calculation"] == "kinetic_completion":
+        from kinetic_completion import main as completion_main
+        completion_main(config)
+        return
     if config["calculation"] != "constraint_surface_lapse":
         raise ValueError("Unsupported calculation")
     print(json.dumps({"configuration": config, "python": sys.version,

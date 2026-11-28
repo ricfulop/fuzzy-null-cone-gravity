@@ -1,16 +1,16 @@
 {
   "plan": [
     {"phase": "setup", "of": 1, "unit": "checks"},
-    {"phase": "constraint_data", "of": 1, "unit": "cases"},
-    {"phase": "exact_hessians", "of": 11, "unit": "cutoffs"},
-    {"phase": "independent_quadrature", "of": 9, "unit": "cases"},
+    {"phase": "exact_completion", "of": 5, "unit": "cases"},
+    {"phase": "finite_amplitude", "of": 21, "unit": "cases"},
     {"phase": "export", "of": 1, "unit": "reports"}
   ],
   "brief": {
-    "question": "Does the common finite-rank metric-coefficient action inherit continuum lapse constraints on vacuum initial data?",
-    "healthy": "Exact rational constraint residuals vanish. The axisymmetric lapse Hessian has predicted nonzero cutoff entries. Independent finite-amplitude quadrature agrees with its exact curvature; the final summary and JSON report are written.",
-    "noise": "A positive boundary_defect is the expected physical obstruction being tested, not numerical divergence. Fixed ell=1 and ell=L are different cutoff sequences. The first setup stage has no package installs because the recipe uses only the Python standard library.",
-    "worth_a_flag": "A nonzero vacuum constraint residual, failed assertion, independent quadrature disagreement, or a claim that this run is a completed graviton loop amplitude.",
-    "decided": "Local CPU only. No GPU or external compute. This is a prerequisite calculation and does not establish full Dirac stabilization, boundary quantization or reconstruction."
+    "question": "Does eliminating the discarded kinetic block repair the verified lapse defect and retain its necessary fourth-order determinant contribution?",
+    "from_parent": "The parent proved a nonzero lapse primary/secondary block on vacuum data. Its unit-L2 cutoff-harmonic defect has analytic limit 1/2, not zero; its fixed-low-harmonic second derivative eventually vanishes.",
+    "healthy": "Exact Schur completion cancels the second lapse derivative in the five specified kinetic cases. Full and factored determinants agree through fourth order. Deliberately omitted high or mixed blocks change coefficients. Increasing auxiliary padding is checked at finite amplitudes; finite residuals do not imply the perturbative identity failed.",
+    "noise": "Zero completed_curvature and determinant_identity_residual are expected exact results. The determinant is only an axisymmetric angular kinetic block. There is no full scattering amplitude, quantum measure, corner Hilbert space, or reconstruction in this run.",
+    "worth_a_flag": "A failed exact identity or independent quadrature assertion; a claim that determinant coefficients are physical four-graviton amplitudes; or a claim that vanishing second derivative proves full Dirac closure.",
+    "decided": "Local CPU, Python standard library only. Preserve the frozen parent experiment. Independent finite-amplitude tests use 60-digit arithmetic and 96/128-node quadrature."
   }
 }
