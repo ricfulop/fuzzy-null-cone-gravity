@@ -126,3 +126,13 @@ The largest scaled geometric-coefficient error is about
 $3.04\times10^{-14}$. These are verified classical ingredients. A
 finite-basis four-point loop can also require fifth/sixth-order vertices and
 quantization terms, so this step does not complete the requested amplitude.
+
+The [sixth-order reduction and loop prescription](reports/quantum-bridge/reduced-sixth-order-and-loop-kernel.md)
+now derives the full higher-order bookkeeping. Scalar responses through
+fourth order and two York vector inverses suffice for the required
+constraint contributions; pointwise sources and the finite-basis inverse
+Gram corrections remain essential. An ordered-partition formula retains
+all one-loop four-point vertex families. These are derived evaluation
+identities, not evaluated higher gravitational couplings or an amplitude.
+The next implementation must supply those couplings, evaluate the loop,
+assemble the connected observable and check its physical limits.
