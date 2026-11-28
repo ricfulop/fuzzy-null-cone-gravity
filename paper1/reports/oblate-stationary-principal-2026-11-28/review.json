@@ -1,0 +1,6 @@
+{
+  "message": "msg_e2eeec13",
+  "reviewer": "independent Astra",
+  "scope": "file, JSON and hash inspection; no rerun",
+  "finding": "No material discrepancy; principal rank4, all23 radial gauge rows, both manufactured controls, source/input hashes and exit evidence agree. No closure or germ claim."
+}
