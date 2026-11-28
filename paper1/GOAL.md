@@ -10,6 +10,8 @@ The [principal probe](reports/oblate-stationary-principal-2026-11-28/README.md) 
 
 The [terminal-embedding timeout](reports/oblate-stationary-closure-terminal-timeout-2026-11-28/README.md) preserved three elimination checkpoints and clean shutdown at 900 seconds, without a closure export. A separate [kernel diagnostic](reports/oblate-terminal-embedding-probe-2026-11-28/README.md) passed in 117.565 seconds: the saved 6-by-14 constraint matrix has rank six and a verified eight-column algebraic kernel. This supports a terminal-algebra implementation repair; it does not establish constraint preservation, all original Euler equations, a solution germ, or a physical mode count.
 
+The [shared local weak-form validation](reports/shared-oblate-weak-validation-2026-11-28/README.md) now passes all eight batches for the original Paper I action: representative exact sampled potential/lapse/Green checks, three fixed symbolic gauge vectors, and nonzero sign/ablation controls. This is separate supporting evidence; it does not certify the stationary DAE, a physical radial domain, an admissible seed, or nonlinear consistency.
+
 ## Objective and completion standard
 
 Resolve the finite-rank gravitational constraints, the boundary quantization and gluing, and the connection to the simulation in one mutually consistent formulation. Preserve the citation corrections and all archived simulation results. The starting scientific source is repair PR #6, commit `ab303dd3f756c7f3f8d393ef090d4da35a7fdae2`.
