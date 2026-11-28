@@ -15,6 +15,8 @@ This is **Paper I**, contained in `paper1/`. Run all commands below from this fo
 
 The review incorporates the Open Research follow-up at `d288b95712c735c2ef1c3df293d1c87abef76849` and preserves its simulation driver, analysis, and raw result files. It retains the corrections to pair-state counting, benchmark precision, and numerical scope, and replaces the figure presentation with a self-contained narrative and regenerated vector artwork.
 
+The [canonical manuscript integration](reports/canonical-manuscript-integration-2026-11-28/README.md) brings the certified oblate primary/secondary ranks and linearized lapse results into both current layouts. The exact stationary operator export remains a research checkpoint; no radial solution germ or nonlinear classification is asserted.
+
 ## Implemented action and clock repairs
 
 The current draft includes citation PR #5 and replaces the failed Appendix A action with an explicit Einstein--Hilbert angular Galerkin **bulk** construction. All metric components are varied before null gauge fixing; exact spherical and quadratic checks and a finite-amplitude nonspherical check are supplied. This reconstruction uses pointwise products of harmonic symbols and is distinct from the archived fuzzy-product simulation model. Finite-rank constraint closure, null-boundary quantization, and equivalence of the models remain open.

@@ -1,0 +1,935 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./paper.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/revtex/revtex4-2.cls
+Document Class: revtex4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for
+ documentation)
+ltxutil[2022/06/05 4.2f utilities package (portions licensed from W. E. Baxter 
+web at superscript.com)]
+ltxfront[2022/06/05 4.2f frontmatter package (AO,DPC,MD)]
+ltxgrid[2022/06/05 4.2f page grid package (portions licensed from W. E. Baxter 
+web at superscript.com)]
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/revtex/aps4-2.rtx)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/revtex/aps10pt4-2.rtx)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/url/url.sty)
+(/Users/ricfulop/Library/texmf/tex/latex/natbib/natbib.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/revtex/revsymb4-2.sty))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/microtype/microtype-pdftex.d
+ef) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/microtype/microtype.cfg)
+) (/Users/ricfulop/Library/texmf/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.
+sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+ (/usr/local/texlive/2026basic/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/Users/ricfulop/Library/texmf/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/gettitlestring/gettitlestr
+ing.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/kvoptions/kvoptions.sty))
+
+Package nameref Warning: The definition of \label has changed! 
+(nameref)                Check your packages! 
+(nameref)                Replacing it with the kernel definition on input line 
+161.
+
+) (/usr/local/texlive/2026basic/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/Users/ricfulop/Library/texmf/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/Users/ricfulop/Library/texmf/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)
+)) (/Users/ricfulop/Library/texmf/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/rerunfilecheck/rerunfilechec
+k.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/uniquecounter/uniquecounte
+r.sty)))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
+ef)
+No file paper.aux.
+(/usr/local/texlive/2026basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.s
+ty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+)) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/jknapltx/ursfs.fd)
+
+Package natbib Warning: Citation `ChoquetBruhat2011' on page 1 undefined on inp
+ut line 51.
+
+
+Package natbib Warning: Citation `Reisenberger2008' on page 1 undefined on inpu
+t line 51.
+
+
+Package natbib Warning: Citation `Reisenberger2013' on page 1 undefined on inpu
+t line 51.
+
+
+Package natbib Warning: Citation `DonnellyFreidel2016' on page 1 undefined on i
+nput line 51.
+
+
+Package natbib Warning: Citation `FreidelGeillerPranzetti2020' on page 1 undefi
+ned on input line 51.
+
+
+Package natbib Warning: Citation `ChandrasekaranFlanagan2023' on page 1 undefin
+ed on input line 51.
+
+
+Package natbib Warning: Citation `CiambelliFreidelLeigh2024' on page 1 undefine
+d on input line 51.
+
+
+Package natbib Warning: Citation `CiambelliKlinger2026' on page 1 undefined on 
+input line 51.
+
+
+Package natbib Warning: Citation `CLPW2023' on page 1 undefined on input line 5
+1.
+
+
+Package natbib Warning: Citation `CPW2023' on page 1 undefined on input line 51
+.
+
+
+Package natbib Warning: Citation `CDMW2024' on page 1 undefined on input line 5
+1.
+
+
+LaTeX Warning: Reference `fig:geometry' on page 1 undefined on input line 53.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 1 undefined on in
+put line 53.
+
+
+LaTeX Warning: Reference `sec:audit' on page 1 undefined on input line 55.
+
+
+LaTeX Warning: Reference `app:comparison' on page 1 undefined on input line 55.
+
+
+
+LaTeX Warning: Reference `prop:finite_area' on page 1 undefined on input line 5
+7.
+
+
+LaTeX Warning: Reference `sec:unified' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Reference `sec:hmc' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Reference `sec:1loop' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Reference `sec:orig_sections' on page 1 undefined on input line 
+61.
+
+
+LaTeX Warning: Reference `app:benchmark_figures' on page 1 undefined on input l
+ine 61.
+
+
+LaTeX Warning: Reference `sec:discussion' on page 1 undefined on input line 61.
+
+
+[1{/Users/ricfulop/Library/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/
+pdftex.map}]
+
+LaTeX Warning: Reference `sec:unified_clock' on page 2 undefined on input line 
+67.
+
+
+LaTeX Warning: Reference `sec:unified_clock' on page 2 undefined on input line 
+67.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 2 undefined on in
+put line 75.
+
+
+LaTeX Warning: Reference `sec:unified_clock' on page 2 undefined on input line 
+92.
+
+
+LaTeX Warning: Reference `sec:unified_H' on page 2 undefined on input line 96.
+
+
+LaTeX Warning: Reference `tab:changes' on page 2 undefined on input line 98.
+
+
+Package natbib Warning: Citation `Steinacker2026' on page 2 undefined on input 
+line 121.
+
+[2] [3 <./figs/review_01_causal_diamond.pdf>]
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 4 undefined on in
+put line 134.
+
+
+LaTeX Warning: Reference `eq:iota_map' on page 4 undefined on input line 139.
+
+
+LaTeX Warning: Reference `eq:cubic_vertex' on page 4 undefined on input line 14
+6.
+
+
+LaTeX Warning: Reference `eq:cubic_vertex' on page 4 undefined on input line 15
+4.
+
+
+LaTeX Warning: Reference `eq:wigner6j' on page 4 undefined on input line 154.
+
+
+LaTeX Warning: Reference `fig:v2' on page 4 undefined on input line 154.
+
+
+LaTeX Warning: Reference `app:explicit_action' on page 4 undefined on input lin
+e 156.
+
+
+LaTeX Warning: Reference `prop:oblate_rank' on page 4 undefined on input line 1
+56.
+
+
+LaTeX Warning: Reference `eq:cubic_vertex' on page 4 undefined on input line 15
+6.
+
+
+LaTeX Warning: Reference `fig:unified' on page 4 undefined on input line 158.
+
+(./sections/quadratic_clock.tex
+
+LaTeX Warning: Reference `sec:audit_clock' on page 4 undefined on input line 1.
+
+
+
+LaTeX Warning: Reference `app:clock_proof' on page 4 undefined on input line 4.
+
+
+
+Package natbib Warning: Citation `Flanagan1997' on page 4 undefined on input li
+ne 9.
+
+
+Package natbib Warning: Citation `FewsterEveson1998' on page 4 undefined on inp
+ut line 9.
+
+
+LaTeX Warning: Reference `eq:oscillator_clock' on page 4 undefined on input lin
+e 9.
+
+
+Underfull \hbox (badness 1622) in paragraph at lines 8--10
+\OT1/cmr/m/n/10 (+20) The scalar-field bounds of Flana-gan and Fewster--
+
+Package natbib Warning: Citation `PowersStormer1970' on page 4 undefined on inp
+ut line 14.
+
+
+LaTeX Warning: Reference `eq:cross_focusing' on page 4 undefined on input line 
+16.
+
+
+Package natbib Warning: Citation `BalianBrezin1969' on page 4 undefined on inpu
+t line 22.
+
+
+Package natbib Warning: Citation `FewsterFordRoman2010' on page 4 undefined on 
+input line 22.
+
+[4]
+
+LaTeX Warning: Reference `fig:v2' on page 5 undefined on input line 36.
+
+
+LaTeX Warning: Reference `eq:cross_focusing' on page 5 undefined on input line 
+50.
+
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 164.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 164.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 164.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 164.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 164.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 164.
+
+
+LaTeX Warning: Reference `eq:cross_focusing' on page 5 undefined on input line 
+171.
+
+
+LaTeX Warning: Reference `fig:state_count' on page 5 undefined on input line 17
+3.
+
+
+LaTeX Warning: Reference `eq:cubic_vertex' on page 5 undefined on input line 18
+5.
+
+
+LaTeX Warning: Reference `eq:wigner6j' on page 5 undefined on input line 185.
+
+
+LaTeX Warning: Reference `eq:H_phys' on page 5 undefined on input line 185.
+
+
+LaTeX Warning: Reference `fig:v2' on page 5 undefined on input line 185.
+
+
+Package natbib Warning: Citation `CiambelliKlinger2026' on page 5 undefined on 
+input line 187.
+
+
+LaTeX Warning: Reference `app:explicit_action' on page 5 undefined on input lin
+e 187.
+
+
+Underfull \hbox (badness 7981) in paragraph at lines 187--188
+[]\OT1/cmr/m/n/10 (+20) Replacing infinite-dimensional $[](\OML/cmm/m/it/10 S[]
+\OT1/cmr/m/n/10 (+20) )$ [\OT1/cmr/bx/n/10 (+20) ? \OT1/cmr/m/n/10 (+20) ]
+
+Underfull \hbox (badness 2285) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 (+20) by com-pact $\OML/cmm/m/it/10 SU\OT1/cmr/m/n/10 (+20) (2)
+$ cor-ner ro-ta-tions on $\OMS/cmsy/m/n/10 H[] \OT1/cmr/m/n/10 (+20) =
+
+Underfull \hbox (badness 1496) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 (+20) 1[]260$) and Boltz-mann weights $(\OML/cmm/m/it/10 e[]; e
+[]; e[]\OT1/cmr/m/n/10 (+20) ) =
+[5]
+
+LaTeX Warning: Reference `eq:quadratic_matrix_action' on page 6 undefined on in
+put line 193.
+
+
+LaTeX Warning: Reference `fig:unified' on page 6 undefined on input line 193.
+
+
+LaTeX Warning: Reference `fig:unified' on page 6 undefined on input line 195.
+
+
+LaTeX Warning: Reference `fig:unified' on page 6 undefined on input line 195.
+
+[6 <./figs/review_02_state_count.pdf>]
+
+LaTeX Warning: Reference `eq:iota_map' on page 7 undefined on input line 205.
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 212--214
+\OML/cmm/m/it/10 @[]Z\OT1/cmr/m/n/10 (+20) (\OML/cmm/m/it/10 @[]Z\OT1/cmr/m/n/1
+0 (+20) )[] + \OML/cmm/m/it/10 @[]Z\OT1/cmr/m/n/10 (+20) (\OML/cmm/m/it/10 @[]Z
+\OT1/cmr/m/n/10 (+20) )[]$, and $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/n/10 (+20) en
+-codes the in-
+
+LaTeX Warning: Reference `eq:hmc_action' on page 7 undefined on input line 217.
+
+
+
+LaTeX Warning: Reference `eq:cubic_vertex' on page 7 undefined on input line 21
+7.
+
+
+LaTeX Warning: Reference `eq:wigner6j' on page 7 undefined on input line 217.
+
+
+LaTeX Warning: Reference `eq:hmc_Z' on page 7 undefined on input line 226.
+
+
+LaTeX Warning: Reference `fig:roughness' on page 7 undefined on input line 229.
+
+
+
+Package natbib Warning: Citation `Vehtari2021' on page 7 undefined on input lin
+e 234.
+
+
+LaTeX Warning: Reference `fig:hmc' on page 7 undefined on input line 240.
+
+
+Underfull \hbox (badness 3354) in paragraph at lines 240--241
+[]\OT1/cmr/m/n/10 (+20) In these follow-ups, the lo-cal mean-area rank-
+[7]
+Underfull \hbox (badness 2065) in paragraph at lines 252--253
+[]\OT1/cmr/m/n/10 (+20) The archived $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 (+20) 
+= 48$ prop-a-ga-tor is close to
+
+Underfull \hbox (badness 1675) in paragraph at lines 252--253
+\OT1/cmr/m/n/10 (+20) its free-field value, with fit-ted wave-function co-ef-
+
+Underfull \hbox (badness 1642) in paragraph at lines 252--253
+\OT1/cmr/m/n/10 (+20) fi-cient $\OML/cmm/m/it/10 Z[] \OT1/cmr/m/n/10 (+20) = 1\
+OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (+20) 0008$. The mass-squared fit in-
+
+Underfull \hbox (badness 2582) in paragraph at lines 252--253
+\OT1/cmr/m/n/10 (+20) ter-cepts at in-creas-ing ranks $8\OML/cmm/m/it/10 ; \OT1
+/cmr/m/n/10 (+20) 12\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (+20) 16\OML/cmm/m/it/10
+ ; \OT1/cmr/m/n/10 (+20) 24\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (+20) 32\OML/cmm/
+m/it/10 ; \OT1/cmr/m/n/10 (+20) 48$ are
+
+Package natbib Warning: Citation `KaulMajumdar2000' on page 8 undefined on inpu
+t line 260.
+
+
+Package natbib Warning: Citation `Sen2013' on page 8 undefined on input line 26
+0.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 8 undefined on in
+put line 260.
+
+
+Package natbib Warning: Citation `BBM2022' on page 8 undefined on input line 26
+4.
+
+
+Package natbib Warning: Citation `FPS2013' on page 8 undefined on input line 26
+4.
+
+[8 <./figs/fig_followup_roughness.pdf>]
+
+LaTeX Warning: Reference `thm:isotropy' on page 9 undefined on input line 279.
+
+
+LaTeX Warning: Reference `fig:1loop' on page 9 undefined on input line 279.
+
+
+LaTeX Warning: Reference `tab:1loop' on page 9 undefined on input line 279.
+
+
+Package natbib Warning: Citation `BenedettiCasini2020' on page 9 undefined on i
+nput line 279.
+
+
+LaTeX Warning: Reference `fig:1loop' on page 9 undefined on input line 279.
+
+
+Package natbib Warning: Citation `ADLS2022' on page 9 undefined on input line 2
+79.
+
+
+LaTeX Warning: Reference `fig:1loop' on page 9 undefined on input line 279.
+
+
+Package natbib Warning: Citation `Sen2013' on page 9 undefined on input line 28
+8.
+
+
+Package natbib Warning: Citation `Sen2013' on page 9 undefined on input line 28
+9.
+
+
+Package natbib Warning: Citation `BenedettiCasini2020' on page 9 undefined on i
+nput line 290.
+
+
+Package natbib Warning: Citation `ADLS2022' on page 9 undefined on input line 2
+91.
+
+
+LaTeX Warning: Reference `thm:isotropy' on page 9 undefined on input line 300.
+
+
+LaTeX Warning: Reference `fig:uv' on page 9 undefined on input line 300.
+
+[9 <./figs/fig6_modal_b200_hmc.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 301.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 301.
+
+
+Class revtex4-2 Warning: Deferred float stuck during \clearpage processing.
+
+
+LaTeX Warning: Reference `eq:cross_focusing' on page 10 undefined on input line
+ 302.
+
+
+LaTeX Warning: Reference `fig:budget_growth' on page 10 undefined on input line
+ 302.
+
+
+Package natbib Warning: Citation `GoroffSagnotti1986' on page 10 undefined on i
+nput line 316.
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 316--317
+[]\OT1/cmr/m/n/10 (+20) At two loops in four-dimensional pure grav-ity,
+
+Underfull \hbox (badness 1226) in paragraph at lines 316--317
+\OT1/cmr/m/n/10 (+20) the unique on-shell Goroff--Sagnotti coun-tert-erm [\OT1/
+cmr/bx/n/10 (+20) ?
+
+Underfull \hbox (badness 7344) in paragraph at lines 316--317
+\OT1/cmr/m/n/10 (+20) ] is cu-bic in the Weyl ten-sor, $^^A\OMS/cmsy/m/n/10 L[]
+ \OT1/cmr/m/n/10 (+20) =
+
+Package natbib Warning: Citation `CEMZ2016' on page 10 undefined on input line 
+320.
+
+
+Package natbib Warning: Citation `CEMZ2016' on page 10 undefined on input line 
+322.
+
+
+LaTeX Warning: Reference `eq:wigner6j' on page 10 undefined on input line 326.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 328.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 328.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 328.
+
+
+LaTeX Warning: Reference `fig:uv' on page 10 undefined on input line 330.
+
+
+Package natbib Warning: Citation `GrossPerryYaffe1982' on page 10 undefined on 
+input line 330.
+
+
+Package natbib Warning: Citation `HawkingPage1983' on page 10 undefined on inpu
+t line 332.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 334.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 334.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\min' on input line 334.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 334.
+
+[10]
+
+LaTeX Warning: Reference `eq:cemz_bound' on page 11 undefined on input line 338
+.
+
+
+LaTeX Warning: Reference `fig:uv' on page 11 undefined on input line 338.
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 338--339
+[]\OT1/cmr/m/n/10 (+20) Combining coarse-graining of the cor-ner en-tropy
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 11 undefined on i
+nput line 342.
+
+
+LaTeX Warning: Reference `eq:cross_focusing' on page 11 undefined on input line
+ 348.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 11 undefined on i
+nput line 348.
+
+
+Underfull \hbox (badness 7047) in paragraph at lines 348--349
+[]\OT1/cmr/m/n/10 (+20) Summing the four-dimensional gravi-ton modes
+
+LaTeX Warning: Reference `fig:v2' on page 11 undefined on input line 357.
+
+
+LaTeX Warning: Reference `fig:orig' on page 11 undefined on input line 357.
+
+[11 <./figs/review_03_two_loop_budget.pdf>]
+
+LaTeX Warning: Reference `fig:orig' on page 12 undefined on input line 365.
+
+
+Package natbib Warning: Citation `MarolfMaxfield2020' on page 12 undefined on i
+nput line 365.
+
+
+LaTeX Warning: Reference `fig:orig' on page 12 undefined on input line 367.
+
+
+LaTeX Warning: Reference `fig:orig' on page 12 undefined on input line 374.
+
+
+LaTeX Warning: Reference `app:explicit_action' on page 12 undefined on input li
+ne 376.
+
+
+Package natbib Warning: Citation `Page1976' on page 12 undefined on input line 
+381.
+
+
+LaTeX Warning: Reference `fig:hawking' on page 12 undefined on input line 381.
+
+
+Package natbib Warning: Citation `CLPW2023' on page 12 undefined on input line 
+383.
+
+
+Package natbib Warning: Citation `CPW2023' on page 12 undefined on input line 3
+83.
+
+
+LaTeX Warning: Reference `tab:ledger' on page 12 undefined on input line 383.
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 397--397
+[]\OT1/cmr/m/n/9 (+20) Roughness sup-pres-sion and observable-
+
+Package natbib Warning: Citation `Page1976' on page 12 undefined on input line 
+406.
+
+
+Package natbib Warning: Citation `Page1976' on page 12 undefined on input line 
+406.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 12 undefined on i
+nput line 412.
+
+
+LaTeX Warning: Reference `prop:finite_area' on page 12 undefined on input line 
+412.
+
+[12]
+
+LaTeX Warning: Reference `sec:unified' on page 13 undefined on input line 418.
+
+
+Underfull \hbox (badness 3029) in paragraph at lines 418--419
+ []\OT1/cmr/m/it/10 (+20) Dynamical ori-gin of cor-ner mi-crostates: \OT1/cmr/m
+/n/10 (+20) In
+[13 <./figs/review_04_graviton_spectrum.pdf>]
+
+LaTeX Warning: Reference `app:code' on page 14 undefined on input line 423.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 14 undefined on i
+nput line 426.
+
+
+Package natbib Warning: Citation `openresearch' on page 14 undefined on input l
+ine 426.
+
+(./sections/nonlinear_action.tex
+Underfull \hbox (badness 5460) in paragraph at lines 14--15
+[]\OT1/cmr/m/n/10 (+20) Choose spin-weighted har-mon-ics nor-mal-ized by
+
+LaTeX Warning: Reference `eq:reconstruction_map' on page 14 undefined on input 
+line 25.
+
+[14]
+
+Package natbib Warning: Citation `LehnerEtAl2016' on page 15 undefined on input
+ line 44.
+
+
+LaTeX Warning: Reference `eq:explicit_IFSG' on page 15 undefined on input line 
+44.
+
+
+LaTeX Warning: Reference `eq:hmc_action' on page 15 undefined on input line 44.
+
+
+
+LaTeX Warning: Reference `eq:cubic_vertex' on page 15 undefined on input line 4
+4.
+
+(./sections/canonical_oblate.tex
+
+LaTeX Warning: Reference `eq:galerkin_metric' on page 15 undefined on input lin
+e 3.
+
+)
+Underfull \hbox (badness 1466) in paragraph at lines 41--47
+\OT1/cmr/m/n/10 (+20) has nonzero sec-ond time deriva-tive for a suit-able
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--47
+\OT1/cmtt/m/n/10 oblate-[]constraint-[]rank-[]2026-[]11-[]27/$\OT1/cmr/m/n/10 (
++20) , $\OT1/cmtt/m/n/10 reports /
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--47
+\OT1/cmtt/m/n/10 oblate-[]lapse-[]consistency-[]2026-[]11-[]27/$ \OT1/cmr/m/n/1
+0 (+20) and
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--47
+\OT1/cmtt/m/n/10 reports / higher-[]order-[]consistency-[]2026-[]11-[]27/$\OT1/
+cmr/m/n/10 (+20) ,
+[15]
+
+LaTeX Warning: Reference `eq:spherical_density' on page 16 undefined on input l
+ine 68.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 16 undefined on i
+nput line 68.
+
+
+LaTeX Warning: Reference `eq:galerkin_metric' on page 16 undefined on input lin
+e 72.
+
+
+Package natbib Warning: Citation `Solomon2023' on page 16 undefined on input li
+ne 74.
+
+
+Package natbib Warning: Citation `Solomon2023' on page 16 undefined on input li
+ne 79.
+
+[16]
+
+LaTeX Warning: Reference `eq:explicit_IFSG' on page 17 undefined on input line 
+113.
+
+)
+
+LaTeX Warning: Reference `sec:unified_H' on page 17 undefined on input line 435
+.
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 439--441
+\OT1/cmr/m/n/10 (+20) with $\OML/cmm/m/it/10 g[] \OT1/cmr/m/n/10 (+20) = []$, $
+[]\OMS/cmsy/m/n/10 j[] \OT1/cmr/m/n/10 (+20) = (\OML/cmm/m/it/10 M [] \OT1/cmr/
+m/n/10 (+20) 2)\OT1/cmr/bx/n/10 (+20) 1$\OT1/cmr/m/n/10 (+20) , $\OML/cmm/m/it/
+10 H[] \OT1/cmr/m/n/10 (+20) =
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 17 undefined on i
+nput line 449.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 17 undefined on i
+nput line 452.
+
+
+Package natbib Warning: Citation `Chandrasekaran2026' on page 17 undefined on i
+nput line 452.
+
+
+LaTeX Warning: Reference `sec:audit_pass' on page 17 undefined on input line 45
+8.
+
+
+LaTeX Warning: Reference `sec:unified_action' on page 17 undefined on input lin
+e 458.
+
+
+LaTeX Warning: Reference `sec:audit_fail' on page 17 undefined on input line 45
+9.
+
+
+LaTeX Warning: Reference `eq:trace_gap' on page 17 undefined on input line 459.
+
+
+
+LaTeX Warning: Reference `sec:audit' on page 17 undefined on input line 460.
+
+
+LaTeX Warning: Reference `sec:unified_clock' on page 17 undefined on input line
+ 460.
+
+
+LaTeX Warning: Reference `sec:unified_H' on page 17 undefined on input line 461
+.
+
+
+LaTeX Warning: Reference `sec:orig_44' on page 17 undefined on input line 462.
+
+
+Underfull \hbox (badness 6792) in paragraph at lines 463--463
+[]\OT1/cmr/m/n/9 (+20) Entropy co-ef-fi-cients, glu-ing,
+
+LaTeX Warning: Reference `sec:1loop' on page 17 undefined on input line 463.
+
+
+LaTeX Warning: Reference `sec:orig_54' on page 17 undefined on input line 463.
+
+
+LaTeX Warning: Reference `sec:orig_6' on page 17 undefined on input line 463.
+
+
+LaTeX Warning: Reference `sec:audit_pass' on page 17 undefined on input line 46
+4.
+
+
+LaTeX Warning: Reference `app:code' on page 17 undefined on input line 464.
+
+
+LaTeX Warning: Reference `sec:unified' on page 17 undefined on input line 484.
+
+
+LaTeX Warning: Reference `sec:unified' on page 17 undefined on input line 484.
+
+
+LaTeX Warning: Reference `fig:v2' on page 17 undefined on input line 505.
+
+
+LaTeX Warning: Reference `fig:v2' on page 17 undefined on input line 505.
+
+[17] [18] [19 <./figs/fig2_unified_matrix_gravity.pdf>] [20 <./figs/fig5_v2_uni
+fication_and_clock.pdf>] [21 <./figs/fig1_breakthrough_1loop.pdf>] [22 <./figs/
+fig3_uv_completion.pdf>] [23 <./figs/fig4_original_resolution.pdf>]
+
+Package natbib Warning: Citation `ScientificAgentSkills' on page 24 undefined o
+n input line 513.
+
+
+LaTeX Warning: Reference `app:clock_proof' on page 24 undefined on input line 5
+16.
+
+
+LaTeX Warning: Reference `tab:lean' on page 24 undefined on input line 518.
+
+(./sections/clock_proof.tex
+
+LaTeX Warning: Reference `eq:clock_floor' on page 24 undefined on input line 3.
+
+
+
+Package natbib Warning: Citation `PowersStormer1970' on page 24 undefined on in
+put line 9.
+
+
+LaTeX Warning: Reference `prop:finite_area' on page 24 undefined on input line 
+39.
+
+) [24]
+
+LaTeX Warning: Reference `LastBibItem' on page 25 undefined on input line 547.
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 583--584
+ \OT1/cmr/m/n/9 (+20) tropy with-out AdS/CFT,'' JHEP \OT1/cmr/bx/n/9 (+20) 10\O
+T1/cmr/m/n/9 (+20) , 063 (2024),
+
+Underfull \hbox (badness 4819) in paragraph at lines 592--593
+ [][]\OT1/cmr/m/n/9 (+20) E. []E. Flana-gan, ``Quan-tum in-equal-i-ties in two-
+
+[25]
+Underfull \hbox (badness 3029) in paragraph at lines 649--650
+ []\OT1/cmr/m/n/9 (+20) A. R. Solomon, ``Off-Shell Du-al-ity In-vari-ance of
+No file paper.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[26] (/tmp/final-paper-WeNNT8/paper.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information) </Users/ricfulop/Library/t
+exlive/2026basic/texmf-var/fonts/pk/ljfour/public/rsfs/rsfs5.720pk> </Users/ric
+fulop/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/public/rsfs/rsfs5.600
+pk> </Users/ricfulop/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/public
+/rsfs/rsfs7.600pk> </Users/ricfulop/Library/texlive/2026basic/texmf-var/fonts/p
+k/ljfour/public/rsfs/rsfs10.600pk></usr/local/texlive/2026basic/texmf-dist/font
+s/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026basic/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026basic/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026basic/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026basic/
+texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/20
+26basic/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/te
+xlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loca
+l/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/l
+ocal/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pf
+b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r5.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr7.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr9.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmss10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026basic/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026basic/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026basic/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026basic/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2026basic/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2026bas
+ic/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texliv
+e/2026basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /tmp/final-paper-WeNNT8/paper.pdf (26 pages, 897666 bytes).
+Transcript written on /tmp/final-paper-WeNNT8/paper.log.

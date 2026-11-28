@@ -1,0 +1,41 @@
+\subsection{Canonical constraints on a stationary oblate solution}
+
+Choose spacelike $t$ slices with $\lambda=h_{rr}>0$. Completing the square in Eq.~\eqref{eq:galerkin_metric} gives the ADM lapse and shift
+\begin{align}
+\alpha^2&=-h_{tt}+h_{tr}^2/\lambda, &
+\beta^r&=h_{tr}/\lambda, &
+\beta^A&=A_t^A-\beta^r A_r^A .
+\end{align}
+The Legendre transform acts on the retained velocities of $(\lambda,X,A_r,C)$. The temporal coefficient fields $z=(h_{tt},h_{tr},A_t)$ have vanishing primary momenta. Their secondary equations are $\delta H/\delta z=0$, with the displayed lapse and shift evaluated pointwise.
+
+\begin{proposition}\label{prop:oblate_rank}
+Let $\Lambda=0$, $L=N-1$, and fix a compact radial shell away from the origin. On the static oblate Minkowski family, for sufficiently small nonzero oblateness, the temporal Hamiltonian Hessian has angular rank 18 at $N=3$ and 26 at $N=4$. The Poisson matrix of the combined primary and secondary constraints has local angular rank 36 and 52, respectively, for compactly supported radial tests.
+\end{proposition}
+
+\begin{proof}
+Write $x=\cos\theta$, $d=1-x^2$, $\rho=r^2+\epsilon$, and $\Sigma=r^2+\epsilon x^2$. The spatial metric is
+\begin{equation}
+\sigma=\frac{\Sigma}{\rho}dr^2+\frac{\Sigma}{d}dx^2+\rho d\,d\phi^2 .
+\end{equation}
+The cylindrical radius $\sqrt{\rho d}$ and height $rx$ give the Euclidean metric in these coordinates. Its angular block is $\rho q-\epsilon\,dx\otimes dx$ and $A_r=0$. All coefficient fields have angular degree at most two. With $\alpha=1$, $\beta=0$ the four-metric is an exact stationary vacuum solution in the retained ansatz and its spatial momenta vanish.
+
+For the normalized action $\bar I=(16\pi G_N)/(4\pi)\,I_{\mathrm{G},N}^{\mathrm{bulk}}$, use the spatial DeWitt pairing
+\begin{align}
+G(U,V)=\frac{1}{4\pi}\int dr\,d^2y\,\sqrt{\det\sigma}\,
+\bigl(U_{ij}V^{ij}-\mathrm{tr}_\sigma U\,\mathrm{tr}_\sigma V\bigr).
+\end{align}
+The restriction of $G$ to the retained spatial tangent space is nondegenerate at the round metric and hence near it. Let $\Pi$ denote its orthogonal tangent projector for this pairing. A shift-coefficient variation $s=(b,W)=(\delta h_{tr},\delta A_t)$ induces $v_s=(b/\lambda)\partial_r+W^A\partial_A$. At fixed zero momentum the spatial velocity absorbs $\Pi\mathcal L_{v_s}\sigma$. The shift Hessian is therefore
+\begin{equation}
+A(s,t)=-\tfrac12 G(n_s,n_t),\qquad
+n_s=(1-\Pi)\mathcal L_{v_s}\sigma .
+\end{equation}
+The lapse Hessian rows vanish at these data. The terms containing $\partial_r b$ and $\partial_r W$ in the shift Lie derivative are retained spatial variations, so $n_s$ is algebraic in their radial profiles.
+
+Let $V_j$ contain the scalar harmonics through degree $j$. Angular shifts with $W(x)\in V_{L-1}$ and radial shifts with $b/\lambda\in V_{L-2}$ give independent tangent directions. Their dimensions are $2L^2-2$ and $(L-1)^2$, respectively, bounding the rank by $8L+2$. For $m=0,\ldots,L$, exact leading Gram minors of the discarded variations give block ranks $(4,4,3)$ at $L=2$ and $(4,4,4,3)$ at $L=3$. Each positive $m$ contributes twice to the real rank. Analyticity preserves the nonzero minors at sufficiently small nonzero $\epsilon$, giving the matching lower bound and $\ker A=\ker(s\mapsto n_s)$.
+
+The only possible secondary--secondary block pairs a lapse-coefficient test $f$ with a shift test $s$. Its value is $-G(\nabla^2_\sigma f,n_s)/2$ by the flat spatial curvature variation and radial integration by parts. It vanishes on $\ker A$. Eliminating the nondegenerate primary--secondary shift pairs thus gives combined rank $2\,\mathrm{rank}\,A$. Each angular channel still carries a radial function.
+\end{proof}
+
+After eliminating the nondegenerate shift pairs, linearized preservation on this family gives one redundant lapse tertiary profile family at $N=3$ and four at $N=4$. For those descriptors the spatial gradient is a retained shift and the tertiary reduces to a shift secondary. The lapse secondaries themselves still apply. The complementary lapse--tertiary brackets have eight and twelve nondegenerate real angular channels, respectively. They are derived with smooth compact radial tests. The reduced bilinear form extends continuously to $H^1_0$ on the shell, where each complementary channel is coercive after a choice of sign. A common boundary domain for the original canonical generators remains to be established.
+
+Higher preservation can exclude data that pass the first two constraint stages. For a round Euclidean slice with $\alpha=1$, $\beta=0$ and constant Cartesian $K_{ij}=\kappa n_i n_j$ ($n$ a unit vector, $\kappa\ne0$), all primaries and secondaries vanish and first preservation admits temporal rates. For every such choice a polar quadrupole shift secondary has nonzero second time derivative for a suitable compact radial test. Thus no sufficiently smooth retained trajectory passes through those fixed data at $N=3,4$. The oblate family tends instead to the round zero-momentum solution. The exact minors, radial forms and second-preservation identity are archived under \path{reports/oblate-constraint-rank-2026-11-27/}, \path{reports/oblate-lapse-consistency-2026-11-27/} and \path{reports/higher-order-consistency-2026-11-27/}, respectively.
