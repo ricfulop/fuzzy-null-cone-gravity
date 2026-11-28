@@ -10,6 +10,7 @@ Companion dynamical manuscript and reproducible symbolic/numerical verification 
 - [Paper I pre-submission interaction-and-symmetry audit](reports/paper1-action-audit.md).
 - [Oblate quadratic operator and boundary preparation](reports/oblate-quadratic-preparation/README.md): formal Hamiltonian blocks, domain requirements, and bounded kinematic verification for the original Paper I Galerkin action.
 - [Bounded oblate weak-form validation](reports/oblate-weak-curvature-validation/full-recheck-pass/README.md): all eight batches passed, including representative exact sampled Green checks and three fixed symbolic gauge controls; finite radial assembly and physical boundary choices remain open.
+- [Angular weak-slot snapshot preparation](reports/oblate-angular-weak-slots/README.md): unrun full-`L=2` angular density/flux snapshots at two radii, with normalization, regularity and real-basis controls; separate launch approval is pending.
 
 ## Reproduce all calculations and figures
 
